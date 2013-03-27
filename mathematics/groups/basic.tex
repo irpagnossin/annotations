@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\input{../../common.tex}
+
+\begin{document}
+
+\section{Group}
+
+\paragraph{Definition:}a set $G = \{a, b, \ldots\}$ and an operation $\cdot$ form a group if, for any given $a,b\in G$ there existis $a\cdot b\in G$ with these properties:
+\begin{itemize}
+ \item $(a\cdot b)\cdot c = a\cdot(b\cdot c)$ (operation is associative).
+ \item $\forall a\in G \Rightarrow \exists e\in G | a\cdot e = a$ (identity element).
+ \item $\forall a\in G \Rightarrow \exists a^{-1}\in G | a\cdot a^{-1} = e$ (inverse element).
+\end{itemize}
+
+\paragraph{Consequences:}
+\begin{itemize}
+ \item $e^{-1} = e$
+ \item $a^{-1}\cdot a = e$
+ \item $e\cdot a = a$
+\end{itemize}
+
+\paragraph{Examples of groups:}
+\begin{itemize}
+ \item $C_1 = \{e\}$ is the smallest group.
+ \item $C_n = \{a,a^2,\ldots,a^n = e\}$ is a \emph{cyclic group}.
+\end{itemize}
+
+\paragraph{Abelian group:} commutative groups, \ie, $a\cdot b = b\cdot a$.
+
+\end{document}
