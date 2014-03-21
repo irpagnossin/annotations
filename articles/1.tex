@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt]{article}
+  \usepackage[utf8]{inputenc}
+  %\usepackage[ae]{fontenc}
+  \usepackage[brazil]{babel}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+
+  \title{Integrais de linha em ciclos termodinâmicos}
+  \author{I. R. Pagnossin}
+  \date{21 de março de 2014}
+  
+\begin{document}
+  
+  \maketitle
+  
+  Em termodinâmica de equilíbrio, um sistema termodinâmico é caracterizado por \emph{funções de estado}, tais como
+  energia interna, entropia, entalpia, entalpia livre de Gibbs e energia livre de Helmhotz.
+  Por sua vez, elas dependem das chamadas \emph{variáveis de estado}, como
+  a temperatura, a pressão, o volume e o potencial químico.
+  
+  Assim, se $f: \mathbb{R}^n \to \mathbb{R}$ é uma função das variáveis de estado $x_i$, com $i = 1, 2, \ldots, n$,
+  o diferencial total de $f$ é dado por:
+  \begin{equation}\label{eq:df}
+   df = \frac{\partial f}{\partial x_1} dx_1 + \frac{\partial f}{\partial x_1} dx_1 + \cdots \frac{\partial f}{\partial x_n} dx_n.
+  \end{equation}
+  
+  Esse formalismo do Cálculo Diferencial e Integral é bastante conveniente na termodinâmica de equilíbrio
+  porque nela todas as transformações de estado são feitas ``lentamente'', isto é, em pequenos incrementos
+  que visam permitir ao sistema retornar ao equilíbrio após uma variação em $x_i$ (isto é, uma transformação de estado). Deste modo, o sistema
+  termodinâmico pode ser descrito por $f$ e caracterizado por um espaço de fases $\{x_i\}$. Assim,
+  qualquer alteração pode ser desfeita, levando ao conceito de ``transformações de estado''.
+
+  A equação acima pode ser reescrita da seguinte maneira:
+  \begin{equation}
+    df = \vec\nabla f \cdot d\vec r.
+  \end{equation}
+  
+  Deste modo, pelo Teorema Fundamental do Cálculo,
+  \begin{equation}
+    \int_A^B df = \int_A^B \vec\nabla f \cdot d\vec r = f(B) - f(A),
+  \end{equation}
+  onde $A = \{x_i\}$ e $B = \{x_i'\}$ são os estados final e inicial da transformação, respectivamente. Vê-se, portanto, que uma
+pequena variação em $f$ não depende da maneira como o estado foi atingido, ou equivalentemente, não depende do caminho pelo estado
+de fases do sistema termodinâmico que tomou-se para ir de $A$ até $B$. Particularmente, se $A = B$, $df = 0$. Assim, num ciclo
+termodinâmico, $f$ não varia.
+
+  Da primeira lei da termodinâmica, sabemos que $du = dq + dw = dq - p\,dV$. Calor não é uma variável de estado, nem trabalho. Mas $p$ (pressão), $V$ (volume) e $S$ (entropia) são:
+  \begin{equation}\label{eq:du}
+    du = S dT - p dV.
+  \end{equation}
+  
+  Comparando com \eqref{eq:df}, concluímos imediatamente que
+  \begin{equation}
+    \left(\frac{\partial u}{\partial T}\right)_V = S \qquad\text{e que}\qquad \left(\frac{\partial u}{\partial V}\right)_T = -p.
+  \end{equation}
+
+  Além disso, como o sistema é contínuo, isto é, não há \emph{transições de fase}, onde as variáveis de estado sofrem discontinuidades, sabemos do cálculo que
+  \begin{equation}
+    \frac{\partial^2 f}{\partial x_i\partial x_j} = \frac{\partial^2 f}{\partial x_j\partial x_i}.
+  \end{equation}
+  
+  Ou seja, no caso da equação \ref{eq:du},
+  \begin{align}
+    \frac{\partial^2 u}{\partial T\partial V} &= \frac{\partial^2 u}{\partial V\partial T} \\
+    -\frac{\partial p}{\partial T} &= \frac{\partial S}{\partial V}
+  \end{align}
+
+  Esta é uma das relações de Maxwell (??????), de de fato todas as outras podem ser obtidas por meio de um procedimento análogo,
+  bastando apenas escolher outras funções e variáveis de estado.
+  
+  Segundo o Teorema de Green,
+  \begin{equation}
+    \oint X(x,y)\, dx + Y(x,y)\, dy = \iint_{\Sigma} \left(\frac{\partial Y}{\partial x} - \frac{\partial X}{\partial y}\right)\, d\sigma
+  \end{equation}
+  
+  Comparando com \eqref{eq:df}, concluímos que
+  \begin{align}
+    \oint df &= \oint X(x,y)\, dx + Y(x,y)\, dy\\
+             &= \iint_{\Sigma} \left(\frac{\partial Y}{\partial x} - \frac{\partial X}{\partial y}\right)\, d\sigma\\
+             &= \iint_{\Sigma} \left(\frac{\partial}{\partial x}\frac{\partial f}{\partial y} - \frac{\partial}{\partial y}\frac{\partial f}{\partial x}\right)\, d\sigma\\
+             &= 0
+  \end{align}
+
+
+
+
+
+  
+  
+\end{document}
