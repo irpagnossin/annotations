@@ -1,0 +1,26 @@
+\documentclass[a4paper,12pt]{article}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{ae}
+	\usepackage[brazil]{babel}
+	\usepackage{amsmath}
+	\newcommand\foreign[1]{\textsl{#1}}
+\begin{document}
+
+	Sabendo que um evento $y$ pode ocorrer após um evento $x$, relacionado, ocorrer, então a probabilidade de $y$ ocorrer é dada por
+	\begin{equation*}
+	p(y) = \sum_i p(y|x = i)p(x=i),
+	\end{equation*}
+onde $p(y|x=i)$ é a probabilidade de ocorrer o evento $y$ se o evento $x=i$ ocorreu.
+
+	$p(\neg y|x) = 1 - p(y|x)$, ou seja, a probabilidade de $y$ \emph{não} ocorrer (símbolo $\neg$), dado que $x$ ocorreu, é complementar a $p(y|x)$. No entanto, $p(y|\neg x) \ne 1 - p(y|x)$, ou seja, a probabilidade de $y$ ocorrer dado que $x$ \emph{não} ocorreu não é complementar a $p(y|x)$. Até por que, se fosse, teríamos, pelas duas equações anteriores, $p(\neg y|x) = p(y|\neg x)$, o que não é verdade, em geral.
+
+
+	Probabilidade de o evento $A$ ocorrer, \emph{dado} que o evento $B$ ocorreu:
+	\begin{equation*}
+	p(A|B) = \frac{p(B|A)p(A)}{p(B)},
+	\end{equation*}
+onde $p(B) = \sum_A p(B|A)p(A)$. $p(A|B)$ é chamado de \foreign{posterior}, $p(B|A)$ é chamado de \foreign{likelihood}, $p(A)$ é chamado de \foreign{prior} e $p(B)$ é chamado de \foreign{marginal likelihood}.
+
+
+\end{document}
