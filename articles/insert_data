@@ -1,0 +1,7 @@
+Abaixo estão as primeiras instruções de inserção de dados na base MongoDB: como este é um trabalho inicial ainda, a estrutura dos documentos certamente será severamente alterada. Por isso, para não perder esses dados enquanto eu ainda não sei como salvá-los diretamente do MongoDB...
+
+db.articles.insert({"filenames":["3.ipynb"],description:[{"locale":"pt-BR", "text": "Simulação de um oscilador amortecido (não harmônico), utilizando como amortecimento a força de atrito proporcional à normal e ao _sinal_ da velocidade (mas não de sua intensidade)."}]})
+
+db.articles.insert({"filenames":["2.ipynb"], "description":[{"locale":"pt-BR", "text":"Simulação de um oscilador não-harmônico. Após apresentar o oscilador harmônico e como chegar em sua equação do movimento, a partir da energia potencial, este é um bom recurso para mostrar casos mais complexos, nos quais não é possível fazer uma aproximação harmônica. Dito de outra forma, este é um recurso útil para distinguir oscilações de oscilações harmônicas."}]})
+
+db.articles.insert({"filenames":["1.tex"], "description":[{"locale":"pt-BR", "text":"Texto: integrais de linha em ciclos termodinâmicos."}]})

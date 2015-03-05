@@ -1,0 +1,7 @@
+Os artigos estão catalogados na base de dados "articles" do servidor MongoDB local. A estrutura dos documentos é:
+
+"filenames": [<Lista de nomes de arquivos>],
+"description": [{
+	"locale": "pt-BR",
+	"text": "Texto da descrição, em textile"
+}]

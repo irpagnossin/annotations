@@ -1,0 +1,50 @@
+\documentclass[a4paper,12pt]{article}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[brazil]{babel}
+  \usepackage{amsmath}
+\begin{document}
+
+  \section{Notação de Spivak}
+  
+  Notação do Spivak: $(Df)(t) \doteq \left.\frac{d}{dx}f(x)\right|_{x=t}$
+  
+  Space-time path: $\Gamma[w](t) = (t, w(t), (Dw)(t))$. As componentes são tempo, posição e velocidade, respectivamente.
+  
+  $\partial_i$ é a derivada com relação à $i$-ésima coordenada:
+  \begin{equation*}
+    \partial_i f \doteq \frac{\partial}{\partial x^i} f(x^1, x^2, \ldots, x^i, \ldots).
+  \end{equation*}
+  Além disso, 
+  \begin{equation*}
+    (\partial_i f)(t) \doteq \left.\frac{\partial}{\partial x^i} f(x^1, x^2, \ldots, x^i, \ldots)\right|_{x_i = t}.
+  \end{equation*}
+
+
+  
+  Equação de Euler-Lagrange na notação de Spivak: 
+  \begin{equation*}
+    D\left(\left(\partial_2 L\right) \circ \left(\Gamma[w]\right)\right) - (\partial_1 L) \circ \left(\Gamma[w]\right) = 0
+  \end{equation*}
+  
+  Ivan: colocando o tempo em ``pé de igualdade'' com as coordenadas espaciais, geralmente coloca-se-o como $0$-ésima coordenada.
+  Assim, $\partial_0 f \equiv D f$. Neste caso, a equação de Euler-Lagrange fica:
+  \begin{equation*}
+    \partial_0\left(\left(\partial_2 L\right) \circ \left(\Gamma[w]\right)\right) - (\partial_1 L) \circ \left(\Gamma[w]\right) = 0
+  \end{equation*}
+  
+  \section{Eletromagnetismo}
+  
+  Tensor de campo eletromagnético: $F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}$, sendo $A^{\mu} \equiv (A^0, \vec A) = (\varphi, \vec A)$
+  o ???. $\varphi$ é o potencial eletrostático e $\vec A$ é o potencial vetor. Além disso, $j^{\mu} \equiv (j^0, \vec j) = (\rho, \vec j)$, sendo $\rho$
+  a densidade volumétrica de carga elétrica e $\vec j$ a densidade de corrente de carga elétrica. Com isso em mente, as equações de Maxwell escrevem-se:
+  \begin{align*}
+    \partial_{\mu}F_{\nu\lambda} + \partial_{\nu}F_{\lambda\mu} + \partial_{\lambda}F_{\mu\nu} &= 0 \\
+    \partial_{\mu}F^{\mu\nu} &= j^{\nu}.    
+  \end{align*}
+  
+  A primeira equação corresponde $\vec\nabla \cdot \vec B = 0$ e $\vec\nabla\times \vec E + \partial\vec B/\partial t = 0$ (as ``equações homogêneas''); a segunda corresponde a
+  $\vec\nabla \cdot \vec E = \rho$ e $\vec\nabla\times\vec B - \partial \vec E/\partial t = \vec j$ (as ``equações inomogêneas'').
+
+
+\end{document}
