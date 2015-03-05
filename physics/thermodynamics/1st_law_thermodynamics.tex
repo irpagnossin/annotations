@@ -1,0 +1,110 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+
+%opening
+\title{Primeira lei da Termodinâmica}
+\subtitle{Energia interna $U$}
+\author{I. R. Pagnossin}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Neste trabalho, exploramos a primeira lei da Termodinâmica utilizando como equação de estado a energia interna $U$, que pode ser função de quaisquer dois pares das variáveis de estado: $T$, $V$, $P$ ($H$, $S$, $G$...?).
+\end{abstract}
+
+\newcommand\D[3]{\ensuremath{\left(\frac{\partial #1}{\partial #2}\right)_{#3}}}
+
+\section{$U \equiv U(T,V)$}
+
+  Primeira lei da Termodinâmica:
+  \begin{equation}\label{eq:1st-law}
+  U = Q + W. 
+  \end{equation}
+
+  Ou seja, a energia (dita ``interna'') $U$ de um material é dada pela soma do calor $Q$ que lhe foi fornecido com o trabalho que o meio externo exerceu sobre esse material.
+  
+  Da mecânica clássica, $dW = -P\, dV$, onde $P$ é a \emph{pressão externa} e $V$ é o volume do material.
+  
+  Do Cálculo Diferencial e Integral, como $U \equiv U(T,V)$ é uma função contínua de $T$ (temperatura) e $V$, vale:
+  \begin{equation*}
+  dU = \D{U}{T}{V}\, dT + \D{U}{V}{T}\, dV.
+  \end{equation*}
+  
+  Usando a primeira lei, podemos escrever de maneira genérica (para qualquer material):
+  \begin{align}
+  dQ &= dU - dW \nonumber\\
+     &= \D{U}{T}{V}\, dT+ \left[P + \D{U}{V}{T}\right]\, dV.\label{eq:dQ}
+  \end{align}
+
+  O calor fornecido ao material tem três destinações possíveis: primeiramente, ele pode ser armazenado na forma de energia cinética dos átomos e moléculas que compõem o material. Essa forma de energia corresponde à temperatura (segundo a teoria cinética dos gases):
+  \begin{equation*}
+  dQ_1 = \D{U}{T}{V}\, dT
+  \end{equation*}
+
+  O calor também pode ser armazenado na forma de energia potencial, que em geral pode ser associado à distância entre as moléculas/átomos que compõem o material. Ou seja, essa parcela do calor altera o volume ocupado pelo material:
+  \begin{equation*}
+  dQ_2 = \D{U}{V}{T}\, dV.
+  \end{equation*}
+  
+  Mas para expandir, o material precisa ``abrir espaço'' no meio externo, trabalhando contra ele. Portanto, parte do calor fornecido ao material deve ser utilizado para realizar trabalho:
+  \begin{equation*}
+  dQ_3 = -P\, dV,
+  \end{equation*}
+  lembrando que $P$ é a pressão que o meio externo ao material exerce sobre o material.
+
+  \subsection{Processo isocórico}
+  
+  Para um processo termodinâmico em que não há variação de volume (chamado ``isocórico''), isto é, quando $dV = 0$, o calor fornecido (removido) é todo empregado no aumento (redução) da energia cinética das moléculas e átomos do material. Ou seja, há apenas variação de temperatura. Isso pode ser deduzido imediatamente a partir de \eqref{eq:dQ} fazendo $dV = 0$:
+  \begin{align*}
+  dQ \equiv dQ_1 &= \D{U}{T}{V}\, dT\\
+                 &:= C_V\, dT,
+  \end{align*}
+  onde $C_V = \D{U}{T}{V}$ é a \emph{capacidade térmica} (a volume constante) do material. Esse parâmetro, então, relaciona a energia fornecida (ou removida) com a variação da temperatura do material.
+  
+  Ou seja, $C_V$ é a taxa com que a energia (calor) é armazenada (ou removida) das vibrações do material, com relação à temperatura.
+  
+  Se usarmos essa definição em \eqref{eq:dQ}, obtemos uma forma alternativa para a primeira lei da Termodinâmica, tão genérica quanto \eqref{eq:1st-law}:
+  \begin{equation}
+  dQ = C_V\, dT + \left[P + \D{U}{V}{T}\right]\, dV.\qquad U\equiv U(T,V)
+  \end{equation}
+
+  \section{$U \equiv U(P,T)$}
+  
+  Se escolhermos usar a pressão $P$ e a temperatura $T$ como \emph{variáveis de estado} independentes, podemos afirmar que:
+  \begin{equation*}
+  dU = \D{U}{P}{T}\, dP + \D{U}{T}{P}\, dT,
+  \end{equation*}
+  já que $U(P,T)$ é uma função (de estado) contínua. Note que essa afirmação vem do Cálculo Diferencial e Integral, não da Física.
+  
+  Agora, lembrando que $dW = -P\, dV$ e usando novamente a expressão diferencial da primeira lei da Termodinâmica, $dU = dQ + dW$, podemos escrever: ...
+  
+  
+  \subsection*{Processo isotérmico}
+  
+  De $dT = 0$ decorre que:
+  \begin{equation*}
+  \left(dQ\right)_T = P\left(dV\right)_T + \D{U}{V}{T}\left(dV\right)_T.
+  \end{equation*}
+  
+  Ou seja, quando não há variação de temperatura, o calor fornecido (removido) ao material é (i) armazenado na forma energia potencial (variação do volume) \emph{e} (ii) é usado para ``abrir caminho'' no meio externo. Note ainda que, se esse processo ocorresse no vácuo, $P = 0$ e todo o calor fornecido seria armazenado na forma de energia potencial.
+  
+  \subsection*{Processo adiabático}
+  
+  Por outro lado, quando $dQ = 0$,
+  \begin{equation*}
+  0 = C_V\, dT + P\left(dV\right)_T + \D{U}{V}{T}\left(dV\right)_T,
+  \end{equation*}
+  ou seja, a toda variação na energia cinética ocorre uma variação oposta na energia potencial, além do trabalho. É o que vemos em sistemas mecânicos onde a energia mecânica é conservada. Isso fica mais claro se $P = 0$ (vácuo no meio externo). Neste caso, $C_V\, dT = - \D{U}{V}{T}\left(dV\right)_T$.
+  
+
+  
+  
+  
+
+
+\end{document}
