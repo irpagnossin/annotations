@@ -1,0 +1,55 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+
+\let\vec=\mathbf
+\begin{document}
+
+  Considere um operador linear $A$ que, num sistema de coordenadas qualquer, é expresso por:
+  \begin{equation*}
+  A = \begin{pmatrix}
+    1 & 3 \\
+    3 & 1
+  \end{pmatrix}.
+  \end{equation*}
+  
+  Seus autovalores (ou valores próprios), são números reais (ou complexos) $\lambda$ que satisfazem a equação:
+  \begin{equation*}
+  A \vec u = \lambda \vec u,
+  \end{equation*}
+  sendo $\vec u = \begin{pmatrix}x\\y\end{pmatrix}$ um vetor desse espaço.
+  Então, a equação anterior fica assim:
+  \begin{equation*}
+  \begin{pmatrix}
+    A_{xx} & A_{xy} \\
+    A_{yx} & A_{yy}
+  \end{pmatrix}
+  \begin{pmatrix}
+    x \\
+    y
+  \end{pmatrix}
+  =
+  \lambda
+  \begin{pmatrix}
+    x \\
+    y
+  \end{pmatrix}
+  \Rightarrow
+  \begin{pmatrix}
+    A_{xx} x + A_{xy} y \\
+    A_{yx} x + A_{yy} y
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \lambda x \\
+    \lambda y
+  \end{pmatrix}
+  \end{equation*}
+
+
+
+
+
+\end{document}

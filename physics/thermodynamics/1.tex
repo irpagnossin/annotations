@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{siunitx}\sisetup{locale=FR}
+\usepackage{booktabs}
+\input{../../common}
+
+\title{Nível de água num copo com gelo}
+\author{I. R. Pagnossin}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Um cubo de gelo num copo de água, ao liquefazer-se, não eleva o nível da água, apesar de parte do gelo ($8\%$ de seu volume) ficar acima da superfície.
+\end{abstract}
+
+  Considere um cubo de gelo de volume $V_{s}$ (o subscrito ``$s$'' significa ``fase sólida'').
+  Sua densidade é $\rho_{s}$, enquanto a densidade da água na qual ele flutua é $\rho_{l}$ (``$l$'' de ``fase líquida'').
+  
+  \paragraph{Argumento \#1:} na fase sólida, podemos escrever: $m = \rho_{s} V_{s}$.
+  Como a transição de fase conserva a massa $m$ do gelo, também é verdade que $m = \rho_{l} V_{l}$, desta vez para a fase líquida.
+  Nesta última expressão, $V_{l}$ é o volume ocupado pelo gelo após liquefazer-se, \ie, seu volume na fase líquida.
+  Note que o único parâmetro comum é a massa, mas daí podemos concluir que:
+  \begin{equation}\label{eq:relacao-1}
+  \frac{\rho_{l}}{\rho_{s}} = \frac{V_{s}}{V_{l}}.
+  \end{equation}
+  
+  Apenas como curiosidade: $\rho_{s} = \SI{920}{kg/m^3}$ e $\rho_{l} = \SI{1000}{kg/m^3}$, de modo que o volume ocupado pela água na fase sólida (gelo) é $9\%$ maior que na fase líquida. Não é por outro motivo que o gelo flutua!
+
+  \paragraph{Argumento \#2:} na fase sólida, podemos argumentar que o cubo encontra-se em equilíbrio estático.
+  Deste modo, sua força-peso $P$ é balanceada pelo empuxo $E$, ou seja: $E = P$.
+  A primeira é dada por:
+  \begin{equation*}
+  P = mg = \rho_{s}V_{s}g,
+  \end{equation*}
+  onde $g$ é a aceleração da gravidade.
+  
+  Já a força de empuxo é igual à força-peso associada à massa de água deslocada, $m_{d}$:
+  \begin{equation*}
+  E = m_{d}g = \rho_{l} V_{d} g,
+  \end{equation*}
+  onde $V_{d}$ é o volume de água deslocado pelo gelo.
+  Perceba que, em princípio, ele não tem nada a ver com $V_l$ ou $V_s$.
+  De fato, $V_d$ é o espaço que o gelo abriu na água para acomodar-se ali.
+  Apesar disso, como $E = P$, podemos afirmar que:
+  \begin{equation}\label{eq:relacao-2}
+  \frac{\rho_{l}}{\rho_{s}} = \frac{V_{s}}{V_{d}}.
+  \end{equation}
+  
+  Comparando as relações \eqref{eq:relacao-1} e \eqref{eq:relacao-2}, obtemos o resultado desejado:
+  \begin{equation*}
+    V_{d} = V_{l}.
+  \end{equation*}
+
+  Assim, ao colocarmos um cubo de gelo num copo d'água, ele desloca um volume de água $V_{d}$ que é equivalente ao volume que ele \emph{ocupará} ao liquefazer-se: $V_{l}$.
+  É por isso que o nível da água no copo não é alterado.
+  
+  Na verdade, esse resultado é verdadeiro para qualquer objeto imerso num líquido do mesmo material (para que valha o argumento \#1) e que seja menos denso em sua fase sólida (argumento \#2). O argumento de que a massa é conservada é verdadeiro sempre que não houver reações nucleares envolvidas.
+  
+  Há vários compostos químicos que apresentam a propriedade de ter a fase sólida menos densa que a líquida, mas apenas cinco elementos químicos da tabela periódica apresentam esse comportamento. São eles:
+  
+  \bigskip
+  
+  \hfill%
+  \begin{tabular}{lccc}
+  \toprule
+  Elemento & $\rho_s$ (\si{g/cc}) & $\rho_l$ (\si{g/cc}) & Fusão (\si{\degreeCelsius})\\
+  \midrule
+  Arsênio & 4,70 & 5,22 & 817 \\
+  Bismuto & 9,78 & 10,07 & 271\\
+  Gálio   & 5,90 & 6,09 & 30 \\
+  Germânio & 5,32 & 5,60 & 940 \\
+  Silício & 2,33 & 2,51 & 1410\\
+  \bottomrule
+  \end{tabular}%
+  \hfill{}
+
+  
+  
+  
+  
+\end{document}
