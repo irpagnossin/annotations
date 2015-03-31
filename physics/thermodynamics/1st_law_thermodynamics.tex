@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[brazil]{babel}
 \usepackage{amsmath}
+\usepackage{paralist}
 
 %opening
 \title{Primeira lei da Termodinâmica}
@@ -41,23 +42,40 @@
      &= \D{U}{T}{V}\, dT+ \left[P + \D{U}{V}{T}\right]\, dV.\label{eq:dQ}
   \end{align}
 
-  O calor fornecido ao material tem três destinações possíveis: primeiramente, ele pode ser armazenado na forma de energia cinética dos átomos e moléculas que compõem o material. Essa forma de energia corresponde à temperatura (segundo a teoria cinética dos gases):
+  O calor (eneregia) fornecido ao material tem três destinações possíveis:
+  \begin{compactenum}
+  \item Ele pode ser armazenado na forma de energia cinética dos átomos e moléculas que compõem o material.
+  Essa forma de energia corresponde à temperatura (segundo a teoria cinética dos gases):
   \begin{equation*}
-  dQ_1 = \D{U}{T}{V}\, dT
+  dQ_1 = \D{U}{T}{V}\, dT.
   \end{equation*}
 
-  O calor também pode ser armazenado na forma de energia potencial, que em geral pode ser associado à distância entre as moléculas/átomos que compõem o material. Ou seja, essa parcela do calor altera o volume ocupado pelo material:
+  \item O calor também pode ser armazenado na forma de energia potencial, que em geral pode ser associado à distância entre as moléculas/átomos que compõem o material. Ou seja, essa parcela do calor altera o volume ocupado pelo material:
   \begin{equation*}
   dQ_2 = \D{U}{V}{T}\, dV.
   \end{equation*}
   
-  Mas para expandir, o material precisa ``abrir espaço'' no meio externo, trabalhando contra ele. Portanto, parte do calor fornecido ao material deve ser utilizado para realizar trabalho:
+  \item Mas para expandir, o material precisa ``abrir espaço'' no meio externo, trabalhando contra ele. Portanto, parte do calor fornecido ao material deve ser utilizado para realizar trabalho:
   \begin{equation*}
   dQ_3 = -P\, dV,
   \end{equation*}
   lembrando que $P$ é a pressão que o meio externo ao material exerce sobre o material.
+  
+  Note que o sinal de menos dá conta do fato de que essa parcela do calor de fato não é transferida ao material, mas sim utilizada para realizar trabalho contra o meio externo.
+  \end{compactenum}
 
-  \subsection{Processo isocórico}
+  \subsection{Processo isotérmico: $dT = 0$}
+    
+  Neste caso, o calor fornecido pelo material é (i) armazenado na forma de energia potencial e (ii) usado para ``abrir caminho'' no meio externo:
+  \begin{equation*}
+  dQ = \left[P + \D{U}{V}{T}\right]\, dV.
+  \end{equation*}
+  
+  Se o processo ocorre no vácuo, $P = 0$ e, por conseguinte, todo o calor fornecido é armazenado no sistema.
+  
+  Inversamente, se $dQ$ é removido do sistema (diz-se que o sistema ``rejeita o calor $dQ$''), ele é obtido aos custos da (i) redução da energia potencial nas ligações químicas e (ii) da energia extra que o sistema ganhou ao ser comprimido pelo meio externo.
+  
+  \subsection{Processo isocórico: $dV = 0$}
   
   Para um processo termodinâmico em que não há variação de volume (chamado ``isocórico''), isto é, quando $dV = 0$, o calor fornecido (removido) é todo empregado no aumento (redução) da energia cinética das moléculas e átomos do material. Ou seja, há apenas variação de temperatura. Isso pode ser deduzido imediatamente a partir de \eqref{eq:dQ} fazendo $dV = 0$:
   \begin{align*}
@@ -72,16 +90,58 @@
   \begin{equation}
   dQ = C_V\, dT + \left[P + \D{U}{V}{T}\right]\, dV.\qquad U\equiv U(T,V)
   \end{equation}
+  
+  \subsection*{Processo adiabático: $dQ = 0$}
+  
+  Por outro lado, quando $dQ = 0$,
+  \begin{equation*}
+  0 = C_V\, dT + P\left(dV\right)_T + \D{U}{V}{T}\left(dV\right)_T,
+  \end{equation*}
+  ou seja, a toda variação na energia cinética ocorre uma variação oposta na energia potencial, além do trabalho. É o que vemos em sistemas mecânicos onde a energia mecânica é conservada. Isso fica mais claro se $P = 0$ (vácuo no meio externo). Neste caso, $C_V\, dT = - \D{U}{V}{T}\left(dV\right)_T$.
 
-  \section{$U \equiv U(P,T)$}
+  
+
+  
+\section{$U \equiv U(P,T)$}
   
   Se escolhermos usar a pressão $P$ e a temperatura $T$ como \emph{variáveis de estado} independentes, podemos afirmar que:
-  \begin{equation*}
+  \begin{equation}\label{eq:dU(P,T)}
   dU = \D{U}{P}{T}\, dP + \D{U}{T}{P}\, dT,
-  \end{equation*}
+  \end{equation}
   já que $U(P,T)$ é uma função (de estado) contínua. Note que essa afirmação vem do Cálculo Diferencial e Integral, não da Física.
   
-  Agora, lembrando que $dW = -P\, dV$ e usando novamente a expressão diferencial da primeira lei da Termodinâmica, $dU = dQ + dW$, podemos escrever: ...
+  Agora, lembrando que $dW = -P\, dV$ e usando novamente a expressão diferencial da primeira lei da Termodinâmica, $dU = dQ + dW$, podemos escrever:
+  \begin{equation*}
+  dQ = \D{U}{P}{T}\, dP + \D{U}{T}{P}\, dT + P\, dV
+  \end{equation*}
+  
+  Mas $V$ desta vez não é uma variável de estado. Ao invés disso, $V equiv V(P,T)$, de modo que
+  \begin{equation}
+  dV = \D{V}{P}{T} dP + \D{V}{T}{P} dT.
+  \end{equation}
+  
+  Assim,
+  \begin{equation*}
+  dQ = \left[\D{U}{P}{T} + P\, \D{V}{P}{T}\right] dP + \left[\D{U}{T}{P} + P \D{V}{T}{P}\right] dT. ???
+  \end{equation*}
+
+  
+
+  \subsection*{Processo isobárico: $dP = 0$}
+  
+  Analogamente a $C_V$, definimos a \emph{capacidade térmica a pressão constante} de modo que ela relacione o calor fornecido com uma variação na temperatura (energia cinética):
+  \begin{equation}
+  \left(dQ\right)_P = C_P\left(dT\right)_P.
+  \end{equation}
+  
+  Note, entretanto, que não relacionamos $C_P$ com uma variação da energia interna, isto é, não afirmamos que $C_V = \D{U}{T}{P}$. \emph{Isso é incorreto!}
+  
+  De \eqref{eq:dU(P,T)} e da forma fundamental da primeira lei da Termodinâmica, 
+
+  
+  
+  
+  
   
   
   \subsection*{Processo isotérmico}
@@ -93,13 +153,7 @@
   
   Ou seja, quando não há variação de temperatura, o calor fornecido (removido) ao material é (i) armazenado na forma energia potencial (variação do volume) \emph{e} (ii) é usado para ``abrir caminho'' no meio externo. Note ainda que, se esse processo ocorresse no vácuo, $P = 0$ e todo o calor fornecido seria armazenado na forma de energia potencial.
   
-  \subsection*{Processo adiabático}
-  
-  Por outro lado, quando $dQ = 0$,
-  \begin{equation*}
-  0 = C_V\, dT + P\left(dV\right)_T + \D{U}{V}{T}\left(dV\right)_T,
-  \end{equation*}
-  ou seja, a toda variação na energia cinética ocorre uma variação oposta na energia potencial, além do trabalho. É o que vemos em sistemas mecânicos onde a energia mecânica é conservada. Isso fica mais claro se $P = 0$ (vácuo no meio externo). Neste caso, $C_V\, dT = - \D{U}{V}{T}\left(dV\right)_T$.
+
   
 
   
