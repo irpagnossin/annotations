@@ -38,16 +38,45 @@
   \end{pmatrix}
   \Rightarrow
   \begin{pmatrix}
-    A_{xx} x + A_{xy} y \\
-    A_{yx} x + A_{yy} y
+    A_{xx} - \lambda & A_{xy} \\
+    A_{yx}           & A_{yy} - \lambda    
   \end{pmatrix}
+  \cdot
+  \begin{pmatrix}    
+    x \\
+    y
+  \end{pmatrix}  
   =
-  \begin{pmatrix}
-    \lambda x \\
-    \lambda y
+  \begin{pmatrix}    
+    0 \\
+    0
   \end{pmatrix}
   \end{equation*}
 
+  Essa equação tem solução apenas se:
+  \begin{equation}\label{eq:ker}
+  \left|\begin{matrix}
+    A_{xx} - \lambda & A_{xy} \\
+    A_{yx}           & A_{yy} - \lambda    
+  \end{matrix}\right|
+  = 0,
+  \end{equation}
+  que é a equação que determina os autovalores de $A$.
+  
+  Considerando o exemplo dado, \eqref{eq:ker} fica:
+  \begin{equation}
+  \left|\begin{matrix}
+    1 - \lambda & 3 \\
+    3           & 1 - \lambda    
+  \end{matrix}\right|
+  = (1-\lambda)^2-9 = 0
+  \Rightarrow
+  1-\lambda = \pm 3
+  \Rightarrow
+  \lambda = 1 \mp 3.
+  \end{equation}
+  
+  Ou seja, os autovalores de $A$ são $\lambda_1 = -2$ e $\lambda_2 = 4$.
 
 
 
