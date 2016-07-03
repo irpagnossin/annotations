@@ -1,0 +1,62 @@
+\begin{tikzpicture}[scale=1]
+	\clip (-2,-1.6) rectangle (7.5,3);
+
+	\coordinate (r) at (10:4);
+	\coordinate (A) at (10:6);
+	\coordinate (B) at ($(r)+(-1.031,-0.688)$);
+	\coordinate (vxL) at ($(A)+(-1.031,-0.688)$);
+	\coordinate (L) at (2,2.5);
+
+	% \hat{r}
+	\draw [->, thick] (0,0) -- (10:1);
+	\draw (10:1) node[anchor=south] {$\hat{r}$};
+
+	% \hat{\theta}
+	\draw [->, thick] (0,0) -- (100:1);
+	\draw (100:1) node[anchor=south] {$\hat{\theta}$};
+
+	% \vec{r}: position vector
+	\draw [->] (0,0) -- (r);
+	\draw ($2/3*(r)$) node[anchor=south east] {$\vec{r}$};
+
+	% \vec{v}: velocity vector
+	\draw [->] (r) -- +(70:2);
+	\draw (r) -- +(70:2) node[anchor=south west] {$\vec{v}$};
+
+	% v x L
+	\draw [->] (r) -- +(-20:1);
+	\draw (r) -- +(-20:1) node[anchor=north west] {$\vec{v} \times \vec{L}$};
+
+	% DM\hat r
+	\draw [dashed, ->] (r) -- (A);
+	\draw (r) (A) node[anchor=west] {$D\earthmass\hat{r}$};
+
+	% DM\vec e
+	\draw [dashed, ->] (r) -- (B);
+	\draw (r) (B) node[anchor=north east] {$D\earthmass\vec{e}$};
+
+	\draw [dotted, -] (A) -- (vxL) -- (B);
+
+	% Pola axis
+	\draw [dashed] (0,0) -- (-146.28:2);
+	\draw (-146.28:2) node[anchor=north west] {\footnotesize $\text{Eixo polar} \parallel \vec e$};
+
+	% \theta and \varphi
+	\draw [->] (-146.28:0.25) arc (-146.28:+10:0.25);
+	\draw (-73:0.25) node[anchor=north] {$\theta \equiv \varphi$};
+
+	\draw (L) node {$\bigodot$};
+	\draw (L) node[anchor=south west] {$\vec{L}$ e $\hat k$};
+
+	% Sun
+	\draw [color=gray,->] (160:0.5) -- (160:0.1);
+	\draw [color=gray] (160:0.5) node[anchor=east] {\footnotesize Sol};
+	\filldraw[fill=black] (0,0) circle (0.05);
+
+	% Earth
+	\draw [color=gray,->] (r) +(130:1) -- ($(r) +(130:0.1)$);
+	\draw [color=gray] (r) +(130:1) node[anchor=south] {\footnotesize Terra};
+	\filldraw[fill=black] (r) circle (0.05);
+
+
+\end{tikzpicture}

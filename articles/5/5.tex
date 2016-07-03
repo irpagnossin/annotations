@@ -1,0 +1,116 @@
+\documentclass[a4paper, 12pt]{scrartcl}
+	\usepackage[utf8]{inputenc}
+	\usepackage{fourier}
+	\usepackage[brazil]{babel}
+	\usepackage{amsmath}
+	\usepackage{paralist}
+	\usepackage{tikz}\usetikzlibrary{calc,arrows}
+	\tikzset{>=stealth',every on chain/.append style={join},every join/.style={->}}
+
+	\title{A órbita dos planetas}
+	\subtitle{Solução do problema de Kepler, ou ``a 1\textordfeminine~lei de Kepler''}
+	\author{I. R. Pagnossin}
+
+	\newcommand\earthmass{\ensuremath{M_{\oplus}}}
+	\newcommand\sunmass{\ensuremath{M_{\odot}}}
+
+\begin{document}
+	\maketitle
+
+	\begin{abstract}
+		Este artigo demonstra como obter a equação da órbita da Terra, utilizando os seguintes conceitos físicos:
+		\begin{compactitem}
+			\item Lei da gravitação universal de Newton
+			\item 2\textordfeminine~lei de Newton
+			\item Momento angular
+			\item Torque
+			\item Conservação do momento angular
+			\item Cinemática: posição, velocidade e aceleração.
+		\end{compactitem}
+
+		Ele também utiliza os seguintes conceitos matemáticos:
+		\begin{compactitem}
+			\item Álgebra vetorial
+			\item Coordenadas polares
+			\item Seções cônicas
+		\end{compactitem}
+	\end{abstract}
+
+	\begin{align*}
+		\vec F &= - G \sunmass \earthmass \frac{\hat r}{r^2} &&\leftarrow\text{Lei da gravitação universal de Newton} \\
+		       &= \earthmass \vec a = \earthmass \frac{d^2\vec r}{dt^2}         &&\leftarrow\text{2\textordfeminine~lei de Newton}.
+	\end{align*}
+
+	Igualando, obtemos a equação da órbita:
+	\begin{equation}\label{eq:a}
+		\vec a = \frac{d^2\vec r}{dt^2} = - D \frac{\hat r}{r^2},
+	\end{equation}
+	onde fizemos $D = G\sunmass$.
+
+	Como $\vec F \parallel \vec r$ (movimento descrito no referencial do Sol), o torque exercido pela força gravitacional $\vec F$ sobre a Terra é nulo: $\vec \tau \doteq \vec r \times \vec F = \vec 0$.
+	Consequentemente, o momento angular orbital $\vec L$ da Terra é conservado:
+	\begin{equation}\label{eq:L}
+		\vec L = \earthmass r^2 \dot\theta \hat k,
+	\end{equation}
+	utilizando coordenadas polares.
+
+	Efetuando o produto vetorial de \eqref{eq:a} por \eqref{eq:L}, obtemos:
+	\begin{equation*}
+		\vec a \times \vec L = - D \frac{\hat r}{r^2} \times \earthmass r^2 \dot\theta \hat k
+		                     = - \earthmass D \dot\theta \hat{r}\times\hat{k}
+		                     = D \earthmass \dot\theta \hat\theta,
+	\end{equation*}
+	lembrando que, para a base polar ortonormal $(\hat{r}, \hat{\theta}, \hat{k})$, $\hat\theta = \hat{k}\times\hat{r}$.
+
+	Usando a identidade $\frac{d\hat{r}}{dt} = \dot\theta \hat\theta$,
+	\begin{align}
+		\vec a \times \vec L &= D \earthmass \frac{d\hat{r}}{dt} \Rightarrow \nonumber\\
+		\Rightarrow \frac{d \vec v}{dt} \times \vec L &= \frac{d}{dt}\left(D\earthmass\hat{r}\right) \Rightarrow \nonumber\\
+		\Rightarrow \frac{d}{dt}\left(\vec v \times \vec L\right) &= \frac{d}{dt}\left(D\earthmass\hat{r}\right) \Rightarrow \nonumber\\
+		\Rightarrow \vec{v} \times \vec{L} &= D\earthmass \left(\hat r + \vec e\right), \label{eq:vxL}
+	\end{align}
+	onde $\vec e$ é uma constante de integração.
+
+	Efetuando o produto escalar de $\vec{r}$ por \eqref{eq:vxL},
+	\begin{align*}
+		\vec{r} \cdot \left(\vec{v} \times \vec{L}\right) &= \vec{r} \cdot D\earthmass \left(\hat{r} + \vec{e}\right) \Rightarrow\\
+		\Rightarrow \vec{r} \times \vec{v} \cdot \vec{L} &= D\earthmass \left(\vec{r} \cdot \hat{r} + \vec{r} \cdot \vec{e}\right) \Rightarrow\\
+		\Rightarrow \frac{\vec{L}}{\earthmass} \cdot \vec{L} &= D\earthmass \left(r + re\cos\varphi\right) \Rightarrow\\
+		\Rightarrow L^2 &= D\earthmass^2\left(1 + e \cos\varphi\right) r.
+	\end{align*}
+
+	Se usarmos a orientação definida por $\vec e$ como eixo polar, $\varphi \equiv \theta$ e, consequentemente,
+	\begin{equation*}
+		r(\theta) = \frac{L^2/D\earthmass^2}{1 + e \cos\theta},
+	\end{equation*}
+	que é a equação de uma seção cônica com excentricidade $e$, em coordenadas polares.
+
+	Logo, decorre da lei da gravitação universal de Newton e sua segunda lei do movimento que o movimento dos planetas ao redor do Sol deve ser uma seção cônica.
+	Entretanto, perceba que essa solução só é válida em primeira aproximação, na qual desconsideramos:
+	\begin{compactitem}
+		\item O torque exercido pela força gravitacional do Sol sobre a Terra, que devido ao fato dela não ser perfeitamente esférica, não é realmente nulo.
+		\item O torque exercido pelos demais astros do sistema solar.
+	\end{compactitem}
+
+	\begin{figure}
+		\centering
+		\input{orbit-vectors}
+		\caption{vetores que caracterizam a órbita.}
+		\label{fig:orbit-vectors}
+	\end{figure}
+
+	\section*{Símbolos}
+	\begin{compactdesc}
+		\item[$\vec F$:] Força gravitacional
+		\item[$\vec L$:] Momento angular
+		\item[$\vec r$:] Posição orbital da Terra
+		\item[$\vec v$:] Velocidade orbital da Terra
+		\item[$\vec a$:] Aceleração orbital da Terra
+		\item[$G$:] Constante gravitacional
+		\item[\earthmass:] Massa da Terra
+		\item[\sunmass:] Massa do Sol
+		\item[$(\hat r, \hat \theta, \hat k)$:] Base ortonormal polar
+	\end{compactdesc}
+
+
+\end{document}
