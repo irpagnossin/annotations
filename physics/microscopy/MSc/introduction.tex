@@ -1,0 +1,79 @@
+%	Projeto: 	Scanning probe microscopy
+%	Autor:	 	Ivan Ramos Pagnossin
+%	Data:		 	07/06/2002
+%	Arquivo: 	introduction.tex
+%	Capítulo:	Introcução à microscopia de varredura por sonda.
+
+
+	Diversas tecnologias de microscopia vêm sendo desenvolvidas desde que Robert Hooke\index{Robert Hooke} primeiro observou, em 1665, a estrutura de uma cortiça com o auxílio de um microscópio óptico\index{Microscópio óptico}. Uma dessas tecnologias é a de varredura\index{Varredura}, onde o sensor (que pode ser óptico, elétrico, magnético, etc.) varre a amostra, registrando, ponto a ponto, algum tipo de interação pertinente à observação. A idéia é formar um conjunto de ternos ordenados $(x,y,z)$, onde $(x,y)$ é a posição da sonda numa amostra mapeada por uma matriz quadrada de pontos igualmente distanciados (figura~\ref{fig:varredura}) e $z$ é algum registro de interação entre sonda e amostra que depende do tipo de microscopia que se pretende fazer.\par
+	
+	Uma característica peculiar à técnica de varredura é o fato de que a sonda não registra a interação com a amostra de forma contínua, como ocorre num microscópio óptico usual, por exemplo; mas sim em intervalos denominados {\slshape tamanho de pixel}\index{Tamanho de pixel} ($\Delta$) que, por simplicidade, é constante durante toda uma medida, tanto na varredura lenta\index{Varredura!lenta} quanto na rápida\index{Varredura!rápida} (veja a seguir). Além disso, a área varrida pela sonda é, em geral, quadrada, também apenas para simplificar a administração dos resultados.\par
+	
+	A varredura de uma única linha na figura~\ref{fig:varredura} leva $T=1/\nu$ segundos (SI), onde $\nu$ é a taxa de leitura\index{Varredura!taxa de leitura} de linhas (ajustável pelo usuário). Finalizada a leitura de uma linha, a sonda passa para a seguinte, levando outros $T$ segundos para completá-la. Se a linha possui $N$ pontos, então teremos $N$ linhas, pois a matriz é quadrada. Isto significa que a varredura de toda a matriz leva $NT$ segundos, obviamente maior que o tempo gasto por linha. Por este motivo nomeamos a leitura de uma linha por {\bfseries varredura rápida} e a varredura na direção perpendicular de {\bfseries varredura lenta}.\par	
+		
+\begin{figure*}[htb]
+  \setlength{\unitlength}{0.7mm}
+  \begin{minipage}[t]{0.48\textwidth}\centering	  
+		\begin{picture}(100,100)(-7,-7)
+	  	\multiput(0,0)(0,10){10}{\multiput(0,0)(10,0){10}{\color{blue}\circle*{1.5}}}
+	  	\multiput(0,8)(0,10){9}{\multiput(0,0)(10,0){10}{\color{red}\circle*{1.5}}}
+	  	\multiput(0,0)(0,10){10}{\vector(1,0){90}}
+	  	\multiput(90,8)(0,10){9}{\vector(-1,0){90}}
+	  	\multiput(90,0)(0,10){9}{\line(0,1){8}}
+	  	\multiput(0,8)(0,10){9}{\line(0,1){2}}
+	  	\put(-5,-5){\vector(1,0){15}}\put(-5,13){\makebox(0,0){$y$}}
+	  	\put(-5,-5){\vector(0,1){15}}\put(13,-5){\makebox(0,0){$x$}}
+	  	\put(40,-7.5){\line(0,1){5}}\put(35,-5){\vector(1,0){5}}
+	  	\put(50,-7.5){\line(0,1){5}}\put(55,-5){\vector(-1,0){5}}
+	  	\put(57,-5){\makebox(0,0)[cl]{\scriptsize Tamanho de pixel}}
+	  	\put(35,95){\vector(1,0){20}}
+	  	\put(95,35){\vector(0,1){20}}
+		\end{picture}
+		\caption{\label{fig:varredura}\footnotesize As linhas em preto indicam o sentido da varredura. Os pontos azuis representam as medidas enquanto a sonda\index{Sonda} move-se da esquerda para a direita ({\slshape trace})\index{Trace}; os vermelhos representam as medidas no sentido contrário ({\slshape retrace})\index{Retrace}. Embora na representação acima os pontos azuis e vermelhos esteja em posições diferente, em realidade eles superpõe-se, ao menos idealmente.}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\begin{picture}(100,100)(-7,-7)
+  		\multiput(0,0)(0,10){10}{\multiput(0,0)(10,0){10}{\color{blue}\circle*{1.5}}}
+  		\multiput(0,8)(0,10){9}{\multiput(0,0)(10,0){10}{\color{red}\circle*{1.5}}}
+  		\multiput(90,0)(0,10){10}{\vector(-1,0){90}}
+  		\multiput(0,8)(0,10){9}{\vector(1,0){90}}
+	  	\multiput(90,0)(0,10){9}{\line(0,1){8}}
+	  	\multiput(0,8)(0,10){9}{\line(0,1){2}}
+	  	\put(-5,-5){\vector(1,0){15}}\put(-5,13){\makebox(0,0){$y$}}
+	  	\put(-5,-5){\vector(0,1){15}}\put(13,-5){\makebox(0,0){$x$}}
+	  	\put(55,95){\vector(-1,0){20}}
+	  	\put(95,55){\vector(0,-1){20}}
+		\end{picture}
+		\caption{\footnotesize A figura ao lado representa o movimento de baixo para cima da varredura lenta; As noções de {\slshape trace} e {\slshape retrace} são absolutamente relativas, exatamente como o que é ``de baixo para cima'' e ``de cima para baixo'': Podemos sem problema algum trocar os nomes. O importante é o conceito de que cada um varre a amostra num sentido diferente.}			
+	\end{minipage}
+\end{figure*}
+
+	Já que os registros das interações não é feito de forma contínua, qualquer estrutura menor que $\Delta$ passa desapercebida pela sonda\footnote{Exceto quanto esta estrutura ocorre de forma periódica.}. Ou seja, este método é verossímil apenas para estruturas maiores que o tamanho de pixel.\par
+	
+	O número de medidas por linha (parâmetro {\slshape number of samples})\index{Number of samples}, que é igual ao número de linhas varridas, por vezes é tomado como sinônimo de resolução. Este valor é de crucial importância pois a partir dele podemos determinar o tamanho de pixel, um dos principais fatores a se considerar tanto na análise de uma medida quanto no planejamento de um experimento. Por exemplo, suponha que num determinado experimento $\Delta=1\unit{\mu m}$, então qualquer estrutura inferior a $1\unit{\mu m}$ não poderia ser associada, com segurança, à amostra. Ou seja, o tamanho de pixel é de sumária importância para nos dar critérios de avaliação do que se obtém.\par
+	
+	Podemos determinar o tamanho de pixel facilmente uma vez conhecidas a resolução e a área varrida pela sonda (definida pelo usuário): Por exemplo, digamos que se queira medir uma área de $200\unit{nm}\times200\unit{nm}$ com uma resolução de $256$ pontos por linha. Então é claro que $\Delta=200\unit{nm}/256\cong8\unit{\AA}$ (veja a 
+figura~\ref{fig:varredura}).\label{ex:pixel}\par
+
+	Quando utilizamos como sonda uma diminuta ponta\index{Ponta}\index{Sonda!Ponta} que interage localmente com a amostra, especificamos a técnica não só como microscopia de varredura\index{Microscopia!de varredura}, mas sim {\slshape microscopia de varredura por sonda}\index{Microscopia!de varredura!por sonda} ou, em inglês, {\bf scanning probe microscopy (SPM)}. São vários o modos (ou modalidades de SPM\index{Modalidades de SPM}, distinguindo-se cada qual pela interação entre ponta e amostra (veja lista a seguir): Na modalidade {\slshape microscopia de força magnética}\index{Microscopia!de força magnética}, e.g., a ponta é imantada e interage magneticamente com a amostra, identificando os domínios magnéticos desta. Por outro lado, a {\slshape microscopia de tunelamento}\index{Microscopia!de tunelamento} baseia-se no conhecido fenômeno quântico de tunelamento, medindo, então, a distribuição eletrônica dos átomos da superfície da amostra.
+
+	Um outro ponto que caracteriza a técnica SPM é o fato de a sonda (ponta) interagir com a {\bfseries superfície} da amostra\footnote{Ou, mais rigorosamente, com os planos atômicos mais superficiais.}, sendo incapaz de avaliar o interior da amostra como ocorre com a microscopia de varredura eletrônica, por exemplo\index{Microscopia!de varredura!eletrônica}. Além disso, todas as técnicas SPM podem ser utilizadas em pressão ambiente, desde que tomados alguns cuidados, principalmente na interpretação dos resultados. Isto por que nessas condições toda e qualquer amostra apresenta água adsorvida que, dependendo da técnica utilizada, pode ou não modificar os resultados. No modo AFM de contato\index{AFM!de contato}\index{AFM!contact}, por exemplo, esta preocupação é desnecessária; Não no AFM de contato intermitente\index{AFM!de contato intermitente}\index{AFM!tapping mode}, entretanto (veja capítulo~\ref{cap:afm}). Outro artefato que geralmente se apresenta na superfície das amostras são óxidos, de preocupação fundamental para a microscopia de tunelamento, que depende da condutividade\index{Condutividade} da superfície (veja capítulo~\ref{cap:stm})
+	
+	Abaixo segue uma pequena relação dos tipos de microscopia SPM\index{Microscopia!SPM} existentes.
+	
+\begin{dingautolist}{202}
+\item AFM --- Atomic force microscope (Microscopia de força atômica)
+	\begin{dingautolist}{202}
+		\item Contact AFM (AFM de contato)
+		\item Tapping mode AFM (AFM de contato intermitente)
+		\item Non-contact AFM (AFM de não-contato)
+	\end{dingautolist}
+\item STM --- Scanning tunneling microscopy (Microscopia de tunelamento)	
+\item MFM --- Magnetic force microscopy (Microscopia de força magnética)
+\item EFM --- Eletric force microscopy (Microscopia de força elétrica)
+\item LFM --- Lateral force microscopy (Microscopia de força lateral)
+\item FMM --- Force modulation microscopy (Microscopia de força modulada)
+\item SCM --- Scanning capacitance microscopy (Microscopia de capacitância)
+\item TSM --- Thermal scanning microscopy (Microscopia térmica)
+\item NSOM --- Near-file scanning optical microscopy (Microscopia de campo próximo)
+\end{dingautolist}

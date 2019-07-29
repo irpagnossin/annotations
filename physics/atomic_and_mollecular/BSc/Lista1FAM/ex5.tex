@@ -1,0 +1,88 @@
+\newcommand{\s}{\hat{\sigma}_x} 
+\begin{quotation}
+{\bf 5.}
+{\it	O operador $\hat{\sigma}_x$ numa base ortonormal $\{\ket{+},\ket{-}\}$ é dado por
+	$$
+	\hat{\sigma}_x=\bra{+}\ket{-}\,+\,\bra{-}\ket{+} 
+	$$
+
+	Prove que $e^{i\alpha\hat{\sigma}_x}=\operador I\cos\alpha+i\hat{\sigma}_x\sin\alpha$.
+}
+\end{quotation} 
+
+\vspace{5mm} 
+
+	O operador $\hat{\sigma}_x$ na sua forma matricial é
+	\[\hat{\sigma}_x=\left(\begin{array}{cc}
+				0	&	1	\\
+				1	&	0
+			\end{array}\right)\]
+
+	E queremos calcular 
+	\begin{equation}
+	e^{i\alpha\s}=\operador I+{i\alpha\s\over 1!}+{(i\alpha\s)^2\over2!}+{(i\alpha\s)^3\over3!}+\cdots
+	\label{eq:exponencial}
+	\end{equation} 
+
+	Mas perceba que 
+
+	\begin{minipage}{0.46\textwidth}
+	\[\s=\left(\begin{array}{cc}
+				0	&	1	\\
+				1	&	0
+			\end{array}\right)=\s\]
+
+	\[\s^3=\left(\begin{array}{cc}
+				0	&	1	\\
+				1	&	0
+			\end{array}\right)=\s\]
+
+	\[\s^5=\left(\begin{array}{cc}
+				0	&	1	\\
+				1	&	0
+			\end{array}\right)=\s\]
+
+	$$\vdots$$ 
+	\end{minipage}
+ 	\hfill
+	\begin{minipage}{0.46\textwidth}
+	\[\s^2=\left(\begin{array}{cc}
+				1	&	0	\\
+				0	&	1
+			\end{array}\right)=\operador I \]
+	
+	\[\s^4=\left(\begin{array}{cc}
+				1	&	0	\\
+				0	&	1
+			\end{array}\right)=\operador I \]
+	
+	\[\s^6=\left(\begin{array}{cc}
+				1	&	0	\\
+				0	&	1
+			\end{array}\right)=\operador I \]
+	
+	$$\vdots$$
+	\end{minipage} 
+	\vspace{5mm} 
+	Então podemos separar a equação (\ref{eq:exponencial}) em duas partes distintas:
+	$$
+	e^{i\alpha\s}=\operador I(1-{\alpha^2\over2!}+{\alpha^4\over4!}-\cdots)+i\s(\alpha-{\alpha^3\over3!}+{\alpha^5\over5!}-\cdots)
+	$$
+
+	Mas nós sabemos que
+	$$
+	\sin x=x-{x^3\over3!}+{x^5\over5!}-\cdots
+	$$
+
+	e
+	$$
+	\cos x=1-{\alpha^2\over2!}+{\alpha^4\over4!}-\cdots
+	$$
+
+	Então é claro que
+	$$
+	e^{i\alpha\s}=\operador I\cos\alpha+i\s\sin\alpha
+	$$
+
+
+	

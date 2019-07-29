@@ -1,0 +1,182 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage{geometry}
+\usepackage{irpackage}
+
+\begin{document}
+
+\newcommand{\vetor}[1]{\ensuremath{\vec{#1}}}
+\newcommand{\versor}[1]{\ensuremath{\hat{#1}}}
+
+\setcounter{exercicio}{2}
+\begin{exercicio}
+	Uma casca esférica condutora não carregada de raio $a$ gira com velocidade angular $\vetor\omega=\omega\versor k$ num campo magnético uniforme $\vetor B=B_0\versor k$. {\bfseries (a)} Calcule a força eletromotriz entre o pólo e um ponto do círculo equatorial.
+
+	{\bfseries (b)} Encontre o potencial num ponto genérico da superfície, $\varphi_c(\theta)$, e tomando o zero do potencial no infinito, mostre que a densidade de carga superficial induzida é
+	$$
+	\sigma(\theta) = -{5\omega a B_0\over 12\pi c}P_2(\cos\theta)
+	$$
+
+\end{exercicio}
+
+	No equilíbrio, a força de Lorentz agindo sobre cada carga deve ser zero\footnote{De outro modo teríamos um fluxo constante de cargas pelo condutor.}. Ou seja,
+	$$
+	\vetor F = q(\vetor E + {1\over c} \vetor v\times\vetor B) = \vetor 0 \qquad \Rightarrow \qquad
+	\vetor E = - {1\over c}\vetor v\times \vetor B
+	$$
+	
+	Se nossa esfera condutora não estivesse girando teríamos $\vetor v = \vetor 0$ e, portanto, $\vetor E=\vetor 0$
+dentro do condutor, que é o resultado conhecido da eletrostática. Contudo, $\vetor v$ não é nulo e, com isso, o campo elétrico no interior do condutor também não o é. De fato, o campo elétrico gerado pela distribuição de carga induzida
+pela velocidade $\vetor v$ e pelo campo magnético externo $\vetor B$ dentro do condutor é tal que a força elétrica 
+$q\vetor E$ cancele pontualmente a força magnética ${q\over c}\vetor v\times\vetor B$. Assim, fisicamente o que obtemos é um campo magnético externo conhecido que gera, em conjunto com $\vetor v$, uma distribuição de carga superficial $\sigma(\theta)$ que, por sua vez, induz um campo elétrico no interior da esfera ($r<a$), dentro do condutor ($r=a$) e fora dela ($r>a$). Além disso, como $\vetor B$ não depende do tempo nem da posição, decorre da lei
+de Faraday que $\vetor\nabla\times\vetor E=\vetor 0$ e, portanto, podemos definir um potencial $\varphi(\vetor r)$ em
+todas as três regiões citadas, com as seguintes condições de contorno:
+  \vspace{5pt}
+	\begin{minipage}[c]{0.46\textwidth}
+	\begin{equation}\label{eq:CC1}
+	\varphi_i(a,\theta) = \varphi_c(\theta) = \varphi_e(a,\theta)
+	\end{equation}
+	\end{minipage}
+	\hfil e \hfil
+	\begin{minipage}[c]{0.46\textwidth}
+	\begin{equation}\label{eq:CC2}
+	{\partial\varphi_e(a,\theta)\over\partial r} - {\partial\varphi_i(a,\theta)\over\partial r} = 4\pi\sigma(\theta)
+	\end{equation}
+	\end{minipage}
+	\vspace{5pt}
+	sendo $\varphi_i$, $\varphi_c$ e $\varphi_e$ os potenciais para $r\le a$, $r=a$ e $r\ge a$, respectivamente.
+	
+	Começamos por determinar o potencial dentro do condutor, pois temos a expressão do campo elétrico neste caso:
+	$$
+	\vetor E = - {1\over c}\vetor v\times \vetor B 
+					 = - {1\over c}(\vetor\omega\times\vetor r)\times\vetor B 
+					 = - {\omega a B_0\over c}\sin\theta (\versor k\times\versor r)\times\versor k 
+					 = - {\omega a B_0\over c}\sin\theta\versor s
+	$$
+	onde $\theta$ é o ângulo polar, $a$ é o raio da esfera, $\omega$ é a velocidade angular e $\versor s$ é o versor de raio em coordenadas cilíndricas.
+	
+	Qualquer percurso $\gamma$ (sobre a superfície da esfera) a ser escolhido pode ser descrito pelo vetor posição 
+	$$
+	\vetor r = a\versor r = a(\sin\theta\,\versor s + \cos\theta\,\versor k) \qquad \Rightarrow \qquad
+	d\vetor\gamma = {d\vetor r\over d\theta}d\theta = a (\cos\theta\,\versor s - \sin\theta\,\versor k)d\theta
+	$$
+	
+	Note que como o campo elétrico no condutor tem sempre a direção $\versor s$, a diferencial de percurso acima é a 
+única que permite à integral ser diferente de zero. E com isso vemos que o potencial no condutor depende exclusivamente
+de $\theta$. Juntando os dois resultados acima temos
+	$$
+	\vetor E\cdot d\vetor\gamma = - {\omega a^2 B_0\over c}\sin\theta\cos\theta d\theta
+	$$
+
+	Iniciando nossa integração em $\theta=0$ (Não vamos definir aqui $\varphi_c(0) = 0$ pois isto complicaria o tratamento da solução da equação de Laplace para os potenciais dentro e fora da esfera. Assim, $\theta=0$ corresponde a um potencial $\varphi_0$ ainda desconhecido), teremos
+	\begin{equation}\label{eq:PotencialC}
+	\varphi_c(\theta) = \varphi_0 - \int_\gamma\vetor E\cdot d\vetor\gamma = \varphi_0 - \varepsilon
+	\end{equation}
+	
+	À integral de $\vetor E$, sem o sinal de menos, damos o nome de força eletromotriz $\varepsilon$ entre os pontos inicial e final do percurso $\gamma$:
+	\begin{equation}\label{eq:FEM}
+	\varepsilon = - {\omega a^2 B_0\over c}\int_0^\theta \sin\theta'\cos\theta' d\theta' =
+	              - {\omega a^2 B_0\over 2c}\sin^2\theta
+	\end{equation}
+	
+	Vemos, então, que a força eletromotriz entre o pólo e um ponto no equador ($\theta=\pi/2$) é $-\omega a^2 B_0/(2c)$.
+Retornando~(\ref{eq:FEM}) a~(\ref{eq:PotencialC}) encontramos
+	$$
+	\varphi_c(\theta) = \varphi_0 + {\omega a^2 B_0\over 2c}\sin^2\theta
+	$$
+	ou, de forma mais conveniente para o nosso próximo passo,
+	$$
+	\varphi_c(\theta) = \varphi_0 + {\omega a^2 B_0\over 3c}\big[P_0(\cos\theta)-P_2(\cos\theta)\big]
+	$$
+	com $P_n(\cos\theta)$ sendo o polinômio de Legendre de ordem $n$.
+	
+	O potencial fora do condutor (dentro e fora da esfera) é a solução da equação de Laplace em coordenadas esféricas	com
+simetria azimutal:
+	$$
+	\varphi(r,\theta) = \sum_{l=0}^\infty\big(A_lr^l + {B_l\over r^{l+1}}\big)P_l(\cos\theta)
+	$$
+	
+	Quando $r\to\infty$, $\varphi_e(r,\theta)$ deve tender a zero pois não há campos elétricos externos aplicados e nem
+a distribuição de cargas é infinita. Logo devemos ter $A_l=0$ para $l\ge1$. Tomamos $A_0=0$ para colocar o zero do
+potencial no infinito, o que simplifica as contas. De forma análoga, quando $r\to0$, $\varphi_i(r,\theta)$ deve permanecer limitada. Assim, $B_l=0$ para todos os $l$. Isto posto simplificamos nossas soluções para
+
+	\begin{minipage}[c]{0.46\textwidth}
+	$$
+	\varphi_i(r,\theta) = \sum_{l=0}^\infty A_lr^lP_l(\cos\theta)
+	$$
+	\end{minipage}
+	\hfil e \hfil
+	\begin{minipage}[c]{0.46\textwidth}
+	$$
+	\varphi_e(r,\theta) = \sum_{l=0}^\infty {B_l\over r^{l+1}} P_l(\cos\theta)
+	$$
+	\end{minipage}
+	
+	O potencial é contínuo em todo o espaço. Logo, quando $r=a$ devemos ter $\varphi_i(a,\theta)=\varphi_e(a,\theta)$:
+	$$
+	\sum_{l=0}^\infty A_la^lP_l(\cos\theta) = \sum_{l=0}^\infty {B_l\over a^{l+1}} P_l(\cos\theta) \qquad \Rightarrow
+	\qquad \sum_{l=0}^\infty \Big(A_la^l-{B_l\over a^{l+1}}\Big)P_l(\cos\theta) = 0
+	$$
+	
+	Como os polinômios de Legendre são ortogonais, para satisfazer a igualdade devemos ter
+	$$
+	A_la^l-{B_l\over a^{l+1}} = 0 \quad \Rightarrow \quad A_l = {B_l\over a^{2l+1}},\qquad\mbox{para todo $l$}
+	$$
+	
+	Usando agora a condição de contorno~(\ref{eq:CC2}),
+	$$
+	{\partial\varphi_e(a,\theta)\over\partial r} - {\partial\varphi_i(a,\theta)\over\partial r} =	 	
+	-\sum_{l=0}^\infty (2l+1){B_l\over a^{l+2}} P_l(\cos\theta) =	-4\pi\sigma(\theta) \qquad \Rightarrow \qquad
+	\sigma(\theta) = \sum_{l=0}^\infty{(2l+1)B_l\over4\pi a^{l+2}}P_l(\cos\theta)
+	$$
+	
+	Comparando $\varphi_e(a,\theta)$ com $\varphi_c(\theta)$ deduzimos que $B_l\ne0$ somente para os termos $l=0$ e $l=2$ de $\varphi_e(r,\theta)$. Além disso, fica claro que 
+	
+	\vspace{5pt}
+	\begin{minipage}[c]{0.46\textwidth}
+	$$
+	B_0 = \big(\varphi_0 + {\omega a^2 B_0\over 3c}\big)a
+	$$
+	\end{minipage}
+	\hfil e \hfil
+	\begin{minipage}[c]{0.46\textwidth}
+	$$
+	B_2 = -{\omega a^5 B_0\over 3c}
+	$$
+	\end{minipage}
+  \vspace{5pt}	
+  
+	Perceba que o $B_0$ que não está isolado é a magnitude do campo magnético; não o fator $B_0$ da expansão em série de polinômios de Legendre.
+	
+	Logo encontramos 
+	$$
+	\sigma(\theta) = {1\over4\pi a}\big(\varphi_0 + {\omega a^2 B_0\over 3c}\big) -
+	 	{5\omega a B_0\over 12\pi c}P_2(\cos\theta)
+	$$
+	
+	Mas o condutor não estava inicialmente carregado. Logo, a carga total ainda deve ser nula:
+	\begin{eqnarray*}
+	2\pi a\int_0^\pi\sigma(\theta)\sin\theta d\theta &=& 
+		\big(\varphi_0 + {\omega a^2 B_0\over 3c}\big)\int_0^\pi\sin\theta d\theta -
+			{5\omega a B_0\over 6c}\int_0^\pi P_2(\cos\theta)\sin\theta d\theta = \\
+		&=&		
+		2\big(\varphi_0 + {\omega a^2 B_0\over 3c}\big) - 
+			{5\omega a B_0\over 6c}\int_0^\pi P_0(\cos\theta)P_2(\cos\theta)\sin\theta d\theta = 
+		2\big(\varphi_0 + {\omega a^2 B_0\over 3c}\big) = 0
+	\end{eqnarray*}
+	
+	Logo devemos ter $\varphi_0 = -\omega a^2 B_0/(3c)$ e, por conseguinte,
+	$$
+	\sigma(\theta) = -{5\omega a B_0\over 12\pi c}P_2(\cos\theta)
+	$$
+	
+	
+	
+	
+
+\end{document}
+ 
+
+

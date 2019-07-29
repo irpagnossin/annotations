@@ -1,0 +1,267 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[dvips]{graphics,color}
+
+\setlength{\paperwidth}{21cm}
+\setlength{\paperheight}{29.7cm}
+\setlength{\topmargin}{0cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{1cm}
+\setlength{\topskip}{2mm}
+\setlength{\textheight}{24.7cm}
+\setlength{\textwidth}{15cm}
+%\setlength{\footskip}{0.5cm}
+\setlength{\oddsidemargin}{4mm}
+\setlength{\evensidemargin}{4mm}
+
+\setlength{\unitlength}{0.75cm}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\pagestyle{myheadings}
+\markboth{}{\rm I.R.Pagnossin}
+
+\title {Lista 4 de Introdução à Física do Estado Sólido}  
+\author {I.R.Pagnossin \\ irpagnossin@hotmail.com}
+\date {\today}
+\maketitle
+
+\begin{quote} 
+{\bf	1.}
+{\it	No estado fundamental de um sistema bidimensional com elétrons livres, os orbitais ocupados podem ser representados por pontos no interior
+	de um círculo no espaço $\vec{k}=(k_x,k_y)$ (veja {\bf fig.1}). {\bf (a)} Calcule, em unidades de $2\pi/a$, o raio do círculo 
+	no espaço $\vec{k}$ de uma rede quadrada de lado $a$, considerando que cada uma dessas células \mbox{primitivas}  contribua com $m$ elétrons 
+	livres para 
+	o gás de férmions; {\bf (b)} Construa uma tabela indicando quais as zonas de Brillouin que possuem elétrons e quais estão vazias para $m=1,2,3$ e $4$;
+	{\bf (c)} Represente as superfícies de Fermi (que separam as regiões ocupadas das vazias) em cada zona usando a representação de zona reduzida e 
+	extendida para $m=1,2,3$ e $4$.
+}
+\end{quote} 
+\vspace{10mm}
+
+
+%\hspace{50mm}\resizebox{65mm}{40mm}{\includegraphics{es4fig1.eps}}
+%\vspace{1mm}
+%\begin{quote}
+%{\center{\small{\bf fig.1:} Representação dos pontos $\vec{k}=(k_x,k_y)$ no espaço recíproco e a a esfera -- bidimensional -- de Fermi.}}
+%\end{quote}
+%\vspace{3mm}
+
+	A cada ponto $\vec{k}$ do espaço recíproco associa-se uma área $4\pi^2/A$, sendo $A$ a área total do material sob análise. E, como a cada um 
+\mbox{desses} pontos associam-se dois estados quânticos de spin ($m_s=\pm1/2$) do elétron, $N$ elétrons ocupam $N/2$ pontos $\vec{k}$, correspondendo a 
+uma área $\pi\vec{k}^2$ do espaço recíproco, conforme a primeira ilustração:
+	$$
+	{1\ ponto\ \vec{k}\over{N\over2}\ pontos\ \vec{k}}={{4\pi^2\over A}\over\pi\vec{k}^2}={2\ e^{-}\over N\ e^{-}}
+	$$
+
+	Esta é uma regra de três simples -- embora pareça ser composta -- devido à equivalência entre os termos dos extremos. Daí é simples obter 
+	$$
+	\vec{k}^2={4\pi^2\over2\pi}{N\over A}=2\pi\sigma
+	$$
+
+	sendo $\sigma$ a densidade superficial de elétrons. Se a distribuição dos elétrons dentro do material for uniforme, então podemos garantir que
+esta densidade, válida para todo o sólido \mbox{bidimensional}, também é igual à densidade superficial de elétrons numa única célula primitiva, por exemplo.
+Neste caso em especial, sabemos que cada célula primitiva contribui com $m$ elétrons. Logo, é claro que $\sigma=m/a^2$ e a identidade anterior se torna
+	$$
+	\vec{k}^2={2\pi m\over a^2}\ \Rightarrow\ k={\sqrt{2\pi m}\over a}
+	$$
+
+	com $k$ sendo o módulo do vetor $\vec{k}$. Dividindo a igualdade em ambos os lados por $2\pi/a$ simplificamo-la para 
+	$$
+	\xi={k\over2\pi/a}=\sqrt{m\over2\pi}
+	$$
+
+	Se $N$, anteriormente definido, for precisamente o número de elétrons presentes no gás de férmions do material, então $\xi$ se torna $\xi_F$, o
+raio da esfera de Fermi em unidades de $2\pi/a$, limite da região populada no espaço $\vec{k}$:
+	$$
+	\xi_F=\sqrt{m\over2\pi},
+	$$
+
+	a resposta ao {\bf item (a)}.
+	 
+	Substituindo os valores de $m=1,2,3$ e 4 encontramos
+
+\vspace{3mm}
+{\centering \begin{tabular}{|c|c|c|}
+\hline 
+m	&	$\xi_F(m)$			&	zona de Brillouin			\\ 
+\hline 
+\hline 
+1	&	${1/\sqrt{2\pi}}=0,40$		&	$1^{a}$					\\                  	
+2	&	${1/\sqrt{\pi}}=0,56$		&	$1^{a}$ e $2^{a}$			\\
+3	&	$\sqrt{3/2\pi}=0,69$		&	$1^{a}$ e $2^{a}$			\\
+4	&	$\sqrt{2/\pi}=0,78$		&	$1^{a}$, $2^{a}$, $3^{a}$ e $4^{a}$	\\
+\hline
+\end{tabular}
+\begin{table}
+\end{table}
+\par}
+\vspace{1mm}
+
+\begin{quote}
+\center{\small{{\bf tab.1:} Ocupação dos pontos $\vec{k}$ do espaço recíproco, variando conforme a contribuição de elétrons $m$ de cada célula primitiva para
+o gás de férmions. A última linha, por exemplo, indica que se cada célula primitiva fornecesse 4 elétrons livres para a nuvem, então o processo de população
+dos níveis de energia correspondentes a $\vec{k}$ terminaria na quarta zona de Brillouin, passando por todas as outras anteriores.}}
+\end{quote} 
+\vspace{5mm}
+
+	que á a resposta ao {\bf item(b)}. Quanto ao {\bf item(c)}, o que fazemos é simplesmente \mbox{desenhar} as circunferências correspondentes a cada
+$m$ (esquema de zona extendida) e refletí-las nos limites da primeira zona de Brillouin (esquema de zona reduzida), conforme mostrado na {\bf fig.2}.
+
+%\resizebox{130mm}{70mm}{\includegraphics{es4fig2.eps}}
+%\vspace{1mm}
+%\begin{quote}
+%{\center{{\small{\bf fig.2:} As circunferências de Fermi nas representações da zona reduzida (em vermelho) e extendida (em azul) para $m$ igual a 1({\bf fig.2a}),
+%2({\bf fig.2b}), 3({\bf fig.2c}) e 4({\bf fig.2d}).}}}
+%\end{quote}
+\vspace{10mm}
+
+
+\begin{quote}
+{\bf 2.}
+{\it	Considere uma rede retangular de vetores primitivos $\vec{a}_1=a\hat{i}$ e $\vec{a}_2=2a\hat{j}$. No contexto da aproximação da rede vazia 
+	determine {\bf (a)} a expressão para o valores de energia deste sistema em unidades de ${\hbar^2\pi^2\over2ma^2}$. Considere que os vetores
+	de translação da rede recíproca são dados por $\vec{G}=m_x\vec{b}_1+m_y\vec{b}_2$; {\bf (b)} Represente a primeira zona de Brillouin e indique
+	quais são as direções $\Gamma${\rm L} e $\Gamma${\rm X}; {\bf (c)} Dê a expressão da \mbox{energia} para a direção $\Gamma${\rm L}, normalizada a 
+	${\hbar^2\pi^2\over2ma^2}$; {\bf (d)} Desenhe, no esquema de zona reduzida, as faixas de energia correspondentes a $m_x$ e $m_y$ variando entre
+	$-1$ e $+1$.
+}
+\end{quote}
+
+\vspace{10mm}
+
+	Dados os vetores da célula primitiva no espaço direto determinamos os vetores primitivos no espaço recíproco:	
+	$$
+	\vec{b}_1={2\pi\ \vec{a}_2\times\hat{k}\over\vec{a}_1\cdot\vec{a}_2\times\hat{k}}={4\pi a\ \hat{j}\times\hat{k}\over2a^2(\hat{i}\cdot\hat{j}\times\hat{k})}=
+		{2\pi\over a}\hat{i}
+	$$
+	$$
+	\vec{b}_2={2\pi\ \hat{k}\times\vec{a}_1\over\vec{a}_1\cdot\vec{a}_2\times\hat{k}}={2\pi a\ \hat{k}\times\hat{i}\over2a^2(\hat{i}\cdot\hat{j}\times\hat{k})}=
+		{\pi\over a}\hat{j}
+	$$
+
+	para então escrevermos $\vec{G}$ em termos dos versores canônicos $\{\hat{i},\hat{j},\hat{k}\}$:
+	\begin{eqnarray*}
+	\vec{G}	&	=	&	m_x\vec{b}_1+m_y\vec{b}_2={\pi\over a}(2m_x\hat{i}+m_y\hat{j})		\\
+		&	=	&	{\pi\over a}(2m_x,m_y)
+	\end{eqnarray*}
+ 
+	Na aproximação da rede vazia, a equação de Schödinger se simplifica para 
+	$$
+	[{\hbar^2\over2m}(\vec{k}-\vec{G})^2-E]c_{\vec{k}-\vec{G}}=0
+	$$
+
+%\hspace{50mm}\resizebox{65mm}{40mm}{\includegraphics{es4fig3.eps}}
+%\vspace{1mm}
+%\begin{quote}
+%{\center{\small{\bf fig.3:} Primeira zona de Brillouin para a rede retangular $\vec{a}_1=a\hat{i}$ e $\vec{a}_2=2a\hat{j}$, identificando-se os pontos de simetria
+%$\Gamma$, L e X.}}
+%\end{quote}
+%\vspace{3mm}
+
+	o que fornece a relação entre a energia e os vetores $\vec{k}$, da primeira zona de Brillouin, e $\vec{G}$, de translação da rede recíproca:
+	\begin{eqnarray*}
+	E		&	=	&	{\hbar^2\over2m}(\vec{k}-\vec{G})^2					\\
+			&	=	&	{\hbar^2\over2m}[(k_x,k_y)-{\pi\over a}(2m_x,m_y)]^2			\\
+			&	=	&	{\hbar^2\pi^2\over2ma^2}|({k_x\over\pi/a}-2m_x,{k_y\over\pi/a}-m_y)|^2	\\
+			&	=	&	{\hbar^2\pi^2\over2ma^2}[(\xi_x-2m_x)^2+(\xi_y-m_y)^2]			\\
+	\epsilon	&	=	&	(\xi_x-2m_x)^2+(\xi_y-m_y)^2						
+	\end{eqnarray*}
+
+	com $E={\hbar^2\pi^2\over2ma^2}\epsilon$ e $k_j={\pi\over a}\xi_j$. Esta é a solução do {\bf item (a)}. A primeira zona de Brillouin é mostrada na
+{\bf fig.3} ({\bf item (b)}). Se escolhermos o caminho $\Gamma$L, fica claro, pela {\bf fig.3}, que $\xi_x=2\xi_y=2\xi$ com $\xi\in[0,1/2]$, e passamos a ter
+	$$
+	\epsilon_{\Gamma L}=4(\xi-m_x)^2+(\xi-m_y)^2,
+	$$
+	
+	solução do {\bf item (c)}. Logo, para $m$ variando entre -1 e 1 teremos ({\bf item (d)}), 
+
+\vspace{3mm}
+{\centering \begin{tabular}{|c|c|c|}
+\hline 
+$m_x$	&	$m_y$	&	$\epsilon_{\Gamma L}$ 		\\ 
+\hline 
+\hline 
+-1	&	-1	&	$4(\xi+1)^2-(\xi+2)^2$	\\                  	
+-1	&	0	&	$4(\xi+1)^2-\xi^2$	\\
+-1	&	1	&	$4(\xi+1)^2-(\xi-2)^2$	\\
+0	&	-1	&	$4\xi^2-(\xi+2)^2$	\\
+0	&	0	&	$3\xi^2$		\\		
+0	&	1	&	$4\xi^2-(\xi-2)^2$	\\
+1	&	-1	&	$4(\xi-1)^2-(\xi+2)^2$	\\
+1	&	0	&	$4(\xi-1)^2-\xi^2$	\\
+1	&	1	&	$4(\xi-1)^2-(\xi-2)^2$	\\
+\hline
+\end{tabular}
+\begin{table}
+\end{table}
+\par}
+\vspace{1mm}
+
+\begin{quote}
+\center{\small{{\bf tab.2:} As faixas de energia no percurso $\Gamma$L para diferentes vetores $\vec{G}$ do espaço recíproco (veja {\bf fig.4}).}}
+\end{quote} 
+\vspace{5mm}
+
+%\hspace{20mm}\resizebox{100mm}{70mm}{\includegraphics{Graph1.eps}}
+%\begin{quote}
+%\center{\small{{\bf fig.4:} As faixas de energia correspondentes à {\bf tab.2}, com $m_x$ e $m_y$ variando de $-1$ a $+1$, no esquema de zona reduzida.}}
+%\end{quote} 
+%\vspace{5mm}
+
+\begin{quote}
+{\bf 3.}
+{\it	Considere uma rede BCC de lado $a$. Na aproximação da rede vazia podemos escrever os níveis de energia para um dado $\vec{k}$ na forma
+	$E_k={\hbar^2\over2m}(\vec{k}-\vec{G})^2$. Determine o mais baixo valor de energia para $\vec{k}={\pi\over a}(1,1,0)$. No caso de degenerescência,
+	indique a quais valores de $\vec{G}$ correspondem as energias \mbox{degeneradas}.
+}
+\end{quote}
+
+\vspace{10mm}
+
+	Sabemos de cálculos anteriores que a rede recíproca de uma BCC é uma FCC, cujos vetores primitivos são
+	$$
+	\vec{b}_1={2\pi\over a}(1,1,0)
+	$$
+	$$
+	\vec{b}_2={2\pi\over a}(1,0,1)
+	$$
+	$$
+	\vec{b}_3={2\pi\over a}(0,1,1)
+	$$
+
+	de modo que podemos escrever um vetor da rede recíproca $\vec{G}=m_1\vec{b}_1+m_2\vec{b}_2+m_3\vec{b}_3$ como
+	\begin{eqnarray*}
+	\vec{G}	&	=	&	m_1{2\pi\over a}(1,1,0)+m_2{2\pi\over a}(1,0,1)+m_3{2\pi\over a}(0,1,1)			\\
+		&	=	&	{2\pi\over a}(m_1+m_2,m_1+m_3,m_2+m_3)
+	\end{eqnarray*}
+
+	E, posto que $\vec{k}={2\pi\over a}({1\over2},{1\over2},0)$, determinamos a expressão da energia como função do vetor $\vec{G}$:	
+	\begin{eqnarray*}
+	E		&	=	&	{\hbar^2\over2\pi}[{4\pi\over a^2}|({1\over2}-m_1-m_2,{1\over2}-m_1-m_3,-m_2-m_3)|^2]		\\
+			&	=	&	{2\hbar^2\pi^2\over ma^2}[({1\over2}-m_1-m_2)^2+({1\over2}-m_1-m_3)^2+(m_2+m_3)^2]		\\
+	\epsilon	&	=	&	({1\over2}-m_1-m_2)^2+({1\over2}-m_1-m_3)^2+(m_2+m_3)^2
+	\end{eqnarray*}
+
+	Utilizando uma planilha eletrônica como {\it Excel} ou {\it Gnumeric Spreadsheet}, por exemplo,  fica fácil determinar que o mínimo de energia 
+ocorre para $(m_1,m_2,m_3)=(0,0,0)$ e $(1,0,0)$, dando $\epsilon=0,5$\footnote{Neste caso variamos $m_j$ de -2 a +2 dando, ao todo, 125 situações diferentes.}. 
+Em outras palavras, os vetores $\vec{G}$ que dão o mínimo de energia $E={\hbar^2\pi^2\over ma^2}$ são $\vec{G}=\vec{0}$ e $\vec{G}=\vec{b}_1$.
+
+	
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

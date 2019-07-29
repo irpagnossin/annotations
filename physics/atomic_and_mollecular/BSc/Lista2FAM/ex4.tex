@@ -1,0 +1,121 @@
+  
+
+\begin{quotation}
+{\bf 4.}
+{\it	Os elementos de matriz dos operadores $\op O_1$ e $\op O_2$ numa base ortonormal $\{\ket x\}$ são
+	dados por
+
+	\begin{minipage}[b]{0.46\textwidth}
+	$$
+	\hope{x_i}{\op O_1}{x_j}=x_i^3\delta(x_i-x_j)
+	$$
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.46\textwidth}
+	$$
+	\hope{x_i}{\op O_2}{x_j}=x_i\delta'(x_i-x_j)
+	$$
+	\end{minipage}
+
+	{\tt (a)} Seja $\ket f$ um ket com componentes $\iprod{x}{f}=f(x)$. Determine $\hope{x}{\op O_1}{f}$
+	e $\hope{x}{\op O_2}{f}$.
+
+	{\tt (b)} Mostre que os elementos de matriz do comutador são dados por
+	$$
+	\hope{x_i}{[\op O_1,\op O_2]}{x_j}=-3x_i^3\delta(x_i-x_j)
+	$$}
+\end{quotation}
+
+	
+	{\tt (a)} O cálculo é direto:
+ 
+	\begin{minipage}[t]{0.5\textwidth} 
+	\begin{eqnarray*}
+	\hope{x}{\op O_1}{f}	&=& \hope{x}{\op O_1\op I}{f}						\\
+				&=& \int_{-\infty}^{\infty}\hope{x}{\op O_1}{x_i}\iprod{x_i}{f}dx_i	\\
+				&=& \int_{-\infty}^{\infty}x^3\delta(x-x_i)f(x_i)dx_i			\\
+				&=& x^3\int_{-\infty}^{\infty} f(x_i)\delta(x_i-x)dx_i			\\
+				&=& x^3f(x)								\\
+				& &									\\
+	\end{eqnarray*}
+	\end{minipage} 
+	\hfill
+	\begin{minipage}[t]{0.5\textwidth} 
+	\begin{eqnarray*} 
+	\hope{x}{\op O_2}{f}	&=& \hope{x}{\op O_2\op I}{f}						\\
+				&=& \int_{-\infty}^{\infty}\hope{x}{\op O_2}{x_i}\iprod{x_i}{f}dx_i	\\
+				&=& \int_{-\infty}^{\infty}x\delta'(x-x_i)f(x_i)dx_i			\\
+				&=& x\int_{-\infty}^{\infty}f(x_i)\delta'(x_i-x)dx_i			\\
+				&=& -x\dot{f}(x)
+	\end{eqnarray*}
+	\end{minipage}
+	
+	{\tt (b)} O primeiro passo é abrir o comutador utilizando as propriedades demonstradas no
+exercício 1:
+	\begin{equation}
+	\label{eq:comutador}  
+	\hope{x_i}{[\op O_1,\op O_2]}{x_j}=\hope{x_i}{\op O_1\op O_2-\op O_2\op O_1}{x_j}
+		=\hope{x_i}{\op O_1\op O_2}{x_j}-\hope{x_i}{\op O_2\op O_1}{x_j}
+	\end{equation} 
+
+	Agora, nossa primeira tentativa seria calcular	
+	\begin{eqnarray}
+	\hope{x_i}{\op O_1\op O_2}{x_j}	&=& \bra{x_i}\op O_1(\intii dx\ket x\bra x)\op O_2\ket{x_j}	
+										\nonumber \\
+					&=& \intii \hope{x_i}{\op O_1}{x}\hope{x}{\op O_2}{x_j}dx	
+										\nonumber \\
+	\label{eq:O1O2}			&=& \intii x_i^3\delta(x_i-x)x\delta'(x-x_j)dx			\\
+					&=& -x_i^3\intii F(x)\delta'(x_j-x)dx				
+										\nonumber \\
+					&=& -x_i^3{d\over dx_j}F(x_j)					
+										\nonumber \\
+					&=& -x_i^3{d\over dx_j}[x_j\delta(x_i-x_j)]			
+										\nonumber \\
+					&=& -x_i^3\delta(x_i-x_j)+x_i^3x_j\delta'(x_i-x_j)		
+										\nonumber 
+	\end{eqnarray}
+	e
+	\begin{eqnarray}										
+	\hope{x_i}{\op O_2\op O_1}{x_j}	&=& \bra{x_i}\op O_2(\intii dx\ket x\bra x)\op O_1\ket{x_j}	
+										\nonumber \\
+					&=& \intii \hope{x_i}{\op O_2}{x}\hope{x}{\op O_1}{x_j}dx	
+										\nonumber \\
+					&=& x_i\intii\delta'(x_i-x)x^3\delta(x-x_j)dx			
+										\nonumber \\
+					&=& x_i\intii F(x)\delta'(x_i-x)dx				
+										\nonumber \\
+					&=& x_i{d\over dx_i}F(x_i)					
+										\nonumber \\
+					&=& x_i{d\over dx_i}[x_i^3\delta(x_i-x_j)]			
+										\nonumber \\
+	\label{eq:O2O1}			&=& 3x_i^3\delta(x_i-x_j)+x_i^4\delta'(x_i-x_j)		
+	\end{eqnarray}
+
+	mas, desta forma, por (\ref{eq:comutador}) perceberíamos que
+	$$
+	\hope{x_i}{[\op O_1,\op O_2]}{x_j}=-4x_i^3\delta(x_i-x_j)-(x_i^4-x_i^3x_j)\delta'(x_i-x_j)
+	$$
+
+	não confere com o que foi pedido na lista. O resultado não está errado mas podemos melhorá-lo.
+Para isso, vamos calcular novamente $\hope{x_i}{\op O_1\op O_2}{x_j}$ mas, desta vez, faremos um pouco 
+difente, a partir de (\ref{eq:O1O2}):
+	\begin{eqnarray*}
+	\hope{x_i}{\op O_1\op O_2}{x_j}	&=& \intii x_i^3\delta(x_i-x)x\delta'(x-x_j)dx		\\
+					&=& x_i^4\delta'(x_i-x_j)
+	\end{eqnarray*}
+
+	Comparando com (\ref{eq:O2O1}) concluiremos que
+	$$
+	\hope{x_i}{\op O_2\op O_1}{x_j} = 3x_i^3\delta(x_i-x_j)+\hope{x_i}{\op O_1\op O_2}{x_j}	 
+	$$
+
+	Ou seja,
+	$$
+	\hope{x_i}{[\op O_1,\op O_2]}{x_j}=-3x_i^3\delta(x_i-x_j)
+	$$ 
+
+	que é o que queríamos demonstrar.
+
+
+
+

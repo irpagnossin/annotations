@@ -1,0 +1,26 @@
+\begin{exercicio}[blue]
+	Calcule a energia efetiva ou equivalente de um feixe de raios X cuja camada semi-redutora ({\sc csr})
+	vale $3,2\unit{mm}$ de Al. Qual a {\sc csr} esperadada para esse feixe se medida no cobre?
+\end{exercicio}
+
+	A partir da lei de decaimento exponencial encontramos $\mu=\ln2/x_{1/2}$, com $x_{1/2}$ sendo a {\sc csr}
+do material --- Alumínio, no caso. Então é claro que $\mu_{\mathrm{Al}}=216,61\unit{m^{-1}}$. O coeficiente
+de atenuação mássico é, então\footnote{A densidade do alumínio é $2699\unit{kg/m^3}$.}, 
+$\mu/\rho=0,0802\unit{m^2/kg}$. Procurando nas tabelas do alumínio (Utilizamos a do Johns) verificamos que
+a energia efetiva está entre $500$ e $662\unit{keV}$. Para encontrarmos um valor mais preciso colhemos alguns
+pontos nesta região, plotamos e ajustamos uma reta\footnote{Nesta região uma reta foi suficiente para 
+atingirmos um $\chi^2_{\mathrm{red}}=0,99$.}:
+	$$
+	{\mu\over\rho}=-7\times10^{-5}\cdot E+0,1198
+	$$
+	
+	Determinamos assim a energia efetiva: $E_{ef}=565\unit{keV}$. Agora, para determinar o {\sc csr} no cobre
+procedemos de forma inversa: Buscamos na tabela do cobre os valores dos coeficientes de atenuação na mesma
+região acima\footnote{Utilizamos o intervalo $[400--626\unit{keV}]$.} e novamente ajustamos uma reta:
+	$$
+	{\mu\over\rho}=-8\times10^{-5}\cdot E+0,1264,
+	$$
+	de onde concluímos imediatamente que a camada semi-redutora deste feixe para o cobre é $0,95\unit{mm}$,
+lembrando que a densidade do cobre é $8960\unit{kg/m^3}$.
+	
+	

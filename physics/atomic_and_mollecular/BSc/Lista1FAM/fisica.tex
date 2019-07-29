@@ -1,0 +1,97 @@
+\newcommand{\operador}[1]{\mathcal{#1}}% FORMA MAIS FÁCIL PARA EXPRESSAR UM OPERADOR
+\newcommand{\bra}[1]{\ensuremath{\langle#1|}}% O VETOR BRA DO ESPAÇO DE HILBERT.
+\newcommand{\ket}[1]{\ensuremath{|#1\rangle}}% O VETOR KET DO ESPAÇO DE HILBERT.
+\newcommand{\iprod}[2]{\ensuremath{\langle#1|#2\rangle}}% O PRODUTO INTERNO NO ESPAÇO DE HILBERT.
+\newcommand{\hope}[3]{\ensuremath{\langle#1|#2|#3\rangle}}% O VALOR ESPERADO DO OPERADOR #2. OU AINDA: A ``ESPERANÇA MATEMÁTICA''. 
+\newcommand{\egauss}{\ensuremath{\mathbf{\nabla}\cdot\mathbf{D}=\rho}}%A LEI DE GAUSS PARA O CAMPO ELÉTRICO.
+\newcommand{\mgauss}{\ensuremath{\mathbf{\nabla}\cdot\mathbf{B}=0}}%A LEI DE GAUSS PARA O CAMPO MAGNÉTICO.
+\newcommand{\faraday}{\ensuremath{\mathbf{\nabla}\times\mathbf{E}=-{\partial\mathbf{B}\over\partial t}}}%A LEI DE FARADAY.
+\newcommand{\ampere}{\ensuremath{\mathbf{\nabla}\times\mathbf{H}=\mathbf{J}+{\partial\mathbf{D}\over\partial t}}}%A LEI DE AMPÈRE.
+
+
+%ESTE NOVO COMANDO PRODUZ TODAS AS QUATRO EQUAÇÕES DE MAXWELL NO VÁCUO E NA MATÉRIA NAS FORMAS DIFERENCIAL E INTEGRAL.
+%SÃO TRÊS ARGUMENTOS: O PRIMEIRO É UM NÚMERO DE 1 A 4 IDENTIFICANDO A EQUAÇÃO DESEJADA:
+%{1} PARA A LEI DE GAUSS PARA O CAMPO ELÉTRICO, {2} PARA O CAMPO MAGNÉTICO, {3} PARA A LEI DE FARADAY E {4} PARA A LEI DE AMPÈRE;
+%O SEGUNDO ARGUMENTO INDICA A FORMA DA EQUAÇÃO DESEJADA: {d} PARA A FORMA DIFERENCIAL E {i} PARA A FORMA INTEGRAL;
+%O TERCEIRO ARGUMENTO INDICA O MEIO: {v} PARA VÁCUO E {m} PARA UM MEIO MATERIAL.
+\newcommand{\maxwell}[3]{ 
+	\ifthenelse{\equal{#1}{1}}{
+		\ifthenelse{\equal{#2}{d}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\mathbf{\nabla}\cdot\mathbf{E}={\rho\over\epsilon_0}}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\mathbf{\nabla}\cdot\mathbf{D}={\rho}}
+						  }{}
+					  }{}
+		\ifthenelse{\equal{#2}{i}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\oint\limits_{\Sigma}\mathbf{E}\cdot\mathrm{d}\mathbf{\Sigma}={\mathrm{q}\over\epsilon_0}}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\oint\limits_{\Sigma}\mathbf{D}\cdot\mathrm{d}\mathbf{\Sigma}=\mathrm{q_f}} 
+						  }{}
+				          }{}
+				  }{}		
+	\ifthenelse{\equal{#1}{2}}{
+		\ifthenelse{\equal{#2}{d}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\mathbf{\nabla}\cdot\mathbf{B}=0}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\mathbf{\nabla}\cdot\mathbf{B}=0}
+						  }{}
+					  }{}
+		\ifthenelse{\equal{#2}{i}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\oint\limits_{\Sigma}\mathbf{B}\cdot\mathrm{d}\mathbf{\Sigma}=0}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\oint\limits_{\Sigma}\mathbf{B}\cdot\mathrm{d}\mathbf{\Sigma}=0} 
+						  }{}
+				          }{}
+				  }{}		
+	\ifthenelse{\equal{#1}{3}}{
+		\ifthenelse{\equal{#2}{d}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\mathbf{\nabla}\times\mathbf{E}=-{\partial\mathbf{B}\over\partial\mathrm{t}}}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\mathbf{\nabla}\times\mathbf{E}=-{\partial\mathbf{B}\over\partial\mathrm{t}}}
+						  }{}
+					  }{}
+		\ifthenelse{\equal{#2}{i}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\oint\limits_{\Gamma}\mathbf{E}\cdot\mathrm{d}\mathbf{\Gamma}=
+						-\mathrm{d\over dt}\int\limits_{\Sigma}\mathbf{B}\cdot\mathrm{d}\mathbf{\Sigma}}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\oint\limits_{\Gamma}\mathbf{E}\cdot\mathrm{d}\mathbf{\Gamma}=
+						-\mathrm{d\over dt}\int\limits_{\Sigma}\mathbf{B}\cdot\mathrm{d}\mathbf{\Sigma}} 
+						  }{}
+				          }{}
+				  }{}		
+	\ifthenelse{\equal{#1}{4}}{
+		\ifthenelse{\equal{#2}{d}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\mathbf{\nabla}\times\mathbf{B}=\mu_0\mathbf{J}+\mu_0\epsilon_0{\partial\mathbf{E}\over\partial\mathrm{t}}}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\mathbf{\nabla}\times\mathbf{H}=\mathbf{J}+{\partial\mathbf{D}\over\partial\mathrm{t}}}
+						  }{}
+					  }{}
+		\ifthenelse{\equal{#2}{i}}{
+			\ifthenelse{\equal{#3}{v}}{
+				\ensuremath{\oint\limits_{\Gamma}\mathbf{B}\cdot\mathrm{d}\mathbf{\Gamma}=
+						\mu_0I+\mu_0\epsilon_0\mathrm{d\over dt}\int\limits_{\Sigma}\mathbf{E}\cdot\mathrm{d}\mathbf{\Sigma}}
+						  }{}
+			\ifthenelse{\equal{#3}{m}}{
+				\ensuremath{\oint\limits_{\Gamma}\mathbf{H}\cdot\mathrm{d}\mathbf{\Gamma}=
+						I+\mathrm{d\over dt}\int\limits_{\Sigma}\mathbf{D}\cdot\mathrm{d}\mathbf{\Sigma}}     
+						  }{}
+				          }{}
+				  }{}		
+
+			}
+
+

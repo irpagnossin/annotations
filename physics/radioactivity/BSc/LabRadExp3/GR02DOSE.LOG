@@ -1,0 +1,76 @@
+#
+Date:            6/10/2001
+Time:            11:11:58
+Setup file:      fisrad.set
+Data  file:      gr02dose.dat
+
+
+INITIAL parameters:
+B. Intervalo de tempo de amostragem (s) [0.09,*]:                       0.2
+C. Temperatura do inicio da leitura (øC) [40,400]:                       40
+D. Temperatura do fim da leitura (øC) [80,500]:                         280
+E. Modo de aquecimento (Automatico/Manual) ["A","M"]:                     A
+F. Taxa de aquecimento (øC/s) [0.0001,35]:                                5
+G. Ganho do controlador de temperatura (øC/V):                           98
+H. Voltagem para o inicio da rampa de aquecimento (V) [-10,1]:          0.0
+I. Tempo morto da PMT+preamp (ns) [5,200]:                              100
+J. Ganho do amplificador do Termopar (tipoK) (ADU/mV) [0.1,*]:          245
+K. Nivel de discriminacao (mV) [-300,300]:                              -30
+L. Logaritmo do fundo de escala do CDA - use 10 p/ saida log. [3,10]:    10
+M. Material medido (string continuo):      laboratorio 3 curso de  FisRad 1
+N. Nome do experimentador (string continuo):thays,mir,fabiana,sergio,nelio      
+                                                          
+
+
+
+
+Data analysis during the run:
+>>>
+Ident        :bg02     
+Center       :223.68 øC
+Temp. of Max.:229.53 øC
+Peak height  : 1.90E+0001 CPS
+Area         : 3.32E+0001 counts
+cursor background
+>>>
+Ident        :alu012   
+Center       :214.84 øC
+Temp. of Max.:224.88 øC
+Peak height  : 6.47E+0002 CPS
+Area         : 4.35E+0003 counts
+cursor background
+>>>
+Ident        :alu022   
+Center       :214.77 øC
+Temp. of Max.:221.96 øC
+Peak height  : 7.12E+0002 CPS
+Area         : 5.18E+0003 counts
+cursor background
+>>>
+Ident        :alu032   
+Center       :215.87 øC
+Temp. of Max.:226.07 øC
+Peak height  : 7.06E+0002 CPS
+Area         : 4.53E+0003 counts
+cursor background
+>>>
+Ident        :alu042   
+Center       :216.58 øC
+Temp. of Max.:226.92 øC
+Peak height  : 7.16E+0002 CPS
+Area         : 4.40E+0003 counts
+cursor background
+>>>
+Ident        :alu052   
+Center       :218.96 øC
+Temp. of Max.:228.59 øC
+Peak height  : 6.61E+0002 CPS
+Area         : 4.90E+0003 counts
+cursor background
+>>>
+Ident        :alu062   
+Center       :216.65 øC
+Temp. of Max.:226.93 øC
+Peak height  : 6.77E+0002 CPS
+Area         : 5.04E+0003 counts
+cursor background

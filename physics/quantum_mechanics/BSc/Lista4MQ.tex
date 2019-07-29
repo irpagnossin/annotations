@@ -1,0 +1,351 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 4 de Mecânica Quântica}
+\author { Ivan Ramos Pagnossin }
+\date { 15 de Julho de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+{\bf 1.}
+{\it	Demonstre as seguintes propriedades do operadores
+}
+
+(a)$(c\mathcal{A})^{\dag}=c^{*}\mathcal{A}^{\dag}$
+
+(b)$(\mathcal{A}+\mathcal{B})^{\dag}=\mathcal{A}^{\dag}+\mathcal{B}^{\dag}$
+
+(c)$(\mathcal{A}\mathcal{B})^{\dag}=\mathcal{B}^{\dag}\mathcal{A}^{\dag}$
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{eqnarray}
+<\phi^*|(c\mathcal{A})^{\dag}|\psi>	&	=	&	<\psi|(c\mathcal{A})^*|\phi^*>					\nonumber \\
+					&	=	&	c^*<\psi|\mathcal{A}^*|\phi^*>					\nonumber \\
+					&	=	&	c^*<\phi^*|\mathcal{A}^{\dag}|\psi>				\nonumber \\
+					&	=	&	<\phi^*|c^*\mathcal{A}^{\dag}|\psi>				\nonumber
+\end{eqnarray}	
+
+Logo, $(c\mathcal{A})^{\dag}=c^*\mathcal{A}^{\dag}$, com $c\in C$.
+
+\begin{eqnarray}
+<\phi^*|(\mathcal{A}+\mathcal{B})^{\dag}|\psi>	&	=	&	<\psi|(\mathcal{A}+\mathcal{B})^*|\phi^*>				\nonumber \\
+						&	=	&	<\psi|\mathcal{A}^*+\mathcal{B}^*|\phi^*>				\nonumber \\
+						&	=	&	<\psi|\mathcal{A}^*|\phi^*>+<\psi|\mathcal{B}^*|\phi^*>			\nonumber \\
+						&	=	&	<\phi^*|\mathcal{A}^{\dag}|\psi>+<\phi^*|\mathcal{B}^{\dag}|\psi>	\nonumber \\
+						&	=	&	<\phi^*|\mathcal{A}^{\dag}+\mathcal{B}^{\dag}|\psi>			\nonumber 
+\end{eqnarray}
+
+Portanto, $(\mathcal{A}+\mathcal{B})^{\dag}=\mathcal{A}^{\dag}+\mathcal{B}^{\dag}$.
+
+\begin{eqnarray}
+<\phi^*|(\mathcal{A}\mathcal{B})^{\dag}|\psi>	&	=	&	<\psi|(\mathcal{A}\mathcal{B})^*|\phi^*>		\nonumber \\
+						&	=	&	<\psi|\mathcal{A}^*|(\mathcal{B}\phi)^*>		\nonumber \\
+						&	=	&	<(\mathcal{B}\phi)^*|\mathcal{A}^{\dag}|\psi>		\nonumber \\
+						&	=	&	<\mathcal{A}^{\dag}\psi|\mathcal{B}^*|\phi^*>		\nonumber \\
+						&	=	&	<\phi^*|\mathcal{B}^{\dag}|\mathcal{A}^{\dag}\psi>	\nonumber \\
+						&	=	&	<\phi^*|\mathcal{B}^{\dag}\mathcal{A}^{\dag}|\psi>	\nonumber 
+\end{eqnarray}
+
+E, finalmente, $(\mathcal{A}\mathcal{B})^{\dag}=\mathcal{B}^{\dag}\mathcal{A}^{\dag}$.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 2.}
+{\it	Demonstre as seguintes propriedades dos comutadores
+
+(a)$[\mathcal{A},(\mathcal{B}+\mathcal{C})]=[\mathcal{A},\mathcal{B}]+[\mathcal{A},\mathcal{C}]$
+
+(b)$[\mathcal{A},\mathcal{B}\mathcal{C}]=[\mathcal{A},\mathcal{B}]\mathcal{C}+\mathcal{B}[\mathcal{A},\mathcal{C}]$
+
+(c)$[\mathcal{A},[\mathcal{B},\mathcal{C}]]+[\mathcal{B},[\mathcal{C},\mathcal{A}]]+[\mathcal{C},[\mathcal{B},\mathcal{A}]]=0$
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{eqnarray}
+[\mathcal{A},(\mathcal{B}+\mathcal{C})]	&	=	&	\mathcal{A}(\mathcal{B}+\mathcal{C})-(\mathcal{B}+\mathcal{C})\mathcal{A}
+																		\nonumber \\
+					&	=	&	\mathcal{A}\mathcal{B}+\mathcal{A}\mathcal{C}-\mathcal{B}\mathcal{A}
+								-\mathcal{C}\mathcal{A}
+																		\nonumber \\
+					&	=	&	\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A}+\mathcal{A}\mathcal{C}
+								-\mathcal{C}\mathcal{A}									
+																		\nonumber \\
+					&	=	&	[\mathcal{A},\mathcal{B}]+[\mathcal{A},\mathcal{C}]				\nonumber 
+\end{eqnarray}
+\begin{eqnarray}
+[\mathcal{A},\mathcal{B}\mathcal{C}]	&	=	&	\mathcal{A}\mathcal{B}\mathcal{C}
+								-\mathcal{B}\mathcal{C}\mathcal{A}	
+																		\nonumber \\
+					&	=	&	\mathcal{A}\mathcal{B}\mathcal{C}
+								-\mathcal{B}\mathcal{A}\mathcal{C}
+								-\mathcal{B}\mathcal{C}\mathcal{A}
+								+\mathcal{B}\mathcal{A}\mathcal{C}						\nonumber \\
+					&	=	&	(\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A})\mathcal{C}
+								+\mathcal{B}(\mathcal{A}\mathcal{C}-\mathcal{C}\mathcal{A})			\nonumber \\ 
+					&	=	&	[\mathcal{A},\mathcal{B}]\mathcal{C}+\mathcal{B}[\mathcal{A},\mathcal{C}]	\nonumber 
+\end{eqnarray}
+\begin{eqnarray}
+[\mathcal{A},[\mathcal{B},\mathcal{C}]]	&	=	&	\mathcal{A}(\mathcal{B}\mathcal{C}-\mathcal{C}\mathcal{B})
+								-(\mathcal{B}\mathcal{C}-\mathcal{C}\mathcal{B})\mathcal{A}			\nonumber \\
+					&	=	&	\mathcal{A}\mathcal{B}\mathcal{C}-\mathcal{A}\mathcal{C}\mathcal{B}
+								-\mathcal{B}\mathcal{C}\mathcal{A}+\mathcal{C}\mathcal{B}\mathcal{A}		\nonumber 
+\end{eqnarray}
+\begin{eqnarray}
+[\mathcal{B},[\mathcal{C},\mathcal{A}]]	&	=	&	\mathcal{B}(\mathcal{C}\mathcal{A}-\mathcal{A}\mathcal{C})
+								-(\mathcal{C}\mathcal{A}-\mathcal{A}\mathcal{C})\mathcal{B}			\nonumber \\
+					&	=	&	\mathcal{B}\mathcal{C}\mathcal{A}-\mathcal{B}\mathcal{A}\mathcal{C}
+								-\mathcal{C}\mathcal{A}\mathcal{B}+\mathcal{A}\mathcal{C}\mathcal{B}		\nonumber 
+\end{eqnarray}
+\begin{eqnarray}
+[\mathcal{C},[\mathcal{B},\mathcal{A}]]	&	=	&	\mathcal{C}(\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A})
+								-(\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A})\mathcal{C}			\nonumber \\
+					&	=	&	\mathcal{C}\mathcal{A}\mathcal{B}-\mathcal{C}\mathcal{B}\mathcal{A}
+								-\mathcal{A}\mathcal{B}\mathcal{C}+\mathcal{B}\mathcal{A}\mathcal{C}		\nonumber 
+\end{eqnarray}
+
+	Portanto $[\mathcal{A},[\mathcal{B},\mathcal{C}]]+[\mathcal{B},[\mathcal{C},\mathcal{A}]]+[\mathcal{C},[\mathcal{B},\mathcal{A}]]=0$.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 3.}
+{\it	Mostre que se os operadores $\mathcal{A}$ e $\mathcal{B}$ são hermitianos, então
+
+
+(a)$\mathcal{A}+\mathcal{B}$ é hermiteano
+
+(b)$\mathcal{A}\mathcal{B}$ é hermitiano se $[\mathcal{A},\mathcal{B}]=0$
+
+(c)$[\mathcal{A},\mathcal{B}]$ é hermitiano se $[\mathcal{A},\mathcal{B}]=0$
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{eqnarray}
+<\phi^*|(\mathcal{A}+\mathcal{B})|\psi>	&	=	&	<\phi^*|\mathcal{A}|\psi>+<\phi^*|\mathcal{B}|\psi>				\nonumber \\
+					&	=	&	<\psi|\mathcal{A}^*|\phi^*>+<\psi|\mathcal{B}^*|\phi^*>				\nonumber \\
+					&	=	&	<\psi|(\mathcal{A}^*+\mathcal{B}^*)|\phi^*>					\nonumber \\
+					&	=	&	<\psi|(\mathcal{A}+\mathcal{B})^*|\phi^*>					\nonumber
+\end{eqnarray}
+
+	Isto é, $\mathcal{A}+\mathcal{B}$ é hermiteano
+
+\begin{eqnarray}
+<\phi^*|\mathcal{B}\mathcal{A}|\psi>	&	=	&	<\psi^*|\mathcal{B}|\mathcal{A}\psi>						\nonumber \\
+					&	=	&	<\mathcal{A}\psi|\mathcal{B}^*|\psi^*>						\nonumber \\
+					&	=	&	<(\mathcal{B}\psi)^*|\mathcal{A}|\psi>						\nonumber \\
+					&	=	&	<\psi|\mathcal{A}^*|(\mathcal{B}\phi)^*>					\nonumber \\
+					&	=	&	<\psi|(\mathcal{A}\mathcal{B})^*|\phi^*>					\nonumber
+\end{eqnarray}
+
+	Portanto, se $[\mathcal{A},\mathcal{B}]=0$ teremos $\mathcal{A}\mathcal{B}=\mathcal{B}\mathcal{A}$ e  $<\phi^*|\mathcal{B}\mathcal{A}|\psi>=
+<\psi|(\mathcal{A}\mathcal{B})^*|\phi^*>$, resultando que $\mathcal{A}\mathcal{B}$ é hermitiano.
+
+\begin{eqnarray}
+<\phi^*|[\mathcal{A},\mathcal{B}]|\psi>	&	=	&	<\phi^*|(\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A})|\psi>			\nonumber \\
+					&	=	&	<\phi^*|\mathcal{A}\mathcal{B}|\psi>-<\phi^*|\mathcal{B}\mathcal{A}|\psi>	\nonumber \\
+					&	=	&	<\psi|(\mathcal{A}\mathcal{B})^*|\phi^*>-<\psi|(\mathcal{B}\mathcal{A})^*|\phi^*>
+																		\nonumber \\
+					&	=	&	<\psi|(\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A})^*|\phi^*>			\nonumber 
+\end{eqnarray}	
+
+	Ou seja, $[\mathcal{A},\mathcal{B}]$ é hermitiano se $\mathcal{A}$ e $\mathcal{B}$ comutam. Mais que isso, este resultado diz qua o operador
+$0$ é hermitiano. 
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 4.}
+{\it	A solução geral da equação de Schrödinger para o oscilador harmônico simples unidimensional é
+
+$$
+\psi(x,t)=\sum_n a_n u_n(x) e^{-i b_n t}
+$$
+
+	onde $b_n=E_n/\hbar$ e $u_n(x)$ são as autofunções normalizdas da energia para cada estado quântico. Tendo isto em vista, (a) expresse o valor médio
+de $x$ ($<x>$) como função do tempo e de $a_n$; (b) Qual o valor de $<x>$ para o caso especial em que temos $a_0,a_1=1/\sqrt{2}$ e $a_n=0$ para $n\ge2$?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{eqnarray}
+<x>	&	=	&	\int_{-\infty}^{\infty}	\psi^*(x,t) x_{op} \psi(x,t) dx							\nonumber \\
+	&	=	&	\int_{-\infty}^{\infty} (\sum_n a_n^* u_n^*(x)e^{ib_nt})x_{op}(\sum_j a_j u_j(x) e^{-ib_jt}) dx		\nonumber \\
+	&	=	&	\sum_n \sum_j a_n^* a_je^{i(b_n-b_j)t} \int_{-\infty}^{\infty} u_n^*(x) x_{op} u_j(x) dx		\nonumber \\
+	&	=	&	\sum_n \sum_j a_n^* a_je^{i(b_n-b_j)t} \int_{-\infty}^{\infty} u_n^*(x) {i\over\sqrt{2k}}(R_{-}-R_{+}) u_j(x) dx	
+																	\nonumber \\
+	&	=	&	{i\over\sqrt{2k}} \sum_n \sum_j a_n^* a_je^{i(b_n-b_j)t}\{\int_{-\infty}^{\infty} u_n^*(x)[R_{-}u_j(x)]dx \nonumber \\
+	&		&					-\int_{-\infty}^{\infty} u_n^*(x)[R_{+}u_j(x)]dx\}			\nonumber \\
+	&	=	&	{i\over\sqrt{2k}} \sum_n a_n \{ \sum_j a_j e^{i(b_n-b_j)t} \int_{-\infty}^{\infty} u_n^*(x)[R_{-}u_j(x)] dx \nonumber \\
+	&		&	-\sum_j a_j e^{i(b_n-b_j)t} \int_{-\infty}^{\infty} u_n^*(x)[R_{+}u_j(x)] dx \}                         \nonumber \\
+	&	=	&	{i\over\sqrt{2k}} \sum_n a_n \{ a_{n+1} e^{i(b_n-b_{n+1})t} \int_{-\infty}^{\infty} u_n^*(x)[R_{-}u_{n+1}(x)] dx \nonumber \\
+	&		&	-a_{n-1} e^{i(b_n-b_{n-1})t} \int_{-\infty}^{\infty} u_n^*(x)[R_{+}u_{n-1}(x)] dx \}                         \nonumber \\
+	&	=	&	{i\over\sqrt{2k}}\sum_n a_n^*(a_{n+1}e^{-i\omega t}\alpha<\psi^*|\psi>-a_{n-1}e^{i\omega t}\beta <\psi^*|\psi>)
+																	\nonumber \\
+	&	=	&	i\sqrt{\hbar\omega\over2k}\sum_n a_n^*\sqrt{n}(a_{n+1}e^{-i\omega t}-a_{n-1}e^{i\omega t})		\nonumber 
+\end{eqnarray}
+
+	Na penúltima passagem utilizou-se o conhecimento adquirido na resolução do exercício $5$ da lista $5$, que dava $\psi_n=(1/\sqrt{\hbar m})
+R_{+}\psi_{n-1}$. 
+	A equação resultante acima é complexa. Contudo, como o operador $x_{op}$ é hamiltoniano, devemos ter $<x>\in\Re$ (pois é mensurável). Verificamos que
+isto é possível se $a_{n+1}=a_{n-1}$ e, consequentemente, iguais a $a_n$. Ainda não descobrimos o porquê disto, mas aí vai o resto da solução:
+
+\begin{eqnarray}
+<x>	&	=	&	i\sqrt{\hbar\omega\over2k}\sum_n a_n^*\sqrt{n}(a_{n+1}e^{-i\omega t}-a_{n-1}e^{i\omega t})		\nonumber \\
+	&	=	&	i\sqrt{\hbar\omega\over2k}\sum_n |a_n|^2\sqrt{n}(e^{-i\omega t}-e^{i\omega t})	 			\nonumber \\
+	&	=	&	\sqrt{2\hbar\omega\over k}\sum_{n=1}^{\infty}\sqrt{n}|a_n|^2sen(\omega t)				\nonumber
+\end{eqnarray}
+
+	Agora está corerente com o que se espera! Quanto ao item (b), basta aplicarmos a equação acima para obtermos 
+
+$$
+<x>=\sqrt{\hbar\omega\over2k} sen(\omega t)	
+$$
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 5.}
+{\it	Uma partícula de massa $m$ está confinada a mover-se entre duas paredes de potencial paralelas de altura infinita, distantes $D$ uma da outra. (a)
+Qual a energia do estado fundamental? (b) Uma das paredes é repentinamente afastada de uma distância $D$ da outra, resultando um novo distanciamento $2D$. 
+Assuma que essa mudança ocorre tão repentinamente que não há tempo suficiente para que a autofunção seja modificada. Qual a probabilidade de a partícula 
+reter sua energia original? (c) Qual a probabilidade de a partícula perder energia? (d) Terá o valor médio da energia cinética alterado? (e) Interprete 
+estes resultados em termos de um modelo físico.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	O problema do poço de potencial de barreiras infinitas já foi resolvido há muito tempo no curso, e sabemos que este possui dois grupos de soluções:
+As pares e as ímpares, cujos autovalores e as autofunções são
+
+Solução par:	$E_n={n^2\pi^2\hbar^2\over2mD^2}$
+		
+		$\psi_n(x)=A cos(\sqrt{\epsilon}x)$
+
+
+Solução ímpar:	$E_n={n^2\pi^2\hbar^2\over2mD^2}$
+		
+		$\psi_n(x)=B sen(\sqrt{\epsilon}x)$
+
+	com $\epsilon_n=2mE_n/\hbar^2$. 
+	
+	(a)O estado fundamental, correspondente ao menor valor da energia, ocorre para o menor $n\neq 0$, ou seja, $1$. Portanto esta energia é 
+$E_1^0={\pi^2\hbar^2\over2mD^2}$, onde o sobrescrito $0$ na energia indica o estado inicial do potencial.
+	Como este problema é unidimensional, não há problemas de degenerescência dos autovalores. Consequentemente, para cada autovalor existe uma
+e apenas uma autofunção. Uma vez que o problema nos diz que a mudança da barreira é tão rápida que não há chance para mudar a autofunção, então não há
+possibilidade de ser alterada a energia. Ou seja, (b) a probabilidade de a partícula reter sua energia original é 100\%, ou, de forma igual, (c) a 
+probabilidade de a partícula perder energia é zero. 
+	(d)Uma vez que o valor médio da energia cinética é dado por $<\psi_n^*|T_{op}|\psi_n>$ e $\psi_n(x)$ não se altera, por solicitação do enunciado,
+então também o valor médio da energia cinética não se altera. 
+	Mas veja que o que foi dito acima só é válido durante a mudança de configuração da barreira.
+	Logo que a nova configuração (sobrescrito 1) da barreira se estabelece, a energia do estado $n$ passa a ser
+$$
+E_n^1={n^2\pi^2\hbar^2\over2m(2D)^2}={1\over4}{n^2\pi^2\hbar^2\over2mD^2}={1\over4}E_n^0
+$$
+
+	Ou seja, a partícula perde energia, o que significa que (b) a probabilidade de a partícula reter sua energia é 0\%, ou ainda (c), a probabilidade dela 
+perder energia é 100\%. (d) O valor médio da energia cinética, que é dado por
+ 
+$$
+<\psi_n^*|T_{op}|\psi_n>=<\psi_n^*|({p_{op}^2\over2m})|\psi_n>=<\psi_n^*|\mathcal{H}|\psi_n>=E_n
+$$
+
+	também se altera por razões óbvias.
+	 
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 6.}
+{\it	(a)Escreva um operador hermitiano para o produto do momento e do deslocamento de um oscilador harmônico simples unidimensional. (b) Mostre que o
+valor médio desta quantidade é zero para qualquer estado estacionário do oscilador.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	A primeira hipótese a se pensar seria o operador $x_{op}p_{op}$. Contudo, para que este operador seja hermitiano, necessitamos que $[x_{op},p_{op}]=0$,
+conforme o resultado do item (b) do exercício 3 desta lista. Mas isto não é verdade, como sabemos. Um outra possibilidade é $x_{op}p_{op}^2$. Vejamos se 
+serve:
+
+\begin{eqnarray}
+[x_{op},p_{op}^2]\phi	&	=	&	[x,-\hbar{d^2\over dx^2}]\phi								\nonumber \\
+			&	=	&	-\hbar x{d^2\phi\over dx^2}+\hbar {d^2\over dx^2}(x\phi)				\nonumber \\
+			&	=	&	-\hbar x{d^2\phi\over dx^2}+\hbar x{d^2\phi\over dx^2}+\hbar\phi{d^2x\over dx^2}	\nonumber \\
+			&	=	&	0											\nonumber 
+\end{eqnarray}
+
+	Ótimo, este serve! Então, um tal operador é $x_{op}p_{op}^2$ (faça a conta e veja que $x_{op}^2p_{op}$ também não serviria!). Vejamos agora o valor esperado,
+usando para isso as seguintes igualdades existentes na lista número 5:
+
+$$
+p_{op}^2={m\over2}(R_{+}^2+R_{-}^2)+m\mathcal{H}
+$$
+$$
+x_{op}={i\over\sqrt{2k}}(R_{-}-R_{+})
+$$
+
+	Neste caso teremos
+
+$$
+x_{op}p_{op}^2={im\over\sqrt{8k}}(R_{-}R_{+}^2+R_{-}^3-R_{+}^3-R_{+}R_{-}^2)+{im\over\sqrt{2k}}(R_{-}\mathcal{H}-R_{+}\mathcal{H})
+$$
+
+	E o valor médio deste operador é
+
+\begin{eqnarray}
+<x_{op}p_{op}^2>	&	=	&	<\psi_n^*|x_{op}p_{op}^2|\psi>						\nonumber \\
+			&	=	&	<\psi_n^*|[{im\over\sqrt{8k}}(R_{-}R_{+}^2+R_{-}^3-R_{+}^3-R_{+}R_{-}^2)
+							+{im\over\sqrt{2k}}(R_{-}\mathcal{H}-R_{+}\mathcal{H})]|\psi_n>	\nonumber \\
+			&	=	&	{im\over\sqrt{8k}}(\alpha<\psi_n^*|\psi_{n+1}>+\beta<\psi_n^*|\psi_{n-3}>-
+							\gamma<\psi_n^*|\psi_{n+3}>					\nonumber \\
+			&		&	-\delta<\psi_n^*|\psi_{n-1}>)+
+								{im\over\sqrt{2k}}(<\psi_n^*|R_{-}\mathcal{H}|\psi_n>-
+									<\psi_n^*|R_{+}\mathcal{H}|\psi_n>)		\nonumber \\
+			&	=	&	{im\over\sqrt{2k}}(<\psi_n^*|R_{-}\mathcal{H}|\psi_n>-
+									<\psi_n^*|R_{+}\mathcal{H}|\psi_n>		\nonumber \\
+			&	=	&	{im\over\sqrt{2k}}(<\psi_n^*|R_{-}|\mathcal{H}\psi_n>-
+								   <\psi_n^*|R_{+}|\mathcal{H}\psi_n>)			\nonumber \\
+			&	=	&	{im\over\sqrt{2k}}(<\psi_n^*|R_{-}|E_n\psi_n>-
+								   <\psi_n^*|R_{+}|E_n\psi_n>)				\nonumber \\
+			&	=	&	{im\over\sqrt{2k}}(E_n<\psi_n^*|\mu\psi_{n-1}>-
+								   E_n<\psi_n^*|\xi\psi_{n+1}>)				\nonumber \\
+			&	=	&	0									\nonumber
+\end{eqnarray}
+
+	As letras gregas $\alpha$, $\beta$, $\gamma$, $\delta$, $\mu$ e $\xi$ foram introduzidas aqui apenas para manter as autofunções
+normalizadas, conforme o exercício 5 da lista seguinte.
+
+\end{document}
+
+

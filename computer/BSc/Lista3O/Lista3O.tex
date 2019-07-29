@@ -1,0 +1,134 @@
+\documentclass[a4paper,10pt]{article}[1998/12/01]
+
+%----------------------------------------------------------------------------------%
+%------------------------- CARREGA OS PACOTES NECESSÁRIOS -------------------------%
+%----------------------------------------------------------------------------------%
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\makeindex
+\pagestyle{myheadings}
+\markboth{}{\rm I.R. Pagnossin}
+
+\begin{document}
+
+\title{Lista 3 de Oficina de programação}
+\author{Ivan R. Pagnossin \\ irpagnossin@hotmail.com}
+\date{\today}
+\maketitle
+
+
+  A sintaxe do programa {\sl a2f.exe} é a2f $\langle$número$\rangle$, onde  $\langle$número$\rangle$
+é uma string no formato
+  \begin{equation}\label{eq:estrutura}
+  \overbrace{[\pm]}^{1}
+  \underbrace{[0\to9]}_{2}\,
+  \overbrace{[.,]}^{3}\,
+  \underbrace{[0\to9]}_{4}\,
+  \overbrace{[\mathrm eE]}^{5}\,
+  \overbrace{[\pm]}^{6}\,
+  \underbrace{[0\to9]}_{7}\,
+  \overbrace{[\backslash0]}^{8}
+  \end{equation}
+  
+  com $1$ representando o sinal da mantissa. Obviamente apenas os caracters $+$ e $-$ são permitidos;
+$2$ aceita dígitos de $0$ a $9$ e é a parte inteira da mantissa; $3$ é o símbolo de decimal, que pode ser 
+tanto um {\sl ponto} como uma {\sl vírgula}; $4$ é a parte decimal da mantissa; $5$ pode ser $e$ (minúsculo)
+ou $E$ (maiúsculo) e indica que a mantissa acabou e segue o expoente: $7$. O fim do argumento é identificado,
+como de costume, pelo caracter '$\backslash0$'.
+
+  O conceito utilizado para produzir tal programa é o de máquina de estados. Deste modo, definimos vários
+{\sl estados} ou {\sl modos}. Cada modo indica o que o programa está fazendo e como ele deve se comportar
+mediante cada um dos caracteres do argumento. São eles\footnote{Chamamos evento cada caracter lido do
+argumento do programa.}:
+  \begin{description}
+  \item[modo\_sinal\_base] 
+	é o modo inicial. Nele o programa define o sinal da mantissa. Este modo pode ser identificado pelo
+	ponto $1$ na estrutura (\ref{eq:estrutura}). A execução permanece neste estado durante apenas o
+	tratamento do primeiro caracter do argumento\footnote{Que não precisa ser $\pm$.}, passando, logo 
+	em seguida, para o estado {\bf modo\_inteiro}. Assim, a ocorrência deste modo implica na transição 
+	para o modo seguinte.\par
+	O tratamento feito neste caso é o seguinte: Se o programa ler um sinal positivo, ele determina
+	uma variável chamada {\tt fSinalBase} com valor $+1$; caso contrário, com valor $-1$. Esta 
+	variável, mais, tarde, será multiplicada pela mantissa, definindo assim o sinal dela.
+
+  \item[modo\_inteiro]
+	é onde o programa ocupa-se de determinar a parte inteira da mantissa, armazenada numa variáel tipo 
+	{\sl float} rotulada {\tt fParteInteira}. Diferentemente do estado anterior, este estado não é
+	capaz de causar uma auto-transição e permanece aí até que um evento específico de transição
+	ocorra: Aqui existem apenas duas transições possíveis: Para o {\bf modo\_decimal} ou para o
+	{\bf modo\_sinal\_expoente}. Caso ocorra esta última, o aplicativo compreende que a parte decimal
+	da mantissa é $0$.\par
+	Cada vez que o programa lê um dígito numérico, através do ponteiro {\tt p}, por exemplo, executamos
+	a instrução
+	\begin{verbatim}
+	fParteInteira = fParteInteira * 10 + (float)(*p - '0');
+ 	\end{verbatim}
+	com isso, lemos como {\sl float} a posição de memória para qual aponta {\tt p} e concatenamos à
+	direita da variável {\tt fParteInteira}. Isto, feito enquanto durar a parte inteira, converte 
+	a parte inteira da mantissa do argumento --- tipo {\sl string} --- para {\sl float}.
+
+  \item[modo\_decimal]
+	É aquele no qual o programa passa a determinar a parte decimal da mantissa. O procedimento de
+	transformação da {\sl string} argumento em {\sl float} é exatamente igual à parte inteira. 
+	Contudo, no final, ao juntarmos, por simples soma, as variáveis {\tt fParteInteira} e 
+	{\tt fParteDecimal}, devemos tomar o cuidado de dividir, antes, {\tt fParteDecimal} por
+	$10^n$, sendo $n$ o número de dígitos de {\tt fParteDecimal}. Isto é feito através de uma
+	instrução {\tt for} tendo $n$ como limite superior:
+	\begin{verbatim}
+	n = (short)(floor(log10(fParteDecimal)) + 1);
+	for(i=1;i<=n;i++) fParteDecimal /= 10;
+	\end{verbatim}
+	A primeira linha responsabiliza-se por determinar $n$ a partir do fato conhecido de que a 
+	mantissa do logarítmo decimal de um número maior que um igual ao número de dígitos deste
+	número, reduzido de um. e.g., se $\log(1456)= 3,16\ldots$, o tamanho do número $1456$ é $3+1=4$,
+	como era de se esperar.\par
+	Tal como o {\bf modo\_inteiro}, este não é auto-transitável e necessita do evento 'E' (ou 'e')
+	para mudar para o estado {\bf modo\_sinal\_expoente}.
+
+  \item[modo\_sinal\_expoente] 
+	é identico ao {\bf modo\_sinal\_base}, exceto pelo fato de que este modo altera o valor da
+	variável {\tt fSinalExpoente};
+
+  \item[modo\_expoente]
+	define o expoente. É também não-transitável e é identificado por $7$ na estrutura 
+	(\ref{eq:estrutura}). Uma vez neste estado a única transição possível é causada pelo caracter
+	'$\backslash0$', para o estado {\bf modo\_fim}, que finaliza a leitura do argumento.\par
+	A montagem do expoente é igual aos modos {\bf modo\_parte\_inteira} e {\bf modo\_parte\_decimal},
+	exceto que aqui lemos o caracter como {\sl short}.
+
+  \item[modo\_fim]
+	é o modo que identifica o fim do argumento.
+  \end{description}
+
+  Abaixo segue um esquema das transições e estados do aplicativo durante a leitura do argumento:
+  \begin{figure}[htb]
+    \centering
+    \vspace{8cm}
+    \caption{\footnotesize Diagrama de {\sl autômato} do programa a2f.exe.}
+  \end{figure}  
+
+  Uma vez findada a leitura do argumento as variáveis {\tt fParteInteira}, {\tt fParteDecimal},
+{\tt fSinalBase}, {\tt fSinalExpoente} e {\tt iExpoente} armazenam os devidos valores e a mantissa
+é determinada:
+  \begin{verbatim}
+  Base = fSinalBase * (fParteInteira + fParteDecimal);
+  \end{verbatim}
+  Em seguida, desloca-se para direita ou para esquerda a vígula em {\tt Base} um número de vezes 
+igual ao expoente:
+  \begin{verbatim}
+  for(i=1;i<=iExpoente;i++)
+    {
+    if(fSinalExpoente == +1.0) Base *= 10;
+    if(fSinalExpoente == -1.0) Base /= 10;
+    }
+  \end{verbatim}
+
+  E este é o resultado: {\tt Base}.
+
+\end{document}
+
+  

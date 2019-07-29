@@ -1,0 +1,82 @@
+	Como foi visto na introdução teórica, a lei de Malus relaciona a intensidade da luz polarizada
+com o ângulo $\theta$ de inclinação da malha do polaróide (e, portanto, o plano de polarização daquele
+polaróide). Para fazermos esta medida precisamos de
+dois polaróides: O primeiro para polarizar num plano conveniente a luz proveniente da fonte não 
+polarizada e o segundo para variarmos o plano da malha (fig.14).
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:malus 1} 
+  %\includegraphics[scale=0.5]{figuras/malus1.jpg}
+  %\caption{\footnotesize Arranjo experimental utilizado na verificação da Lei de Malus. O primeiro
+	%polaróide garante que a luz incidente sobre o segundo é polarizada.}
+%\end{figure} 
+
+	As medidas foram feitas desde $\theta=0^{\mathrm{o}}$ até $\theta=180^{\mathrm{o}}$, tomando o
+cuidado de se verificar as intensidades para $\theta=0^{\mathrm{o}}$ e $\theta=90^{\mathrm{o}}$ antes de
+cada medida. Este procedimento é necessário pois a fonte luminosa de tungstênio ainda sim não é
+necessariamente perfeitamente homogênea em sua emissão, e isto pode causar alguma flutuação na medida,
+o que de fato ocorreu, como pode ser visto na figura 15:
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:malus 2}
+  %\includegraphics[scale=0.5]{figuras/malus2.tex}
+  %\caption{\footnotesize A intensidade máxima do feixe emergente do segundo polaróide flutua um
+	%pouco, como se pode verificar. Isto se deve às imperfeições de emissão da luz incandescente.
+	%Os valores em vermelho são os esperados teoricamente, considerando a intensidade máxima como
+	%a média da flutuação encontrada.} 
+%\end{figure}
+
+	Uma alternativa para resolver este problema é usar intensidades normalizadas pela intensidade
+máxima. Neste caso o que se faz é tomar uma medida de $I_\theta$, subtair $I_f$ para aquele caso  e 
+dividí-la 
+por $I_0$. Isto feito chegamos à figura 16:
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:malus 3}
+  %\includegraphics[scale=0.5]{figuras/malus3.jpg}
+  %\caption{\footnotesize O mesmo resultado da figura \ref{fig:malus 2} normalizando os valores das 
+	%intensidades e excluindo a radiação de fundo $I_f$.} 
+%\end{figure} 
+
+	Pela teoria de Malus, a intensidade $I_\theta$ do feixe polarizado deve variar conforme
+	$$
+	I_\theta = I_0 \cos^2\theta +I_f,
+	$$  
+
+	onde $I_0$ é a intensidade para $\theta=0^{\mathrm{o}}$ e $I_f$ a intensidade para 
+$\theta=90^{\mathrm{o}}$ (radiação de fundo pois nesta situação o polaróide bloqueia totalmente a luz
+incidente).
+
+	Podemos então normalizar esta equação fazendo $x=\cos^2\theta$ e $y=I_\theta$. Isto posto plotamos
+a figura 17:
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:malus 4}
+  %\includegaphics[scale=0.5]{figuras/malus4.jpg}
+  %\caption{\footnotesize Linearização da lei de Malus, cujo objetivo é determinarmos experimentalmente os
+	%valores de $I_0$ e $I_f$.}
+%\end{figure}
+
+	E concluímos que
+	$$
+	I_\theta = 21,4(3)\cos^2\theta+0,11(15)
+	$$
+
+	As intensidades na expressão anterior são dadas, na realidade, em $\mathrm{mV}$, a tensão sobre
+o resistor de carga do circuito do fotodiodo utilizado no experimento (figura 18).
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:foto diotod}
+  %\includegraphics[scale=0.5]{figuras/fotodiodo.jpg}
+  %\caption{\footnotesize Fotodiodo utilizado para medir as intensidades luminosas e sua relação entre
+	%corrente, em $m\mathrm{A}$ de coletor e intensidade luminosa, em $\mathrm{mW/cm^2}$.}
+%\end{figure} 
+
+	 
+
+	

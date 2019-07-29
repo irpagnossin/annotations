@@ -1,0 +1,82 @@
+%	Projeto:  Scanning probe microscopy
+%	Autor:	  Ivan Ramos Pagnossin
+%	Data:		  15/06/2002
+%	Arquivo:  afm.tex
+% Capítulo: Microscopia de força atômica
+
+	São três os modos de microscopia de força atômica: AFM de contato, \index{AFM!de contato} AFM de não contato \index{AFM!de não contato} e AFM de contato intermitente. \index{AFM!de contato intermitente} Em todos eles a interação sonda-amostra é a força de Wan der Waals, \index{Van der Waals, Força de} cuja dependência com a distância é ilustrada na figura~\ref{fig:van-der-waals}. Dissemos que se trata de AFM de contato quando a sonda entra em contato com a amostra\footnote{Este ponto é caracterizado pela inversão no sinal da força de Van der Waals no gráfico da figura~\ref{fig:van-der-waals}.}) ou, identicamente, quando a força de Wan der Waals torna-se repulsiva. Nas outras duas modalidades a força é atrativa e a sonda oscila sobre a amostra. Quando esta oscilação toca a amostra intermitentemente damos o nome de contato intermitente (ou, mais comumente, {\slshape tapping mode}); Quando não toca em momento algum, chamamos AFM de não contato. Note que o AFM de contato {\bfseries não oscila}, permanecendo constantemente em contato com a superfície.
+
+\begin{figure}[htb]
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.5]{figuras/afm/van-der-waals.jpg}
+		\caption{\label{fig:van-der-waals}\footnotesize Dependência com a distância da força de Van der Waals.}
+	\end{minipage}\hfill
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.5]{figuras/afm/sonda-afm.jpg}
+		\caption{\label{fig:sonda-afm-contato}\footnotesize Esquema de organização da sonda para a microscopia de força atômica.}
+	\end{minipage}
+\end{figure}
+
+	A ordem de grandeza da força de Van der Waals está entre $10^{-6}\unit{N}$ e $10^{-7}\unit{N}$ para a AFM de contato e por volta de $10^{-12}\unit{N}$ para a AFM de não contato. Para a AFM de contato intermitente temos valores intermediários (veja figura~\ref{fig:van-der-waals}). Note que, diferentemente da microscopia de tunelamento, a de força atômica não limita-se a amostras condutoras pois não mede corrente alguma. Esta é uma vantagem sobre a STM. No entanto, a AFM não atinge a mesma resolução que a STM, mantendo-se na ordem de alguns ângstrons tanto lateral quanto verticalmente para o AFM de contato.  (Para as outras técnicas a resolução é ainda menor).	
+		
+\section{A sonda}
+	\label{sec:sonda-afm}\index{Sonda}
+	
+	Na microscopia de força atômica a sonda é um sistema um pouco mais complicado que na de tunelamento: Trata-se de um conjunto de uma ponta muito pequena montada sobre um {\slshape cantilever} \index{Cantilever} (Uma pequena haste) que, por sua vez, está acoplada ao \scanner; um feixe de laser e um fotodetector, \index{Fotodetector} montados conforme a figura~\ref{fig:sonda-afm-contato}: Ao aproximarmos a ponta da amostra, o cantilever começa a defletir-se conforme sua constante elástica $k$, no intuito de sempre equilibrar a força de Van der Waals (fig.~\ref{fig:van-der-waals}). A medida dessa deflexão é feita através do laser, que atinge o cantilever em sua extremidade (sobre a ponta) e é refletido até um fotodetector dividido em quatro seções (fig.~\ref{fig:fotodetector}). Conforme o cantilever é mais ou menos defletido, o feixe refletido atinge o fotodetector mais para cima ou mais para baixo. Deflexões laterais no cantilever aparecem como deslocamentos laterais do feixe refletido, o que dá origem à microscopia de força lateral (capítulo~\ref{cap:lfm}).\par
+
+	A rigor existe ainda uma terceira força envolvida: A de capilaridade, atrativa e da ordem de $10^{-8}\unit{N}$. Pela ordem de grandeza fica claro que no modo AFM de contato tal força é irrelevante, pois contribui no máximo com $1\%$. Mas para os outros, de forma alguma. Verdadeiramente têm-se que o AFM de contato intermitente é pouco (ou não é) susceptível à capilaridade; O AFM de contato é muito susceptível. Com o exposto vemos que os três modos se completam, no sentido de que eles são gradativamente mais delicados com a amostra na mesma medida que são mais susceptíveis ao menísco de água \index{Menísco de água} adsorvido na amostra (e outros artefatos). Neste aspecto, o AFM de não contato oferece a vantagem de se poder analisar a topografia de uma amostra sem que haja contato real entre ponta e amostra, enquanto o AFM de contato não se deixa levar por esse artefato sempre presente. O AFM de contato intermitente faz a ponte entre uma modalidade e outra, juntando vantagens e desvantagens de ambas.\par
+	
+	A deflexão do cantilever ao encostar na amostra não precisa ser zero e, de fato, pode ser qualquer. Essa força com que a ponta pressiona a amostra, em termos da deflexão observada pelo detector, recebe o nome de {\slshape setpoint}. Quanto maior o {\slshape setpoint}, \index{Setpoint} maior é a pressão sobre a amostra. Então parece óbvio que devemos ser cautelosos ao escolhê-lo pois, caso contrário, fatalmente destruiremos a amostra.
+	
+\section{AFM de contato}
+	\label{sec:AFM-de-contato}\index{AFM!de contato}
+	
+	No caso do AFM de contato (cantilever não oscilante) os deslocamentos em $z$ são feitos sempre com o intuito de recuperar o setpoint: Suponha, e.g., que a sonda foi encostada na superfície com setpoint de $0,5\unit{V}$ (A tensão aplicada à piezoelétrica para produzir tal pressão) e, ao deslocar-se para o ponto vizinho na matriz de varredura, encontrou uma protuberância. Então a proximidade ponta-amostra diminuiu, aumentando a força de Van der Waals e conseqüentemente aumentando a deflexão do cantilever. Essa alteração na deflexão aparece como um deslocamento vertical para cima do laser refletido, alterando a leitura do fotodiodo (veja figura~\ref{fig:fotodetector}). O software do microscópio percebe esta alteração e retrai a piezoelétrica na direção $z$ até que a deflexão original seja atingida. Neste momento o microscópio registra a correção em $z$ necessária para restaurar a situação original. Este esquema de acompanhamento óptico das defelxões é capaz de captar variações de até frações de ângstron.\par
+	
+	Um ponto importante a se notar é que a constante elástica do cantilever deve ser menor que a da estrutura atômica que se pretende observar. Caso contrário não será o cantilever que irá defletir, mas sim a amostra. Isto obviamente leva a uma alteração da amostra e, muitas vezes, à sua destruição. Mais especificamente, como $k_{at}=\omega^2_{at}\,m_{at}$, sendo $k_{at}$, $\omega_{at}$ e $m_{at}$ a constante elástica, a freqüência de ressonância e a massa atômica da amostra, temos que a constante elástica do cantilever deve ser inferior a aproximadamente $10^{13}\unit{Hz}\cdot10^{-24}\unit{N}=10\unit{N/m}$ --- utilizando valores típicos.
+	
+	Há ainda uma outra forma de varrermos a amostra: Ao invés de mantermos constante a deflexão do cantilever, mantemos a altura $z$ constante, registrando as variações na deflexão. É uma forma análoga àquela discutida na microscopia de tunelamento: É mais rápida mas limita-se a amostras com pouca rugosidade. É especialmente utilizada em estudos de formação de superfície, onde é interessante uma varredura rápida; em ``tempo real''.
+	
+\section{AFM de não contato e {\slshape tapping mode}}
+	\label{sec:AFM-de-contato-intermitente}\index{AFM!de contato intermitente}\index{AFM!de não-contato}
+	
+	No caso do AFM de não contato a idéia básica é parecida, exceto que como o cantilever oscila, também o setpoint, a rigor. Então o que chamamos de setpoint toma outra forma: Ele pode ser a amplitude da oscilação, a freqüência ou a defasagem entre as oscilações do cantilever e a fonte osciladora: A piezoelétrica. Assim, ponto a ponto na malha de varredura o microscópio restaura um desses valores, registrando a correção em $z$ necessária para retornar à situação inicial. Verifica-se experimentalmente que a qualidade das imagens obtidas utilizando-se a freqüência como setpoint é maior, seguida da defasagem.\par
+	
+	Para o AFM de contato intermitente somente o modo de amplitude de oscilação está disponível, já que neste caso a ponta toca a amostra.\par
+	
+	Uma questão freqüente é o porque da oscilação do cantilever. Isto explica-se pelo fato de que a força de Van der Waals não seria detectável se assim não o fôsse: A algumas dezenas ou centenas de ângstrons acima da amostra, que é a região onde atua o AFM de não contato, a força de Van der Waals é da ordem de $10^{-12}\unit{N}$, o que causa uma deflexão da ordem de um centésimo de ângstron, incomensurável pelas técnicas atuais.\par
+	
+	Para funcionar corretamente, tanto o {\slshape tapping mode} quanto o AFM de não contato devem oscilar na freqüência de ressonância do cantilever, em geral por volta de $100\unit{kHz}$ a $400\unit{kHz}$. A amplitude, também de ressonância, é da ordem de $10\unit{\angstron}$ a $100\unit{\angstron}$. O próprio microscópio possui um sistema específico para determinar a freqüência de ressonância do cantilever, mas existe uma sutileza: Determina-se a freqüência de ressonância com a ponta bastante longe da amostra para evitar qualquer toque acidental. Com isso, o amortecimento devido à força de Van der Waals não é levado em consideração, o que significa que ao colocarmos a ponta para oscilar próximo à superfície, a freqüência de ressonância terá sido sutilmente alterada, prejudicando as medidas. Vejamos: $F=-k\Delta z$ é a força de restauração. Tome $F_w(z)$ como a força de Van der Waals, dependente da distância ponta-amostra. Então, para um pequeno deslocamento $\Delta z$ teremos 
+	$$
+	F_w(z+\Delta z)\cong{\partial F_w(z)\over\partial z}\Delta z
+	$$
+	que pode ser combinada com a força de restauração da seguinte forma:
+	$$
+	F_{\mbox{total}}=F+F_w =-k\Delta z + {\partial F_w(z)\over\partial z}\Delta z =
+		-\left[k - {\partial F_w(z)\over\partial z}\right]\Delta z = -k_{ef}\Delta z
+	$$
+	
+	Pelo gráfico da figura~\ref{fig:van-der-waals} vemos que $\partial F_w(z)/\partial z>0$, o que leva a $k_{ef}<k$, reduzindo a freqüência de ressonância:
+	$$
+	\omega^2 = {k_{ef}\over m} = {1\over m}\left({k-{\partial F_w\over\partial z}}\right) = 
+		\omega_0^2\left(1-{1\over k}{\partial F_w\over\partial z}\right) \Rightarrow 
+			\omega = \omega_0 \left(1-{1\over k}{\partial F_w\over\partial z}\right)^{1/2}
+	$$
+	que pode ser aproximado por
+	$$
+	\omega = \omega_0 \left(1-{1\over 2k}{\partial F_w\over\partial z}\right)
+	$$
+	considerando a derivada da força de Van der Waals pequena quando comparada à unidade. Experimentalmente sabemos que $\Delta\omega\cong\omega_0/10$. Isto nos leva a uma regra prática e simples: Após medirmos a freqüência de ressonância pelo microscópio, utilizamos esta freqüência acrescida de $10\%$ como um dos parâmetros exigidos. Isto nos assegura que ao iniarmos as medidas, com a ponta próxima à amostra, estaremos bem próximos da freqüência e ressonância.
+	
+	Nos modos AFM de não contato e tapping mode há uma limitação a mais quanto à constante elástica do cantilever: Sabemos que ela não pode ser superior à constante elástica da amostra, mas agora também devemos impor que a constante não seja muito pequena para que a variação $\Delta\omega$ seja pequena. Outro aspecto a se levar em consideração nesses dois modos é o fator de qualidade $Q$ do cantilever:
+	$$
+	Q = 2\pi\left({\mbox{Energia armazenada por ciclo}\over\mbox{Energia dissipada por ciclo}}\right)={\omega_0\over\gamma}
+	$$
+	sendo $\gamma$ a constante de amortecimento, inerente ao cantilever. Quanto maior este número, menor será a dissipação de energia no sistema.\par
+	
+	Vale a pena lembrar que como a força de Van der Waals, por ser essencialmente coulombiana, depende das constantes dielétricas da ponta, amostra e meio em que estão imersas. Em líquidos polares, e.g., a força de Van der Waals é bastante reduzida, podendo até causar a inversão do sentido da interação. Ou seja, a regra passada acima, quanto à correção da freqüência de ressonância, embora coerente, não é sempre correta. O que nos leva novamente a lembrarmos que o julgamento do usuário está acima de tudo.\par
+	
+	Finalmente, medidas nesses dois modos devem, sempre que possível, serem feitas a baixas temperaturas pois a anergia vibracional da amostra a temperatura ambiente pode estar relacionada a amplitudes de vibração consideráveis. De fato, tomando a temperatura ambiente ($k_BT\cong 0,0258\unit{eV}$) com $k=1\unit{N/m}$ e teremos vibrações de aproximadamente $0,6\unit{\angstron}$, que está na ordem de grandeza mensurável pela técnica de não contato.\par
+	
+	Exemplos de imagens em AFM podem ser observados nos capitulos que seguem.
+	

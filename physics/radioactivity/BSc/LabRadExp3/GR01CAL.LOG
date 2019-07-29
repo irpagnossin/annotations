@@ -1,0 +1,104 @@
+#
+Date:            6/10/2001
+Time:            9:6:49
+Setup file:      fisrad.set
+Data  file:      gr01cal.dat
+
+
+INITIAL parameters:
+B. Intervalo de tempo de amostragem (s) [0.09,*]:                       0.2
+C. Temperatura do inicio da leitura (øC) [40,400]:                       40
+D. Temperatura do fim da leitura (øC) [80,500]:                         280
+E. Modo de aquecimento (Automatico/Manual) ["A","M"]:                     A
+F. Taxa de aquecimento (øC/s) [0.0001,35]:                                5
+G. Ganho do controlador de temperatura (øC/V):                           98
+H. Voltagem para o inicio da rampa de aquecimento (V) [-10,1]:          0.0
+I. Tempo morto da PMT+preamp (ns) [5,200]:                              100
+J. Ganho do amplificador do Termopar (tipoK) (ADU/mV) [0.1,*]:          245
+K. Nivel de discriminacao (mV) [-300,300]:                              -30
+L. Logaritmo do fundo de escala do CDA - use 10 p/ saida log. [3,10]:    10
+M. Material medido (string continuo):      laboratorio 3 curso de  FisRad 1
+N. Nome do experimentador (string continuo):    samuel,ricardo,carlos,elmar     
+                                                          
+
+
+
+
+Data analysis during the run:
+>>>
+Ident        :cal1a    
+Center       :224.72 øC
+Temp. of Max.:231.09 øC
+Peak height  : 2.07E+0002 CPS
+Area         : 1.25E+0003 counts
+cursor background
+>>>
+Ident        :cal01b   
+Center       :218.91 øC
+Temp. of Max.:224.79 øC
+Peak height  : 2.60E+0002 CPS
+Area         : 1.20E+0003 counts
+cursor background
+>>>
+Ident        :cal02a   
+Center       :220.02 øC
+Temp. of Max.:227.96 øC
+Peak height  : 3.62E+0002 CPS
+Area         : 2.10E+0003 counts
+cursor background
+>>>
+Ident        :cal02a   
+Center       :218.84 øC
+Temp. of Max.:227.99 øC
+Peak height  : 3.74E+0002 CPS
+Area         : 2.36E+0003 counts
+cursor background
+>>>
+Ident        :cal02b   
+Center       :218.68 øC
+Temp. of Max.:225.33 øC
+Peak height  : 3.30E+0002 CPS
+Area         : 2.28E+0003 counts
+cursor background
+>>>
+Ident        :cal03a   
+Center       :226.52 øC
+Temp. of Max.:234.60 øC
+Peak height  : 6.11E+0002 CPS
+Area         : 3.93E+0003 counts
+cursor background
+>>>
+Ident        :cal03b   
+Center       :229.98 øC
+Temp. of Max.:238.12 øC
+Peak height  : 5.96E+0002 CPS
+Area         : 3.79E+0003 counts
+cursor background
+>>>
+Ident        :cal04a   
+Center       :234.62 øC
+Temp. of Max.:244.07 øC
+Peak height  : 9.14E+0002 CPS
+Area         : 5.65E+0003 counts
+cursor background
+>>>
+Ident        :cal04b   
+Center       :225.78 øC
+Temp. of Max.:236.44 øC
+Peak height  : 8.89E+0002 CPS
+Area         : 5.63E+0003 counts
+cursor background
+>>>
+Ident        :cal05a   
+Center       :222.97 øC
+Temp. of Max.:230.04 øC
+Peak height  : 1.20E+0003 CPS
+Area         : 7.45E+0003 counts
+cursor background
+>>>
+Ident        :cal05b   
+Center       :218.53 øC
+Temp. of Max.:228.01 øC
+Peak height  : 1.33E+0003 CPS
+Area         : 8.53E+0003 counts
+cursor background

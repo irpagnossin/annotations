@@ -1,0 +1,59 @@
+%IVAN RAMOS PAGNOSSIN 11/03/2001 irpagnossin@hotmail.com
+
+\begin{quotation}
+{\color{blue}{\bf 1.}}
+{\it Determine literalmente a distância entre o Sol e Marte por triangulação tomando a unidade astronômica como unidade de comprimento.}
+\end{quotation}
+
+\begin{figure}[htb]
+\begin{center} 
+\includegraphics[scale=0.6]{kepler.pdf}
+\caption{\footnotesize Esquema de triangulação utilizado para determinar a distância Sol-Marte como função da distância Sol-Terra (=1UA).}
+\label{fig:sol-marte} 
+\end{center} 
+\end{figure}
+
+	Para resolver este problema imaginaremos a situação ilustrada na figura~\ref{fig:sol-marte}, que representa a oposição da Terra com Marte
+alguns instantes antes (Ponto $E$) e alguns instantes depois (Ponto $E'$) de ocorrer. Necessitamos esta proximidade entre os eventos $E$ e $E'$ para 
+podermos considerar Marte fixo no ponto $P$. $S$ é o Sol e os ângulos $\alpha$\footnote{Note que este ângulo, em graus, é aproximadamente o período em dias 
+entre os dois eventos $E$ e $E'$.}, $\beta$ e $\gamma$ são facilmente medidos. Desta forma, $\delta$ também está definido através do quadrilátero
+$\Box SEPE'$: $\delta=2\pi-(\alpha+\beta+\gamma)$. 
+	Pressupostamente conhecemos $D=1\mathrm{UA}$ e queremos determinar $r$. Vejamos. Do triângulo $\bigtriangleup SEE'$ podemos encontrar o valor do segmento
+$\bar{EE'}$: 
+	\begin{eqnarray*}
+	(\bar{EE'})^2	&=&D^2+D^2-2D^2\cos\gamma	\\
+			&=&2D^2(1-\cos\gamma) 		\\	
+			&=&4D^2\sin^2({\gamma\over2})
+	\end{eqnarray*}
+
+	Isto é, ${\bar{EE'}\over D}=2\sin({\gamma\over2})$. Além disso, como este triângulo é Isóceles, os ângulos $\hat{E'ES}$ e $\hat{SE'E}$ são 
+congruentes (E chamamo-los $\mu$ na figura~\ref{fig:sol-marte}). Isto nos permite determiná-los: $\gamma+2\mu=\pi\Rightarrow\mu=(\pi-\gamma)/2$.
+Daí encontramos o ângulo $\lambda=\hat{EE'P}$ como sendo $\lambda=\alpha-(\pi-\gamma)/2$, o que é necessário para determinarmos, pela {\it Lei do Senos}, 
+a distância entre a Terra e Marte no instante $E$ no triângulo $\bigtriangleup PEE'$:
+	$$
+	{\bar{EE'}\over\sin\delta}={d\over\sin\lambda}\Rightarrow d=\bar{EE'}{\sin\lambda\over\sin\delta}
+	$$
+
+	Mas $\sin\delta=-\sin(\alpha+\beta+\gamma)$ e $\sin\lambda=\cos(\alpha+{\gamma\over2})$. Portanto
+	$$
+	d=\xi(\alpha,\beta,\delta)D=2D\sin({\gamma\over2})[{\cos(\alpha+{\gamma\over2})\over-\sin(\alpha+\beta+\gamma)}]	
+	$$
+
+	Por fim, pela {\it Lei dos cossenos} aplicada ao triângulo $\bigtriangleup SEP$, 
+	\begin{eqnarray*}
+	r^2		&=&D^2+d^2-2Dd\cos\beta			\\
+			&=&D^2+D^2\xi^2-2D^2\xi\cos\beta	\\
+	{r\over D}	&=&\sqrt{1+[\xi-2\cos\beta]\xi} 	
+	\end{eqnarray*}
+
+	com $\xi(\alpha,\beta,\gamma)=-2{\sin({\gamma\over2})\cos(\alpha+{\gamma\over2})\over\sin(\alpha+\beta+\gamma)}$. E o problema está resolvido
+uma vez que expressamos a distância Sol-Marte como função de parâmetros conhecidos, e com boa precisão!
+	    
+\vspace{10mm}
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+\begin{quotation}
+{\bf 5.}
+{\it	Considere o operador $\op O$ cuja aplicação sobre um ket $\ket f$ com componentes 
+	$\iprod{x}{f}=f(x)$ é dada por
+	$$
+	\hope{x}{\op O}{f} = \int_{-\infty}^x tf(t)dt
+	$$
+
+	{\tt (a)} Resolva o problema de autovalores
+	$$
+	\op O\ket f = \lambda\ket f
+	$$
+
+	{\tt (b)} Para que valores de $\lambda$ o autoket é normalizável, isto é, $\iprod{f}{f}<\infty$?
+Determine a constante $A$ no caso em que é normalizável.}
+\end{quotation}
+
+	{\tt (a)} A solução da equação $\op O\ket f=\lambda\ket f$ é feita projetando-se esta
+na base $\{\bra x\}$:
+
+	\begin{eqnarray*}
+				\op O\ket f		&=&	
+					\lambda\ket f		\Rightarrow	\\
+	\Rightarrow		\hope{x}{\op O}{f}	&=&
+					\lambda\iprod{x}{f}	\Rightarrow	\\
+	\Rightarrow \int_{-\infty}^x tf(t)dt		&=& 	
+					\lambda f(x)		\Rightarrow	\\
+	\Rightarrow {d\over dx}\int_{-\infty}^x tf(t)dt	&=&
+					\lambda{df\over dx}	\Rightarrow	\\	
+	\Rightarrow xf(x)				&=&
+					\lambda{df\over dx} 	\Rightarrow	\\
+	\Rightarrow {1\over\lambda}\int_{x_0}^x xdx	&=&
+					\int_{f_0}^{f}{df\over f}\Rightarrow	\\
+	\Rightarrow {1\over\lambda}[{1\over2}x^2]_{x_0}^x	&=&
+					[\ln f]_{f_0}^f		\Rightarrow	\\
+	\Rightarrow f(x)					&=&
+					Ae^{x^2/2\lambda}
+	\end{eqnarray*}
+
+	onde $A=f_0e^{-x_0^2/2\lambda}$ e supomos $f(-\infty)=0$. Então a normalização será
+
+	\begin{eqnarray*}
+	\iprod{f}{f}	&=& \intii f^*(x)f(x)dx			\\
+			&=& |A|^2\intii e^{x^2/\lambda}dx	\\
+			&=& |A|^2\sqrt{\lambda}\intii e^{u^2}du	\\
+	1		&=& |A|^2\sqrt{\lambda\pi}		\\
+	\end{eqnarray*}
+
+	{\tt (b)} Portanto, 
+	$$
+	|A|^2={1\over\sqrt{\lambda\pi}}
+	$$
+
+	Mas como $|A|\in\mathbb{R}$, então decorre que devemos ter $\lambda > 0$, estritamente, para que 
+possamos normalizar $\ket f$.

@@ -1,0 +1,355 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 1 de Mecânica Quântica}
+\author { Ivan Ramos Pagnossin }
+\date { 15 de Julho de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+
+{\bf 1.}
+{\it	Assuma que um átomo de hidrogênio consiste de um núcleo fixo ao redor do qual um elétron de carga $e=1,602\cdot10^{-19}C$ move-se classicamente
+	em órbita circular de raio $a_0=0,529\AA$. Estime a radiação eletromagnética clássica emitida por tal átomo devido à aceleração do elétron
+	e compare com a energia clássica total do átomo. A radiação emitida por uma carga acelerada é dada por $S=2e^2a^2/3c^3$, onde $a$ é a aceleração
+	da carga e $c$ a velocidade da luz.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Sabemos que a constante de Planck é uma medida de momento angular, de tal forma que podemos estimar o momento angular total do átomo como sendo
+$\hbar$. De fato, de resultados mais avançados sabemos que o momento angular total de um átomo de hidrogênio (potencial com simetria esférica) pode ser
+avaliado por $L=\sqrt{l(l+1)}\hbar$, onde $l$ é o número quântico dito secundário. Se $l=1$ teremos $L=\sqrt{2}\hbar$, que é aproximadamente igual ao 
+valor escolhido para o momento angular.
+	
+	Classicamente o momento angular do átomo é dado por $L=ma_0v$, com $m$ sendo a massa do elétron, $a_0$ o raio da órbita e $v$ a velocidade tangencial
+de revolução em torno do núcleo. Fazendo $L=\hbar$ concluímos que $v=\hbar/(ma_0)$. Além disso, também da mecânica clássica sabemos que a aceleração 
+centrípeta é $a=v^2/a_0$, ou seja, $a=\hbar^2/(m^2a_0^3)$. Pronto, utilizando a igualdade fornecida pelo enunciado da questão concluímos que
+	$$
+	S={2e^2\hbar^4\over3m^4a_0^6c^3}\approx5,2\cdot10^{-18}{J\over s}\approx32{eV\over s}
+	$$
+
+	Mas dos resultados de Bohr, conhecemos a expressão das energias permitidas para o átomo de hidrogênio:
+	$$
+	E_n=-{mZ^2e^4\over(4\pi\epsilon_0)^22\hbar^2}{1\over n^2}
+	$$   
+
+	Para o primeiro nível possível encontramos $E_1=13,6eV$. Ou seja, um átomo clássico emite tanta radiação, comparada com o total de um átomo
+quântico, que este átomo não viveria muito tempo pois mais dia menos dia ele acabaria por cessar toda a energia contida neste átomo.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 2.}
+{\it	Discuta como a experiência de Franck-Hertz para medidas de perdas de energia de elétrons espalhados num gás requer conceitos quânticos para a sua
+	compreensão.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Em sua experiência original, Franck e Hertz utilizaram, em 1914, um feixe monoenergético de elétrons para bombardear uma nuvem de mercúrio. O que
+se observou foi que, para um feixe com energia inferior a $4,88eV$ (correspondendo a uma onda de De Broglie de $\lambda=2536\AA$), os elétrons eram 
+espalhados pela nuvem sem que perdessem sua energia inicial. Ou seja, o choque era elástico. Contudo, para um feixe de energia próxima a $4,88eV$, 
+verificava-se absorção quase que total dos elétrons. E para energias maiores mediam-se elétrons espalhados com energias menores que a inicial e emissões
+eletromagnéticas de freqüência $\lambda=2536\AA$! Isto acontecia, na realidade, para vários valores discretos de energia. Verificou-se ainda que essas 
+observações permaneciam válidas para feixes de intensidades muito pequenas.
+
+	Frente a tudo isso, apenas as noções de quantização das órbitas atômicas e de dualidade onda-partícula poderiam explicar tais resultados. 
+
+	O que realmente acontece é que os átomos absorvem apenas as energias multiplas das diferenças entre dois níveis quaisquer. Deste modo, no caso do
+mercúrio, a energia necessária para fazer um elétron no estado fundamental passar para o primeiro nível excitado é $4,88eV$. Se a energia do elétron 
+incidente for inferior a este valor nada acontece num choque com o átomo. Entretanto, se a energia for exatamente igual, então toda a energia do elétron 
+será absorvida pelo átomo e o elétron simplesmente pára. Se a energia for maior, então apenas os $4,88eV$ são absorvidos pelo átomo e resta ao elétron
+a diferença das energias inicial e absorvida. O mesmo acontece para cada um dos níveis principais, o que explica o conhecido gráfico de absorção com 
+formato de dente de serra. 
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 3.}
+{\it	Em 1913, Bohr propôs um procedimento de quantização para certos sistemas. Para que tipos de sistemas físicos pode este procedimento ser aplicado?
+	Para que tipos falha?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Bohr fez literalmente uma salada de conceitos quânticos e clássicos -- mas, ao que consta, ele era bom cozinheiro! -- pois para poder explicar 
+o comportamento do espectro dos átomos, a começar pelo de hidrogênio, por ser o mais simples de todos, ele propôs um conjunto de 4 postulados, evidenciáveis
+apenas pelas experiências. São eles:
+
+	(a)Um elétron gira em torno do núcleo atômico sob a influência de forças Coulombianas e obedecento as leis da mecânica clássica;
+
+	(b)Os elétrons possuem apenas um conjunto finito e discreto de órbitas;
+	
+	(c)Nessas órbitas não há emissão de radiação;
+	
+	(d)As emissões ocorrem quando os elétrons passam de um nível para o outro, sendo que a freqüência da radiação emitida é definida pela diferença das
+energias dos níveis inicial e final.
+	
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+	
+{\bf 4.}
+{\it	Um feixe de raios X é formado por bombardeamento de carbono com elétrons de alta energia. Raios X ``fracos'' monocromáticos ($\lambda=44,5\AA$)
+	são produzidos. Qual a perda de energia de um tal feixe quando sofre espalhamento Compton pelo elétron, sabendo que este é lançado a $30^o$ com
+	relação à direção do feixe incidente?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Aparentemente basta que se use a fórmula de Compton para o espalhamento. De fato, mas é preciso tomar um certo cuidado. O enunciado do exercício
+diz que o {\bf elétron} assume $30^o$ com relação ao feixe incidente, e não este feixe, como exige a equação de Compton
+	$$
+	\lambda=\lambda_0+\lambda_c(1-cos\theta)
+	$$
+
+	O ângulo $\theta$ aqui é o ângulo de espalhamento do feixe de raios X, e não do elétron. Mas é possível determinarmos este ângulo. Vejamos: Voltando
+no início dos raciocínios de Compton, ele utilizou as duas equações
+	$$
+	p_0=p_1cos\theta+pcos\phi
+	$$
+
+	para conservação do momento numa direção e
+	$$
+	p_1sen\theta=psen\phi
+	$$
+
+	para conservação na direção perpendicular à anterior, assumindo que toda a interação -- ao menos nas vizinhanças do ponto de choque -- ocorre no 
+mesmo plano. Nas igualdades acima, $p_0$ é o momento dos fótons de raios X antes da colisão e $p_1$ seu momento após; $p$ é o momento do elétron, $\theta$ é
+o ângulo de espalhamento do feixe de raios X e $\phi$ o de espalhamento de elétron\footnote{Para maiores detalhes consulte ``Eisberg e Resnick'', página 62}.
+	Com estas equações, e lembrando da relação de De Broglie, $p=h/\lambda$, escrevemos
+	$$
+	{h\over\lambda_0}={h\over\lambda_0}cos\theta+{h\over \lambda_c(1-cos\theta)}{sen\theta\over sen\phi}cos\phi
+	$$
+
+	Com muita paciência podemos desenvolver esta equação até chegar na equação de segundo grau para $cos\theta$:
+	$$
+	-[\lambda_0^2cotg^2\phi+(\lambda_0+\lambda_c)^2]cos^2\theta+2\lambda_c(\lambda_0+\lambda_c)cos\theta+(\lambda_0^2cotg^2\phi-\lambda_c^2)=0
+	$$
+
+	cuja solução é
+	$$
+	cos\theta=
+		{\lambda_c(\lambda_0+\lambda_c)sen^2\phi+\lambda_0cos\phi\sqrt{\lambda_0^2+2\lambda_0\lambda_csen\phi}
+			\over
+		\lambda_0^2+(\lambda_c^2+2\lambda_0\lambda_c)sen^2\phi}
+	$$
+
+	Isto posto, e aplicando os dados do problema -- não se esquecendo, é claro, que $\lambda_c=0,0243\AA$ -- encontramos, para a nossa ira, $30^o$. É,
+desta vez o trabalho todo foi em vão pois neste caso os ângulos de espalhamento do feixe e do elétron são iguais. Assim sendo, teremos
+	$$
+	\lambda=\lambda_0+\lambda_c(1-cos\theta)	\Rightarrow	\lambda=44,5032\AA
+	$$
+
+	que equivale a uma energia de $E=hc/\lambda=278,564eV$. Comparado com a energia inicial, $E_0=hc/\lambda_0=278,58eV$, concluímos que a perda de 
+energia foi de $0,02eV$.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 5.}
+{\it	Calcule, em elétrons voltz, a energia máxima dos fotoelétrons emitidos de um metal quando uma radiação amarela de sódio incide sobre ele. Esta
+	energia máxima depende das propriedades do metal? Caso positivo, quais propriedades são significantes?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Conforme a teoria do efeito fotoelétrico, para um feixe de onda eletromagnética incidente, a máxima energia cinética que um elétron da superfície do
+metal pode atingir é dada por
+	$$
+	K=h\nu-w_0
+	$$
+
+	onde $w_0$ é a função trabalho do metal. Em termos de modelos, esta equação indica que se o elétron que absorveu a energia $h\nu$ do feixe incidente
+não perder nenhuma energia em processos internos à estrutura do metal, então a única barreira a vencer é a oferecida pela função trabalho, que corresponde 
+à mínima energia que o elétron tem de possuir para poder escapar das forças atrativas que o ligam à superfície do metal. Assim sendo, e considerando que
+o comprimento de onda da luz amarela do sódio é de $5890\AA$, então a maior energia de um fotoelétron é $K=2,10-w_0$ (em elétrons-voltz), e obviamente depende
+do tipo de metal envolvido, já que $w_0$ é característica deste metal.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 6.}
+{\it	Para elétrons de $45eV$ incidentes normalmente sobre a face de um cristal de estrutura cúbica com distância interplanar de $3,52\AA$, calcule o ângulo
+	entre a incidência e os máximos de espalhamento, semelhantemente à experiência de Davisson e Germer.	
+}	 
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Este tipo de esperiência usa a reflexão de De Bragg:
+	$$
+	n\lambda=2dsen\phi
+	$$
+
+	onde $n$ é um número inteiro que indica a ordem do máximo de difração, $\lambda$ indica o comprimento de onda incidente, $d$ a distância interplanar
+e $\phi$ o ângulo de espalhamento. No nosso caso, temos $d=3,52\AA$ e $\lambda=hc/E=0,027\AA$. Portanto, os ângulos entre os máximos de espalhamento e a direção
+de incidência são
+	$$
+	sen\phi_n\approx 0,004n
+	$$
+
+	Ou seja, teremos $\phi_1=0,23^o$, $\phi_2=0,45^o$, etc.  
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 7.}
+{\it	Calcule o número quântico $n$ para o sistema Terra--Sol, semelhantemente ao que foi feito para o caso do átomo de hidrogênio.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Para o sistema Terra--Sol, devemos igualar as forças gravitacional $F_g={GmM\over r^2}$ e centrípeta $F_{cp}={mv^2\over r}$:
+	$$
+	{GmM\over r^2}={mv^2\over r}
+	$$
+
+	Além disso, definimos o número quântico que estamos procurando pela mesma igualdade utilizada no caso do átomo de hidrogênio: $mrv=n\hbar$, onde
+$n$ é o número quântico procurado. Aplicando esta identidade na igualdade anterior concluímos que 
+	$$
+	r={n^2\hbar^2\over m^2GM}	\Rightarrow	n={m\over\hbar}\sqrt{GMr}
+	$$
+
+	Pronto, basta que apliquemos os dados $\hbar=1,055\cdot10^{-34}J\cdot s$, $m=5,98\cdot10^{24}kg$, $M=1,99\cdot10^{30}kg$, 
+$G=6,67\cdot10^{-11}N\cdot m/ kg^2$ e $r=149,5\cdot10^9m$ para obtermos
+	$$
+	n\approx 2,5\cdot10^{74}
+	$$
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 8.}
+{\it	Assumindo que o elétron move-se ao redor do próton com uma força que depende do inverso de três-meios da distância, use o procedimento de Bohr de quantização
+	de órbitas circulares para obter possíveis níveis de energia neste sistema.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Suponha que, ao invés de
+	$$
+	F={1\over4\pi\epsilon_0}{Ze^2\over r^2}
+	$$
+
+	tivéssemos
+	$$
+	F={1\over4\pi\epsilon_0}{Ze^2\over r^{3/2}}
+	$$
+
+	Seguindo o procedimento de Bohr, num átomo deste tipo, esta força teria de ser identificada como a força centrípeta que mantém o elétron na órbita.
+Desta forma, igualamos as forças elétrica e centrípeta:
+	$$
+	{1\over4\pi\epsilon_0}{Ze^2\over r^{3/2}}={mv^2\over r}
+	$$
+
+	Além disso $L=mrv=n\hbar$, donde $v={n\hbar\over mr}$. Retornando este valor na equação acima encontraremos
+	$$
+	Ze^2=4\pi\epsilon_0mr^{1/2}v^2=4\pi\epsilon_0mr^{1/2}{n^2\hbar^2\over mr}	\Rightarrow	r=({4\pi\epsilon_0n^2\hbar^2\over Ze^2})^2
+	$$
+
+	Este resultado pode ser aplicado na expressão da velocidade logo acima de modo a dar-nos
+	$$
+	v={n\hbar\over m}({Ze^2\over 4\pi\epsilon_0n^2\hbar^2})^2
+	$$
+
+	A partir da posição $r$ e da velocidade $v$ do elétron em torno do núcleo, é possível calcularmos as energias potencial e cinética, respectivamente. E,
+finalmente, calcular a energia total do sistema:
+	\begin{eqnarray}
+	V	&	=	&	-\int_r^{\infty}Fdr									\nonumber \\
+		&	=	&	-{1\over4\pi\epsilon_0}\int_r^{\infty}{dr\over r^{3/2}}=2{1\over4\pi\epsilon_0}Ze^2[{1\over r^{1/2}}]_r^{\infty}
+																\nonumber \\
+	 	&	=	&	-{2Ze^4\over(4\pi\epsilon_0)^2n^2\hbar^2}						\nonumber \\
+	T	&	=	&	{1\over2}mv^2										\nonumber \\
+		&	=	&	{1\over2}{n^2\hbar^2\over m}({Ze^2\over4\pi\epsilon_0n^2\hbar^2})^4			\nonumber 
+	\end{eqnarray}
+
+	Deste modo, a energia total do sistema é a soma das energias potencial e cinética:
+	$$
+	E_n={2Ze^4\over(4\pi\epsilon_0)^2\hbar^2n^2}[{Z^3e^2\over4(4\pi\epsilon_0)^2mn^4\hbar^4}-1]
+	$$
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 9.}
+{\it	Calcule o número de fótons por segundo irradiados por uma estação de rádio de $50kW$ a uma freqüência de $570kHz$.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Cada fóton, com esta frequência, possui uma energia de
+	$$
+	E=h\nu=(6,626\cdot10^{-34})(570.000)\approx3,77\cdot10^{-28}J
+	$$
+
+	Deste modo, o número de fótons por segundo emitidos por esta estação é
+	$$
+	n=50.000{J\over s}\cdot{foton\over 3,77\cdot10^{-18}J}\approx1,32\cdot10^{32}{fotons\over s}
+	$$
+
+
+{\bf 10.}
+{\it	O menor comprimento de onda possível para o som no cloreto de sódio é o dobro das distâncias intermoleculares, $5,6\AA$. Neste meio sua velocidade é
+	aproximadamente $1,5\cdot10^{5}cm$. (a) Calcule a máxima freqüência do som neste sólido. (b) Calcule a energia dos ``fótons'' correspondentes (ou 
+	quantas de energia vibracional). (c) Qual a temperatura para que esses osciladores sejam apreciavelmente excitados?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Esta é fácil. Basta utilizarmos a famosíssima $v=\lambda\nu\Rightarrow\nu=v/\lambda=(1,5\cdot10^5cm/s)/(2\cdot5,6\cdot10^{-8}cm)
+\approx2,68\cdot10^{12}Hz$. Pronto, esta é a freqüência. Para obtermos a energia dos quanta de vibração basta utilizarmos a relação de Planck $E=h\nu$, o que
+nos dá $E\approx0,011eV$.
+
+\end{document}
+
+
+
+
+
+
+
+
+

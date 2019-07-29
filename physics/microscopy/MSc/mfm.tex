@@ -1,0 +1,31 @@
+%	Projeto:  Scanning probe microscopy
+%	Autor:	  Ivan Ramos Pagnossin
+%	Data:		  16/06/2002
+%	Arquivo:  mfm.tex
+% Capítulo: Microscopia de força magnética
+
+	Na microscopia de força magnética, como já deve ter ficado claro pelo nome, a interação ponta-amostra é a magnética. Os princípios de funcionamento são todos idênticos à microscopia de força atômica de não contato, exceto que agora a interação deixa de ser a de Van der Waals (É claro que esta interação não deixa de existir; apenas torna-se de menor magnitude quando comparada à magnética) para ser a magnética: A ponta é recoberta por um filme ferromagnético imantado permanentemente.\par
+	
+	Como deduzimos no capítulo anterior, a freqüência de ressonância $\omega_0$ altera-se para
+	$$
+	\omega = \omega_0\,\left(1-{1\over2k}{\partial F^\perp\over\partial z}\right)
+	$$
+	onde modificamos um pouco a simbologia apenas para torná-la mais corerente com a situação atual: $F^\perp=\vetor F\cdot\hat k$ é a componente perpendicular à superfície da força magnética entre ponta e amostra. Pela expressão acima fica claro que qualquer força paralela ao plano da amostra não influi sobre $\omega_0$, o que indica que a microscopia de força magnética só é capaz de captar domínios magnéticos perpendiculares à superfície da amostra.\par
+	
+	Algo tão importante quanto é perceber que, diferentemente da força de Van der Waals, a força magnética pode ser tanto atrativa quanto repulsiva, o que significa que não tem sentido colocar como freqüência de ressonância $1,1\omega_0$ nem tampouco $0,9\omega_0$. No caso simplesmente encontramos a freqüência de ressonância e a utilizamos diretamente sem 
+tratamento algum (A não ser, é claro, que se conheça a amostra).\par
+
+\begin{figure}[htb]
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/mfm/mfm1.jpg}		
+	\end{minipage}\hfill
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/mfm/mfm2.jpg}		
+	\end{minipage}
+	\caption{\label{fig:mfm}\footnotesize Imagem MFM de $25\unit{\mu m}\times25\unit{\mu m}$ de uma fita magnética comercial. À esquerda temos a medida em AFM de contato que permitiu isolar, à direita, os domínios magnéticos na {\bfseries mesma} região.}
+\end{figure}
+	
+	Mas, durante a varredura, como poderá o microscópio distinguir morfologia da amostra e campo magnético? Para isso utiliza-se uma técnica chamada de {\slshape interleave}. \index{Interleave} Genericamente, o conceito de interleave em SPM indica a possibilidade de se fazer duas medidas simultâneas com técnicas diferentes. No caso, a sonda varre uma linha utilizando o AFM de contato (ou de contato intermitente), retorna e varre novamente a {\bfseries mesma linha} utilizando MFM. Retorna e passa para a linha seguinte, repetindo o processo até o fim da medida (Note a diferença entre interleave e retrace). A vantagem é que na segunda leitura (da mesma linha) a sonda já conhece a topografia, o que lhe permite manter-se a uma distância constante da amostra (que pode ser definida pelo usuário), eliminando quase que por completo a ambiguidade entre morfologia e campo magnético há pouco discutida. Dito de outra forma, na segunda passagem da sonda o microscópio consulta em seu banco de dados a posição $(x,y,z)$ que ele acabou de obter por AFM de contato (ou de contato intermitente), posiciona-se ali e executa, em seguida, uma medida em MFM. Com isso ele (microscópio) consegue uma nova correção em $z$ que diz respeito somente à interação magnética entre a ponta e a amostra.\par
+		
+	Na figura~\ref{fig:mfm} temos uma medida MFM de uma fita magnética comercial. À esquerda a imagem em AFM de contato e à direita, MFM.
+	

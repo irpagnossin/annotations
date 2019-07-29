@@ -1,0 +1,134 @@
+	Primeiramente verificamos a lei dos pontos conjugados ao determinar a distância focal de uma
+lente convergente. Além disso, também foi possível verificar a veracidade da equação de amplificação
+linear $m=-i/o$. Para isso posicionamos uma fonte luminosa, uma lente convergente e um anteparo 
+opaco tal como demonstrado na figura 5.
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:lente convergente}
+  %\includegraphics[scale=0.25]{figuras/Alc.jpg}
+  %\caption{\footnotesize Arranjo experimental que possibilitou a verificação da lei dos pontos conjugados
+%e a expressão da amplificação linear: O objeto, representado por uma fonte luminosa na forma de uma cruz
+%de malta de dimensões $2,35\,\mathrm{cm}\times1,65\,\mathrm{cm}$ é captado pela lente convergente ($C36$)
+%que projeta a imagem real sobre o anteparo mais a frente. A posição de formação da imagem é identificada 
+%como aquela em que a imagem forma-se em foco.}
+%\end{figure} 
+
+	Note que este procedimento só é possível por que lentes convergentes formam imagens reais, possíveis
+de se projetar. De fato, veremos mais a frente (sessão \ref{sec:ld}) que no caso de lentes
+divergentes a situação complica-se quando queremos determinar sua distância focal.
+
+	Mantemos, então, a fonte fixa e variamos as posições da lente e do anteparo (ou, equivalentemente,
+do objeto e da imagem, respectivamente) e medimos estas posições mais o tamanho vertical\footnote{Também 
+poderíamos ter medido a 
+dimensão horizontal mas, devido às posições dos objetos sobre a bancada, esta medida mostrou-se ser 
+desajeitadamente difícil de se conseguir.} da imagem formada. Isto posto é fácil encontrar os conjuntos
+$(i,\sigma_i)$ e $(h_i,\sigma_{h_i})$, cujas incertezas foram avaliadas em $0,5\,\mathrm{mm}$. Já para o
+grupo $(o,\sigma_o)$ procedemos da seguinte forma: Procuramos posicionar o anteparo uma vez se aproximando
+da lente e outra se afastando. Com isso determinamos as posições máxima e mínima para a formação em foco,
+conforme nossa avaliação fisiológica, da imagem. Daí obtemos a média ($o$) e o desvio padrão; a este 
+último somamos quadraticamente a incerteza sistemática $0,5\,\mathrm{mm}$ utilizada para os conjuntos 
+anteriores de modo a obter $\sigma_o$. O passo seguinte foi inverter $o$ e $i$ de modo a linearizar a
+equação de Gauss:
+	$$
+	{1\over i} = {1\over f} - {1\over o} \Rightarrow y = {1\over f} - x
+	$$
+
+	O cálculo de incertezas mostra que $\sigma_y=y^2\sigma_i$, valendo o mesmo para $x$. Plota-se
+o gráfico $1/i\times 1/o$, faz-se a transferência de incertezas 
+	$$
+	\sigma_y^2=\sigma_{y_0}^2+m^2\sigma_x^2
+	$$ 
+
+	e refazemos o gráfico de forma mais precisa: $(y,\sigma_y)\times x$ e ajusta-se a reta. Obtivemos
+$y=0,03977(2)-0,999(15)\,x$, dando-nos 
+	$$
+	f = {1\over 0,03977} = 25,14(13)\,\mathrm{cm\,,}
+	$$ 
+
+	sendo a incerteza encontrada simplesmente por
+	$$
+	\sigma_f = f^2\sigma_a = 25,145^2 \times 0,0002 = 0,13
+	$$
+
+	onde $f$ é obviamente a distância focal (em centímetros) e $a$ é apenas o coeficiente linear
+da curva ajustada. Note que, além da incerteza para nos dar uma noção de acurácia, o coeficiente
+angular comporta-se como o previsto, pois é muito próximo da unidade; É, de fato, indistinguível,
+dada a sua incerteza.  
+	
+	Uma forma de avaliar se o resultado obtido está correto é tentar focalizar um objeto muito
+distânte. Neste caso, a imagem formar-se-á justamente no foco:
+	$$
+	\lim_{o\rightarrow\infty} {1\over f} = \lim_{o\rightarrow\infty} {1\over i}+{1\over o} = {1\over i}
+		\Rightarrow i=f
+	$$
+
+	Utilizamos como objeto distante o Sol e encontramos $f=25,0\pm 2,0\,\mathrm{cm}$. A incerteza aqui é
+bastante grande pois a medida era desajeitada de se conseguir. De qualquer modo vemos que de fato há
+coerência entre os resultados\footnote{Apenas como complemento da informação, medimos também a distância
+focal da lente $C5$ pelo mesmo método, obtendo $f=14,8\pm2,0\,\mathrm{cm}$. Obviamente não pudemos aplicar
+a mesma idéia à lente divergente $D25$.}. Além disso, o próprio laboratório de demonstrações encontrou,
+conforme tabela fornecida, $f_{C36}=26,40\,\mathrm{cm}$, $f_{C5}=14,40\,\mathrm{cm}$ e 
+$f_{D25}=9,40\,\mathrm{cm}$. Confirmam-se as coerências. 
+ 
+%\begin{figure}[htb]
+  %\centering
+  %\includegraphics[scale=0.5]{figuras/lc.jpg}
+  %\caption{\footnotesize $1/i$ relaciona-se linearmente com $1/o$, sendo o coeficiente linear o inverso
+	%da distância focal.} 
+%\end{figure}  
+
+	Convém comentar que os limites superior e inferior dos dados coletados foram determinados,
+respectivamente, pelo suporte da lente, que já não era grande o bastante para focalizar a imagem, e pela 
+amplificação, que já não cabia no anteparo.
+
+
+	Com relação à amplificação linear, verificamos uma concordância muito boa entre as equações
+
+\begin{minipage}[c]{0.46\textwidth}
+  $$
+  m = -{i\over o} 
+  $$
+\end{minipage} 
+e
+\begin{minipage}[c]{0.46\textwidth} 
+  $$
+  m = {h_i\over h_o}\mathrm{,}
+  $$ 
+\end{minipage}
+
+	onde $h_i$ e $h_o$ são as dimensões verticais da imagem e do objeto, respectivamente. Como não
+há nenhum ajuste ou análise mais aprofundada a se fazer com relação a este ponto convém apresentar os
+dados obtidos tanto por uma quanto pela outra equação:
+
+\begin{table}[htbp]
+  \centering
+  \label{tab:amplificação linear} 
+  \begin{tabular}{c|c}
+  $m =h_i/h_o $		&	$m = -i/o$	 	\\
+  \hline
+  1,70			&	1,74			\\
+  1,02			&	1,03			\\
+  0,72			&	0,65			\\
+  0,55			&	0,57			\\
+  0,45			&	0,46			\\
+  0,38			&	0,39			\\
+  0,34			&	0,34			\\
+  0,30			&	0,30			\\
+  0,28			&	0,27			\\
+  0,26			&	0,24			\\
+  \hline
+  \end{tabular} 
+  \caption{\footnotesize Comparação entre as amplificações lineares obtidas por cada uma das equações
+	$m=-i/o$ e $m=h_i/h_o$ aplicadas aos dados colhidos no experimento.}
+\end{table} 
+
+	
+    
+ 
+
+
+
+
+
+

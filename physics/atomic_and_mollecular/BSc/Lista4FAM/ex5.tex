@@ -1,0 +1,110 @@
+\begin{exercicio}
+	Considere uma partícula de massa $m$ sujeita a um potencial unidimensional da forma
+	\[V(x)=\left\{ \begin{array}{ll}
+		{1\over2}kx^2 	& \mathrm{para}\,\,\,\, x>0	\\	
+		\infty		& \mathrm{para}\,\,\,\, x<0
+			\end{array}\right .\]
+
+	{\tt (a)} Escreva a equação de Shrodinger para $x>0$ e a condição que a função de onda
+deve satisfazer em $x=0$ e $x\rightarrow\infty$. Verifique quais das funções de onda do oscilador
+harmônico com os mesmos valores de $m$ e $k$ podem representar as funções de onda permitidas e as
+funções de onda correspondentes.
+
+	{\tt (b)} Calcule os valores esperados $\med{\op X}$ e $\med{\op P}$ para o estado 
+fundamental.
+\end{exercicio}
+
+	{\tt (a)} Conquanto $x$ permaneça positivo, o Hamiltoniano do problema é idêntico ao
+do oscilador harmônico:
+	$$
+	\op H = {1\over2m}\op P^2+{1\over2}k\op X^2
+	$$
+
+	que, na representação das coordenadas, escreve-se
+	$$
+	-{\hbar^2\over2m}{d^2\over dx^2}+{1\over2}kx^2
+	$$
+
+	então a equação de Schrodinger é
+	\begin{eqnarray*}
+	\op H\ket\psi		&=&	E\ket\psi			\\
+	\hope{x}{\op H}{\psi}	&=&	E\iprod{x}{\psi}		\\
+	\hope{x}{-{\hbar^2\over2m}{d^2\over dx^2}+{1\over2}kx^2}{\psi}
+				&=&	E\psi(x)			\\
+	-{\hbar^2\over2m}{d^2\psi(x)\over dx^2}+{1\over2}kx^2\psi(x)	
+				&=&	E\psi(x)
+	\end{eqnarray*}
+
+	As condições de contorno para $\psi(x)$ são $\psi(0)=0$ e $\psi(\infty)=0$.
+
+	Depois de algum tempo analisando a situação conclui-se que qualquer solução do oscilador
+harmônico unidimensional que possua $x=0$ como raiz é também {\bf uma solução} desse problema. De 
+fato, como estas soluções satisfazem a equação de Schrodinger e às condições de contorno 
+-- Lembre-se que as soluções do oscilador tendem a zero no infinito, é claro que se trata de uma 
+solução. Mais que isso: Como é sempre possível fazer um mapeamento contrativo do espaço de Hilbert, segue que
+a solução é única. Então esta é {\bf a solução}. Mas quais são elas? O que vai caracterizar a raiz
+que queremos são os polinômios de Hermite pois a exponencial nunca se anula. Vejamos:
+	\begin{eqnarray*}
+	H_0(0) &=& a_0		\\
+	H_1(0) &=& a_0y=0	\\
+	H_2(0) &=& a_0		\\
+	H_3(0) &=& 0		\\
+	H_4(0) &=& 12a_0	\\
+	H_5(0) &=& 0		\\
+	       &\vdots&		
+	\end{eqnarray*}
+
+	Assim fica claro que as soluções do nosso problema são aquelas com índice $n$ ímpar do
+problema do oscilador harmônico. Matematicamente escrevemos
+	$$
+	\psi_n(x)=N_nH_n(\alpha x)e^{-\alpha^2x^2/2},\,\,\,\,n=1,3,5,7,...
+	$$
+
+	sendo $N_n$ a constante de normalização que, obviamente é diferente da do oscilador 
+harmônico. É imediato também que a equação da energia permanece
+	$$
+	E_n=(n+{1\over2}\hbar\omega,\,\,\,\,\,n=1,3,5,7,...
+	$$
+
+	{\tt (b)} A função de onda para o estado fundamental ($n=1$) é
+	$$
+	\psi_1(x)=N_1\alpha xe^{-\alpha^2x^2/2},\,\,\,\,\,E_1={3\over2}\hbar\omega
+	$$
+
+	Vamos, em primeiro lugar, normalizá-la:
+	\begin{eqnarray*}
+	\iprod{\psi}{\psi}	&=& |N_1|^2\alpha^2\int_0^{\infty}x^2e^{-\alpha^2x^2}dx		\\
+	1			&=& |N_1|^2\alpha^2{1\over2}\Gamma({3\over2})\alpha^{-3}	\\
+				&=& {|N_1|^2\over4\alpha}\Gamma({1\over2})			\\
+				&=& {|N_1|^2\sqrt{\pi}\over4\alpha}	
+	\end{eqnarray*}
+
+	Levando-nos a $|N_1|^2=4\alpha\over\sqrt{\pi}$. Agora podemos calcular o valor médio de
+$\op X$:
+	\begin{eqnarray*}
+	\hope{\psi}{\op X}{\psi}	&=& |N_1|^2\alpha^2\int_0^\infty x^3e^{-\alpha^2x^2}dx	\\
+					&=& |N_1|^2\alpha^2{1\over2}\Gamma(2)\alpha^{-4}	\\
+					&=& {|N_1|^2\over2\alpha^2}				\\
+					&=& {2\over\alpha\sqrt{\pi}}		
+	\end{eqnarray*}
+
+	e o valor médio de $\op P$:
+	\begin{eqnarray*} 
+	\hope{\psi}{\op P}{\psi}	&=& -i\hbar|N_1|^2\alpha^2\int_0^\infty xe^{-\alpha^2x^2/2}
+						{d\over dx}[xe^{-\alpha^2x^2/2}]dx		\\
+					&=& -i\hbar|N_1|^2\alpha^2
+						[\int_0^\infty xe^{-\alpha^2x^2}dx-
+						\alpha^2\int_0^\infty x^3e^{-\alpha^2x^2}dx]	\\
+					&=& -i\hbar|N_1|^2\alpha^2
+						[{1\over2}\Gamma(1)\alpha^{-2}-
+						\alpha^2{1\over2}\Gamma(2)\alpha^{-4}]		\\
+					&=& -i\hbar|N_1|^2\alpha^2[{1\over2\alpha}-
+								{1\over2\alpha}]		\\
+					&=& 0
+	\end{eqnarray*} 
+ 	
+
+
+
+
+

@@ -1,0 +1,76 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{1cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\sf
+{
+\it	
+	Mostre que a equação hipergeométrica $x(1-x){d^2y\over dx^2}+[c-(a+b+1)x]{dy\over dx}-aby=0$ reduz-se à equação de Legendre
+quando se impõe as transformações $x={(1-z)\over 2}$, $a=-l$, $b=l+1$ e $c=1$.
+}
+
+
+\begin{picture}(5,0)
+\put(0,0){\line(1,0){5}}
+\end{picture}
+
+	O problema consiste simplesmente em substituir os valores de $a$, $b$ e $c$ e transformar a variável $x$ em $z$ na equação
+hipergeométrica e desenvolver até encontrarmos a equação de Legendre. O ponto mais difícil neste exercício é relacionar o operador
+derivada com relação a $x$ com o operador derivada com relação a $z$. Este problema pode ser resolvido utilizando-se a regra da cadeia
+para derivadas ordinárias. Suponha o operador aplicado a uma função $f(x)$, por exemplo, pois fica mais fácil compreender. Desta forma,
+escrevemos
+
+$$
+{d\over dx}f(x)={df\over dz}{dz\over dx}={dz\over dx}{d\over dx}f(x)
+$$
+
+	A derivada de $z$ com relação a $x$ pode ser obtida facilmente através da transformação dada no enunciado:
+
+$$
+x={1-z\over 2} \Rightarrow {dx\over dz}=-{1\over 2} \Rightarrow {dz\over dx}={1\over dx/dz}=-2
+$$
+
+	Logo, é fácil concluir que
+
+\begin{equation}
+{d\over dx}=-2{d\over dz}
+\end{equation}
+
+	E a derivada de ordem dois? Basta derivarmos a expressão imediatamente acima e usarmos o que acabamos de descobrir:
+
+\begin{eqnarray}
+{d^2\over dx^2}	&  =  & {d\over dx}(-2{d\over dz})=-2{d\over dx}{d\over dz}=-2(-2{d\over dz}){d\over dz} \nonumber \\
+		&  =  & 4{d^2\over dz^2}
+\end{eqnarray}
+
+	Agora sim! Vamos aplicar os resultados $(1)$, $(2)$ e as transformações dadas na equação hipergeométrica e desenvolver.
+No primeiro instante ficamos com
+
+$$
+4({1-z\over 2})(1-{1-z\over 2}){d^2y\over dz^2}-2[1-(-l+l+1+1)({1-z\over 2}]{dy\over dz}+l(l+1)y=0
+$$
+
+	Agora é apenas uma questão de álgebra! Faça você mesmo e obtenha
+
+$$
+(1-z^2){d^2y\over dz^2}-2x{dy\over dz}+l(l+1)y=0
+$$
+
+	Ou ainda, em termos de operadores Hermitianos,
+
+$$
+\mathcal{L}y(z)+l(l+1)y(z)=0
+$$
+
+	com $\mathcal{L}={d\over dz}[(1-z^2){d\over dz}]$. Esta é a equação de Legendre, cujas soluções, no intervalo $[-1,1]$, são os famosos
+\it Polinômios de Legendre \sf, largamente utilizados em vários campos das ciências exatas\footnote{Por I.R.Pagnossin (i\_irp@hotmail.com)}.
+
+\end{document}
+
+
+

@@ -1,0 +1,53 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage{graphicx}
+\usepackage{wrapfig} 
+\usepackage{epsfig} 
+\usepackage{url}
+\usepackage{ae,algorithm,alltt}
+\usepackage{amsfonts,amstext,enumerate}
+\usepackage{float,fancyvrb,fontenc}
+\usepackage{geometry,hyperref,ifthen}
+\usepackage{indentfirst,lastpage,longtable}
+\usepackage{lscape,makeidx,mathrsfs}
+\usepackage{multicol,pifont,psfrag}
+\usepackage{setspace,showidx,subfigure}
+\usepackage{texnames,textcomp,ulem}
+\usepackage{url,varioref,version}
+\usepackage{wasysym}
+
+\begin{document}
+
+\pagestyle{myheadings}
+\markboth{}{\rm I.R.Pagnossin}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}	
+
+\title {Segunda lista de Física Atômica e Molecular}  
+\author {I.R.Pagnossin \\ irpagnossin@hotmail.com}
+\date {\today}
+\maketitle
+
+\newcommand{\op}[1]{\mathcal{#1}}
+\newcommand{\bra}[1]{\ensuremath{\langle#1|}}% O VETOR BRA DO ESPAÇO DE HILBERT.
+\newcommand{\ket}[1]{\ensuremath{|#1\rangle}}% O VETOR KET DO ESPAÇO DE HILBERT.
+\newcommand{\iprod}[2]{\ensuremath{\langle#1|#2\rangle}}% O PRODUTO INTERNO NO ESPAÇO DE HILBERT.
+\newcommand{\hope}[3]{\ensuremath{\langle#1|#2|#3\rangle}}% O VALOR ESPERADO DO OPERADOR #2.
+\newcommand{\intii}{\int_{-\infty}^{\infty}}
+
+\input{ex1.tex}
+\vspace{10mm} 
+\input{ex2.tex}
+\vspace{10mm}
+\input{ex3.tex}
+\vspace{10mm} 
+\input{ex4.tex}
+\vspace{10mm} 
+\input{ex5.tex}
+
+\end{document}
+ 
+
+

@@ -1,0 +1,118 @@
+\renewcommand{\a}{\hat{a}}
+\renewcommand{\aa}[1][]{\hat{a}^{\dagger #1}}
+
+\begin{exercicio}
+	Para o estado $\ket n$ do $n$-ésimo nível de energia do oscilador harmônico calcule
+
+	{\tt (a)} Os valores esperados $\med{\op X}$, $\med{\op P}$, $\med{\op X^2}$ e
+$\med{\op P^2}$.
+
+	{\tt (b)} O produto $\Delta X\Delta P$ e mosre que é igual a $n+1/2)\hbar$. Esse
+resultado está de acordo com o princípio da incerteza?
+
+	{\tt (c)} Os valores esperados das energia potencial $\med{\op V}$ e cinética 
+$\med{\op T}$, e mostre que satisfazem ao teorema do virial: $\med{\op V}=\med{\op T}$.
+\end{exercicio}
+
+	{\tt (a)} O valor médio de $\op X$ é mais facilmente calculado tomando-se o operador
+análogo adimensional $\op x$, 
+	$$
+	\hope{n}{\op X}{n}=\sqrt{\hbar\over m\omega}\hope{n}{\hat{x}}{n}
+	$$
+
+	Além disso, sabemos que $\hat{x}$ pode ser expresso em termos dos operadores de criação
+$\aa$ e destruição $\a$:
+	$$
+	\hat{x} = {1\over\sqrt{2}}(\a+\aa)
+	$$
+
+	Então,
+	$$
+	\hope{n}{\hat x}{n}={1\over\sqrt{2}}[\hope{n}{\a}{n}+\hope{n}{\aa}{n}]=0
+	$$
+
+	pois 
+	\begin{eqnarray*}
+	\a\ket n 	&=& \sqrt{n}\ket{n-1},				\\
+	\aa\ket n	&=& \sqrt{n+1}\ket{n+1}\,\,\mathrm{e}		\\
+	\iprod{i}{j}	&=& \delta_{ij}
+	\end{eqnarray*}
+
+	Logo $\med{\op X}=0$. O mesmo ocorre com $\op P=\hat p\sqrt{m\omega\hbar}$:
+	$$
+	\hope{n}{\hat p}{n}={1\over i\sqrt{2}}[\hope{n}{\a}{n}-\hope{n}{\aa}{n}]=0
+	$$
+
+	visto que
+	$$
+	\hat p = {1\over i\sqrt{2}}(\a-\aa)
+	$$
+
+	Processo análogo fazemos para $\op X^2$ e $\op P^2$. Mas note antes que
+	\begin{eqnarray*}
+	\hat x^2 &=&{1\over2}(\a+\aa)(\a+\aa)={1\over2}(\a^2+\a\aa+\aa\a+\aa[2])\\
+		&=&{1\over2}(2\a\aa-1)=\a\aa-{1\over2}				\\
+	\hat p^2&=&-{1\over2}(\a-\aa)(\a-\aa)={1\over2}(\a^2-\a\aa-\aa\a+\aa[2])\\
+		&=&-{1\over2}(-2\a\aa+1)=\a\aa-{1\over2}		
+	\end{eqnarray*}
+
+	Ou seja, $\hat x^2=\hat p^2$. Note que os operadores $\a^2$ e $\aa[2]$ foram simplesmente
+excluídos das expressões acima pois como vamos aplicá-los num estado $\ket n$ e então efetuar
+o produto interno com ele mesmo, necessitamos que haja sempre pares de operadores de criação
+e aniquilação, de modo que, se o primeiro eleva o estado para $ket{n+1}$, por exemplo, o segundo 
+reduz-lhe a $ket n$ novamente, dando $\hope{n}{\op M}{n}\ne0$, onde $\op M$ é uma combinação de 
+operadores $\a$ e $\aa$.
+	\begin{eqnarray*}
+	\hope{n}{\op X^2}{n}	&=& {\hbar\over m\omega}\hope{n}{op x^2}{n}			\\
+				&=& {\hbar\over m\omega}\hope{n}{\a\aa-{1\over2}}{n}		\\
+				&=& {\hbar\over m\omega}[\hope{n}{\a\aa}{n}-\hope{n}{1\over2}{n}]\\
+				&=& {\hbar\over m\omega}[\sqrt{n+1}\hope{n}{\a}{n}-{1\over2}]	\\
+				&=& {\hbar\over m\omega}[(n+1)\iprod{n}{n}-{1\over2}]		\\
+				&=& (n+{1\over2}){\hbar\over m\omega}				\\
+	\hope{n}{\op P^2}{n}	&=& {\hbar\over m\omega}\hope{n}{op p^2}{n}			\\
+				&=& (n+{1\over2}){\hbar\over m\omega}
+	\end{eqnarray*}
+
+	{\tt (b)} A incerteza num autovalor de um operador $\op J$ é dada pela raiz de sua 
+variância:
+	$$
+	\Delta J=\sqrt{\med{\op J^2}-\med{\op J}^2}
+	$$
+
+	Então temos
+	\begin{eqnarray*}
+	\Delta X &=& \sqrt{\med{\op X^2}-\med{\op X}^2}=\sqrt{n+{1\over2}}\,{\hbar\over m\omega}	\\
+	\Delta P &=& \sqrt{\med{\op P^2}-\med{\op P}^2}=\sqrt{n+{1\over2}}\,m\omega\hbar	
+	\end{eqnarray*}
+
+	E, portanto, a relação de incerteza fica
+	$$
+	\Delta X\Delta P = \sqrt{n+{1\over2}}\,{\hbar\over m\omega}\cdot
+				\sqrt{n+{1\over2}}\,m\omega\hbar=(n+{1\over2})\hbar
+	$$
+
+	E esta expressão está coerente com o que se espera já que 
+	$$
+	\Delta X\Delta P \ge {\hbar\over2},\,\,\,\,\,n=0,1,2,...
+	$$
+
+	{\tt (c)} O Hamiltoniano do oscilador harmônico simples unidimensional é
+	$$
+	\op H = {1\over2m}\op P^2+{1\over2}k\op X^2
+	$$
+
+	Portanto, os operadores de energia cinética $\op T$ e enmergia potencial $\op V$ são
+	\begin{eqnarray*}
+	\op T = {1\over2m}\op P^2	\\
+	\op V = {1\over2}k\op X^2	
+	\end{eqnarray*}
+
+	Deduzimos quase de imediato que
+	\begin{eqnarray*}
+	\hope{n}{\op T}{n}&=&{1\over2m}\hope{n}{\op P^2}{n}={1\over2}(n+{1\over2})\omega\hbar	\\
+	\hope{n}{\op V}{n}&=&{1\over2}k\hope{n}{\op X^2}{n}=
+				{1\over2}m\omega^2(n+{1\over2}){\hbar\over m\omega}=
+						{1\over2}(n+{1\over2})\omega\hbar
+	\end{eqnarray*}
+
+	Logo, $\med{\op T}=\med{\op V}$.

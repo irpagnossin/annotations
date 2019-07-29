@@ -1,0 +1,70 @@
+\begin{exercicio}[blue]
+	
+	Uma partícula encontra-se num estado $\ket{lm}$ que é um autoket dos observáveis $\opv L^2$ e
+$\op L_z$ com autovalotes $\hbar^2 l(l+1)$ e $\hbar m$, respectivamente. Mostre que
+	
+	{\tt (a)} $\med{\op L_x}=\med{\op L_y}=0$
+
+	{\tt (b)} $\med{\op L_x^2}=\med{\op L_y^2}={1\over 2}\hbar^2[l(l+1)-m^2]$
+
+\end{exercicio}
+
+	Item {\tt (a)}: Sabemos que
+	\begin{eqnarray*} 
+	\op L_+	&=& \op L_x+i\op L_y	\\
+	\op L_- &=& \op L_x-i\op L_y	
+	\end{eqnarray*}
+
+	então, podemos facilmente obter
+	\begin{eqnarray*}
+	\op L_x &=& {1\over 2}(\op L_++\op L_-)	\\
+	\op L_y	&=& {1\over 2i}(\op L_+-\op L_-)
+	\end{eqnarray*}
+
+	Assim temos
+	\begin{eqnarray*}
+	\med{\op L_x}	&=& \hope{lm}{\op L_x}{lm}					\\
+			&=& {1\over2}\hope{lm}{\op L_++\op L_-}{lm}			\\
+			&=& {1\over2}(\hope{lm}{\op L_+}{lm}+\hope{lm}{\op L_-}{lm})	\\
+			&=& 0								\\
+	\med{\op L_y}	&=& \hope{lm}{\op L_y}{lm}					\\
+			&=& {1\over2}\hope{lm}{\op L_+-\op L_-}{lm}			\\
+			&=& {1\over2}(\hope{lm}{\op L_+}{lm}-\hope{lm}{\op L_-}{lm})	\\
+			&=& 0
+	\end{eqnarray*} 
+
+	Item {\tt (b)}: 
+	\begin{eqnarray*}
+	\op L_x^2 	&=& {1\over4}(\op L_++\op L_-)(\op L_++\op L_-)				\\
+			&=& {1\over4}(\op L_+^2+\op L_+\op L_-+\op L_-\op L_++\op L_-^2)	\\
+			&=& {1\over4}(\op L_+\op L_-+\op L_-\op L_+)				\\
+	\op L_y^2	&=& -{1\over4}(\op L_+-\op L_-)(\op L_+-\op L_-)			\\
+			&=& -{1\over4}(\op L_+^2-\op L_+\op L_--\op L_-\op L_++\op L_-^2)	\\
+			&=& {1\over4}(\op L_+\op L_-+\op L_-\op L_+)
+	\end{eqnarray*}
+	
+	onde os termos quadráticos foram ignorados simplesmente porque tensionamos calcular a média, que
+é dada por $\hope{lm}{\op L_x^2}{lm}$, o mesmo valendo para $\op L_y$. Ocorre $\op L_+^2$ eleva o estado
+$\ket{lm}$ para $\ket{lm+2}$, fazendo a média resultar $\iprod{lm}{lm+2}=0$. Portanto, essas parcelas não
+tem interesse para nós no momento. Por conseguinte concluímos que $\op L_x^2=\op L_y^2$\footnote{Note que 
+$\op L_x^2=\op L_y^2$ apenas neste tipo de aplicação, onde podemos
+ignorar os termos quadráticos. Em outra situação não podemos assumir a identidade.}. 
+	
+	Para simplificar ainda mais nossos cálculos, notemos que
+	$$
+	\opv L^2=\op L_x^2+\op L_y^2+\op L_z^2=2\op L_x^2+\op L_z^2 \Rightarrow 
+			\op L_x^2={1\over2}(\opv L^2-\op L_z^2)
+	$$
+ 
+	Assim,
+	\begin{eqnarray*} 
+	\med{\op L_x^2}=\med{\op L_y^2}	&=&  \hope{lm}{\op L_x^2}{lm}					\\
+					&=& {1\over2}\hope{lm}{\opv L^2-\op L_z^2}{lm}			\\
+					&=& {1\over2}(\hope{lm}{\opv L^2}{lm}-\hope{lm}{\op L_z^2}{lm})	\\
+					&=& {1\over2}[l(l+1)\hbar^2-m^2\hbar^2]				\\
+					&=& {1\over2}\hbar^2[l(l+1)-m^2]
+	\end{eqnarray*} 
+
+	
+  
+

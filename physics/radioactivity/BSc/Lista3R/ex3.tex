@@ -1,0 +1,73 @@
+\begin{exercicio}[blue]
+	Uma fonte de $\el(241,)Am(,)$ (Emissor alfa com energia média de $5,48\unit{MeV}$) está exposta ao
+	ar. Quer-se utilizá-la para irradiar uma folha de plástico colocada a uma certa distância $d$. Qual
+	deve ser essa distância para que a energia média das partículas alfa que a atingem seja de 
+	$2,0\unit{MeV}$?
+\end{exercicio}
+
+	Divida a distância $d$ da fonte ao alvo em $n$ "fatias" de ar com espessura $\Delta x=d/n$ em cada uma
+das quais se pode aplicar a lei do decaimento exponencial. A relação entre as energias nas faces $x_i$ e 
+$x_{i+1}=x_i+\Delta x$ é, então, 
+	$$
+	E(x_{i+1}) = E(x_i)e^{-\mu(E(x_i))\,\Delta x}
+	$$
+	onde $\mu(E)$ é o coeficiente de atenuação linear.\par
+	Por comodidade apenas, vamos renomear $E(x_k)$ para $E_k$ e $\mu(E(x_k))=\mu(E_k)=\mu_k$. Assim 
+reescrevemos a lei acima:
+	$$  
+	E_{i+1} = E_ie^{-\mu_i\Delta x}
+	$$
+
+	Aplicando isso de forma recursiva para cada uma das fatias $\Delta x$, desde $x_0=0$ até $x_n=d$,
+	\begin{eqnarray*}
+ 	E_1 &=& E_0 e^{-\mu_0\Delta x}				\\
+	E_2 &=& E_1 e^{-\mu_1\Delta x}				\\
+	    &=& E_0 e^{-(\mu_0+\mu_1)\Delta x}			\\
+	E_3 &=& E_2 e^{-\mu_2\Delta x}				\\
+	    &=& E_0 e^{-(\mu_0+\mu_1+\mu_2)\Delta x}		\\
+	    &\vdots&							\\
+	E_{n+1} &=& E_0 e^{-\Delta x\sum_{j=0}^\infty\mu_j}
+	\end{eqnarray*}
+
+	obtemos a energia medida após uma distância $d$ no ar. Desenvolvendo um pouco mais concluímos que
+	$$
+	d\bigl ({1\over n}\sum_{j=0}^\infty\mu_j\bigr ) = \ln{E_0\over E_{n+1}}
+	$$
+
+	Se notarmos que a grandeza entre parênteses é a média de $\mu$ no intervalo $E_0$ e $E_{n+1}$:
+	$$
+	\bar\mu = \bigl ({1\over n}\sum_{j=0}^\infty\mu_j\bigr ) = 
+	{1\over E_{n+1}-E_0}\int_{E_0}^{E_{n+1}}\mu(E)\mathrm{dE}
+	$$
+	concluiremos que a distância $d$ procurada é
+	\begin{equation}\label{eq:d}
+	d = {(E_1-E_0)\ln(E_0/E_1)\over\int_{E_0}^{E_1}\mu(E)\mathrm{dE}}
+	\end{equation}
+	onde $E_1=E_{n+1}$\footnote{Renomeamos novamente por comodidade.}. Desta forma, o problema passa a ser
+avaliar a integral acima. Isto pode ser feito tomando os valores experimentais de $\mu_i$ no intervalo de
+interesse e ajustando uma {\sl curva} aos pontos para obter uma expressão $\mu(E)$. Utilizamos os dados do 
+{\sl Johns}:
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{ccc}
+  E(keV)	&     $\mu/\rho$ ($\mathrm{cm^2/g}$)	\\
+  \hline
+  2	&	0,0445	\\
+  3	& 	0,0358	\\
+  4	&  	0,0308	\\
+  5	&	0,0274	\\
+  6	&	0,0250	\\
+  \hline
+  \end{tabular}
+  \caption{\label{tab:ex3}\footnotesize Valores des coeficientes mássicos de absorção como função da energia
+	     para o ar. Densidade $1,205\unit{kg/m^3}$, conforme {\sl Johns}.}
+\end{table}
+
+	Neste intervalo, conseguimos ajustar uma parábola com $\chi_{\mathrm{red}}^2=0,9966$:
+	$$
+	\mu(E) = 0,1231\,E^2-1,5522\,E+7,9385\qquad(\times10^{-3})
+	$$
+
+	Imaginando que, apesar da distribuição de energias do feixe, ele possa ser considerado monoernergético,
+aplicando esta expressão na equação (\ref{eq:d}), com $E_1=2\unit{MeV}$ e $E_0=5,48\unit{MeV}$, encontramos 
+$d=253,29\unit{m}$.

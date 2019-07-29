@@ -1,0 +1,401 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\setlength{\unitlength}{0.75cm}
+
+\begin{document}
+
+
+\title {Lista 3 de Introdução à Física do Estado Sólido}  
+\author {I.R.Pagnossin \\ irpagnossin@hotmail.com}
+\date {30 de Outubro de 2000}
+\maketitle
+ 
+{\bf	1.}
+{\it	Considere um gás de elétrons em duas dimensões sujeito a condições periódicas de contorno. Sabendo que a densidade eletrônica deste gás é 
+	$n=N/A$ (elétrons/cm$^2$) determine:
+
+	a) A densidade de estados $\mathcal{D}(E)$;
+
+	b) A energia de Fermi para o gás em função de sua densidade $n$;
+
+	c) A energia cinética do gás de elétrons no estado fundamental.
+
+	d) Mostre que o potencial químico $\mu(T)$ é dado por
+		$$
+		\mu(T)=kT\ln(e^{{n\pi\hbar^2\over mkT}}-1)
+		$$
+}
+
+\vspace{0.5cm}
+
+	Sabemos que a densidade de estados é a quantidade de elétrons por unidade de energia,
+	$$
+	\mathcal{D}={\partial N\over\partial E}
+	$$
+
+	Deste modo, precisamos primeiro encontrar N, que depende da energia, e vice-versa: 
+	\begin{equation}
+	E={\hbar^2k^2\over 2m}
+	\end{equation} 
+
+	Mas esta depende de $k^2$. E precisamos determiná-lo. 
+
+	Construindo a rede recíproca a partir da rede direta -- supostamente dada --, notamos que a cada ponto (vetor) $\vec{k}$ desta associamos uma
+zona de Brillouin, de área $4\pi^2/A$ -- sendo $A$ a área da célula primitiva da rede direta --, e a cada uma destas dois estados quânticos de spin 
+($m_s=\pm1/2$). Isto é, dois elétrons\footnote{\sf No estado 
+fundamental. Caso contrário os níveis não estarão perfeitamente preenchidos.}. Ou seja, estamos associando a cada ponto $\vec{k}$ da rede recíproca dois
+elétrons. Por outro lado, o módulo do vetor $\vec{k}$ é dado por $k^2=k_x^2+k_y^2$. Isto sugere que a uma área $\pi k^2$ da rede recíproca ($\vec{k}_x
+\times\vec{k}_y$)  pode-se 
+associar um número  qualquer $N'$ de elétrons, e que este $\vec{k}$ dá, por (1), a energia daquele do último nível ocupado até aquele momento. E este é 
+facilmente encontrado por uma regra de três simples:
+	$$
+	{2e^{-}\over4\pi^2/A}={N'e^{-}\over\pi k^2} \Rightarrow k_F^2={2\pi N'\over A}
+	$$
+
+	Este resultado aplicado na equação (1) retorna
+	\begin{equation}
+	E={\hbar^2\over 2m}{2\pi N'\over A}={\pi\hbar^2N'\over mA}
+	\end{equation}
+
+	Isolando $N'$ nesta equação ficamos com $N'={mA\over\pi\hbar^2}E_F$, de onde determinamos a densidade de estados:
+	$$
+	\mathcal{D}={\partial N\over\partial E}={\partial\over\partial E}({mA\over\pi\hbar^2}E)={mA\over\pi\hbar^2}
+	$$
+
+	E aí está a resposta do {\bf item (a)}. Se, no entanto, o número $N'$ de elétrons ``envoltos'' por $k^2$ for exatamente o número de elétrons do
+átomo em questão, então a este $\vec{k}=\vec{k}_F$ corresponde uma energia especial $E_F$, chamada {\it Energia de Fermi}: A energia do último estado 
+ocupado. Assim, diretamente de (2) tiramos que esta energia é
+	$$
+	E_F={\pi\hbar^2N\over mA}={\pi\hbar^2n\over m}
+	$$
+
+	que é a resposta do {\bf item (b)}.
+
+	A energia cinética -- {\bf item (c)} -- por sua vez é facilmente determinada pela expressão
+	$$
+	T=\int_0^{E_F}E\mathcal{D}(E)dE={mA\over\pi\hbar^2}\int_0^{E_F}EdE={mA\over2\pi\hbar^2}E_F^2={1\over 2}NE_F
+	$$
+
+	Note que a integral acima é, na realidade a energia total do metal. Contudo, como o modelo utilizado considera o potencial e, consequentemente, 
+a energia potencial nulos, então toda a energia é cinética. Além disso, entenda esta integral: Estamos simplesmente fazendo uma somatória das energias 
+ponderada pela densidade de estado. Isto é, estamos multiplicando um valor de nivel de energia pela quantidade de elétrons naquele nível e somando isto
+para todos os níveis existente, desde zero até a energia máxima do átomo no estado fundamental, a {\it Energia de Fermi}.
+
+	Quando o átomo sai do estado fundamental, por efeito da temperatura, por exemplo, precisamos levar em consideração o fato de que os níveis energéticos
+deixam de estar seqüêncialmente preenchidos, esceto talvez para temperaturas muito baixas, principalmente aqueles próximos à energia de Fermi, pois os elétrons 
+mais externos passam a pular para níveis mais energéticos, despopulando os níveis do estado fundamental para popular energias acima da de Fermi. Com isso a energia
+do elétron mais energético muda e passa a se chamar {\it potencial químico} $\mu$, variando com a temperatura. 
+
+	No estado fundamental, sabemos que o número de elétrons é
+	$$ 
+	N=\int_0^{E_F}\mathcal{D}(E)dE
+	$$
+
+	Isto vem diretamente da definição de densidade de estados: $\mathcal{D}(E)={\partial N\over\partial E}$.
+	Já no estado excitado precisamos incluir a esta integral um fator $f(E)$, que é a função de Fermi-Dirac\footnote{\sf Utiliza-se a função de Fermi-Dirac
+pois, como os elétrons são férmions, seguem a estatística de Fermi-Dirac.}, o que transforma a integral acima em 
+	$$
+	N=\int_0^{\mu}\mathcal{D}(E)f(E)dE
+	$$
+
+	onde ${1\over f(E)}=1+e^{E-\mu\over kT}$, e o potencial químico $\mu$ é definido (ajustado) de modo a tornar a igualdade acima verdadeira:
+	\begin{eqnarray}
+	N	&	=	&	\int_0^{\mu}\mathcal{D}(E)f(E)dE				\nonumber \\
+		&	=	&	{mA\over\pi\hbar^2}\int_0^{\mu}f(E)dE				\nonumber \\
+		&	\cong	&	{mA\over\pi\hbar^2}\int_0^{\infty}{dE\over1+e^{E-\mu\over kT}}	 
+	\end{eqnarray}
+
+	A última igualdade substitui o limite superior da integral por $+\infty$. Isto se justifica simplesmente por que após $E=\mu$, a função de Fermi-Dirac
+torna-se praticamente nula. 
+	Fazendo $\lambda={E-\mu\over kT} \Rightarrow dE=k\lambda d\lambda$ e teremos, após algumas poucas passagens e substituições,
+	$$
+	\int{dE\over1+e^{E-\mu\over kT}}=kT\int{d\lambda\over1+e^{\lambda}}=kT\ln(1+e^{-\lambda})
+	$$
+
+	dando
+	$$
+	\int_0^{\infty}{dE\over1+e^{E-\mu\over kT}}=-kT[\ln(1+e^{\mu-E\over kT})]_0^{\infty}=kT\ln(1+e^{\mu\over kT})
+	$$
+
+	Levando em $(3)$,
+	$$
+	N={mA\over\pi\hbar^2}kT\ln(1+e^{\mu\over kT})	\Leftrightarrow	{n\pi\hbar^2\over mkT}=\ln(1+e^{\mu\over kT})	
+	\Leftrightarrow e^{\mu\over kT}=e^{n\pi\hbar^2\over mkT}-1
+	$$
+
+	Que dá 
+	$$
+	\mu(T)=kT\ln(e^{n\pi\hbar^2\over mkT}-1)
+	$$
+
+	o resultado que procurávamos -- {\bf item (d)}.
+
+\begin{picture}(10,0)\thicklines
+\put(5,0){\line(1,0){5}}
+\end{picture}
+
+{\bf 2.}
+{\it	Os metais monoatômicos de $Na$ e $K$ têm redes de Bravais cúbica de corpo centrado. Sabendo que ambos os sistemas encontram-se no mesmo estado
+	fundamental, calcule a energia cinética do elétron mais energético em cada um destes metais. Na temperatura $T\approx0K$ o parâmetro de rede
+	do $Na$ é $a_{Na}=4,225\AA$ e o do $K$ é $a_K=5,225\AA$.
+}
+
+\vspace{0.5cm}
+
+	Suponha que a base da estrutura cristalina seja de apenas um átomo. Então, como ambos $Na$ e $K$ pertencem à primeira família da tabela periódica,
+	$$
+	Na=1s^22s^22p^63s^1
+	$$
+	$$
+	K=1s^22s^22p^63s^13p^64s^1
+	$$
+
+	então ambos possuem um elétron de valéncia. Isto é, contribuem com apenas um elétron para a nuvem de férmions. Conseqüentemente, cada célula 
+convencional de volume $a^3$ contém dois elétrons, visto que numa célula CCC existem
+	$$
+	N=8{1\over8}+1=2
+	$$
+	
+	dois átomos. Desta forma, a densidade volumétrica de elétrons é\footnote{\sf Considerando distribuição uniforme dos elétrons em todo o metal.}
+	$$
+	n={2\over a^3}
+	$$
+
+	E a energia de Fermi fica sendo
+	\begin{eqnarray}
+	E_F	&	=	&	{\hbar^2\over2m}(3\pi^2n)^{2/3} 		\nonumber \\
+		&	=	&	{\hbar^2\over2m}({6\pi^2\over a^3})^{2/3}		\nonumber \\
+		&	=	&	{\hbar^2(6\pi^2)^{2/3}\over 2m}{1\over a^2}	\nonumber \\
+		&	\cong	&	{57,939\over a^2}				\nonumber
+	\end{eqnarray}
+
+	com $a$ dado em ângstrons e $E_F$ em elétrons-voltz. Como o modelo de Sommerfeld pressupõe energia potencial nula, então a Energia de Fermi é
+a energia cinética do elétron mais energético:
+	$$
+	T(Na)=E_F(Na)={57,939\over a^2}\cong3,24eV
+	$$
+	$$
+	T(K)=E_F(K)={57,939\over a^2}\cong2,12eV
+	$$
+
+\begin{picture}(10,0)\thicklines
+\put(5,0){\line(1,0){5}}
+\end{picture}
+
+{\bf 3.}
+{\it	Considere um metal monoatômico\footnote{\sf Tome $Na$ e $K$ do exercício anterior.} que tem rede de Bravais cúbida simples. Considere ainda que 
+	o parâmetro de rede deste metal varie linearmente com a temperatura no intervalo de $0K$ a $300K$ a uma taxa de $\gamma=1,5\cdot10^{-6}\AA/K$.
+
+	a) Qual a variação de $E_F$ e $v_F$ ({\it Velocidade de Fermi}) neste intervalo de temperatura?
+
+	b) Em $T=300K$ qual a fração de elétrons com energia superior a $E_F$?
+}
+
+\vspace{0.5cm}
+
+	Em tese, a energia de Fermi é definida para $T=0K$ somente. Contudo, como sua obtenção é feita populando-se os níveis de energia do átomo de forma
+a não haver estados quânticos intermediários não ocupados (Ou seja, populamos os níveis de forma a obter a menor energia total possível), podemos cogitar
+a possibilidade de fazermos o mesmo para uma temperatura diferente de zero, desde que a energia térmica não seja capaz de promover saltos quânticos.
+Isto equivale a dizer que a energia térmica não pode ser superior à diferença entre o nível de Fermi e o anterior -- Se o nível de Fermi não estiver
+totalmente populado -- ou o posterior -- Se estiver --, o que for menor. Pela expressão de Bohr para os níveis de energia do átomo de hidrogênio podemos
+estimar que a segunda opção dará a menor energia, e é esta que provavelmente limitará a temperatura. Isto posto, podemos simplesmente substituir a variação
+da densidade volumétrica de elétrons
+	$$
+	n={N\over V}={1\over a^3(T)}={1\over(a_0+\gamma T)^3}=(a_0+\gamma T)^{-3}
+	$$
+
+	na expressão da energia de Fermi
+	\begin{eqnarray}
+	E_F	&	=	&	{\hbar^2\over2m}(3\pi^2n)^{2/3}			 	\nonumber \\
+		&	=	&	{\hbar^2\over2m}[3\pi^2(a_0+\gamma T)^{-3}]^{2/3}	\nonumber \\
+		&	=	&	{\hbar^2(3\pi^2)^{2/3}\over2m(a_0+\gamma T)^2}		\nonumber \\
+		&	\cong	&	{36,500\over(a_0+\gamma T)}				\nonumber 
+	\end{eqnarray}
+
+	Com $a_0$ sendo o parâmetro de rede para $T=0K$ e dado em ângstrons, a energia $E_F$ em elétrons-voltz e a temperatura em Kelvin.
+
+	De fato, sabemos que $kT\approx0,0258eV$ à temperatura ambiente ($T=300K$). Pela expressão de Bohr há pouco comentada, para termos uma diferença
+de energia desta ordem precisaríamos estar no nível principal $n=8$, indo para o nível $n=9$. Mas até hoje todos os elementos naturais conhecidos não passam 
+de $n=7$\footnote{\sf Esta estimativa não leva em consideração variação da energia por outros números quânticos, haja vista que o próprio modelo utilizado
+aqui não as pressupõe.}. Logo podemos usar a expressão acima em $300K$ -- {\bf item (a)}:
+	\begin{eqnarray}
+	\Delta E_F(Na)	&	=	&	E_F(300K)-E_F(0K)							\nonumber \\			
+			&	=	&	36,500[(a_{0_{Na}}+300\gamma)^{-2}-a_{0_{Na}}^{-2}]			\nonumber \\
+			&	\cong	&	-0.43meV								\nonumber \\
+	\Delta E_F(K)	&	=	&	E_F(300K)-E_F(0K)							\nonumber \\
+			&	=	&	36,500[(a_{0_{K}}+300\gamma)^{-2}-a_{0_{K}}^{-2}]			\nonumber \\
+			&	\cong	&	-0.23meV								\nonumber
+	\end{eqnarray}
+
+	O sinal negativo indica que a energia decresce com o aumento da temperatura. Isto porque estamos considerando que o único efeito da temperatura é
+dilatar a estrutura do metal. Não estamos levando em conta o fato de que esta dilatação decorre de um aumento na energia de oscilação dos átomos em torno de 
+seu ponto de equilíbrio na estrutura. Em outras palavras, se por um lado a energia do elétron de valência diminui, por outro a energia do sistema como um todo 
+aumenta.
+
+	A velocidade de Fermi -- {\bf item (b)} --  é a velocidade associada à energia de Fermi, considerando nulo o potencial no metal:
+	$$
+	E_F={1\over2}mv_F^2 \Rightarrow	v_F^2={\hbar^2(3\pi^2)^{2/3}\over m^2(a_0+\gamma T)^2} \Rightarrow v_F={\hbar(3\pi^2)^{2/3}\over m}{1\over(a_0+\gamma T)}
+		\Rightarrow 
+	$$
+	$$
+	\Rightarrow 	v_F\cong {0,013c\over(a_0+\gamma T)}  
+	$$ 
+
+	onde $a_0$ é dado em ângstrons, a temperatura em Kelvin e a velocidade na dimensão escolhida para a velocidade da luz $c$.
+	\begin{eqnarray}
+	\Delta v_F(Na)	&	=	&	v_F(300K)-v_F(0K)								\nonumber \\
+			&	=	&	0,013[{1\over a_{0_{Na}}+300\cdot1,5\cdot10^{-6}}-{1\over a_{0_{Na}}}]		\nonumber \\
+			&	\cong	&	-90,31 m/s									\nonumber \\
+	\Delta v_F(K)	&	=	&	v_F(300K)-v_F(0K)								\nonumber \\
+			&	=	&	0,013[{1\over a_{0_{K}}+300\cdot1,5\cdot10^{-6}}-{1\over a_{0_{K}}}]		\nonumber \\
+			&	\cong	&	-59,05 m/s									\nonumber 
+	\end{eqnarray}
+ 
+	Ou seja, a velocidade do elétron mais energético decresce com o aumento da temperatura. O motivo disto é exatamento o mesmo que aquele dado à energia.
+
+	O número de elétrons que estão com energia acima da de Fermi ($T=0K$) é
+	\begin{eqnarray}
+	N_1	&	=	&	\int_{E_F}^{\mu} \mathcal{D}(E)f(E)dE 							\nonumber \\
+		&	=	&	\int_{E_F}^0\mathcal{D}(E)f(E)dE+\int_0^{\mu}\mathcal{D}(E)f(E)dE			\nonumber \\
+		&	=	&	\int_0^{\mu}\mathcal{D}(E)f(E)dE-\int_0^{E_F}\mathcal{D}(E)f(E)dE			\nonumber \\
+		&	\cong	&	\int_0^{\mu}\mathcal{D}(E)dE+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(\mu)-\int_0^{E_F}\mathcal{D}(E)f(E)dE
+																\nonumber 
+	\end{eqnarray}
+
+	na qual $\dot{\mathcal{D}}(E)={\partial D\over\partial E}$.
+	Numa primeira aproximação podemos fazer $E_F=\mu$, 
+	\begin{eqnarray}
+	N_1	&	\cong	 &	\int_0^{E_F}\mathcal{D}(E)dE-\int_0^{E_F}\mathcal{D}(E)f(E)dE+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(E_F)
+														\nonumber \\
+		&	\cong	&	\int_0^{E_F}[1-f(E)]\mathcal{D}(E)dE+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(E_F)
+														\nonumber 
+	\end{eqnarray}
+
+	Como consequência da aproximação anterior, temos ainda que a função de Fermi-Dirac é praticamente igual à unidade no intervalo $[0,E_F[$, o que anula
+a integral, restando-nos
+	$$
+	N_1\approx{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(E_F)
+	$$
+
+	A densidade de estados para um gás de elétrons tridimensional é $\mathcal{D}(E)={V\over2\pi^2}({2m\over\hbar^2})^{3/2}E^{1/2}$. Então,
+	\begin{eqnarray}
+	\dot{\mathcal{D}}(E)	&	=	&	{V\over4\pi^2}({2m\over\hbar^2})^{3/2}E^{-1/2}			\nonumber \\
+				&	=	&	{V\over4\pi^2}[{(3\pi^2n)^{2/3}\over E_F}]^{3/2}E^{-1/2}	\nonumber \\
+				&	=	&	{3\over4}N{E^{-1/2}\over E_F^{3/2}}				\nonumber \\
+	\dot{\mathcal{D}}(E_F)	&	=	&	{3\over4}{N\over E_F^2}						\nonumber 
+	\end{eqnarray}
+
+	Assim,
+	$$
+	{N_1\over N}={\pi^2\over6N}(kT)^2{3\over4}{N\over E_F^{2}}={\pi^2\over8}({kT\over E_F})^2
+	$$
+
+	Utilizando o resultado do exercício anterior, item (a), podemos determinar a fração de elétrons com energia acima da de Fermi: Para o Sódio, 
+$E_F(300K)=2,04eV$, que dá ${N_1\over N}\cong0,02\%$. Para o potássio, $E_F(300K)=1,34eV$ e ${N_1\over N}\cong0,04\%$.		
+
+\begin{picture}(10,0)\thicklines
+\put(5,0){\line(1,0){5}}
+\end{picture}
+
+{\bf 4.}
+{\it	Mostre que a capacidade calorífica eletrônica em baixas temperaturas ($kT<<E_F$) para um gás de $N$ elétrons em três dimensões é
+	$$
+	C_{el}={1\over2}\pi^2Nk{kT\over E_F}	
+	$$
+}
+
+\vspace{0.5cm}
+
+	O número $N$ de elétrons no gás é encontrado fazendo-se
+	$$
+	N=\int_0^{\mu}\mathcal{D}(E)f(E)dE
+	$$
+
+	Para resolver esta integral podemos utilizar a expansão de Sommerfeld:
+	$$
+	\int_{-\infty}^{\infty}\mathcal{H}(E)f(E)dE=\int_{-\infty}^{\mu}\mathcal{H}(E)dE+{\pi^2\over6}(kT)^2\dot{\mathcal{H}}(\mu)+\mathcal{O}
+	$$ 
+
+	onde $\mathcal{O}$ indica termos de ordens superiores e $\mathcal{H}(E)$ uma função qualquer cuja primitiva seja nula em $E=0$. Lembremos que 
+$\mathcal{D}(E)=0$ para $E<0$ e melhoramos a forma da expansão para\footnote{Perceba que colocaremos $\mathcal{D}(E)$ no lugar de $\mathcal{H}(E)$.} 
+	$$
+	\int_{0}^{\mu}\mathcal{H}(E)f(E)dE=\int_{0}^{\mu}\mathcal{H}(E)dE+{\pi^2\over6}(kT)^2\dot{\mathcal{H}}(\mu)+\mathcal{O}
+	$$ 
+	
+	Assim, a expressão para $N$ fica -- Deixando de lado os termos de ordens superiores. 
+	\begin{eqnarray}
+	N	&	=	&	\int_0^{\mu}\mathcal{D}(E)f(E)dE					\nonumber \\
+		&	=	&	\int_0^{\mu}\mathcal{D}(E)dE+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(\mu)	\nonumber \\
+		&	=	&	\int_0^{E_F}\mathcal{D}(E)dE+\int_{E_F}^{\mu}\mathcal{D}(E)dE+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(\mu)
+														\nonumber 
+	\end{eqnarray}
+
+	Como $E_F$ é bastante próximo de $\mu$, a integral entre estes valores pode ser avaliada pelo {\it Teorema do Valor Médio}:
+	$$
+	\int_{E_F}^{\mu}\mathcal{D}(E)dE=(\mu-E)\mathcal{D}(\zeta)
+	$$
+
+	$\zeta\in[E,\mu]$. Ou seja,
+	$$
+	N=\int_0^{E_F}\mathcal{D}(E)dE+(\mu-E)\mathcal{D}(\zeta)+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(\mu)
+	$$
+
+	mas note que a primeira integral é exatamente $N$ calculada em $T=0K$. Isto significa que
+	\begin{equation}
+	(\mu-E)\dot{\mathcal{D}}(\zeta)+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(\mu)=0
+	\end{equation} 
+
+	pois obviamente o número de elétrons não muda com a variação da temperatura. Esta é a expressão que nos interessa neste procedimento. Isto por que
+logo a seguir desenvolveremos os mesmos passos para a energia do gás e encontraremos um termo exatamente igual que se anulará e dará uma solução simples para
+o problema. 
+	
+	A energia total do gás de elétrons é 
+	\begin{eqnarray}
+	U	&	=	&	\int_0^{\mu}E\mathcal{D}(E)f(E)dE								\nonumber \\
+		&	=	&	\int_0^{\mu}E\mathcal{D}(E)dE+{\pi^2\over6}(kT)^2[\mu\dot{\mathcal{D}}(\mu)+\mathcal{D}(\mu)]	\nonumber \\
+		&	=	&	\int_0^{E_F}E\mathcal{D}(E)dE+\int_{E_F}^{\mu}E\mathcal{D}(E)dE+{\pi^2\over6}(kT)^2[\mu\dot{\mathcal{D}}(\mu)+
+												\mathcal{D}(\mu)]			\nonumber \\
+		&	=	&	\int_0^{E_F}E\mathcal{D}(E)dE+(\mu-E)\zeta\mathcal{D}(\zeta)+{\pi^2\over6}(kT)^2\mu\dot{\mathcal{D}}(\mu)+
+												{\pi^2\over6}(kT)^2\mathcal{D}(\mu)	\nonumber \\
+		&	=	&	\int_0~{E_F}E\mathcal{D}(E)dE+\mu[(\mu-E)\mathcal{D}(\mu)+{\pi^2\over6}(kT)^2\dot{\mathcal{D}}(\mu)]
+												+{\pi^2\over6}(kT)^2\mathcal{D}(\mu)	\nonumber \\
+		&	=	&	\int_0^{E_F}E\mathcal{D}(E)dE+{\pi^2\over6}(kT)^2\mathcal{D}(\mu)				\nonumber
+	\end{eqnarray}
+
+	Note que na última passagem fizemos, por conveniência $\zeta=\mu$. Perceba também que integral que sobrou é precisamente a energia no estado fundamental e
+que utilizamos a expressão $(3)$ para simplificar bastante o resultado.
+
+	A partir desta equação encontramos facilmente a capacidade calorífica pela conhecida expressão da termodinâmica:
+	\begin{eqnarray}
+	C_{el}	&	=	&	{\partial U\over\partial T}					\nonumber \\
+		&	=	&	{\pi^2\over3}k^2T\mathcal{D}(\mu)				\nonumber \\
+		&	=	&	{\pi^2\over3}k^2T\mathcal{D}(E_F)				\nonumber \\
+		&	=	&	{\pi^2\over3}k^2T {3\over2}{N\over E_F}				\nonumber \\
+		&	=	&	{1\over 2}\pi^2Nk{kT\over E_F}					\nonumber
+	\end{eqnarray}
+
+	E este é, finalmente, o resultado desejado.
+
+	 		
+	
+
+
+	 
+	
+
+\end{document} 
+	 
+
+
+
+
+
+
+
+
+
+
+

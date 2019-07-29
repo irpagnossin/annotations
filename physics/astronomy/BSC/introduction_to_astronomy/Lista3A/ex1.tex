@@ -1,0 +1,248 @@
+\begin{exercicio}\label{periodo}  
+	Encontre o período e a magnitude aparente média das estrelas HV 2063, HV 837, HV 843 e HV 1967
+a partir das curvas de luminosidade.
+\end{exercicio} 
+
+	A partir dos gráficos fornecidos, determina-se visualmente o período e as magnitudes aparente
+máxima e mínima para cada uma das quatro curvas referentes ao filtro V. Tira-se, então, a média dos 
+valores encontrados para cada uma das estrelas, obtendo
+
+\begin{table}[h]
+	\centering
+	\label{tab:periodos} 
+	\begin{tabular}{rccc}
+    	\hline
+	HV		&	P (dias)	&	$\log(P)$ 	&	$m$	\\
+	\hline
+	2063		&	10,93		&	1,04		&	14,55	\\
+	837		&	39,55		&	1,60		&	13,12	\\
+	843		&	15,35		&	1,19		&	14,85	\\
+	1967		&	29,33		&	1,47		&	14,52	\\
+	\hline
+  	\end{tabular}
+	\caption{\footnotesize Resultados obtidos das curvas de luminosidade para quatro estrelas da
+		pequena nuvem de Magalhães.} 
+\end{table} 
+
+\begin{exercicio}
+	Encontre a relação Período--Luminosidade para variáveis Cefeidas a partir dos dados de Kraf's
+(tabela 2)%\ref{tab:calibracao}).
+\end{exercicio} 
+
+	A calibração da relação Período--Magnitude Absoluta (O mesmo que Período--Luminosidade) é feita
+a partir dos dados da tabela 2:%(\ref{tab:calibracao}):
+
+	Obtemos então o gráfico da relação Período--Luminosidade:
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5,width=25em,height=40ex]{calibracao.jpg} 
+  \caption{\footnotesize Relação Período--Luminosidade obtida da tabela (\ref{tab:calibracao}).}
+  \label{fig:calibracao} 
+\end{figure} 
+
+	Utilizamos $0,3$\footnote{Esta é a menor incerteza permitida pela forma como foram apresentados
+os dados.} como incerteza na medida da magnitude absoluta. 
+	Fazendo a regreção linear encontramos uma equação para o gráfico:
+	\begin{equation}\label{eq:periodo} 
+	M = -3,516\,\log(P)-0,608\,\,\,\,\,\,\,\mathrm{[P]=dias}
+	\end{equation} 
+
+\begin{exercicio}
+	Encontre a distância até à pequena nuvem de Magalhães a partir dos dados de período e magnitude
+aparente da tabela (3) %(\ref{tab:magalhaes})  PROBLEMA DE REFERÊNCIA CRUZADA 
+mais os dados encontrados no exercicio anterior.%\ref{periodo}.
+\end{exercicio} 
+
+	Uma vez conhecida a relação Período--Luminosidade, eq.\ref{eq:periodo}, podemos determinar 
+facilmente a magnitude absoluta das cefeidas da pequena nuvem de Magalhães. 
+
+	Por exemplo, tome a estrela HV 2063, cujo período é $\log(P)=1,04$. Então, pela equação 
+(\ref{eq:periodo}),
+	$$
+	M=-3,516\,1,04-0,608\cong-4,25
+	$$
+
+	Por fim, da tabela (3)%(\ref{tab:magalhaes}) 
+encontramos facilmente a distância através da relação o módulo de distância
+	\begin{equation}\label{eq:modulo de distancia}
+	M = m + 5 - 5\,\log(d),\,\,\,\,\,\,\mathrm{[d]=pc}
+	\end{equation}
+
+	Seguindo o mesmo exemplo, faríamos 
+	$$
+	\log(d)={M-m-5\over-5}={-4,25-14,55-5\over-5}=4,76 \Rightarrow d=57\,544\,\mathrm{pc}
+	$$
+
+	Fazendo isso para cada uma das estrelas da tabela (3) %(\ref{tab:magalhaes})
+e calculando a média
+obtemos a distância aproximada de $62\,000\,\mathrm{pc}$ com incerteza de $28\%$.\footnote{Utilizamos
+como medida de incerteza a dispersão $\sigma$ da distribuição.}
+
+\begin{exercicio}
+	Calcular a distância até a galáxia M31--Andrômeda.
+\end{exercicio}
+
+	De forma idêntica ao exercício anterior encontramos, através da tabela (4),%(\ref{tab:andromeda})
+$d\cong 760\,000\,\mathrm{pc}\,(\pm 20\%)$ para a População I\footnote{A população II não foi utilizada 
+nos cálculos, conforme orientação do professor, embora sem sabermos exatamente o porquê.}
+
+\begin{exercicio}
+	Determine o diâmetro linear de M31 (em kiloparsecs) dado o seu diâmetro angular de $160'$. 
+\end{exercicio}
+
+	O diâmetro angular ($\phi$) é expresso por simples trigonometria:
+	$$
+	\tan \phi = {\varphi\over d}, 
+	$$
+
+	onde $\varphi$ é o diâmetro linear e $d$ a distância. Aqui utilizaremos a distância encontrada para
+a população I pois, devido à menor dispersão encontrada, facilmente evidenciada pelo erro na média, estas
+provavelmente encontram-se no Disco ou no Bojo da galáxia. Além disso, estrelas de população II são mais
+facilmente encontradas no Halo. Ou seja, estão mais dispersas (O que possivelmente explica a maior incerteza
+na distância encontrada) e, consequentemente, dão uma informação mais vaga a respeito da galáxia. Assim
+ficamos com
+	$$
+	\varphi = d\,\tan\phi \cong 760\,660\cdot\tan(160') \cong 35\,428\,\mathrm{pc}  
+	$$
+
+	Ou seja, o diâmetro de Andrômeda é de aproximadamente $35\,500\,\mathrm{pc}$, um pouco maior que
+a nossa galáxia, cujo diâmetro é por volta de $35\,000\,\mathrm{pc}$.
+
+\begin{exercicio} 
+	Com o telescópio Hubble, capaz de detectar magnitures inferiores a $27,5$, será possível observar
+variáveis cefeidas nas galáxias do aglomerado de Virgo, a $22\,\mathrm{Mpc}$?
+\end{exercicio}
+
+	Suponhamos que exista uma variável cefeida numa das galáxias do aglomerado de Virgo -- portanto a 
+$22\,\mathrm{Mpc}$ de distância -- cuja magnitude aparente seja $27,5$, a máxima perceptível pelo 
+telescópio Hubble. Pela relação do módulo da distância -- equação (\ref{eq:modulo de distancia}) -- 
+podemos determinar a maior magnitude absoluta (Ou seja, a estrela de menor luminosidade) possível de
+se detectar:
+	$$
+	M=m+5-5\log(d) \cong 27,5+5-5\log(22\times10^{6}) \cong -4,21
+	$$
+
+	Utilizando agora a relação Período--Luminosidade (eq.\ref{eq:periodo}),
+	$$
+	M=-3,516\log(P)-0,608 \Rightarrow P=10^{-{M+0,608\over3,516}} \cong 10\,\mathrm{dias}
+	$$
+
+	Isto é: O telescópio Hubble pode perceber variáveis cefeidas no aglomerado de Virgo desde
+que estas possuam período superior a $10$ dias aproximadamente. Podemos inclusive dizer que, se a
+população de cefeidas do universo distribui-se uniformemente pelo gráfico Período--Luminosidade,
+então, para qualquer cefeida no aglomerado de Virgo, temos $99/90\cong91\%$\footnote{Esta estimativa
+foi feita partindo-se da idéia de que cefeidas possuem período de oscilação entre 1 e 100 dias
+aproximadamente. Então, temos ao todo $100-1=99$ ``classes'' de cefeidas, distribuidas conforme seu 
+período, em agrupamentos de 1 em 1 dia. Mas podemos enxergar $100-10+1=90$ dessas ``classes''. Então,
+se existem igual número de estrelas em cada uma das ``classes'', teremos $90/99\cong0,91$ de 
+probabilidade de enxergá-la.}  de chance de enxergá-la através do Hubble. 
+\clearpage
+\begin{table}[t]%htbp]
+  \begin{minipage}[t]{0.46\textwidth} 
+  	\centering
+  	\begin{tabular}{rcc}
+    	\hline	
+    	Estrela		& $\log(P)$		& 	$M$ 	\\
+    	\hline
+    	SU Cas		&	0,29		&	-1,7 	\\
+	EV Sct		&	0,49		&	-2,4	\\
+	SS Sct		&	0,56		&	-2,4	\\
+	SU Cyg		&	0,58		&	-2,8	\\
+	Y Lac		&	0,64		&	-2,8	\\
+	FF Aql		&	0,65		&	-3,1	\\
+	CF Cas		&	0,69		&	-3,4	\\
+	V350 Sgr	&	0,71		&	-3,0	\\
+	CV Mon		&	0,73		&	-3,0	\\
+	RR Lac		&	0,81		&	-3,4	\\
+	U Sgr		&	0,83		&	-3,5	\\
+	$\eta$ Aql	&	0,86		&	-3,5	\\
+	RX Cam		&	0,90		&	-3,5	\\
+	DL Cas		&	0,90		&	-3,7	\\
+	S Nor		&	0,99		&	-3,7	\\
+	Z Lac		&	1,04		&	-4,1	\\
+	RW Cas		&	1,17		&	-4,5	\\
+	Y Oph		&	1,23		&	-5,3	\\
+	T Mon		&	1,34		&	-5,6	\\
+	SV Vul		&	1,65		&	-6,4	\\
+	\hline	
+ 	\end{tabular}
+	\label{tab:calibracao} 
+  	\caption{\footnotesize Calibração para a relação Período--Luminosidade obtida por Kraf's, 1961.}  
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.46\textwidth} 
+	\centering 
+  	\begin{tabular}{rcc|c}
+    	\hline
+    	HV		& 	$\log(P)$	& 	$m$	&	$M$ 	\\
+    	\hline
+	2019		&	0,21		&	16,8	&	-1,34	\\
+	2035		&	0,30		&	16,6	&	-1,66	\\
+	844		&	0,35		&	16,3	&	-1,83	\\
+	2046		&	0,41		&	16,0	&	-2,04	\\
+	1809		&	0,45		&	16,1	&	-2,18	\\
+	1987		&	0,50		&	16,0	&	-2,36	\\
+	1825		&	0,63		&	15,6	&	-2,82	\\
+	1903		&	0,71		&	15,6	&	-3,10	\\
+	1945		&	0,81		&	15,2	&	-3,45	\\
+	2060		&	1,01		&	14,3	&	-4,15	\\
+	{\bf 2063} 	&	{\bf 1,04}	&	{\bf 14,5}	&	{\bf -4,76}	\\
+	1873		&	1,11		&	14,7	&	-4,50	\\
+	{\bf 843}	&	{\bf 1,19}	&	{\bf 14,8}	&	{\bf -4,79} 	\\
+	{\bf 1967}	&	{\bf 1,47}	&	{\bf 14,5} 	&	{\bf -5,77}	\\
+	1954		&	1,22		&	13,8	&	-4,89 	\\
+	847		&	1,44		&	13,8	&	-5,66	\\
+	840		&	1,52		&	13,4	&	-5,95	\\
+	{\bf 837}	&	{\bf 1,60}	&	{\bf 13,1}	&	{\bf -6,23} 	\\
+	11182		&	1,60 		&	13,6	&	-6,23	\\
+	1837		&	1,63		&	13,1	&	-6,33	\\
+	1877		&	1,70		&	13,1	&	-6,58 	\\
+	\hline	
+  	\end{tabular}
+	\label{tab:magalhaes}
+	\caption{\footnotesize Informações sobre o período (em dias) e as magnitudes de algumas variáveis
+	cefeidas da pequena nuvem de Magalhães. Os valores em negrito são aqueles obtidos no exercício 1.} 
+  \end{minipage} 
+\end{table} 
+
+
+\begin{table}
+	\centering
+	\begin{tabular}{ccc|c}
+    	\hline
+    	Estrela		& 	$\log(P)$	& 	$m$	&	$M$ 	\\
+    	\hline
+	\multicolumn{4}{c}{População I}						\\
+	27		&	0,41		&	21,7	&	-2,04	\\
+	11		&	0,47		&	21,1	&	-2,25	\\
+	10		&	0,48		&	21,7	&	-2,29	\\
+	21		&	0,52		&	21,6	&	-2,43	\\
+	48		&	0,53		&	22,0	&	-2,46	\\
+	36		&	0,55		&	21,7	&	-2,53	\\
+	46		&	0,57		&	22,1	&	-2,60	\\
+	13		&	0,58		&	21,7	&	-2,64	\\
+	2		&	0,64		&	21,2	&	-2,85	\\
+	17		&	0,83		&	20,8	&	-3,52	\\
+	9		&	0,93		&	20,5	&	-3,87	\\
+	8		&	0,98		&	20,4	&	-4,05	\\
+	3		&	1,10		&	20,4	&	-4,47	\\
+	5		&	1,11		&	20,4	&	-4,50	\\
+	30		&	1,11		&	20,4	&	-4,50	\\
+	31		&	1,13		&	19,8	&	-4,57	\\
+	15		&	1,33		&	19,8	&	-5,29	\\
+	\hline
+	\multicolumn{4}{c}{População II}					\\
+	57		&	1,28		&	21,8	&	-5,10	\\
+	22		&	1,57		&	21,3	&	-6,12	\\
+	24		&	1,66		&	20,6	&	-6,44	\\
+	47		&	1,73		&	21,3	&	-6,68	\\
+	34		&	1,79		&	20,6	&	-6,89	\\
+	\hline
+  	\end{tabular}
+	\label{tab:andromeda} 
+	\caption{\footnotesize Informações sobre o período (em dias) e as magnitudes de algumas variáveis
+	cefeidas da galáxia de Andrômeda (M31). Os valores à esquerda da barra vertical são dados do
+	problema e aqueles à direita foram calculados.} 
+\end{table} 
+
+

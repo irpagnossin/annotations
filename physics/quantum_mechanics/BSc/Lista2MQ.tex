@@ -1,0 +1,279 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 2 de Mecânica Quântica}
+\author { Ivan Ramos Pagnossin }
+\date { 05 de Julho de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+
+{\bf 1.(a)}
+{\it	Calcule os níveis de energia do átomo de hidrogênio assumindo que o elétron move-se em órbitas circulares ao redor do núcleo tais que as circunferências
+	dessas órbitas são múltiplas inteiras do comprimento de onda de De Broglie. {\bf(b)} Calcule a freqüência da radiação emitida quando o elétron salta 
+	de uma órbita para aquela imediatamente exterior.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	A quantização sugerida pelo exercício é
+	$$
+	2\pi r=n\lambda 	\Rightarrow	r={n\lambda\over2\pi}={nh\over2\pi p}={n\hbar\over p}
+	$$
+
+	Sabemos ainda ser válido que $\vec{F}_{el}={1\over4\pi\epsilon_0}{Ze^2\over r^2}=m{v^2\over r}=\vec{F}_{cp}$. Aplicando o último resultado nesta 
+expressão encontraremos
+	$$
+	{1\over4\pi\epsilon_0}{Ze^2\over r}=mv^2	\Rightarrow	{1\over4\pi\epsilon_0}{Ze^2\over{h\hbar\over p}}=mv{m\over m}v={p^2\over m}
+	\Rightarrow	p_n={1\over4\pi\epsilon_0}{mZe^2\over n\hbar}
+	$$
+
+	Retornando este resultado na expressão de $r$ acima, encontramos
+	$$
+	r_n=4\pi\epsilon_0{n^2\hbar^2\over mZe^2}
+	$$
+
+	Agora, tendo $r_n$ e $p_n$, podemos calcular $T_n$ e $V_n$ para então encontrarmos $E_n=T_n+V_n$:
+	\begin{eqnarray}
+	T_n	&	=	&	{p_n^2\over m}								\nonumber \\
+		&	=	&	{1\over2m}{1\over(4\pi\epsilon_0)^2}{m^2Ze^4\over n^2\hbar^2}		\nonumber \\
+		&	=	&	{mZ^2e^4\over2(4\pi\epsilon_0)^2(n\hbar)^2}				\nonumber
+	\end{eqnarray} 
+
+	e
+	\begin{eqnarray}
+	V_n	&	=	&	-{Ze^2\over4\pi\epsilon_0r_n}						\nonumber \\
+		&	=	&	-{Ze^2\over4\pi\epsilon_0{4\pi\epsilon_0{n^2\hbar^2\over mZe^2}}}	\nonumber \\
+		&	=	&	-{mZ^2e^4\over(4\pi\epsilon_0)^2(n\hbar)^2}				\nonumber
+	\end{eqnarray}
+
+	Consequentemente,
+	\begin{eqnarray}
+	E_n	&	=	&	T_n+V_n									\nonumber \\
+		&	=	&	{mZ^2e^4\over2(4\pi\epsilon_0)^2(n\hbar)^2(-{mZ^2e^4\over(4\pi\epsilon_0)^2(n\hbar)^2})}
+														\nonumber \\
+		&	=	&	-{mZ^2e^4\over2(4\pi\epsilon_0)^2(n\hbar)^2}				\nonumber
+	\end{eqnarray}
+
+	Imagine agora que o elétron salte de um nível $n$ para outro, $n+1$. Neste caso a frequência da radiação emitida é
+	\begin{eqnarray}
+	\nu	&	=	&	{E_{n+1}-E_n\over h}							\nonumber \\
+		&	=	&	{mZ^2e^4\over4\pi(4\pi\epsilon_0)^2\hbar^3}({1\over(n+1)^2}-{1\over n^2})\nonumber 
+	\end{eqnarray}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 4.}
+{\it	Calcule a corrente de densidade de probabilidade $\vec{S}$ para a região $x>0$ para o caso de uma barreira de potencial quadrada em $x=0$. Qual o
+	significado físico quando $E<V$?	
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Dos cálculos em sala de aula sabemos que a função de onda na região considerada é
+	\begin{eqnarray}
+	\Psi_2(x,t)	&	=	&	{2k_1A\over k_1^2+k_2^2}e^{-k_2x}(k_1+ik_2)e^{-i\phi t}			\nonumber \\
+			&	=	&	H(x)(k_1+ik_2)e^{-i\phi t}						\nonumber 
+	\end{eqnarray}
+
+	Perceba que $H(x)$ é uma função real.
+
+	Para calcularmos $\vec{S}$ precisamos conhecer $\Psi_2^*$:
+	\begin{eqnarray}
+	\Psi_2^*(x,t)	&	=	&	H(x)e^{-k_2x}[(k_1+ik_2)e^{-i\phi t}]^*		\nonumber \\
+			&	=	&	H(x)e^{-k_2x}(k_1+ik_2)^*[e^{-i\phi t}]^*	\nonumber \\
+			&	=	&	H(x)e^{-k_2x}(k_1-ik_2)e^{i\phi t}		\nonumber
+	\end{eqnarray}
+
+	Além disso, precisamos das derivadas espaciais. 
+	$$
+	{\partial\Psi_2\over\partial x}={dH\over dx}(k_1+ik_2)e^{-i\phi t}
+	$$
+
+	e
+	$$
+	{\partial\Psi_2^*\over\partial x}={dH\over dx}(k_1-ik_2)e^{i\phi t}
+	$$
+
+	Agora podemos calcular a corrente de densidade de probabilidade:
+	\begin{eqnarray}
+	\vec{S}(\vec{r},t)	&	=	&	{i\hbar\over2m}[\Psi(\vec{r},t)\vec{\nabla}^2\Psi^*(\vec{r},t)-
+								\Psi^*(\vec{r},t)\vec{\nabla}^2\Psi(\vec{r},t)]\hat{i}		\nonumber \\
+	\vec{S}(x,t)		&	=	&	{i\hbar\over2m}[\Psi(x,t){d\Psi^*\over dx}(x,t)-\Psi^*(x,t){d\Psi\over dx}(x,t)]\hat{i}	
+																\nonumber \\
+				&	=	&	{i\hbar\over2m}\{[H(x)(k_1+ik_2)e^{-i\phi t}][{dH\over dx}(k_1-ik_2)e^{i\phi t}]-
+																\nonumber \\
+				&		&		-[H(x)(k_1-ik_2)e^{i\phi t}][{dH\over dx}(k_1+ik_2)e^{-i\phi t}]\}\hat{i}
+																\nonumber \\
+				&	=	&	{i\hbar\over2m}[H(x)\dot{H}(x)(k_1+ik_2)(k_1-ik_2)-\dot{H}(x)H(x)(k_1+ik_2)(k_1-ik_2)]\hat{i}
+																\nonumber \\
+				&	=	&	\vec{0}									\nonumber
+	\end{eqnarray}	
+
+	Isto significa que, apesar de haver probabilidade de encontrarmos a partícula na região classicamente proibida, ainda sim sabemos com certeza
+que ela será refletida pelo degrau de potencial, pois não há fluxo de densidade de probabilidade para esta região. 
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 5.}
+{\it	Calcule a probabilidade de transmissão da barreira (fig. 3-2 do livro texto) para partículas de massa $m$ e energia $E>V$. Assuma que a barreira
+	é suficientemente fina tal que a condição $\hbar/(2mE)^{1/2}>>a$ é válida (Isto é equivalente a assumir que o comprimento de onda de De Broglie
+	da partícula muito mais longo que a espessura da barreira. Mostre esta equivalência)
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}	
+
+	Sabemos dos cálculos em sala de aula que a probalidade de transmissão de $\vec{S}$ numa tal barreira é
+	$$
+	T={4\epsilon(\epsilon-U_0)\over 4\epsilon(\epsilon-U_0)+U_0\sin^2(k_2a)}
+	$$
+
+	Se, pela condição dada pelo enunciado, 
+	$$
+	{\hbar\over\sqrt{2mE}}>>a	\Rightarrow	{\sqrt{2mE}\over\hbar}<<{1\over a}
+	$$
+
+	Mas $E>V_0$ e, obviamente, $E-V_0<E$. Logo, também vale dizer que 
+	$$
+	{\sqrt{2m(E-V_0)}\over\hbar}<<{1\over a}	\Rightarrow 	\sqrt{{2m(E-V_0)\over\hbar^2}}=k_2<<{1\over a}
+	$$
+
+	Ou ainda, de forma mais conveniente, $k_2={1\over Na}$, onde $N$ é um número muito grande. Nesta situação, podemos simplificar a parte trigonométrica 
+da expressão de $T$:
+	$$
+	\sin(k_2a)=\sin({a\over Na})=\sin{1\over N}\approx 0
+	$$
+
+	Isto leva a taxa de trasmissão imediatamente a um! Ou seja, se o comprimento de onde de De Brogile for muito maior que a espessura da barreira, então
+a partícula tem praticamente 100\% de chance de atravessar a barreira.
+
+	Por fim, mostremos a equivalência entre se dizer que  $\hbar/(2mE)^{1/2}>>a$ e $\lambda>>a$:
+	\begin{eqnarray}
+	{\hbar^2\over2mE}	&	=	&	{\hbar^2\over2m{p^2\over2m}}					\nonumber \\
+				&	=	&	({\hbar\over p})^2						\nonumber \\
+				&	=	&	{1\over 4\pi^2}({h\over p})^2					\nonumber \\
+				&	=	&	{\lambda^2\over4\pi^2}						\nonumber 
+	\end{eqnarray}
+
+	E, como $\hbar/(2mE)^{1/2}>>a$, então também ${\lambda\over2\pi}>>a$. Multiplicando por $2\pi$ teremos, como desejávamos, $\lambda>>a$.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 6.}
+{\it	Calcule uma expressão explícita que represente o envelope de onda de uma partícula livre dada por
+	$$
+	\psi(x,t)=\int_{-\infty}^{+\infty}e^{-{(k-k_0)^2\over a}}e^{i(kx-\omega t)}dk	
+	$$
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Fazendo a mudança de variável $u=k-k_0$, reescrevemos a integral como 
+	\begin{eqnarray}
+	\psi(x,t)	&	=	&	\int_{-\infty}^{+\infty} e^{-{u^2\over a}}e^{i(ux+k_0x-\omega t)}du				\nonumber \\
+			&	=	&	e^{i(k_0x-\omega t)}\int_{-\infty}^{+\infty} e^{-{u^2\over a}+iux}du				\nonumber
+	\end{eqnarray}
+
+	Utilizando a técnica de ``completar o quadrado'', podemos reescrever o argumento do integrando:
+	\begin{eqnarray}
+	\psi(x,t)	&	=	&	e^{i(k_0x-\omega t)}\int_{-\infty}^{+\infty} e^{-({u-{iax\over2}\over\sqrt{a}})^2}e^{-{ax^2\over4}}du	\nonumber \\
+			&	=	&	e^{i(k_0x-\omega t)}e^{-{ax^2\over4}}\sqrt{a}\int_{-\infty}^{+\infty} e^{-\eta^2}d\eta			\nonumber \\
+			&	=	&	\sqrt{a\pi}e^{i(k_0x-\omega t)}e^{-{ax^2\over4}}							\nonumber
+	\end{eqnarray}
+
+	Note que na segunda passagem utilizamos a mudança de variável $-({u-{iax\over2}\over\sqrt{a}})=u$. E esta é a expressão que procurávamos.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 7.}
+{\it	Calcule a transmissão de duas finas barreiras de potencial retangular com altura $V$ e espessura $2a$, considerando-as separadas por uma distância
+	$b$. Discuta o efeito de ressonância que pode ocorrer para certos valores de energias da partícula.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{picture}(10,5)\thicklines
+\put(0,0){\line(1,0){3}}
+\put(3,0){\line(0,1){3}}
+\put(3,3){\line(1,0){1}}
+\put(4,0){\line(0,1){3}}
+\put(4,0){\line(1,0){2}}
+\put(6,0){\line(0,1){3}}
+\put(6,3){\line(1,0){1}}
+\put(7,0){\line(0,1){3}}
+\put(7,0){\line(1,0){3}}
+\put(0,4){\line(1,0){10}}
+\end{picture}
+
+
+	{\bf(a)}Suponha que a onda incida pela esquerda. As soluções, para cada região, é
+	$$ 
+	\psi_1(x)=Ae^{ik_1x}+Be^{-ik_1x}
+	$$
+	$$
+	\psi_2(x)=Ce^{ik_2x}+De^{-ik_2x}
+	$$
+	$$
+	\psi_3(x)=Ee^{ik_1x}+Fe^{-ik_1x}
+	$$
+	$$
+	\psi_4(x)=Ge^{ik_2x}+He^{-ik_2x}
+	$$
+	$$
+	\psi_5(x)=Ie^{ik_1x}
+	$$
+ 
+	A transmissão da primeira barreira é 
+	$$
+	T_1=|{G\over A}|^2={4\epsilon(\epsilon-U_0)\over 4\epsilon(\epsilon-U_0)+U_0\sin^2(k_2a)}
+	$$
+
+	E a da segunda, com relação à primeira, é 
+	$$
+	T_2=|{I\over G}|^2={4\epsilon(\epsilon-U_0)\over 4\epsilon(\epsilon-U_0)+U_0\sin^2(k_2a)}
+	$$
+
+	A transmissão total é, então, 
+	$$
+	|{I\over A}|^2=|{G\over A}|^2|{I\over G}|^2=T_1T_2=[{4\epsilon(\epsilon-U_0)\over 4\epsilon(\epsilon-U_0)+U_0\sin^2(k_2a)}]^2
+	$$
+
+	{\bf(b)}Como durante todo o processo o comprimento de onda de De Broglie não se altera, então, no intervalo $b$ entre as duas barreiras haverá,
+para certos comprimentos de onda (ou energias) específicos, formação de uma onda estacionária nesta região, cuja amplitude aumenta com o tempo, a medida
+que mais e mais partículas são lançadas contra as barreiras. Ou seja: Para determinados valores de energia de feixes incidentes, haverá grande probabilidade
+de acúmulo de partículas nesta região.
+
+\end{document}		
+
+
+
+

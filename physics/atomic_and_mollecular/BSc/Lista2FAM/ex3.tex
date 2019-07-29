@@ -1,0 +1,175 @@
+\begin{quotation}
+{\bf 3.}
+{\it	Os autovetores $\ket x$ do operador $\op X$ satisfazendo
+	$$
+	\op X\ket x = x\ket x ,
+	$$
+
+	formam uma base ortonormal. Considere os kets $\ket k$ cujas projeções ao longo da base
+$\{\ket{x} \}$ são dadas por
+	$$
+	\iprod{x}{k} = {1\over\sqrt{2\pi}}e^{ikx}
+	$$
+
+	{\tt (a)} Mostre que os kets $\ket k$ formam uma base ortonormal, ou seja, que satisfazem
+
+	\begin{minipage}[t]{0.46\textwidth}
+	$$
+	\iprod{k_i}{k_j}=\delta(k_i-k_j) 
+	$$
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.46\textwidth}
+	$$
+	\int_{-\infty}^\infty\ket k\bra k dk = \op I
+	$$
+	\end{minipage}
+
+	{\tt (b)} Mostre que os elementos de matriz do operador $\op X$ nas duas bases são dados por
+	$\hope{x_i}{\op K}{x_j}=x_j\delta(x_i-x_j)$ e $\hope{k_i}{\op X}{k_j}=i\delta'(k_i-k_j)$.
+
+	{\tt (c)} Seja $\op K$ o operador
+	$$
+	\op K = \int_{-\infty}^\infty k\ket k\bra k dk
+	$$
+
+	Determine os elementos de matriz desse operador nas duas bases.
+
+	{\tt (d)} Seja $\ket f$ um ket com componentes $\iprod{x}{f}=f(x)$. Determine $\hope{x}{\op K}{f}$.
+}
+\end{quotation}
+
+	{\tt (a)} No caso da ortogonalidade, o cálculo é direto:
+	\begin{eqnarray*}
+	\iprod{k_i}{k_j}	&=& \hope{k_i}{\op I}{k_j}					\\
+				&=& \intii dx \iprod{k_i}{x} \iprod {x}{k_j}			\\
+				&=& \intii {1\over\sqrt{2\pi}}e^{-ik_ix}
+							{1\over\sqrt{2\pi}}e^{ik_jx}dx		\\
+				&=& {1\over2\pi}\intii e^{-i(k_i-k_j)x}dx			\\
+				&=& \delta(k_i-k_j)
+	\end{eqnarray*}	
+
+	A última passagem foi feita com o auxílio do conhecimento adquirdo no exercício anterior. Já
+para o caso da completeza, vamos mostrar que $\iprod{x_i}{x_j}=\hope{x_i}{\op I}{x_j}$, utilizando
+para $\op I$ a expressão que queremos verificar se é verdadeira:
+	\begin{eqnarray*}
+	\hope{x_i}{\op I}{x_j}	&=& \bra{x_i}(\intii dk\ket{k}\bra{k})\ket{x_j}			\\
+				&=& \intii \iprod{x_i}{k}\iprod{k}{x_j}dk			\\
+				&=& \intii {1\over\sqrt{2\pi}}e^{ikx_i}{1\over\sqrt{2\pi}}e^{-ikx_j}\\
+				&=& {1\over2\pi}\intii e^{i(x_i-x_j)k}dk			\\
+				&=& \delta(x_i-x_j)						\\
+				&=& \iprod{x_i}{x_j}
+	\end{eqnarray*} 
+	
+	Está, portanto, demonstrada a completeza e a ortonormalidade do conjunto $\{\ket k\}$ e, por
+conseguinte, podemos dizer que este conjunto forma uma base do espaço de Hilbert. 
+
+	{\tt (b)} Calculemos primeiro $\hope{x_i}{\op X}{x_j}$:	
+	\begin{eqnarray*} 
+	\op X\ket{x_j} = x_j\ket{x_j} \Rightarrow \hope{x_i}{\op X}{x_j}&=& x_j\iprod{x_i}{x_j}  \\
+								       	&=& x_j\delta(x_i-x_j)   
+	\end{eqnarray*}
+
+	Agora, para se obter $\hope{k_i}{\op X}{k_j}$ é preciso um pouco mais de atenção pois o
+resultado não sai automaticamente:
+	\begin{eqnarray*}
+	x_i\ket{x_i}		&=& \op X\ket{x_i}						\\ 
+	x_i\iprod{k_i}{x_i}	&=& \hope{k_i}{\op X}{x_i} 					\\
+				&=& \hope{k_i}{\op X\op I}{x_i}					\\
+				&=& \hope{k_i}{\op X\int dk_j\ket{k_j}\bra{k_j}}{x_i}		\\
+				&=& \intii \hope{k_i}{\op X}{k_j}\iprod{k_j}{x_i} dk_j		\\
+	{x_i\over\sqrt{2\pi}}e^{-ik_ix_i}
+				&=& \intii \hope{k_i}{\op X}{k_j}{1\over\sqrt{2\pi}}
+						e^{-ik_jx_i}dk_j				\\
+	-i{x_i\over\sqrt{2\pi}}e^{-ik_ix_i}
+				&=& -i\intii \hope{k_i}{\op X}{k_j}{1\over\sqrt{2\pi}}
+						e^{-ik_jx_i}dk_j				\\
+	{d\over dk_i}e^{-ik_ix_i}
+				&=& -i\intii \hope{k_i}{\op X}{k_j}e^{-ik_jx_i}dk_j		\\
+	{dF(k_i)\over dk_i}	&=& \intii (-i\hope{k_i}{\op X}{k_j})F(k_j)dk_j			
+	\end{eqnarray*} 
+
+	Comparando com a conhecida propriedade da função delta de Dirac
+	$$				 
+	\int_{-\infty}^\infty F(\lambda)\delta'(x-\lambda)d\lambda = {d\over dx}F(x)
+	$$
+
+	concluímos que 
+	$$
+	-i\hope{k_i}{\op X}{k_j} = \delta'(k_i-k_j) \Rightarrow \hope{k_i}{\op X}{k_j} = i\delta'(k_i-k_j)
+	$$
+
+	{\tt (c)} O operador $\op K$, expresso na base $\{\ket k\}$, fica sendo
+	\begin{eqnarray*}
+	\hope{k_i}{\op K}{k_j}	&=& \bra{k_i}\intii kdk\ket{k}\bra{k}\ket{k_j}			\\
+				&=& \intii k\iprod{k_i}{k}\iprod{k}{k_j}dk			\\
+				&=& \intii k\delta(k_i-k)\delta(k-k_j)dk			\\
+				&=& k_j\delta(k_i-k_j)	
+	\end{eqnarray*}
+
+	Já na base $\{\ket x\}$ o resultado é um pouco mais complicado:
+	\begin{eqnarray*}
+	\hope{x_i}{\op K}{x_j}	&=& \bra{x_i}\intii k\ket{k}\bra{k}dk\ket x_j			\\
+				&=& \intii k\iprod{x_i}{k}\iprod{k}{x_j}dk				\\
+				&=& \intii k{1\over\sqrt{2\pi}}e^{ikx_i}{1\over\sqrt{2\pi}}e^{-ikx_j}dk \\
+				&=& {1\over2\pi}\intii ke^{i(x_i-x_j)k} dk				\\
+				&=& {1\over2\pi}\lim_{\lambda\rightarrow\infty}
+						\int_{-\lambda}^{\lambda} ke^{i\Delta xk} dk		\\
+				&=& \lim_{\lambda\rightarrow\infty}[{e^{i\Delta xk}\over(i\Delta x)^2}
+						(i\Delta xk-1)]_{-\lambda}^{\lambda}			\\
+				& & \vdots								\\
+				&=& -2i\lim_{\lambda\rightarrow\infty}[{\cos(\lambda\Delta x)\over\Delta x}
+						+{\sin(\lambda\Delta x)\over\Delta^2x}] 		
+	\end{eqnarray*}
+
+	Que é uma solução nada comportada: As funções trigonométricas no numerador são limitadas mas
+oscilatórias e, como $\lambda$ não é um valor definido, o resultado permanece oscilando indefinidamente sem
+termos como determiná-lo precisamente. O máximo que se pode fazer é uma aproximação tomando um valor de
+$\lambda$ bastante grande de modo a cumprir alguma exigência de precisão do tipo 
+$|\op K(\Delta x+\rho)-\op K(\Delta x)|<\epsilon$, sendo $\rho$ uma pequena variação em 
+$\Delta x$\footnote{\footnotesize Note que não convém escrever, neste caso, $\op K(i,j)$, pois como se
+pode ver pelo resultado acima, $\hope{x_i}{\op K}{x_j}$ têm uma dependência melhor expressa pela diferença
+entre $x_i$ e $x_j$.} e $\epsilon$ o erro máximo que se permite em $\op K(i,j)$. Uma condição típica seria
+	$$
+	|\Delta\op K(i,j)|=|{d\op K\over d\Delta x}\Delta x|<\epsilon
+	$$
+
+	Concluímos desta forma que a base $\{\ket x\}$ não é a melhor opção para se trabalhar com $\op K$.
+Melhor que isso, concluímos que é uma péssima idéia projetar $\op K$ em $\{\ket x\}$! 
+
+
+	Item {\tt (d)}
+	\begin{eqnarray*}
+	\hope{x}{\op K}{f}	&=& \bra x(\intii k\ket k\bra k dk)\ket f		\\
+				&=& \intii k\iprod{x}{k}\iprod{k}{f}dk			\\
+				&=& {1\over\sqrt{2\pi}}\intii e^{ikx}\iprod{k}{f}kdk			\\
+				&=& {1\over\sqrt{2\pi}}\intii e^{ikx}\hope{k}{I}{f}kdk			\\
+				&=& {1\over\sqrt{2\pi}}\intii e^{ikx}
+					\bra{x}(\intii \ket{x_i}\bra{x_i}dx_i)\ket{f}kdk		\\
+				&=& {1\over\sqrt{2\pi}}\intii e^{ikx}
+					(\intii\iprod{k}{x_i}\iprod{x_i}{f}dx_i)kdk			\\
+				&=&  {1\over\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{ikx}
+					\intii{1\over\sqrt{2\pi}}e^{-ikx_i}\iprod{x_i}{f}dx_i kdk	\\
+				&=& {1\over2\pi}\intii ke^{ikx}\intii f(x_i)e^{-ikx_i}dx_i dk
+	\end{eqnarray*}
+  
+	Uma outra opção, mais compacta, é
+	\begin{equation}
+	\label{eq:K(x,f)} 
+	\hope{x}{\op K}{f} = {1\over\sqrt{2\pi}}\intii kF(k)e^{ikx}dk
+	\end{equation} 
+
+	onde $F(k)=\mathcal{F}[f(x)]$ é a transformada de Fourier de $f(x)$\footnote{\footnotesize Note 
+como o cálculo acima é coerente: Se, o operador $\op K$ não possuísse um $k$ no integrando, teríamos
+exatamente $\op K=\op I$ e deveríamos obter, ao final, simplesmente $f(x)$. Mas isto de fato ocorre, pois
+note que, não fosse o mesmo $k$ no integrando da equação (\ref{eq:K(x,f)}) a integral seria a 
+anti-transformada de Fourier da transformada de $f(x)$, que é precisamente $f(x)$!}. 
+		
+		
+				
+		 
+	
+	
+	
+	
+

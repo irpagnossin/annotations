@@ -1,0 +1,46 @@
+\begin{exercicio}[blue]
+	Um feixe paralelo de raios X monocromáticos ($E=20\unit{keV}$) com fluência de 
+$4,5\times10^{12}$ fótons$\,\cdot\, cm^{-2}$ incide perpendicularmente à base de um cilindro 
+preenchido com água. As dimensões do cilindro são: diâmetro de $5,0\unit{cm}$ e altura 
+de $10,0\unit{cm}$. 
+\begin{itemize} 
+\item[a.]	Qual a fluência do feixe que emerge da outra face do cilindro? 
+\item[b.]	Supondo que em média $70\%$ da energia dos fótons que interagem é transferida  
+		para a água na forma de energia cinética de suas partículas, calcule a energia 
+		total depositada pelo feixe nesse volume de água. 
+\item[c.]	A energia cinética transferida aos átomos e/ou moléculas da água produz, em última 
+		análise, aquecimento do meio. Calcule o acréscimo de temperatura produzido na água 
+		do cilindro pela passagem do feixe de fótons. 
+\end{itemize} 
+
+	Obs.: Utilize $\mu=0,7613\unit{cm^{-1}}$ para a água, para essa energia de fótons.
+\end{exercicio}
+
+	A lei de atenuação linear $N(x)=N_0e^{-\mu x}$ pode ser expressa em termos da fluência ($\Phi_0$)
+de fótons incidente se lembrarmos que a dimensão da fluência é números de fótons por área: Se a área
+de incidência é $A=\pi r^2$, com $r=2,5\unit{cm}$, então o número $N_0$ de fótons incidentes é 
+$\Phi_0 A$.\par 
+	Disto fica claro que o número de fótons que emergem da base oposta do cilindro sem interagir com
+a massa de água é
+	$$
+	N(10\unit{cm}) = 4,5\times10^{12}\cdot5^2\pi\,e^{-0,7613\cdot10} = 1,7\times10^{11}
+	\unit{f\acute{o}tons}
+	$$
+
+	que corresponde a uma fluência $\Phi=6,98\times10^9\unit{f\acute{o}tons/\acute{a}rea}$. Ou seja, 
+houve 
+$\Delta N = N_0-N=4,33\times10^{12}$ interações, cada uma com energia de $20\unit{keV}$. Portanto uma 
+energia total de $20\times10^3\cdot\Delta N=8,66\times10^7\unit{GeV}$. Desse total, $70\%$ 
+($6,06\times10^7\unit{GeV}=0,00971\unit{J}$) foi transferida para a massa
+	$$
+	m=\rho V=1000\cdot0,05^2\pi\cdot0,10=0,7854\unit{kg}
+	$$
+	contida no cilindro.\par
+	O acúmulo de energia $Q$ por unidade de massa e temperatura é, para baixas temperaturas, 
+$Q=mc\Delta T$. Como o calor específico da água é $c=4186\unit{J/kg\,^oC}$, decorre que o aumento de
+temperatura na água, causado pela irradiação em questão, é
+	$$
+	\Delta T={Q\over mc}={0,00971\over 0,7854\cdot 4186}=3\times10^{-6}\unit{^oC}
+	$$
+
+

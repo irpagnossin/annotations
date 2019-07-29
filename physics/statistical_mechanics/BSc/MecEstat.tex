@@ -1,0 +1,197 @@
+\documentclass[a4paper,11pt]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 1 de Mecânica Estatística}
+\author { Ivan Ramos Pagnossin }
+\date { 18 de Setembro de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+
+{\it	Considere um modelo de $N$ íons magnéticos localizados, em que cada um deles tem energia $E=DS^2$, onde a variável $S$ pode assumir os valores
+	$-1$, $0$ e $+1$.
+
+	(a)	Compute o número de estados microscópicos $\Omega(U,N)$ acessíveis ao sistema;
+	
+	(b)	Obtenha a entropia por partícula $s=s(u)$ com $u=U/N$;
+
+	(c) 	Calcule o calor específico por partícula $c(T)=({\partial u\over\partial T})_N$. Esboce o gráfico de $c(T)$ determinando a posição 
+		do máximo na anomalia Schottky.
+
+	(d)	Escreva a expressão da entropia em função da temperatura, $s(T)$. Quais os valores da entropia para $T\rightarrow0$ e $T\rightarrow\infty$? 
+}
+\vspace{1cm}
+
+
+	Pela expressão da energia fica claro que existem três estados possíveis mas apenas dois níveis energéticos. Isto é, estamos trabalhando com um 
+problema de degenerescência da energia. Neste caso, supomos $N_0$ o número de partículas para as quais temos $S=0$, $N_{+}$ para $S=+1$ e $N_{-}$ para
+$S=-1$.
+
+	Imaginando que o sistema esteja isolado e que não haja interação entre os íons, então a energia total mantém-se constante e é simplesmente a soma
+das energias individuais das partículas:
+	\begin{eqnarray}
+	U	&	=	&	(N_{-}+N_{+})D		\nonumber \\
+		&	=	&	MD			
+	\end{eqnarray}
+
+	Note que $N_{-}$ e $N_{+}$ podem variar desde que mantenham $M$ constante também. Isto é, podemos escrever $N_{-}=M-N_{+}$, com $N_{+}=0,1,2,...,M$.
+Além disso, é claro que o número total de partículas do sistema é
+	\begin{eqnarray}
+	N	&	=	&	N_0+N_{-}+N_{+}		\nonumber \\
+		&	=	&	N_0+M			\nonumber
+	\end{eqnarray}
+
+	de onde podemos tirar $N_0=N-M$.
+
+	Considerando as expressões acima podemos escrever o número de microestados acessíveis $\Omega$ {\bf(a)}:
+	\begin{eqnarray}
+	\Omega(N,N_0,N_{-},N_{+})	&	=	&	\sum_{N_{+}=0}^M{N!\over N_0!N_{-}!N_{+}!}			\nonumber \\
+					&	=	&	\sum_{N_{+}=0}^M{N!\over (N-M)!(M-N_{+})!N_{+}!}		\nonumber \\
+					&	=	&	{N!\over(N-M)!}\sum_{N_{+}=0}^M{1\over N_{+}!(M-N_{+})!}	\nonumber \\
+					&	=	&	{N!\over M!(N-M)!}\sum_{N_{+}=0}^M{M!\over 
+								N_{+}!(M-N_{+})!}1^{M_{+}}1^{M-N_{+}}				\nonumber \\
+					&	=	&	{N!\over M!(N-M)!}(1+1)^M					\nonumber \\
+	\Omega(N,M)			&	=	&	{2^MN!\over M!(N-M)!}						\nonumber
+	\end{eqnarray}
+
+	A soma em $N_{+}$ indica todas as possíveis configurações de $N_{+}$ e $N_{-}=M-N_{+}$ para um dado $M$. Daqui podemos determinar a entropia {\bf(b)}: 
+	\begin{eqnarray}
+	{1\over k}S(N,M)		&	=	&	\ln\Omega								\nonumber \\
+					&	=	&	\ln{2^MN!\over M!(N-M)!}						\nonumber \\
+					&	=	&	M\ln2+\ln N!-\ln M!-\ln(N-M)!						\nonumber \\
+					&	=	&	M\ln2+N\ln N-N-M\ln M+M-(N-M)\ln(N-M)+					\nonumber \\
+					&		&	+(N-M)									\nonumber \\
+					&	=	&	M\ln2+N\ln N-M\ln M-(N-M)\ln(N-M)					\nonumber \\
+	{1\over Nk}S(N,m={M\over/N})	&	=	&	m\ln2+\ln N-m\ln M-(1-m)\ln(N-M)					\nonumber \\
+	{1\over k}s(N,m)		&	=	&	m\ln2+[1+m+(1-m)-m-(1-m)]\ln N-m\ln M-					\nonumber \\
+					&		&	-(1-m)\ln(1-M)								\nonumber \\
+					&	=	&	m\ln2+(m\ln N-m\ln M)+[(1-m)\ln N-					\nonumber \\
+					&		&	-(1-m)\ln(N-M)]								\nonumber \\
+					&	=	&	m\ln2-m\ln m-(1-m)\ln(1-m)						\nonumber \\
+	{1\over k}s(m)			&	=	&	m\ln{2\over m}-(1-m)\ln(1-m)						
+	\end{eqnarray}
+
+	De $(1)$ concluímos facilmente que $m=u/D$ e, conseqüentemente,
+	\begin{equation}
+	s(u)={u\over D}k\ln{2D\over u}-(1-{u\over D})k\ln(1-{u\over D})
+	\end{equation}
+
+\begin{picture}(10,10)
+\end{picture}
+
+{\centerline{\scriptsize{\bf Gráf.1:} Entropia por partícula em função da energia interna por partícula}}
+\vspace{0.5cm}
+
+
+	onde $k$ é a constante de Boltzmann. Da termodinâmica sabemos que a derivada da entropia com relação à energia interna é proporcional ao inverso
+da temperatura:
+	$$
+	{1\over T}={\partial s(u)\over\partial u}
+	$$
+
+	Para facilitar um pouco as contas, convém trabalharmos com $(2)$ ao invés de $(3)$. Para isso, basta conhecermos a relação entre as derivadas em
+relação à energia $u$ e a porcentagem $m$ de íons nos estados $S=\pm1$:
+	$$
+	{\partial\over\partial u}={\partial m\over\partial u}{\partial\over\partial m}={1\over D}{\partial\over\partial m}
+	$$
+
+	Assim,
+	\begin{eqnarray}
+	{1\over T}	&	=	&	{\partial s(u)\over\partial u}							\nonumber \\
+			&	=	&	{1\over D}{\partial s(u)\over\partial m}					\nonumber \\
+	{D\over T}	&	=	&	k\ln2-k\ln m+k\ln(1-m)								\nonumber \\
+			&	=	&	k\ln {2(1-m)\over m}								\nonumber \\
+	e^{D\over kT}	&	=	&	{2(1-m)\over m}									\nonumber \\
+	m		&	=	&	{2\over 2+e^{D\over kT}}							\nonumber 
+	\end{eqnarray}
+
+	Que dá
+	\begin{equation}
+	u(T)={2D\over 2+e^{D\over kT}}						
+	\end{equation}
+
+\begin{picture}(10,10)
+\end{picture}
+
+{\centerline{\scriptsize{\bf Gráf.2:} Energia interna por partícula em função da temperatura}}
+\vspace{0.5cm}
+
+	Vejamos agora o calor específico {\bf(c)}, que pode ser obtido de outra igualdade termodinâmica:
+	\begin{eqnarray} 
+	c		&	=	&	{\partial u\over\partial T}								\nonumber \\
+			&	=	&	{\partial\over\partial T}({2D\over 2+e^{D\over kT}})					\nonumber \\
+			&	=	&	2D{d\over dT}(2+e^{D\over kT})^{-1}							\nonumber \\
+	{c\over k}	&	=	&	2({D\over kT})^2{e^{D\over kT}\over(2+e^{D\over kT})^2}					\nonumber
+	\end{eqnarray}
+
+\begin{picture}(10,10)
+\end{picture}
+
+{\centerline{\scriptsize {\bf Gráf.3:} Calor específico em função da temperatura. Note o pico da anomalia Schottky 
+$({kT\over D},{c\over k})\approx(0.377,0.762)$\footnote{Como o intervalo ao qual pertence este ponto é conhecido, foi mais rápido determiná-lo
+através de um pequeno script C que através do Cálculo.}}} 
+\vspace{0.5cm} 
+
+	
+	Retornando $(4)$ à igualdade $(3)$ e simplificando obtemos a entropia como função da temperatura {\bf(d)}:
+	\begin{equation}
+	{1\over k}s(T)=\ln(2+e^{D\over kT})-{D\over kT}{e^{D\over kT}\over2+e^{D\over kT}}
+	\end{equation} 
+
+\begin{picture}(10,10)
+\end{picture}
+
+{\centerline{\scriptsize {\bf Gráf.4:} Entropia como função da temperatura. Note os limites superior ${s(T)\over k}=\ln3\approx1,10$ e inferior, 
+${s(T)\over k}=0$.}}
+\vspace{0.5cm}
+
+	Quando $kT>>D$ (temperaturas altas), isto é, ${D\over kT}\rightarrow0$, a exponencial pode ser expandida por
+	$$
+	e^{D\over kT}\approx1+{D\over kT}
+	$$ 
+
+	Colocando este resultado em $(5)$,
+	\begin{eqnarray}
+	{1\over k}s(T)	&	\approx &	\ln(3+{D\over kT})-{D\over kT}{1+{D\over kT}\over 3+{D\over kT}}			\nonumber \\ 
+			&	\approx	&	\ln3											\nonumber
+	\end{eqnarray}
+
+	que é o valor esperado pois temos três estados distintos\footnote{Este resultado vale tanto para $D$ positivo quanto negativo.}.
+
+	Por outro lado, quando $kT<<D$ (temperaturas baixas) e $D>0$, ${D\over kT}\rightarrow\infty$ e qualquer parcela finita adicionada à exponencial
+passa a ser desprezível. Mais especificamente,
+	$$
+	2+e^{D\over kT}\approx e^{D\over kT}
+	$$
+
+	que dá 
+	\begin{eqnarray}
+	{1\over k}s(T)	&	\approx	&	\ln e^{D\over kT}-{D\over kT}								\nonumber \\
+			&	\approx	&	{D\over kT}-{D\over kT}									\nonumber \\
+			&	\approx &	0											\nonumber
+	\end{eqnarray}
+	
+	que também é esperado, conforme gráfico logo acima. Se $D<0$ teremos 
+	$$
+	2+e^{D\over kT}\approx2
+	$$
+
+	resultando quase que diretamente ${1\over k}s(T)=\ln2$ (veja gráfico 4).
+	
+
+	
+
+
+\end{document}
+		
+
+
+

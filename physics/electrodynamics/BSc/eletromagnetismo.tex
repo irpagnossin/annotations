@@ -1,0 +1,518 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Prova de Eletromagnetísmo II}
+\author { Ivan Ramos Pagnossin }
+\date { 05 de Agosto de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+
+{\bf 1.}
+{\it	Um barco é construido de forma que o mastro faça um ângulo $\theta$ com respeito ao deck. Um observador fora da embarcação observa-a com uma velocidade
+	$v$. Qual o ângulo do mastro para este observador?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Decompondo o comprimento do mastro nas direções $x$ e $y$, paralela e perpendicular à do movimento, teremos $x=l\cos\theta$ e $y=l\sin\theta$. O observador
+ em terra firme, ao medir $y'$, encontra exatamente $y$, pois esta dimensão é perpendicular ao movimento. Contudo, o mesmo não acontece com
+$x$, que acaba por medir $x'={x\over\gamma}$. Deste modo, o novo ângulo sob o qual este observador percebe o mastro pode ser obtido por
+
+	$$
+	\tan\theta'={y'\over x'}={l\sin\theta\over{l\over\gamma}\cos\theta}=\gamma\tan\theta
+	$$
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 2.}
+{\it 	Resolva as equações abaixo para $x$, $y$, $z$ e $t$ em termos de $x'$, $y'$, $z'$ e $t'$.
+	\begin{equation}
+	x'=\gamma(x-vt)
+	\end{equation}
+	$$
+	y'=y
+	$$
+	$$
+	z'=z
+	$$
+	\begin{equation}
+	t'=\gamma(t-{v\over c^2}x)	
+	\end{equation} 
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Para resolver este exercício, existe o método cabeça e o método luso. Pelo método cabeça basta lembrar que, para quem está no referencial $S'$,
+o sistema $S$ move-se com velocidade $-v$. Deste modo, é fácil perceber que o resultado é
+	$$
+	x=\gamma(x'+vt')
+	$$
+	$$
+	y=y'
+	$$
+	$$
+	z=z'
+	$$
+	$$
+	t=\gamma(t'+{v\over c^2}x')	
+	$$
+	
+	Mas vejamos o método luso: Da expressão $(1)$ podemos escrever
+	$$
+	{x'\over\gamma}=x-vt	\Rightarrow	vt=x-{x'\over\gamma}	\Rightarrow	t={x\over v}-{x'\over\gamma v}
+	$$
+
+	Aplicando este resultado em $(2)$,
+	\begin{eqnarray}
+	t'=\gamma[({x\over v}-{x'\over\gamma v})-{v\over c^2}x]				&	\Rightarrow	&	
+							\gamma{x\over v}-{v\gamma\over c^2}x=t'+{x'\over v}		\Rightarrow 	\nonumber \\
+	\Rightarrow x\gamma({1\over v}-{v\over c^2})=t'+{x'\over v}			&	\Rightarrow	&	
+							x\gamma{c^2-v^2\over c^2v}=t'+{x'\over v}			\Rightarrow	\nonumber \\
+	\Rightarrow x\gamma{c^2[1-({v\over c})^2]\over c^2v}=t'+{x'\over v}		&	\Rightarrow	&	
+							x\gamma{1\over v\gamma^2}=t'+{x'\over v}			\Rightarrow	\nonumber \\
+	\Rightarrow 								x	&		=	&	v\gamma(t'+{x'\over v})	
+																	\nonumber 
+	\end{eqnarray}
+
+	Resultando, obviamente, $x=\gamma(x'+vt')$. Agora, usando este resultado na expressão $(2)$ novamente,
+	\begin{eqnarray}
+	t'=\gamma t-{v\over c^2}\gamma(x'-vt')		&	\Rightarrow	&	
+					\gamma t=t'+{v\gamma^2\over c^2}(x'+vt')	\Rightarrow						\nonumber \\
+	\Rightarrow t	&	=	&	{t'\over\gamma}+{v\gamma\over c^2}(x'+vt')							\nonumber \\
+			&	=	&	{t'\over\gamma}+{v^2\gamma\over c^2}t'+{v\gamma\over c^2}x'					\nonumber \\
+			&	=	&	({1\over\gamma}+{v^2\gamma\over c^2})t'+{v\gamma\over c^2}t'+{v\gamma\over c^2}x'		\nonumber \\
+			&	=	&	({c^2+v^2\gamma^2\over c^2\gamma})t'+{v\gamma\over c^2}x'					\nonumber \\
+			&	=	&	{c^2+{c^2v^2\over c^2-v^2}\over c^2\gamma}t'+{v\gamma\over c^2}x'				\nonumber \\
+			&	=	&	{c^2\over\gamma(c^2-v^2)}t'+{v\gamma\over c^2}x'						\nonumber \\
+			&	=	&	{1\over\gamma[1-({v\over c})^2]}t'+{v\gamma\over c^2}x'						\nonumber \\
+			&	=	&	\gamma(t'+{v\over c^2}x')									\nonumber
+	\end{eqnarray} 
+	
+	As outras duas equações ($y$ e $z$) são imediatas.
+		
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 3.}
+{\it	As coordenadas do evento $\mathcal{A}$ são $(x_A,t_A)$, e as coordenadas do evento $\mathcal{B}$ são $(x_B,t_B)$. Assumindo que o intervalo entre
+	os dois eventos é do tipo espaço, ache a velocidade do sistema de coordenadas em que eles ocorrem ao mesmo tempo.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Como os dois eventos possuem intervalo do tipo espaço, então eles estão correlacionados e podem ser vistos simultaneamente num sistema conveniente. 
+Suponha um referencial $S'$ que se mova com velocidade $v$ em relação ao sistema de coordenadas onde se mede $(x_A,t_A)$ e $(x_B,t_B)$. As coordenadas 
+$t'_A$ e $t'_B$ podem ser escritas como 
+	$$
+	t'_A=\gamma(t_A-{v\over c^2}x_A)
+	$$
+
+	e
+	$$
+	t'_B=\gamma(t_B-{v\over c^2}x_B)
+	$$
+
+	Neste novo sistema $S'$ esperamos observar os eventos $\mathcal{A}$ e $\mathcal{B}$ como simultâneos. Ou seja, $t'_A=t'_B$:
+	\begin{eqnarray}
+	t'_A				&	=	&	t'_B				\nonumber \\
+	\gamma(t_A-{v\over c^2}x_A)	&	=	&	\gamma(t_B-{v\over c^2}x_B)	\nonumber \\
+	t_A-t_B				&	=	&	{v\over c^2}x_A-{v\over c^2}x_B	\nonumber \\
+	\Delta t			&	=	&	{v\over c^2}\Delta x		\nonumber \\
+	v				&	=	&	c^2{\Delta t\over\Delta x}	\nonumber
+	\end{eqnarray}
+
+	Note que, como $\Delta x>c\Delta t$ (condição para intervalo do tipo espaço), $v<c$, mostrando que o resultado está coerente.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 4.}
+{\it	Um capacitor de placas paralelas, em repouso no sistema $S_0$ e inclinado de um ângulo de $45^o$ com o eixo $x_0$ tem densidade de carga
+	$\sigma_0$ nas suas placas, conforme a figura. O sistema $S$ está se movendo para a direita com velocidade $v$ em relação a $S_0$.
+
+	(a)Ache o campo $\vec{E}_0$ em $S_0$.
+
+	(b)Ache o campo $\vec{E}$ em $S$.
+	
+	(c)Que ângulo as placas fazem com o eixo $x$?
+	
+	(d)O campo é perpendicular às placas em $S$?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{picture}(5,5)
+\end{picture}
+
+
+	O item $(a)$ é muito fácil. Basta observarmos a figura para verificarmos que
+	\begin{eqnarray}
+	\vec{E}_0	&	=	&	E_0[cos(45^o)\hat{i}-cos(45^o)\hat{j}]		\nonumber \\
+			&	=	&	{\sqrt{2}\over2}E_0(\hat{i}-\hat{j})		\nonumber 
+	\end{eqnarray}
+
+	Quanto ao item $(b)$, podemos utilizar a transformação dos campos demonstrada em sala de aula para encontrar
+	$$
+	E'_x=E_x
+	$$
+	$$
+	E'_y=\gamma E_y=-\gamma{\sqrt{2}\over2}E_0
+	$$
+	$$
+	E'_z=\gamma E_z=0
+	$$
+
+	Ou seja, $\vec{E}'={\sqrt{2}\over2}E_0(\hat{i}-\gamma\hat{j})$, com $E_0={\sigma_0\over\epsilon_0}$. Já o item $(c)$ pode ser resolvido 
+aproveitando-se o resultado do primeiro exercício: $\tan\theta'=\gamma\tan\theta=\gamma\tan(45^o)=\gamma$. Por fim, o item $(d)$ pode ser resolvido 
+através da famosa relação da geometria analítica, $\tan\phi\tan\theta'=-1$ (esta condição deve ser satisfeita para que as linhas de campo e as placas 
+sejam perpendiculares umas as outras), onde $\phi$ é o ângulo de inclinação das linhas do campo elétrico com relação a $x$:
+	$$
+	\tan\phi={E'_y\over E'_x}={-{\sqrt{2}\over2}E_0\gamma\over{\sqrt{2}\over2}E_0}=-\gamma
+	$$
+
+	Assim sendo, $\tan\phi\tan\theta'=-\gamma\gamma=-\gamma^2\not=-1$. Portanto, o campo elétrico não é perpendicular às placas quando visto do referencial
+em movimento. Perceba que para velocidades baixas $\gamma$ é praticamente igual a 1 e, consequentemente, o campo continua perpendicular à placa do capacitor. 	
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 5.}
+{\it	(a)Mostre que $\vec{E}\cdot\vec{B}$ é relativisticamente invariante.
+
+	(b)Mostre que $E^2-c^2B^2$ é relativisticamente invariante.
+
+	(c)Suponha que o campo magnético em algum ponto é zero em um dado sistema. É possível achar outro sistema em que o campo elétrico neste mesmo ponto é 
+	   zero?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	{\bf(a)}Devemos mostrar que $\vec{E}\cdot\vec{B}=\vec{E}'\cdot\vec{B}'$. Imagine que num novo referencial $S'$ mova-se com velocidade $v$ no sentido positivo
+de $x$ (Observe que esta hipótese de maneira alguma diminui a generalidade dos cálculos, visto que sempre podemos girar os eixos de forma a adquirirem
+a configuração desejada). Nesta situação, os campos transformam-se pelas expressões 
+	$$ 
+	E'_x=E_x		\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_x=B_x
+	$$
+	$$
+	E'_y=\gamma(E_y-vB_z)	\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_y=\gamma(B_y+{v\over c^2}E_z)
+	$$
+	$$	
+	E'_z=\gamma(E_z+vB_y)	\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_z=\gamma(B_z-{v\over c^2}E_y)
+	$$
+
+	Assim, podemos começar:
+	\begin{eqnarray}
+	\vec{E}'\vec{B}'	&	=	&	E'_xB'_x+E'_yB'_y+E'_zB'_z							\nonumber \\
+				&	=	&	E_xB_x+\gamma^2[(E_y-vB_z)(B_y+{v\over c^2}E_z)+(E_z+vB_y)(B_z-{v\over c^2}E_y)	\nonumber \\
+				&		&	\vdots										\nonumber \\
+				&	=	&	E_xB_x+\gamma^2[(1-{v^2\over c^2})E_yB_y+(1-{v^2\over c^2})E_zB_z		\nonumber \\
+				&	=	&	E_xB_x+\gamma^2{E_yB_y+E_zB_z\over\gamma^2}					\nonumber \\
+				&	=	&	E_xB_x+E_yB_y+E_zB_z								\nonumber \\
+				&	=	&	\vec{E}\cdot\vec{B}								\nonumber
+	\end{eqnarray}
+
+	{\bf(b)}O método é exatamente o mesmo. Primeiramente, notemos que
+	\begin{eqnarray}
+	{E'}^2	&	=	&	{E'}_x^2+{E'}_y^2+{E'}_z^2									\nonumber \\
+		&	=	&	E_x^2+\gamma^2[E_y^2+E_z^2+2v(E_zB_y-E_yB_z)+v^2(B_y^2+B_z^2)]					\nonumber 
+	\end{eqnarray}
+
+	Também temos
+	\begin{eqnarray}
+	{B'}^2		&	=	&	{B'}_x^2+{B'}_y^2+{B'}_z^2									\nonumber \\
+			&	=	&	B_x^2+\gamma^2[B_y^2+B_z^2+{2v\over c^2}(E_zB_y-E_yB_z)+{v^2\over c^4}(E_y^2+E_z^2)]		\nonumber \\
+	c^2{B'}^2	&	=	&	c^2B_x^2+\gamma^2[c^2B_y^2+c^2B_z^2+2v(E_zB_y-E_yB_z)+{v^2\over c^2}(E_y^2+E_z^2)]		\nonumber
+	\end{eqnarray}
+
+	Unindo os dois resultados,
+	\begin{eqnarray}
+	{E'}^2-c^2{B'}^2	&	=	&	E_x^2+\gamma^2[E_y^2+E_z^2+2v(E_zB_y-E_yB_z)+v^2(B_y^2+B_z^2)]-				\nonumber \\
+				&		&	-c^2B_x^2-\gamma^2[c^2B_y^2+c^2B_z^2+2v(E_zB_y-E_yB_z)+{v^2\over c^2}(E_y^2+E_z^2)]	\nonumber 
+	\end{eqnarray}
+	
+	Agrupando os termos com fatores constantes semelhantes encontramos
+	\begin{eqnarray}
+	{E'}^2-c^2{B'}^2	&	=	&	E_x^2-c^2B_x^2+\gamma^2[(1-{v^2\over c^2})E_y^2+(1-{v^2\over c^2})E_z^2+(v^2-c^2)B_y^2+(v^2-c^2)B_z^2
+																	\nonumber \\
+				&	=	&	E_x^2-c^2B_x^2+\gamma^2[{E_y^2\over\gamma^2}+{E_z^2\over\gamma^2}-c^2(1-{v^2\over c^2})B_y^2-
+												c^2(1-{v^2\over c^2})B_z^2]		\nonumber \\
+				&	=	&	E_x^2-c^2B_x^2+E_y^2+E_z^2-c^2B_y^2-c^2B_z^2						\nonumber \\
+				&	=	&	E_x^2+E_y^2+E_z^2-c^2(B_x^2+B_y^2+B_z^2)						\nonumber \\
+				&	=	&	E^2-c^2B^2										\nonumber
+	\end{eqnarray}
+
+	{\bf(c)}Tomemos dois referenciais inerciais $S$ e $S'$, sendo que este último move-se com velocidade $v$ no sentido positivo do eixo $x$ (Uma vez
+mais perceba que não há perda de generalidade aqui). Então supomos que em $S$ o campo magnético seja nulo, conforme solicita o enunciado da questão. Neste caso
+podemos dizer sobre as transformações dos campos:
+	$$ 
+	E'_x=E_x		\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_x=0
+	$$
+	$$
+	E'_y=\gamma E_y		\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_y=\gamma{v\over c^2}E_z
+	$$
+	$$	
+	E'_z=\gamma E_z		\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_z=\gamma{v\over c^2}E_y
+	$$
+
+	Queremos encontrar um referencial, chamado $S'$ no caso, no qual o campo elétrico seja zero, mas não o magnético. Em termos das notações acima, isto 
+significa que $(E'_x,E'_y,E'_z)=(0,0,0)$ e podemos simplificar ainda mais as equações acima:
+	$$ 
+	0=E_x			\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_x=0
+	$$
+	$$
+	0=\gamma E_y		\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_y=\gamma{v\over c^2}E_z
+	$$
+	$$	
+	0=\gamma E_z		\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_z=\gamma{v\over c^2}E_y
+	$$
+
+	Mas isto implica automaticamente que $\vec{E}=\vec{0}$. Chegamos num absurdo pois o exercício exige que haja campo elétrico em $S$, mas não em
+$S'$. Contudo, as equações dizem que para não haver campo elétrico em $S'$ -- sob a condição de não haver campo magnético em $S$ -- então também não pode haver 
+campo elétrico em $S$. Ou seja, a única solução possível é $\vec{E},\vec{B}=\vec{0}$ e  $\vec{E}',\vec{B}'=\vec{0}$ (a solução trivial). Isto significa que não 
+existe um tal sistema que satisfaça nossas exigências.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 6.}
+{\it 	Uma carga $q$ é liberada na presença de um campo elétrico $\vec{E}=E_0\hat{k}$ e um campo magnético $\vec{B}=B_0\hat{j}$. Ache a trajetória da partícula
+	passando para um sistema inercial onde $\vec{E}=\vec{0}$, achando trajetória neste sistema e então fazendo a transformação para o sistema original.
+	Assuma que $E_0<cB_0$.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{picture}(5,5)\thicklines
+\end{picture}
+
+	Primeiro vamos relembrar a transformação Lorentziana dos campos eletromagnéticos: 
+	$$ 
+	E'_x=E_x		\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_x=B_x
+	$$
+	$$
+	E'_y=\gamma(E_y-vB_z)	\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_y=\gamma(B_y+{v\over c^2}E_z)
+	$$
+	$$	
+	E'_z=\gamma(E_z+vB_y)	\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_z=\gamma(B_z-{v\over c^2}E_y)
+	$$
+
+	Estas equações são verdadeiras para a situação descrita pela figura. Como sabemos, do enunciado, que $\vec{E}=(0,0,E_0)$ e $\vec{B}=(0,B_0,0)$, então é
+claro que podemos simplificar as equações acima para 
+	$$ 
+	E'_x=0			\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_x=0		
+	$$
+	\begin{equation}
+	E'_y=0			\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_y=\gamma(B_y+{v\over c^2}E_z)
+	\end{equation}
+	\begin{equation}
+	E'_z=\gamma(E_z+vB_y)	\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;	B'_z=0
+	\end{equation}
+
+	Queremos encontrar um sistema inercial $S'$ no qual o campo elétrico é nulo. Isto, em termos da nomenclatura acima, é o mesmo que fazer 
+$\vec{E}'=(0,0,0)$. Aplicando esta condição na equação $(4)$ conclui-se facilmente que
+	$$
+	E_0+vB_0=0	\Rightarrow	v=-{E_0\over B_0}
+	$$
+
+	Ou seja, o sistema $S'$ que estamos procurando move-se no sentido de crescimento do eixo $x$ (por escolha nossa) com uma velocidade constante $v$ dada pela
+equação acima\footnote{Aqui é que entra a consideração feita no enunciado do exercício: $E_0<cB_0$. Isto obviamente equivale a dizer que $v<c$. Se essa condição não
+fosse satisfeita, então $v$ teria de ser maior que a velocidade da luz e, logicamente, não existiria o tal sistema procurado.}. Mas perceba que isto de forma alguma zera o campo magnético em $S'$, que é dado por $(3)$:
+	\begin{eqnarray}
+	B'_y	&	=	&	\gamma[B_0-{v^2\over c^2}B_0]						\nonumber \\
+		&	=	&	\gamma{B_0\over\gamma^2}						\nonumber \\
+		&	=	&	{B_0\over\gamma}							\nonumber 	
+	\end{eqnarray}
+
+	E teremos $\vec{B}'=(0,{B_0\over\gamma},0)$. Pronto. Agora conhecemos todas as propriedades de $S'$ que nos interessa e, por conseguinte, podemos começar
+a procurar a trajetória da partícula. 
+
+	Considerando que a carga move-se de forma não relativística, podemos desprezar a variação de sua massa $m$, e igualarmos a força de Lorentz à segunda lei de
+Newton:
+	$$
+	\vec{F}'=q\vec{E}'+q\vec{u}\times\vec{B}'=m\vec{a}
+	$$ 
+
+	Nesta equação, $\vec{u}$ é a velocidade e $\vec{a}$ a aceleração da partícula em sua trajetória. Pela forma do campo magnético, percebe-se claramente que 
+é mais conveniente usarmos o sistema cartesiano de coordenadas. Deste modo, teremos $\vec{r}=x\hat{i}+y\hat{j}+z\hat{k}$, 
+	$$
+	\vec{u}=\dot{x}\hat{i}+\dot{y}\hat{j}+\dot{z}\hat{k}
+	$$
+
+	e
+	$$
+	\vec{a}=\ddot{x}\hat{i}+\ddot{y}\hat{j}+\ddot{z}\hat{k}
+	$$
+
+	 Assim, ficamos com
+\[ \vec{F}'=q\left | \begin{array}{ccc}
+\hat{i}	&	\hat{j}			&	\hat{k}		\\	
+\dot{x}	&	\dot{y}			&	\dot{z}		\\
+0	&	{B_0\over\gamma}	&	0	
+\end{array}\right | 
+	=-\dot{z}{B_0\over\gamma}\hat{i}+\dot{x}{B_0\over\gamma}\hat{k}=m\ddot{x}\hat{i}+m\ddot{y}\hat{j}+m\ddot{z}\hat{k}\]
+	
+	E isto nos leva ao sistema de equações diferenciais
+\begin{eqnarray}
+m\ddot{x}+{qB_0\over m\gamma}\dot{z}	&	=	&	0	\\
+m\ddot{y}			    	&	=	&	0	\nonumber \\
+m\ddot{z}-{qB_0\over m\gamma}\dot{x}	&	=	&	0	
+\end{eqnarray}
+
+	A solução da coordenada $y$ é imediata:
+	$$
+	y'(t')=A_yt'+B_y
+	$$
+
+	Derivando $(6)$ e aplicando em $(5)$, encontramos facilmente
+	$$
+	{d^3z'\over {dt'}^3}+\omega^2{dz'\over dt'}=0
+	$$
+
+	Fazendo o contrário (Derivando $(5)$ e aplicando em $(6)$),
+	$$
+	{d^3x'\over {dt'}^3}+\omega^2{dx'\over dt'}=0
+	$$
+
+	Com $\omega=qB_0/m\gamma$.
+
+	Aparentemente é uma equação desconhecida, uma vez que envolve derivadas de terceira ordem. Contudo, fazendo a substituição $\dot{x},\dot{z}=\nu$, 
+chega-se à conhecida equação do oscilador harmônico simples
+	$$
+	{d^2\nu'\over {dt'}^2}+\omega^2\nu'=0
+	$$
+
+	Cuja solução é conhecida. E, por simples integração, chega-se às equações
+	$$
+	x'(t')={A_x\over\omega}\sin(\omega t')-{B_x\over\omega}\cos(\omega t')+C_x	\nonumber
+	$$
+	$$
+	z'(t')={A_z\over\omega}\sin(\omega t')-{B_z\over\omega}\cos(\omega t')+C_z	\nonumber
+	$$
+ 	
+	Agora vejamos as condições iniciais. Podemos centralizar ambos os sistemas $S$ e $S'$ na partícula em seu momento inicial. Foi dito pelo enunciado que,
+para o sistema $S$, a partícula era liberada ($\dot{\vec{r}}=\vec{0}$) no campo. Deste modo, como $S'$ move-se no sentido positivo de $x$, então no momento 
+$t'=0$, do sistema $S'$, vê-se a partícula com velocidade $\vec{u}_0=-v\hat{i}$ (Pode parecer bobagem mas é importante ressaltar que não existe contração dos 
+versores cartesianos pois são apenas entes matemáticos e, assim sendo, não estão sujeitos às leis da Física). As outras componentes da velocidade ficam inalteradas.
+Logo, as condições iniciais são
+	\begin{eqnarray}
+	\vec{r}'=x'\hat{i}+y'\hat{j}+z'\hat{k}				&	=	&	\vec{0}		\nonumber \\
+	\dot{\vec{r}}'=\dot{x}'\hat{i}+\dot{y}'\hat{j}+\dot{z}'\hat{k}	&	=	&	-v\hat{i}	\nonumber
+	\end{eqnarray}
+
+	Para a componente $y'(t')$:
+	\begin{eqnarray}
+	\dot{y}'(0)=B_y=0			&	\Rightarrow	&	B_y=0			\nonumber \\
+	y'(0)=A_y=0				&	\Rightarrow	&	A_y=0			\nonumber 
+	\end{eqnarray}
+
+	Ou seja,
+	$$
+	y'(t')=0
+	$$
+
+	Para a componente $z'(t')$:
+	\begin{eqnarray}
+	\dot{z}'(0)=A_z=0			&	\Rightarrow	&	A_z=0			\nonumber \\
+	z(0)'=-{B_z\over\omega}+C_z=0		&	\Rightarrow	&	C_z={B_z\over\omega}	\nonumber
+	\end{eqnarray}
+
+	E obviamente encontramos 
+	$$
+	z'(t')=C_z[1-\cos(\omega t')]
+	$$
+
+	Finalmente, para a componente $x'(t')$:
+	\begin{eqnarray}
+	\dot{x}'(0)=A_x=-v			&	\Rightarrow	&	A_x=-v			\nonumber \\
+	x'(0)=-{B_x\over\omega}+C_x=0		&	\Rightarrow	&	C_x={B_x\over\omega}	\nonumber
+	\end{eqnarray}
+	
+	Assim,
+	$$
+	x'(t')=C_x[1-\cos(\omega t')]-{v\over\omega}\sin(\omega t')
+	$$
+
+	Essas são as soluções do problema no referencial $S'$. Mas nos interessa o resultado em $S$. Sem problemas. Basta aplicarmos a transformação
+de Lorentz-Fitzgerald, lembrando a figura no início do exercício:
+	$$
+	x(t)=\gamma[x'(t')+vt']
+	$$
+	$$
+	y(t)=y'(t')
+	$$
+	$$
+	z(t)=z'(t')
+	$$
+
+	Comecemos pelas duas últimas, nas quais não há mudança na forma da equação. Assim, teremos
+	$$
+	y(t)=0
+	$$
+
+	e
+	$$
+	z(t)=C_z[1-\cos(\omega t')]
+	$$
+
+	Note que $z$ ainda está expresso como função de $t'$. Desejamos mudar para $t$. Para isso utilizamos a relação
+	\begin{eqnarray}
+	\Delta t'	&	=	&	\gamma\Delta t		\nonumber \\
+	t'-t'_0		&	=	&	\gamma(t-t_0)		\nonumber \\
+	t'		&	=	&	\gamma t		\nonumber
+	\end{eqnarray}
+	
+	Uma vez que ambos os sistemas $S$ e $S'$\footnote{Observe que a equação está aparentemente invertida. Isto não é verdade. O que ocorre é que, para o 
+observador em $S'$, quem está se movendo é $S$, e consequentemente o tempo de $S$ anda mais devagar. Ou seja, para quem está em $S'$, o sistema $S$ é que é o
+$S'$, em termos das notações costumeiras.} utilizam, respectivamente, $t_0=0$ e $t'_0=0$ como o ponto de referência na coordenada tempo. Por isso ficamos com
+	\begin{eqnarray}
+	z(t)	&	=	&	C_z[1-\cos({\omega\over\gamma}t)]	\nonumber \\
+		&	=	&	C_z[1-\cos({qB_0\over m}t)]		\nonumber 
+	\end{eqnarray}
+
+	Já a equação para $x(t)$ fazemos
+	\begin{eqnarray}
+	x(t)	&	=	&	\gamma\{C_x[1-\cos(\omega t')]-{v\over\omega}\sin(\omega t')+vt'\}		\nonumber \\
+		&	=	&	\gamma C_x[1-\cos(\omega t')]-{v\gamma\over\omega}\sin(\omega t')+v\gamma t'	\nonumber \\
+		&	=	&	K_x[1-\cos({qB_0\over m} t)]-{m\gamma^2\over qB_0}\sin({qB_0\over m}t)			\nonumber 
+	\end{eqnarray}
+	
+	Ufa! Acabou!
+	
+	
+	
+
+	
+\end{document}
+	
+

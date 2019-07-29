@@ -1,0 +1,39 @@
+	
+	Ao compilar a seguinte estrutura
+
+...
+\newcommand{\opv}[1]{\hat{\mathbf{#1}}}
+\newcommand{\op}[1]{\hat #1}
+...
+\begin{eqnarray*} 
+[\op L_y^2,\opv L]&=& -i\hbar\{\op L_y,\op L_z\}\hat i+i\hbar\{\op L_x,\op L_y\}\hat k	\\ 
+[\op L_z^2,\opv L]&=&  i\hbar\{\op L_y,\op L_z\}\hat i-i\hbar\{\op L_x,\op L_z\}\hat j
+\end{eqnarray*} 
+...
+
+	recebi a mensagem
+
+!Missing number, treated as zero
+<to be read again>
+		  \mathaccent
+l.108 ...
+
+	onde a linha 108 era a segunda linha do environment eqnarray*. 
+	Notei que colocando algum caracter (1) antes do colchetes o problema se resolvia:
+
+\begin{eqnarray*} 
+[\op L_y^2,\opv L]&=& -i\hbar\{\op L_y,\op L_z\}\hat i+i\hbar\{\op L_x,\op L_y\}\hat k\\
+1[\op L_z^2,\opv L]&=& i\hbar\{\op L_y,\op L_z\}\hat i-i\hbar\{\op L_x,\op L_z\}\hat j
+\end{eqnarray*} 
+
+	A solução que encontrei, então, foi colocar um \rule{0mm}{0mm}: 
+
+\begin{eqnarray*} 
+[\op L_y^2,\opv L]&=& -i\hbar\{\op L_y,\op L_z\}\hat i+i\hbar\{\op L_x,\op L_y\}\hat k\\
+\rule{0mm}{0mm}[\op L_z^2,\opv L]&=& i\hbar\{\op L_y,\op L_z\}\hat i-i\hbar\{\op L_x,\op L_z\}\hat j
+\end{eqnarray*} 
+	
+	Mas não entendi o porquê. Será que alguém já passou por isso e/ou sabe me explicar o que
+aconteceu?
+
+------------------------

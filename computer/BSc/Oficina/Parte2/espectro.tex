@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{wasysym}
+\begin{document}
+
+
+\font\rmsete = cmr10 at 7pt
+
+\begin{picture}(569,284.5)(60,0)%(139.25,0)
+
+\linethickness{0.05pt}
+
+\multiput(0,0)(28.45,0){21}{\line(0,1){284.5}}
+\multiput(0,0)(0,28.45){11}{\line(1,0){569}}
+
+\put(25.45,-9){\makebox(0,0)[bl]{\rmsete 10}}
+\put(138.5,-9){\makebox(0,0)[bl]{\rmsete 50}}
+\put(279,-9){\makebox(0,0)[bl]{\rmsete 100}}
+\put(422,-9){\makebox(0,0)[bl]{\rmsete 150}}
+\put(564,-9){\makebox(0,0)[bl]{\rmsete 200}}
+
+\put(-9,26.45){\makebox(0,0)[bl]{\rmsete .1}}
+\put(-9,140.25){\makebox(0,0)[bl]{\rmsete .5}}
+\put(-9,282.5){\makebox(0,0)[bl]{\rmsete 1.}}
+
+\multiput(2.845,0)(2.845,0){200}{\line(0,-1){2.845}}
+\multiput(0,2.845)(0,2.845){100}{\line(-1,0){2.845}}
+
+\multiput(14.225,0)(28.45,0){20}{\line(0,-1){4.2675}}
+\multiput(0,14.225)(0,28.45){10}{\line(-1,0){4.2675}}
+
+\newsavebox{\ponteiro}
+\savebox{\ponteiro}(20,20)
+{
+  \put(-10,+10){\line(1,0){20}}
+  \put(-10,-10){\line(1,0){20}}
+  \put(-10,-10){\line(0,1){20}}
+  \put(+10,-10){\line(0,1){20}}
+  \put(-10,0){\line(1,0){5}}
+  \put(+05,0){\line(1,0){5}}
+  \put(0,+05){\line(0,1){5}}
+  \put(0,-10){\line(0,1){5}}
+}
+
+
+%\put(40,40){\usebox{\ponteiro}}
+%\put(50,50){\circle*{3}}
+%\put(100,100){\makebox(0,0)[bl]{$\clubsuit$}}
+
+\input{saida}
+
+\linethickness{1pt}
+\put(100,0){\framebox(150,284.5){}}
+
+
+\end{picture}
+
+
+\end{document}

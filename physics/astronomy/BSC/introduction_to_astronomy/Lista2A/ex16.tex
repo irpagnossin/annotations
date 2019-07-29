@@ -1,0 +1,94 @@
+\begin{quotation}
+{\bf 16.}
+{\it	Considere duas estrelas, (1) e (2), que formam uma binária eclipsante. A estrela (1)
+	tem uma temperatura superficial de $20000\,\,\mathrm{K}$, uma raio de 
+	$60\,\,\mathrm{R_{\bigodot}}$ e magnitude absoluta $-6,8$. O raio da estrela (2) é
+	$0,3\,\,\mathrm{R_{\bigodot}}$ e sua magnitude absoluta é $0,4$. Calcule {\tt (a)}
+	a razão de suas luminosidades e {\tt (b)} a razão de suas temperaturas efetivas.
+	{\tt (c)} Qual das estrelas é eclipsada no mínimo primário?}
+\end{quotation}
+
+	Como as duas estrelas estão a aproximadamente a mesma distância $d$ de nós, o
+módulo de distância é o mesmo para as duas estrelas:	
+
+	\begin{minipage}[t]{0.46\textwidth}
+	$$
+	M_1 - m_1 = 5(1-\log d) 
+	$$
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.46\textwidth}
+	$$
+	M_2 - m_2 = 5(1-\log d)
+	$$
+	\end{minipage}
+
+	Portanto,
+	$$
+	m_2-m_1 = M_2-M_1 = -2,5\log({\varphi_1\over\varphi_2})
+	$$
+
+	sendo $\varphi$ o fluxo de potência aparente. Neste caso, não importa onde seja medido esse
+fluxo pois, como já consideramos há pouco, ambas as estrelas estão à mesma distância.
+Desta forma, podemos escolher o fluxo na superfície da estrela, aproximadamente, que será mais fácil de
+relacionar com a luminosidade $L$ logo a seguir. Então fica claro que
+	$$
+	\log({\Phi_1\over\Phi_2})={M_1-M_2\over2,5}=-2,56
+	$$
+	
+	Ou ainda,
+	\begin{equation}
+	\label{eq:fluxo}  
+	{\Phi_1\over\Phi_2}=10^{(M_1-M_2)/2,5}=0,000275
+	\end{equation} 
+
+	Mas a luminosidade $L$ da estrela é o fluxo de potência integrado sobre toda a superfície da
+estrela. Ou seja, $L=4\pi R^2\Phi$. Do que provém
+	$$
+	{4\pi R_1^2\Phi_1\over 4\pi R_2^2\Phi_2}={L_1\over L_2}=0,000275\cdot({R_1\over R_2})^2\cong110
+	$$
+
+	{\tt (b)} Sabemos, pela lei de Stefan, que o fluxo de potência e a temperatura relacinam-se
+por $\Phi=\sigma T^4$. Por conseguinte, a partir da equação (\ref{eq:fluxo}), 	
+	$$
+	{\Phi_1\over\Phi_2}={\sigma T_1^4\over\sigma T_2^4}=0,000275 \Rightarrow {T_1\over T_2}=0,2289
+	$$
+
+	{\tt (c)} Quando a estrela secundária eclipsa a primária, aos olhos do observador consta que a
+potência irradiada por uma área $\pi R_2^2$ da superfície da estrela primária não nos atinge. Esta área 
+é a projeção da companheira menos massiva sobre a maior e este fato mostra-se através da redução do
+fluxo de potência medido no detector. Assim, durante o período em que a estrela secundária eclipsa a
+primária, o fluxo ``perdido'' parece-nos como se nunca tivesse sido emitido, e vale
+	$$
+	\phi_1=\Omega_1\Phi_1
+	$$
+
+	onde $\Omega_1=\pi R_2^2/R_1^2$ é o ângulo sólido que compreende a projeção da estrela secundária
+sobre a primária. Por outro lado, quando a estrela primária eclipsa a secundária, o fluxo desta não 
+chega aos nossos olhos e, portanto, reduz o valor medido em
+	$$
+	\phi_2=\Omega_2\Phi_2=2\pi\Phi_2
+	$$
+
+	onde $\Omega_2=2\pi$ é o ângulo sólido de meia estrela, que é aproximadamente o que chega ao nosso
+detector. Comparando $\phi_1$ com $\phi_2$ temos
+	$$
+	{\phi_1\over\phi_2}={\Omega_1\Phi_1\over\Omega_2\Phi_2}={\pi({R_2\over R_1})^2\Phi_1\over 2\pi\Phi_2}
+		={1\over2}({R_2\over R_1})^2{\Phi_1\over\Phi_2}\cong0,000137({0,3\over60})^2
+		\cong3,5\times10^{-8}
+	$$
+
+	Ou seja, $\phi_1<<\phi_2$. O que significa que a redução maior (mínimo principal) ocorrerá quando a 
+estrela secundária for eclipsada pela primária.
+
+ 
+
+
+
+
+
+
+
+
+
+

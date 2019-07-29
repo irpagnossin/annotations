@@ -1,0 +1,80 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[pdftex]{graphics,graphicx,color}
+\usepackage{wrapfig} 
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\begin{document}
+
+  
+  \input{irpackage}
+
+	\addtocounter{exercicio}{4}
+	\begin{exercicio}[blue]
+		Uma suprfície esférica condutora de raio $a$ é constituída por dois hemisférios isolados por um anel isolante colocado em $\theta=\pi/2$. O hemisfério superior é mantido num potencial $+\Phi_0$ enquanto o inferior é fixo em $-\Phi_0$. Calcule o potencial em todos os pontos do espaço. Use as expressões $P_n(\cos\theta)$ e calcule os três primeiros termos da expansão.
+	\end{exercicio}
+
+	A solução da equação de Laplace em coordenadas esféricas com simetria azimutal é
+	$$
+	\phi(r,\theta) = \sum_{l=0}^\infty (A_lr^l + {B_l\over r^{l+1}})P_l(\cos\theta)
+	$$
+	onde $P_l(\cos\theta)$ é o polinômio de Legendre de ordem $l$.
+	
+	Como não existe campo externo aplicado, o campo existente deve-se exclusivamente à esfera. Assim, $\phi(r,\theta)$
+deve tender a zero quando $r\to\infty$. Logo, $A_l=0$ para $l\ge1$. Fazemos $A_0=0$ por simplicidade e, então,
+	$$
+	\phi(r,\theta) = \sum_{l=0}^\infty {B_l\over r^{l+1}}P_l(\cos\theta)
+	$$
+	
+	Como a esfera é condutora, então o campo elétrico para $r\le a$ é nulo e, consequentemente, o potencial é constante 
+e igual a $\Phi_0$ se $\theta\in[0,\pi/2[$ e igual a $-\Phi_0$ se $\theta\in]\pi/2,\pi]$. Convenientemente escrevemos
+que o potencial na superfície --- que é igual ao potencial no interior da esfera --- é $\phi(a,\theta)$:
+	$$
+	\phi(a,\theta) = \sum_{l=0}^\infty {B_l\over a^{l+1}}P_l(\cos\theta)
+	$$
+	
+	Multiplicando ambos os lados da equação por $P_m(\cos\theta)\sin\theta$ e integrando em $\theta$ de $0$ a $\pi$ encontramos
+	\begin{eqnarray*}
+	\int_0^\pi\phi(a,\theta)P_m(\cos\theta)\sin\theta\,d\theta  
+			&=& \sum_{l=0}^\infty {B_l\over a^{l+1}}\int_0^\pi P_l(\cos\theta)P_m(\cos\theta)\sin\theta\, d\theta \\
+			&=& {B_m\over a^{m+1}}\cdot{2\over2m + 1} 
+	\end{eqnarray*}
+	
+	Ou seja,
+	\begin{eqnarray*}
+	B_m &=& {1\over2}(2m+1)a^{m+1}\int_0^\pi\phi(a,\theta)P_m(\cos\theta)\sin\theta\,d\theta	\\
+		  &=& {1\over2}(2m+1)a^{m+1}\Phi_0\Big[\int_0^{\pi/2}P_m(\cos\theta)\sin\theta\,d\theta -
+		  			\int_{\pi/2}^\pi P_m(\cos\theta)\sin\theta\,d\theta\Big] \\
+		  &=& {1\over2}(2m+1)a^{m+1}\Phi_0\underbrace{\Big[\int_0^1P_m(x)dx + \int_0^{-1}P_m(x)dx\Big]}_{b_m} \\
+		  &=& {1\over2}(2m+1)a^{m+1}\Phi_0 b_m
+	\end{eqnarray*}
+	
+	A expressão geral para o potencial $\phi(r,\theta)$ ($r\ge a$) é, então,
+	\begin{equation}\label{eq:1}
+	\phi(r,\theta) = {1\over2}\Phi_0\sum_{l=0}^\infty (2l+1){b_l\over(r/a)^{l+1}}P_l(\cos\theta),\qquad
+	         b_l = \int_0^1P_l(x)dx + \int_0^{-1}P_l(x)dx
+	\end{equation}
+	
+	Para $r\le a$ têm-se simplesmente $\phi(a,\theta)$.
+	
+	Com um pouco de trabalho podemos mostrar que os três primeiros $b_m$ não nulos são $b_1=1$, $b_3=-1/4$ e $b_5=1/8$.
+Portanto temos
+	$$
+	{\phi(r,\theta)\over\Phi_0} = {3\over2}{1\over(r/a)^2}\cos\theta + 
+	                              {7\over4}{1\over(r/a)^4}(5\cos^3\theta-3\cos\theta) +
+	                              {11\over16}{1\over(r/a)^6}(63\cos^5\theta-70\cos^3\theta+15\cos\theta) + \cdots
+	$$
+	
+	\begin{figure}[ht]
+		\centering
+	  \includegraphics[scale = 0.5]{Lista3Ex5Graf.pdf}
+	  \caption{Aproximação de $\phi(a,\theta)$ para os primeiros vinte termos ($l\le20$ na equação (\ref{eq:1})). Na 				abscissa temos $\phi(a,\theta)/\Phi_0$ e na ordenada, $\theta\in[0,\pi]$.}
+	\end{figure}
+	
+\end{document}
+ 
+
+

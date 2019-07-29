@@ -1,0 +1,82 @@
+
+\begin{quotation}
+{\bf 1.}
+{\it	Uma partícula que se move em uma dimensão encontra-se num estado $\ket\psi$ descrito
+	pela função de onda
+	$$
+	\psi(x)=Ne^{-\lambda x^2}
+	$$
+
+	{\tt (a)} Determine $N$ de modo que a função de onda seja normalizada.
+
+	{\tt (b)} Calcule os valores esperados $\med{\op X}$ e $\med{\op P}$ dos operadores
+	posição e momento, respectivamente.
+
+	{\tt (c)} Calcule as incertezas de posição $\Delta X=\sqrt{\med{\op X^2}-\med{\op X}^2}$
+	e de momento $\Delta P=\sqrt{\med{\op P^2}-\med{\op P}^2}$. Os resultados são 
+	consistentes com a relação de incerteza posição-momento? }
+\end{quotation}
+
+	{\tt (a)} A normalização se faz integrando-se o quadrado do módulo da função de onda por
+todo o espaço:
+	$$
+	\iprod{\psi}{\psi}=|N|^2\intii e^{-2\lambda x^2}dx=|N|^2\sqrt{\pi\over2\lambda}=1
+	$$
+
+	Então é claro que
+	$$
+	|N|^2=\sqrt{2\lambda\over\pi} \Rightarrow \tilde{N}=({2\lambda\over\pi})^{1/4}e^{i\phi}
+	$$
+
+	onde $\phi$ é a fase de $\tilde{N}$.
+
+	{\tt (b)} Escolhendo a representação das coordenadas, na qual $\op X = x$, o valor esperado de 
+$\op X$ é simplesmente
+	$$
+	\med{X}=\hope{\psi}{\op X}{\psi}=|N|^2\intii e^{-\lambda x^2}xe^{-\lambda x^2}dx=
+		|N|^2\intii xe^{-2\lambda x^2}dx=0
+	$$
+
+	pois uma função par vezes uma função ímpar resulta numa função impar. Já para $\op P$, nesta mesma
+representação resulta que $\op P=-i\hbar(d/dx)$ e, por conseguinte,
+	$$
+	\med{\op P}=\hope{\psi}{\op P}{\psi}=-i\hbar|N|^2\intii dx\,\,e^{-\lambda x^2}{d\over dx}
+				e^{-\lambda x^2}=2i\hbar\lambda|N|^2\intii xe^{-2\lambda x^2}dx=0
+	$$
+	
+	pelo mesmo motivo.
+
+	{\tt (c)} Já calculamos $\med{\op X}$ e $\med{\op P}$. Falta encontrar $\med{\op X^2}$ e
+$\med{\op P^2}$. Ainda na mesma representação,
+	$$
+	\med{\op X^2}=\hope{\psi}{\op X^2}{\psi}=|N|^2\intii e^{-\lambda x^2}x^2e^{-\lambda x^2}dx=
+			|N|^2\intii x^2e^{-2\lambda}dx={1\over4\lambda}
+	$$
+
+	e
+	$$
+	\med{\op P^2}=\hope{\psi}{\op P^2}{\psi}=-\hbar^2|N|^2\intii dx\,\,e^{-\lambda x^2}
+		{d^2\over dx^2}e^{-\lambda x^2}=-\hbar^2|N|^2\intii dx e^{-\lambda x^2}{d\over dx}
+			(-2\lambda x e^{-\lambda x^2})=\hbar^2\lambda
+	$$
+
+	Assim concluímos que
+	$$
+	\Delta X=\sqrt{\med{\op X^2}-\med{\op X}^2}=\sqrt{\med{\op X^2}}={1\over 2\sqrt{\lambda}}
+	$$
+
+	e
+	$$
+	\Delta P=\sqrt{\med{\op P^2}-\med{\op P}^2}=\sqrt{\med{\op P^2}}=\sqrt{\lambda}\hbar
+	$$
+
+	Além disso,
+	$$
+	\Delta X\Delta P = {\hbar\over2}
+	$$
+
+	e, portanto, está coerente com o que se esperava pelo princípio da incerteza.
+
+
+
+

@@ -1,0 +1,57 @@
+\begin{exercicio}[blue]
+	A camada semi-redutora de alumínio para um feixe monocromático de fótons é de $5\unit{cm}$.
+\begin{itemize}
+\item[a.]	Quais as porcentagens do feixe incidente que serão transmitidas por camadas de
+		$1\unit{mm}$, $1\unit{cm}$ e $10\unit{cm}$ desse material?
+\item[b.]	Calcule os coeficientes de atenuação linear, eletrônico e de massa para essa
+		energia de fótons.
+\item[c.]	Qual a energia do feixe incidente?
+\end{itemize}
+\end{exercicio}
+
+	Se para $5\unit{cm}$ de espessura temos uma atenuação de $50\,\%$ (Camada semi-redutora), deduzimos
+facilmente que 
+	$$
+	\mu={1\over x}\ln{I_0\over I}={1\over5}\ln2=0,1386\unit{cm^{-1}}
+	$$
+
+	Com isso somos perfeitamente capazes de calcular 
+	\begin{eqnarray*}
+	{I(1\unit{mm})\over I_0}	&=& e^{-0,1386\cdot0,1}=0,9862\;(98,62\%)	\\
+	{I(1\unit{cm})\over I_0}	&=& e^{-0,1386\cdot1,0}=0,8706\;(87,06\%)	\\
+	{I(10\unit{cm})\over I_0}	&=& e^{-0,1386\cdot10,0}=0,2501\;(25,01\%)	
+	\end{eqnarray*}
+
+	Sabendo que a densidade mássica do alumínio é $2699\unit{kg/m^3}$ podemos calcular o coeficiente
+de atenuação mássico:
+	$$
+	{\mu\over\rho}={0,1386\over2699}\cdot100=5,1352\times10^{3}\unit{m^2/kg}
+	$$
+
+	Na tabela do {\sl Johns} encontramos
+	
+	\begin{table}[htbp]
+	\centering
+	\begin{tabular}{cc}
+	$h\nu$ (MeV)	&	$\mu/\rho$ ($\unit{m^2/kg}$)			\\
+	\hline
+	\rule{1.5ex}{0mm}1,25		&	0,00549				\\
+	\rule{1.5ex}{0mm}1,5		&	0,00501				\\			
+	\hline
+	\end{tabular}
+	\end{table}
+	
+
+	Interpolando linearmente podemos obter uma boa aproximação para a energia correspondente ao
+coeficiente de atenuação mássico que acabamos de calcular:
+	$$
+	{1,5-1,25\over501-549}={1,5-\xi\over501-513,52}\quad\Rightarrow\quad \xi=1,435
+	$$
+
+	Portanto a enegia do feixe incidente é de aproximadamente $1,435\unit{MeV}$.\par
+	Chamemos $\varrho$ a densidade eletrônica do alumínio, que é igual a 
+$2,902\times10^{26}\unit{e^-/kg}$ ({\sl Johns}), ou ainda $7,832\times10^{29}\unit{e^-/m^3}$. Então
+	$$
+	{\mu\over\varrho}={13,86\over7,832}=1,769\times10^{-29}\unit{m^2/e^-}
+	$$
+	é o coeficiente de atenuação eletrônico do alumínio.

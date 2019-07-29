@@ -1,0 +1,95 @@
+\begin{exercicio}
+	Considere um oscilador harmônico unidimensional com energia 
+$E_n=(n+1/2)\hbar\omega$.
+
+	{\tt (a)} Qual é a amplitude máxima $A$ de um oscilador clássico com a
+mesma energia?
+
+	{\tt (b)} Qual é a probabilidade de se observar a partícula para além da
+amplitude clássica máxima no caso $n=0$?
+
+	{\tt (c)} Mostre que a probabilidade $P(x)dx$ de se encontrar a partícula
+no trecho $dx$ para um oscilador clássico é dada por
+	$$
+	P(x)dx = {dx\over\pi\sqrt{A^2-x^2}}
+	$$
+\end{exercicio}
+
+	{\tt (a)} Devido à conservação de energia do oscilador harmônico, no ponto 
+de máxima amplitude -- e portanto de velocidade zero -- a energia potencial 
+iguala-se à energia mecânica:
+	$$
+	E = {1\over2}kA^2 = (n+{1\over2})\hbar\omega \Rightarrow 
+		A^2 = (n+{1\over2}){2\hbar\over m\omega} 
+	$$
+
+	{\tt (b)} A função de onda normalizada para o estado fundamental do 
+oscilador harmônico quântico é
+	\begin{eqnarray*}
+	\psi_0(x)&=&({m\omega\over\hbar\pi})^{1/4}H_0(x)e^{-\alpha^2x^2/2}	\\
+		 &=&({m\omega\over\hbar\pi})^{1/4}e^{-\alpha^2x^2/2}
+	\end{eqnarray*}
+
+	A probabilidade de encontrarmos a partícula além dos limites clássicos é,
+portanto,
+	\begin{eqnarray*}
+	P	&=& \iprod{\psi_0}{\psi_0}-\int_{-A}^A\psi_0^*(x)\psi_0(x)dx	\\
+		&=& 1-2\int_0^A\psi_0^*(x)\psi_0(x)dx				\\
+		&=& 1-{2\over\sqrt{\pi}}\int_0^{A\sqrt{m\omega/\hbar}}
+						\psi_0^*(y)\psi_0(y)dy		\\
+		&=& 1-{2\over\sqrt{\pi}}\int_0^{A\sqrt{m\omega/\hbar}}
+						e^{-y^2}dy			
+	\end{eqnarray*}
+
+	onde fizemos a substituição $y=x\sqrt{m\omega/\hbar}$. 
+
+	Do item anterior obtemos, para $n=0$, $A={\sqrt{\hbar/m\omega}}$ e,
+portanto, o limite superior da integral é $1$:
+	\begin{eqnarray*}
+	P	&=& 1-{2\over\sqrt{\pi}}\int_0^1e^{-y^2}dy			\\
+		&=& 1-{2\over\sqrt{\pi}}\cdot0,746824				\\
+		&=& 0,1573					
+	\end{eqnarray*}
+
+	Assim, a probabilidade de encontrarmos a partícula além dos limites 
+clássicos é de aproximadamente $15,73\%$.
+
+	{\tt (c)} A equação de movimento do oscilador harmônico clássico é
+	$$
+	x(t)=A\cos(\omega t)
+	$$
+
+	Invertendo esta função de modo a expressarmos $t$ como função de $x$
+encontramos
+	\begin{equation}\label{eq:mhs classico}
+	t(x) = {1\over\omega}\arccos({x\over A}),\,\,\,\,\,{x\over A}\in[0,\pi]
+	\end{equation}
+
+	Esta inversão foi feita simplesmente porque a probabilidade de encontrarmos
+a partícula numa região $dx$ depende diretamente do tempo em que ela permanece lá:
+	$$
+	P(x)=2{dt\over T},
+	$$
+
+	onde o fator $2$ foi incluído por que a equação (\ref{eq:mhs classico}) só
+vale para meio período: T/2.	
+	
+	Deste modo, derivamos (\ref{eq:mhs classico}) em relação a $x$ para obter
+$dt$:
+	\begin{eqnarray*}
+	dt	&=& {1\over\omega}{d\over dx}\arccos({x\over A})		\\
+		&=& {1\over\omega A}{1\over\sqrt{1-({x\over A})^2}}	\\
+		&=& {T\over2\pi}{1\over\sqrt{A^2-x^2}}			\\
+	{dt\over T}
+		&=& {1\over2\pi}{1\over\sqrt{A^2-x^2}}			
+	\end{eqnarray*}
+
+	E finalmente concluímos que
+	$$
+	P(x) = {1\over\pi\sqrt{A^2-x^2}}
+	$$
+
+	ou ainda,
+	$$
+	P(x)dx = {dx\over\pi\sqrt{A^2-x^2}}
+	$$

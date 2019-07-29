@@ -1,0 +1,656 @@
+\documentclass{article}
+	\usepackage[brazil]{babel}
+	\usepackage[latin1]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{geometry}
+	\usepackage[squaren]{SIunits}
+	\usepackage{amsmath}
+	\usepackage{color}
+	\usepackage{amsfonts}
+	\usepackage{fancyhdr}
+	\usepackage{graphicx}
+	\usepackage{psfrag}
+	\usepackage{colortbl}	
+	\pagestyle{fancy}
+	\chead{Ivan Ramos Pagnossin}
+
+	\newcommand\vetor[1]{\ensuremath{\boldsymbol{#1}}}
+	\newcommand\longvec[1]{\ensuremath{\overrightarrow{#1}}}	
+	
+\begin{document}
+
+	\begin{center}
+		\color{red}
+		\rule[0.5ex]{2.5cm}{0.3pt}\textsc{ capítulo 4 }\rule[0.5ex]{2.5cm}{0.3pt}
+	\end{center}
+
+	\textbf{\textcolor{blue}{Exercício 1}} \textbf{(a)} Através de uma reorganização dos pontos da rede cúbica de base centrada, apresentada na figura~\hbox{\ref{fig:ex1}(a)}, vemos que esta se trata, na realidade, de uma rede de Bravais tetragonal (linhas vermelhas). \textbf{(b)} Neste caso, a rede ilustrada na figura~\hbox{\ref{fig:ex1}(b)} não se trata de uma rede de Bravais por que a estrutura não mantém a simetria translacional quando migramos de um ponto dos vértices do cubo para uma de suas faces, e vice-versa. Contudo, podemos descrever uma tal estrutura como uma rede de Bravais cúbica simples com uma base de três átomos, nas posições $(0,0,0)$, $a(0,1,1)/2$ e $a(1,0,1)/2$. \textbf{(c)} Similarmente ao caso anterior, esta também não é uma rede de Bravais e, para descrevê-la como tal, precisamos associar a cada ponto de uma rede cúbica simples uma base de quatro átomos localizados em $(0,0,0)$, $a(1,0,0)/2$, $a(0,1,0)/2$ e $a(0,0,1)/2$, conforme ilustra a figura~\hbox{\ref{fig:ex1}(c)}.
+
+	\begin{figure}[tb]
+		\centering
+		\psfrag{a}[][]{\huge$a$}
+		\psfrag{b}[][]{\huge$\sqrt{2}a/2$}
+		\psfrag{c}[][]{\huge\textbf{(a)}}
+		\psfrag{d}[][]{\huge\textbf{(b)}}
+		\psfrag{e}[][]{\huge\textbf{(c)}}
+		\resizebox{0.95\textwidth}{!}{\includegraphics{ex1}}
+		\caption{\footnotesize\label{fig:ex1}Em (a), podemos identificar uma rede de Bravais tetragonal (em vermelho); já em (b) e (c) a rede não é de Bravais pois não respeita a simetria translacional. Mesmo assim, podemos tratá-las como redes de Bravais cúbicas simples se a cada ponto desta rede associarmos uma base de três (em (b)) e quatro (em (c)) átomos (em vermelho).}
+	\end{figure}
+
+	\begin{center}
+		\rule{5cm}{0.1pt}
+	\end{center}
+
+	\textbf{\textcolor{blue}{Exercício 2}} \textbf{(a)} Quando todos os $m_i$ ($i = 1$, $2$ ou $3$) forem pares, poderemos escrever os vetores de translação da rede como $\vetor R \doteq (m_1,m_2,m_3) = (2n_1,2n_2,2n_3) = 2(n_1,n_2,n_3)$, com $n_i\in \mathbb{Z}$. Como não há restrições sobre $n_i$ e como $\hat{\vetor i}$, $\hat{\vetor j}$ e $\hat{\vetor k}$ são vetores ortonormais, concluimos que a rede resultante é cúbica simples com parâmetro de rede $2$. 
+	
+	Por outro lado, quando todos os $m_i$ forem ímpares, $\vetor R \doteq (m_1,m_2,m_3) = (2n_1+1,2n_2+1,2n_3+1) = 2\left[(n_1,n_2,n_3)+ (1/2,1/2,1/2)\right]$ --- com $n_i,m_i\in \mathbb{Z}$ --- e, analogamente, concluimos que esta é uma rede cúbica simples com parâmetro de rede $2$ e deslocada da anterior por um vetor $(1,1,1)$.
+	
+	\textbf{(b)} Neste caso, $m_1+m_2+m_3$ será par se todos forem pares (cúbica simples) \textbf{ou} se apenas um deles o for (obviamente, os outros dois serão ímpares). Podemos representar uma rede definida por esta condição da seguinte forma:
+	$$	
+	(m_1,m_2,m_3) = 
+	\left\{\begin{matrix}
+		(2n_1,2n_2+1,2n_3+1) \\ (2n_1+1,2n_2,2n_3+1) \\ (2n_1+1,2n_2+1,2n_3)
+	\end{matrix}\right\} = 
+	2\Big[(n_1,n_2,n_3) + 
+	\left\{\begin{matrix}
+		(0,\frac{1}{2},\frac{1}{2}) \\ (\frac{1}{2},0,\frac{1}{2}) \\ (\frac{1}{2},\frac{1}{2},0)
+	\end{matrix}\right\}\Big].
+	$$
+	
+	Ou seja, para cada terno $(n_1,n_2,n_3)$, que por sí só define um ponto de uma rede cúbica simples, associamos três outros pontos ou vetores adicionais, deslocados de $(n_1,n_2,n_3)$ por $(0,1,1)$, $(1,0,1)$ e $(1,1,0)$. Mas estes são precisamente os vetores primitivos de uma rede cúbica de faces centradas com parâmetro de rede $2$. Portanto, a rede formada pela condição de que $m_1+m_2+m_3$ seja par resulta numa rede cúbica de faces centradas com parâmetro de rede $2$.
+	
+	\begin{center}
+		\rule{5cm}{0.1pt}
+	\end{center}
+
+	\textbf{\textcolor{blue}{Exercício 3}} Os quatro átomos primeiros vizinhos de um átomo qualquer numa rede do diamante localizam-se em $\vetor r_j = \frac{a}{4}(x_j,y_j,z_j)$ (com relação ao átomo em questão), com $(x_j,y_j,z_j)$ podendo assumir os seguintes valores:
+	
+	\begin{center}
+	\begin{tabular}{cccc}
+		$x_j$	&	$y_j$ &	$z_j$	& $x_j + y_j + z_j$\\
+		\hline
+		$+1$	&	$-1$	&	$-1$	&	$-1$\\
+		$-1$	&	$+1$	&	$-1$	&	$-1$\\
+		$-1$	&	$-1$	&	$+1$	&	$-1$\\		
+		$+1$	&	$+1$	&	$+1$	&	$-1$\\		
+		\hline 
+	\end{tabular}
+	\end{center}	
+	
+	Além disso, como $r_j =\sqrt{3}\,a/4$, temos que os versores dos primeiros vizinhos são $\hat{\vetor r}_j \doteq \vetor r_j/r_j= \frac{1}{\sqrt{3}} (x_j,y_j,z_j)$. Assim, 
+	$$
+	\cos(j,k) = \hat{\vetor r}_j \cdot \hat{\vetor r}_k = \frac{1}{3}\,(x_j\,x_k + y_j\,y_k + z_j\,z_k) = -\,\frac{1}{3},
+	$$
+	quaisquer que sejam $\hat{\vetor r}_j$ e $\hat{\vetor r}_k$. Logo, o ângulo entre quaisquer duas ligações que unem um sítio da rede aos seus primeiros átomos vizinhos é $\arccos(-1/3) \approx 109\degree28'$.	
+
+	\begin{center}
+		\rule{5cm}{0.1pt}
+	\end{center}
+
+	\textbf{\textcolor{blue}{Exercício 5}} \textbf{(a)} A figura~\ref{fig:hcp} ilustra a organização geométrica ideal para a estrutura HCP: Note que $\bar{AB}= a$. Neste caso, o volume delimitado pelos pontos \textit{A}, \textit{B}, \textit{C} e \textit{D} é um tetraedro e, conseqüentemente, o triângulo $\Delta BCD$ é equilátero. Portanto, o ângulo $\angle FBE$ é 30º e $\bar{BF} = \bar{BE}/\cos(30\degree) = a/\left[2\cos(30\degree)\right] = a/\sqrt{3}$. Assim,
+	$$
+	\bar{AF} = \frac{c}{2} = \left[a^2- \bar{BF}^2\right]^{1/2} \quad\Rightarrow\quad \frac{c}{a} = \left(\frac{8}{3}\right)^{1/2}.
+	$$
+	
+	\begin{figure}[t]
+		\centering
+		\psfrag{A}[][]{\huge$A$}
+		\psfrag{B}[][]{\huge$B$}
+		\psfrag{C}[][]{\huge$C$}
+		\psfrag{D}[][]{\huge$D$}
+		\psfrag{E}[][]{\huge$E$}
+		\psfrag{F}[][]{\huge$F$}
+		\psfrag{G}[][]{\huge$30\degree$}
+		\psfrag{H}[][]{\huge$a$}
+		\resizebox{0.4\textwidth}{!}{\includegraphics{HCP}}
+		\caption{\footnotesize\label{fig:hcp}Configuração geométrica ideal de uma estrutura HCP.}
+	\end{figure}
+
+	\textbf{(b)} Uma rede BCC possui dois pontos da rede por célula convencional, cada qual associado a um átomo de sódio. Assim, acima de \unit{23}{\kelvin}, temos dois átomos de sódio por volume $f_e^\text{\textsc{bcc}}a^3_\text{\textsc{bcc}}$, onde $f_e^\text{\textsc{bcc}}$ é o fator de empacotamento desta estrutura, igual a $0,74$ (veja o exercício 6). Por outro lado, cada \unit{23}{\gram} de sódio (peso atômico) possui um mol de átomos. Por esta forma, a densidade do Na na fase BCC é
+	$$
+	\frac{\text{2 átomos de Na}}{f_e^\text{\textsc{bcc}}a^3_\text{\textsc{bcc}}}\, \frac{\unit{23}{\gram}}{\unit{6,022\times \power{10} {23}}{\text{átomos de Na}}}.
+	$$
+	
+	Analogamente, numa célula convencional da estrutura HCP temos $6$ pontos da rede (cada qual associado a um átomo de Na), de modo que temos seis átomos de sódio por volume $f_e^\text{\textsc{hcp}}a^3_\text{\textsc{hcp}}$. Neste caso, o fator de empacotamento é
+	$$
+	f_e^{\text{\textsc{hcp}}} = \frac{\text{Volume dos seis pontos da rede}}{\text{Volume da célula convencional}} = 
+					\frac{6\,\left[ \frac{4}{3}\,\pi\,\left( \frac{a}{2} \right)^3 \right]}{6\,\left[ \frac{1}{2}\,a^2\,\sin(60\degree)\,c \right]} 	=	\frac{\pi}{3\,\sqrt{2}} \approx 0,74
+	$$	
+	e, conseqüentemente, a densidade na fase HCP é
+	$$
+	\frac{\text{6 átomos de Na}}{f_e^\text{\textsc{hcp}}a^3_\text{\textsc{hcp}}}\, \frac{\unit{23}{\gram}}{\unit{6,022\times \power{10} {23}}{\text{átomos de Na}}}.
+	$$
+	
+	Considerando que esta densidade permaneça constante durante a transição BCC$\to$HCP a \unit{23}{\kelvin}, segue que $a_\text{\textsc{hcp}}^3 = 3\sqrt{3}a_\text{\textsc{bcc}}^3/8$ e, portanto (tomando $a_\text{\textsc{bcc}} = \unit{4,23}{\angstrom}$), que $a_\text{\textsc{hcp}}=\unit{3,66}{\angstrom}$.
+	
+	\begin{center}
+		\rule{5cm}{0.1pt}
+	\end{center}
+
+	\textbf{\textcolor{blue}{Exercício 6}} O fator de empacotamento $f_e$ é definido como o volume ocupado por esferas rígidas interiores a um volume qualquer, dividido por este volume. Em geral, é comum trabalharmos com as células convencionais, de forma que
+	$$
+	f_e = \frac{\text{Volume das esferas rígidas dentro da célula convencional}}{\text{Volume da célula convencional}}.
+	$$
+	
+	O raio $r$ dessas esferas deve ser definido de modo a ser o maior possível sem que ocorra a interpenetração de esferas. Então, no caso da rede cúbica simples (SC), $r = a/2$ pois o primeiro vizinho (nos vértices do cubo) localiza-se a uma distância $a$ (parâmetro de rede). Além disso, numa célula convencional desta estrutura temos apenas um átomo por célula convencional (por volume $a^3$), e
+	$$
+	f_e^\text{\textsc{sc}} = \frac{\frac{4}{3}\pi r^3}{a^3} = \frac{\frac{4}{3}\pi\left(  \frac{a}{2} \right)^3}{a^3} = \frac{\pi}{6} \approx 0,52.
+	$$
+	
+	Analogamente, no caso de uma rede cúbica de faces centradas (FCC), temos $4$ átomos por célula e $r=\sqrt{2}a/4$, pois o primeiro vizinho (nas faces do cubo) situa-se a $\sqrt{2}a/2$. Então
+	$$
+	f_e^\text{\textsc{fcc}} = \frac{4\left[ \frac{4}{3}\pi\left( \frac{\sqrt{2}}{4}a \right)^3 \right]}{a^3} = \frac{\sqrt{2}}{6}\pi \approx 0,74.
+	$$
+	
+	Para a rede cúbica de corpo centrado (BCC), existem dois átomos numa célula convencional e $r = \sqrt{3}a/4$, pois o primeiro vizinho (no centro do cubo) localiza-se a $\sqrt{3}a/2$. Neste caso, o fator de empacotamento é
+	$$
+	f_e^\text{\textsc{bcc}} = \frac{2\left[ \frac{4}{3}\pi\left( \frac{\sqrt{3}}{4}a \right)^3 \right]}{a^3} = \frac{\sqrt{3}}{8}\pi \approx 0,68.
+	$$
+
+	Finalmente, numa célula convencional da rede do diamante temos $8$ átomos e $r = \sqrt{3}a/8$, pois o primeiro vizinho (deslocado por um vetor $\vetor r_j$ do exercício $3$) situa-se a $\sqrt{3}a/4$. Assim,
+	$$
+	f_e^\text{diamante} = \frac{8\left[ \frac{4}{3}\pi\left( \frac{\sqrt{3}}{8}a \right)^3 \right]}{a^3} = \frac{\sqrt{3}}{16} \pi \approx 0,34.
+	$$
+
+	\begin{center}
+		\rule{5cm}{0.1pt}
+	\end{center}
+				
+	\textbf{\textcolor{blue}{Exercício 7}} A tabela~\ref{tab:vizinhos} relaciona a ordem $n$ de vizinhança a um ponto qualquer da rede à distância até os vizinhos da correspondente ordem e a quantidade deles; a figura~\ref{fig:vizinhos} ilustra alguns desses vizinhos.
+	
+	\begin{table}[t]
+		\caption{\footnotesize\label{tab:vizinhos}A quantidade $N_n$ e as distâncias $R_n$ (em unidades do parâmetro de rede) e $r_n=R_n/R_1$ (em unidades da distância dos primeiros vizinhos) dos vizinhos de ordem $n$ a um ponto qualquer das redes de Bravais SC (cúbica simples), BCC (cúbica de corpo centrado) e FCC (cúbica de faces centradas).}
+		\hfill\begin{minipage}[c]{0.3\textwidth}
+			\begin{tabular}{cccc}
+				\multicolumn{4}{c}{SC} \\
+				\hline
+				$n$	&	$R_n$ & $r_n$ & $N_n$ \\
+				\hline
+				1			&	1			&	1			&	6		\\
+				2			&	1,41	&	1,41	&	12	\\
+				3			&	1,73	&	1,73	&	8		\\
+				4			&	2			&	2			&	6		\\
+				5			&	2,23	&	2,23	&	24	\\
+				6			&	2,45	&	2,45	&	24	\\
+				\hline
+			\end{tabular}
+		\end{minipage}\hfill
+		\begin{minipage}[c]{0.3\textwidth}
+			\begin{tabular}{cccc}
+				\multicolumn{4}{c}{BCC} \\
+				\hline			
+				$n$	&	$R_n$ & $r_n$ & $N_n$ \\			
+				\hline
+				1			&	0,26	&	1			&	8		\\
+				2			&	1			&	1,16	&	6		\\
+				3			&	1,41	&	1,64	&	12	\\
+				4			&	1,65	&	1,92	&	24	\\
+				5			&	1,73	&	2,01	&	8		\\
+				6			&	2			&	2,32	&	6		\\
+				\hline
+			\end{tabular}
+		\end{minipage}\hfill
+		\begin{minipage}[c]{0.3\textwidth}
+			\begin{tabular}{cccc}		
+				\multicolumn{4}{c}{FCC} \\
+				\hline
+				$n$	&	$R_n$ & $r_n$ & $N_n$ \\
+				\hline		
+				1			&	0,71	&	1			&	12	\\
+				2			&	1			&	1,41	&	6		\\
+				3			&	1,2		&	1,72	&	24	\\
+				4			&	1,41	&	1,99	&	12	\\
+				5			&	1,58	&	2,23	&	24	\\
+				6			&	1,73	&	2,45	&	8		\\				
+				\hline
+			\end{tabular}
+		\end{minipage}		
+	\end{table}
+	
+	\begin{figure}[t]
+		\psfrag{1}[][]{\huge$1$}
+		\psfrag{2}[][]{\huge$2$}
+		\psfrag{3}[][]{\huge$3$}
+		\psfrag{4}[][]{\huge$4$}
+		\psfrag{5}[][]{\huge$5$}
+		\psfrag{6}[][]{\huge$6$}
+		\psfrag{7}[][]{\huge$7$}
+		\psfrag{8}[][]{\huge$8$}
+		\psfrag{9}[][]{\huge$9$}
+		\psfrag{10}[][]{\huge$10$}
+		\psfrag{11}[][]{\huge$11$}
+		\begin{minipage}[c]{0.3\textwidth}
+			\resizebox{\textwidth}{!}{\includegraphics{vizinhos-SC}}
+		\end{minipage}\hfill
+		\begin{minipage}[c]{0.3\textwidth}
+			\resizebox{\textwidth}{!}{\includegraphics{vizinhos-BCC}}		
+		\end{minipage}\hfill
+		\begin{minipage}[c]{0.3\textwidth}
+			\resizebox{\textwidth}{!}{\includegraphics{vizinhos-FCC}}		
+		\end{minipage}
+		\caption{\footnotesize\label{fig:vizinhos}Duas células convencionais de três redes de Bravais: Cúbica simples (SC), à esquerda; cúbica de corpo centrado (BCC), ao centro, e cúbica de faces centradas (FCC). Os números indicam a ordem $n$ de vizinhança dos respectivos pontos com relação ao ponto mais à esquerda, rotulado por $0$. A tabela~\ref{tab:vizinhos} relaciona $n$ à distância até $0$ e a quantidade de vizinhos daquela ordem.}
+	\end{figure}
+	
+	\begin{center}
+		\color{red}
+		\rule[0.5ex]{2.5cm}{0.3pt}\textsc{ capítulo 5 }\rule[0.5ex]{2.5cm}{0.3pt}
+	\end{center}
+	
+	\textbf{\textcolor{blue}{Exercício 1}} \textbf{(a)} Utilizando a equação $(5.3)$ do Aschcroft para $\vetor b_1$,
+	\begin{align*}
+		\vetor b_1\cdot \vetor b_2\times \vetor b_3 &=
+			2\pi\,\frac{\vetor a_2\times \vetor a_3}{\vetor a_1\cdot \vetor a_2\times \vetor a_3}\,\cdot\,\vetor b_2\times \vetor b_3 \\
+			&= 2\pi\,\frac{(\vetor a_2\times \vetor a_3)\cdot (\vetor b_2\times \vetor b_3)}{\vetor a_1\cdot \vetor a_2\times \vetor a_3} \\
+			&= 2\pi\,\frac{\vetor b_2\cdot\left[ \vetor b_3 \times \left( \vetor a_2\times \vetor a_3 \right) \right]} {\vetor a_1\cdot \vetor a_2\times \vetor a_3} \\
+			&= 2\pi\,\frac{\vetor b_2\cdot \left[ \vetor a_2\left( \vetor b_3\cdot \vetor a_3 \right) - \vetor a_3\,\left( \vetor b_3\cdot \vetor a_2 \right)\right]}{\vetor a_1\cdot \vetor a_2\times \vetor a_3} \\			
+			&= (2\pi)^2\,\frac{\vetor b_2\cdot \vetor a_2}{\vetor a_1\cdot \vetor a_2\times \vetor a_3} \\
+			&= \frac{(2\pi)^3}{\vetor a_1\cdot \vetor a_2\times \vetor a_3}.
+	\end{align*}
+	
+	Note que utilizamos a relação $\vetor a_i\cdot \vetor b_j = 2\pi\,\delta_{ij}$, onde $\delta_{ij}$ é o delta de Kronecker.
+	
+	\textbf{(b)} Analogamente ao item anterior, utilizamos a equação $(5.3)$ do Aschcroft para escrever $\vetor b_3$ em termos dos vetores da rede direta, $\vetor a_i$, e desenvolvemos a igualdade $(5.16)$:
+	\begin{align*}
+		2\pi\frac{\vetor b_2\times \vetor b_3}{\vetor b_1\cdot \vetor b_2\times \vetor b_3}
+			&= \frac{2\pi}{\vetor b_1\cdot \vetor b_2\times \vetor b_3}\,\vetor b_2\times \left(2\pi\, \frac{\vetor a_1\times \vetor a_2}{\vetor a_1\cdot \vetor a_2\times \vetor a_3}\right) \\
+			&= \frac{(2\pi)^2}{(\vetor b_1\cdot \vetor b_2\times \vetor b_3)\,(\vetor a_1\cdot \vetor a_2\times \vetor a_3)}\,
+					\vetor b_2\times (\vetor a_1\times \vetor a_2) \\
+			&= \frac{(2\pi)^2}{(\vetor b_1\cdot \vetor b_2\times \vetor b_3)\,(\vetor a_1\cdot \vetor a_2\times \vetor a_3)}\,
+					\left[ \vetor a_1\left( \vetor b_2\cdot \vetor a_2 \right) - \vetor a_2\left( \vetor b_2\cdot \vetor a_1 \right) \right] \\
+			&= \frac{(2\pi)^3}{\vetor b_1\cdot \vetor b_2\times \vetor b_3}\,\frac{\vetor a_1}{\vetor a_1\cdot \vetor a_2\times \vetor a_3} \\
+			&= \vetor a_1,
+	\end{align*}
+	após utilizarmos o resultado do item anterior.
+	
+	\textbf{(c)} Observe a figura~\ref{fig:paralelogramo} definido pelos vetores primitivos $\vetor a_i$. Seu volume pode ser obtido geometricamente, lembrando que
+	\begin{align*}
+	\text{volume} &= \text{área da base}\,\cdot\,\text{altura} =
+				\left(a_2\,a_3\,\sin\theta\right)\,\left(a_1\,\left|\cos\phi\right|\right) \\
+							 &= |\vetor a_2\times \vetor a_3|\,a_1\,|\cos\phi| \\
+							 &= \left|\vetor a_1\,\cdot\,\left(\vetor a_2\times \vetor a_3\right)\right|,
+	\end{align*}
+	como queríamos demonstrar. O módulo no cosseno acima é necessário para dar conta da possibilidade de $\phi$ ser maior que $\pi/2$.
+	
+	\begin{figure}[t]
+		\begin{minipage}[c]{0.46\textwidth}
+			\centering
+			\psfrag{a}[][]{\huge$\vetor a_1$}
+			\psfrag{b}[][]{\huge$\vetor a_2$}
+			\psfrag{c}[][]{\huge$\vetor a_3$}
+			\psfrag{d}[][]{\huge$\theta$}
+			\psfrag{e}[][]{\huge$\phi$}
+			\psfrag{f}[][]{\huge Base}
+			\psfrag{g}[][]{\huge\rotatebox{90}{Altura}}
+			\resizebox{0.95\textwidth}{!}{\includegraphics{paralelogramo}}
+			\caption{\footnotesize\label{fig:paralelogramo}O volume da célula primitiva definido pelos vetores primitios $\vetor a_i$.}
+		\end{minipage}\hfill
+		\begin{minipage}[c]{0.46\textwidth}
+			\centering
+			\psfrag{a}[][]{\huge$\vetor a_1$}
+			\psfrag{b}[][]{\huge$\vetor a_2$}
+			\psfrag{c}[][]{\huge$\vetor b_1$}
+			\psfrag{d}[][]{\huge$\vetor b_2$}
+			\psfrag{e}[][]{\huge$\vetor i$}
+			\psfrag{f}[][]{\huge$\vetor j$}
+			\psfrag{g}[][]{\huge$30\degree$}
+			\resizebox{0.95\textwidth}{!}{\includegraphics{CelulaHexagonal}}
+			\caption{\footnotesize\label{fig:Hexagonal}Células convencionais da rede direta (em preto) e recíproca (em vermelho). Os vetores $\vetor a_3$ e $\vetor b_3$ não estão representados pois localizam-se perpendicularmente ao plano da folha; apontados para o leitor}
+		\end{minipage}		
+	\end{figure}
+			
+	\textbf{\textcolor{blue}{Exercício 2}} \textbf{(a)} Utilizando os seguintes vetores primitivos de uma rede de Bravais hexagonal,
+	$$
+	\vetor a_1 = a\,(1,0,0), \quad \vetor a_2 = \frac{a}{2}\,(1,\sqrt{3},0) \quad\text{e}\quad \vetor a_3 = c(0,0,1),
+	$$
+	calculamos os vetores primitivos da rede recíproca através das equações $(5.3)$ do Aschcroft. Encontramos	
+	$$
+		\vetor b_1 = \frac{2\pi}{a}\,\frac{2}{\sqrt{3}}\,(\frac{\sqrt{3}}{2},-\frac{1}{2},0) \quad
+		\vetor b_2 = \frac{2\pi}{a}\,\frac{2}{\sqrt{3}}\,(0,1,0) \quad\text{e}\quad
+		\vetor b_3 = \frac{2\pi}{c}\,(0,0,1).
+	$$
+	
+	Logo, $b_1 = b_2 = 4\pi/(a\,\sqrt{3})$ e $b_3 = 2\pi/c$. A figura~\ref{fig:Hexagonal} ilustra esses vetores e dela podemos ver que as duas redes (direta e recíproca) são hexagonais, deslocadas angularmente de $30\degree$.
+	
+	\textbf{(b)} A razão $c^*/a^*$ da rede recíproca do item anterior pode ser facilmente calculada ao verificarmos que $c^* \doteq b_3$ e $a^* = b_1 = b_2$ (item anterior). Assim, $c^*/a^* = (2\pi/c)/\left[4\pi/(\sqrt{3}\,a)\right] = \tfrac{\sqrt{3}}{2}\,(a/c)$. \textbf{(i)} Fazendo $c^*/a^*=c/a$ na expressão anterior encontramos que $c/a\approx 0,93$. Ou seja, a razão $c/a$ será a mesma tanto na rede direta quanto na recíproca se ela for igual a $0,93$; Por outro lado, \textbf{(ii)} se $c/a=\sqrt{8/3}$ (razão ideal), $c^*/a^*=\sqrt{2}$.
+		
+	\textbf{(c)} O ângulo $\theta^*$ entre os vetores primitivos da rede recíproca $\vetor b_i$ ($i=1$, $2$ ou $3$) pode ser determinado através da equação $\cos\theta^* = \vetor b_i\cdot \vetor b_j/(b_i\,b_j)$. Então, calculemos primeiramente $b_i\doteq ||\vetor b_i||$:
+	\begin{equation*}
+		\vetor b_i \cdot \vetor b_i
+					= 2\pi\,\frac{\vetor a_j\times \vetor a_k}{\vetor a_i\cdot \vetor a_j \times a_k}\,\cdot\,
+						 2\pi\,\frac{\vetor a_j\times \vetor a_k}{\vetor a_i\cdot \vetor a_j \times a_k}
+					= \left(\frac{2\pi}{v}\right)^2\,(\vetor a_j\times\vetor a_k)\cdot(\vetor a_j\times\vetor a_k),
+	\end{equation*}
+	onde definimos $v = \vetor a_i\cdot \vetor a_j \times \vetor a_k$ como sendo o volume (a menos de um possível sinal negativo) encerrado pelos vetores primitivos da rede direta, $\vetor a_i$. Além disso,
+	\begin{align*}
+		(\vetor a_j\times\vetor a_k)\cdot(\vetor a_j\times\vetor a_k)
+			&= \vetor a_j\cdot\left[\vetor a_k\times\left(\vetor a_j\times\vetor a_k\right)\right]	\\
+			&= \vetor a_j\left[\vetor a_j\left(\vetor a_k\cdot \vetor a_k \right)-\vetor a_k \left(\vetor a_k\cdot\vetor a_j\right)\right] \\
+			&= (\vetor a_j\cdot \vetor a_j)(\vetor a_k\cdot \vetor a_k) - (\vetor a_j\cdot \vetor a_k)(\vetor a_k\cdot \vetor a_j).
+	\end{align*}
+	
+	Em redes trigonais, $\vetor a_i\cdot \vetor a_j = a^2\cos\theta$ (quaisquer que sejam $i$ e $j$) e, por conseguinte,
+	
+	\begin{align*}
+	(\vetor a_j\times\vetor a_k)\cdot(\vetor a_j\times\vetor a_k)
+			&= a^2\,a^2 - (a^2\cos\theta)\,(a^2\cos\theta) \\
+			&= a^4\sin^2\theta.
+	\end{align*}
+		
+	Por outro lado, Colocando $\vetor a_1$ e $\vetor a_2$ no plano $xy$, o volume $v$ pode ser obtido geometricamente:
+	$$
+	v=\underbrace{2\,\left(\frac{1}{2}\,a^2\,\sin\theta\right)}_{\text{Área da base}}\,\overbrace{\left(a\cos\phi\right)}^{\text{Altura}},
+	$$
+	onde $\phi$ é o ângulo entre $\vetor a_3$ e $\vetor k$. Portanto, $b_i = \tfrac{2\pi}{a}\,\tfrac{1}{\cos\phi}$ e podemos calcular
+	\begin{align*}
+		\vetor b_i \cdot \vetor b_j
+			&= 2\pi\,\frac{\vetor a_j\times \vetor a_k}{\vetor a_i\cdot \vetor a_j \times a_k}\,\cdot\,
+				 2\pi\,\frac{\vetor a_k\times \vetor a_i}{\vetor a_i\cdot \vetor a_j \times a_k} \\
+			&= \left(\frac{2\pi}{v}\right)^2\,(\vetor a_j\times\vetor a_k)\cdot(\vetor a_k\times\vetor a_i)\\	
+			&= \left(\frac{2\pi}{v}\right)^2\,\vetor a_k\cdot\left[\vetor a_i\times\left(\vetor a_j\times\vetor a_k\right)\right]	\\
+			&= \left(\frac{2\pi}{v}\right)^2\, \left\{\vetor a_k\left[\vetor a_j\left(\vetor a_i\cdot \vetor a_k \right)-\vetor a_k \left(\vetor a_i\cdot\vetor a_j\right)\right]\right\} \\
+			&= \left(\frac{2\pi}{v}\right)^2\,\left[(\vetor a_k\cdot \vetor a_j)(\vetor a_i\cdot \vetor a_k) - (\vetor a_k\cdot \vetor a_k)(\vetor a_i\cdot \vetor a_j)\right] \\
+			&= \left(\frac{2\pi}{v}\right)^2\,\left[(a^2\cos\theta)(a^2\cos\theta) - (a^2)(a^2\cos\theta)\right] \\
+			&= \left(\frac{2\pi}{v}\right)^2\,\frac{\left( \cos\theta - 1 \right)\cos\theta}{\sin^2\theta\,\cos^2\phi}.
+	\end{align*}
+	
+	Finalmente,
+	$$
+	\cos\theta^* = \frac{\vetor b_i\cdot \vetor b_j}{b_i\,b_j} = -\frac{\cos\theta}{1 + \cos\theta}.
+	$$
+	
+	Resta apenas determinarmos $\phi$. para fazê-lo, escrevemos os vetores primitivos $\vetor a_i$ no formato seguinte e notamos que $\cos\phi = z_3/a$:
+	\begin{equation*}
+		\vetor a_1 = a\cos\frac{\theta}{2}\,\vetor i - a\sin\frac{\theta}{2}\,\vetor j, \quad
+		\vetor a_2 = a\cos\frac{\theta}{2}\,\vetor i + a\sin\frac{\theta}{2}\,\vetor j \quad\text{e}\quad
+		\vetor a_3 = x_3\,\vetor i + z_3\,\vetor k.
+	\end{equation*}
+	
+	Por esta forma, $\vetor a_1\cdot \vetor a_3=a\,x_3\,\cos(\theta/2)=a^2\cos\theta$ e, conseqüentemente, $x_3= a\,\cos\theta/ \cos(\theta/2)$. Além disso, $a_3^2 = x_3^2 + z_3^2 = a^2$ e decorre daí que
+	\begin{align*}
+		\left(\frac{z_3}{a}\right)^2 &= 1-\frac{\cos^2\theta}{\cos^2(\theta/2)} 
+			= 1 - \frac{\cos^2\theta}{-\frac{1}{2}(1+\cos\theta)} 
+			= 1 + \frac{2\cos^2\theta}{1+\cos\theta} \Rightarrow\\
+			\Rightarrow\cos^2\phi &= 1 + 2\,\cos\theta\,\cos\theta^*.
+	\end{align*}
+	
+	Portanto, $b_i \doteq a^* = \tfrac{2\pi}{a}\left[ 1 + 2\,\cos\theta\,\cos\theta^* \right]^{-1/2}$. Destarte, a rede recíproca de uma rede trigonal é também trigonal com parâmetro de rede dado por $a^*$ e ângulo entre os vetores primitivos igual a $\theta^*$.
+	
+	
+	\begin{center}
+		\rule{5cm}{0.1pt}
+	\end{center}
+	
+	\textbf{\textcolor{blue}{Exercício 3}} \textbf{(a)} A célula de Wigner-Seitz é uma célula unitária (ou primitiva) de alta simetria, definida como a região do espaço em torno de um ponto da rede que está mais próxima deste ponto que de qualquer outro. Seu volume é $v$. Dito de outra forma, \textbf{associamos} a cada ponto de uma rede de Bravais um volume $v$ e, por conseguinte, a densidade \textbf{volumétrica} de pontos da rede de Bravais é $1/v$. Similarmente, dado um plano de pontos da rede, podemos associar a ele uma região ao seu redor que está mais próxima dele que de qualquer outro plano paralelo: Se $d$ é a distância entre dois desses planos (paralelos e sucessivos) e $A$ uma área qualquer nele, então podemos associar um volume $Ad$ a cada um dos planos, pois nossa ``célula de Wigner-Seitz'' do plano extende-se de $d/2$ para cada um dos lados do plano em questão. Destarte, a quantidade $N$ de pontos contidos neste plano pode ser obtida multiplicando o volume ``ocupado'' por este plano pela densidade volumétrica de pontos da rede. Obtemos $N=Ad/v$ e, conseqüentemente, $N/A = d/v$. Obviamente, $N/A$ é a densidade \textbf{superficial} de pontos daquele plano, como queríamos verificar.
+	
+	\textbf{(b)} A cada família de planos $\{m_1m_2m_3\}$ está associado um vetor da rede recíproca normal a eles, de comprimento $2\pi/d$ e dado por $m_1\vetor b_1+m_2\vetor b_2+m_3\vetor b_3$, onde $\vetor b_i$ são os vetores primitivos da rede recíproca. $d$ é a distância entre dois planos sucessivos desta família. Então, á claro que
+	$$
+	\frac{2\pi}{d} = |m_1\vetor b_1+m_2\vetor b_2+m_3\vetor b_3|.
+	$$
+	
+	Utilizando as equações $(5.3)$ do Aschcroft e lembrando que $v=|\vetor a_1\cdot \vetor a_2\times \vetor a_3|$, onde $a_i$ são os vetores primitivos da rede direta, podemos fazer
+	\begin{align}
+		\frac{d}{2\pi} &= \frac{1}{|m_1\vetor b_1+m_2\vetor b_2+m_3\vetor b_3|}  \notag\\
+			&= \frac{|\vetor a_1\cdot \vetor a_2\times \vetor a_3|}{|m_12\pi(\vetor a_2\times \vetor a_3) + m_22\pi(\vetor a_3\times \vetor a_1)+m_32\pi(\vetor a_1\times \vetor a_2)|} \notag\\
+			\frac{d}{v} &= \frac{1}{|m_1(\vetor a_2\times \vetor a_3) + m_2(\vetor a_3\times \vetor a_1)+m_3(\vetor a_1\times \vetor a_2)|}. \label{eq:d/v}
+	\end{align}
+	
+	Então $d/v$, a densidade superficial de pontos num plano $(m_1m_2m_3)$ será máxima quando o denominador da expressão acima for mínimo. No caso de uma rede FCC, onde
+	$$
+	\vetor a_1 = \frac{a}{2}(0,1,1), \quad \vetor a_2 = \frac{a}{2}(1,0,1) \quad\text{e}\quad \vetor a_3 = \frac{a}{2}(1,1,0),
+	$$
+	encontramos que o denominador da expressão~\eqref{eq:d/v} é (a menos do fator multiplicativo $a^2/4$) é
+	$$
+	\left[ (-m_1+m_2+m_3)^2 + (m_1-m_2+m_3)^2 + (m_1+m_2-m_3)^2 \right]^{1/2},
+	$$
+	que é mínimo quando $m_1=m_2=m_3=1$. Portanto, numa rede cúbica de faces centradas, a família de planos com maior densidade superficial de pontos da rede é a $\{111\}$, com os índices de Miller dados em função dos vetores primitivos simétricos desta estrutura. 
+	
+	Analogamente, para o caso de uma rede BCC, onde
+	$$
+	\vetor a_1 = \frac{a}{2}(-1,1,1), \quad \vetor a_2 = \frac{a}{2}(1,-1,1) \quad\text{e}\quad \vetor a_3 = \frac{a}{2}(1,1,-1),
+	$$
+	o denominador de~\eqref{eq:d/v} é proporcional a
+	$$
+	\left[(m_2+m_3)^2 + (m_1+m_3)^2 + (m_1+m_2)^2  \right]^{1/2},
+	$$
+	que é mínimo quando $m_1=1$ e $m_2=m_3=0$. Portanto, numa rede BCC a família de planos com maior densidade superficial de pontos da rede é a $\{100\}$, com os índices de Miller dados em função dos vetores primitivos simétricos desta estrutura.
+				
+	\begin{center}
+		\color{red}
+		\rule[0.5ex]{2.5cm}{0.3pt}\textsc{ capítulo 8 }\rule[0.5ex]{2.5cm}{0.3pt}
+	\end{center}
+	
+	\textbf{\textcolor{blue}{Exercício 2}} \textbf{(a)} Quando a superfície de Fermi está completamente contida na primeira zona de Brillouin, a energia do elétron livre pode ser escrita como $\epsilon(\vetor k) = \hbar^2\vetor k^2/(2m)$. Neste caso, as superfícies eqüienergéticas são esferas de raio $k=\sqrt{2m\epsilon}/\hbar$. De acordo com a equação $(8.63)$ do Aschcroft, a densidade de estados $g(\epsilon)$ é
+	\begin{equation}\label{eq:g(e)}
+	g(\epsilon) = \frac{1}{4\pi^3}\,\int\limits_{\Sigma} \frac{d\Sigma}{|\vetor \nabla \epsilon(\vetor k)|},
+	\end{equation}
+	onde $\Sigma$ é a esfera de energia $\epsilon$ e $d\Sigma=k^2\,\sin\theta\,d\theta\,d\phi$ (com $\theta\in[0,\pi]$ e $\phi\in [0,2\pi]$) é o elemento de área desta superfície. Em coordenadas esféricas, $|\vetor\nabla \epsilon(\vetor k)|=\partial\epsilon/\partial k = \hbar^2\,k/m$ e, por conseguinte,
+	$$
+	g(\epsilon) = \frac{1}{4\pi^3}\,\frac{m\,k}{\hbar^2}\int\limits_{\theta=0}^\pi\sin\theta\,d\theta\,\int\limits_{\phi=0}^{2\pi}d\phi = \frac{m\,k}{\pi^2\hbar^2}.
+	$$
+	
+	Quando $\epsilon=\epsilon_F$, $k=k_F$ e, portanto, $g(\epsilon_F) = m\,k_F/(\pi\,\hbar)^2$.
+	
+	\textbf{(b)} Não precisamos calcular a integral~\eqref{eq:g(e)} novamente para determinarmos $g(\epsilon)$ neste caso. Basta que reorganizemos a relação de dispersão:
+	\begin{align}
+		\epsilon(\vetor k) &= \epsilon_0 + \frac{\hbar^2}{2}\left( \frac{k_x^2}{m_x} + \frac{k_y^2}{m_y} + \frac{k_z^2}{m_z} \right) \notag\\
+		\epsilon(\vetor k) - \epsilon_0 &= \frac{\hbar^2}{2\,m_e}\left( m_y\,m_z\,k_x^2 + m_x\,m_z\,k_y^2 + m_x\,m_y\,k_z^2 \right) \notag\\
+				&= \frac{\hbar^2\vetor b^2}{2\,m_e}, \label{eq:disp}
+	\end{align}
+	com $m_e=m_x\,m_y\,m_z$ e $\vetor b= \left(\sqrt{m_y\,m_z}\,k_x, \sqrt{m_x\,m_z}\,k_y, \sqrt{m_x\,m_y}\,k_z\right)$. A expressão acima é estruturalmente idêntica à relação de dispersão do elétron livre no item anterior, de modo que podemos concluir de imediato que
+	\begin{equation}\label{eq:g2(e)}
+	g(\epsilon(\vetor k) - \epsilon_0) \equiv g(\epsilon) = \frac{m_e\,b}{\pi^2\,\hbar^2}.
+	\end{equation}
+	
+	Resolvendo a equação~\eqref{eq:disp} para $b$ (obtemos $b = \sqrt{2\,m_e\,(\epsilon - \epsilon_0)}/\hbar$) e colocando este resultado na igualdade acima, obtemos
+	\begin{align*}
+		g(\epsilon) &= \frac{m_e}{\pi^2\,\hbar^2}\,\frac{\sqrt{2\,m_e\,(\epsilon - \epsilon_0)}}{\hbar} \\
+								&= \frac{1}{2\pi^2}\,\left(\frac{2\,m_e}{\hbar^2}\right)^{3/2}\,\sqrt{\epsilon - \epsilon_0}.
+	\end{align*}
+	
+	Ou seja, $g(\epsilon) \propto (\epsilon - \epsilon_0)^{1/2}$. Além disso, a densidade eletrônica $n$ na banda em questão é
+	$$
+	n = \int\limits_0^{\epsilon_F} g(\epsilon)\,d\epsilon =  \int\limits_0^{\epsilon_F} \frac{m_e\,b}{\pi^2\hbar^2}\, \frac{\hbar^2 \,b}{m_e} db = \frac{b_F^3}{3\pi^2} \Rightarrow g_F^3 = 3\,n\,\pi^2.
+	$$
+	
+	Levando este resultado até a equação~\eqref{eq:g2(e)}, chegamos ao resultado pretendido:
+	$$
+	g(\epsilon_F) = \frac{m_e\,b_F}{\pi^2\hbar^2}\,{\color{blue}\frac{b_F^2}{b_F^2}} = \frac{m_e\,b_F^3}{\pi^2\hbar^2}\,\frac{1}{b_F^2} = 
+		\frac{m_e\,3\,n\,\pi^2}{\pi^2\hbar^2}\,\frac{\hbar^2}{2\,m_e\,(\epsilon_F - \epsilon_0)} = \frac{3}{2}\,\frac{n}{\epsilon_F - \epsilon_0}.
+	$$
+	
+	\begin{center}
+		\color{red}
+		\rule[0.5ex]{2.5cm}{0.3pt}\textsc{ capítulo 9 }\rule[0.5ex]{2.5cm}{0.3pt}
+	\end{center}
+
+	\textbf{\textcolor{blue}{Exercício 1}} \textbf{(a)} Quando $0<\Delta<2|U_{\vetor G}|$, A energia de Fermi está abaixo de $\epsilon_{\vetor G/2} + |U_{\vetor G}|$ e, portanto, a superfície de Fermi intercepta a banda associada ao ponto $\Gamma$ ($\vetor G=(0,0,0)$). Neste caso,
+	$$
+	\epsilon - \epsilon_{\vetor G/2} = \frac{\hbar^2k^2}{2m} {\color{blue}-} \left( 4\epsilon_{\vetor G/2}^0\,\frac{\hbar^2k_\parallel^2} {2m} + |U_{\vetor G}|^2 \right)^{1/2}.
+	$$
+	
+	No plano de Bragg, $k_\parallel = 0$ e, portanto, $\vetor k=\vetor k_\perp$. Utilizando isto e fazendo $\epsilon=\epsilon_F=\epsilon_{\vetor G/2}^0 - |U_{\vetor G}| + \Delta$ na expressão anterior, estaremos determinando a curva em $\vetor G/2$ que tem energia $\epsilon_F$, ou seja, a intersecção do nível de Fermi no com o plano de Bragg:
+	$$
+	-|U_{\vetor G}| + \Delta = \frac{\hbar^2k^2}{2m} - |U_{\vetor G}| \quad\Rightarrow\quad \rho_2^2 \doteq k^2 = k_\perp^2 = \frac{2m \Delta}{\hbar^2}.
+	$$
+
+	\textbf{(b)} Por outro lado, quando $\Delta > 2|U_{\vetor G}|$, além da banda associada a $\vetor G = (0,0,0)$, a superfície de Fermi intercepta também a banda $\vetor B \ne \vetor 0$. Neste caso,
+	$$
+	\epsilon - \epsilon_{\vetor G/2} = \frac{\hbar^2k^2}{2m} {\color{blue}+} \left( 4\epsilon_{\vetor G/2}^0\,\frac{\hbar^2k_\parallel^2} {2m} + |U_{\vetor G}|^2 \right)^{1/2}	
+	$$
+	e colocando $\epsilon=\epsilon_F=\epsilon_{\vetor G/2}^0 - |U_{\vetor G}| + \Delta$ e $k_\parallel = 0$, obtemos $\rho_1^2 = 2 m\left( \Delta - 2|U_{\vetor G}| \right)/\hbar^2$. Assim,
+	$$
+	\pi\left(\rho_2^2 - \rho_1^2\right) = \frac{4m\pi|U_{\vetor G}|}{\hbar^2}.
+	$$
+	
+	\textbf{\textcolor{blue}{Exercício 3}} Partindo da equação $(9.19)$ do Aschcroft, separamos da somatória em $j$ o termo $j=i$,
+	\begin{align*}
+	\left( \epsilon - \epsilon^0_{\vetor k - \vetor G_i} \right)c_{\vetor k-\vetor G_i} &=
+	 		\sum_{j=1}^m U_{\vetor G_j-\vetor G_i}c_{\vetor k- \vetor G_j}, \quad i=1,2,\ldots,m \\
+	 		&= U_{\vetor 0} c_{\vetor k- \vetor G_i} + \sum_{j\ne i}^m U_{\vetor G_j-\vetor G_i}c_{\vetor k- \vetor G_j} \\
+	\left( \epsilon - \epsilon^0_{\vetor k - \vetor G_i} - U_{\vetor 0} \right)c_{\vetor k-\vetor G_i} &=
+	 			\sum_{j\ne i}^m U_{\vetor G_j-\vetor G_i}c_{\vetor k- \vetor G_j}. \\
+	\end{align*}
+	
+	O limite superior da somatória é o número de estados cujas energias relativas são da ordem do potencial $U$ ($U_{\vetor G}$, quando expresso em termos de sua série de Fourier).
+	
+	No ponto W, $m=4$ pois a relação de dispersão de elétron livre das bandas associadas aos vetores da rede recíproca $(0,0,0)$, $2\pi(1,1,1)/a$, $2\pi(1,1,\bar1)/a$ e $2\pi(2,0,0)/a$ possuem todas a energia $\epsilon_W$ em W. Assim, escolhendo (sem perda de generalidade) $U_{\vetor 0} = 0$, chamando $U_{ji} = U_{\vetor G_j - \vetor G_i}$ e escrevendo a expressão acima na forma matricial (com $m=4$), obtemos
+	$$
+	\left(\begin{matrix}
+		\epsilon_{\vetor k - \vetor G_1}^0 - \epsilon	&	U_{21} 	& U_{31}	& U_{41} \\
+		U_{12}	& \epsilon_{\vetor k - \vetor G_2}^0 - \epsilon	& U_{32}	&	U_{42} \\
+		U_{13}	& U_{23}	& \epsilon_{\vetor k - \vetor G_3}^0 - \epsilon	& U_{43} \\
+		U_{14}	&	U_{24}	&	U_{34} & \epsilon_{\vetor k - \vetor G_4}^0 - \epsilon \\
+	\end{matrix}\right)
+	\left(\begin{matrix}
+		 c_{\vetor k - \vetor G_1} \\ c_{\vetor k - \vetor G_2} \\ c_{\vetor k - \vetor G_3} \\ c_{\vetor k - \vetor G_4}
+	\end{matrix}\right)
+	=0,
+	$$
+	que só tem solução não trivial se o determinante da matriz $4\times 4$ acima for nulo.
+	
+	Utilizando os símbolos do enunciando do exercício, vemos que $U_{200} \equiv U_{\vetor G_4} \doteq U_2$, que $U_{111} \equiv U_{\vetor G_2} \doteq U_1$ e $U_{11\bar1} \equiv U_{\vetor G_3} \doteq U_1$ (por simetria). Além disso, também utilizando a simetria de rotação da rede recíproca (veja a figura~\ref{fig:brilzone}), observamos também que
+	\begin{align*}
+	U_{\vetor G_4 - \vetor G_1} &= U_{\vetor G_1 - \vetor G_4} = U_2; \\
+	U_{\vetor G_4 - \vetor G_2} &= U_{\vetor G_2 - \vetor G_4} = U_1; \\
+	U_{\vetor G_4 - \vetor G_3} &= U_{\vetor G_3 - \vetor G_4} = U_1; \\	
+	U_{\vetor G_3 - \vetor G_1} &= U_{\vetor G_1 - \vetor G_3} = U_1; \\
+	U_{\vetor G_3 - \vetor G_2} &= U_{\vetor G_2 - \vetor G_3} = U_2; \\
+	U_{\vetor G_2 - \vetor G_1} &= U_{\vetor G_1 - \vetor G_2} = U_1. 
+	\end{align*}
+	
+	Finalmente, chamando $\epsilon_{\vetor k- \vetor G_i} = \epsilon_i$, essas energias podem ser obtidas da expressão $\det(A)=0$, onde $A$ é a matriz $4\times 4$ acima:
+	\begin{equation}\label{eq:determinante}
+	\left|\begin{matrix}
+		\epsilon_1^0 - \epsilon	&	U_1 	& U_1	& U_2 \\
+		U_1	& \epsilon_2^0 - \epsilon	  & U_2	&	U_1 \\
+		U_1	& U_2	& \epsilon_3^0 - \epsilon	  & U_1 \\
+		U_2	&	U_1	&	U_1 & \epsilon_4^0 - \epsilon   \\
+	\end{matrix}\right| = 0.
+	\end{equation}
+	
+	Como dissemos, no ponto W as energias das quatro bandas em questão são iguais, i.e., $\epsilon_1=\epsilon_2=\epsilon_3=\epsilon_4= \epsilon_W$. Resolvendo o determinante acima para esta situação, encontramos
+	$$
+	\det(A) = x^2 - 2(U_2^2+2U_1^2)x^2 + 8U_1^2U_2x - 4U_1^2U_2^2, \qquad x = \epsilon_W - \epsilon,
+	$$
+	cujas soluções são $\epsilon = \epsilon_W + U_2 \pm 2U_1$ e $\epsilon = \epsilon_W - U_2$ (multiplicidade dois).
+	
+	\textbf{(b)} Já no caso do ponto U, não temos a contribuição da banda $\vetor G_3$ pois, enquanto a energia de $\epsilon_1$, $\epsilon_2$ e $\epsilon_4$ são iguais em U, $\epsilon_3$ não o é. Em verdade, isto significa que, em primeira aproximação, as contribuições das bandas $\vetor G_1$, $\vetor G_2$ e $\vetor G_4$ são mais importantes que a da banda $\vetor G_3$. Neste caso, para obtermos as energias $\epsilon$ (em U), basta fazermos $\epsilon_1=\epsilon_2=\epsilon_4=\epsilon_U$ na equação~\eqref{eq:determinante} e retirarmos dela a linha e a coluna três, referentes à banda $\vetor G_3$. Ficamos com
+	\begin{equation*}
+	\left|\begin{matrix}
+		\epsilon_U - \epsilon	&	U_1 	& U_2 \\
+		U_1	& \epsilon_U - \epsilon	  &	U_1 \\		
+		U_2	&	U_1	& \epsilon_U - \epsilon   \\
+	\end{matrix}\right| = 0,
+	\end{equation*}	
+	cujas soluções são $\epsilon = \epsilon_U - U_2$ e $\epsilon = \epsilon + U_2/2 \pm \tfrac{1}{2}\left[ 8U_1^2 + U_2^2 \right]^{1/2}$.
+	
+	 
+	\begin{figure}[t]
+		\centering
+		\psfrag{A}[][]{$\vetor k_x$}
+		\psfrag{B}[][]{$\vetor k_y$}
+		\psfrag{C}[][]{$\vetor k_z$}
+		\psfrag{D}[][]{$\vetor G_4$}
+		\psfrag{E}[][]{$\vetor G_2$}
+		\psfrag{F}[][]{$\vetor G_3$}
+		\psfrag{G}[l][l]{$\vetor G_4 - \vetor G_3$}
+		\psfrag{H}[][]{$\vetor G_1$}
+		\psfrag{I}[l][l]{$\vetor G_4 - \vetor G_2$}
+		\psfrag{J}[][]{$\vetor G_3 - \vetor G_2$}
+		\resizebox{0.5\textwidth}{!}{\includegraphics{brilzone}}
+		\caption{\footnotesize\label{fig:brilzone}Primeira zona de Brillouin de uma rede cúbica de faces centradas com os vetores de translação da rede recíproca de maior importância para cômputo das energias nos pontos $W$ e $U$. Através desta figura é possível observarmos, com base nas simetrias de rotação, que vários dos vetores $\vetor G$ contribuem de forma igual para a energia: É o caso, por exemplo, de $\vetor G_3$ e $\vetor G_4-\vetor G_2$.}
+	\end{figure}
+	
+	\begin{center}
+		\color{red}
+		\rule[0.5ex]{2.5cm}{0.3pt}\textsc{ capítulo 10 }\rule[0.5ex]{2.5cm}{0.3pt}
+	\end{center}
+	
+	\textbf{\textcolor{blue}{Exercício 1}} \textbf{(a)} Utilizando a expressão $(10.22)$ do Aschcroft e substituindo nela os vetores do espaço recíproco em cada uma das situações, obtemos $\epsilon(\vetor k)$ nas direções desejadas: Em \textbf{(i)}, $\vetor k=(2\pi\mu/a,0,0)$ e, por conseguinte, $\epsilon(\mu) = \epsilon_s - \beta - 4\gamma\left[1+2\cos(\mu\pi)\right]$. Ou seja, simplesmente substituimos $\vetor k\cdot \vetor i \doteq k_x = 2\pi\mu/a$ e $k_y=k_z=0$ na equação $(10.22)$ e obtemos de imediato a relação de dispersão ao longo de $\Gamma X$. Note que quando $\mu=0$, $\vetor k=0$ e $\epsilon(\mu) \equiv \epsilon(\vetor k)$ será a energia no ponto $\Gamma$; quando $\mu=1$, $\vetor k = (2\pi\mu/a,0,0)$ e $\epsilon(\mu)$ será a energia no ponto $X$.
+	
+	Procedendo de maneira idêntica para os outros casos, encontramos as expressões solicitadas:
+	\begin{align*}
+	\text{\textbf{(ii)}} \Gamma L&:	& \quad \epsilon &= \epsilon_s - \beta - 12\gamma\cos^2(\mu\pi), &&0\le \mu \le 1; \\
+	\text{\textbf{(iii)}} \Gamma K&:	& \quad \epsilon &= \epsilon_s - \beta - 4\gamma \left[ \cos^2(\mu\pi) + 2\cos(\mu\pi) \right],
+			&&0 \le \mu \le \tfrac{3}{4}; \\
+	\text{\textbf{(iv)}} \Gamma W&:	& \quad \epsilon &= \epsilon_s - \beta - 4\gamma \left[ \cos(\mu\pi) + \cos(\tfrac{1}{2}\mu\pi) + \cos(\mu\pi)\cos(tfrac{1}{2}\mu\pi) \right], &&0 \le \mu \le 1.	
+	\end{align*}
+	
+	Note que o domínio $\mu$ varia de acordo com a posição do plano de Bragg ao longo da correspondente direção.
+	
+	\textbf{(b)} Tomemos, por exemplo, a face quadrada identificada pelo vetor $\vetor G_4$ na figura~\ref{fig:brilzone}. Geometricamente nós podemos concluir que a distância do centro (ponto $X$) até qualquer um dos vértices é $\pi/a$, de modo que qualquer ponto desse plano pode ser escrito vetorialmente como 
+	$$
+	\vetor k_S (\lambda_1,\lambda_2) = \frac{2\pi}{a}(1,2\lambda_1,2\lambda_2), \qquad -1\le \lambda_1,\lambda_2 \le 1.
+	$$
+	
+	Além disso, como $\vetor i$ é perpendicular a esta face, a derivada normal ao plano é
+	$$
+	\frac{d\epsilon}{d\vetor k} = \vetor i \cdot \vetor \nabla\epsilon_s(\vetor k) = \left.\frac{\partial\epsilon(\vetor k)}{\partial k_x}\right|_{\vetor k_s}.
+	$$
+	Novamente, utilizando a expressão $(10.22)$ do Aschcroft nós encontramos
+	\begin{align*}
+		\frac{d\epsilon}{d\vetor k} &= \left\{ -2a\gamma\sin\left(\tfrac{1}{2}k_xa\right)\left[ \cos\left(\tfrac{1}{2}k_ya\right) + \cos\left( \tfrac{1}{2}k_za \right) \right] \right\}_{\vetor k_s} \\
+				&=  -2a\gamma\sin\left(\tfrac{1}{2}\tfrac{2\pi}{a}a\right)\left\{ \cos\left[\tfrac{1}{2}\left(\tfrac{\pi \lambda_1}{a}\right)a\right] + \cos\left\{ \tfrac{1}{2}\left(\tfrac{\pi \lambda_2}{a}\right)a \right] \right\}   \\
+				& = 0,
+	\end{align*}
+	como queríamos demonstrar.
+	
+	\textbf{(c)} Tomemos a face hexagonal identificada por $\vetor G_2$ na figura~\ref{fig:brilzone}. Um vetor normal a esta superfície é o próprio $\vetor G_2$ (do exercício $3$ do capítulo $9$) e, portanto, um versor normal é simplesmente $\vetor G_2/G_2 = \tfrac{1}{\sqrt{3}}(1,1,1)$. Então, utilizando novamente a equação $(10.22)$ do Aschcroft, a derivada normal a esta superfície é
+	\begin{align}
+		\frac{d\epsilon}{d\vetor k} &= \frac{\vetor G_2}{G_2} \cdot \vetor \nabla\epsilon_s(\vetor k) \notag\\
+				&= \frac{1}{\sqrt{3}}\left[\frac{\partial\epsilon(\vetor k)}{\partial k_x} + \frac{\partial\epsilon(\vetor k)}{\partial k_y} + \frac{\partial\epsilon(\vetor k)}{\partial k_z}\right]_{\vetor k_s} \notag\\
+				&\vdots \notag\\
+				&= -\frac{2a\gamma}{\sqrt{3}}\left[ \sin\left(\frac{k_x+k_z}{2}a\right) + \sin\left(\frac{k_x+k_y}{2}a\right) + \sin\left(\frac{ k_y + k_z}{2}a\right) \right]_{\vetor k_s}. \label{eq:derdir}
+	\end{align}
+	
+	A expressão acima pode ser simplificada se observarmos que um ponto $\vetor k_S$ qualquer na superfície do hexágono atende à equação $\vetor k_s\cdot \tfrac{\vetor G_2}{G_2} = 2\sqrt{3}\pi/a$, onde $2\sqrt{3}\pi/a$ é a distância do ponto $\Gamma$ à face, ou ainda, a projeção de $\vetor k_S$ sobre $\longvec{\Gamma L}$. Então, escrevendo $\vetor k = \tfrac{2\pi}{a}(k_x,k_y,k_z)$ e aplicando a equação do plano, obtemos $k_x + k_y + k_z = 3/2$. Com isto nós podemos escrever
+	$$
+	k_x + k_z = \frac{3}{2} - k_y, \quad k_x + k_y = \frac{3}{2} - k_z \quad\text{e}\quad  k_y + k_z = \frac{3}{2} - k_x.
+	$$
+	
+	Utilizando isto na expressão~\eqref{eq:derdir}, encontramos\footnote{Aqui é preciso chamar a atenção para o fato de que mudamos a definição de $\vetor k=(k_x,k_y,k_z)$ para $\vetor k=2\pi(k_x,k_y,k_z)/a$, de modo que cada $k_j$ na equação~\eqref{eq:derdir} deve ser substituído por $2\pi k_j/a$.}
+	\begin{equation}\label{eq:e(hexagono)}
+		\frac{d\epsilon}{d\vetor k} = -\frac{2a\gamma}{\sqrt{3}}\left\{ \sin\left[\left(\frac{3}{2}-k_x\right)\pi\right]  + \sin\left[\left(\frac{3}{2}-k_y\right)\pi\right] + \sin\left[\left(\frac{3}{2}-k_z\right)\pi\right] \right\}.
+	\end{equation}
+	
+	Vamos agora encontrar uma forma mais conveniente para $\vetor k_S$: A figura~\ref{fig:hexagono} apresenta uma vista aproximada da face hexagonal da primeira zona de Brillouin identificada por $\vetor G_2$ na figura~\ref{fig:brilzone}. Note que, devido à simetria, descrever o triângulo hachurado corresponde a descrever toda a face. Assim, queremos localizar o ponto $P$ dentro dele e, para isto, escrevemo-lo no formato vetorial, utilizando $\Gamma$ como ponto de referência:
+	\begin{align*}
+	\vetor k_S \doteq \longvec{\Gamma P} &= \longvec{\Gamma L} + \lambda_1\longvec{LA}, \quad 0\le \lambda_1 \le 1 \\
+		&= \longvec{\Gamma L} + \lambda_1\left(\longvec{\Gamma A} - \longvec{\Gamma L}\right) \\
+		&= \longvec{\Gamma L} + \lambda_1\left(\longvec{\Gamma W} + \longvec{WA}- \longvec{\Gamma L}\right).
+	\end{align*}
+	
+	Por outro lado, $\longvec{WA} = \lambda_2 \longvec{WK}$, com $0\le \lambda_2\le 1$ e $\longvec{WK} = \longvec{\Gamma K} - \longvec{\Gamma W}$. Então,
+	\begin{align}
+		\vetor k_S &= \longvec{\Gamma L} + \lambda_1 \longvec{\Gamma W} + \lambda_1\lambda_2 \left( \longvec{\Gamma K} - \longvec{\Gamma W} \right) - \lambda_1\longvec{\Gamma L} \notag\\
+			&= (1-\lambda) \longvec{\Gamma L} + \lambda_1(1- \lambda_2) \longvec{\Gamma W} + \lambda_1\lambda_2\longvec{\Gamma K}. \label{eq:kS}
+	\end{align}
+	
+	No caso das figuras~\ref{fig:brilzone} e~\ref{fig:hexagono}, 
+	\begin{equation}\label{eq:direcoes}
+	\longvec{\Gamma L} = \frac{2\pi}{a}\frac{1}{2}(1,1,1), \quad 
+		\longvec{\Gamma W} = \frac{2\pi}{a}(1,\frac{1}{2},0 \quad\text{e}\quad
+			\longvec{\Gamma K} = \frac{2\pi}{a}(\frac{3}{4},\frac{3}{4},0).
+	\end{equation}
+	
+	Assim, colocando as equações~\eqref{eq:kS} e~\eqref{eq:direcoes} na expressão~\eqref{eq:e(hexagono)} e desenvolvendo (isto dá um pouco de trabalho, embora seja simples), obtemos
+	$$
+	\frac{d\epsilon}{d\vetor k} = \frac{2a\gamma}{\sqrt{3}}\left\{ \sin\left(\frac{\pi}{2}\lambda_1\right) - \sin\left(\frac{\pi}{4}\lambda_1\lambda_2\right) - \sin\left[\frac{\pi}{2}(1-\lambda_2)\lambda_1\right] \right\}.
+	$$
+	
+	Quando $\lambda_2 = 0$, ou seja, ao longo da direção $WL$, $d\epsilon/d\vetor k = 0$, como queríamos demonstrar. Para completar a demonstração, basta então fazer um gráfico da equação acima para $0\le \lambda_1,\lambda_2\le 1$ e verificarmos que ela não se anula no triângulo hachurado (e, conseqüentemente, em todo a face hexagonal) para qualquer valor de $\lambda_2$ que seja diferente de  $0$, i.e., fora das diagonais do hexágono que passam por $L$.
+	
+	\begin{figure}[t]
+		\centering
+		\psfrag{A}{$\Gamma$}
+		\psfrag{B}{$W$}
+		\psfrag{C}{$K$}
+		\psfrag{D}{$L$}
+		\psfrag{E}{$P$}
+		\psfrag{I}{$\lambda_1$}
+		\psfrag{F}{$\lambda_2$}
+		\resizebox{0.5\textwidth}{!}{\includegraphics{hexagono}}
+		\caption{\footnotesize\label{fig:hexagono}Vista próxima da face hexagonal da primeira zona de Brillouin de uma rede FCC identificada por $\vetor G_2$ na figura \ref{fig:brilzone}. Os parâmetros $\lambda_1$ e $\lambda_2$ localizam um ponto $P$ qualquer dentro do triângulo hachurado. Devido às simetrias, este triângulo é suficiente para descrever toda a face.}
+	\end{figure}
+	
+\end{document}

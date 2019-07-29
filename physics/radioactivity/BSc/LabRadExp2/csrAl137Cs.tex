@@ -1,0 +1,81 @@
+\section{Camada semi-redutora do alumínio bombardeado por $\mathrm{^{137}Cs}$.}
+\label{sec:csr Al 137Cs}
+  \par
+ 
+  Medindo a exposição para várias espessuras de alumínio podemos desenhar a figura 
+\ref{fig:csr Al 137Cs}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.35]{figuras/csrAlCs.pdf}
+    \caption{\footnotesize\label{fig:csr Al 137Cs}
+      Valores de exposição em função da espessura da camada de alumínio interposta ao césio e               detector. A escala vertical tornada logarítmica expõe o caráter exponencial do comportamento.
+      O ajuste da reta, em vermelho, resultou $\ln\dot{X}=3,539(10)-0,01745(16)e$ com
+      $\chi_{\mathrm{red}}^2=0,99$.}
+  \end{figure}
+  
+  Sabemos que o césio é um gama-emissor monoenergético. Entretanto, suponhamos por um momento que
+este fato não é conhecido e, por generalidade, consideremos a radiação como poli-energética. Neste
+caso, buscaremos a primeira e segunda camadas semi-redutoras diretamente do gráfico e sem ajustar 
+curva alguma; notaremos que são iguais e este seria o principal indício\footnote{E único com as 
+ferramentas que temos à mão.} de que realmente se trata de um feixe monoenergético.\par
+	De qualquer forma continuamos a assumir poli-energético o feixe e procuramos encontrar a camada
+semi-redutora efetiva. Para isso, consideramos realizada uma experiência anterior que nos diga que
+o césio emite raios gama e tomamos a lei de atenuação exponencial como modelo:
+	\begin{equation}\label{eq:lei exponencial}
+	\ln\dot X = \ln\dot{X}_0-\mu e
+	\end{equation}
+	onde $e$ é a espessura do material.
+	
+	Na carência de um conhecimento prévio sobre a natureza da radiação emitida pelo césio poderíamos 
+ainda assim assumir tal modelo, justificando-o com uma suposição e verificando-a no final. Não
+faremos isso pois esta não é uma experiência com este propósito --- E, portanto, eventualmente
+faltar-nos-á informações suficientes.\par
+  A equação~(\ref{eq:lei exponencial}) esclarece-nos que o coeficiente angular da reta ajustada ao
+gráfico $\ln\dot{X}\times e$ (figura~\ref{fig:csr Al 137Cs}) é precisamente o coeficiente (não mássico) de
+atenuação:
+	\begin{equation}\label{eq:mu}
+	\mu=0,1745(16)\unit{cm^{-1}}\quad\Rightarrow\quad {\mu\over\rho}=0,0646(6)\unit{cm^2/g}
+	\end{equation}
+	lembrando que a densidade de massa do alumínio é $2699\unit{kg/m^3}$.\par
+	A camada semi-redutora efetiva é imediata:
+	$$
+	e_{1/2}={\ln2\over\mu}={\ln2\over0,1745}=3,97(4)\unit{cm}
+	$$
+	
+	A energia efetiva, por outro lado, exige um pouco mais de trabalho: A partir de $\mu/\rho$ 
+encontrado na eq.~(\ref{eq:mu}), notamos que a energia correspondente deve estar entre $800\unit{keV}$ e $1\unit{MeV}$ (tabela~\ref{tab:Johns-Al}). Interpolando os dados do
+gráfico~\ref{fig:mu(E)}, obtidos da referência~\cite{johns}:
+  \begin{table}
+   \centering
+   \begin{tabular}{cc}
+   $h\nu$ ($\unit{keV}$) & $\mu/\rho$ ($\unit{cm^2/g}$) \\
+   \hline
+   550   & 0,0810 \\
+   662   & 0,0746 \\
+   800   & 0,0684 \\
+   1000  & 0,0615 \\
+   1250  & 0,0549 \\
+   1500  & 0,0501 \\
+   \hline
+   \end{tabular}
+   \caption{\footnotesize\label{tab:Johns-Al}
+   Alguns valores de $\mu/\rho$ em função da energia do feixe incidente.}
+  \end{table}
+  
+  \begin{figure}
+   \centering
+   \includegraphics[scale=0.35]{figuras/JohnsAlCs.pdf}
+   \caption{\footnotesize\label{fig:mu(E)}
+     Os dados da tabela~\ref{tab:Johns-Al} e a interpolação para essa região.}
+  \end{figure}
+  
+  O resultado é
+  \begin{eqnarray*}
+  {\mu\over\rho} &=& 0,1160(22) - 7(5)\times10^{-5}E + 0,21(23)\times10^{-7}E^2 \\
+  0,0646         &=&\\
+  \end{eqnarray*}
+  
+	Resolvendo para $E$ obtemos $E_{\mathrm{ef}}=1075,73\unit{keV}$.
+	
+	  
+		

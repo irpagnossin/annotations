@@ -1,0 +1,68 @@
+\begin{quotation}
+{\bf 3.}
+{\it	Um operador linear num espaço de $n$ dimensões não têm necessariamente $n$ autovetores linearmente independentes. Como exemplo considere um 
+operador $\operador A$ num espaço bidimensional representado em termos da base ortonormal $\{\ket 1,\ket 2\}$:
+	$$
+	\operador A=4\ket 1\bra 1+\ket 1\bra 2-\ket 2\bra 1+2\ket 2\bra 2
+	$$
+
+	{\tt (a)} Escreva a forma matricial deste operador. Esse operador é Hermiteano? {\tt (b)} Escreva e resolva a equação característica. Mostre que
+existe apenas um autovalor 3 duplamente degenerado. {\tt (c)} Mostre que existe apenas um autovetor normalizado (a menos de um fator de fase) dado por
+$\ket v=(\ket 1-\ket 2)/\sqrt{2}$.
+}
+\end{quotation}
+
+\vspace{5mm}
+
+	Como no exercício anterior, a forma matricial é clara:
+	\[\operador A=\left (\begin{array}{cc}
+				4	&	1	\\
+				-1	&	2
+			\end{array}\right )\]
+
+	E é claro que $\operador A$ é Hermiteano se $\operador A^{\dagger}=\operador A$:
+	\[\operador A^{\dagger}=\tilde{\operador{A}}^*=\left (\begin{array}{cc}
+								4	&	-1	\\
+								1	&	2	
+							\end{array}\right )\ne\operador A\]
+
+	Portanto, {\bf $\operador A$ não é Hermiteano}. Sua equação característica é dada por $\mathrm{ker}[\operador A-\lambda\operador I]$:
+	\[\mathrm{ker}[\operador A-\lambda\operador I]\Rightarrow\left |\begin{array}{cc}
+									4-\lambda	&	1	\\
+									-1		&	2-\lambda	
+								\end{array}\right |=0\Rightarrow(\lambda-3)^2=0 \]
+
+	A solução é $a=3$ duplamente degenerado (raiz com multiplicidade algébrica dois) e, conseqüentemente, o problema de autovalor
+$\operador A\ket{\psi}=a\ket{\psi}$ é dado, na forma matricial, por
+	\[\left (\begin{array}{cc}
+			1	&	1	\\
+			-1	&	-1
+		\end{array}\right )\cdot\left(\begin{array}{c}
+						x	\\
+						y
+					\end{array}\right)=\left(\begin{array}{c}
+									0	\\
+									0
+							\end{array}\right)\]
+	
+	lembrando que $\ket{\psi}=x\ket 1+y\ket 2$. Novamente verificamos que as duas linhas da matriz são linearmente dependentes, o que nos dá a 
+equação $x+y=0\Rightarrow x=-y$:
+	$$
+	\ket{\psi}=x(\ket 1-\ket 2)
+	$$
+
+	Normalizando,
+	\begin{eqnarray*}
+	\iprod{\psi}{\psi}	&=&|x|^2(\bra 1-\bra 2)\cdot(\ket 1-\ket 2)	\\
+				&=&|x|^2(\iprod 11-\iprod 12-\iprod 21+\iprod 22)	\\
+	1			&=&2|x|^2
+	\end{eqnarray*}
+
+	Que dá, obviamente, $|x|={1/\sqrt{2}}e^{\i\phi}$. Ou seja, o autovetor normalizado é
+	$$
+	\ket{\psi}={\ket 1-\ket 2\over\sqrt{2}}e^{i\phi} 
+	$$
+
+	que é exatamente o que o exercício pediu, a menos de uma fase $\phi$.
+
+

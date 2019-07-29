@@ -1,0 +1,70 @@
+\begin{exercicio}[blue]
+	Um elétron num átomo de hidrogênio encontra-se no estado 
+	$$
+	\ket\psi = N(2\ket{100}-3\ket{200}+\ket{322})
+	$$
+	
+	onde $\ket{nlm}$ representam os autoestados do elétron ignorando-se o spin.
+	
+	{\tt (a)} Determine a constante $N$ de modo que o auto--estado seja normalizado.
+	
+	{\tt (b)} A função de onda $\psi(\mathbf{r})=\iprod{\mathbf{r}{\psi}$. tem paridade definida?
+	
+	{\tt (c)} Qual é a probabilidade de que na medida de energia se encontre $-m(e^2/4\pi\epsilon_0)^2/8\hbar^2$?
+	
+	{\tt (d)} Qual é a probabilidade de que na medida de $\opv{L}^2$ se encontre $6\hbar^2$?
+	
+	{\tt (e)} Qual é a probabilidade de que na medida de $\op L_z$ se encontre valor nulo?
+	
+	{\tt (f)} Quais são os valores esperados da medida de energia, $\opv{L}^2$ e $\op L_z$?
+
+\end{exercicio}
+
+	{\tt (a)} 
+	\begin{eqnarray*}
+	\iprod{\psi}{\psi}	&=& N^*(2\bra{100}-3\bra{200}+\bra{322})\cdot N(2\ket{100}-3\ket{200}+\ket{322})	\\
+	1										&=& |N|^2(4\iprod{100}{100}+9\iprod{200}{200}+\iprod{322}{322})	\\
+	1										&=& |N|^2(4+9+1)
+	\end{eqnarray*}
+	
+	ou seja, $|N|^2=1/14$.
+	
+	{\tt (b)}Uma função de onda $\psi_{nlm}(r,\theta,\phi)$ é dita par se $l$ for par; e ímpar se $l$ for ímpar. Como $\ket{100}$, $\ket{200}$ e $\ket{322}$ são todos pares e a soma de funções pares é
+uma função par, temos que $\psi_{nlm}(r,\theta,\phi)$ é par. Isto é, tem paridade definida.
+
+	{\tt (c)} Sabemos que 
+	$$
+	\mathcal{H}\ket{n}=-{mZ^2\over2n^2\hbar^2}({e^2\over4\pi\epsilon_0})^2
+	$$
+	
+	Deste modo, para $Z=1$ (átomo de hidrogênio), a energia $E=-(m/8\hbar^2)(e^2/4\pi\epsilon_0)^2$ 
+corresponde a $n=2$. Logo, como a energia depende apenas de $n$, a probabilidade de medirmos tal
+energia é igual à soma dos quadrados do coeficiente que multiplica os kets que contém $n=2$. No
+nosso caso é apenas o ket $\ket{200}$ com coeficiente $3/\sqrt{14}$. A probabilidade procurada é,
+então, $P(n=2)=9/14=64,28\%$.
+
+	{\tt (d)} $\op L^2\ket{nlm}=l(l+1)\ket{nlm}$ e, portanto, no nosso caso procuramos a situação em que $l(l+1)=6 \Rightarrow l=2$. A probabilidade é $1/14=7,14\%$, o quadrado do coeficiente do ket $\ket{322}$, o único com $l=2$.
+	
+	{\tt (e)} $\op L_z\ket{nlm}=m\hbar\ket{nlm}$ e, portanto, no nosso caso procuramos a situação em que $m=0$. Isto é verificado para os kets $\ket{100}$ e $\ket{200}$. A probabilidade é, então
+	$$
+	|2N|^2+|-3N|^2=(4+9)|N|^2={13\over14}\cong92,86\%
+	$$
+	
+	{\tt (f)} 
+	\begin{eqnarray*}
+	\med{\op L^2}	&=& \hope{\psi}{\op L^2}{\psi} = \bra{\psi}\op L^2[N(2\ket{100}-3\ket{200}
+																									+\ket{322})]											\\
+								&=& \bra{\psi}{[N(2\op L^2\ket{100}-3\op L^2\ket{200}+\op L^2\ket{322}]}	\\
+								&=& 6N\hbar^2\iprod{\psi}{322}=6|N|^2\hbar^2={6\over14}\hbar^2			\\
+								&=& {3\over7}\hbar^2
+	\end{eqnarray*}
+	
+	\begin{eqnarray*}
+	\med{\op L_z}	&=& \hope{\psi}{\op L_^2}{\psi}=\bra{\psi}\op L_z[N(2\ket{100}-3\ket{200}
+																									+\ket{322})]											\\
+								&=& \bra{\psi}(2N\op L_z\ket{100}-3N\ket{200}+N\ket{322})						\\
+								&=& 2N\hbar\iprod{\psi}{322}																				\\
+								&=& 2|N|^2\hbar																											\\
+								&=& {1\over7}\hbar
+	\end{eqnarray*}
+	

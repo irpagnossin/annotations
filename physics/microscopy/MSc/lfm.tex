@@ -1,0 +1,50 @@
+%	Projeto:  Scanning probe microscopy
+%	Autor:	  Ivan Ramos Pagnossin
+%	Data:		  16/06/2002
+%	Arquivo:  lfm.tex
+% Capítulo: Microscopia de força lateral
+
+	A microscopia de força lateral é muito parecida à microscopia de força atômica de contato. De fato, qualquer aparelho apto a fazer medidas AFM de contato pode executar LFM, incluse em modo interleave. Isto acontece por que a única diferença prática entre um e outro é que no LFM ao invés de o fotodetector se preocupar com as deflexões verticais do cantilever, ele mede as deflexões laterais. Na verdade o fotodetector (fig.~\ref{fig:fotodetector}) mede ambas as deflexões simultaneamente, no sentido de que quanto mais deslocado do centro estiver o laser, maior será a tensão (em módulo) observada.
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+	\centering
+	\setlength{\unitlength}{.5cm}
+	\begin{picture}(10,10)(-5,-5)
+		\put(-5,+5){\line(1,0){10}}
+		\put(-5,+0){\line(1,0){10}}
+		\put(-5,-5){\line(1,0){10}}
+		\put(-5,-5){\line(0,1){10}}
+		\put(+0,-5){\line(0,1){10}}
+		\put(+5,-5){\line(0,1){10}}
+		\put(-2.5,-2.5){\makebox(0,0){B}}
+		\put(-2.5,+2.5){\makebox(0,0){A}}
+		\put(+2.5,-2.5){\makebox(0,0){D}}
+		\put(+2.5,+2.5){\makebox(0,0){C}}
+		\put(1,.75){\line(0,1){0.5}}
+		\put(.75,1){\line(1,0){0.5}}
+	\end{picture}
+	\caption{\label{fig:fotodetector}\footnotesize Esquema da setorização do fotodetector. A cruz deslocada do centro indica onde o laser está atingindo o detector. Quanto mais deslocado do centro, maior a tensão. Em LFM as tensões $V_C+V_D$ e $V_A+V_B$ indicam a deflexão. Nas outras modalidades, é $V_A+V_C$ e $V_B+V_D$.}
+\end{wrapfigure}
+				
+	A deflexão lateral do cantilever deve-se às forças de atrito exis-tentes entre a ponta e a amostra que, como aprendemos desde cedo no primário, depende --- macroscopicamente falando --- da força normal exercida pela amostra sobre a ponta e pelo coeficiente de atrito $\mu$: $|\vetor F_{\text{at}}| = \mu |\vetor N|$. Essa força de atrito gera um torque $\vec\tau = \vetor r\times\vetor F_{\text{at}}$ que torce o cantilever, deslocando late-ralmente o feixe de laser refletido. Mantendo fixa a normal, que está diretamente ligada ao setpoint escolhido, as medidas darão uma representação de como $\mu$ varia ponto a ponto na amostra. Contudo (e há sempre um contudo), também é possível defletirmos lateralmente o cantilever sem que haja mudança em $\mu$, sobretudo nas bordas entre regiões mais baixas e mais altas (pois nesses pontos a sonda ``enrosca'' nessas bordas. Para evitar isso utilizamos novamente o conceito de interleave, varrendo a amostra com AFM de contato e re-varrendo a mesma linha com o conhecimento adquirido na varredura anterior. Mas diferentemente do MFM, que sempre trabalha em interleave, o LFM permite-nos não utilizá-lo. Com isso podemos, ao invés de medirmos as variações regionais de $\mu$, destacar as bordas da amostra. Ou seja, o que era um problema acabou se tornando um aliado pois temos agora duas microscopias diferentes com exatamente o mesmo sistema.\par
+	
+	Algo que precisa ser lembrado sempre ao se utilizar este método é que a varredura rápida, neste caso, deve ser posicionada de forma perpendicular ao eixo maior do cantilever. Caso contrário as deflexões por forças laterais sobrepor-se-ão àquelas devidas à topografia (na linha vertical do fotodetector, fig.~\ref{fig:fotodetector}). O parâmetro, no software da Digital Instruments, \index{Digital Instruments}\index{DI} e.g., que nos permite ajustar tal ângulo é o {\slshape scan angle}. \index{Scan angle}\par
+	
+	Como já deve ter ocorrido ao leitor, uma vez que o torque (e, claro, a torção do cantilever) depende da normal, quanto mais fortemente pressionarmos a ponta sobre a amostra, maior será o sinal recebido. Isso é de fato verdade mas deve ser utilizado com cautela pois na mesma medida podemos danificar a amostra.
+	
+\begin{figure}[htb]
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/lfm/lfm1.jpg}		
+	\end{minipage}\hfill
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/lfm/lfm2.jpg}		
+	\end{minipage}
+	\caption{\label{fig:lfm}\footnotesize Imagem de $15\unit{\mu m}\times 15\unit{\mu m}$ de uma borracha escolar. À esquerda temos a medida em AFM de contato e à direita LFM. Nestas imagens não utilizamos o interleave. Ao invés disso, ilustramos as deflexões (direita) devido tanto às variações de $\mu$ (regiões planas à esquerda mas não à direita) como àquelas devidas à própria topologia (destaque).}
+\end{figure}
+	
+	Segue agora uma breve explicação sobre o funcionamento do fotodetector que é válida para todas as técnicas de SPM que o utilizam.\par
+	
+	Na figura~\ref{fig:fotodetector} temos uma ilustração simplificada da setorização que é feita sobre o fotodetector. A pequena cruz indica o ponto onde o laser refletido pelo cantilever atinge-o. Durante uma medida AFM as deflexões do cantilever fazem o laser (cruz) variar sua posição sobre o fotodetector somente na direção vertical, enquanto numa medida LFM o laser varia horizontalmente sua posição. Fica então claro como é possível realizarmos medidas de AFM e LFM simultaneamente. Em termos práticos, o microscópio, ao avaliar o curso vertical do laser (e, portanto, a deflexão relativa ao AFM), mede a tensão $(V_A+V_C)-(V_B+V_D)$. Analogamente, durante o curso horizontal do laser (relativa ao LFM), a tensão medida é a $(V_A+V_B)-(V_C+V_D)$. A tensão oposta à medida é a que deve ser aplicada ao atuador piezoelétrico para restaurar o setpoint.\par
+	
+	Aproveitando o ensejo, toda vez antes de efetuarmos uma medida, precisamos ``alinhar o lase''. Ou seja, precisamos fazer com que a ponta, pouco antes de tocar a amostra, reflita o laser sobre o centro do fotodetector. Isto é feito analisando justamente as tensões comentadas acima. Existe três displays num microscópio AFM/LFM: O primeiro refere-se à tensão $(V_A+V_C)-(V_B+V_D)$, o segundo a $(V_A+V_B)-(V_C+V_D)$ e o terceiro à soma total: $V_A+V_B+V_C+V_D$. Os dois primeiros devem ser manualmente zerados (através de botões de ajustes), enquanto o último deve ser maximizado. A última leitura dá conta de garantir que o laser não está incidindo fora do fotodetector, enquanto as outras, como acabamos de ver, responsabilizam-se por centralizar o laser. Isto feito o microscópio está pronto para medir.
+	

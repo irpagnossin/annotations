@@ -1,0 +1,48 @@
+\begin{exercicio}[blue]
+ 	Um feixe de fótons de energia $1,5\unit{MeV}$ incide perpendicularmente sobre alvos de chumbo
+e alumínio. Esboce e justifique
+	\begin{itemize}
+	\item	O espectro de energia dos elétrons liberados pelos fótons nesses materiais;
+	\item	O espectro de energia dos elétrons observados em que qualquer ponto desses materiais;
+	\item	Em que diferem este e o exercício anterior.
+	\end{itemize}
+\end{exercicio}
+
+	\begin{itemize}
+	\item	Quando falamos de elétrons liberados do alvo, estamos nos referindo aos chamados 
+				{\sl fotoelétrons\/}, gerados no efeito fotoelétrico. Neste caso, sabemos que estes
+				podem emergir da superfície do alvo com energias cinéticas desde muito baixas até uma
+				energia máxima dada por $T_M=h\nu-w_0$, sendo $w_0$ a função trabalho do alvo, que é a 
+				energia mínima necessária para desalojar um elétron do potencial Coulombiando do material.
+				Para energias inferiores a $w_0$ nada ocorre.\par
+				O espectro de energia dos fotoelétrons é contínuo, desde zero até $T_M$, isto porque o
+				fóton interage com o átomo como um todo, e não simplesmente com o elétron. Com isso, energia
+				é transferida tanto para o átomo quanto para o elétron. Entretanto, como a massa do elétron
+				é muitas vezes inferior à do átomo, a probabilidade de o elétron receber mais energia
+				é muito maior. Isto explica o pico da distribuição próximo de $T_M$ (figura~\ref{fig:ex2}).
+
+	\item	Por outro lado, quando nos referimos aos elétrons que permaneceram no meio, estamos nos
+				referindo aos elétrons de recuo que participaram do {\sl efeito Compton\/}\footnote{Estamos
+				ignorando, por questão de simplicidade, a {\sl produção de pares}. Também pelo fato de que
+				este efeito só ocorre após $1,022\unit{MeV}$.}. No {\sl efeito Compton}, um feixe fotônico 
+				monoenergético de energia $E_0$ é espalhado pelo alvo de tal maneira que este novo espectro
+				passa a ser contínuo, desde uma energia mínima $E_m$ dada por )
+				\begin{equation}\label{eq:ex2}
+				E_m = {E_0\over1+3,9139 E_0},\qquad\mathrm{[E,E_0]=MeV},
+				\end{equation}
+				até a energia do feixe incidente, que obviamente é a máxima permitida.\footnote{O 										equacionamento necessário para se chegar à equação~(\ref{eq:ex2}) pode ser observado
+				em exercício semelhante da lista anterior.}. Assim, por conservação de energia fica que o 						espectro dos {\bf elétrons} de recuo varia desde zero até uma energia máxima, que é
+				a diferença entre a energia do feixe incidente e a menor energia do feixe espalhado
+				(fig.~\ref{fig:ex2}).
+	\item	A diferença entre este exercício e o anterior é que enquanto no primeiro estávamos 				
+				trabalhando com feixes de partículas carregadas, neste estamos trabalhando com feixes de 							fótons. O comportamento de cada um desses feixes no interior do alvo é completamente 									diferente. Além disso, o espectro da radiação incidente no primeiro exercício é contínuo,
+				enquanto aqui é discreto.
+	\end{itemize}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.35]{ex2.pdf}
+	\caption{\label{fig:ex2}\footnotesize
+					 Os espectros de energia dos fótons incidentes ($1$), dos fotoelétrons ($2$) e 
+					 dos elétrons de recuo do {\sl efeito Compton\/.}($3$)}
+\end{figure}

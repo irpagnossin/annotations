@@ -1,0 +1,529 @@
+\documentclass[a4paper]{book}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 3 de Mecânica Quântica}
+\author { Ivan Ramos Pagnossin }
+\date { 23 de Junho de 2000 }
+\maketitle
+
+\pagebreak
+
+\bf {1.}
+\it {	Mostre que se a energia potencial $V(\mathbf{r})$ for alterada de uma constante em todo o espaço, então as funções de onda independentes do tempo
+	não se alteram. Neste caso, qual o efeito sobre os níveis de energia? 
+    }
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\sf
+	Inicialmente tomemos a situação em que $V(\mathbf{r})$ é o potencial. Nesta situação a equação de Schrödinger independente do tempo fica sendo
+
+\begin{equation}
+[-{\hbar^2\over 2m}\mathbf{\nabla}^2+V(\mathbf{r})]\psi(\mathbf{r})=E\psi(\mathbf{r})
+\end{equation}
+
+	Agora, imagine uma nova situação onde o potencial é $V_1(\mathbf{r})$:
+$$
+[-{\hbar^2\over 2m}\mathbf{\nabla}^2+V_1(\mathbf{r})]\psi_1(\mathbf{r})=E_1\psi_1(\mathbf{r})
+$$
+
+	Note que também incluímos o índice 1 nas funções de onda, pois, em princípio, não sabemos qual a sua relação com $\psi(\mathbf{r})$. Tome, como
+solicita o enunciado da questão, os potenciais $V(\mathbf{r})$ e $V_1(\mathbf{r})$ diferentes apenas por uma constate. Ou seja,
+$V_1(\mathbf{r})=V(\mathbf{r})+C$. Aplicando isto na equação imediatamente anterior,
+$$
+[-{\hbar\over 2m}\mathbf{\nabla}^2+V(\mathbf{r})+C]\psi_1(\mathbf{r})=E_1\psi_1(\mathbf{r})
+\Rightarrow
+[-{\hbar\over 2m}\mathbf{\nabla}^2+V(\mathbf{r})]\psi_1(\mathbf{r})=(E_1-C)\psi_1(\mathbf{r})
+$$
+
+	Mas comparando com $(1)$, o operador Hamiltoniano é exatamente o mesmo! Logo, como as funções de onda são autofunções deste operador (e não dependem
+de mais nada), então elas são idênticas. Ou seja, as funções de onda são as mesmas para uma variação espacial constante do potencial (Equivalente é 
+dizer que $\psi_1(\mathbf{r})=\psi(\mathbf{r})$). Além disso, note que, ainda comparando esta equação com $(1)$, as energias nas duas situações relacionam-se por
+$$
+E=E_1-C \Rightarrow E_1=E+C
+$$
+
+	Isto é, sob a mesma alteração no potencial acima mencionada, a energia também se altera deste mesmo valor.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+	
+\bf {2.}
+\it {	Calcule os coeficientes de reflexão e transmisão para uma partícula de massa $m$ incidindo da esquerda para a direita em uma barreira de potencial
+	de altura $V_0$, conforme a figura
+    }
+
+	\begin{picture}(5,2.5)\thicklines
+	\put(0,0){\line(1,0){5}}
+	\put(2.5,0){\line(0,1){1.5}}
+	\put(2.5,1.5){\line(1,0){2.5}}
+	\put(1.25,2){\vector(-1,0){1}}
+	\put(3.25,2.125){\vector(1,0){1}}
+	\put(4.25,1.875){\vector(-1,0){1}}
+
+	\end{picture}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\sf
+	Para a situação imposta existir, a energia $E$ da partícula deve, necessariamente, ser maior que $V_0$. Desta forma, nas duas regiões distintas do
+gráfico acima a solução da equação de Schrödinger independente do tempo\footnote{Ao longo do texto, quando a equação de Schrödiger for mencionada,
+estaremos nos referindo à forma independente do tempo, exceto por comentário oportunamente contrário.} é oscilatória. Escrevemos
+\begin{equation}
+\psi_1(x)=A e^{i k_1 x}+B e^{- i k_1 x}   \;\;\;\;\;\;\;\;\;\;	\psi_2(x)=C e^{i k_2 x}+D e^{- i k_2 x}
+\end{equation}
+	com $k_1^2={2m\over\hbar^2}E$ e $k_2^2={2m\over\hbar^2}(E-V_0)$. É razoável supor $A=0$ uma vez que não há partículas incidindo da esquerda para a 
+direita.
+	 Derivando as equações acima,
+$$
+\dot{\psi}_1(x)=-ik_1B e^{-i k_1 x}	\;\;\;\;\;\;\;\;\;\;	\dot{\psi}_2=ik_2 C e^{i k_2 x}-i k_2 D e^{-i k_2 x}
+$$
+
+	Aplicando as condições de contorno $\psi_1(0)=\psi_2(0)$ e $\dot{\psi}_1(0)=\dot{\psi}_2(0)$ (Após termos definido a descontinuidade de $V(x)$ como
+a origem do sistema de coordenadas) ficamos com as equações
+$$
+C+D=B	\;\;\;\;\;\;\;\;\;\;	C-D=-{k_1\over k_2}B
+$$
+
+	Resolvendo este sistema em função de $D$, que representa a onda incidente e é supostamente conhecido (pois depende da fonte emissora da dita partícula),
+encontramos facilmente
+$$
+B={2k_2\over k_2+k_1}D	\;\;\;\;\;\;\;\;\;\;	C={k_2-k_1\over 2k_2}B={k_2-k_1\over k_2+k_1}D  
+$$
+
+	Com isso dimensionamos as funções de onda $(2)$
+$$
+\psi_1(x)=D{2k_2\over k_2+k_1}e^{-i k_1 x}	\;\;\;\;\;\;\;\;\;\;	\psi_2(x)=D(e^{-i k_2 x}+{k_2-k_1\over k_2+k_1}e^{i k_2 x})
+$$
+
+	Agora podemos avaliar os coeficientes de reflexão e transmissão:
+\begin{eqnarray}
+R	&	=	&	{S_{REFLETIDO}\over S_{INCIDENTE}}={{\hbar\over m}k_2 |C|^2\over{{\hbar\over m}k_2 |D|^2}}=|{C\over D}|^2 \nonumber \\
+	&	=	&	({k_2-k_1\over k_2+k_1})^2 \nonumber \\
+T	&	=	&	{S_{TRANSMITIDO}\over S_{INCIDENTE}}={{\hbar\over m}k_1 |B|^2\over{{\hbar\over m}k_2 |D|^2}}={k_1\over k_2}|{B\over D}|^2
+																\nonumber \\
+	& 	=	&	{4k_1k_2\over (k_1+k_2)^2} \nonumber
+\end{eqnarray} 
+
+	E o problema está resolvido.
+
+\begin{picture}(10,0)
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+\bf {3.}
+\it {	Considere o poço de potencial com barreiras finitas de altura $V_0$ e largura $2a$, conforme a figura. Calcule os níveis de energia e desenhe as 
+	autofunções para os três primeiros estados ligados quando $V_0a^2={6\hbar^2\over m}$.
+    }
+
+\begin{picture}(6,3.5)\thicklines
+\put(0,0){\vector(1,0){6}}
+\put(2.5,0){\vector(0,1){3}}
+\put(0,2.5){\line(1,0){1.5}}
+\put(3.5,2.5){\line(1,0){1.5}}
+\put(0,2){\line(1,0){5}}
+\put(1.5,0){\line(0,1){2.5}}
+\put(3.5,0){\line(0,1){2.5}}
+\end{picture}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\sf
+
+	Uma vez que o enunciado solicita-nos informações sobre estados ligados, então a energia da partícula sujeita a tal potencial é menor que $V_0$.
+Consequentemente, teremos soluções exponenciais nas regiões 1 e 3 e uma solução oscilatória na região 2. Escrevemos as soluções como
+$$ \psi_1(x)=Ae^{k_1x}+Be^{-k_1x}  $$
+$$ \psi_2(x)=Ccos(k_2x)+Dsen(k_2x) $$
+$$ \psi_3(x)=Ee^{k_3x}+Fe^{-k_3x}  $$
+
+	Como a função de onda procurada deve permanecer limitada no infinito, concluímos que $B=0$, caso contrário $\psi_1(x)$ explode em $x=-\infty$. 
+Analogamente, $E$ deve ser zero pois se não, $\psi_3(x)$ explode em $x=+\infty$. Além disso, é imediato da equação de Schrödinger que 
+$k_1^2=k_3^2={2m\over\hbar^2}(V_0-E)$ e $k_2={2m\over\hbar^2}E$. O passo seguinte é determinar as derivadas de primeira ordem das funções de onda:
+\begin{eqnarray}
+\dot{\psi}_1(x)	&	=	&	k_1Ae^{k_1x}			\nonumber \\                  
+\dot{\psi}_2(x)	&	=	&	-k_2Csen(k_2x)+k_2Dcos(k_2x)  	\nonumber \\
+\dot{\psi}_3(x)	&	=	&	-k_1Fe^{-k_1x}                	\nonumber 
+\end{eqnarray}
+
+	Agora aplicamos as condições de contorno:
+\begin{eqnarray}
+\psi_1(-a)	 &	 =	 & \psi_2(-a) \nonumber \\	
+\psi_2(a) 	 &	 =	 & \psi_3(a)  \nonumber \\	
+\dot{\psi}_1(-a) &	 =	 & \dot{\psi}_2(-a) \nonumber \\		
+\dot{\psi}_2(a)	 &	 =	 & \dot{\psi}_3(a) \nonumber		
+\end{eqnarray}
+
+	Que geram, respectivamente,
+\begin{eqnarray}
+Ae^{-k_1a}  			&	=	&  Ccos(k_2a)-Dsen(k_2a) \nonumber \\
+Ccos(k_2a)+Dsen(k_2a)  		&	=	&  Fe^{-k_1a} \nonumber \\
+k_1Ae^{-k_1a} 			&	=	&  k_2Csen(k_2a)+k_2Dcos(k_2a) \nonumber\\
+-k_2Csen(k_2a)+k_2Dcos(k_2a) 	&	=	& -k_1Re^{-k_1a} \nonumber
+\end{eqnarray}
+
+	Reorganizando estas equações e trabalhando-as um pouco chega-se ao conjunto
+\begin{eqnarray}
+2Ccos(k_2a)	&	=	&	(A+F)e^{-k_1a} \\
+2Dsen(k_2a)	&	=	&	(F-A)e^{-k_1a} \\
+2Csen(k_2a)	&	=	&	{k_1\over k_2}(A+F)e^{-k_1a} \\
+2Dcos(k_2a)	&	=	&	{k_1\over k_2}(A-F)e^{-k_1a} 
+\end{eqnarray}
+
+	 Após milhares de tentativas frustradas de se resolver este sistema pelo método tradicional, encontrando pelo caminho coisas como $1=-1$, $tg(k_2x)=i$,
+olhamos para este último sistema e tentamos simplificá-lo. Tentamos $A=F$, o que tornaria $(4)$ e $(6)$ identicamente nulas. Mas isto resultaria em dizer que
+$D=0$ também. Isto deixaria ``vivas'' as equações $(3)$ e $(5)$, ambas determinando $C$. Vejamos no que dá:
+\begin{eqnarray}
+2Ccos(k_2a)	&	=	&	2Ae^{-k_1a} \nonumber \\
+C		&	=	&	Asec(k_2a)e^{-k_1a} \nonumber \\
+2Csen(k_2a)	&	=	&	2{k_1\over k_2}Ae^{-k_1a} \nonumber \\
+C		&	=	&	A{k_1\over k_2}cossec(k_2a)e^{-k_1a} \nonumber  
+\end{eqnarray}
+
+	Igualando estes dois resultados para $C$ e simplificando encontramos que
+\begin{equation}
+tg(k_2a)=k_1/k_2
+\end{equation}
+
+ 	Legal! Esta é sem dúvida uma solução possível. Mas veja que pelo mesmo método que seguimos podemos ``zerar'' também outras equações do sistema 
+fazendo $A=-F$. Neste caso, $(3)$ e $(5)$ é que se anulam, levando, automaticamente, $C$ para zero!...
+\begin{eqnarray}
+2Dsen(k_2a)	&	=	&	-2Ae^{-k_1a} \nonumber \\
+D		&	=	&	-Ae^{-k_1a}cossec(k_2a) \nonumber \\
+2Dcos(k_2)	&	=	&	2{k_1\over k_2}Ae^{-k_1a} \nonumber \\
+D		&	=	&	{k_1\over k_2}Ae^{-k_1a}sec(k_2a) \nonumber
+\end{eqnarray}
+
+	Ainda seguindo o mesmo procedimento encontramos que, para essas duas igualdades serem consistentes, é preciso que
+\begin{equation}
+cotg(k_2a)=-k_1/k_2 
+\end{equation}
+
+	Por isso não dava certo! Pelos métodos tradicionais o que acabavamos por fazer era misturar duas soluções independentes! Ou seja, temos, na realidade,       pelo menos duas soluções independentes:
+
+{\bf solução 1}		$	A=+F	 \;\;\;\;\;\;\;\;\;\;\;\;	D=0		 \;\;\;\;\;\;\;\;\;\;\;\;	C\not= 0	$
+
+{\bf solução 2}		$	A=-F	 \;\;\;\;\;\;\;\;\;\;\;\;	D\not= 0	 \;\;\;\;\;\;\;\;\;\;\;\;	C=0		$
+
+	É claro! uma vez que a partícula está confinada e as funções de onda nas regiões 1 e 3 são exponenciais idênticas, diferindo apenas pelas constantes
+multiplicativas, então fica claro, após desenhar algumas possibilidades, que há duas combinações apenas: Nas regiões 1 e 2 as exponencis são estritamente positivas,
+ou então, na região 1(3) ela é estritamente positiva(negativa) e na 3(1), estritamente negativa(positiva). No primeiro caso, a solução na região 2 capaz de
+satisfazer as condições de contorno deve ser par (veja a figura abaixo)...um {\bf cosseno} (D=0 na função $\psi_2$); Na segunda situação, impar...um {\bf seno}
+(C=0 na função $\psi_2$). Mas seno e cosseno são funções linearmente dependentes. Isto explica as incoerências encontradas...estávamos misturando soluções
+linearmente independentes! Ufa! Agora ficou claro o porquê do sofrimento. Mas não nos interessa as funções de onda, e sim os níveis de energia. Para o primeiro
+grupo de soluções utilizamos $(7)$:
+$$
+tg(k_2a)=k_1/k_2	\Rightarrow	k_2tg(k_2a)=k_1		\Rightarrow	(k_2a)tg(k_2a)=(k_1a)	\Rightarrow	\zeta tg(\zeta)=\xi
+$$
+	Notando que
+$$
+\zeta^2+\xi^2=(k_2a)^2+(k_1a)^2={2ma^2E\over\hbar^2}+{2ma^2(V_0-E)\over\hbar^2}={2ma^2V_0\over\hbar^2}=R^2
+$$
+	 é a equação de uma circunferência! Isolando $\xi$ e aplicando na equação acima desta fazemos
+\begin{equation}
+\zeta tg(\zeta)=\sqrt{R^2-\zeta^2}
+\end{equation}
+
+	que é uma equação transcedental resolvível por métodos numéricos\footnote{Aqui nos interessa apenas a raiz positiva, visto que os eixos $\zeta$ e
+$\xi$ inventados representam, em realidade, $k_1$ e $k_2$, que são estritamente positivos dentro das condições estabelecidas no problema}. 
+	Procedendo analogamente para o segundo grupo de soluções encontramos
+\begin{equation}
+\zeta cotg(\zeta)=-\sqrt{R^2-\zeta^2}
+\end{equation}
+	que também é transcedental. Para resolvermos $(9)$ e $(10)$ precisamos dar um valor numérico para $R$. Fitando logo acima, recordamos que
+$R^2={2ma^2V_0\over\hbar^2}$. Como o enunciado do exercício nos diz para considerar o caso em que $V_0a^2={6\hbar^2\over m}$, fazendo as contas encontramos
+facilmente que $R^2=12$. Assim ficamos com as duas equações
+$$
+\zeta tg(\zeta)=\sqrt{12-\zeta^2}
+$$
+	e
+
+$$
+\zeta cotg(\zeta)=-\sqrt{12-\zeta^2}
+$$
+
+	As primeiras soluções destas equações, encontradas utilizando-se o software mathcad, são $1,213036$ e $3,372258$ referentes ao primeiro grupo de
+soluções, e $2,294932$ relativo ao segundo. Utilizando o conhecimento há pouco introduzido de que $\zeta=k_2a=\sqrt{{2m\over\hbar^2}E}a$, e lembrando do 
+enunciado que $a^2={6\hbar^2\over V_0m}$, fazemos
+$$
+E(\zeta)={1\over 12}V_0\zeta^2
+$$
+
+	E, por simples substituição, encontramos os valores das energias dos estados ligados:
+\[\begin{array}{c}
+	E_1 \cong 0,123 V_0 \\
+	E_2 \cong 0,439 V_0 \\
+	E_3 \cong 0,948 V_0 
+\end{array}\]
+
+	Veja abaixo a posição relativa dos estados ligados com relação ao poço em questão.
+
+\begin{picture}(6,3.5)\thicklines
+\put(0,0){\vector(1,0){6}}
+\put(2.5,0){\vector(0,1){3}}
+\put(0,2.5){\line(1,0){1.5}}
+\put(3.5,2.5){\line(1,0){1.5}}
+\put(1.5,0){\line(0,1){2.5}}
+\put(3.5,0){\line(0,1){2.5}}
+
+\put(1,0.307){\line(1,0){3}}
+\put(1,1.097){\line(1,0){3}}
+\put(1,2.370){\line(1,0){3}}
+\end{picture}
+
+	
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+\bf {4.}
+\it {	Calcule o coeficiente de transmissão para uma partícula de massa $m$ incidindo na barreira de potencial quadrada, como na figura, com $E>V_0$
+
+\begin{picture}(5,2.5)\thicklines
+\put(0,2.3){\line(1,0){5}}
+\put(0,0){\line(1,0){5}}
+\put(1.5,2){\line(1,0){2}}
+\put(1.5,0){\line(0,1){2}}
+\put(3.5,0){\line(0,1){2}}
+\end{picture}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+	
+\sf
+	Como a energia da partícula é maior que $V_0$, então todas as soluções da equação de Schrödinger são oscilatórias:
+\begin{eqnarray}
+\psi_1(x)	&	=	&	Ae^{ik_1x}+Be^{-ik_1x} \nonumber \\
+\psi_2(x)	&	=	&	Ce^{ik_2x}+De^{-ik_2x} \nonumber \\
+\psi_3(x)	&	=	&	Ee^{ik_3x}+Fe^{-ik_3x} \nonumber 
+\end{eqnarray}
+
+	Com $k_1=k_3={2m\over\hbar^2}E$, $k_2={2m\over\hbar^2}(E-V_0)$ e considerando a abscisa do centro do patamar como origem do sistema de coordenadas.
+	Supondo a partícula incidindo da esquerda para a direita, então concluímos que $F=0$, tendo em vista que esta parcela representa uma onda oriunda
+de $x=\infty$. Reescrevendo,
+\begin{eqnarray}
+\psi_1(x)	&	=	&	Ae^{ik_1x}+Be^{-ik_1x} \nonumber \\
+\psi_2(x)	&	=	&	Ce^{ik_2x}+De^{-ik_2x} \nonumber \\
+\psi_3(x)	&	=	&	Ee^{ik_1x}	       \nonumber 
+\end{eqnarray}
+
+	As derivadas de primeira ordem são
+\begin{eqnarray}
+\dot{\psi}_1(x)		&	=	&	ik_1Ae^{ik_1x}-ik_1Be^{-ik_1x} \nonumber \\
+\dot{\psi}_2(x)		&	=	&	iCk_2e^{ik_2x}-ik_2De^{-ik_2x} \nonumber \\
+\dot{\psi}_3(x)		&	=	&	ik_1Ee^{ik_1x}		       \nonumber
+\end{eqnarray}
+
+	Neste mesmo contexto, as condições de contorno são
+\begin{eqnarray}
+\psi_1(-a)		&	=	&	\psi_2(-a)	 \nonumber \\
+\psi_2(a)		&	=	&	\psi_3(a) 	 \nonumber \\
+\dot{\psi}_1(-a)	&	=	&	\dot{\psi}_2(-a) \nonumber \\
+\dot{\psi}_2(a)		&	=	&	\dot{\psi}_3(a)  \nonumber 
+\end{eqnarray}
+
+	Aplicando estas condições encontramos o seguinte sistema de equações algébricas:
+\begin{eqnarray}
+Ae^{-ik_1a}+Be^{ik_1a}		&	=	&	Ce^{-ik_2a}+De^{ik_2a} 		\nonumber \\
+Ce^{ik_2a}+De^{-ik_2a}		&	=	&	Ee^{ik_1a} 			\nonumber \\
+k_1Ae^{-ik_1a}-k_1Be^{ik_1a}	&	=	&	Ck_2e^{-ik_2a}-k_2De^{ik_2a} 	\nonumber \\
+Ck_2e^{ik_2a}-ik_2De^{-ik_2a} 	&	=	&	k_1Ee^{ik_1a}			\nonumber
+\end{eqnarray}
+
+	Reescrevendo este sistema com o pressuposto de que $A$ é conhecido, já que representa a onda incidente,
+	\[ \left[
+	\begin{array}{cccc}
+	e^{ik_1a}	&	-e^{-ik_2}	&	-e^{ik_2a}	&	0			\\
+	0		&	e^{ik_2a}	&	e^{-ik_2a}	&	-e^{ik_1a}		\\
+	-e^{ik_1a}	&	-e^{-ik_a}	&	e^{ik_2a}	&	0			\\
+	0		&	e^{ik_2a}	&	-e^{-ik_2a}	&	-{k_1\over k_2}e^{ik_1a}
+	\end{array}
+	\right]
+	\cdot
+	\left[
+	\begin{array}{c}
+	B	\\	
+	C	\\	
+	D	\\	
+	E
+	\end{array}
+	\right] 
+	=
+	\left[
+	\begin{array}{c}
+	-Ae^{-ik_1a}			\\
+	0				\\
+	-{k_1\over k_2}Ae^{-ik_2a}	\\
+	0
+	\end{array}
+	\right] \]
+
+	Como queremos o coeficiente de transmissão, dado por
+\begin{eqnarray}
+T	&	=	&	{S_{TRANSMITIDO}\over S_{INCIDENTE}}={{\hbar\over 2m}k_1\over {\hbar\over 2m}k_1}|{E\over A}|^2 \nonumber \\
+	&	=	&	|{E\over A}|^2 \nonumber
+\end{eqnarray}
+
+	basta que determinemos $E$, o que pode ser feito com um pouco de paciência e utilizando o método de Cramer. Contudo, como paciência não é
+uma das minhas maiores virtudes, solicitei ajuda ao software Mathematica, e ele deu, em poucos segundos, a solução
+\begin{eqnarray}
+{E\over A}	&	=	&	{4k_1k_2e^{ik_2L}e^{-ik_2L}\over -k_1^2+k_1^2e^{i2Lk_2}-2k_1k_2-2k_1k_2e^{i2Lk_2}-k_2^2+k_2^2e^{i2Lk_2}} \nonumber \\
+		&	=	&	{4k_1k_2e^{ik_2L}e^{-ik_2L}\over k_1^2(e^{i2Lk_2}-1)-2k_1k_2(1+e^{i2Lk_2})+k_2^2(e^{i2Lk_2}-1)}	\nonumber \\	
+		&	=	&	{4k_1k_2e^{ik_2L}e^{-ik_2L}\over (k_1^2+k_2^2)(e^{i2Lk_2}-1)-2k_1k_2(1+e^{i2Lk_2}} \nonumber \\
+		&	=	&	{4k_1k_2e^{ik_2L}e^{-ik_2L}\over (k_1^2+k_2^2)e^{iLk_2}(e^{iLk_2}-e^{-iLk_2})-2k_1k_2e^{iLk_2}(e^{iLk_2}+e^{-iLk_2}}
+															\nonumber \\
+		&	=	&	{4k_1k_2e^{ik_2L}e^{-ik_2L}\over e^{iLk_2}\{ [2i(k_1^2+k_2^2)sen(k_2L)]-4k_1k_2cos(k_2L)\}} \nonumber \\
+		&	=	&	{4k_1k_2e^{-ik_2L}\over 2i(k_1^2+k_2^2)sen(k_2L)-4k_1k_2cos(k_2L)} \nonumber \\
+|{E\over A}|^2	&	=	&	{16k_1^2k_2^2\over 4(k_1^2+k_2^2)^2sen^2(k_2L)+16k_1^2k_2^2cos^2(k_2L)} \nonumber \\
+		&	=	&	{4k_1^2k_2^2\over (k_1^2+k_2^2)^2sen^2(k_2L)+4k_1^2k_2^2cos^2(k_2L)} \nonumber \\
+		&	=	&	{4k_1^2k_2^2\over (k_1^2+k_2^2)^2sen^2(k_2L)+4k_1^2k_2^2[1-sen^2(k_2L)]} \nonumber \\
+		&	=	&	{4k_1^2k_2^2\over 4k_1^2k_2^2+(k_1^2+k_2^2)sen^2(k_2L)} \nonumber \\
+T		&	=	&	{4\varepsilon(\varepsilon-U_0)\over 4\varepsilon(\varepsilon-U_0)+U_0sen^2(k_2L)} 
+\end{eqnarray}
+
+	Mantendo em mente as transformações comuns $k_1={2m\over\hbar^2}E=\varepsilon$ e $k_2={2m\over\hbar^2}(E-V_0)=\varepsilon-U_0$, e ainda lembrando que 
+$2a=L$ (veja a figura).
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+\bf {5.}
+\it {	Considere, no exercício 4, a barreira de potencial tal que $V_0L^2={40\hbar^2\over 2m}$. Calcule os primeiros três valores de energia $E$, em unidades de 
+	$V_0$, tais que a probabilidade da partícula atravessar a barreira é um.
+    }
+\sf
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Observando a equação $(11)$, que expressa o coeficiente de transmissão, notamos que, para este assumir o valor 1 solicitado, basta que o seno no denominador seja zero, ou seja, que o argumento seja um múltiplo inteiro de $\pi$:
+\[\begin{array}{c}
+k_2L=n\pi	\Leftrightarrow		k_2^2L^2=n^2\pi^2						\Leftrightarrow	\\		
+		\Leftrightarrow		(\varepsilon-U_0)L^2=n^2\pi^2					\Leftrightarrow	\\
+		\Leftrightarrow		{2m\over\hbar^2}E_n={2m\over\hbar^2}V_0+({n\pi\over L})^2	\Leftrightarrow	\\
+		\Leftrightarrow		E_n=V_0+{\hbar^2\over 2m}({n\pi\over L})^2			\Leftrightarrow	\\
+		\Leftrightarrow		E_n=V_0[1+{(n\pi)^2\over 40}]					\Leftrightarrow	
+\end{array}\]
+	que nos dá, para $n=0,1,2,...$
+\[\begin{array}{c}
+	E_0=V_0 			\\
+	E_1=V_0(1+{\pi^2\over 40})	\\
+	E_2=V_0(1+{4\pi^2\over 40})	\\
+	E_3=V_0(1+{9\pi^2\over 40})	\\
+	\vdots
+\end{array}\]
+
+	E o problema está solucionado.
+
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+
+\bf {6.}
+\it {	Considere um elétron no poço de potencial quadrado mostrado na figura do exercício 3. Tome a largura do poço $L=2a=100a_0$. Calcule a máxima altura
+	do poço, em Rydberg, tal que só haja um estado ligado.
+    }
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\sf
+
+	Conforme a ilustração abaixo, tevemos ter 
+\[\begin{array}{c}
+				\xi^2+\eta^2 \le ({\pi\over 2})^2 			\Leftrightarrow \\
+\Leftrightarrow			\varepsilon a^2+(U_0-\varepsilon)a^2 \le {\pi^2\over 4}	\Leftrightarrow \\
+\Leftrightarrow 		U_0 \le ({\pi\over 2a})^2 				\Leftrightarrow \\
+\Leftrightarrow 		{2m\over\hbar^2}V_0 \le ({\pi\over 2a})^2			
+\end{array}\]
+
+	Desenvolvemos $V_0$:
+\begin{eqnarray}
+V_0	&	\le	&	{1\over m}({\pi\hbar\over 8a})^2		\nonumber \\
+	&	\le	&	{1\over m}[{\pi\hbar\over 4(2a)}]^2 		\nonumber \\
+	&	\le	&	{1\over m}({\pi\hbar\over 4\cdot 100a_0})^2 	\nonumber \\
+	&	\le	&	{1\over 1/2}({\pi\cdot 1\over 400})^2 		\nonumber \\
+	&	\le	&	2({\pi\over 400})^2 				\nonumber \\
+	&	\le	&	1,2\cdot 10^{-4} Ry 				\nonumber
+\end{eqnarray}
+
+	Lembrando, para isso, que no sistema Rydberg, considera-se $e=\sqrt{2}$, $m=1/2$ e $\hbar=1$, de forma a dar $a_0=1$.
+
+\begin{picture}(5,5)\thicklines
+\put(0,0){\vector(1,0){5}}
+\put(0,0){\vector(0,1){5}}
+\end{picture}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+\bf {7.}
+\it {	Em um retificador de cristal por contato pontual operado na direção reversa, a corrente elétrica sofre interrupções devido à uma barreira de
+	potencial. Estime a probabilidade de penetração para um elétron cuja energia cinética é 2,5V, incidente numa barreira retangular de 3,0V de
+	altura e $10^{-7}$cm de largura.
+    }
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\sf
+
+	A função de onda no poço de potencial descrito no enunciado é (considere a ilustração do exercício 3)
+$$
+\psi_3(x)=Ae^{-k_3x}
+$$
+	com $k_3={2m\over\hbar^2}(V_0-E)$. Desta forma, a equação de densidade de probabilidade será
+$$
+\psi_3(x)\psi_3^{*}(x)=A^2e^{-2k_3x}
+$$
+
+	O argumento da exponencial é que dá a razão de queda da função, ou seja, da penetração. Como o que queremos é apenas uma estimativa, podemos avaliar
+a penetração como o valor de $x$ para o qual o expoente atinge o valor -1, que corresponde a termos uma certeza de aproximadamente 73\% nesta estimativa.
+Em símbolos,
+\begin{eqnarray}
+x_0	&	=	&	{1\over 2k_3} 				 \nonumber \\
+	&	=	&	{1\over 2\sqrt{{2m\over\hbar^2}(V_0-E)}} \nonumber \\
+	&	=	&	{\hbar\over\sqrt{8m(V_0-E)}}		 \nonumber \\
+	&	\cong	&	1,38 \AA 				 \nonumber
+\end{eqnarray}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

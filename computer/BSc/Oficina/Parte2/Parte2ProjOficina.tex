@@ -1,0 +1,205 @@
+\documentclass[a4paper,10pt]{article}[1998/12/01]
+
+%----------------------------------------------------------------------------------%
+%------------------------- CARREGA OS PACOTES NECESSÁRIOS -------------------------%
+%----------------------------------------------------------------------------------%
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{wasysym}
+
+\makeindex
+\pagestyle{myheadings}
+\markboth{}{\rm G. S. Faria, I. R. Pagnossin}
+
+
+\begin{document}
+
+\font\rmoito = cmr10 at 8pt
+\title{AAE --- Analisador avançado de espectro\\
+       {\rmoito o software que só espera de você as conclusões.}}
+\author{Gerson S. Faria   \\ gersonfaria@ig.com.br   \and
+        Ivan R. Pagnossin \\ irpagnossin@hotmail.com
+       }
+\date{\today}
+\maketitle
+
+
+\begin{abstract}
+	O {\sl software\/} que ora descrevemos faz parte da segunda etapa do projeto final do curso e é dedicado à análise estatística dos dados gerados na primeira etapa. É pois dedicado à análise de apenas um modelo físico - sinais gerados por detectores (medidores) sendo bombardeados por fontes emissoras de partículas\footnote{Por partículas,
+compreenda tanto fótons quanto bárions.}. Um maior cuidado foi dispensado à abordagem visual na análise, ou seja, o uso da visão como poderosa ferramenta na extração de informações quando os dados são dispostos em forma gráfica.\par
+
+	Apesar disso, essa apresentação não pretende ser um manual completo do {\sl software\/}, mas sim uma breve descrição de sua utilidade e capacidade.
+\end{abstract}
+
+
+\section{Introdução}\label{introducao}
+
+	A interação cada vez maior do computador com o mundo físico ao redor dada pela criação de novas interfaces, sejam visuais, mecânicas ou elétricas, fez com que este se tornasse uma ferramenta bastante versátil, podendo configurar-se como uma televisão, um rádio, um gravador, uma máquina de escrever avançada, uma calculadora, um terminal de um sistema de comunicação e muitas outras variações inclusive um instrumento laboratorial, como é o nosso caso. Dada a complexidade dos sistemas componentes de um computador ainda é alto o risco de delegar tarefas críticas somente aos desígnios de sistemas automáticos. Mas no caso de seu uso como ferramental de aquisição e análise de dados, este tem se mostrado fundamental, dada a quantidade normalmente grande de dados extraídos de experimentos físicos e também pela crescente complexidade na análise destes.\par
+	
+\section{O software}\label{software}
+
+	O {\sl software\/} desenvolvido é baseado no sistema de janelas, segundo o padrão {\sc gui}, na implementação Windows\footnote{Desenvolvido com Borland C++ Builder $5.0$.}. 
+Na figura~\ref{fig:principal} observamos a tela que compõe o sistema: A maior área é dedicada à visualização
+do espectro em análise e dos gráficos auxiliares (Integral e derivada). À esquerda, abaixo do
+espectro, temos os resultados das operações anunciadas no {\sl prompt\/} de comando à direita; Logo abaixo 
+deste consta o {\sl help\/} dinâmico, que instrui o operador em cada passo das operações, sejam elas 
+digitadas no {\sl prompt\/} ou executadas via mouse\footnote{Qualquer operação executada via mouse é 
+automaticamente escrita no {\sl prompt\/} desde que a opção {\tt prompt acompanha mouse} do menu {\tt 
+configurações} esteja ticada. Este método permite ao iniciante aprender os comandos conforme executa as 
+tarefas via mouse, o que é desejável, caso ele pretenda, um dia, criar um {\sl script\/} de execução.}. 
+Esta janela pode ser ocultada através do menu {\tt configurações} (opção {\tt ocultar help dinâmico}). 
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.5]{principal.pdf}
+  \caption{\footnotesize 
+    Janela do aplicativo {\sc aae}. Todas as funções e operações são acessíveis a partir deste ambiente, 
+sem a necessidade de outras telas.}
+  \label{fig:principal}
+\end{figure}
+
+	Todos os gráficos que aparecem na janela do espectro podem ser exportados para os formatos {\tt 
+pdf}, {\tt jpg}, {\tt bmp}, {\tt eps}, {\tt tex} ou {\tt txt}. No formato {\tt tex} é gerado um arquivo com 
+os comandos \LaTeX 
+que geram o gráfico\footnote{A exportação para \LaTeX é a única situação onde aparece uma outra janela, 
+necessária para se determinar o tamanho do gráfico que se quer exportar.}; No formato {\tt txt} exporta-se, 
+na realidade, o conjunto de pares ordenados que deram origem aos gráficos, tabulados de modo a serem 
+facilmente lidos por qualquer planilha eletrônica.\par
+
+	Os resultados obtidos (janela da esquerda) também podem ser exportados, em formato {\tt txt} apenas; Já a janela
+de {\sl prompt\/}, caso haja interesse, pode ser copiada e colada num arquivo qualquer. O {\sl help\/} dinâmico
+não tem essa facilidade mas, por outro lado, pode ser acessado através do menu {\tt ajuda}, {\sc cd-rom} de
+instalação ou pela internet (http://www.aae.com.br).\par
+
+	Existem três gráficos distintos que podem ser apresentados: O espectro, sua integral e derivada. Qualquer um desses pode ser re-escalonado de forma a representar, na ordenada, valores absolutos ou 
+relativos\footnote{A referência dos valores relativos pode ser o valor máximo absoluto do espectro ou a área
+sob este. Para escolher entre um e outro, clique com o botão direito do mouse sobre o gráfico que deseja 
+re-escalonar e escolha a opção {\tt relativo}; um sub-menu se abre dando as opções {\tt por área} e {\tt por
+valor máximo}.}. Para se acrescentar um gráfico, clique com o botão da direita do mouse na área do espectro
+e escolha uma das opções: {\tt Integral} ou {\tt derivada}: Uma nova aba abre-se com o gráfico 
+solicitado.\par
+
+	Outra facilidade que o {\sl software} oferece é a capacidade de execução de {\sl scripts\/}: 
+Arquivos textos comuns com uma sequência lógica de comandos conhecidos. Por exemplo,
+\begin{verbatim}
+	for(;1;)
+	{
+    if(_time == "13:47")
+    {
+      LerSerial(100,"segundos");
+      selecionar _Minimo .. _Maximo;
+      picos[.] <- Bpicos(1);
+      for(i = 1,picos[0],i++)
+        {    
+        intervalo <- selecionar picos[i] - 10 .. picos[i] + 10;
+        gaussiana(intervalo,picos[i]);
+        }
+      exportar("resultados.txt");
+    }
+  }
+\end{verbatim}
+
+
+	O {\sl script\/} acima permanece num {\sl loop\/} infinito e sempre as $13:47$ de cada dia
+  executa uma escuta na porta serial, coletando dados durante $100$ segundos. Em seguida, busca os picos
+  existentes em todo o intervalo do espectro e ajusta uma gaussiana a cada um deles. No final, exporta
+  o resultado para o arquivo {\tt resultados.txt}.\par
+
+	Como se pode observar, a sintaxe do {\sl script\/} é bastante parecida com a linguagem {\sc c} e 
+muitas das funções são bastante autosuficientes. Por exemplo, a instrução {\tt gaussiana}, responsável por 
+ajustar uma curva de {\sl Gauss\/} aos dados do intervalo, deve ser chamada com pelo menos um argumento: O 
+intervalo de interesse. O pico e seu valor naquele intervalo também podem ser passados mas, caso
+não sejam, a função {\tt gaussiana} procura-os por conta própria. Este procedimento não é recomendado pois 
+acarreta perda de tempo em processamento e, dependendo da situação, valores incorretos. O melhor é 
+determinar visualmente os valores da abscissa e ordenada do pico e passar esses pontos para a função.\par
+
+	Segue uma lista das principais ações possíveis:
+
+\begin{description}
+\item[Arquivo]\rule{0pt}{1pt}
+
+\begin{itemize}
+\item	{\bf Novo projeto:} Um projeto é salvo com a extensão {\tt aae} e compreende toda a situação
+	de um projeto, inclusive {\sl help dinâmico\/} e {\sl prompt\/}.
+\item	{\bf Abrir projeto:} Abre um projeto já existente.
+\item	{\bf Abrir projeto como:} É uma ferramenta ótima quando se quer trabalhar a partir de um projeto
+	já existente mas que não se queira alterar. Esta opção elimina completamente a possibilidade do
+	usuário sobre-escrever o projeto por engano.
+\item	{\bf Rodar script:} Carrega um {\sl script\/}, formato {\tt txt}, e executa-o.
+\item	{\bf Salvar projeto:} Salva o projeto atual. Caso não tenha sido dado o nome do projeto ainda,
+	o {\sl software\/} o solicita; caso já tenha, simplesmente salva com o mesmo nome.
+\item	{\bf Salvar projeto como:} Salva um projeto pré-existente com um nome diferente.
+\item	{\bf Exportar:} Exporta um componente do projeto, que pode ser
+	\begin{itemize}
+	\item {\bf Gráfico:} Exporta o gráfico em foco. Na tela onde se escolhe o nome com que 
+		exportar define-se também a extensão do arquivo.
+	\item {\bf Resultados:} Exporta os resultados para uma arquivo texto.
+	\end{itemize}
+\item	{\bf Imprimir:} Imprime um componente do projeto.
+\item	{\bf Visualizar impressão:} Permite ao usuário ver previamente o resultado da impressão.
+\item	{\bf Configurar impressão:} Permite ao usuário adequar o arquivo a ser impresso e o dispositivo
+	de impressão.  
+\item	{\bf Sair:} Sai do aplicativo.
+\end{itemize}
+
+\item[Editar]\rule{0pt}{1pt}
+
+  \begin{itemize}
+  \item {\bf Desfazer:} Desfaz operações anteriormente efetivadas. 
+  \item	{\bf Refazer:} Refaz a última operação desfeita.
+  \item	{\bf Copiar:} Copia uma área selecionada para a área de transferência.
+  \end{itemize}
+
+\item[Análise]\rule{0pt}{1pt}
+
+  \begin{itemize}
+  \item	{\bf Picos:} Busca todos os picos no intervalo especificado.
+  \item	{\bf Gaussiana:} Ajusta uma curva {\sl gaussiana\/} ao conjunto de pontos do intervalo indicado.
+  \item	{\bf Poisson:} Ajusta uma curva {\sl poisson\/} ao conjunto de pontos do intervalo indicado.
+  \item	{\bf Integral:} Gera e mostra o gráfico da integral do espectro (Espectro acumulado).
+  \item	{\bf Derivada:} Gera e mostra o gráfico da derivada do espectro.
+  \item	{\bf Fusão:} Funde os gráficos selecionados num só.
+  \end{itemize}
+
+\item[Visualizar]\rule{0pt}{1pt}
+
+  \begin{itemize}
+  \item	{\bf Aproximar:} Amplia uma região selecionada de um gráfico.
+  \item	{\bf Afastar:} Reduz uma região selecionada de um gráfico.
+  \item	{\bf Tela cheia:} Ajusta todo o domínio do gráfico na janela disponível.
+  \end{itemize}
+
+\item[Configurações]\rule{0pt}{1pt}
+
+  \begin{itemize}
+  \item	{\bf Porta:} Configuração da porta de aquisição de dados.
+  \item	{\bf Ocultar help dinâmico:} Inibe o {\sl help dinâmico\/}.
+  \item	{\bf Prompt acompanha mouse:} Inibe acompanhamento do {\sl prompt\/}. 
+  \item	{\bf Usuários:} Menu do modo multi-usuário.
+	\begin{itemize}
+	\item {\bf Modo multi-usuário:} Habilita ou não o modo multi-usuário.
+	\item {\bf Configurações de usuário:} Cadastro dos usuários, senhas e permissões.
+	\end{itemize}
+  \end{itemize}
+
+\item[Ajuda (?)]\rule{0pt}{1pt}
+
+  \begin{itemize}
+  \item {\bf Índice:} Índice de termos do manual.
+  \item {\bf Pesquisar:} Busca por termos no manual.
+  \item {\bf Manual on-line:} Conecta-se ao manual on-line do site {\sc aae}.
+  \item {\bf Visitar site AAE:} Abre o {\sl browser\/} padrão e aponta-o para o site {\sc aae},
+	onde o usuário pode consultar as atualizações, manuais e fórum.
+  \item {\bf Atualizar:} Verifica atualizações do produto na internet.
+  \end{itemize}
+\end{description}
+
+	
+\section{Conclusões}\label{conclusao}
+
+	A utilização de computadores como ferramentas auxiliares em atividades de pesquisa é hoje um fato trivial. Milhões de linhas de código são desenvolvidas, empacotadas e espalhadas ao mundo em velocidade crescente e quase sempre imbuídas dos apelos de portadoras de 'inovação' e 'poder' o que provoca bastante o interesse de pessoas com os mais diversos graus de discernimento. Um fator decisivo na escalada pela popularização do {\sl software\/} foi a popularização de ferramentas geradoras de programas complexos , elevando assim o número de pessoas mal habilitadas criando programas e de pessoas utilizando programas com as mais diversas finalidades. Por outro lado foram criadas ferramentas imprescindíveis de análise e depuração de código que nas mãos de pessoas bem habilitadas auxiliam na criação de programas mais confiáveis. Dado este panorama de complexidade e popularização crescentes fica clara a necessidade de um olhar realmente cuidadoso com relação ao {\sl software\/}, na criação, na escolha e no uso deste. 
+
+\end{document}

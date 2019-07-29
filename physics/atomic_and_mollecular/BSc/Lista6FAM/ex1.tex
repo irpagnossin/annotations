@@ -1,0 +1,87 @@
+\begin{exercicio}[blue]
+	Uma partícula sem spin move-se num potencial central $V(r)=0$ para $r<a$ e $V(r)=\infty$ para $r>a$. Determine os níveis de energia e as funções de onda normalizadas correspondentes aos estados $s$, isto é, estados com momento angular orbital nulo ($l=0$).
+\end{exercicio}
+
+
+	Devido ao fato de, da mesma forma que para o átomo de hidrogênio, $V(r)$ não depender de $\theta$ e
+$\phi$, a equação de Schrödinger em coordenadas esféricas pode ser separada como de costume:
+	$$
+	-{1\over\sin\theta}{d\over d\theta}(\sin\theta{d\Theta\over d\theta})+{m_l^2\Theta\over\sin^2\theta} = l(l+1)\Theta
+	$$
+	
+	$$
+	{d^2\Phi\over d\phi^2}=-m_l^2
+	$$
+	
+	$$
+	{1\over r^2}{d\over dr}(r^2{dR\over dr})+{2\mu\over\hbar^2}[E-V(r)]R=l(l+1){R\over r^2}
+	$$
+	
+	Com $\mu$ a massa reduzida do elétron.
+ 	A solução da parte angular é simplesmente os harmônicos esféricos $Y_{lm}(\theta,\phi)$. O que
+difere esta situação do átomo de hidrogênio é que devemos fazer $V(r)=0$ na equação acima, obtendo
+	$$
+	{1\over r^2}{d\over dr}(r^2{dR\over dr})+{2\mu\over\hbar^2}ER=l(l+1){R\over r^2}
+	$$
+
+	ou ainda,
+	$$
+	{d\over dr}(r^2{dR\over dr})+[k^2r^2-l(l+1)]R=0
+	$$
+	
+	com $k^2=2\mu E/\hbar^2$.
+	As soluções desta equação são da forma
+	$$
+	R_l(r) = A_lj_l(kr) + B_ln_l(kr)
+	$$
+	
+	onde $j_l(kr)$ e $n_l(kr)$ são, respectivamente, as funções esféricas de Bessel e Neumann. Como 
+estamos trabalhando numa região finita nas proximidades da origem, concluímos que $B_l=0$ pois 
+$n_l(kr)$ diverge para $r\rightarrow0$. Então
+	$$
+	R_l(r)=A_lj_l(kr)
+	$$
+	
+	Como o potencial fora de uma esfera de raio $a$ é infinito, segue que $\psi_{nlm}$ tem de ser zero
+nesta região e, para manter a continuidade, em $r=a$ também. Esta é a condição de contorno que devemos aplicar:
+	$$
+	R_l(a)=A_lj_l(ka)=0
+	$$
+	
+	cuja solução é obviamente $\alpha_{nl}$, a n--ésima raiz da função $j_l(kr)$. Ou seja,
+	$$
+	ka = \alpha_{nl} \Rightarrow {\sqrt{2\mu E_n}\over\hbar}=\alpha_{nl} \Rightarrow 
+		E_n={\alpha_{nl}^2\hbar^2\over2\mu a^2}
+	$$
+	
+	No caso de $l=0$, $j_0(kr)=\sin(kr)/(kr)$. Em outras palavras, a raiz $\alpha_{n0}=n\pi$, 
+$n = 1,2,3,...$ e, portanto,
+	$$
+	E_n = {n^2\pi^2\hbar^2\over2\mu a^2}
+	$$
+	
+	que são os níveis de energia do poço de potencial tridimensional esférico. 
+
+	Para encontrarmos $A_0$ devemos normalizar $\psi_{n00}$:
+	\begin{eqnarray*}
+	\iprod{\psi}{\psi}	&=& {|A_0|^2\over\sqrt{4\pi}}\int_{\phi=0}^{2\pi}\int_{\theta=0}^{\pi}
+					\int_{r=0}^aj_0^2(kr)r^2\sin\theta dr d\theta d\phi	\\
+	1			&=& |C|^2\int_{\phi=0}^{2\pi}d\phi\int_{\theta=0}^\pi\sin\theta d\theta
+					\int_{r=0}^ar^2j_0^2(kr)dr				\\
+				&=& 4\pi|C|^2\int_0^ar^2{\sin(k^2r)\over k^2r^2}dr		\\
+				&=& {4\pi|C|^2\over k^2}\int_0^a\sin^2(kr)dr			\\
+				&=& {2\sqrt{\pi}|A_0|^2\over k^2}
+	\end{eqnarray*}
+
+	E disto resulta que 
+	$$
+	A_0 = {ke^{i\lambda}\over(4\pi)^{1/4}}
+	$$
+
+	E portanto temos
+	$$
+	\psi_{n00}(r,\theta,\phi) = {e^{i\lambda}\over2\sqrt\pi r}\sin(k_nr)
+	$$ 
+
+	com $e^{i\lambda}$ uma fase arbitrária e $k_n=(n\pi/a)^2$.
+	

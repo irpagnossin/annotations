@@ -1,0 +1,201 @@
+\label{sec:teoria} 
+\subsection{Modelo físico do indutor e capacitor}
+
+	Quando sinais elétricos sobre um circuito eletrônico deixa de ser contínuo (DC) para ser alternado (AC), as equações
+
+\vspace{10pt}	
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\mathbf{\nabla}\times\mathbf{E}=\mathbf{0}
+	$$
+	\end{minipage}
+	\hfill
+	e
+	\hfill
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\mathbf{\nabla}\times\mathbf{H}=\mathbf{J}
+	$$
+	\end{minipage}
+
+\vspace{10pt} 
+	deixam de valer e passam a assumir a sua forma completa ({\it Equações de Maxwell})
+
+\vspace{10pt} 	
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\mathbf{\nabla}\times\mathbf{E}=-{\partial\mathbf{B}\over\partial t}
+	$$
+	\end{minipage}
+	\hfill
+	e
+	\hfill
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\mathbf{\nabla}\times\mathbf{H}=\mathbf{J}+{\partial\mathbf{H}\over\partial t}
+	$$
+	\end{minipage}
+
+\vspace{10pt} 
+	E esta alteração leva-nos a redefinir as {\it Leis de Kirchhoff}:
+	
+	\begin{itemize}
+	\item	A soma algébrica das correntes {\it instantâneas} que fluem através de um nó é igual a zero.
+	\item	A soma algébrica das voltagens {\it instantâneas} aplicadas em uma malha fechada é igual à soma algébrica das contravoltagens
+		{\it instantâneas} na malha.
+	\end{itemize}
+
+	Aqui entra uma nova nomenclatura: Designamos {\it Voltagem} aquelas ddp existentes em elementos ativos do circuito, como por exemplo baterias,
+fontes de corrente, etc. E {\it Contravoltagem} aquelas sobre elementos passivos, tais como resistores, capacitores e indutores, por exemplo. Isto são apenas
+nomes e não há problema algum em invertê-los.  
+
+	Além disso, os componentes Capacitor e Indutor passam a se comportar de forma bastante diferente, principalmente o indutor, que até então não passava
+de um pedaço de fio enrolado. Mas estes elementos não obedecem à {\it Lei de Ohm} do resistor pois
+
+\vspace{10pt}
+	\begin{minipage}{0.46\textwidth}
+	$$
+	V_C(t)={1\over C}\int_{t_0}^tI(t)\mathrm{dt}
+	$$
+	\end{minipage}
+	\hfill
+	e
+	\hfill
+	\begin{minipage}{0.46\textwidth}
+	$$
+	V_L(t)=L\mathrm{dI\over dt}
+	$$
+	\end{minipage}
+
+\vspace{10pt} 
+	Como fazer agora para dimensionarmos um circuito? Considere o problema de resolver um circuito com um resistor, um capacitor e um indutor em série,
+alimentados por uma fonte de tensão alternada $V(t)=V_0\cos(\omega t)$\footnote{Escolhemos esta forma de sinal pois, como sabemos das séries de Fourier, sinais
+senoidais e cossenoidais podem ser combinados de modo a formar qualquer sinal periódico que se queira. Então, escolhendo esta forma para $V(t)$ estaremos ao
+mesmo tempo tratando o problema com extrema generalidade e simplificando os cálculos.}.
+
+	Pela 2$^{\mathrm{a}}$ {\it Lei de Kirchhoff} temos que 
+	\begin{equation} 
+	V(t)=RI+L{dI\over dt}+{1\over C}\int_{t_0}^tIdt
+	\label{eq:circuitoRLC}
+	\end{equation}
+
+	Podemos escolher trabalhar com $\hat{V}(t)=V_0e^{j\omega t}$ ao invés de $V(t)$, desde que $\mathrm{Re}[\hat{V}(t)]=V(t)$. Usando isto em
+(\ref{eq:circuitoRLC}) e desenvolvendo (Referência \cite{reitz}, capítulo 13 -- Correntes que variam lentamente.), chegamos a
+	$$
+	V_0e^{j\omega t}=[R+j\omega L+{1\over j\omega C}]I_0e^{j\omega t}
+	$$
+
+	Chame o fator entre colchetes de $\hat{Z}$ e teremos
+	$$
+	\hat{V}=\hat{Z}\hat{I}
+	$$
+
+	Esta é a {\it Lei de Ohm} para correntes alternadas e $\hat{Z}$ corresponde a características resistivas, mas não só no sentido da resistência à 
+passagem de corrente, mas também a alterações nesses sinais. À parte complexa dessa impedância dá-se o nome de reatância, que pode ser {\it capacitiva} 
+ou {\it indutiva}.
+
+	Todo componente eletrônico possui características resistivas, capacitivas e indutivas, inclusive os próprios resistor, capacitor e indutor. E é aí
+que entra o modelo a ser utilizado em cada caso. Para freqüências não muito altas, como é o nosso caso, o modelo do resistor é simplesmente uma resistência
+real, sem reatância. Um capacitor é puramente capacitivo, ou seja, possui apenas reatância capacitiva. O indutor, entretanto, não é puramente indutivo.
+Ele possui uma característica resistiva real, que é precisamente a resistência do fio de que é composto. Por este motivo utilizamos para ele um modelo que
+associa em série uma resistência real e uma reatância indutiva. Resumindo,
+	
+\vspace{10pt}
+	\begin{minipage}{0.3\textwidth}
+	$$
+	\hat{Z}_R=R\,\mathrm{,}
+	$$
+	\end{minipage}
+	%\hfill
+	\begin{minipage}{0.3\textwidth} 
+	$$
+	\hat{Z}_C=j{1\over\omega C}
+	$$ 
+	\end{minipage}
+	%\hfill
+	e
+	\begin{minipage}{0.3\textwidth}
+	$$
+	\hat{Z}_L=R_L+j\omega L
+	$$
+	\end{minipage} 
+
+\vspace{10pt} 
+	E são esses os modelos que pretendemos verificar com as experiências.
+
+\subsection{Filtro RC}
+
+	Considere o circuito RC em série. A tensão de saída (Tensão sobre o capacitor) é $\hat{V}_s(t)=\hat{Z}_C\hat{I}(t)$ e a tensão de entrada
+é $\hat{V}_e(t)=(\hat{Z}_R+\hat{Z}_C)\hat{I}(t)$. Portanto, o {\it ganho} complexo de tensão entre a entrada e a saída do filtro RC é
+	$$
+	\hat{G}={\hat{V}_s(t)\over\hat{V}_e(t)}={\hat{Z}_C\hat{I}(t)\over(\hat{Z}_C+\hat{Z}_R)\hat{I}(t)}={1\over1+{\hat{Z}_R\over\hat{Z}_C}}=
+			{1\over1+j\omega RC}={1\over1+{\omega\over\omega_c}}
+	$$
+
+	com $\omega_c=1/RC$ sendo a freqüência de corte do filtro, na qual o ganho é precisamente $1/\sqrt{2}$. O ganho real é, então
+	$$
+	|\hat{G}|={1\over\sqrt{1+({\omega\over\omega_c})^2}}
+	$$
+
+	Além disso, $\hat{V}_s(t)=\hat{G}\hat{V}_e(t)$, e como 
+	$$
+	\hat{G}=|\hat{G}|(1-j\omega/\omega_c)={e^{-j\omega\arctan({\omega\over\omega_c})}\over\sqrt{1+({\omega\over\omega_c})^2}}
+	$$
+
+	percebemos que um dos efeitos do ganho complexo é alterar a fase do sinal de entrada. Em outras palavras, a diferença de fase entre os sinais
+de entrada e saída é $-\arctan(\omega/\omega_c)$.
+
+\subsection{Circuito Integrador}
+
+	Acabamos de ver que num circuito RC a tensão de entrada e de saída estão relacionadas pelo ganho complexo na forma
+	$$
+	\hat{V}_s(t)={1\over1+j{\omega\over\omega_c}}\cdot\hat{V}_e(t)
+	$$
+
+	Mas, se estivermos numa faixa de freqüência muito maior que a de corte ($\omega\gg\omega_c$), então poderemos aproximar a equação anterior para
+	$$
+	\hat{V}_s(t)\approx{1\over j{\omega\over\omega_c}}\hat{V}_e(t)
+	$$
+
+	Considerando que $\hat{V}_e(t)=V_0e^{j\omega t}$\footnote{Se este não for o sinal, ele certamente pode ser escrito em termos de séries de Fourier,
+que possuem essa forma. Portanto, esta consideração é verdadeira e genérica.}, identificamos que 
+	$$
+	{\hat{V}_e(t)\over j\omega}=\int\hat{V}_e(t)\mathrm{dt}
+	$$
+
+	Logo teremos
+	$$
+	\hat{V}_s(t)={1\over RC}\int\hat{V}_e(t)\mathrm{dt}
+	$$
+
+	Dito de outra forma, para altas freqüências, além de atenuar o sinal de entrada (Fator $1/RC$), o filtro RC também o integra.  
+
+\subsection{Perdas de energia por histerese magnética}
+
+	A perda de energia por ciclo devido à histerese magnética é dada por (Veja referência~\cite{reitz}, capítulo 12 -- Energia magnética, seção
+4 -- Perdas por histerese.)
+	$$
+	u=\int\mathbf{B}\cdot\mathrm{d}\mathbf{H}
+	$$
+
+	Fazendo-se algumas estimativas de $\mathbf{H}$ e $\mathbf{B}$ (Consulte a referência~\cite{apostila}, página 24), podemos aproximar esta 
+energia em termos de grandezas mensuráveis:
+	$$
+	u\approx{R_2 C\over R_1}\cdot{N_p\over N_s}\int V_c\cdot dV_R
+	$$
+
+	onde $R_1$ é o resistor limitador de corrente, $R_2$ é o resistor do circuito integrador acoplado ao terminal secundário do transformador de
+$N_p$ espiras primárias e $N_s$ espiras secundárias. A tensão $V_C$ é sobre o capacitor do circuito integrador (saída deste circuito) e $V_R$ é a tensão
+sobre o resistor limitador de corrente.
+	
+
+
+
+
+
+
+
+
+
+
+

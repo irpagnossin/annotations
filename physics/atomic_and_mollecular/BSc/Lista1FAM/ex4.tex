@@ -1,0 +1,61 @@
+\newcommand{\op}[1]{\operador{#1}}
+
+\begin{quotation}
+{\bf 4.}
+{\it	Se $\operador A$ e $\operador B$ são Hermiteanos, o que se pode afirmar a respeito dos operadores: {\tt (a)}$\operador A^2$ {\tt (b)} 
+$\operador A+\operador B$ {\tt (c)} $\operador A\operador B$ {\tt (d)} $\{\operador A,\operador B\}$ {\tt (e)} $[\operador A,\operador B]$
+{\tt (f)} $i[\operador A,\operador B]$?
+}
+\end{quotation}
+
+\vspace{5mm}  
+
+	Se um operador $\operador O$ é Hermiteano, então ele é igual ao seu próprio conjugado: $\operador O^{\dagger}=\operador O$. Então vejamos:
+	
+	\vspace{2ex} 
+	{\tt (a)}
+	$
+	(\op A^2)^{\dagger}=(\op A\cdot\op A)^{\dagger}=\op A^{\dagger}\cdot\op A^{\dagger}=\op A\cdot\op A=\op A^2
+	$
+
+	Portanto, $\op A^2$ é Hermiteano. 
+	
+	\vspace{2ex} 
+	{\tt (b)}
+	$
+	(\op A+\op B)^{\dagger}=\op A^{\dagger}+\op B^{\dagger}=\op A+\op B
+	$
+
+	Logo, $\op A+\op B$ é Hermiteano.
+	
+	\vspace{2ex} 
+	{\tt (c)}
+	$
+	(\op A\op B)^{\dagger}=\op B^{\dagger}\op A^{\dagger}=\op B\op A
+	$
+
+	Ou seja, $\op A\op B$ é Hermiteano se, e somente se $[\op A,\op B]=0$ 
+	
+	\vspace{2ex} 
+	{\tt (d)}
+	$
+	\{\op A,\op B\}^{\dagger}=(\op A\op B+\op B\op A)^{\dagger}=(\op A\op B)^{\dagger}+(\op B\op A)^{\dagger}=\op B\op A+\op A\op B=\{\op A,\op B\}
+	$
+
+	Então, $\{\op A,\op B\}$ é Hermiteano.
+	
+	\vspace{2ex} 
+	{\tt (e)}
+	$
+	[\op A,\op B]^{\dagger}=(\op A\op B-\op B\op A)^{\dagger}=(\op A\op B)^{\dagger}-(\op B\op A)^{\dagger}=\op B\op A-\op A\op B=-[\op A,\op B]
+	$
+
+	Quer dizer, $[\op A,\op B]$ em geral não é Hermiteano, a menos que $\op A$ e $\op B$ comutem. Ou seja, se $[\op A,\op B]=0$.
+	
+	\vspace{2ex} 
+	{\tt (f)}
+	$
+	(i[\op A,\op B])^{\dagger}=i^*(\op A\op B-\op B\op A)^{\dagger}=-i[(\op A\op B)^{\dagger}-(\op B\op A)^{\dagger}]=-i(\op B\op A-\op A\op B)=i[\op A,\op B]
+	$	
+
+	$i[\op A,\op B]$ é Hermiteano.

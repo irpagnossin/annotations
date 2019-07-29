@@ -1,0 +1,267 @@
+\newcommand{\opa}{\operador A} 
+\begin{quotation}
+{\bf 2.}
+{\it	Considere o operador $\operador{A}$ num espaço tridimensional expresso numa base ortonormal $\{\ket 1,\ket 2,\ket 3\}$ por
+	\begin{equation}
+	\operador{A}=\ket 1\bra 1+{3\over2}\ket 2\bra 2-{1\over2}\ket 2\bra 3-{1\over2}\ket 3\bra 2+{3\over2}\ket 3\bra 3
+	\label{eq:o}
+	\end{equation}
+
+	{\tt(a)} Escreva a matriz que representa $\operador{A}$ nessa base. Esse operador é Hermiteano? {\tt(b)} Escreva e resolva a equação característica.
+Mostre que os autovalores são $a_1=a_2=1$ e $a_3=2$. {\tt(c)} Determine um autovetor normalizado $\ket{a_3}$ correspondente ao autovalor $a_3=2$. {\tt(d)}
+Determine dois autovetores ortonormais $\ket{a_1}$ e $\ket{a_2}$ correspondentes ao autovalor $a_1=a_2=1$. {\tt(e)} Determine os projetores $\operador{P}_1$ e
+$\operador{P}_2$ nos subespaços dos autovalores 1 e 2, respectivamente. Escreva as matrizes correspondentes e mostre que a soma delas é a matriz identidade.
+}
+\end{quotation}
+
+\vspace{5mm}
+
+	Qualquer operador representado na base $\{\ket 1,\ket 2,\ket 3\}$ tem sua forma matricial como
+	\begin{equation}
+	\operador A=\sum_{i,j}\ket{i}\hope{i}{\operador A}{j}\bra{j} 
+	\label{eq:og}
+	\end{equation} 
+
+	{\tt (a)} Comparando (\ref{eq:og}) com (\ref{eq:o}) vemos que
+	$$
+	\operador A=	\underbrace{\hope{1}{\opa}{1}}_{A_{11}}\ket 1\bra 1+
+			\underbrace{\hope{2}{\opa}{2}}_{A_{22}}\ket 2\bra 2+
+			\underbrace{\hope{2}{\opa}{3}}_{A_{23}}\ket 2\bra 3+
+			\underbrace{\hope{3}{\opa}{2}}_{A_{32}}\ket 3\bra 2+
+			\underbrace{\hope{3}{\opa}{3}}_{A_{33}}\ket 3\bra 3
+	$$ 
+
+	O que nos dá de imediato a forma matricial do operador $\operador A$:
+	\[\operador A=\left (\begin{array}{ccc}
+				1	&	0	&	0	\\
+				0	&	3/2	&	-1/2	\\
+				0	&	-1/2	&	3/2
+			\end{array} \right ) \]
+
+	Se a conjugada transposta desta matriz, que é a representação do adjunto de $\operador A$, for igual ao próprio operador, então $\operador A$ é 
+Hermiteano:
+ 	\[\tilde{\operador A}^*=\operador{A}^{\dagger}=\left (\begin{array}{ccc}
+				1	&	0	&	0	\\
+				0	&	3/2	&	-1/2	\\
+				0	&	-1/2	&	3/2
+ 			\end{array} \right )=\operador{A} \]
+
+	Portanto, $\operador A$ é Hermiteano.
+
+	{\tt (b)} A equação característica e os autovalores são dados pelo núcleo do operador $\operador A-\lambda\operador I$:
+	\[\mathrm{ker}[\operador A-\lambda\operador I] \Rightarrow \left |\begin{array}{ccc}
+				1-\lambda	&	0		&	0	\\
+				0		&	3/2-\lambda	&	-1/2	\\
+				0		&	-1/2		&	3/2-\lambda
+			\end{array} \right |=0 \Rightarrow (1-\lambda)[({3\over2}-\lambda)^2-{1\over4}]=0\]
+
+	onde $\operador I$ é a matriz unitária. As raízes são $a_1=a_2=1$ e $a_3=2$. Note que o autovalor 1 é duplamente degenerado.
+
+	Vamos agora determinar os autovetores. Para isso, consideremos o vetor genérico $\ket{\xi}=x\ket{1}+y\ket{2}+z\ket{3}$ e o problema de autovalor
+correspondente:
+	$$
+	\operador A\ket{\xi}=a_i\ket{\xi}
+	$$
+
+	Ou então, na forma matricial,
+	\[ \left (\begin{array}{ccc}
+				1-\lambda	&	0		&	0	\\
+				0		&	3/2-\lambda	&	-1/2	\\
+				0		&	-1/2		&	3/2-\lambda
+		\end{array}\right )\cdot\left (\begin{array}{c}
+							x	\\
+							y	\\
+							z
+						\end{array}\right )=\left(\begin{array}{c}
+										0	\\
+										0	\\
+										0
+									\end{array} \right )\]
+
+	{\tt (c)} Para o autovalor $a_3=2$ teremos
+	\[ \left (\begin{array}{ccc}
+				-1	&	0	&	0	\\
+				0	&	-1/2	&	-1/2	\\
+				0	&	-1/2	&	-1/2	
+			\end{array}\right )\cdot\left (\begin{array}{c}
+							x	\\
+							y	\\
+							z
+						\end{array}\right )=\left (\begin{array}{c}
+										0	\\
+										0	\\
+										0
+									\end{array}\right ) \]
+
+	Note que a segunda e terceira linhas da matriz mais à esquerda são linearmente dependentes. Logo temos apenas duas equações a resolver: $-x=0$, cuja
+solução é claramente $x=0$, e $-y/2-z/2=0$, dando $y=-z$. Ou seja: Para o autovalor $a_3=2$, o autovetor não normalizado é $\ket{\xi}=y(\ket{2}-\ket{3})$.
+Normalizando-o concluímos que
+	\begin{eqnarray*}
+	\iprod{\xi}{\xi}	&=&y^*(\bra 2-\bra 3)\cdot y(\ket 2-\ket 3)		\\
+				&=&|y|^2(\bra 2-\bra 3)\cdot(\ket 2-\ket 3)		\\
+				&=&|y|^2(\iprod 22-\iprod 23-\iprod 32+\iprod 33)		\\
+	1			&=&2|y|^2
+	\end{eqnarray*}
+
+	dando $y=e^{i\phi}/\sqrt{2}$. Finalmente temos o primeiro autovetor: 
+	\begin{eqnarray*}
+	\ket{\xi}=\ket{a_3}	&=&{\ket 2-\ket 3\over\sqrt{2}}e^{i\phi}	\\ 
+				&=&{\ket 2-\ket 3\over\sqrt{2}}
+	\end{eqnarray*}
+	
+	Aqui escolhemos a fase $\phi=0$ por questão de simplicidade.
+	
+	{\tt (d)} Para o autovalor $a_1=a_2=1$ teremos
+	\[ \left (\begin{array}{ccc}
+				0	&	0	&	0	\\
+				0	&	1/2	&	-1/2	\\
+				0	&	-1/2	&	1/2
+			\end{array}\right )\cdot\left (\begin{array}{c}
+							x	\\
+							y	\\
+							z	
+						\end{array}\right )=\left(\begin{array}{c}
+										0	\\
+										0	\\
+										0	 
+									\end{array}\right ) \]
+
+	Perceba que, uma vez mais, as duas últimas linhas da matriz são linearmente dependentes, o que dá $0x=0$, cuja solução é qualquer $x\in\mathbb{C}$ e
+$y/2-z/2=0$, resultando $y=z$. Logo, $\ket{\xi}=x\ket 1+y(\ket 2+\ket 3)$. Normalizando temos
+	\begin{eqnarray*}
+	\iprod{\xi}{\xi}	&=&(x^*\bra 1+y^*\bra 2+y^*\bra 3)\cdot(x\ket 1+y\ket 2+y\ket 3)	\\
+				&=&|x|^2\iprod 11+x^*y\iprod 12+x^*y\iprod 13+xy^*\iprod 21+|y|^2\iprod 22+|y|^2\iprod 23+xy^*\iprod 31+|y|^2\iprod 32+
+				|y|^2\iprod 33	\\
+	1			&=&|x|^2+2|y|^2		
+	\end{eqnarray*}
+
+	Isto dá $x=\sqrt{1-2|y|^2}e^{i\phi}$. Escolhemos $\phi_1=0$ e $\phi_2=\pi$ por simplicidade, já que, como está explicitado a seguir, podemos exigir
+apenas que $x\in\mathbb{R}$ e ainda sim seremos capazes de resolver o problema. Temos então os autovetores genéricos 
+	$$
+	\ket{\xi_1}=\sqrt{1-2|y|^2}e^{i\phi_1}\ket 1+y\ket 2+y\ket 3
+	$$
+
+	e
+	$$
+	\ket{\xi_2}=\sqrt{1-2|y|^2}e^{i\phi_2}\ket 1+y\ket 2+y\ket 3 	
+	$$
+
+	Queremos que estes dois autovetores sejam ortonormais. Normalizados eles já são. Falta apenas torná-los ortogonais entre si. Então devemos exigir 
+que $\iprod{\xi_1}{\xi_2}=0$:
+	\begin{eqnarray*}
+	\iprod{\xi_1}{\xi_2}	&=&(\sqrt{1-2|y|^2}e^{-i\phi_1}\bra 1+y\bra 2+y\bra 3)\cdot(\sqrt{1-2|y|^2}e^{i\phi_2}\ket 1+y\ket 2+y\ket 3)		\\
+				&=&(1-2|y|^2)e^{i(\phi_2-\phi_1)}\iprod 11+|y|^2(\bra 2+\bra 3)\cdot(\ket 2+\ket 3)					\\
+				&=&(1-2|y|^2)e^{i(\phi_2-\phi_1)}+2|y|^2										\\
+	0			&=&e^{i(\phi_2-\phi_1)}+2|y|^2[1-e^{i(\phi_2-\phi_1)}]
+	\end{eqnarray*}
+
+	O resultado é 
+	$$
+	|y|^2=-{e^{i(\phi_2-\phi_1)}\over2[1-e^{i(\phi_2-\phi_1)}]}\Rightarrow y=\sqrt{e^{i(\phi_2-\phi_1)}\over2[e^{i(\phi_2-\phi_1)}-1]}e^{i\theta}
+	$$
+	Tomemos, por simplicidade dos cálculos, $\phi_1=0$, $\phi_2=\pi$ e $\theta=0$\footnote{Existe de fato a arbitrariedade aqui utilizada nas fases pois,
+como tudo o que se exige de $\ket{\xi_1}$ e $\ket{\xi_2}$ é que sejam ortonormais, apenas $x$ e $y$ precisam estar correlacionados, como mostrou os
+cálculos anteriores.}. Determinamos dai os dois outros autovetores que faltavam:
+	$$
+	\ket{\xi_1}=\ket{a_1}={1\over\sqrt{2}}\ket 1+{1\over 2}\ket 2+{1\over 2}\ket 3
+	$$
+	$$
+	\ket{\xi_2}=\ket{a_2}=-{1\over\sqrt{2}}\ket 1+{1\over 2}\ket 2+{1\over 2}\ket 3
+	$$
+
+	{\tt (e)} Dada uma base $\{\ket{i,j}\}$\footnote{A base $\{\ket{i,j}\}$ não tem nada de diferente, essencialmente, que a base $\{\ket i\}$. Aqui escolhemos
+colocar dois índices nos kets simplesmente por questão de notação. No caso, $i$ representa o autovetor e $j$ é um índice dos vetores da base. Por exemplo: um
+vetor $\ket{1,1}$ seria o primeiro autovetor associado ao autovalor 1 e $\ket{2,3}$ seria o terceiro autovetor associado ao autovalor 2. Nada mais que isso.}, o 
+operador de projeção $\operador{P}_i$ correspondente ao autovalor $a_i$ é
+	$$
+	\operador{P}_i=\sum_j^{g(i)}\ket{i,j}\bra{i,j}
+	$$
+
+	onde $g(i)$ é a degenerescência do autovalor $a_i$. Consideremos primeiramente o operador $\operador{P}_1$ que projeta um vetor $\ket{\psi}$ no
+espaço formado pelos autovetores correspondentes ao autovalor $a_1=a_2=1$: 
+	$$
+	\{\ket{a_1},\ket{a_2}\}=\{\underbrace{{1\over\sqrt{2}}\ket 1+{1\over 2}\ket 2+{1\over 2}\ket 3}_{\ket{1,1}},
+				\underbrace{-{1\over\sqrt{2}}\ket 1+{1\over 2}\ket 2+{1\over 2}\ket 3}_{\ket{1,2}}\}
+	$$
+
+	Neste caso o operador de projeção será
+	\begin{eqnarray*} 
+	\operador{P}_1	&=&\ket{1,1}\bra{1,1}+\ket{1,2}\bra{1,2}		\\
+			&=&({1\over\sqrt{2}}\ket 1+{1\over 2}\ket 2+{1\over 2}\ket 3)\cdot({1\over\sqrt{2}}\bra 1+{1\over 2}\bra 2+{1\over 2}\bra 3)+	\\
+			& &+(-{1\over\sqrt{2}}\ket 1+{1\over 2}\ket 2+{1\over 2}\ket 3)\cdot(-{1\over\sqrt{2}}\bra 1+{1\over 2}\bra 2+{1\over 2}\bra 3)	\\
+			&=&\ket 1\bra 1+{1\over2}\ket 2\bra 2+{1\over2}\ket 2\bra 3+{1\over2}\ket 3\bra 2+{1\over2}\ket 3\bra 3				
+	\end{eqnarray*}
+
+	Cuja forma matricial é, de forma idêntica ao item {\tt (a)},
+	\[\operador{P}_1=\left (\begin{array}{ccc}	
+				1	&	0	&	0	\\
+				0	&	1/2	&	1/2	\\
+				0	&	1/2	&	1/2
+			\end{array}\right ) \]
+
+	Podemos provar que $\operador{P}_1$ é projetor pela sua definição: $\operador{P}^2=\operador{P}$:
+	\[\operador{P}_1^2=\left (\begin{array}{ccc}	
+				1	&	0	&	0	\\
+				0	&	1/2	&	1/2	\\
+				0	&	1/2	&	1/2
+			\end{array}\right )\cdot\left (\begin{array}{ccc}	
+						1	&	0	&	0	\\
+						0	&	1/2	&	1/2	\\
+						0	&	1/2	&	1/2
+					\end{array}\right )=\left (\begin{array}{ccc}	
+								1	&	0	&	0	\\
+								0	&	1/2	&	1/2	\\
+								0	&	1/2	&	1/2
+							\end{array}\right )=\operador{P}_1 \]
+
+	Quanto ao autovalor $a_3=2$, este gera um espaço unidimensional $\{\ket{2,1}\}=\{{\ket 2-\ket 3\over\sqrt{2}}\}$ e, conseqüentemente,
+	\begin{eqnarray*}
+	\operador{P}_2	&=&\ket{2,1,}\bra{2,1}										\\
+			&=&({\ket 2-\ket 3\over\sqrt{2}})\cdot({\bra 2-\bra 3\over\sqrt{2}})				\\
+			&=&{1\over2}\ket 2\bra 2-{1\over2}\ket 2\bra 3-{1\over2}\ket 3\bra 2+{1\over2}\ket 3\bra 3	
+	\end{eqnarray*}
+
+	Que é equivalente a 
+	\[\operador{P}_2=\left (\begin{array}{ccc}
+				0	&	0	&	0	\\
+				0	&	1/2	&	-1/2	\\
+				0	&	-1/2	&	1/2 
+			\end{array}\right ) \]
+
+	Outra vez provamos que de fato $\operador{P}_2$ é projetor pela sua definição:
+	\[\operador{P}_2^2=\left (\begin{array}{ccc}
+				0	&	0	&	0	\\
+				0	&	1/2	&	-1/2	\\
+				0	&	-1/2	&	1/2 
+			\end{array}\right )\cdot \left (\begin{array}{ccc}
+							0	&	0	&	0	\\
+							0	&	1/2	&	-1/2	\\
+							0	&	-1/2	&	1/2 
+						\end{array}\right )=\left (\begin{array}{ccc}
+									0	&	0	&	0	\\
+									0	&	1/2	&	-1/2	\\
+									0	&	-1/2	&	1/2 
+								\end{array}\right )=\operador{P}_2 \]
+
+	Além disso, é claro que  
+	\[\operador{P}_1+\operador{P}_2=    \left (\begin{array}{ccc}	
+				1	&	0	&	0	\\
+				0	&	1/2	&	1/2	\\
+				0	&	1/2	&	1/2
+			\end{array}\right )+\left (\begin{array}{ccc}
+				0	&	0	&	0	\\
+				0	&	1/2	&	-1/2	\\
+				0	&	-1/2	&	1/2 
+			\end{array}\right )=\left (\begin{array}{ccc}
+				1	&	0	&	0	\\
+				0	&	1	&	0	\\
+				0	&	0	&	1
+			\end{array}\right )=\operador{I} \]
+
+	pois os dois subespaços de $\{\ket 1,\ket 2,\ket 3\}$ são complementares. 	
+	
+	
+
+
+
+

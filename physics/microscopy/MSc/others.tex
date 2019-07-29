@@ -1,0 +1,37 @@
+%	Projeto:  Scanning probe microscopy
+%	Autor:	  Ivan Ramos Pagnossin
+%	Data:		  17/06/2002
+%	Arquivo:  others.tex
+% Capítulo: Outros modos de SPM
+
+	\begin{description}
+		\item{\bfseries FMM --- Microscopia de força modulada:}\index{FMM}\index{Microscopia!de força modulada}
+		Esta técnica de microscopia nos permite avaliar as variações de rigidez \index{Rigidez} da amostra. Para isso faz-se oscilar a piezoelétrica --- em sua freqüência de ressonância --- utilizando como ponto de apoio o contato ponta-amostra (que é feito no sentido do AFM de contato). Se o material analisado for rígido o ponto de apoio mantém-se fixo e a amplitude de oscilação aumenta. Se, por outro lado, a rigidez não for das maiores, este ponto oscila (pois a ponta deforma a amostra naquele ponto) juntamente com a piezoelétrica (mas não em fase), reduzindo a amplitude. Deste modo, vemos que grandes amplitudes referem-se a regiões mais rígidas, enquanto menores amplitudes dizem respeito a regiões mais ``macias''.\par
+		\item{\bfseries EFM --- Microscopia de força elétrica:}\index{EFM}\index{Microscopia!de força elétrica}
+		Idêntica ao MFM, exceto por utilizar a força elétrica (gerada por uma diferença de potencial aplicada entre ponta e amostra) como interação ponta-amostra.
+		\item{\bfseries SCM --- Microscopia de capacitância:}\index{SCM}\index{Microscopia!de capacitância}
+		Esta modalidade de microscopia mede a variação da capacitância \index{Capacitância} ao longo da amostra: Aplica-se uma tensão contínua entre amostra e ponta, que oscila sem encostar na superfície (AFM de não-contato). Pode-se utilizar o interleave para evitar ambiguidades com a topografia. Este tipo de microscopia nos permite observar a distribuição de portadores \index{portadores} pouco abaixo da superfície ou ainda analisar uma amostra dielétrica \index{Dielétrico} depositada sobre um substrato condutor.
+		\item{\bfseries TSM --- Microscopia térmica:}\index{TSM}\index{Microscopia!térmica}
+		Avalia a condutividade térmica \index{Condutividade térmica} da superfície da amostra ou, em alguns casos, em planos atômicos abaixo da superfície. A sonda neste tipo de microscopia é um pequeno termopar, \index{Termopar} aquecido por uma fonte externa: Ao se aproximar da amostra, calor é transferido para ela e, obviamente, a velocidade de variação da temperatura da ponta (termopar) é proporcional à condutividade.\par
+		É claro que o meio no qual estão imersos a ponta e a amostra influi nos resultados. Para medidas feitas em ambiente aberto, o caminho livre médio das moléculas \index{Caminho livre médio} que compõem o ar é de aproximadamente $l=66\unit{nm}$. Portanto, para distâncias ponta-amostra maiores que $l$ a condução por correntes de convecção \index{Corrente de convecção} predomina. Para distâncias inferiores teremos domínio das transferências por radiação, \index{Radiação} principalmente infravermelho. \index{Infravermelho} Para evitar influências do meio, em geral faz-se medidas TSM (não confunda com STM) com o termopar acoplado a um cantilever oscilante.\par
+		A resolução desta técnica é da ordem de $40\unit{nm}$ a $100\unit{nm}$, variando com a distância ponta-amostra e a dimensão da ponta. A resolução vertical é por volta de $3\unit{nm}$ e em temperatura é da ordem de $3\unit{mK}$ (correspondente a alguns nanowatts).
+		\item{\bfseries NSOM --- Microscopia de campo próximo:}\index{NSOM}\index{Microscopia!de campo próximo}
+		NSOM é o acrônimo de {\slshape near-field scanning optical microscopy} e trata-se de uma técnica óptica recente que consegue, com radiação de comprimento $\lambda$, resolver detalhes de até aproximadamente $\lambda/20$. A técnica é interessante pois consegue burlar o limite de resolução \index{Resolução} dos microscópios ópticos tradicionais. Para isso, a extremidade da amostra é fabricada com uma pequena abertura muito menor que $\lambda$ e iluminada por laser. 
+		\item{\bfseries Nanolitografia:}\index{Nanolitografia}
+		Em geral utilizamos as técnicas de SPM para obter informações a respeito de uma superfície. As vezes, entretanto, têm-se o interesse de modificá-las intensionalmente de forma a produzir marcas específicas na amostra. Isto é feito utilizando-se as técnicas de AFM de contato com setpoint bastante algo. Ou seja, com alta pressão sobre a amostra. A este tipo de atividade chamamos nanolitografia.
+\end{description}
+
+\begin{figure}[htb]
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/others/fmm2.jpg}		
+	\end{minipage}\hfill
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/others/fmm3.jpg}		
+	\end{minipage}
+	\caption{\footnotesize Imagem FMM ($20\unit{\mu m}\times 20\unit{\mu m}$) de uma borracha escolar. À esquerda a imagem em AFM de contato; à direita em FMM.}
+\end{figure}
+
+\begin{figure}\centering
+	\includegraphics[scale=0.5]{figuras/others/fmm1.jpg}
+	\caption{\footnotesize Esquema de funcionamento do FMM.}
+\end{figure}

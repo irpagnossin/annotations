@@ -1,0 +1,40 @@
+\begin{exercicio}
+	Mostre que as funções de onda normalizadas do oscilador harmônico unidimensional
+satisfazem a relação de recorrência
+	\begin{equation}\label{eq:mhs recorrencia}
+	\sqrt{n}\psi_n(x)=\sqrt{2}\alpha x\psi_{n-1}(x)-\sqrt{n-1}\psi_{n-2}(x)
+	\end{equation} 
+
+	para $n=1,2,3,...$ onde $\alpha=\sqrt{m\omega/\hbar}$. Essa relação permite calcular
+as funções de onda de qualquer nível excitado partindo da função de onda do nível 
+fundamental.
+\end{exercicio}
+
+	As funções de onda para os níveis $n$, $n-1$ e $n-2$ são
+	\begin{eqnarray*}
+\psi_n(x)&=&{\alpha^{1/2}\over2^{n/2}(n!)^{1/2}\pi^{1/4}}H_n(x)e^{-\alpha^2x^2/2}	\\
+\psi_{n-1}(x)&=&{\alpha^{1/2}\over2^{n-1/2}[(n-1)!]^{1/2}\pi^{1/4}}H_{n-1}(x)
+				e^{-\alpha^2x^2/2}					\\
+\psi_{n-2}(x)&=&{\alpha^{1/2}\over2^{n-2/2}[(n-2)!]^{1/2}\pi^{1/4}}H_{n-2}(x)
+				e^{-\alpha^2x^2/2}
+	\end{eqnarray*}
+
+	Aplicando na equação (\ref{eq:mhs recorrencia}),
+	\begin{eqnarray*}
+\sqrt{n}{\alpha^{1/2}H_n(x)e^{-\alpha^2x^2/2}\over2^{n/2}(n!)^{1/2}\pi^{1/4}}	&=&
+	\sqrt{2}\alpha x{\alpha^{1/2}H_{n-1}(x)e^{-\alpha^2x^2/2}\over2^{n-1/2}
+				[(n-1)!]^{1/2}\pi^{1/4}}-
+	\sqrt{n-1}{\alpha^{1/2}\over2^{n-2/2}[(n-2)!]^{1/2}\pi^{1/4}}H_{n-2}(x)
+				e^{-\alpha^2x^2/2}					\\
+	{\sqrt{n}H_n(y)\over2^{n/2}\sqrt{n!}}&=&
+		{yH_{n-1}(y)\over2^{n/2-1}\sqrt{(n-1)!}}-
+			\sqrt{n-1}{H_{n-2}(y)\over2^{n/2-1}\sqrt{(n-2)!}}		\\
+	{1\over2}\sqrt{n}H_n(y)&=&\sqrt{n}yH_{n-1}(y)-
+				\sqrt{n-1{n!\over(n-2)!}}H_{n-2}(y)			\\	
+	H_n(y) &=& 2yH_{n-1}(y)-2(n-1)H_{n-2}(y)
+	\end{eqnarray*}
+
+	Mas esta última expressão já nos é conhecida como a relação de recorrência dos
+polinômios de Hermite, demonstrada por outros meios. Segue, então, que está verificada a
+veracidade de (\ref{eq:mhs recorrencia}).
+				

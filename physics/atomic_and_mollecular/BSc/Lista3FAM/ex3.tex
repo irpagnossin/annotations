@@ -1,0 +1,52 @@
+\begin{quotation}
+{\bf 3.}
+{\it	O operador hamiltoniano de uma partícula em uma dimensão sujeita a uma potencial $V(x)$
+	é
+	$$
+	\op H = {\op P^2\over 2m}+V(\op X)
+	$$
+
+	{\tt (a)} Sabendo-se que $\op X$ e $\op P$ satisfazem a relação de comutação canônica
+	$[\op X,\op P]=i\hbar$, mostre que $\op P=(im/\hbar)[\op H,\op X]$.
+
+	{\tt (b)} Usando o resultado do item anterior, mostre que para qualquer autofunção do
+	operador $\op H$ correspondendo a um estado ligado, o valor esperado do momento é
+	nulo: $\med{\op P}=0$.}
+\end{quotation}
+
+	{\tt (a)}
+	\begin{eqnarray*}
+	[\op H,\op X]	&=& [{\op P^2\over 2m}+V(\op X),\op X]			\\
+			&=& {1\over2m}[\op P^2,\op X]+[V(\op X),\op X]		\\
+			&=& -{1\over2m}(\op P[\op X,\op P]+[\op X,\op P]\op P)
+						+[V(\op X),\op X]		\\
+			&=& -{1\over2m}(\op P i\hbar + i\hbar \op P)
+						+[V(\op X),\op X]		\\
+			&=& -{i\hbar\over m}\op P+[V(\op X),\op X]		\\
+			&=& -{i\hbar\over m}\op P	
+	\end{eqnarray*}
+
+	O comutador de $V(\op X)$ e $\op X$ é zero pois o potencial só depende de $\op X$.
+Podemos chegar a esta conclusão de forma mais clara assumindo a representação das coordenadas,
+onde $\op X=x$:
+	$$
+	[V(\op X),\op X]=[V(x),x]=V(x)x-xV(x)=0
+	$$
+ 
+	{\tt (b)}
+	\begin{eqnarray}
+	\med{\op P}	&=& \hope{\psi}{\op P}{\psi}				\nonumber\\
+			&=& {im\over\hbar}\hope{\psi}{[\op H,\op X]}{\psi}	\nonumber\\	
+	\label{eq:ex3}	&=& {im\over\hbar}\hope{\psi}{\op H\op X}{\psi}-
+				{im\over\hbar}\hope{\psi}{\op X\op H}{\psi}	\\
+			&=& {im\over\hbar}x\hope{\psi}{\op H}{\psi}-
+				{im\over\hbar}E\hope{\psi}{\op X}{\psi}		\nonumber\\
+			&=& {im\over\hbar}xE\iprod{\psi}{\psi}-
+				{im\over\hbar}Ex\iprod{\psi}{\psi}		\nonumber\\
+			&=& {im\over\hbar}xE-{im\over\hbar}Ex			\nonumber\\
+			&=& 0							\nonumber
+	\end{eqnarray}
+
+	Onde em (\ref{eq:ex3}) utilizamos $\op X\ket\psi=x\ket\psi$ e $\op H\ket\psi=E\ket\psi$,
+o problema de Sturm-Liouville para os operadores posição e hamiltoniano, respectivamente.
+	

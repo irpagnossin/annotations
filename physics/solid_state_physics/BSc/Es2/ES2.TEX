@@ -1,0 +1,545 @@
+\documentclass[a4paper,9pt,leqno,draft]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\newcommand{\bum}{\vec{b}_1}
+\newcommand{\bdois}{\vec{b}_2}
+\newcommand{\btres}{\vec{b}_3}
+\newcommand{\aum}{\vec{a}_1}
+\newcommand{\adois}{\vec{a}_2}
+\newcommand{\atres}{\vec{a}_3}
+
+\begin{document}
+
+\title { Lista número 2 de Introdução à física do estado sólido}
+\author { Ivan Ramos Pagnossin }
+\date { 03 de Outubro de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+
+
+{\bf	1.}
+{\it	Uma rede plana é caracterizada pelos vetores primitivos $\vec{a}_1=2\hat{i}$ e $\vec{a}_2=\hat{i}-\hat{j}$. 
+
+	{\bf(a)}	Trace a rede e represente a família de planos cujos índices de Miller são $(1\ 2)$;
+
+	{\bf(b)}	Trace a rede recíproca e represente o vetor de translação $\vec{K}$ da rede recíproca perpendicular a esse conjunto de planos.
+
+	{\bf(c)}	Use os gráficos para mostrar que $\vec{K}$ é realmente perpendicular ao conjunto de planos e que a relação entre $|\vec{K}|$ e
+			a distância entre planos consecutivos é satisfeita;
+
+	{\bf(d)}	Desenhe as quatro primeiras zonas de Brillouin.
+}
+
+\vspace{1cm}
+
+	Uma vez que a rede direta é a recíproca da recíproca, os índices de Miller de uma são as coordenadas $(x_1,x_2)$\footnote{\sf Os pontos nos quais o plano 
+cruza os vetores primitivos.} da outra, e vice versa. Deste modo, se os índices de Miller são $(1\ 2)$, então podemos achar os pontos de interseção $x_1$ e
+$x_2$ simplesmente transformando-os exatamente da mesma forma como faríamos se tivéssemos o problema inverso: Dados os pontos de interseção, achar os índices
+de Miller:
+
+	$$
+	1\ 2\ \rightarrow\  {1\over 1}\ {1\over 2}\ \rightarrow\ {2\over 2}\ {1\over 2}\ \rightarrow\ 2\ 1 
+	$$
+
+	Isto é, temos que o plano procurado corta os vetores primitivos $\vec{a}_1$ e $\vec{a}_2$ em $x_1=2$ e $x_2=1$ \footnote{\sf Isto é, 
+$\vec{x}_1=2\vec{a}_1$ e $\vec{x}_2=\vec{a}_2$.}, respectivamente. Daí temos a {\it fig.1}. 
+
+	O segundo item pede um vetor de translação da rede recíproca, dado por $N(l\vec{b}_1+m\vec{b}_2)$, com $N$ inteiro, $(l\ m)$ os índices de Miller e
+$\{\vec{b}_1,\vec{b}_2\}$ os vetores primitivos da rede recíproca. Tomando $N=1$ temos um vetor de translação especial -- o mais simples e menor de todos -- 
+chamado $\vec{k}_0$, que permitir-nos-á encontrar a distância interplanar solicitada no item seguinte. Mas para explicitarmos $\vec{k}_0$
+\footnote{\sf E conseqüentemente qualquer $\vec{K}=N(l\vec{b}_1+m\vec{b}_2)$.} devemos conhecer $\{\vec{b}_1,\vec{b}_2\}$.
+
+	Com $A$ sendo a área da célula primitiva da rede direta, 
+	\[ 
+	A=|\hat{k}\times\vec{a}_1\cdot\vec{a}_2|=\left | \begin{array}{ccc}
+								0	&	0	&	1	\\
+								2	&	0	&	0	\\
+								1	&	-1	&	0	
+							\end{array} \right | = 2
+	\]
+
+	Podemos agora encontrar os vetores primitivos da rede recíproca:
+	\[
+	\vec{b}_1={2\pi\over A}(\vec{a_2}\times\hat{k})=\pi\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									1	&	-1	&	0	\\
+									0	&	0	&	1	
+								\end{array} \right | =  - \pi(\hat{i}+\hat{j})
+	\]
+
+	e
+	\[
+	\vec{b}_2={2\pi\over A}(\hat{k}\times\vec{a}_1)=\pi\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									0	&	0	&	1	\\
+									2	&	0	&	0
+								\end{array} \right | = 2\pi\hat{j}
+	\]
+
+	
+	Assim fica fácil determinar o vetor da rede recíproca:
+	\begin{eqnarray}
+	\vec{k}_0	&	=	&	l\vec{b}_1+m\vec{b}_2			\nonumber \\
+			&	=	&	l[-\pi(\hat{i}+\hat{j})]+m[2\pi\hat{j}]	\nonumber \\
+			&	=	&	\pi(3\hat{j}+\hat{i})			\nonumber 
+	\end{eqnarray}
+
+	É claro, pela {\it fig.1}, que o vetor $\vec{k}_0$ é perpendicular à família de planos $\{1\ 2\}$, mas podemos demonstrar isto com precisão analítica:
+Observe que a inclinação da família de planos com relação à base canônica ilustrada ainda na primeira figura é $\tan\theta=1/3$, e a do vetor $\vec{k}_0$ é
+	$$
+	\tan\phi=-{|\vec{k}_{0_y}|\over|\vec{k}_{0_x}|}=-{3\pi\over\pi}=-3 
+	$$
+
+	E assim, pela geometria analítica, como $\tan\phi\cdot\tan\theta=-1$ temos que o vetor $\vec{k}_0$ é realmente perpendicular à família de planos 
+considerada.
+
+	Já a distância interplanar pode ser determinada geometricamente através da triangulação em vermelho na {\it fig.1}
+	$$
+	3d=6\sin(\arctan{1\over3})	\Rightarrow	d\cong 0,63\AA
+	$$
+
+	ou pela teoria de estruturas desenvolvida:
+	$$
+	d_{(1\ 2)}={2\pi\over|\vec{k}_0|}={2\pi\over\sqrt{10}\pi}\cong0,63\AA
+	$$
+
+	E verifica-se que realmente a expressão acima utilizada é correta.
+
+	O último item pede as quatro primeiras zonas de Brillouin. O primeiro passo é desenhar a rede recíproca -- na qual essas zonas são
+definidas -- com o auxílio dos resultados $\vec{b}_1$ e $\vec{b}_2$ encontrados anteriormente. Em seguida, escolhemos um ponto da rede como
+referência e, a partir dele, encontramos os primeiros vizinhos e traçamos a mediatriz do segmento que une o ponto de referência aos seus vizinhos. Repete-se
+o processo para todos os segundos vizinhos, terceiros, quartos, e assim por diante\footnote{\sf Não existe um momento específico para se parar, mas é
+sempre bom repetir o processo para uns dois ou três vizinhos seguintes àqueles aos quais se quer chegar para evitar a possibilidade de deixarmos uma linha 
+importante de lado.}. O resultado é mostrado passo a passo na figura 2.
+
+\vspace{1cm}
+
+{\bf 2.}
+{\it	Para um cristal monoatômico, um dado vetor da rede recíproca tem módulo $|\vec{G}|=2\cdot10^8\ cm^{-1}$. Um feixe de raios-X com vetor de onda
+	$\vec{k}$ incide sobre o cristal formando um ângulo de $30^o$ com a direção de $\vec{G}$.
+
+	{\bf (a)}	Qual deve ser o comprimento de onda do feixe incidente para que haja interferência construtiva?
+
+	{\bf (b)}	Qual o ângulo entre a direção do feixe incidente e do difratado?
+}
+
+\vspace{1cm}
+ 
+	A condição de Von Laue para que haja interferência construtiva numa experiência de difração de ondas é que a diferença entre os vetores de onda
+incidente e refratada seja um vetor de translação da rede recíproca, isto é
+	\begin{equation}
+	\vec{k}_i-\vec{k}_r=\vec{G}
+	\end{equation}
+
+	com $|\vec{k}_i|=|\vec{k}_r|=k={2\pi\over\lambda}$, condição esta que impõe a conservação da energia eletromagnética na difração.
+
+	Escolhendo uma base ortonormal como descrita na {\it fig.3} podemos escrever os vetores $\vec{k}_i$ e $\vec{G}$ de modo a determinarmos $\vec{k}_r$:
+	$$
+	\vec{k}_i=-k\sin\theta\hat{i}-k\cos\theta\hat{j}
+	$$
+
+	e
+	$$
+	\vec{G}=-G\hat{j}
+	$$
+
+	Isolando $\vec{k}_r$ em $(1)$ e aplicando os conhecimentos acima adquiridos concluimos que
+	\begin{eqnarray} 
+	\vec{k}_r	&	=	&	\vec{k}_i-\vec{G}						\nonumber \\
+			&	=	&	-k\sin\theta\hat{i}-k\cos\theta\hat{j}+G\hat{j}			\nonumber \\
+			&	=	&	-k\sin\theta\hat{i}+(G-k\cos\theta){j}				\nonumber \\
+	|\vec{k}_r|^2	&	=	&	k^2\sin^2\theta+k^2\cos^2\theta+G^2-2kG\cos\theta		\nonumber 
+	\end{eqnarray}
+
+	que dá 
+	$$
+	G=2k\cos\theta\	\Rightarrow\	k={G\over2\cos\theta}\	\Rightarrow\	{2\pi\over\lambda}={G\over2\cos\theta}\	\Rightarrow\	\lambda\cong5,44\ \AA
+	$$
+
+	Já o ângulo entre os feixes incidente e refratado pode ser encontrado percebendo-se que o ângulo entre $\vec{k}_r$ e $\vec{G}$ é 
+	$$
+	\phi=\arcsin{|\vec{k}_{r_x}|\over|\vec{k}_r|}=\arcsin{k\sin\theta\over k}=\theta=30^o
+	$$
+
+	Isto é, o ângulo de desvio do feixe de raios-X é $\theta+\phi=60^o$.
+	
+\vspace{1cm}
+	
+{\bf 3.} 
+{\it	Mostre qual das duas zonas de Brillouin é maior: A da prata (estrutura FCC de aresta $a=4,08\ \AA$) ou a do lítio (BCC com $a=3,50\ \AA$).
+}
+
+\vspace{1cm}
+
+	Como estamos falando de uma estrutura tridimensional, a grandeza que utilizamos para comparar as células é o volume. Isto significa que precisamos
+calcular o volume da zona de Brillouin\footnote{\sf Não é necessário fazer distinção entre qual zona estamos falando, uma vez que todas tem o mesmo 
+volume.}. Mas a célula de Brillouin é a de Wigner-Seitz na rede recíproca, e sabemos também que a célula de Wigner-Seitz é uma primitiva. Isto
+posto, o que precisamos fazer é apenas determinar os vetores primitivos da rede recíproca e encontrar o volume pelo produto misto destes vetores.
+Comecemos pela FCC.
+
+	Os vetores primitivos canônicos são
+	$$
+	\aum={a\over2}(\hat{i}+\hat{j})
+	$$
+	$$
+	\adois={a\over2}(\hat{j}+\hat{k})
+	$$
+	$$
+	\atres={a\over2}(\hat{i}+\hat{k})
+	$$
+
+	E o volume $V_d$ da célula primitiva da rede direta é 
+	\[
+	V_d=|\aum\times\adois\cdot\atres|=({a\over 2})^3\left | \begin{array}{ccc}
+									1	&	1	&	0	\\
+									0	&	1	&	1	\\
+									1	&	0	&	1
+							\end{array} \right |={a^3\over4}
+	\] 
+
+	A partir destes vetores é trivial encontrar os da rede recíproca:
+	\[
+	\bum={2\pi\over V_p}\ \adois\times\atres={8\pi\over a^3}\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									0	&	1	&	1	\\
+									1	&	0	&	1
+								\end{array} \right |={2\pi\over a}(1,1,-1)
+	\]
+	\[
+	\bdois={2\pi\over V_p}\ \atres\times\aum={8\pi\over a^3}\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									1	&	0	&	1	\\
+									1	&	1	&	0
+								\end{array} \right |={2\pi\over a}(-1,1,1)
+	\]
+	\[
+	\btres={2\pi\over V_p}\ \aum\times\adois={8\pi\over a^3}\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									1	&	1	&	0	\\
+									0	&	1	&	1
+								\end{array} \right |={2\pi\over a}(1,-1,1)
+	\]
+
+	Assim\footnote{\sf Note que, a despeito da ordenação dos vetores $\vec{b}_j$, estes formam uma rede BCC, o que não é de se espantar pois sabemos que a
+rede recíproca também é de Bravais.}, o volume $V_r$ da zona de Brillouin da rede FCC é 
+	\[
+	V_r=|\bum\times\bdois\cdot\btres|=({2\pi\over a})^3 \left | \begin{array}{ccc}
+									1	&	1	&	-1	\\
+									-1	&	1	&	1	\\
+									1	&	-1	&	1	
+								\end{array} \right |={32\pi^3\over a^3}\cong\ 14,61\ \AA^{-3}
+	\]
+
+	Vejamos o que ocorre para a rede BCC: Os vetores primitivos são
+	$$
+	\aum={a\over2}(\hat{i}+\hat{j}-\hat{k})
+	$$
+	$$
+	\adois={a\over2}(\hat{i}-\hat{j}+\hat{k})
+	$$
+	$$
+	\atres={a\over2}(-\hat{i}+\hat{j}+\hat{k})
+	$$
+
+	E o volume da rede direta é
+	\[
+	V_d=|\aum\times\adois\cdot\atres|={a^3\over8} \left |	\begin{array}{ccc}
+									1	&	1	&	-1	\\
+									1	&	-1	&	1	\\
+									-1	&	1	&	1	
+								\end{array} \right |={a^3\over2}
+	\]
+	
+	Os vetores da rede recíproca são
+	\[
+	\bum={2\pi\over V_d}\ \adois\times\atres={\pi\over a}\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									1	&	-1	&	1	\\
+									-1	&	1	&	1
+								\end{array} \right |=-{2\pi\over a}(1,1,0)
+	\]		
+	\[
+	\bdois={2\pi\over V_d}\ \atres\times\aum={\pi\over a}\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									-1	&	1	&	1	\\
+									1	&	1	&	-1
+								\end{array} \right |=-{2\pi\over a}(1,0,1)
+	\]	
+	\[
+	\btres={2\pi\over V_d}\ \aum\times\adois={\pi\over a}\left | \begin{array}{ccc}
+									\hat{i}	&	\hat{j}	&	\hat{k}	\\
+									1	&	1	&	-1	\\
+									1	&	-1	&	1
+								\end{array} \right |=-{2\pi\over a}(1,1,0)
+	\]	
+	
+	E o volume da célula de Brillouin é
+	\[
+	V_r=|\bum\times\bdois\cdot\btres|=({2\pi\over a})^3\left | \begin{array}{ccc}
+									1	&	1	&	0	\\
+									1	&	0	&	1	\\
+									0	&	1	&	1	
+								\end{array} \right |={16\pi^3\over a^3}\cong\ 11,57\ \AA^{-3}
+	\]
+
+	Concluimos então que a zona de Brillouin da rede da prata (FCC) é maior\footnote{\sf O volume aqui é dado com a dimensão $1/L^3$ pois estamos
+trabalhando na rede recíproca, definida por $\vec{R}\cdot\vec{G}=2\pi N$, $N\in\mathcal{N}$. Nesta situação, como o segundo membro é adimensional e, no primeiro,
+$[\vec{R}]=L$, então $[\vec{G}]$ deve ser $1/L$, esclarecendo a aparente impossibilidade.}.
+
+\vspace{1cm}
+
+{\bf 4.}
+{\it	Considere a rede unitária do diamante que contém oito átomos por célula. Determine o fator de estrutura. Ache os
+	zeros do fator de estrutura e mostre que as reflexões permitidas na estrutura do diamante satisfazem a relação $h+k+l=4n$, onde os índices
+	são pares e $n$ é um inteiro qualquer, ou então todos os índices são ímpares.
+}
+\vspace{1cm}
+
+	O fator de estrutura geométrico é dado por
+	$$
+	S_{\vec{G}}=\sum_j^Nf_je^{i\vec{r}_j\cdot\vec{G}}
+	$$
+
+	onde $f$ é o fator de estrutura atômico e a somatória é feita sobre os átomos da base\footnote{\sf Perceba que não é sobre os átomos da célula considerada.}.
+
+	A rede do diamante é formada exclusivamente por átomos de carbono -- salvo situações de dopagem. Portanto, o fator de estrutura atômico é igual para todos
+os átomos e, assim, podemos passá-lo para fora do sinal de soma:
+	$$
+	S_{\vec{G}}=f_0\sum_j^Ne^{i\vec{r}_j\cdot\vec{G}}
+	$$
+
+	A célula unitária indicada no enunciado do exercício é assim escolhida pois é comum em cristalografia descrever-se todas as estruturas em termos de redes
+cúbicas simples. Neste contexto, devemos escolher oito átomos da célula unitária para fazermos de base\footnote{\sf Os átomos não podem ser escolhidos sem   
+discriminação, pois devemos construir uma base que preencha todos os pontos da estrutura sem que haja superposição de qualquer um dos átomos.}. Aqui, escolhemos 
+os quatro átomos internos à célula é os quatro outros que identificam os vetores primitivos convencionais:
+	\begin{eqnarray}
+	\vec{r}_0	&	=	&		  (0,0,0)			\nonumber \\
+	\vec{r}_1	&	=	&	{1\over2}a(1,0,1)			\nonumber \\
+	\vec{r}_2	&	=	&	{1\over2}a(1,1,0)			\nonumber \\
+	\vec{r}_3	&	=	&	{1\over2}a(0,1,1)			\nonumber \\
+	\vec{r}_4	&	=	&	{1\over4}a(1,1,1)			\nonumber \\
+	\vec{r}_5	&	=	&	{1\over2}a(3,3,1)			\nonumber \\
+	\vec{r}_6	&	=	&	{1\over2}a(3,1,3)			\nonumber \\
+	\vec{r}_7	&	=	&	{1\over2}a(1,3,3)			\nonumber 
+	\end{eqnarray}
+
+	Quanto ao vetor de translação $\vec{G}$ da rede recíproca, é conveniente expressá-lo em termos dos índices de Miller:
+	\begin{equation}
+	\vec{G}=N\vec{k}_0=N(h\bum+k\bdois+l\btres)
+	\end{equation}
+	
+	Devemos, portanto, determinar $\vec{b}_i$ para podermos avaliar o produto interno na exponencial do fator de estrutura.
+
+	Os vetores primitivos da rede direta são\footnote{\sf Lembre-se que adotamos uma descrição baseada em células cúbicas simples.}
+	$$
+	\aum=a\hat{i}
+	$$
+	$$
+	\adois=a\hat{j}
+	$$
+	$$
+	\atres=a\hat{k}
+	$$
+
+	E o volume é $a^3$. Assim, os vetores primitivos da rede recíproca associada são
+	\[
+	\bum={2\pi\over V_d}(\adois\times\atres)={2\pi\over a} \left | \begin{array}{ccc}
+								\hat{i}	&	\hat{j}	&	\hat{k}	\\
+								0	&	1	&	0	\\
+								0	&	0	&	1	
+					\end{array} \right | = {2\pi\over a}\hat{i}
+	\]	
+	\[
+	\bdois={2\pi\over V_d}(\atres\times\aum)={2\pi\over a} \left | \begin{array}{ccc}
+								\hat{i}	&	\hat{j}	&	\hat{k}	\\
+								0	&	0	&	1	\\
+								1	&	0	&	0	
+					\end{array} \right | = {2\pi\over a}\hat{j}
+	\]	
+	\[
+	\btres={2\pi\over V_d}(\aum\times\adois)={2\pi\over a} \left | \begin{array}{ccc}
+								\hat{i}	&	\hat{j}	&	\hat{k}	\\
+								1	&	0	&	0	\\
+								0	&	1	&	0	
+					\end{array} \right | = {2\pi\over a}\hat{k}
+	\]
+	
+	Retornando estes resultados em $(2)$\footnote{\sf Por simplicidade fazemos $N=1$.}, 
+	$$
+	\vec{G}=\vec{k}_0={2\pi\over a}(h,k,l)
+	$$	
+	
+	Isto nos dá a seqüência de produtos escalares que nos interessa:
+	\begin{eqnarray}
+	\vec{r}_0\cdot\vec{G}	&	=	&	0						\nonumber \\
+	\vec{r}_1\cdot\vec{G}	&	=	&	\pi(h+l)					\nonumber \\
+	\vec{r}_2\cdot\vec{G}	&	=	&	\pi(h+k)					\nonumber \\
+	\vec{r}_3\cdot\vec{G}	&	=	&	\pi(k+l)					\nonumber \\
+	\vec{r}_4\cdot\vec{G}	&	=	&	{\pi\over2}(h+k+l)				\nonumber \\
+	\vec{r}_5\cdot\vec{G}	&	=	&	{\pi\over2}(h+3k+l)				\nonumber \\
+	\vec{r}_6\cdot\vec{G}	&	=	&	{\pi\over2}(3h+k+l)				\nonumber \\
+	\vec{r}_7\cdot\vec{G}	&	=	&	{\pi\over2}(h+k+3l)				\nonumber
+	\end{eqnarray}
+
+	Dando-nos o fator de estrutura
+	\begin{eqnarray}
+	{S_{\vec{G}}\over f_0}	&	=	&	[1+e^{i\pi(h+l)}+e^{i\pi(h+k)}+e^{i\pi(k+l)}]+[1+e^{i\pi(h+l)}+e^{i\pi(h+l)}		\nonumber \\
+				&		&	+e^{i\pi(h+l)}]e^{i{\pi\over2}(h+k+l)}							\nonumber \\
+				&	=	&	[1+e^{i{\pi\over2}(h+k+l)}][1+e^{i\pi(h+l)}+e^{i\pi(h+k)}+e^{i\pi(k+l)}]		\nonumber 
+	\end{eqnarray}
+
+	Esta é a expressão do fator de estrutura geométrico procurado. Vejamos suas propriedades identificando os máximos e os mínimos. Para isso é preciso
+lembrarmos da álgebra quais as relações entre números pares e ímpares numa soma. Abaixo segue uma seqüência de igualdades que utilizaremos, na qual denota-se
+$\mathcal{P}$ para número par e $\mathcal{I}$ para ímpar:
+	\begin{eqnarray}
+	\mathcal{P}+\mathcal{P}			&	=	&	\mathcal{P}			\\
+	\mathcal{P}+\mathcal{I}			&	=	&	\mathcal{I}			\\
+	\mathcal{I}+\mathcal{I}			&	=	&	\mathcal{P}			\\
+	\mathcal{P}+\mathcal{P}+\mathcal{P}	&	=	&	\mathcal{P}			\\ 
+	\mathcal{P}+\mathcal{P}+\mathcal{I}	&	=	&	\mathcal{I}			\\
+	\mathcal{P}+\mathcal{I}+\mathcal{I}	&	=	&	\mathcal{P}			\\
+	\mathcal{I}+\mathcal{I}+\mathcal{I}	&	=	&	\mathcal{I}		
+	\end{eqnarray}
+
+	Se $h+k+l$ for par, então é claro que $e^{-i{\pi\over2}(h+k+l)}=\pm1$ ({\rm Situação 1}); Por outro lado, se $h+k+l$ for ímpar, teremos
+$e^{-i{\pi\over2}(h+k+l)}=\pm i$ ({\rm Situação 2}).
+
+	Considere a situação 1 em primeiro lugar. Para que $h+k+l$ seja par, devemos ter -- equações $(6)$ e $(8)$ -- $h$, $k$ e $l$ todos simultaneamente
+pares ({\rm Situação i}) ou apenas um deles par ({\rm Situação ii}). E mais, a exponencial $e^{-i{\pi\over2}(h+k+l)}$ será $+1$ ({\rm Situação 1.1})  se 
+	$$
+	{\pi\over2}(h+k+l)=2n\pi	\Rightarrow	h+k+l=2(2n)
+	$$
+
+	ou seja, se $h+k+l$ for o DOBRO DE UM NÚMERO PAR. Ou ainda, se ${\pi\over2}(h+k+l)$ for MÚLTIPLO PAR de $\pi$. Neste caso, e considerando ainda
+a {\rm situação i}, podemos escrever 
+	$$
+	{S_{\vec{G}}\over f_0}=[1+1][1+1+1+1]=8
+	$$
+
+	que é um MÁXIMO. Ou seja, uma reflexão permitida. Perceba que utilizamos $(3)$ para avaliar as exponenciais mais à direita: Sendo $h+k$, $h+l$ e
+$k+l$ somas de parcelas pares, o resultado é sempre par, e um múltiplo par como argumento daquelas exponenciais dá $+1$ como resposta.
+
+	Se considerarmos a {\rm situação ii}, perceberemos que
+	$$
+	{S_{\vec{G}}\over f_0}=[1+1][1-1-1+1]=0
+	$$
+	
+	que é um MÍNIMO. Neste caso, como temos dois números ímpares e um par, então pelas equações $(3)$ a $(5)$ teremos dois argumentos ímpares nas
+exponenciais (resultando $-1$) e um par (dando $+1$). A primeira exponencial continua dando $+1$. 
+
+	Vendo a possibilidade de a exponencial $e^{-i{\pi\over2}(h+k+l)}$ resultar $-1$, notamos que isto ocorrerá se
+	$$
+	{\pi\over2}(h+k+l)=(2n+1)\pi	\Rightarrow	h+k+l=2(2n+1)
+	$$
+	 
+	isto é, se $h+k+l$ for o DOBRO DE UM NÚMERO ÍMPAR. Ou ainda, se ${\pi\over2}(h+k+l)$ for MÚLTIPLO ÍMPAR DE $\pi$. Neste caso não interessa a 
+configuração individual de $h$, $k$ e $l$ pois teremos o primeiro colchete no fator de estrutura se anulando e estaremos numa situação de MÍNIMO.
+
+	Na hipótese de $e^{-i{\pi\over2}(h+k+l)}=\pm i$ ({\rm Situação 2}), veremos que não podemos distingüir entre $+i$ e $-i$, mas isto não nos 
+afetará pois também veremos que o resultado é idêntico em ambas as situações.  
+
+	Precisamos que $h$, $k$ e $l$ sejam simultaneamente ímpares ({\rm situação iii}) ou que apenas um deles seja ímpar ({\rm situação iv})\footnote{\sf Pelas   
+equações $(7)$ e $(9)$.}. No primeiro caso ({\rm iii}), as exponenciais de duas parcelas apenas darão todas $+1$, visto que 
+$\mathcal{I}+\mathcal{I}=\mathcal{P}$, resultando
+	$$
+	{S_{\vec{G}}\over f_0}=[1\pm i][1+1+1+1]=4(1\pm i)
+	$$
+	
+	Até agora simplesmente avaliamos os valores de $S_{\vec{G}}$. Mas o que realmente nos interessa é a intensidade da radiação difratada, que é 
+proporcional a $S_{\vec{G}}^*S_{\vec{G}}$. Isto posto concluiremos de imediato que
+	$$
+	|S_{\vec{G}}|^2=16(1\pm i)(1\mp i)f_0^2=32f_0^2
+	$$    
+
+	que não deixa de ser um MÁXIMO, embora de menor intensidade que aquele encontrado anteriormente. Se contudo estivermos na {\rm situação iv},
+apreciaremos que teremos duas exponenciais dando $-1$ (aquelas que dão combinações ímpares entre $h$, $k$ e $l$) e uma dando $+1$ (combinação par). Com isso,
+	$$
+	{S_{\vec{G}}\over f_0}=[1\pm i][1-1-1+1]=0
+	$$
+	
+	outro MÍNIMO.  Ufa! consumimos todas as possibilides. Agora vamos resumir:
+	
+	Teremos um MÁXIMO se:
+
+	1. $h+k+l$ for PAR e todos os índices forem PARES ($h+k+l=2(2n)=4n$, com $n$ qualquer);
+	
+	2. $h+k+l$ for ÍMPAR e todos os índices forem ÍMPARES ($h+k+l=2p+1=n$, com $n$ ímpar)\footnote{\sf Os dois últimos parênteses tenta traduzir a resposta da 
+forma como chegamos há pouco para aquela esperada no enunciado da questão, de modo a mostrar que são exatamente a mesma.}.
+
+	E um MÍNIMO nas outras situações.
+
+\vspace{1cm}
+
+{\bf 5.}
+{\it	Para uma rede cúbida de aresta $a$, localizar em uma base ortogonal um plano de índices de Miller $(15\ 6\ 10)$. Se $a={2\pi\over3}\AA$, ache
+	o menor $\vec{G}$ da rede recíproca perpendicular a este plano. Qual é a distância interplanar?
+}
+
+\vspace{1cm}
+
+	A partir dos índices de Miller podemos, como no primeiro exercício, encontrar os pontos de interseção do plano com os vetores primitivos da rede direta.
+
+	$$
+	15\ 6\ 10\ \rightarrow\  {1\over 15}\ {1\over 6}\ {1\over 10}\ \rightarrow\ {2\over 30}\ {5\over 30}\ {3\over 30}\ \rightarrow\ 2\ 5\ 3 
+	$$
+
+	Isto significa que o plano desejado cruza os eixos $\{\aum,\adois,\atres\}=\{a\hat{i},a\hat{j},a\hat{k}\}$ em $x_1=2$, $x_2=5$ e $x_3=3$. Ou seja,
+o plano em questão é determinado pelo terno $\{2a\hat{i},5a\hat{j},3a\hat{k}\}$\footnote{Cuja equação é ${x\over2}+{y\over5}+{z\over 3}=1$.}. Além disso, 
+fica claro que o menor vetor de translação da rede recíproca é $\vec{k}_0=15\bum+6\bdois+10\btres$. E para podermos determinar a distância entre os planos
+consecutivos da família precisamos determinar os vetores primitivos da rede recíproca de forma idêntica àquela dos exercícios 1, 3 e 4:
+
+	O volume da célula da rede direta é
+	\[
+	V_d=|\aum\times\adois\cdot\atres|={a^3\over 8} \left | \begin{array}{ccc}
+										1	&	1	&	0	\\
+										0	&	1	&	1	\\
+										1	&	0	&	1
+							\end{array} \right | = {a^3\over 4}
+	\]
+
+	E os vetores primitivos da rede recíproca são
+	\[
+	\bum={2\pi\over V_p}(\adois\times\atres)={8\pi\over a^3} \left | \begin{array}{ccc}
+										\hat{i} &	\hat{j}	&	\hat{k}	\\
+										0	&	1	&	0	\\
+										0	&	0	&	1	
+							\end{array} \right | = {2\pi\over a}\hat{i}
+	\]
+	\[
+	\bdois={2\pi\over V_p}(\atres\times\aum)={8\pi\over a^3} \left | \begin{array}{ccc}
+										\hat{i} &	\hat{j}	&	\hat{k}	\\
+										0	&	0	&	1	\\
+										1	&	0	&	0	
+							\end{array} \right | = {2\pi\over a}\hat{j}
+	\]
+	\[
+	\btres={2\pi\over V_p}(\aum\times\adois)={8\pi\over a^3} \left | \begin{array}{ccc}
+										\hat{i} &	\hat{j}	&	\hat{k}	\\
+										1	&	0	&	0	\\
+										0	&	1	&	0	
+							\end{array} \right | = {2\pi\over a}\hat{k}
+	\]
+
+	Logo temos $\vec{k}_0={2\pi\over a}(15\hat{i}+6\hat{j}+10\hat{k})$, que dá $|\vec{k}_0|={38\pi\over a}=57\AA^{-1}$ e, obviamente,
+	$$
+	d_{15\ 6\ 10}={2\pi\over|\vec{k}_0|}\cong0,11\AA
+	$$
+
+
+	
+	
+
+	
+
+
+
+\end{document}
+
+
+

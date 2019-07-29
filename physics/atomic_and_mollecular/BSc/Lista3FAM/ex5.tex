@@ -1,0 +1,76 @@
+\newcommand{\sumi}{\sum_{n=0}^{\infty}}
+
+\begin{quotation}
+{\bf 5.}
+{\it	Considere uma partícula em uma dimensão cujo hamiltoniano é
+	$$
+	\op H = {\op P^2\over 2m}+V(\op X)
+	$$
+
+	{\tt (a)} Sabendo-se que $\op X$ e $\op P$ satisfazem a relação de comutação canônica
+	$[\op X,\op P]=i\hbar$, mostre que $[\op X,[\op H,\op X]]=\hbar^2/2$.
+
+	{\tt (b)} Prove a regra de soma de Thomas-Reiche-Kuhn
+	$$
+	\sum_{n=0}^{\infty}{2m\over\hbar^2}|\hope{n}{\op X}{0}|^2(E_n-E_0)=1,
+	$$
+
+	onde a soma é sobre todos os estados ligados $\ket n$ de energia $E_n$. $\ket 0$ 
+corresponde ao estado fundamental. }
+\end{quotation}
+
+	{\tt (a)} Do exercício $3$, item (a), recordamos que
+	$$
+	[\op H,\op X]=-{i\hbar\over m}\op P
+	$$
+
+	Então fica fácil demonstrar o item (a) deste exercício:
+	$$
+	[\op X,[\op H,\op X]]=[\op X,-{i\hbar\over m}\op P]=-{i\hbar\over m}[\op X,\op P]=\hbar^2/2
+	$$
+
+	{\tt (b)} Este item exige mais atenção. Partamos de $\hope{0}{[\op X,[\op H,\op X]]}{0}$
+e vejamos no que dá:
+	\begin{eqnarray*}
+	\hope{0}{[\op X,[\op H,\op X]]}{0}
+						&=& 
+	\hope{0}{\op X[\op H,\op X]-[\op H,\op X]\op X}{0}					\\
+	\hope{0}{{\hbar^2\over m}}{0}		&=&
+	\hope{0}{\op X\op H\op X-\op X\op X\op H-\op H\op X\op X+\op X\op H\op X}{0}		\\		
+	{\hbar^2\over m}			&=&
+	\hope{0}{2\op X\op H\op X-\op X\op X\op H-\op H\op X\op X}{0}				\\
+						&=&
+	2\hope{0}{\op X\op H\op X}{0}-\hope{0}{\op X\op X\op H}{0}-\hope{0}{\op H\op X\op X}{0}	\\
+						&=&
+	2\hope{0}{\op X\op H\op I\op X}{0}-\hope{0}{\op X\op X E_0}{0}-
+							\hope{0}{\op H\op I\op X\op X}{0}	\\
+						&=&
+	2\hope{0}{\op X\op H\sumi\ket n\bra n\op X}{0}-E_0\hope{0}{\op X\op X }{0}-
+						\hope{0}{\op H\sumi\ket n\bra n\op X\op X}{0}	\\
+						&=&
+	2\sumi\hope{0}{\op X\op H}{n}\hope{n}{\op X}{0}-E_0\hope{0}{\op X\op X }{0}-
+						\sumi\hope{0}{\op H}{n}\hope{n}{\op X\op X}{0}	\\
+						&=&
+	2\sumi E_n\hope{0}{\op X}{n}\hope{n}{\op X}{0}-E_0\hope{0}{\op X\op X }{0}-
+						E_0\sumi\iprod{0}{n}\hope{n}{\op X\op X}{0}	\\
+						&=&
+	2\sumi E_n|\hope{n}{\op X}{0}|^2-E_0\hope{0}{\op X\op X }{0}-
+						E_0\hope{0}{\op X\op X}{0}			\\
+						&=&
+	2\sumi E_n|\hope{n}{\op X}{0}|^2-2E_0\hope{0}{\op X\op I\op X}{0}			\\			
+						&=&
+	2\sumi E_n|\hope{n}{\op X}{0}|^2-2E_0\hope{0}{\op X\sumi\ket n\bra n\op X}{0}	\\			
+						&=&
+	2\sumi E_n|\hope{n}{\op X}{0}|^2-2E_0\sumi\hope{0}{\op X}{n}\hope{n}{\op X}{0}	\\			
+						&=&
+	2\sumi E_n|\hope{n}{\op X}{0}|^2-2E_0\sumi|\hope{n}{\op X}{0}|^2			\\			
+						&=&
+	2\sumi|\hope{n}{\op X}{0}|^2(E_n-E_0)						
+	\end{eqnarray*}
+
+	Portanto,
+	$$
+	\sum_{n=0}^{\infty}{2m\over\hbar^2}|\hope{n}{\op X}{0}|^2(E_n-E_0)=1,
+	$$
+
+	e está provada a regra de soma.		

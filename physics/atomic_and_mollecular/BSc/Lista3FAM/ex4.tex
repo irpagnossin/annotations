@@ -1,0 +1,142 @@
+\begin{quotation}
+{\bf 4.}
+{\it	Considere uma partícula num poço infinito com potencial $V(x)=0$ para $|x|<L/2$ e
+	$V(x)=\infty$ para $|x|>L/2$. A função de onda do sistema no instante $t=0$ é
+	$$
+	\psi(x,t=0)=N[\psi_1(x)+\psi_3(x)],
+	$$
+
+	onde $\psi_n(x)$ são as autofunções normalizadas correspondentes ao $n$--ésimo nível de
+	energia $E_n=\hbar^2n^2/8mL^2$.
+
+	{\tt (a)} Determine a constante $N$ de modo que $\psi(x,0)$ seja normalizada.
+
+	{\tt (b)} Calcule a probabilidade da partícula ser encontrada entre $x=0$ e $x=L/4$ no
+	instante $t=0$.
+
+	{\tt (c)} Determine a função de onda normalizada $\psi(x,t)$ para qualquer $t>0$.
+
+	{\tt (d)} Determine a probabilidade de que a medida de energia forneça o resultado $E_3$
+	para $t>0$.
+
+	{\tt (e)} Quando a energia é medida no instante $t=t_0$ o resultado $E_3$ é encontrado.
+	Determine a função de onda normalizada do sistema para $t>t_0$. }
+\end{quotation}
+
+	{\tt (a)} Normalizamos $\psi(x,0)$ fazendo
+	\begin{eqnarray*}
+	\iprod{\psi}{\psi}	&=& |N|^2\iprod{\psi_1+\psi_3}{\psi_1+\psi_3}			\\
+	1			&=& |N|^2(\iprod{\psi_1}{\psi_1}+\iprod{\psi_1}{\psi_3}+	
+						\iprod{\psi_3}{\psi_1}+\iprod{\psi_3}{\psi_3})	\\
+				&=& |N|^2(\iprod{\psi_1}{\psi_1}+\iprod{\psi_3}{\psi_3})	\\
+				&=& 2|N|^2
+	\end{eqnarray*}
+
+	Logo, 
+	$$
+	|N|={1\over\sqrt{2}} \Rightarrow \tilde{N}={e^{i\phi}\over\sqrt{2}}
+	$$
+
+	onde $\phi$ é a fase de $\tilde{N}$.
+
+	{\tt (b)} A probabilidade de encontrarmos a partícula entre $x=0$ e $x=L/4$ é
+	\begin{eqnarray*}
+	P	&=& \int_0^{L/4}\psi^*(x)\psi(x)dx						\\
+		&=& {1\over2}\int_0^{L/4}(\psi_1+\psi_2)^*(\psi_1+\psi_2)dx			\\
+		&=& \int_0^{L/4}\psi_1^*(x)\psi_1(x)dx+\int_0^{L/4}\psi_1^*(x)\psi_3(x)dx+	\\
+		& & +\int_0^{L/4}\psi_3^*(x)\psi_1(x)dx+\int_0^{L/4}\psi_3^*(x)\psi_3(x)dx	
+	\end{eqnarray*}
+
+	Como as autofunções do problema da partícula confinada num poço de potencial infinito são
+	
+	\begin{minipage}[c]{0.46\textwidth}
+	$$
+	\psi_1(x)=\sqrt{2\over L}\cos({\pi\over L}x)
+	$$
+	\end{minipage}
+	e
+	\begin{minipage}[c]{0.46\textwidth} 
+	$$
+	\psi_3(x)=\sqrt{2\over L}\cos({3\pi\over L}x),
+	$$
+	\end{minipage} 
+	
+	então 
+	$$
+	P={2\over L}\int_0^{L/4}\cos^2({\pi\over L}x)dx
+		+{4\over L}\int_0^{L/4}\cos({\pi\over L}x)\cos({3\pi\over L}x)
+			+{2\over L}\int_0^{L/4}\cos^2({3\pi\over L}x)dx
+	$$ 
+
+	A solução é simples e resulta $P=0,924413$, ou $92,44\%$.
+	
+	Uma alternativa mais rápida de se resolver o problema acima é utilizar um pacote matemático como 
+o {\it Mathematica}. Definimos as integrais como funções de $L$: 
+
+	\begin{verbatim}
+	  I1[L_]:=(2/L)*NIntegrate[(Cos[Pi*y/L])^2,{y,0,L/4}];
+	  I2[L_]:=(2/L)*NIntegrate[(Cos[Pi*y/L])Cos[3*Pi*y/L],{y,0,L/4}];
+	  I3[L_]:=(2/L)*NIntegrate[(Cos[3*Pi*y/L])^2,{y,0,L/4}];
+	\end{verbatim} 
+
+	Mostramos que a probabilidade não depende de $L$ plotando um gráfico de $P(L)$:
+
+	\begin{verbatim} 
+	  P[L_]:=I1[L]+2*I2[L]+I3[L];
+	  Plot[P[x],{x,1,10}];
+	\end{verbatim}
+
+	\begin{figure}[htb]
+	\centering
+	\includegraphics[scale=0.5]{ex4.pdf}
+	\caption{\footnotesize A função probabilidade de encontrar a partícula entre $x=0$ e $x=L/4$ em 
+		função de $L$ é constante, indicando que, em verdade, não existe dependência em $L$.} 
+	\end{figure}
+
+	e, em seguida, calculamos $P$ para algum $L$: 
+
+	\begin{verbatim}   	
+	  In[1]:=
+	       P[1]
+	  Out[1]=
+	       0.924413
+	\end{verbatim}  
+
+	{\tt (c)} Para situações onde a energia se conserva, vale a relação
+	$$
+	\ket{\psi,t}=e^{-iEt/\hbar}\ket{\psi,0}
+	$$
+
+	onde $E$ é a energia correpondente ao estado $\ket{\psi,0}$. Assim sendo, projetando-se o
+ket na base $\{x\}$ temos
+	\begin{eqnarray*} 
+	\iprod{x}{\psi,t}	&=& e^{-iEt/\hbar}\iprod{x}{\psi,0} 					\\ 
+	\psi(x,t)		&=& N[e^{-i{E_1t\over\hbar}}\psi_1(x)+e^{-i{E_3t\over\hbar}}\psi_3(x)]	\\
+				&=& N[e^{-i{E_1t\over\hbar}}\cos({\pi\over L}x)+
+						e^{-i{E_3t\over\hbar}}\cos({2\pi\over L})]
+	\end{eqnarray*} 
+
+	onde $E_n$ é aquela expressa no enunciado da questão.
+
+	{\tt (d)} A probabilidade de que encontremos a partícula com energia $E_3$ é encontrada projetando-se
+a função de onda sobre o espaço formado pelo autovetor correspondente à energia $E_3$, que no caso é
+$\ket{3,t}$:
+	\begin{eqnarray*}
+	P(E_3)	&=& \iprod{3,t}{\psi,t}									\\
+		&=& (e^{+i{E_3t\over\hbar}}\bra{3})(\tilde{N}e^{-i{E_1t\over\hbar}}\ket{\psi_1}+
+				\tilde{N}e^{-i{E_3t\over\hbar}}\ket{\psi_3}				\\
+		&=& |N|^2e^{-i{(E_3-E_1)t\over\hbar}}\iprod{\psi_3}{\psi_1}+
+			|N|^2\iprod{\psi_3}{\psi_3}							\\
+		&=& |N|^2										\\
+		&=& 1/2
+	\end{eqnarray*}
+
+	Portanto a probabilidade de encontrarmos a partícula com energia $E_3$ é constante e igual a meio.
+
+	{\tt (e)} Instantes após termos feito a medida ainda é possível dizer que a partícula está no 
+estado de energia $E_3$. Contudo, após certo tempo o estado da partícula volta a ser uma combinação linear
+dos autoestados do sistema em questão (Partícula confinada num poço de potencial infinito). Portanto
+a função de onda -- normalizada -- ainda é a mesma que no item {\tt (c)}. Era de se esperar pois, como
+$\psi(x,t)$ é a função de onda para qualquer $t$, então ela deve ser verdadeira para um tempo $t>t_0$.
+
+

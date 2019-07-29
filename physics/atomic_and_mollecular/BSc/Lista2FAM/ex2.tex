@@ -1,0 +1,75 @@
+\begin{quotation}
+{\bf 2.}
+{\it	Considere a representação da função delta de Dirac dada por 
+	$$
+	\delta_\epsilon(x)={1\over2\pi}\int_{-\infty}^\infty e^{ikx-\epsilon |k|} dk
+	$$
+
+	{\tt (a)} Calcule a integral e mostre que
+	$$
+	\delta_\epsilon(x)={1\over\pi}{\epsilon\over x^2+\epsilon^2}
+	$$
+
+	Esboçe o gráfico da função para diferentes valores de $\epsilon$ e observe o que
+acontece para $\epsilon\rightarrow 0$.
+
+	{\tt (b)} Mostre que para qualquer valor de $\epsilon$
+	$$
+	\int_{-\infty}^\infty \delta_\epsilon(x)dx = 1
+	$$
+
+	{\tt (c)} Mostre que a n-ésima derivada é dada por
+	$$	
+	\delta_\epsilon(x)^{(n)} = {1\over2\pi}\int_{-\infty}^\infty(ik)^n e^{ikx-\epsilon|k|} dk,
+	$$
+
+	o que justifica a identidade formal
+	$$
+	\delta_\epsilon(x)^{(n)} = {1\over2\pi}\int_{-\infty}^\infty(ik)^n e^{ikx} dk
+	$$
+}
+\end{quotation}
+
+Item {\tt (a)}
+\begin{eqnarray*}
+\delta_\epsilon(x)	&=& {1\over2\pi}\int_{-\infty}^\infty e^{ikx-\epsilon |k|}dk	\\
+			&=& {1\over2\pi}(\int_{-\infty}^0 e^{ikx+\epsilon k}dk+
+				\int_0^\infty e^{ikx-\epsilon k}dk)			\\
+			&=& {1\over2\pi}(\int_{-\infty}^0 e^{(ix+\epsilon)k}dk+
+				(\int_0^\infty e^{(ix-\epsilon)k}dk)			\\
+			&=& {1\over2\pi}\{ [{e^{(ix+\epsilon)k}\over ix+\epsilon}]_{-\infty}^0+
+				{e^{(ix-\epsilon)k}\over ix-\epsilon}]_0^\infty \}	\\
+			&=& {1\over\pi}{\epsilon\over x^2+\epsilon^2}
+\end{eqnarray*}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.75]{ex2.jpg}
+\caption{\footnotesize O comportamento da distribuição delta $\delta_\epsilon(x)$
+	(gráfico $\pi\delta_\epsilon\times x$) para $\epsilon$ igual a $1$, $0,5$ e $0,25$.}
+\end{figure}
+
+\begin{minipage}[t]{0.46\textwidth} 
+Item {\tt (b)}
+\begin{eqnarray*}
+\int_{-\infty}^\infty\delta_\epsilon(x)dx	
+		&=& {\epsilon\over\pi}\int_{-\infty}^\infty {dx\over x^2+\epsilon^2}	\\
+		&=& {1\over\pi}[\arctan({x\over\epsilon})]_{-\infty}^\infty		\\
+		&=& {1\over\pi}({\pi\over2}+{\pi\over2})				\\
+		&=& 1
+\end{eqnarray*}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\textwidth}   
+Item {\tt (c)}
+\begin{eqnarray*}
+{d^n\over dx^n}\delta_\epsilon(x)
+		&=& {1\over2\pi}\intii dk\,\, e^{-\epsilon |k|}
+			{d^n\over dx^n}e^{ikx}						\\
+		&=& {1\over2\pi}\intii dk\,\, e^{-\epsilon |k|}
+			(ik)^ne^{ikx}							\\
+		&=& {1\over2\pi}\intii (ik)^n e^{ikx -\epsilon |k|} dk	
+\end{eqnarray*}
+\end{minipage} 
+
+			

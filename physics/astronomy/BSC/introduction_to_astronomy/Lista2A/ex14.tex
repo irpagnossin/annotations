@@ -1,0 +1,61 @@
+\begin{quotation}
+{\bf 14.}
+{\it	Um feixe de luz branca incide, a partir do vácuo, num material transparente sob um ângulo de 
+	$10^{\mathrm{o}}$ com respeito à normal. O feixe com $\lambda=6800\,\,\mbox{\AA}$ sofre 
+	um desvio de $0,3^{\mathrm{o}}$. Já a radiação com $\lambda=3300\,\,\mbox{\AA}$ sofre um
+	desvio de $0,38^{\mathrm{o}}$.{\tt (a)} Calcule o índice de refração do meio. {\tt (b)} Calcule
+	as constantes $A$ e $B$ da equação de Cauchy.}
+\end{quotation}
+
+	{\tt (a)} O índice de refração do vácuo é, por definição, $1$. Então, pela Lei de Snell-Descartes, 
+o índice de refração para um dado comprimento de onda é
+	$$
+	n(\lambda)={\sin{\hat{i}}\over\sin{\hat{r}(\lambda)}}
+	$$
+
+	onde $\hat{i}$ e $\hat{r}$ são os ãngulos de incidência e refração do feixe de comprimento de onda
+$\lambda$. Lembrando que a radiação eletromagnética, indo de um meio menos denso para outro mais denso,
+sofre um desvio em direção à normal, concluiremos que os ângulos de refração são $\hat{r}=9,7^{\mathrm{o}}$
+para o feixe com $6800\,\,\mbox{\AA}$ e $\hat{r}=9,62^{\mathrm{o}}$ para o feixe com $3300\,\,\mbox{\AA}$.
+Então
+	$$
+	n(6800\,\,\mbox{\AA})={\sin(10^{\mathrm{o}})\over\sin(9,7^{\mathrm{o}})}\cong 1,031
+	$$
+
+	e
+	$$
+	n(3300\,\,\mbox{\AA})={\sin(10^{\mathrm{o}})\over\sin(9,62^{\mathrm{o}})}\cong 1,039
+	$$
+
+	{\tt (b)} A equação de Cauchy é
+	$$
+	n(\lambda)=A+{B\over\lambda_0^2}
+	$$
+	
+	onde $\lambda_0$ é o comprimento de onda incidente e $A$ e $B$ são constantes a se determinar.
+Do item anterior sabemos que
+	\begin{equation} 
+	n(6800\,\,\mbox{\AA})=A+{B\over6800^2}=1,0306179
+	\label{eq:6800}
+	\end{equation} 
+
+	e
+	\begin{equation} 
+	n(3300\,\,\mbox{\AA})=A+{B\over3300^2}=1,0391069
+	\label{eq:3300}
+	\end{equation} 
+
+	Subtraindo (\ref{eq:3300}) de (\ref{eq:6800}) encontramos $B$
+	\begin{eqnarray*}
+	n(6800)-n(3300)	&=& 1,0306179-1,03910687\\
+			&=& A+{B\over6800^2}-A-{B\over3300^2}	\\
+			&=& {3300^2-6800^2\over(3300\cdot6800)^2}B=0,00848897
+	\end{eqnarray*}
+
+	donde $B=120923,709$. Com $B$ fica fácil determinar $A$ a partir de (\ref{eq:6800}), por exemplo:
+	$$
+	1,0306179 = A+{120923,709\over6800^2} \Rightarrow A=1,028002
+	$$
+
+
+	

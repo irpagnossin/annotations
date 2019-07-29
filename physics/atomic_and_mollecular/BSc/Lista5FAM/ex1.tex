@@ -1,0 +1,172 @@
+\begin{exercicio}[blue]
+
+	A partir exclusivamente das relações de comutação canônicas satisfeitas pelos obseráveis de
+posição e momento, mostre que o operador momento angular orbital $\opv L$ com componentes
+
+\hspace{-10mm}
+\begin{minipage}[c]{0.3\textwidth}
+ $$
+ \op L_x = \op Y\op P_z - \op Z\op P_y
+ $$
+\end{minipage}
+\begin{minipage}[c]{0.3\textwidth}
+ $$
+ \op L_y = \op Z\op P_x - \op X\op P_z
+ $$
+\end{minipage}
+%\hfill
+\begin{minipage}[c]{0.3\textwidth}
+ $$
+ \op L_z = \op X\op P_y - \op Y\op P_x
+ $$
+\end{minipage}
+
+	satisfaz as relações
+
+\begin{minipage}[c]{0.46\textwidth}
+ {\tt (a)} $\opv L^{\dagger}=\opv L$
+ 
+ {\tt (b)} $\opv L \times \opv L = i\hbar\opv L$
+
+ {\tt (c)} $[\opv L^2,\opv L] = \mathbf{0}$ 
+\end{minipage} 
+\hfill
+\begin{minipage}[c]{0.46\textwidth}
+ {\tt (d)} $[\opv L^2,\op L_{\pm}]=0\,\,\,\, \mathrm{onde}\,\, \op L_{\pm}=L_x\pm i\op L_y$
+
+ {\tt (e)} $[\op L_z,\op L_{\pm}] = \pm \hbar L_{\pm}$
+
+ {\tt (f)} $\op L_{\pm}\op L_{\mp} = \opv L^2-L_z^2\pm\hbar L_z$
+\end{minipage} 
+
+\end{exercicio} 
+
+	item {\tt (a)}: 
+	\begin{eqnarray*}
+	\opv L^{\dagger}&=& (\op L_x\hat i +\op L_y\hat j +\op L_z\hat k)^{\dagger}	\\
+			&=& \op L_x^{\dagger}\hat i +\op L_y^{\dagger}\hat j +\op L_z^{\dagger}\hat k	
+	\end{eqnarray*} 
+
+	Não há necessidade de calcularmos cada uma das componentes pois elas são simétricas por uma 
+rotação do sistema $\{\hat i,\hat j,\hat k\}$ em torno do vetor $\vec u=(1,1,1)$. Ou seja, uma vez 
+provada a equivalência $\op L_x^{\dagger}=\op L_x$, a mesma equivalência para $\op L_y$ e $\op L_z$ 
+pode ser obtida por simples rotação do sistema de coordenadas utilizado. Deste modo: Uma primeira
+rotação transformaria $x$ em $y$, $y$ em $z$ e $z$ em $x$. Então, neste caso, a partir de
+$\op L_x^{\dagger}=\op L_x$ concluiríamos que $\op L_y^{\dagger}=\op L_y$. Uma outra rotação de simetria
+daria $\op L_z^{\dagger}=\op L_z$. Então, basta demonstrarmos $\op L_x^{\dagger}=\op L_x$:
+	\begin{eqnarray*}
+ 	\op L_x^{\dagger}	&=& (\op Y\op P_z - \op Z\op P_y)^{\dagger}	\\
+				&=& (\op Y\op P_z)^{\dagger} - 
+					(\op Z\op P_y)^{\dagger}		\\
+				&=& \op P_z^{\dagger}\op Y^{\dagger} - 
+					\op P_y^{\dagger}\op Z^{\dagger}	\\
+				&=& \op P_z\op Y - \op P_y\op Z			\\
+				&=& \op Y\op P_z - \op Z\op P_y
+	\end{eqnarray*}
+
+	A última passagem foi possível pois $[\op Y,\op P_z]=0$ e $[\op Z,\op P_y]=0$, já que atuam em
+espaços diferentes. Isto prova a igualdade para $L_x$ e, portanto, para $L_y$ e $L_z$. Consequentemente,
+provamos que $\opv L^{\dagger}=\opv L$. Em palavras, provamos que $\opv L$ é hermiteano.
+
+	Item {\tt (b)}: 
+	\begin{eqnarray*}
+	\opv L\times \opv L = \left |\begin{array}{ccc}
+				\hat i	&	\hat j	&	\hat k	\\
+				\op L_x	&	\op L_y	&	\op L_z	\\
+				\op L_x	&	\op L_y	&	\op L_z	
+				\end{array} \right | 
+			&=& (\op L_y\op L_z-\op L_z\op L_y)\hat i+
+				(\op L_z\op L_x-\op L_x\op L_z)\hat j+
+					(\op L_x\op L_y-\op L_y\op L_x)\hat k				\\
+			&=& [\op L_y,\op L_z]\hat i+[\op L_z,\op L_x]\hat j+[\op L_x,\op L_y]\hat k	\\ 
+			&=& i\hbar\op L_x\hat i+i\hbar\op L_y\hat j+i\hbar\op L_z\hat k			\\
+			&=& i\hbar\opv L
+	\end{eqnarray*} 
+
+	Item {\tt (c)}:
+	\begin{eqnarray*} 
+	[\opv L^2,\opv L]&=& [\op L_x^2+\op L_y^2+\op L_z^2,\opv L] 			\\
+			&=& [\op L_x^2,\opv L]+[\op L_y^2,\opv L]+[\op L_z^2,\opv L]
+	\end{eqnarray*}
+
+	Vejamos cada uma das parcelas separadamente:
+	\begin{eqnarray*} 
+	[\op L_x^2,\opv L]&=& [\op L_x^2,\op L_x\hat i+\op L_y\hat j+\op L_z\hat k]			   \\
+			  &=& [\op L_x^2,\op L_x]\hat i+[\op L_x^2,\op L_y]\hat j+[\op L_x^2,\op L_z]\hat k\\
+			  &=& -[\op L_y,\op L_x^2]\hat j-[\op L_z,\op L_x^2]				\\
+			  &=& -([\op L_y,\op L_x]\op L_x+L_x[\op L_y,\op L_x])\hat i-
+				([\op L_z,L_x]\op L_x+\op L_x[\op L_z,\op L_x])\hat k			\\
+			  &=& i\hbar\{L_x,\op L_z\}\hat j-i\hbar\{\op L_x,\op L_y\}\hat k		\\
+	\end{eqnarray*}
+
+	Analogamente,
+	\begin{eqnarray*} 
+[\op L_y^2,\opv L]&=& -i\hbar\{\op L_y,\op L_z\}\hat i+i\hbar\{\op L_x,\op L_y\}\hat k\\               
+\rule{0mm}{0mm}[\op L_z^2,\opv L]&=& i\hbar\{\op L_y,\op L_z\}\hat i-i\hbar\{\op L_x,\op L_z\}\hat j
+	\end{eqnarray*} 
+
+	e, portanto, $[\opv L^2,\opv L]=\mathbf{0}$\footnote{Note que o resultado é vetorial.}. 
+
+	Item {\tt (d)}:
+	\begin{eqnarray*} 
+	[\opv L^2,\op L_{\pm}]	&=& [\op L_x^2+\op L_y^2+\op L_z^2,\op L_\pm]	\\
+				&=& [\op L_x^2,\op L_{\pm}]+[\op L_y^2,\op L_{\pm}]+[\op L_z^2,\op L_{\pm}]\\
+				&=& [\op L_x^2,\pm i\op L_y]+[\op L_y^2,\op L_x]+[\op L_z^2,\op L_x]\pm
+					i[\op L_z^2,\op L_y]			\\
+				&=& \mp i[\op L_y,\op L_x^2]-[\op L_x,\op L_y^2]-[\op L_x,\op L_z^2]
+					\mp i[\op L_y,\op L_z^2]	
+	\end{eqnarray*}
+
+	Vejamos cada uma das parcelas individualmente:
+	\begin{eqnarray*} 
+ 	[\op L_y,\op L_x^2]	&=& [\op L_y,\op L_x]\op L_x+\op L_x[\op L_y,\op L_x]	\\
+				&=& -i\hbar\op L_z\op L_x-i\hbar\op L_x\op L_z		\\
+				&=& -i(\op L_z\op L_x+\op L_x\op L_z)			\\
+				&=& -i\hbar\{\op L_z,\op L_x\}				\\
+	\rule{0mm}{0mm}[\op L_x,\op L_y^2]	&=& [\op L_x,\op L_y]\op L_y+\op L_y[\op L_x,\op L_y]	\\
+				&=& i\hbar\op L_z\op L_y+i\hbar\op L_y\op L_z		\\
+				&=& i\hbar\{\op L_z,\op L_y\}				\\
+	\rule{0mm}{0mm}[\op L_x,\op L_z^2]	&=& [\op L_x,\op L_z]\op L_z+\op L_z[\op L_x,\op L_z]	\\
+				&=& -i\hbar\op L_y\op L_z-i\hbar\op L_z\op L_y		\\
+				&=& -i\hbar\{\op L_y,\op L_z\}				\\
+	\rule{0mm}{0mm}[\op L_y,\op L_z^2]	&=& [\op L_y,\op L_z]\op L_z+\op L_z[\op L_y,\op L_z]	\\
+				&=& i\hbar\op L_x\op L_z+i\hbar\op L_z\op L_x		\\
+				&=& i\hbar\{\op L_x,\op L_z\}		
+	\end{eqnarray*} 
+
+	Então
+	\begin{eqnarray*} 
+	[\opv L^2,\op L_{\pm}]	&=& \mp i(-i\hbar)\{\op L_z,\op L_x\}\mp i(i\hbar)\{\op L_x,\op L_z\}	\\
+				&=& \mp \hbar\{\op L_x,\op L_z\}\pm\hbar\{\op L_x,\op L_z\}		\\
+				&=& 0
+	\end{eqnarray*} 
+
+	Item {\tt (e)}:
+	\begin{eqnarray*} 
+	[\op L_z,\op L_{\pm}]	&=& [\op L_z,\op L_x\pm i\op L_y]		\\
+				&=& [\op L_z,\op L_x]\pm i[\op L_z,\op L_y]	\\
+				&=& i\hbar\op L_y\pm i(-i\hbar\op L_x)		\\
+				&=& i\hbar\op L_y\pm\hbar\op L_x		\\
+				&=& \hbar(\pm \op L_x+i\op L_y)			\\
+				&=& \pm\hbar(\op L_x\pm i\op L_y)		\\
+				&=& \pm\hbar\op L_{\pm}
+	\end{eqnarray*} 
+
+	Item {\tt (f)}:
+	\begin{eqnarray*} 
+	\op L_\pm\op L_\mp	&=& (\op L_x\pm i\op L_y)(\op L_x\mp i\op L_y)			\\
+				&=& \op L_x^2\mp i\op L_x\op L_y\pm i\op L_y\op L_x+\op L_y^2	\\
+				&=& \op L_x^2+\op L_y^2\pm i(\op L_y\op L_x\mp \op L_x\op L_y)	\\
+				&=& \opv L^2-\op L_z^2\pm i[\op L_y,\op L_x]			\\
+				&=& \opv L^2-\op L_z^2\pm i(-i\hbar \op L_z)			\\
+				&=& \opv L^2-\op L_z^2\pm\hbar\op L_z			
+	\end{eqnarray*} 
+
+	
+
+
+
+
+
+
+

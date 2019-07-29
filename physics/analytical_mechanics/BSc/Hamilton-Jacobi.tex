@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{irpackage}
+\usepackage{geometry}
+\usepackage{eulervm}
+\begin{document}
+
+\newcommand{\espaco}{\rule{0em}{2ex}}
+
+\centering
+{\large\color{blue} Roteiro para solução de problemas utilizando as equações de Hamilton-Jacobi}
+\vspace{.5cm}
+
+	Os dois métodos de solução são utilizados quando a Hamiltoniana
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|c}
+	é uma função de $q$, $p$ e $t$:	&	representa a energia e, portanto, constante:	\\	
+	$\mathcal H(q,p,t)$	&	$\mathcal H(q,p) = E$\\	
+	\multicolumn{2}{c}{Procuramos, então, uma transformação canônica para um conjunto novo de variáveis tal que}\\	
+	\parbox[c]{80mm}{\centering\espaco todas as coordenadas e momentos $Q_i$ e $P_i$ \\ são constantes do movimento:}
+		& \parbox[c]{80mm}{\centering todos os momentos $P_i$ são constantes \\ do movimento:} \\		
+	\multicolumn{2}{c}{Para satisfazer tais solicitações, basta fazermos a Hamiltoniana}\\
+	identicamente nula: & ser cíclica em todas as coordenadas: \\
+	$K=0$	& $K=\mathcal H(P_i) = \alpha_i$	\\
+	\multicolumn{2}{c}{Sob tais condições, as equações do movimento são}\\
+	$\dot Q_i = \parcial K{P_i} = 0$,	&	$\dot Q_i = \parcial K{P_i} = \nu_i$, \\
+	$\dot P_i = -\parcial K{Q_i} = 0$	&	$\dot P_i = -\parcial K{Q_i} = 0$ \\
+	\multicolumn{2}{c}{cujas soluções são imediatas:}\\
+	$Q_i=\beta_i$	\quad e\quad $P_i=\gamma_i$ &	$Q_i = \nu_it + \beta_i$ \quad e\quad $P_i=\gamma_i$	\\
+	\multicolumn{2}{c}{Assim, a função geradora capaz de produzir a transformação desejada é}\\
+	a {\color{blue} função principal de Hamilton}:	&	a {\color{blue} função característica de Hamilton}: \\
+	$S(q,P,t)$	&	$W(q,P)$ \\
+	\multicolumn{2}{c}{Satisfazendo a equação diferencial parcial de Hamilton-Jacobi:}\\
+	$H(q,\parcial{S}{q},t) + \parcial St = 0$,	&	$\mathcal H(q,\parcial Sq)-\alpha_i = 0$, \\
+	\multicolumn{2}{c}{a solução completa dessa equação conterá}\\
+	\parbox[c]{80mm}{\centering\espaco $n$ constantes de integração não triviais \\ $\alpha_i,\ldots,\alpha_n$}
+		& \parbox[c]{80mm}{\centering $n-1$ constantes de integração não \\ triviais que, com $\alpha_i$, formam
+				um conjunto \\ de $n$ constantes independentes $\alpha_i,\ldots,\alpha_n$} \\
+	\multicolumn{2}{c}{\parbox[c]{160mm}{\centering\espaco Os novos momentos lineares $P_i=\gamma_i$ podem ser escolhidos como 			quaisquer $n$ funções \\ independentes das $n$ constantes de integração:}}\\
+	$P_i=\gamma_i(\alpha_i,\ldots,\alpha_n)$	& $P_i = \gamma_i(\alpha_i,\ldots,\alpha_n)$ \\
+	\multicolumn{2}{c}{\parbox[c]{160mm}{\centering\espaco Então a solução completa da equação de Hamilton-Jacobi pode ser 					considerada como \\ funções dos novos momentos:}}\\
+	$S=S(q_i,\gamma_i,t)$	& $W=W(q_i,\gamma_i)$\\
+	\multicolumn{2}{c}{\parbox[c]{160mm}{\centering\espaco Em particular, os $\gamma_i$ podem ser escolhidos como os próprios
+		$\alpha_i$. Assim, metade das \\ equações de transformação,}}\\
+	$p_i = \parcial S{q_i}$, & $p_i = \parcial S{q_i}$,	\\
+	\multicolumn{2}{c}{\parbox[c]{160mm}{\centering\espaco são satisfeitas automaticamente, uma vez que foram utilizadas para
+		construir a \\ equação de Hamilton-Jacobi. A outra metade,}}\\
+	$Q_i=\parcial S{\gamma_i} = \beta_i$	& $Q_i = \parcial W{\gamma_i} = \nu_i(\gamma_i)t+\beta_i$	
+\end{tabular}
+
+	Pode ser resolvida para $q_i$ em termos de $t$ e das $2n$ constantes $\beta_i$ e $\gamma_i$. A solução do problema estará, então, completa ao aplicarmos as condições iniciais e/ou de contorno.\par
+	Quando a Hamiltoniana não envolve o tempo explicitamente, ambos os métodos acima são plausíveis e as funções geradoras são relacionadas de acordo com
+	$$ S(q,P,t)=W(q,P)-\alpha_1t$$
+
+
+\end{document}

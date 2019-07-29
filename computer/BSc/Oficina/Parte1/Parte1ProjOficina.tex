@@ -1,0 +1,363 @@
+\documentclass[a4paper,10pt]{article}[1998/12/01]
+
+%----------------------------------------------------------------------------------%
+%------------------------- CARREGA OS PACOTES NECESSÁRIOS -------------------------%
+%----------------------------------------------------------------------------------%
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{wasysym}
+
+\def\<#1>{$\langle$#1$\rangle$}
+
+\makeindex
+\pagestyle{myheadings}
+\markboth{}{\rm G. S. Faria, I. R. Pagnossin}
+
+\begin{document}
+
+\title{Projeto de oficina de programação para físicos\\
+       Parte 1: Gerando um conjunto de dados}
+\author{Gerson S. Faria   \\ gersonfaria@ig.com.br   \and
+        Ivan R. Pagnossin \\ irpagnossin@hotmail.com
+       }
+\date{\today}
+\maketitle
+
+\begin{abstract}\sl
+O objetivo deste trabalho, rotulado parte um, é preparar numericamente um conjunto de dados que representam
+outro, real, de medidas de partículas, cada uma com uma energia média e probabilidade de ocorrência. Este 
+conjunto, armazenado num arquivo de texto simples, será de grande valia na parte dois deste trabalho, que 
+trata de analisar esses dados.
+\end{abstract}
+
+%\renewcommand{\abstractname}{Abstract}
+%\begin{abstract}\sl
+%The purpose of this work, namely step one, is to prepare numericaly a set of data which represents a real 
+%measure set of particles, each of them with an average energy and probability of ocurrence. This set, 
+%recorded in a simple text file, will be useful in the near future on step two of this work, which
+%treats the analysis of these data.
+%\end{abstract}
+
+\section{Introdução}
+\label{sec:introducao}
+
+	É importante manter em mente que, embora estejamos gerando resultados; partículas, o algoritmo
+aqui desenvolvido não trata de representar a fonte de tais eventos, mas sim do detector. Isto explica-se
+pelo simples fato de ignorarmos completamente as características usuais de um detector real, tais como
+{\sl geometria\/}, {\sl eficiência\/}, etc. De fato o que estamos gerando é aquilo que o aparelho ``vê''.\par
+	Este paradigma de forma alguma limita ou desmerece os resultados obtidos pois, apesar de tudo,
+os valores encontrados relacionam-se aos {\bf produzidos} por características do próprio detector
+somente. Por exemplo: Se a câmara de detecção de nosso aparelho apresenta um ângulo sólido $\Omega$ a
+partir da fonte e supondo esta emitir isotropicamente, é claro que o número real de partículas emitidas
+$N$ relaciona-se com o número de partículas detectadas $n$ por
+	$$
+	{n\over N} = {\Omega\over4\pi}
+	$$
+	 
+	Ou seja, o fato de ignorarmos as influências do detector apenas torna o código ainda mais 
+verossímil com relação aquilo que o detector mede. A partir daí encontrar o que realmente aconteceu na
+fonte é um outro problema que não temos a intensão de tratar aqui.\par
+	Portanto, quando dissermos {\sl gerar\/}, entenda-se {\sl detectar\/}.
+
+\section{O aplicativo}
+\label{sec:aplicativo}
+
+	A sintaxe do aplicativo {\tt gerador.exe} é\par
+	{\tt\hfil gerador \<n> \<$\Lambda$> \<$\varepsilon$> \<$\Delta t$> \<arquivo> \hfil}\par
+	
+	O programa gera um espectro em energia de {\tt n} partículas com $\lambda$ limitado a
+$\Lambda$\footnote{Veja seção~\ref{subsec:no particulas}.}, resultado de um intervalo~$\Delta t$ de 
+medidas com incerteza máxima $\varepsilon$. O
+resultado é escrito em {\tt arquivo} na forma de duas colunas: Na primeira a energia em unidades
+de \lightning\footnote{\lightning\ é, na verdade, uma unidade de energia qualquer.} e, na
+segunda, a contagem por energia.\par
+	{\tt n} e $\Delta t$ são números naturais\footnote{Ou seja, $n,\Delta t>0$.} quaisquer e $\Delta t$ é
+múltiplo de \clock\footnote{\clock\ é, na realidade, um intervalo de tempo qualquer.}; 
+$\Lambda$ e $\varepsilon$ são números reais mas $0<\varepsilon<1$\footnote{Essa limitação existe pois
+$\varepsilon$ é definido como a {\sl probabilidade de não ocorrer o evento que obtemos\/}. Dito de
+outra forma, $1-\varepsilon$ é a certeza de que o evento registrado em {\tt arquivo} de fato 
+ocorreu.}. 
+	
+\section{A teoria envolvida}
+\label{sec:teoria}
+
+\subsection{O número de partículas detectadas}
+\label{subsec:no particulas}
+
+  	A probabilidade de que $k$~eventos ocorram num intervalo de tempo~$t$ é dada pelo processo de 
+{\sl Poisson}\footnote{Para detalhes consulte~\cite{barry}, pág.~22.}:
+  	$$
+  	P_k(t,\lambda) = {(\lambda t)^k\over k!}e^{-\lambda t}
+  	$$
+  	onde $\lambda$ é o número médio de ocorrências neste intervalo ($t$). Isto é verdade se ({\bf a}) a 
+ocorrência de um tal evento depender apenas do intervalo de tempo $t$ e não do momento da observação, se
+({\bf b}) o número de ocorrências para intervalos disjuntos forem independentes e se ({\bf c}) os eventos 
+ocorrem não simultaneamente. Todas elas são hipóteses atendidas no nosso caso.\par  
+  	Assim, para um intervalo de tempo unitátio ($t=1$) teremos
+  	$$
+  	p_k(\lambda)=P_k(1,\lambda) = {\lambda^k\over k!}e^{-\lambda}	
+  	$$
+ 
+	Então se, e.g., estivermos observando uma partícula com $2$ contagens médias por intervalo
+unitário ($\lambda=2$), teremos $p_0(2)=13,53\%$ de chances de não medirmos nada, 
+$p_2(2)=p_3(2)=27,07\%$ de medirmos uma ou duas partículas, $p_3(2)=18,04\%$ de medirmos três e assim
+por diante.\par 
+	Essa teoria foi utilizada para determinarmos o número de detecções de cada partícula por unidade
+de tempo.
+  
+\subsection{A energia de cada partícula}
+\label{subsec:energia}
+
+	Convencionou-se em sala que um conjunto de partículas do mesmo tipo\footnote{Seja lá o que
+a palavra ``tipo'' signifique aqui.} distribuir-se-iam energeticamente em torno de uma média $\bar E$.
+Esta média é o que caracteriza uma partícula para nós, já que só podemos medir isso (Além, é claro
+da freqüência de ocorrência de cada uma). A forma desta distribuição não foi definida mas achamos mais
+razoável escolher uma distribuição simétrica e com maior ocorrência na média. Três distribuições deste
+tipo são especialmente interessantes: {\sl Gaussiana\/}, {\sl Poisson\/} e {\sl delta de Dirac}. 
+Escolhendo essas três distribuições estamos ainda admitindo a possibilidade de uma tal distribuição
+representar não somente um comportamento da partícula, mas também do detector; um erro. Este 
+não-obviamente é um erro que não podemos ignorar como fizemos na seção~\ref{sec:introducao}. De
+qualquer modo a questão dos erros é bastante delicada e exige cuidados maiores.
+
+\section{Implementação} 
+\label{sec:implementacao}
+
+
+\subsection{A função ``Main''}
+\label{subsec:main}
+
+	A simulação ocorre durante $\Delta t$ intervalos de tempo (Aquilo que convencionamos chamar
+\clock), determinado pelo usuário. É conhecido no código como {\tt Nintervalos}. Portanto a estrutura
+básica é um laço durante este intervalo:
+	\begin{verbatim}
+	for(i=1;i<=Nintervalos;i++)
+	  {
+	  ...
+	  }
+	\end{verbatim}
+	
+	Em cada um desses intervalos existe a oportunidade de gerarmos {\tt n} partículas ({\tt Nparticulas}).
+Então devemos ter outro {\sl loop\/}, agora sobre {\tt Nparticulas}, que executará instruções específicas
+para cada uma das partículas:
+	\begin{verbatim}
+	for(i=1;i<=Nintervalos;i++)
+	  {
+	  ...
+	  for(n=1;n<=Nparticulas;n++)
+	    {
+	    ...
+	    }
+	  }
+	\end{verbatim}
+
+\subsection{O número de partículas}
+\label{subsec:implementacao no. particulas}
+
+	Isto é o básico. O problema vem a seguir: Suponhamos por um momento que temos apenas uma partícula,
+chamada $\clubsuit$. Para cada execução do {\sl loop\/} em {\tt Nintervalos} devemos determinar quantas 
+partículas do tipo $\clubsuit$ devem ser geradas. Façamos isso por meio de um exemplo: Temos uma partícula
+com $\lambda=1,5$. As probabilidades de ocorrências são dadas na tabela~\ref{tab:probabilidades}:
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{cc}
+  $k$  &  $p_k(1,5)$ ($\%$) \\
+  \hline
+  0 & 22,31 \\
+  1 & 33,47 \\
+  2 & 25,10 \\
+  3 & 12,55 \\
+  4 & 4,71  \\
+  5 & 1,41  \\
+  $\ge6$ & 0,45 \\
+  \hline
+  \end{tabular}
+  \caption{\footnotesize\label{tab:probabilidades}
+    Probabilidades de detecção para partículas com $\lambda=1,5$.}
+\end{table}
+
+	Fazemos uma associação da tabela~\ref{tab:probabilidades} com a figura~\ref{fig:regua} de modo
+que o comprimento de cada retângulo seja proporcional à probabilidade de ocorrência do evento $k$. Os
+valores limites que determinam as fronteiras entre um evento e outro são armazenados na matriz
+{\tt pLimites[k][n]} com {\tt n} sendo o número identificador da partícula (No nosso caso é $\clubsuit$).\par
+	Em seguida sorteamos um número inteiro ({\tt rcrand}) de $0$ a $100$ e vemos em que retângulo cai:\par
+	Suponha que tenhamos obtido $42$ (linha tracejada na fig.~\ref{fig:regua}). Isto significa que 
+devemos gerar $1$ partícula (Se, por outro lado, se tivéssemos obtido $85$, geraríamos $3$).\par
+
+\input{regua.tex}
+
+	Gerar uma partícula no contexto do código fonte significa incrementar o valor da posição {\tt i} do
+vetor resultado {\tt pResultado[i]}: A contagem de partículas com energia {\tt i}.(No
+arquivo de saída as duas colunas impressas são {\tt i} e {\tt pResultado[i]}).\par
+	Para incrementar esta posição do vetor {\tt pResultado[i]} utilizamos uma função chamada {\tt Binomial}
+cuja função é justamente determinar a posição {\tt i} que deve ser incrementada\footnote{Veja seção~\ref{subsec:implementacao energia}.}.\par
+	Os argumentos da função {\\ Binomial} são {\bf (a)} o número de ocorrências a ser contabilizado (Ou ainda
+o número de partículas detectadas), {\bf (b)} a energia média {\tt pMedia[n]} e {\bf (c)} a dispersão 
+{\tt pDispersao[n]} da partícula {\tt n}. O primeiro é dado pela comparação ilustrada acima. Em código:	
+	\begin{verbatim}
+	for(j=1;j<=Neventos;j++)
+	  {
+	  if(((float)rcrand <= Limites[j][n]) && ((float)rcrand > Limites[j-1][n])) 
+	    Binomial(j,pMedia[n],pDispersao[n] - 1);
+	  ...
+	  }
+	\end{verbatim}
+	
+	{\tt pMedia[n]} é sorteada e tem valor máximo $400$\footnote{A próxima versão do {\tt gerador.exe} permitirá
+ao usuário definir este limite.} e {\tt pDispersao[n]} é limitado ao dobro de {\tt pMedia} (Isto para evitar
+obtermos energias negativas):
+	\begin{verbatim}
+	...
+	EnergiaMaxima = 400;
+	...
+	if(EnergiaMaxima%2 == 0)
+	  pMedia[i] = random(EnergiaMaxima/2 + 1);
+	else
+	  pMedia[i] = random((EnergiaMaxima - 1)/2 + 1);
+	pDispersao[i] = random(2 * pMedia[i] + 2);
+	...
+	\end{verbatim}
+
+	A variável {\tt Neventos} é determinada a partir do erro $\varepsilon$ e de $\Lambda$ estabelecidos
+pelo usuário (veja sessão~\ref{subsec:implementacao erro}).\par	
+	Os valores {\tt pLimites[j][m]} ilustrados na figura~\ref{fig:regua} são definidos a partir da função
+{\tt Poisson}, que simplesmente calcula o valor de $\sum p_k(\lambda)$ com $k$ variando de $0$ a {\tt
+Neventos} que, por sua vez, foi definido pela função {\tt Erro} ({\tt Neventos} É o número mínimo de 
+ocorrências que deve ser considerado pelo aplicativo para garantir o erro $\varepsilon$)\footnote{Veja
+seção~\ref{subsec:implementacao erro}.}:
+	\begin{verbatim}
+	pLimites[0][i] = Poisson(0,pLambda[i]);
+	for(j=0;j<Neventos;j++) pLimites[j+1][i] = pLimites[j][i] + Poisson(j,pLambda[i]);
+	\end{verbatim}
+     
+	A figura~\ref{fig:exemplo1} é um exemplo de resultado obtido.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.35]{exemplo1.pdf}
+\caption{\footnotesize\label{fig:exemplo1}
+	Exemplo de espectro obtido na execução do aplicativo {\tt gerador.exe} com $n=9$, 
+$\Lambda=4$, $\varepsilon=0,05$ e $\Delta t=100\,000$. Os números próximos aos picos localizam
+aproximadamente cada uma das nove partículas geradas. As médias, dispersões e $\lambda$ de
+cada partícula são sorteados pelo aplicativo.}
+\end{figure}
+
+\subsection{A energia}
+\label{subsec:implementacao energia}
+
+	Como foi dito na sessão~\ref{subsec:energia}, resolvemos utilizar as distribuições 
+{\sl Gaussiana\/}, {\sl Poisson\/} e {\sl delta de Dirac\/}. As duas últimas podem ser atingidas a partir
+da primeira com parâmetros específicos. Então é claro que utilizamos apenas a {\sl Gaussiana\/}. Mais
+precisamente, utilizamos a distribuição {\sl Binomial\/} pois temos um número finito de contagens. Para
+tal distribuição necessitamos saber a média $\bar E$ e a largura da base, que chamamos {\sl dispersão\/}.\par
+	Obtemos a distribuição sorteando aleatoriamente os números~$0$ e~$1$ $n$~vezes e somando-os todos.
+Com isso obtemos um número entre $0$ e $n$ com distribuição binomial\footnote{Este fato pôde ser observado 
+no primeiro trabalho desta disciplina.} de média $n/2$ e dispersão $n$.\par
+	Então criamos uma função chamada {\tt Binomial} que, recebendo a média e a dispersão, sorteia
+binomialmente uma energia {\tt i} e incrementa o valor do vetor {\tt pResultado[i]}. Um parâmetro a mais
+é colocado por conveniência: {\tt Neventos}. Aqui, {\tt Neventos} representa o número de partículas que
+devem ser geradas. A função {\tt Binomial}, então, sorteia uma energia {\tt i} para cada uma delas e
+incrementa a devida posição do vetor {\tt pResultado[i]}:
+	\begin{verbatim}
+	int Binomial(int Neventos, int Media, int Dispersao)
+	{
+	int i,j,energia,minimo;
+
+	for(i=1;i<=Neventos;i++)
+	  {
+	  energia = 0;
+	  for(j=1;j<=Dispersao;j++) energia += random(2);
+	  if(Dispersao%2==0) minimo = Media - Dispersao/2;
+	  else minimo = Media - (Dispersao - 1)/2;
+
+	  pResultado[minimo + energia]++;
+	  }
+
+	return(0);
+	}
+	\end{verbatim}
+
+
+\subsection{O erro $\mathbf\varepsilon$}
+\label{subsec:implementacao erro}
+
+	A somatória de $p_k(\lambda)$ para $k$ variando de $0$ a $\infty$ é, como esperaríamos, $1$:
+	$$
+	\sum_{k=0}^\infty {\lambda^k\over k!}e^{-\lambda}=e^{-\lambda}\sum_{k=0}^\infty{\lambda^k\over k!}
+		=e^{-\lambda}e^{\lambda}=1
+	$$
+
+	Mas como é preciso irmos até $\infty$ com $k$ para garantirmos o resultado e como isso não é 
+possível numericamente, precisamos definir um $m>k$ tal que
+	$$
+	\sum_{k=0}^m{\lambda^k\over k!}e^{-\lambda}\approx\sum_{k=0}^\infty{\lambda^k\over k!}e^{-\lambda}=1
+	$$
+
+	A proximidade dos resultados é algo que o usuário define através de $\varepsilon$:
+	$$
+	\varepsilon = \sum_{k=m}^\infty {\lambda^k\over k!}e^{-\lambda}
+	$$
+
+	Ou seja, $\varepsilon$ é a probabilidade de ocorrer mais de $5$ eventos (no caso do exemplo da 
+seção~\ref{subsec:no particulas}). 
+Genericamente, {\sl $\varepsilon$ é a probabilidade de não obtermos o que obtivemos\/}. Ou ainda,
+{\sl $1-\varepsilon$ é a probabilidade de obtermos o que obtivemos\/}.\par
+	para garantirmos um tal erro precisamos definir qual o $m>k$ que satisfaça
+	\begin{equation}\label{eq:erro}
+	1-\sum_{k=0}^m{\lambda^k\over k!}e^{-\lambda} \le \varepsilon
+	\end{equation}
+
+	A solução da equação~(\ref{eq:erro}) não é trivial (E possivelmente nem mesmo tangível 
+analiticamente). Uma solução muito melhor é calcularmos o valor da expressão~(\ref{eq:erro}) para vários
+$m$, em ordem crescente, e vermos qual satisfaz a igualdade. e.g., no caso de $\lambda=1,5$
+(tab.~\ref{tab:probabilidades}) com $\varepsilon=1\%$ percebemos que $k=5$ é a solução pois
+	\begin{minipage}[c]{0.46\textwidth}
+	$$
+	1-\sum_{k=0}^4{\lambda^k\over k!}e^{-\lambda}=1,86\%>1\%
+	$$
+	\end{minipage}
+	\hfil
+	e
+	\hfil
+	\begin{minipage}[c]{0.46\textwidth}
+	$$
+	1-\sum_{k=0}^5{\lambda^k\over k!}e^{-\lambda}=0,45\%<1\%
+	$$
+	\end{minipage}
+	
+	O código que resolve este problema foi agrupado numa função chamada {\tt Erro} cujo retorno é
+precisamente a solução de (\ref{eq:erro}):	
+	\begin{verbatim}
+	int Erro(float LambdaMaximo, float ErroPermitido)
+	{
+	float aProbabilidadeObtida    = (1 - ErroPermitido) * exp(LambdaMaximo),
+	      aProbabilidadePermitida = 0;
+	int   k;
+	do
+	  {
+	  aProbabilidadeObtida += pow(LambdaMaximo,k) / Fatorial(k);
+	  k++;
+	  }while(aProbabilidadeObtida < aProbabilidadePermitida);
+	return(k);
+	}
+	\end{verbatim}
+
+	Note que {\tt Erro} necessita dos valores de $\Lambda$ ({\tt LambdaMaximo}) e $\varepsilon$
+({\tt ErroPermitido}). Na realidade não
+precisaríamos de $\Lambda$, mas sim do $\lambda$ de cada partícula. Contudo, $\lambda$ é um valor
+definido aleatoriamente pelo programa e, como não queríamos impor um limite fixo e/ou desconhecido do
+usuário, preferimos que este informasse o valor máximo: $\Lambda$. Além disso, fazer este cálculo
+para cada partícula apenas consumiria mais tempo de máquina e memória; à toa. Procedendo como fizemos
+--- calcular {\tt Neventos} para $\Lambda$ --- estamos garantindo que $\varepsilon$ é o erro
+{\bf máximo} que se comete.\par
+
+
+
+\begin{thebibliography}{99}
+\bibitem{barry} James, B.R., {\sl Probabilidade: Um curso em nível intermediário}, ed.impa, São Paulo, 1981.
+\end{thebibliography}
+
+\end{document}
+	

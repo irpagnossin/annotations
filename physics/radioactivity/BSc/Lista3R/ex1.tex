@@ -1,0 +1,58 @@
+\begin{exercicio}[blue]
+	Esboce o espectro de energia dos elétrons emitidos por uma fonte beta com energia máxima de 
+	$1,5\unit{MeV}$. Se parte dos elétrons emitidos por essa fonte incidem, após a colimação,
+	perpendicularmente sobre folhas finas (Aproximadamente $0,1\unit{mm}$) de chumbo e alumínio,
+	esboce e justifique no mesmo gráfico do feixe incidente o espectro dos elétrons que emergem
+	deles.
+\end{exercicio}
+
+	Por se tratar de partículas carregadas (elétrons ou pósitrons), a grandeza que rege a interação
+com o(s) elemento(s) que constitui(em) o alvo é o {\sl stopping power mássico\/}:
+	$$
+	S = {1\over\rho}{dT\over dx},
+	$$
+	onde $\rho$ é a densidade de massa do alvo, $dT$ a energia, na forma cinética, perdida pelas
+partículas incidentes durante o percurso $dx$\footnote{$dx$ aqui não é a espessura da barreira,
+mas sim o comprimento do percurso percorrido pela partícula.}. Como o espectro de energia de emissões beta é contínuo, devemos considerar a variação de $S$ com a energia.\par
+	A partir das tabelas de {\sl stopping power\/} armazenadas na {\sl home-page} da disciplina,
+podemos verificar o comportamento do {\sl stopping power mássico} com a energia no intervalo que nos
+interessa, ou seja, de $0\unit{MeV}$ a $1,5\unit{MeV}$:
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.35]{ex1_1.pdf}
+	\caption{\label{fig:ex1_1}\footnotesize
+					 O comportamento do {\sl stopping power} com a energia para alvos de chumbo e alumínio.}
+\end{figure}
+
+	Como foi dito acima, $dx$ é o percurso de uma partícula incidente durante sua aventura no interior
+do alvo. Contudo, como estamos utilizando um alvo bastante fino ($0,1\unit{mm}$)\footnote{O conceito 
+de "bastante fino" aqui é completamente subjetivo. Para se perceber isto basta notar que nesta 
+diminuta distância existe algo em torno de $10^8$ diâmetros atômicos, cada um representando uma
+possibilidade de interação com a partícula incidente, o que pode, a rigor, fazer desmerecer o
+argumento a seguir.}, podemos supor que a partícula interaja apenas uma vez enquanto no interior do
+alvo, e que sua trajetória não mude substancialmente. Nesta situação, o percurso percorrido pela 
+partícula pode ser aproximada à espessura do alvo, $0,1\unit{mm}$. Com isso podemos verificar a
+energia emergente $E_e$ da barreira em função da energia incidente $E_i$:
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.35]{ex1_2.pdf}
+	\caption{\label{fig:ex1_2}\footnotesize
+					 A relação entre as energias incidente ($E_i$) e emergente ($E_e$), por unidade de massa
+					 dos alvos de alumínio e chumbo. O intervalo de energia aqui foi reduzido pois nele ocorre
+					 o diferencial entre os elementos dos alvos. Para energias superiores a $200\unit{keV}$ as
+					 curvas do chumbo e do alumínio tendem a se unificar.}
+\end{figure}
+
+	Assim, imaginando um espectro de energia incidente como abaixo (figura~\ref{fig:ex1_3})\footnote{%
+Este espectro foi escolhido ao bel-prazer sem se preocupar com a veracidade da abscissa, já que tem
+apenas efeito ilustrativo.}, notamos que as energias mais baixas são mais atenuadas que as mais altas.
+Mais que isso, notamos que existe um corte de energias inferiores a aproximadamente $50\unit{keV}$.
+Ou seja, o alvo assume papel de filtro para essas energias.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[scale=0.35]{ex1_3.pdf}
+	\caption{\label{fig:ex1_3}\footnotesize
+					 Para um espectro hipotético A de emissões beta verificamos a atenuação para baixas 
+					 energias.}
+\end{figure}
+	

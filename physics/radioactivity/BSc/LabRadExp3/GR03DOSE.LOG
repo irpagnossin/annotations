@@ -1,0 +1,76 @@
+#
+Date:            6/10/2001
+Time:            12:19:29
+Setup file:      fisrad.set
+Data  file:      gr03dose.dat
+
+
+INITIAL parameters:
+B. Intervalo de tempo de amostragem (s) [0.09,*]:                       0.2
+C. Temperatura do inicio da leitura (øC) [40,400]:                       40
+D. Temperatura do fim da leitura (øC) [80,500]:                         280
+E. Modo de aquecimento (Automatico/Manual) ["A","M"]:                     A
+F. Taxa de aquecimento (øC/s) [0.0001,35]:                                5
+G. Ganho do controlador de temperatura (øC/V):                           98
+H. Voltagem para o inicio da rampa de aquecimento (V) [-10,1]:          0.0
+I. Tempo morto da PMT+preamp (ns) [5,200]:                              100
+J. Ganho do amplificador do Termopar (tipoK) (ADU/mV) [0.1,*]:          245
+K. Nivel de discriminacao (mV) [-300,300]:                              -30
+L. Logaritmo do fundo de escala do CDA - use 10 p/ saida log. [3,10]:    10
+M. Material medido (string continuo):      laboratorio 3 curso de  FisRad 1
+N. Nome do experimentador (string continuo):Robson,Ivan,Waldir,Wille            
+                                                          
+
+
+
+
+Data analysis during the run:
+>>>
+Ident        :bgg3     
+Center       :228.03 øC
+Temp. of Max.:243.82 øC
+Peak height  : 1.85E+0001 CPS
+Area         : 4.11E+0001 counts
+cursor background
+>>>
+Ident        :dosePb1g3
+Center       :216.55 øC
+Temp. of Max.:226.77 øC
+Peak height  : 5.23E+0002 CPS
+Area         : 3.99E+0003 counts
+cursor background
+>>>
+Ident        :dosepb2g3
+Center       :216.50 øC
+Temp. of Max.:224.57 øC
+Peak height  : 4.74E+0002 CPS
+Area         : 3.80E+0003 counts
+cursor background
+>>>
+Ident        :dosePb3g3
+Center       :212.67 øC
+Temp. of Max.:224.74 øC
+Peak height  : 4.98E+0002 CPS
+Area         : 4.27E+0003 counts
+cursor background
+>>>
+Ident        :dosePb4g3
+Center       :213.54 øC
+Temp. of Max.:222.19 øC
+Peak height  : 5.70E+0002 CPS
+Area         : 4.25E+0003 counts
+cursor background
+>>>
+Ident        :dosePb5g3
+Center       :219.42 øC
+Temp. of Max.:231.18 øC
+Peak height  : 6.30E+0002 CPS
+Area         : 4.42E+0003 counts
+cursor background
+>>>
+Ident        :dosePb6g3
+Center       :214.46 øC
+Temp. of Max.:223.69 øC
+Peak height  : 5.62E+0002 CPS
+Area         : 4.23E+0003 counts
+cursor background

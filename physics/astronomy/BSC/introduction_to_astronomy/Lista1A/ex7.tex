@@ -1,0 +1,42 @@
+%IVAN RAMOS PAGNOSSIN 11/03/2001 irpagnossin@hotmail.com
+
+\begin{quotation}
+{\color{blue}{\bf 7.}}
+{\it	Determine, por integração, a área de uma elipse de semi-eixos maior ($a$) e menor ($b$).}
+\end{quotation}
+
+\vspace{5mm}
+
+	A equação de uma elipse cujo semi-eixo maior reside sobre as abcissas é
+	\begin{equation}
+	{x^2\over a^2}+{y^2\over b^2}=1
+	\label{eq:elipse} 
+	\end{equation} 
+
+	E a área da elipse é 
+	\begin{equation}
+	A=4\int_0^bdy\int_0^{x(y)}dx
+	\label{eq:area} 
+	\end{equation}
+
+	Da equação~(\ref{eq:elipse}) encontramos facilmente a dependência de $x$ por $y$ para o primeiro quadrante do plano cartesiano:
+	$$
+	x(y)=a\sqrt{1-({y\over b})^2}
+	$$
+
+	Levando este resultado em (\ref{eq:area}) obtemos
+	$$
+	A=4\int_0^bx(y)dy=4a\int_0^b\sqrt{1-({y\over b})^2}dy
+	$$
+
+	Fazendo a substituição ${y\over b}=\sin\theta\,\Rightarrow\,dy=b\cos\theta d\theta$ e retornando à integral,
+	$$
+	A=4a\int_0^{\pi/2}(\cos\theta)\cdot(b\cos\theta d\theta)=4ab\int_0^{\pi/2}\cos^2\theta d\theta=4ab[{\theta\over2}-{\sin2\theta\over4}]_0^{\pi/2}=\pi ab
+	$$
+
+	A área procurada.
+
+\vspace{10mm}
+
+	
+  

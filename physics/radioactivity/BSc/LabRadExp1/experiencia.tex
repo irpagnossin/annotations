@@ -1,0 +1,328 @@
+
+\begin{abstract}\it
+ 	The intention of this experiment is to use a {\sl Geiger-Müller} detector in a few situations
+	which we can deal and understand the basic concepts of radioactive sources like, for example, 
+	{\sl background radiation}, {\sl activitie} and {\sl half-life}.
+\end{abstract}
+
+\section{Radiação de fundo}
+
+	Mantendo a abertura do detector livre e na posição em que a utilizamos durante todo o experimento,
+aguardamos $300\unit{s}$ e medimos a contagem de fundo, composta por raios cósmicos, emissões dos isótopos
+em manipulação pelos outros grupos e outros materiais que compõem os tecidos orgânicos de nossos corpos.\par
+	Esta medição foi efetuada três vezes consecutivas para reduzir as chances de medirmos algum pico
+ou ``calmaria'' nesta radiação. O valor encontrado foi $204(21)\unit{\#/300\unit s}$ ou 
+$0,68(7)\unit{\#/s}$.
+
+\section{Caráter estatístico da emissão radioativa}\label{sec:experimentoC}
+	
+	A observação do caráter estatístico das emissões radioativas consiste em calcularmos a incerteza
+estatística (desvio padrão) de um conjunto de medidas de contagens e verificarmos a semelhança com o 
+desvio teórico da distribuição de {\sl Poisson}: $\sigma_C=\sqrt C$.\par
+	Deste modo, medimos $29$ vezes o número de desintegrações do césio-137 durante um intervalo de 
+tempo de $100\unit s$ e encontramos (veja tabela \ref{tab:experimentoC} no apêncide \ref{ap:experimentoC})
+$\bar{C}=4990(60)\unit{\#/100\unit s}$. A incerteza encontrada é, portanto, $60\unit{\#/100\unit s}$. 
+Comparando com $\sqrt{\bar C}=\sqrt{4990}=70\unit{\#/\unit{100\unit s}}$ vemos que os valores de fato estão 
+próximos.\par
+	Para nós isto já é suficiente pois estamos apenas constatando a semelhança. Caso desejássemos 
+demonstrar que esta semelhança é muito mais que apenas uma coincidência deveríamos efetuar muitas outras
+medidas.
+
+	
+\section{Verificações qualitativas}
+
+	Neste momento da experiência tensionamos verificar qualitativamente o comportamento do número de
+contagens mediante variações controladas das grandezas {\sl distância} da fonte ao detector, {\sl espessura}
+de uma barreira colocada entre o detector e a fonte e {\sl tempo} de amostragem.\par
+	Escolhemos a fonte de $\mathrm{^{137}C}$ para nossas medidas.
+	\begin{itemize}
+	\item Primeiro variamos a distância da fonte ao detector e fixamos o tempo de amostragem em 
+$30\unit s$:
+		\begin{table}[htbp]
+		  \centering
+		  \begin{tabular}{c|cc |c}
+		  $d\unit{(cm)}$ & \multicolumn{2}{c}{$\#/30\unit{s}$} & $\bar\#/30\unit{s}$ \\
+		  \hline
+		  \hline
+		  $2,30+2,50$	 & $3636$ & $3696$ & $3666$ \\
+  		  $3,25+2,50$	 & $2242$ & $2356$ & $2299$ \\
+		  $3,40+2,50$	 & $1535$ & $1520$ & $1527$ \\
+		  \hline
+		  \end{tabular}
+		  \caption{\footnotesize A quantia $2,50\unit{cm}$ adicionada a cada um dos valores da
+			   coluna um é uma distância de segurança inerente ao detector: É o comprimento
+			   de um cilindro que protege a janela do detector. O tempo de amostragem foi
+			   fixado em $30\unit s$.}
+		\end{table}
+
+		Concluímos, então, que {\sl o número de contagens diminui com o aumento da distância}.
+	\clearpage
+	\item Em seguida variamos o tempo de amostragem e mantivemos a distância fixa em 
+$3,25+2,50\unit{cm}$:
+		\begin{table}[htbp]
+		  \centering
+		  \begin{tabular}{c|cc|c}
+		  $t\unit{(s)}$ & \multicolumn{2}{c}{$\#/t$} & $\bar\#/t$ \\
+		  \hline
+		  \hline
+		  $10$ &  $698$ &  $767$ &  $732$ \\ 
+  		  $30$ & $2242$ & $2356$ & $2299$ \\
+		  $50$ & $3678$ & $3606$ & $3642$ \\
+		  \hline
+		  \end{tabular}
+		  \caption{\footnotesize As colunas aqui são iguais às da tabela anterior, exceto pela 
+			   primeira coluna, que indica o tempo de amostragem utilizado. A distância entre
+			   a fonte e o detector foi mantida em $3,25+2,50\unit{cm}$.}
+		\end{table}
+
+		{\sl O número de contagens aumenta com o tempo de amostragem}.
+	\item Observamos o que ocorre ao colocarmos uma barreira fina entre a fonte e o detector. Em
+primeiro lugar utilizamos o alumínio e depois o chumbo:
+		\begin{table}[htbp]
+		  \begin{minipage}[t]{0.46\textwidth}
+		    \centering
+		    \begin{tabular}{c|cc|c}
+	    	    \multicolumn{4}{c}{Alumínio --- $\mathrm{Al}$}\\
+		    \hline
+	    	    $d\unit{(mm)}$ & \multicolumn{2}{c}{$\#/30\unit s$} & $\bar\#/30\unit s$ \\
+		    \hline
+		    \hline
+		    $6,0$ &  $447$ &  $414$ & $430$  \\ 
+  		    $0,2$ & $2242$ & $2356$ & $2299$ \\
+		    \hline
+		    \end{tabular}
+		  \end{minipage}
+		  \hfill
+		  \begin{minipage}[t]{0.46\textwidth}
+		    \centering
+		    \begin{tabular}{c|cc|c}
+	    	    \multicolumn{4}{c}{Chumbo --- $\mathrm{Pb}$}\\
+		    \hline
+	    	    $d\unit{(mm)}$ & \multicolumn{2}{c}{$\#/30\unit s$} & $\bar\#/30\unit s$ \\
+		    \hline
+		    \hline
+		    $4,0$ & $288$ & $327$ & $307$ \\ 
+  		    $1,5$ & $463$ & $454$ & $458$ \\
+		    \hline
+		    \end{tabular}
+		  \end{minipage}
+		  \caption{\footnotesize A coluna um indica a espessura da barreira utilizada; As colunas
+			   dois e três o número de contagens obtido durante o intervalo de $30\unit{s}$ e
+			   na coluna quatro temos a média das duas anteriores. A distância entre a placa
+			   e a fonte foi fixada em $1,8\unit{cm}$ e a distância entre a fonte e o detector
+			   em $1,50+2,50\unit{cm}$.}
+		\end{table}	
+
+		Fica clara a {\sl diminuição da contagem com o aumento da espessura da barreira}. A 
+comparação entre os dois materiais, entretanto, exige um pouco mais de cuidado e mais algumas medidas: 
+As que aqui possuimos não são suficientes para fornecer um resultado confiável.
+	\end{itemize}
+
+%	Finalmente, adquirimos três materiais radioativos: $\mathrm{^{233}U}$, $\mathrm{^{90}Sr}$ e
+%$\mathrm{^{14}C}$. O intuito era deduzir qual o emissor predominante\footnote{Excetuando a radiação
+%$\gamma$ que não somos capazes de medir diretamente com um {\sl Geiger-Müller}.} em cada um dos
+%materiais. Para isso, medimos a contagem de cada uma das fontes sozinha e com uma barreira entre elas
+%e o detector. A diferença entre essas contagens dá um indicativo da forma de emissão que domina:
+%	\begin{itemize}
+%	\item Para a fonte de urânio-233 encontramos, em $30\unit s$, uma contagem de $162$ em média. 
+%	      Assim que colocamos uma folha de papel sulfite entre a fonte e o detector a contagem 
+%	      cai imediatamente para $54$. Ou seja, aproximadamente $33\%$ das emissões são absorvidas
+%	      no papel. Uma tão baixa penetração freqüentemente encontra-se para partículas $\alpha$ e,
+%	      portanto, deduzimos que o urânio-233 é um emissor alfa.
+%	\item Já para o estrôncio-90, no mesmo intervalo de medida, achamos $2303$ com a fonte a
+%	      $4,00\unit{cm}$ (Já incluído os $2,50\unit{cm}$). Quando passamos a fonte para $6,9\unit{cm}$,
+%	      a contagem cai para $752$. 
+%	\end{itemize}
+
+
+\section{A meia-vida do $\mathrm{^{99m}Tc}$} 
+
+	O procedimento experimental aqui foi simplesmente contar, durante um intervalo de tempo fixo
+(Utilizamos 1 minuto), o número de desintegrações do tecnécio. Este procedimento foi repetido de tempos em
+tempos (veja tabela \ref{tab:experimentoE}) durante aproximadamente $140$ minutos de laboratório, algo em 
+torno de metade da meia-vida.\par
+	O número de contagens $\Delta n$ observado durante este intervalo de um minuto é aproximadamente
+igual à atividade $A(\xi)$ do tecnécio num instante $\,\,\xi\in]t_i-\Delta t/2,t_i+\Delta t/2[\,\,$ vezes
+o intervalo de tempo $\Delta t$ em que se fez a medida:
+	$$
+	\Delta n \cong A\cdot\Delta t = -{dN\over dt}\,\Delta t
+	$$
+  	onde $\Delta n$ é o número de {\bf núcleos-filho} formado durante o intervalo de tempo 
+$\Delta t$\footnote{Mais precisamente $\Delta n$ é apenas o número de contagens. A diferença reside no
+simples fato de que o detector não é capaz de {\bf medir} todas as desintegrações ocorridas devido a
+problemas de ângulo sólido (A janela do detector ocupa uma pequena área na região ao redor da fonte),
+formas de emissões ($\alpha$, $\beta$ ou $\gamma$) e energia.}
+
+	No nosso caso, como $\Delta t$ foi de um minuto, um tempo bastante pequeno comparado aos
+$140$ minutos totais de toda a medida, podemos aproximar o número de contagens por unidade de
+tempo ($\Delta n/\Delta t$) à atividade dos núcleos-pai:
+	\begin{equation}\label{eq:atividade}
+	\lim_{\Delta\to0} {\Delta N\over\Delta t} = -{dN\over dt} = A
+	\end{equation}
+
+	Desta forma, nossas medidas, de minuto em minuto, deram-nos a atividade da amostra em cada
+instante de tempo $t$ e, a partir de agora, chamaremos {\sl atividade} o número de contagens
+obtido durante uma medida.\par
+	A lei de decaimento exponencial é $N(t) = N_0e^{-\lambda t}$, com $N(t)$ sendo o número de 
+núcleos-pai existentes no instante $t$ e $N_0=N(t=0)$. Aplicando-a na equação \ref{eq:atividade} obtemos
+	\begin{eqnarray}
+				    A(t) &=& -{dN\over dt}			\nonumber	\\
+		   			   &=& \lambda N_0e^{-\lambda t}	\nonumber	\\
+		   			   &=& A_0e^{-\lambda t}		\nonumber	\\
+	\label{eq:linear} \ln A(t) &=& \ln A_0 - \lambda t
+	\end{eqnarray}
+	com $A_0$ sendo a atividade inicial, em $t_0$ arbitrariamente escolhido por nós. Assim,
+para obtermos a meia-vida $T_{1/2}=\ln2/\lambda$  do tecnécio simplesmente plotamos o gráfico
+$\,\ln A\times t\,$ e ajustamos uma reta aos pontos de forma a determinar os coeficientes linear
+$\ln A_0$ e angular $-\lambda$. Mas vejamos com mais cuidado:\par
+	Com o fim de melhorar a aproximação $A=\Delta n/\Delta t$ que fizemos no começo da 
+análise podemos assumir $\Delta t/2=30\unit{s}$ como sendo a incerteza na medida do tempo $t$.\footnote{
+A incerteza obtida nos cronômetros utilizados são da ordem de décimos de segundo e seguramente inferiores
+a 1 segundo, de modo que podemos ignorá-las.}\par
+	Para a atividade consideramos a incerteza teórica $\sigma_A=\sqrt A$, já que 
+verificamos, na sessão \ref{sec:experimentoC}, que este número é uma boa avaliação da
+incerteza estatística do número de contagens, mesmo para nossa situação onde o núcleo-pai não
+está presente em quantidade inesgotável.\par
+	Assim, temos os pares $(A,\sigma_A)$ e $(t,\sigma_t)$. Pela equação de linearização 
+\ref{eq:linear} vemos a necessidade de propagar o erro $\sigma_A$ para $\sigma_{\ln A}$:
+	$$
+	\sigma_{\ln A}^2 = \bigl( \sigma_A\,{\partial\over\partial A}\ln A\bigr) ^2 = 
+	  \bigl( {\sigma_A\over A}\bigr) ^2
+	$$
+
+	Uma vez feito isso já podemos plotar o gráfico $(\ln A,\sigma_{\ln A})\times(t,\sigma_t)$ e
+proceder a regressão\footnote{Não precisamos fazer transferência dos erros da abscissa para a
+ordenada pois o software utilizado na análise dos dados ({\sl Microcall Origin}) é capaz de
+fazê-lo por conta própria.} (veja figura \ref{fig:experimentoE}). Encontramos 
+$\ln A_0 = 7,346(17)$ e $\lambda = 0,00167(22)\unit{min^{-1}}$ com $\chi_{\mathrm{red}}^2=0,83$, o que 
+nos dá 
+	$$
+	T_{1/2} = \mathrm{6\unit h 55\unit m\,\pm 55\unit m}
+	$$
+	onde a incerteza foi obtida por propagação da incerteza do coeficiente angular:
+	$$
+	\sigma_{T_{1/2}}^2 = \bigl( \sigma_\lambda {\partial T_{1/2}\over\partial\lambda}\bigr)^2 = 
+		\bigl( {\sigma_\lambda\ln2\over\lambda^2}\bigr)^2 \Rightarrow \sigma_{T_{1/2}} = 55\unit m
+	$$
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.5]{experimentoE.pdf}
+  \caption{\label{fig:experimentoE}\footnotesize A atividade $\ln A$ como função do tempo $t$ 
+	   evidencia o coeficiente de decaimento $\lambda$ como o coeficiente angular da reta ajustada, 
+	   a menos do sinal.}
+\end{figure}
+
+	Um ponto interessante a notar é que o valor da atividade inicial $A_0$, quando obtido do ajuste
+há pouco ($A_0=e^{\ln A_0}=1549(26)\unit{\#/s}$), é bastante próximo daquele realmente obtido 
+($1588\unit{\#/s}$), o que nos dá uma idéia da qualidade do ajuste feito, juntamente com o teste do 
+$\chi_{\mathrm{red}}^2$.
+	
+\section{Conclusões}
+	Durante os vários anos de laboratórios aprendemos que a incerteza da média $\sigma_{\bar x}$ de uma 
+distribuição que se aproxima de um valor verdadeiro $x_v$ é dada pela razão do desvio padrão $\sigma$ da
+distribuição pela raiz quadrada do número de medidas $n$ efetuadas: $\sigma_{\bar x}=\sigma/\sqrt{n}$,
+independentemente da distribuição utilizada para representar a variável aleatória. Aqui, contudo, verificamos
+que utilizou-se o próprio valor do desvio como incerteza e poderíamos perguntar por quê. A razão é simples
+mas não imediata: No caso de medidas de decaimento, não existe um valor verdadeiro $C_v$ fixo do qual 
+queremos nos aproximar pois a cada instante um número $C_v(t)$ dá lugar ao seguinte e esta variação não
+pode ser desconsiderada, mesmo que tomando intervalos de medida pequenos, nos quais possamos tomar por
+constante a lei de decaimento exponencial.\par
+	Outra situação é: Se utilizamos $\sigma_C=\sqrt{C}$ como a incerteza da medida, porque não utilizar
+intervalos muito pequenos de forma a dar um número de contagens próximo da unidade? Teríamos uma incerteza 
+cada vez menor! Esta idéia não procede pois embora a incerteza absoluta diminua, a relativa aumenta na mesma
+proporção:
+	$$
+	{\sigma_C\over C}={\sqrt{C}\over C}={1\over\sqrt{C}}
+	$$
+
+	De fato, se conseguíssemos medir apenas uma contagem nossa incerteza seria também de uma contagem.
+Uma incerteza relativa de $100\%$. Ou seja, a medida simplesmente não diz nada.
+
+\clearpage
+\begin{appendix}
+\section{Caráter estatístico das emissões radioativas}\label{ap:experimentoC}
+
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{ccccc}
+  \multicolumn{5}{c}{$\#/100\unit{s}$} \\
+  \hline
+  4990	&  4924	 &  5057  &  5008  &  5023  \\
+  5035  &  4996  &  5092  &  4963  &  4987  \\
+  4993  &  4979  &  5053  &  5104  &  4940  \\
+  5013  &  5057  &  4844  &  5092  &  4892  \\
+  5022  &  4946  &  4972  &  5023  &  5007  \\
+  4945  &  4950  &  5079  &  4956	    \\
+  \hline
+  \end{tabular}
+  \caption{\footnotesize\label{tab:experimentoC} Contagens obtidas a partir de uma fonte de césio-137
+	   em amostragens de $100\unit s$ cada. A distância entre a fonte e o detector foi mantida
+	   constante e igual a $5,9\unit{cm}$. O valor médio é $\bar{C}=4998$ com incerteza 
+	   $\sigma_C=60$.}  
+\end{table}
+\hfill
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.35]{experimentoC.pdf}
+  \caption{\footnotesize A distribuição do número de contagens de uma fonte radioativa durante um período
+	   fixo de tempo --- No caso, $1\unit{m}40\unit{s}$.}
+\end{figure}
+
+\clearpage
+\section{A meia-vida do $\mathrm{^{99m}Tc}$}
+
+\begin{table}[htbp]
+  \begin{minipage}[t]{0.46\textwidth}
+  \centering
+  \begin{tabular}{ccc}
+  $\#/\Delta t$  &  $\Delta t$  &  $t$	      \\
+  \hline
+  1588 & 1m00,30s &  00m30s \\
+  1543 & 0m59,90s &  05m30s \\  
+  1555 & 1m00,17s &  10m30s \\  
+  1545 & 1m00,21s &  16m00s \\
+  1629 & 1m00,24s &  19m00s \\
+  1553 & 1m00,01s &  24m00s \\
+  1524 & 0m59,92s &  29m00s \\
+  1418 & 1m00,18s &  34m00s \\
+  1372 & 0m59,99s &  42m30s \\
+  1386 & 1m00,02s &  48m30s \\
+  1295 & 1m00,25s &  53m30s \\
+  1348 & 0m59,88s &  58m30s \\
+  1323 & 1m00,01s &  63m30s \\
+  1328 & 1m00,03s &  68m30s \\
+  \hline
+  \end{tabular}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.46\textwidth}
+  \begin{tabular}{ccc}
+  $\#/\Delta t$  &  $\Delta t$  &  $t$	      \\
+  \hline
+  1267 & 0m59,96s &  72m30s \\
+  1406 & 1m00,04s &  77m30s \\
+  1329 & 0m59,98s &  82m30s \\
+  1270 & 0m59,98s &  87m30s \\
+  1249 & 1m00,23s &  93m30s \\
+  1349 & 1m00,25s &  97m30s \\
+  1359 & 1m00,09s & 102m30s \\
+  1332 & 1m00,24s & 107m30s \\
+  1384 & 1m00,30s & 112m30s \\
+  1373 & 1m00,22s & 117m30s \\
+  1255 & 1m00,15s & 122m30s \\
+  1302 & 0m59,55s & 127m30s \\
+  1197 & 0m59,93s & 132m30s \\
+  1242 & 0m59,95s & 137m30s \\
+  \hline
+  \end{tabular}
+  \end{minipage}
+  \caption{\label{tab:experimentoE}\footnotesize O número de contagens $\#$ por intervalo de tempo
+	   $\Delta t$, cada um medido a um instante $t$. Os $30\unit{s}$ que aparecem freqüentemente
+	   nos instantes $t$ devem-se à consideração de $\Delta t/2$ como a incerteza em $t$. Desta 
+	   forma escolhemos um ponto $\,\xi\in]t-\Delta t/2,t+\Delta t/2[\,$ para representar a medida
+	   no gráfico.} 
+\end{table}
+
+\end{appendix}

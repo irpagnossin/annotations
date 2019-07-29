@@ -1,0 +1,35 @@
+\begin{exercicio}[blue]
+	Qualquer região do espaço em que a energia cinética da partícula torna-se negativa é classicamente proibida. Para o átomo de hidrogênio no estado fundamental $1s$,
+	
+	{\tt (a)} Determine a região classicamente proibida.
+	
+	{\tt (b)} Usando a função de onda do estado fundamental $\psi_{1s}(\mathbf r)$, calcule a probabilidade de se encontrar o elétron nessa região.
+
+\end{exercicio}
+
+	{\tt (a)} Se a energia se conserva identificamos o limite clássico (ponto de retorno) como aquele em que a energia mecânica total é integralmente potencial: A energia total de um átomo de hidrogênio num estado $n$ é $-e^2Z^2/4\pi\epsilon_0a_02n^2$ e a energia potencial $U(r)$ é dada por $-e^2/4\pi\epsilon_0r^2$. Então o maior $r = r_0$ para o qual a existência do elétron é permitida classicamente é encontrado por
+	$$
+	E_n = U(r_0) \Rightarrow -{1\over4\pi\epsilon_0}{e^2\over r_0^2} = -{e^2Z^2\over4\pi\epsilon_0a_02n^2} \Rightarrow r_0 = {2a_0n^2\over Z^2}
+	$$
+	
+	Assim, para o estado $1s$ ($n=1$ e $l=0$) temos $r_0=2a_0$.
+	
+	{\tt (b)} A probabilidade de encontrarmos o elétron nesta região classicamente proibida, baseando-nos na teoria quântica, é o complementar da probabilidade de encontrarmos o elétron na região classicamente possível. Ou seja, em algum lugar com $r<2a_0$:
+	\begin{eqnarray*}
+	P	&=& \int_{\phi=0}^{2\pi}\int_{\theta=0}^\pi\int_{r=0}^{2a_0}\psi_{100}^*(r,\theta,\phi)
+					\psi_{100}(r,\theta,\phi) r^2\sin\theta\mathrm{dr\,d}\theta\mathrm{d}\phi		\\
+		&=& \int_0^{2\pi}\mathrm{d}\phi\int_0^\pi\sin\theta\mathrm{d}\theta\int_0^{2a_0}
+					|\psi_{100}(r,\theta,\phi)|^2 r^2dr																					\\
+		&=& 4\pi\int_0^{2a_0} r^2[4({Z\over a_0})^3e^{-2Zr/a_0}{1\over4\pi}]dr							\\
+		&=& {1\over2}\int_0^4\lambda^2e^{-\lambda}\mathrm{d}\lambda												\\
+		&=& 76,19\%
+	\end{eqnarray*}
+	
+	Portanto a probabilidade de encontrarmos o elétron na região classicamente proibida é $23,81\%$.
+
+
+
+
+
+
+

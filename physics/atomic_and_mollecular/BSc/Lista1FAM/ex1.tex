@@ -1,0 +1,60 @@
+\begin{quotation}
+{\bf 1.}
+{\it	Sejam $\ket{u}$ e $\ket{v}$ dois vetores de um espaço complexo com produto interno. Prove a desigualdade triangular
+	\begin{equation}
+	|\ket{u}+\ket{v}|\le|\ket{u}|+|\ket{v}|
+	\label{eq:dt}
+	\end{equation}
+}
+\end{quotation}
+
+\vspace{5mm}
+
+	Consideremos uma base ortonormal $\{\ket{i}\}$ deste espaço complexo. Então, os vetores $\ket{u}$ e $\ket{v}$ podem ser expressos por
+	$$
+	\ket{u}=\sum_{i=0}^{\infty}\underbrace{\iprod{i}{u}}_{u_i}\ket{i}
+	$$
+	$$
+	\ket{v}=\sum_{i=0}^{\infty}\underbrace{\iprod{i}{v}}_{v_i}\ket{i}
+	$$
+
+	Nestas condições, podemos também escrever a soma destes dois vetores como
+	$$
+	\ket{u}+\ket{v}=\sum_iu_i\ket{i}+\sum_iv_i\ket{i}=\sum_i(u_i+v_i)\ket{i}
+	$$
+
+	Calculemos agora o quadrado do módulo da soma destes dois vetores:
+	\begin{eqnarray*}
+	\mathrm{mod}^2(\ket{u}+\ket{v})	&=&[\sum_i(u_i+v_i)^*\bra{i}]\cdot[\sum_j(u_j+v_j)\ket{j}]	\\
+					&=&\sum_i\sum_j(u_i+v_i)^*(u_j+v_j)\iprod{i}{j}			\\
+					&=&\sum_i(u_i+v_i)^*(u_i+v_i)					\\
+					&=&\sum_i(|u_i|^2+|v_i|^2)+\sum_i(u_i^*v_i+v_i^*u_i)		\\
+					&=&\sum_i(|u_i|^2+|v_i|^2)+|\iprod{u}{v}|+|\iprod{v}{u}|	\\
+					&=&\sum_i(|u_i|^2+|v_i|^2)+2|\iprod{u}{v}|		
+	\end{eqnarray*}
+
+	E vejamos também o quadrado do módulo de $\ket{u}$ e $\ket{v}$:
+	\begin{eqnarray*}
+ 	\mathrm{mod}^2\ket{u}	&=&\iprod uu								\\
+				&=&(\sum_iu_i^*\bra{i})\cdot(\sum_ju_j\ket{j})				\\
+				&=&\sum_i\sum_ju_i^*u_j\iprod ij					\\
+				&=&\sum_i|u_i|^2							\\
+	\mathrm{mod}^2\ket{v}	&=&\sum_i|v_i|^2		
+	\end{eqnarray*}
+
+	Queremos provar a equação (\ref{eq:dt}). Partamos dela mas, ao invés de usarmos o sinal $\le$ com significado conhecido para nós, utilizaremos
+o símbolo $\prec$ para indicar que existe uma relação de ordem entre os dois membros da equação mas que não a conhecemos ainda:
+	\begin{eqnarray}
+	\label{eq:dt2}\mathrm{mod}(\ket{u}+\ket{v})		&\prec&\mathrm{mod}\ket{u}+\mathrm{mod}\ket{v}							
+													  \\
+	\mathrm{mod}^2(\ket{u}+\ket{v})				&\prec&\mathrm{mod}^2\ket{u}+\mathrm{mod}^2\ket{v}+2\cdot\mathrm{mod}\ket{u}\mathrm{mod}\ket{v}	
+												\nonumber \\
+	\sum_i(|u_i|^2+|v_i|^2)+2|\iprod{u}{v}|			&\prec&\sum_i(|u_i|^2+|v_i|^2)+2\mathrm{mod}\ket{u}\mathrm{mod}\ket{v}				
+												\nonumber \\
+	|\iprod{u}{v}|						&\prec&|\ket{u}|\cdot|\ket{v}|	\nonumber 
+	\end{eqnarray}
+
+	Mas a última expressão é precisamente a desigualdade de Schwartz e, como as manipulações entre os dois membros não influenciaram a relação
+$\prec$ entre eles, então simplesmente substituimos $\prec$ por $\le$ em (\ref{eq:dt2}) e demonstramos (\ref{eq:dt}).
+
+	

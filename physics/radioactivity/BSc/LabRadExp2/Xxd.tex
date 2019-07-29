@@ -1,0 +1,47 @@
+\section{Dependência da exposição com a distância}
+\label{sec:Xxd}
+
+	Imagine que nossa fonte radioativa emitiu, num intervalo de tempo qualquer, um conjunto de partículas
+com energia $E_0$. Por conservação de energia podemos afirmar que, decorrido alguns instantes, essa mesma energia encontra-se distribuída ainda neste conjunto de partículas\footnote{Assumindo que não haja
+interação com o ar ao redor.} que agora assume o formato de uma superfície específica\footnote{A forma
+exata desta superfície depende de como a fonte emite em cada direção.} de área $A$ que envolve a fonte. Supondo
+ ser, por simplicidade, uma superfície esférica\footnote{Ao assumirmos este formato estamos impondo algumas 
+restrições
+fortes a esse feixe. Por exemplo: Ele não pode se tratar de um feixe composto por fótons e elétrons pois os
+fótons carregam sua energia à velocidade da luz enquanto os elétrons o fazem com velocidade finita. Desta
+forma, para um tal feixe jamais poderemos supor tal superfície, salvo algumas situações onde os erros possam
+ser considerados aceitáveis.} e que a emissão é isotrópica, imediatamente podemos identificar a fluência de
+energia por esta superfície como sendo $\Phi=E_0/A=E_0/(4\pi e^2)$, sendo $e$ o raio da superfície imaginada.\par
+	O detector mede algo\footnote{Que chamamos exposição.} proporcional a esta {\bf fluência} e não à 
+energia, pois é claro que este oferece um ângulo sólido específico e pequeno para interação com o feixe. Ou 
+seja, $X\propto\Phi$ ou, ainda mais especificamente, $X\propto e^{-2}$.\par
+	Este é o nosso modelo e é o que queremos verificar. Para isso, aplicamos o logarítmo (numa base 
+$\lambda$ qualquer) à equação acima para obtermos 
+	$$
+	\log_\lambda X\propto\log_\lambda\Phi=\log_\lambda({E_0\over4\pi})-2\log_\lambda e
+	$$
+	
+	Desta forma, uma vez que conhecemos os pares $(X,e)$, sendo $r$ a distância do detector à fonte, e suas
+respectivas incertezas, desenhamos o gráfico e regredimo-los\footnote{Utilizamos $\lambda=10$.} a uma reta 
+(veja fig.\ref{fig:X x d}):
+	$$
+	\log X = 5,27(15)-1,96(7)\log e
+	$$
+	
+	O coeficiente angular $-1,96$ revela quão próximo o modelo é da realidade. De fato ele está tão próximo que
+nossos erros são demasiadamente grandes que não nos permitem dizer se a diferença entre os valores esperado e 
+medido deve-se ao modelo ou à medida. Na prática sabemos que, por exemplo, uma emissão de fótons em geral
+é acompanhada por partículas e vice-versa e que a distribuição de energia ao redor da fonte não é isotrópica,
+como supomos. Contudo, se conhcessemos apenas o resultado acima certamente poderiamos dizer, com razão 
+justificada pelas medidas, que não existe nada contra as suposições que tomamos.
+	\begin{figure}[htb]
+	\centering
+	%\includegraphics[scale=0.35]{figuras/Xxd.pdf}
+	\caption{\label{fig:X x d}\footnotesize
+	 A exposição varia praticamente como uma lei do inverso do quadrado da distância. No resultado acima
+	 encontrou-se uma dependência com $e^{-1,96}$. A diferença, tão pequena, deve-se a diversos fatores
+	 tais como a proporcionalidade entre $X$ e $\Phi$ depender da energia, à fluência não isotrópica de
+	 energia, etc. Na realidade, como a própria incerteza na medida torna possível ao coeficiente tomar
+	 qualquer valor do intervalo $[1,89;2,03]$, é notável que o modelo tenha se aproximado tanto da
+	 realidade.}
+  \end{figure}

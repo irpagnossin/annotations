@@ -1,0 +1,229 @@
+\documentclass[a4paper,10pt]{article}[1998/12/01]
+
+%----------------------------------------------------------------------------------%
+%------------------------- CARREGA OS PACOTES NECESSÁRIOS -------------------------%
+%----------------------------------------------------------------------------------%
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{wasysym}
+
+\makeindex
+\pagestyle{myheadings}
+\markboth{}{\rm Ivan R. Pagnossin}
+
+\begin{document}
+
+\input{irpackage.tex}
+
+\title{Lista 5 de Introdução às radiações}
+\author{Ivan R. Pagnossin \\ irpagnossin@hotmail.com}
+\date{\today}
+\maketitle
+
+\begin{exercicio}[blue]
+  Considere uma câmara tipo Farmer cilíndrica de $0,6\unit{cm^3}$ e raio interno $3,15\unit{mm}$ com 
+paredes de grafite de espessura de $0,065\unit{g/cm^2}$ e dispondo de uma capa de build-up de acrílico
+com espessura $0,551\unit{g/cm^2}$. Compare e discuta, utilizando a idéia de cavidades, o uso dessa 
+câmara para a determinação de dose em um feixe de raios X de $60\unit{keV}$ emitido pelo 
+$\mathrm{^{60}Co}$.
+\end{exercicio}
+
+  Em $60\unit{keV}$ os efeitos das interações por efeito fotoelétrico e espalhamento Compton estão
+competindo significativamente, de modo que a dependência de $\mu/\rho$ com $Z$ é menos crítica que
+para energias menores. Desta forma, tanto a parede como a capa de build-up do dosímetro são
+{\sl ar-equivalentes}\footnote{Já que $Z_{\mathrm C} = 6$, $\bar Z_{\mathrm{acr.}} = 6,27$ e 
+$\bar Z_{\mathrm{ar}} = 7,78$. }.\par
+  A necessidade de termos paredes {\sl ar-equivalentes} advém do fato de que a medida de dose ($D$)
+  \begin{equation}\label{eq:dose}
+  D = 0,00876 \cdot X \cdot ({\bar\mu_{\mathrm{ab}}\over\rho})^{\mathrm{meio}}_{\mathrm{ar}} \cdot
+      k(c_{\mathrm{meio}})
+  \end{equation}
+  é obtida a partir da medida de exposição ($X$), definida apenas para o ar.\par
+  Além disso, para utilizarmos (\ref{eq:dose}) precisamos asseverar que a espessura das paredes é superior
+ao máximo alcance dos íons produzidos por esta radiação que, na hipótese mais otimista, tem a energia do 
+fóton incidente; ou seja, $60\unit{keV}$. Conforme o {\sl Attix}, esse alcance no carbono é de
+$0,006648\unit{g/cm^2}$ ou $0,0295\unit{mm}$, aproximadamente dez vezes menor que a espessura da parede
+de grafite: $0,289\unit{mm}$ (ou $0,065\unit{g/cm^2}$).\par
+  Concluímos, então, que a medida de dose feita com esta câmara é aceitável e não necessita da capa de
+built-up para esta energia.\par
+  É sempre conveniente lembrar que a necessidade de termos uma espessura de parede maior que o máximo
+alcance dos íons produzidos decorre, em primeiro lugar, da necessidade de garantirmos o equilíbrio 
+eletrônico que, por sua vez, garante a quasi-equivalência {\bf kerma-dose}; Em segundo, a parede ``espessa''
+assegura que todas as cargas coletadas na cavidade foram produzidas ou na parede ou na própria cavidade;
+ou seja, em materiais {\sl ar-equivalentes}.
+
+\begin{exercicio}[blue]\label{ex:espectro}
+  Um feixe de raios X que possui um espectro com $5,0\times10^8\unit{fotons/m^2/s/keV}$ uniformemente 
+distribuídos entre $5$ e $65\unit{keV}$ incide sobre um detector.
+  \begin{itemize}
+  \item[a.] Faça o gráfico desse espectro, supondo que ele foi medido a intervalos de $10\unit{keV}$ de
+  energia.
+  \item[b.] Qual a taxa de fluência de fótons nesse local?
+  \item[c.] Qual seria a fluência se a irradiação permanecesse por $10$ minutos?
+  \item[d.] Obtenha também a taxa de fluência de energia que incde sobre o detector.
+  \item[e.] Calcule a taxa de kerma no ar e na água e a taxa de exposição no local em que se encontra o
+  detector.
+  \end{itemize}
+\end{exercicio}
+  
+\begin{itemize}
+
+  \item[a.] A dimensão da constante $5,0\times10^8\unit{fotons/m^2/s/keV}$ sugere que o espectro em energia
+da taxa de fluência de fótons é $\phi = \kappa E$, onde $\kappa=5,0\times10^8\unit{fotons/m^2/s/keV}$. Então
+as taxas de fluência encontradas para cada uma das energias medidas é (\ref{tab:espectro})
+  \begin{table}[htb]
+    \centering
+    \begin{tabular}{cc}
+      $E$ (keV)  & $\phi$ ($10^8\mathrm fotons/m^2/s$) \\
+      \hline
+      5  & 25  \\
+      15 & 75  \\
+      25 & 125 \\
+      35 & 175 \\
+      45 & 225 \\
+      55 & 275 \\
+      65 & 325 \\
+      \hline
+    \end{tabular}
+    \caption{\footnotesize\label{tab:espectro}
+      Taxas de fluência em função da energia $\phi(E)$ encontradas nas medidas do espectro do 
+      exercício~\ref{ex:espectro}.}
+  \end{table}
+
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[scale=0.35]{espectro.pdf}
+    \caption{\footnotesize\label{fig:espectro}
+      Espectro de raios X obtido do exercício~\ref{ex:espectro}. Os pontos são os valores medidos e a linha
+      tracejada indica o espectro completo para a faixa de energia de $5$ a $65\unit{keV}$.}
+  \end{figure}
+
+  \item[b.] A taxa de fluência total para este espectro é a soma de $\phi(E)$ para $5\le E\le65$, ou 
+    $$
+    \phi = \int_5^{65}\phi(E)dE = \kappa\int_5^{65} EdE = 10500\times10^8\unit{{fotons\over m^2\cdot s}}
+    $$
+  
+  \item[c.] A fluência é simplesmente 
+    $$
+    \Phi = \phi\Delta t = 10500\times10^8\cdot 600 = 6,3\times10^{14}\unit{{fotons\over m^2}}
+    $$
+    já que $\phi$ é constante.
+    
+  \item[d.] A taxa de fluência para uma energia $E$ qualquer é dada por $\psi(E)=E\phi(E)$. A taxa de
+  fluência para todo o espectro é, então, a soma dos $\psi(E)$ para $5\le E\le65$, ou 
+    $$
+    \psi = \int_5^{65}E\phi(E)dE = \kappa\int_5^{65} E^2dE = 45,75\times10^{12}\unit{{keV\over m^2\cdot s}}
+    $$
+    
+  \item[e.] A taxa de kerma para uma energia $E$ qualquer é dada por
+    $$
+    \dot k(E) = \phi(E)E_{tr}(E)\lambda(E)
+    $$
+    onde $\lambda(E) = (\mu/\rho)(E)$. Então, a taxa de kerma para todo o espectro é
+    \begin{eqnarray*}
+    \dot k &=& \int_5^{65}\phi(E)E_{tr}(E)\lambda(E)dE \\
+           &=& \kappa\int_5^{65}EE_{tr}(E)\lambda(E)dE 
+    \end{eqnarray*}
+    
+    As expressões $E_{tr}$ e $\lambda(E)$ devem ser obtidas por interpolação aos dados experimentais.\par
+    A taxa de exposição relaciona-se com a taxa de kerma {\bf de colisão} no ar por $\dot K_{ar}(E) = 0,00876 
+\dot X(E)$, sendo que $K_{ar}(E) = K(E)[1-Y(E)]$, onde $Y$ é o {\sl yield} de radiação que, como era de se
+esperar, depende da energia $E$. Logo, 
+    \begin{eqnarray*}
+    X(E) &=& 114,1552 K(E)[1-Y(E)] \\
+         &=& 114,1552 \phi(E)E_{tr}(E)\lambda(E)[1-Y(E)] \\
+         &=& 570,7762\times10^8 EE_{tr}(E)\lambda(E)[1-Y(E)]
+    \end{eqnarray*}
+    e, portanto, para todo o espectro teremos
+    $$
+    X = 570,7762\times10^8\int_5^{65} EE_{tr}(E)\lambda(E)[1-Y(E)]dE
+    $$
+    onde $Y(E)$ deve ser obtido também por interpolação dos dados experimentais.       
+\end{itemize}
+
+
+\begin{exercicio}[blue]
+  Uma câmara de ionização absoluta com paredes de grafite possui massa interna de ar de $0,552\unit{mg}$ à
+pressão de $760\unit{mmHg}$ e temperatura $22^{\mathrm{o}}\unit{C}$. Para determinar seu fator de calibração
+é irradiada, no ar, a $100\unit{cm}$ de distância de uma fonte de $\mathrm{^{60}Co}$ com $521\unit{mCi}$ de
+atividade.
+  \begin{itemize}
+  \item[a.] Qual a taxa de exposição no local?
+  \item[b.] Durante a irradiação da câmara a temperatura medida foi de $28^{\mathrm{o}}\unit{C}$, e a
+  pressão de $760\unit{mmHg}$. Para $30$ minutos de irradiação a carga coletada na câmara foi de
+  $4,78\times10^{-8}\unit{C}$. Calcule o fator de calibração a ser aplicado à câmara para a energia gamma do
+  $\mathrm{^{60}Co}$.
+  \end{itemize}
+\end{exercicio}
+
+  \begin{itemize}
+  \item[{\bf a.}] Conforme o roteiro do laboratório 3 a constante de raios gama (``Gamão'') para o cobalto-60
+  é $12,97\unit{R\cdot cm^2/h\cdot mCi}$. Então a taxa de exposição no detector é simplesmente
+  $$
+  \dot X = {A\over d^2}\Gamma = {521\over100^2}12,97 = 0,6757\unit{R/h}
+  $$
+  e, portanto, a exposição em $30$ minutos será $0,3379\unit{R}$.
+  
+  \item[{\bf b.}] À temperatura de $28^{\mathrm{o}}\unit{C}$ a massa de ar contida na câmara é 
+  \begin{eqnarray*}
+  m(28^{\mathrm{o}}\unit{C},760\unit{mmHg}) &=& m(22^{\mathrm{o}}\unit{C},760\unit{mmHg})
+     {22^{\mathrm{o}}\unit{C}/760\unit{mmHg}\over28^{\mathrm{o}}\unit{C}/760\unit{mmHg}} \\
+     &=& 0,4337\unit{mg}
+  \end{eqnarray*}
+  
+  Então a exposição real é
+  $$
+  X = {dQ\over dm} \cong {Q\over m} = {4,78\times10^{-8}\unit{C}\over0,4337\unit{mg}} = 0,1102\unit{R}
+  $$
+  
+  Logo, o fator de calibração será $N_X = 0,3379/0,1102 = 3,0658$.   
+  \end{itemize}
+
+\begin{exercicio}[blue]
+  Uma câmara de ionização {\sl ar-equivalente}, calibrada em exposição, é irradiada por um feixe de raios
+X com camada semi-redutora de $2,2\unit{mmAl}$. A câmara está envolta por um pequeno pedaço de osso humano,
+suficiente para produzir equilíbrio eletrônico. Se a câmara, nessas condições, fornece $185\unit{R}$ como  o valor da exposição, calcule a dose absorvida no osso.
+\end{exercicio}    
+  
+  Interpolando linearmente os dados da tabela A-3 do {\sl Johns} para o alumínio, a partir de $\mu/\rho$ (que
+por sua vez é obtido da camada semi-redutora dada no enunciado e pela densidade do alumínio), concluímos que
+os fótons incidentes tem energia aproximada de $29,98\unit{keV}$.\par
+  A dose em um meio pode ser obtida a partir da exposição pela equação
+  $$
+  D_{\mathrm{meio}} = 0,00876\cdot X\cdot({\mu_{ab}\over\rho})^{\mathrm{meio}}_{\mathrm{ar}}\cdot k_c\cdot b
+  $$
+  onde $b$ é a relação dose-kerma no equilíbrio eletrônico, que consideramos 1; $k_c$ é um fator de correção
+para cavidade finita, que também consideramos 1, $X$ é a exposição medida (já corrigida com o fator de 
+calibração) e 
+	$$
+	({\mu_{ab}\over\rho})^{\mathrm{osso}}_{\mathrm{ar}} \cong
+	         {(\mu_{ab}/\rho)_{\mathrm{osso}}\over(\mu_{ab}/\rho)_{\mathrm{ar}}} = {0,7091\over1,167}
+	         = 0,6076
+	$$
+	lembrando que, neste caso, o meio é o osso.\par
+	Assim, a dose absorvida pelo osso será
+	$$
+	D = 0,00876\cdot185\cdot0,6076 = 0,9813\unit{J/kg}
+	$$
+    
+    
+\begin{exercicio}[blue]
+  Calcule a dose equivalente nas mãos e na face de um trabalhador que, nas suas atividades profissionais,
+  recebeu, nas duas regiões, respectivamente, as doses {\bf absorvidas} $0,22$ e $0,045\unit{mGy}$. Para 
+  isso suponha que a radiação incidente no trabalhador é constituída de raios gama (na mão) e nêutrons
+  com energia média de $1\unit{MeV}$.
+\end{exercicio}
+
+  A dose equivalente é dada por $H_T = \sum_R w_R D_R$, onde $w_R = 1$ para a radiação gama e $12,5$ para
+nêutrons (média); $D_R$ é a dose absorvida no órgão $R$:
+  $$
+  H_T = 1\cdot 0,22 + 12,5\cdot 0,045 = 0,7825\unit{mSv}
+  $$
+  
+
+{\bf obs.: Não deu tempo de passar o último exercício a limpo. Enviá-lo-ei por e-mail no dia seguinte.}
+    
+\end{document}

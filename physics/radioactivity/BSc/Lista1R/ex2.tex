@@ -1,0 +1,80 @@
+\begin{exercicio}[blue]
+	O $\el{210}{}{Po}{}{}$ com atividade $2\,\mathrm{MBq}$ decai por desintegração alfa  (meia-vida de
+$138,4\,\mathrm{dias}$).
+
+	a) Mostre que esse decaimento é possível e que decaimentos com emissão de nêutrons ou prótons não
+	são possíveis para esse nuclídeo.
+
+	b) Qual a atividade em $\mu Ci$ para essa fonte?
+
+	c) Qual a massa da amostra de Polônio-210?
+\end{exercicio}
+
+	{\tt (a)} Para mostrarmos que uma reação de desintegração é possível devemos ter a energia dos
+	reagentes maior que a dos produtos. Ou, em outras palavras, devemos ter uma energia de desintegração
+	positiva. Vejamos para cada uma das reações:
+	$$
+	\el{210}{84}{Po}{}{}\,\to\,\el{4}{2}{He}{2+}{}\,+\,\el{206}{82}{Pb}{}{}\,+\,Q
+	$$
+
+	Das tabelas (referência \cite{serway}), para o decaimento alfa
+	\begin{eqnarray*} 
+	\mathrm{m(Po)}	&=& 209,982\,848\,\mathrm{u}	\\
+	\mathrm{m(Pb)} 	&=& 205,974\,440\,\mathrm{u}	\\
+	\mathrm{m(He)}	&=&   4,002\,602\,\mathrm{u}
+	\end{eqnarray*}
+
+	Então $Q/c^2 = \mathrm{m(Po)-m(He)-m(Pb)}=0,005\,806\,\mathrm{u} > 0$ e, portanto esta reação é 
+possível\footnote{Isto não garante que ela ocorra, mas lhe dá a possibilidade.}. 
+
+	Já para o decaimento com emissão de nêutron
+	$$
+	\el{210}{84}{Po}{}{}\,\to\,\el{1}{0}{n}{0}{}\,+\,\el{209}{84}{Po}{}{}\,+\,Q
+	$$
+
+	\begin{eqnarray*}
+	\mathrm{m(n)}		&=&   1,008\,665\,\mathrm{u} 	\\
+	\mathrm{m(^{209}Po}	&=& 208,982\,405\,\mathrm{u}  
+	\end{eqnarray*}
+
+	$$
+	{Q\over c^2} = \mathrm{m(^{210}Po)-m(n)-m(^{209}Po)} = -0,008\,222 < 0
+	$$
+
+	E a reação não é possível. Equivalentemente, 
+
+	$$
+	\el{210}{84}{Po}{}{}\,\to\,\el{1}{1}{p}{+}{}\,+\,\el{209}{83}{Bi}{}{}\,+\,\mathrm{u}
+	$$
+
+	\begin{eqnarray*}
+	\mathrm{m(p^+)}	&=&   1,007\,276\,\mathrm{u}	\\
+	\mathrm{m(Bi)}	&=& 208,980\,374\,\mathrm{u}	
+	\end{eqnarray*}
+
+	$$
+	{Q\over c^2} = \mathrm{m(Po)-m(p)-m(Bi)} =  -0,004\,802\,\mathrm{u} < 0 
+	$$
+
+	A equação, mais uma vez, não é possível.
+
+	{\tt (b)} Sabemos que $1\,\mathrm{Ci} = 1,7\times10^{10}\,\mathrm{Bq}$ e, assim, 
+$2\times10^6\,\mathrm{Bq} = 54,054\,\mathrm{\mu Ci}$.
+
+	{\tt (c)} A atividade do núcleo e a quantidade em que ocorre relacionam-se por $A=\lambda N$,
+sendo $A$ a atividade, $\lambda$ a constante de decaimento e $N$ o número de núcleos. Assim, no início
+da contagem do tempo, quando a atividade do Polônio-210 era $2\,\mathrm{MBa}$, o número de átomos (e,
+consequentemente, de núcleos) era
+	$$
+	N = {A\over\lambda} = {A T_{1/2}\over\ln 2} = 3,4502\times10^{13}
+	$$
+
+	Assim, como em um mol ($6,022\times10^{23}$) temos M\footnote{A massa atômica.} gramas do 
+elemento, concluímos que a massa de Polônio-210 no ínicio de nosso experimento era de
+	$$
+	\mathrm{m(Po)} = 3,4502\times10^{13}\cdot{\mathrm{1\,mol(Po)}\over6,022\times10^{23}}\cdot 
+		{209,982\,848\,\mathrm{g}\over 1\,mol(Po)} = 0,012\,031\,\mathrm{\mu g}
+	$$
+	
+
+	

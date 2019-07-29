@@ -1,0 +1,209 @@
+\documentclass[a4paper,12pt]{article}
+	\usepackage[brazil]{babel}
+	\usepackage[latin1]{inputenc}
+	\usepackage[T1]{fontenc}
+	\usepackage{indentfirst}
+	\usepackage{geometry}
+	\usepackage{amsmath}
+	\usepackage{SIunits}
+	\usepackage{graphicx}
+	\usepackage{fancyhdr}
+	
+		\pagestyle{fancy}
+	\fancyhead{}
+	\chead{Ivan Ramos Pagnossin}
+
+
+	\newcommand\foreign[1]		{\textsl{#1}}
+	\newcommand\novotermo[1]	{\textbf{#1}}
+	\newcommand\enfase[1]			{\textit{#1}}
+	\newcommand\ie						{\textsl{i.e.}}
+	\newcommand\eg						{\textsl{e.g.}}
+	\newcommand\etal					{\textsl{et al}}
+	\newcommand\etc						{\textsl{etc}}
+	\newcommand\vetor[1]			{\ensuremath{\boldsymbol{#1}}}	
+\begin{document}
+
+	A teoria da \novotermo{ionização por impacto} tem uma longa história. O propósito principal é determinar o coeficiente de ionização $\alpha(E)$ de elétrons e buracos em função do campo elétrico proporcional à probabilidade de um determinado portador, quando submetido a um campo elétrico, adquirir energia superior a um dado valor (comumente conhecido \foreign{threshold}) e tornar-se capaz de ionizar elétrons ligados. As primeiras tentativas de se calcular $\alpha(E)$ microscopicamente foram os modelos de Wolff e de Schockley para altos e baixos campos elétricos, respectivamente.
+
+	Este fenômeno é o principal mecanismo de \novotermo{ruptura} em junções semicondutoras pouco dopadas pois ele impõe limites à tensão reversa aplicada em diodos, à tensão coletor-base em transistores bipolares e à tensão de dreno em \textsc{mesfet}s e \textsc{mosfet}s. Além disso, a multiplicação de portadores por avalanche (outro nome para ionização por impacto) vem sendo utilizada na confecção de fotodetectores a avalanche, \textsc{hemt}s (\foreign{high electron mobility transistor}) e diodos zener.
+
+	\section{Introdução}
+		
+	Ao polarizamos reversamente uma junção pn altamente dopada, o perfil de potencial induzido nas bandas de condução e de valência favorece o aumento da separação energética entre o topo da banda de valência no material p ($\epsilon_{vp}$) e o fundo da banda de condução na região n ($\epsilon_{cn}$),	conforme ilustra a figura~\ref{fig:reverse-bias}. Quando esta tensão de polarização reversa é suficientemente intensa, as energias dos estados livres na banda de condução da região n torna-se menor que as dos estados ocupados na banda de valência da região p. Isto favorece o tunelamento de portadores minoritários através da região de depleção e, conseqüentemente, o incremento na corrente elétrica e na concentração de portadores majoritários em ambas as regiões: É o chamado efeito Zener.
+	
+	Mas em 1953, McKay \etal~\cite{mckay} descobriram um novo mecanismo de ruptura, observável sob diferentes condições de dopagem e de tensão aplicada. Este fenômeno, denominado \novotermo{avalanche}, é o análogo em sólidos à então conhecida ruptura Townsend nos gases. A grande diferença entre este mecanismo e o efeito Zener é que, embora todos acresçam enormemente a corrente que percorre a junção, somente a avalanche é caracterizada pela multiplicação de portadores.
+		
+		\begin{figure}[t]
+			\centering
+			\resizebox{0.6\textwidth}{!}{\includegraphics{reverse-bias}}
+			\caption{\footnotesize\label{fig:reverse-bias} (a) A multiplicação de portadores causada por um elétron: Forma-se o par elétron-buraco e a quantidade de portadores após este processo passa a ser três vezes maior que a inicial. (b) A multiplicação sucessiva de elétrons e buracos leva a um processo de avalanche que eleva rapidamente a corrente elétrica. Por questão de clareza, somente uma ionização causada por um buraco foi mostrada.}
+		\end{figure}
+		
+	\section{A multiplicação de portadores}
+	
+	Uma aproximação válida e já bastante difundida é a de que todo o potencial aplicado sobre uma junção pn recai sobre a região de depleção, \ie, o campo elétrico aplicado sobre uma junção pn é apreciável somente na região de depleção. Sabe-se que a largura desta região é proporcional à raiz quadrada da diferença de potencial aplicada, enquanto o campo elétrico varia linearmente com ela. Assim, ao acrescermos a diferença de potencial sobre a junção, o alargamento da região de depleção não é capaz de contrabalançar completamente o incremento no campo elétrico. Decorre daí que haverá um aumento na intensidade do campo elétrico em todos os pontos da região de depleção.
+	
+	Sob a influência deste campo $\vetor E$, os portadores são arrastados através da região de depleção com velocidade $v_d$ dada por $\mu\vetor E$, onde $\mu$ é a mobilidade do portador. Caso a energia cinética adquirida por estes portadores torne-se suficientemente elevada, eles adquirem a possibilidade de ionizar os centros de espalhamento do cristal, levando elétrons (buracos) da banda de valência (condução) para a de condução (valência), ou seja, formando pares elétron-buraco (ou elétron-lacuna). Por esta forma, cada elétron ionizante produz dois novos portadores: um outro elétron (na banda de condução) e seu respectivo buraco (valência). Portanto, este processo está baseado na transferência de momento através da colisão de portadores com impurezas da rede, o que explica o nome ionização por impacto.
+		
+	\subsection{Energia de ionização}
+	
+	Se nesta colisão a energia e o momento se conservarem, são válidas as seguintes expressões:
+	\begin{equation}\label{eq:conserv}
+	\frac{1}{2}m_e^* v_1^2 = \varepsilon_g + m_e^* v_{2e}^2 + \frac{1}{2}m_h^*v_{2h}^* \quad\text{e}\quad
+		m_e^*v_1 = 2m_e^* v_{2e} + m_h^*v_{2h},
+	\end{equation}
+	onde $m_e^*$ e $m_h^*$ são as massas efetivas do elétron e do buraco, respectivamente; $v_1$ e $v_2$ representam as velocidades inicial e final e os índices $e$ e $h$ referem-se aos elétrons e buracos (\foreign{holes}); $\epsilon_g$ é o \foreign{gap} do material semicondutor. Fazendo (por simplicidade) $m_e^* = m_h^*$ e que $v_{2e} = v_{2h}$, as equações acima se simplificam e obtemos a relação
+	\begin{equation}\label{eq:K1}
+	K_1 \doteq \frac{1}{2}m_e^* v_1^2 = \frac{3}{2} \varepsilon_g.
+	\end{equation}
+	
+	Então, se $K_1$ for a energia cinética mínima para que o processo de avalanche ocorra, então podemos ver que esta condição está intimamente ligada com o \foreign{gap} do material. Nada mais justo: Quanto maior o \foreign{gap}, mais energia o portador precisa adquirir para poder promover a ionização de um elétron na banda de valência.
+	
+	É instrutivo notar que, embora extremamente simples, este modelo dá uma estimativa bastante razoável da chamada energia de ionização ($E_I$). De fato, modelos mais complexos concluem que, para materiais de \foreign{gap} direto e bandas parabólicas,
+	$$
+	E_I = \frac{1+ 2\phi}{1+\phi}\varepsilon_g^\Gamma,
+	$$
+	onde $\phi=m_e^\Gamma/m_h$ e $\varepsilon_g^\Gamma$ é o \foreign{gap} no ponto $\Gamma$ da primeira zona de Brillouin. Perceba que se fizermos $E_I$ equivalente a $K_1$ e $m_e = m_h$, a equação acima reduz-se para $E_I=\tfrac{3}{2}\varepsilon_g^\Gamma$, reproduzindo o resultado obtido classicamente.
+
+	Apesar disso, é importante ressaltar que, ao escrevermos $\varepsilon_g$ na equação~\eqref{eq:conserv}, estamos dizendo que somente transição banda de valência para banda de condução contribui para a avalanche, o que não é verdade. De fato, embora a grande maioria dos trabalhos sobre ionização por impacto limite-se à esta transição, recentemente vêm surgindo artigos sobre a influência de outros estados, como os centros profundos~\cite{kang}.
+
+	\subsection{Tensão de ruptura}
+
+	A ruptura ocorre para campos elétricos suficientemente intensos ou, equivalentemente, para tensões suficientemente altas. A tensão de ruptura ($V_B$), a partir da qual ocorre a multiplicação de portadores, pode ser encontrada (em primeira aproximação), exigindo que o campo elétrico correspondente na região de depleção seja tal que, ao longo de apenas \textbf{um} caminho livre médio ($\ell$), o elétron (ou buraco) adquira energia cinética igual ou superior ao \foreign{gap} do material. Ou seja, durante um percurso médio isento de colisões, o elétron (ou buraco) deve adquirir energia suficiente para transferí-la, por colisão, a um elétron ligado ao seu sítio de impureza. Matematicamente, podemos escrever
+	$$
+	eE_c\ell = \varepsilon_g	\quad\Rightarrow\quad E_c = \frac{\varepsilon_g}{e\ell},
+	$$
+	onde $e$ é a carga do elétron e $E_c$ é o campo elétrico crítico, a partir do qual ocorre a ruptura.
+	
+	O campo elétrico não é uniforme na região de depleção e, por isso, é conveniente utilizar seu valor máximo, que ocorre na junção metalúrgica e é dado por $2 V_r/w$, onde $w^2=2\epsilon V_{br}(1/N_a + 1/N_d)/e$ é a largura da região de depleção. Levando estes conhecimentos à equação anterior, encontamos~\cite{streetman}
+	$$
+	V_r = \frac{\epsilon\varepsilon_g^2}{2e^3\ell^2}\left( \frac{1}{N_a} + \frac{1}{N_d} \right).
+	$$
+	
+	Esta aproximação, embora simples, ilustra dois pontos importantes: Primeiro, que a tensão de ruptura é maior para materiais com \foreign{gaps} maiores. Isto é intuitivo e já comentamos: Quanto maior o \foreign{gap} do material, mais energia deve adquirir um portador para que possa ionizar um elétron na banda de valência; Segundo, que esta tensão é determinada pela região de \textbf{menor} concentração de impurezas. Isto por que quanto menor a concentração de impurezas, maior é o livre caminho médio e, portanto, mais fácil é de o elétron (ou buraco) adquirir a energia necessária para a ionização.\footnote{Lembre-se: Os espalhamentos de um portador em um cristal decorrem da colisão deles com as \textbf{impurezas} da rede, não com os sitios dela.}
+		
+	O gráfico na figura~\ref{fig:Vbr} ilustra alguns resultados experimentais da tensão de ruptura em função da dopagem. Vemos que a aproximação acima, na qual $V_r \propto 1/N$, é válida para uma grande gama de valores de dopagens. Note também que para dopagens acima de \unit{\power{10}{17}}{\centi\rpcubic\metre} o Zener passa a dominar o processo de ruptura e a expressão acima deixa de ser válida.
+		
+	\begin{figure}[t]
+		\centering
+		\resizebox{0.6\textwidth}{!}{\includegraphics{Vbr}}
+		\caption{\footnotesize\label{fig:Vbr}A tensão de ruptura em função da dopagem em alguns materiais semicondutores comuns.}
+	\end{figure}
+		
+	\section{Coeficiente ou taxa de ionização}
+	
+	Como vimos, os portadores, acelerados pelo intenso campo elétrico, causam inúmeras ionizações ao cruzarem a região de depleção. Por este motivo define-se o chamado coeficiente ou taxa\footnote{O termo ionização não é muito correto.} de ionização, definido como o número de ionizações por unidade de distância percorrida. $\alpha(E)$ é diferente para diferentes portadores (define-se $\alpha_e$ para elétrons e $\alpha_h$ para buracos) e depende tanto do campo elétrico aplicado como do material.
+	
+	O coeficiente de ionização é um dos pontos principais da teoria de ionização por impacto, pois contém todos os conceitos necessários, como o fator de multiplicação, a probabilidade de colisão e as condições de ruptura (num nível de complexidade e acurácia superior ao que descrevemos até agora), \etc.
+	
+	\subsection{Fator de multiplicação}
+	
+	O fator de multiplicação $M_{e,h}$ (os índices $e$ e $h$ referem-se a elétrons e buracos) é definido como a razão entre as quantidades de portadores finais e iniciais, ou seja,
+	$$
+	M_n = \frac{n_{nf}}{n_{ni}} \equiv \frac{I_n}{I_{n0}} \quad\text{e}\quad
+	M_p = \frac{n_{pf}}{n_{pi}} \equiv \frac{I_p}{I_{p0}},
+	$$
+	onde $n_{ni}$ ($n_{pi}$) é a concentração de elétrons (buracos) inicial e $n_{nf}$ ($n_{pf}$), final. $I_n$ ($I_p$) é a corrente de elétrons (buracos) final e $I_{n0}$ ($I_{p0}$), final.
+	
+	Considere que $P$ é a probabilidade de um elétron ionizar algum elétron ao percorrer toda a região de depleção. Se $n_{ni}$ elétrons entram pelo material p na região de depleção (em direção ao material n), haverá $n_{ni}P$ ionizações e, conseqüentemente, igual número de pares elétron-buraco. Então, após a primeira colisão teremos $n_{ni}(1 + P)$ elétrons. O par elétron-buraco gerado, por sua vez, é acelerado pelo campo elétrico (o elétron, em direção ao material n; e o buraco, em direção ao material p) e percorre uma distância \textbf{efetiva} $w$ (largura da região de depleção): Por exemplo, se um tal par for gerado no centro da região, o buraco se deslocará $w/2$ para a região p e o elétron, $w/2$ para a região n. Então, a probabilidade de haver uma nova ionização por este para é também $P$. Assim, para $n_{ni}P$ pares secundários haverá $(n_{ni}P)P$ ionizações, portanto, $n_{ni}P^2$ pares terciários. Efetuando este procedimento indefinidamente obtemos
+	$$
+	n_\text{nf} = n_{ni} ( 1 + P + P^2 + P^3 + \cdots)
+	$$
+	e o fator de multiplicação neste modelo será 
+	$$
+	M_n = \frac{n_\text{nf}}{n_\text{ni}} = 1 + P + P^2 + P^3 + \cdots = \frac{1}{1-P}.
+	$$
+	
+	Note que desconsideramos qualquer recombinação de portadores e que a colisão é $100\%$ eficiente em produzir pares elétron-buraco. Procedimento idêntico pode ser executado para buracos.
+	
+	\subsection{Coeficientes de ionização distintos}
+
+	Estamos agora em condições de obter uma condição melhor da ionização por impacto: Considere que $I_{p0}$ é a corrente que incide no lado p da região de depleção (posição $x=0$). Se o campo elétrico induzido na região de depleção é suficientemente intenso para que o processo de avalanche ocorra, a corrente de buracos cresce ao longo da região de depleção até atingir seu valor máximo em $w$: $I_{p} = M_p I_{p0}$, onde $M_p$ é o fator de multiplicação dos buracos. Similarmente, a corrente de elétrons crescerá desde $x=0w$ até $0$ e a corrente total, constante no estado estacionário, será simplesmente a soma das contribuições de cada um dos portadores: $I= I_p + I_n$.
+	
+	O incremento na corrente de buracos em um ponto $x$ qualquer da região de depleção é dado pelo número de pares elétron-buraco gerados no incremento $dx$, ou seja,
+	$$
+	d\left(\frac{I_p}{e}\right) = \left(\frac{I_p}{e}\right)\alpha_p dx + \left(\frac{I_n}{e}\right)\alpha_n dx,
+	$$
+	ou ainda $dI_p/dx - (\alpha_p-\alpha_n) = I_p  \alpha_n I$, cuja solução é\footnote{Equações da forma $\dot y + A y = B$ têm solução $y=\left(\int_0^x B\exp(\int_0^\lambda A d\lambda) + C\right)/\exp(\int_0^\lambda A d\lambda)$.}
+	$$
+	\frac{I_p(x)}{I} = \frac{\tfrac{1}{M_p} + \int_0^x \alpha_n\exp\left[ -\int_0^x (\alpha_p - \alpha_n) d\lambda \right] dx} {\exp\left[ -\int_0^x (\alpha_p - \alpha_n) d\lambda \right]},
+	$$
+	lembrando que $M_p=I_p/I_{p0}$. Trabalhando os termos desta equação nós concluimos que
+	$$
+	1- \frac{1}{M_p} = \int\limits_0^w \alpha_p \exp\left[ \int_0^x (\alpha_p - \alpha_n) d\lambda \right] dx.
+	$$
+	
+	Expressão análoga pode ser obtida para a corrente de elétrons. Ao caracterizarmos a ruptura como a situação na qual o fator de multiplicação tende ao infinito (ou seja, a probabilidade $P$ de ocorrer a ionização ao longo da região de depleção tender à unidade), chegamos à condição de ruptura para buracos:
+	\begin{equation}\label{eq:ruptura}
+	1 = \int\limits_0^w \alpha_p \exp\left[ \int_0^x (\alpha_p - \alpha_n) d\lambda \right] dx, \quad\text{e}\quad
+	1 = \int\limits_0^w \alpha_n \exp\left[ \int_x^w (\alpha_n - \alpha_p) d\lambda \right] dx
+	\end{equation}
+	para elétrons. Estas duas condições são equivalentes, o que significa que a condição de ruptura depende apenas da região de depleção, e não do tipo de portador que inicia o processo de avalanche. Observe que, para $\alpha_e=\alpha_p$, como no GaP e no GaAs, obtemos
+	$$
+	1 = \int\limits_0^w \alpha_p dx \quad\text{e}\quad
+	1 = \int\limits_0^w \alpha_n dx.
+	$$
+	
+	Para utilizarmos as equações~\eqref{eq:ruptura}, é necessário conhecermos a dependência de $\alpha_e$ e $\alpha_p$ com o campo elétrico $E$. Há vários modelos para isto e os mais largamente utilizados resultam numa expressão da forma
+	$$
+	\alpha_{e,p} = A\exp\left[ -\left(B/E(x)\right)^m \right],
+	$$
+	onde $E(x)$ é o campo elétrico na posição $x$ da região de depleção e $A$, $B$ e $m$ são constantes ajustadas para melhor atender aos resultados experimentais. A justificativa física para esta expressão ocorreu primeiramente através dos modelos de Wolff e Shockley para altos e baixos campos elétricos, respecitvamente. Procurando fazer a ponte entre estes dois modelos, Baraff realizou aproximações numéricas com base na equação de Boltzmann para obter a dependência de $\alpha_{e,h}$. Neste modelo, foi considerado que os pares elétron-buraco responsáveis pela avalanche são criados através da ionização por impacto e que o principal mecanismo de perda de energia é através da emissão de fônons óptivos. Neste modelo, $\alpha$ depende da energia de ionização ($\varepsilon_I$), do livre caminho médio dos fônons ($\lambda$) e da energia média perdida por fônon, $\varepsilon_p$. Estes são os três parâmetros desta teoria e os resultados obtidos por Baraff concordaram com os de Wolff e Schockley.
+		
+	O modelo de Baraff foi largamente utilizado nos primeiros estudos da avalanche e com base nele e em outros trabalhos da época, Okuto e Crowell obtiveram uma forma fechada para $\alpha$ que concordasse com os resultados numéricos de Baraff em baixos campos e previam valores corretos para altos campos. A expressão obtida foi
+	$$
+	\alpha = \frac{1}{\lambda y} \exp\left\{\left( \frac{a}{r}\right)^b - \left[ \left(\frac{a}{r}\right)^{2b} + y^2 \right]^{1/2} \right\},
+	$$
+	onde $r=E_p/E_I$, $y=E_I/\left[e\lambda E(x)\right]$; $a=0,262$, $b=1,14$ e o caminho livre médio dos fônons e a energia média perdida por fônon relacionam-se pela expressão~\cite{hur} $\lambda/\lambda_0 = E_p/E_p^0=\tanh\left[E_p^0/\left( 2k_BT \right)\right]$, onde $\lambda_0$ e $E_p^0$ são o livre caminho médio e a energia média perdida por fônon a \unit{0}{\kelvin}.
+	
+	A partir destes resultados é possível determinar a tensão de ruptura, o campo elétrico máximo e a largura da região ativa.
+	
+	\section{Influência da temperatura}
+	
+	Basicamente, há dois efeitos decorrentes das variações de temperatura: (i) a tensão de ruptura e (ii) a corrente de fundo aumentam com o crescimento da temperatura: À medida que a temperatura cresce, mais e mais energia é passada para a rede (absorvida por fônons). Este aumento na quantidade de fônons acresce a taxa de espalhamento e, por conseguinte, reduz o caminho livre médio. Isto siginfica que os elétrons e buracos precisarão ganhar energia suficiente para promover a transição banda-banda num espaço menor, ou seja, será necessário um campo elétrico maior e, conseqüentemente, um potencial maior (lembre-se de que o aumento na largura da região de depleção não é suficiente para contrabalançar o aumento no campo elétrico).
+	
+	Quanto ao item (ii), a corrente de fundo (ou no escuro) a altas temperaturas é determinada pela corrente de difusão na região neutra, que possui uma dependência $\exp(-E_g/k_BT)$, o que explica o aumento na corrente.
+	
+	\section{Ionização por impacto antecipada}
+	
+	A velocidade intrínseca de operação de um fotodiodo de avalanche é limitada pela razão com a qual a multiplicação por avalanche cresce ou reduz na região de altos campos elétricos. Microscopicamente, este processo é governado pela velocidade dos portadores, pela distância que eles podem percorrer para ionizar e pela estrutura da ionização, que determina o fator de multiplicação final. Trata-se de um fenômeno estocástico e, por isso, é conveniente falar em termos de valores médios de fator de multiplicação e corrente. Alguns trabalhos mostram como calcular a resposta em freqüência da corrente de avalanche considerando (i) que os portadores sempre viajam em sua velocidade de arrasto de saturação na região de altos campos e (ii) que a multiplicação possa ser descrita pelos coeficientes de ionização dependentes apenas do campo elétrico local.
+		
+	Em fotodetctores de avalanche com regiões de avalanche pequenas, esta última suposição não é válida por que a chamada zona morta de ionização, na qual os portadores recém-gerados entram em equilíbrio com o campo elétrico, torna-se uma significante parcela da região de ionização. É conhecido que a localização espacial resultante da ionização reduz a indeterminância do processo de multiplicação, reduzindo o ruído, o que é bom; Por outro lado, a zona morta de ionização também reduz a velocidade do processo de avalanche por que a ionização é adiada para o final da trajetória do portador na região de ionização. Assim, o número de vezes que um portador pode ionizar torna-se limitado, o que não é bom. Acredita-se que este último efeito domina o anterior.
+	
+	Apesar disso, simulações de Monte Carlo recentes prevêem que, em altos campos elétricos (necessários para a multiplicação de portadores em reduzidas regiões de ionização) e quando os efeitos da zona morta de ionização são significantes, os portadores ionizados precocemente (ainda na zona morta de ionização) atingem os eventos de ionização com velocidades consideravelmente superiores que a de saturação. Espera-se que este efeito, já verificado teoricamente por vários autores, possa compensar o efeito negativo da zona morta de ionização, descrito no parágrafo anterior. 
+	
+	Entrementes, o mecanismo físico por trás deste fenômeno é ainda desconhecido.
+	
+	\subsection{Modelo de Wolff}
+		
+	Sob o ponto de vista do modelo de Wolff para altos campos elétricos aplicados, a energia adquirida por um portador é gradual e uniformemente dependente da distância percorrida. Neste caso, Hambleton \etal~\cite{hambleton} obtiveram uma velocidade média $v_I$ na posição $l$ da região de ionização igual a $v_I(\infty)/(1-d/l)$, onde $v_I(\infty)$ representa a velocidade média de ionização de portadores que ionizam a distâncias muito maiores que a zona morta e $d$ é o comprimento da zona morta de ionização. Segundo a interpretação de Hambleton \etal~\cite{hambleton}, os elétrons ionizados precocemente sofrem menos espalhamento que aqueles ionizados após a zona morta, o que explicaria a melhora na velocidade desses portadores.
+	
+	\subsection{Modelo de Schockley}
+	
+	Em campos elétricos menos intensos, a suposição de Wolff de que a energia de um portador cresce linearmente com a distância percorrida deixa de ser válida. Neste caso, a energia adquirida passa por três fases (acompanhe na figura~\ref{fig:schockley}: Na região (I), o portador ganha energia linearmente com a distância (à imagem do que ocorreu na região de altos campos) até atingir uma energia média $\langle\varepsilon\langle$ (região (II)), que independe de quão longe um determinado portador precisa viajar para ionizar. Esta região é determinada por intensos processos de espalhamento e inúmeras e infrutíferas tentativas de ionização. Esta região se mantém até que o portador, ganhe abruptamente energia suficiente para provocar a ionização. Nas palavras de Schockley, ao transitar da região (II) para a (III), um portador ``sortudo'' deixa de ser espalhado (estocasticamente) e é violentamente acelerado pelo campo elétrico, mesmo quando ainda na zona morta de ionização.
+	
+	
+	\begin{figure}[t]
+		\hfill\begin{minipage}[c]{0.46\textwidth}	
+			\resizebox{\textwidth}{!}{\includegraphics{schockley1}}
+		\end{minipage}\hfill
+		\begin{minipage}[c]{0.46\textwidth}	
+			\resizebox{\textwidth}{!}{\includegraphics{schockley2}}
+		\end{minipage}
+		\caption{\footnotesize\label{fig:schockley}Energia média adquida pelos elétrons em função da distância percorrida. À esquerda, resultados de simulações numéricas da referência~\cite{hambleton} e, à direita, esquema ilustrando as três regiões do processo de ionização em baixos campos elétricos. $E_T$ é a energia necessária para que os portadores sejam capazes de ionizar outros elétrons e $l$ é o comprimento de ionização, ou seja, o espaço percorrido por um portador até que ele ionize.}
+	\end{figure}
+	
+
+	\begin{thebibliography}{99}
+		\bibitem{hambleton}	P. J. Hambleton, J. P. R. David e G. J. Rees, \textsl{Enhanced carrier velocity to early impact ionization}, J. Appl. Phys. \textbf{95}, 3561 (2004).
+		\bibitem{hur}	J. H. Hur, C. W. Myles e M. A. Gundersen, \textsl{Avalanche breakdown in pn AlGaAs/GaAs heterjunctions}, J. Appl. Phys. \textbf{67}, 6917 (1990).
+		\bibitem{hauser} J. R. Hauser, \textsl{Avalanche breakdown voltages for III-V semiconductors}, Appl. Phys. Lett \textbf{33(4)}, 341 (1978).
+		\bibitem{kang}	S. Kang e C. W. Myles, \textsl{Effect of deep level impact ionization on avalanche breakdown in semiconductor pn junctions}, Phys. Stat. Sol. \textbf{181}, 219 (2000).
+		\bibitem{wood}	D. Wood, \textsl{Optoelectronic semiconductor devices}, Prentice Hall, 1994.
+		\bibitem{sze}	S. M. Sze, \textsl{Physics of semiconductor devices}, John Wiley \& Sons, 1981.
+		\bibitem{streetman}	B. G. Streetman, \textsl{Solid state electronic devices}, Prentice Hall, 1980.
+		\bibitem{mckay} M. G. McKay e K. B McAfee, \textsl{Electron multiplication in silicon and germanium}, Phys. Rev. \textbf{91}, 1079 (1953).
+	\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,350 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 6 de Mecânica Quântica}
+\author { Ivan Ramos Pagnossin }
+\date { 01 de Agosto de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+
+{\bf 1.}
+{\it	O operador $\mathcal{A}$ representa uma observável física qualquer. Mostramos que
+	\begin{equation}
+	{d\over dt}<\mathcal{A}>={i\over\hbar}<[\mathcal{H},\mathcal{A}]>+<{\partial\mathcal{A}\over\partial t}>
+	\end{equation}
+
+	A partir deste resultado, mostre que, para uma partícula de massa $m$ em um potencial $V(x)$,
+
+	(a) $	{d\over dx}<x>={1\over m}<p_x>		$
+
+	(b) $	{d\over dx}<p_x>=-<{dV\over dx}>	$
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Vejamos primeiramente o comutador da Hamiltoniana com o operador $x$:
+	$$
+	[\mathcal{H},x]=[\mathcal{T}+\mathcal{V},x]=[\mathcal{T},x]+[\mathcal{V},x]
+	$$
+
+	Para irmos além é preciso escolhermos um ``sistema de coordenadas'', que em mecânica quântica costumamos chamar de representação. Neste caso,
+o mais simples é escolhermos a representação da posição, cujos operadores posição e momento assumem as formas $x$ e $-i\hbar {d\over dx}$ respectivamente. 
+Como conseqüência disto teremos que $\mathcal{V}$ torna-se simplesmente $V(x)$, uma função. Isto posto torna-se fácil concluir que o último colchete de
+Poisson na última equação se anula:
+	$$
+	[\mathcal{V},x]=[V(x),x]=V(x)x-xV(x)=0
+	$$ 
+	
+	E obviamente teremos
+	\begin{eqnarray}
+	[\mathcal{H},x]		&	=	&	[\mathcal{T},x]									\nonumber \\
+				&	=	&	[{p_x^2\over 2m},x]								\nonumber \\
+				&	=	&	{1\over2m}[p_x^2,x]								\nonumber \\	
+				&	=	&	-{1\over2m}([x,p_x]p_x+p_x[x,p_x])						\nonumber \\
+				&	=	&	-{1\over2m}(i\hbar p_x+i\hbar p_x)						\nonumber \\
+				&	=	&	-{i\over m}p_x									\nonumber \\
+	<[\mathcal{H},x]>	&	=	&	-{i\over m}<\psi^*(x)|p_x|\psi(x)>						\nonumber \\
+				&	=	&	-{i\over m}<p_x>								\nonumber
+	\end{eqnarray}
+
+	Note que não utilizamos a forma representativa de $p_x$ para chegarmos a esta conclusão. De fato, isto apenas foi preciso para mostrar que 
+$[\mathcal{V},x]=0$ e nada mais.
+	Pelo resultado que acabamos de chegar, e notando que ${\partial x\over\partial t}=0$, concluimos rapidamente, por $(1)$, que
+	$$
+	{d\over dx}<x>={1\over m}<p_x>
+	$$
+
+	Já para o caso do momento o resultado não é tão imediato:
+	$$
+	[\mathcal{H},p_x]=[\mathcal{T}+\mathcal{V},p_x]=[\mathcal{T},p_x]+[\mathcal{V},p_x]
+	$$
+
+	Agora vale a pena vermos o primeiro colchete:
+
+	\begin{eqnarray}
+	[\mathcal{V},p_x]	&	=	&	[{p^2_x\over2m},p_x]			\nonumber \\
+				&	=	&	{1\over2m}[p_x^2,p_x]			\nonumber \\
+				&	=	&	{1\over2m}([p_x,p_x]p_x+p_x[p_x,p_x])	\nonumber \\
+				&	=	&	0					\nonumber 
+	\end{eqnarray}
+
+	No caso do segundo colchete é preciso utilizarmos a forma representativa. Neste caso é prudente aplicarmos o operador comutador a uma função
+qualquer, digamos $\phi(x)$:
+	\begin{eqnarray}
+	[\mathcal{V},p_x]\phi(x)	&	=	&	\mathcal{V}p_x\phi-p_x\mathcal{V}\phi					\nonumber \\
+					&	=	&	V(x)(-i\hbar{d\phi\over dx})+i\hbar{d\over dx}[V(x)\phi(x)]		\nonumber \\
+					&	=	&	i\hbar[-V(x){d\phi\over dx}+V(x){d\phi\over dx}+\phi(x){dV\over dx}]	\nonumber \\
+					&	=	&	i\hbar\phi(x){dV\over dx}						\nonumber
+	\end{eqnarray}
+
+	Deste modo, $[\mathcal{V},p_x]=i\hbar{dV\over dx}$ e, como no item anterior, $<[\mathcal{V},p_x]>=i\hbar<{dV\over dx}>$. Além disso, também neste
+caso temos ${\partial p_x\over\partial t}=0$, resultando
+	$$
+	{d\over dx}<p_x>=-<{dV\over dx}>
+	$$	
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 2.}
+{\it	Usando a expressão $(1)$, defina constante de movimento em mecânica quântica
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Uma grandeza $\mathcal{A}$ é dita constante de movimento na mecânica quântica se, conforme a expressão $(1)$,
+	$$
+	{d\over dt}<\mathcal{A}>=0
+	$$
+
+	Para isto, é preciso que o operador $\mathcal{A}$ satisfaça $<{\partial\mathcal{A}\over\partial t}>=0$ e $<[\mathcal{H},\mathcal{A}]>=0$. Assim, 
+de modo inverso, definimos uma constante de movimento como sendo aquela representada por um operador que satisfaça a estas duas exigências.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 3.}
+{\it	Defina ``bom número quântico''. Por que a energia é um bom número quântico para o oscilador harmônico simples e o que isto significa de acordo com 
+	a teoria da medida em mecânica quântica?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Um bom número quântico é aquele que, além de ser uma constante de movimento, também mantém-se fixo com o decorrer do tempo. Em expressões, um bom
+número quântico exige ainda que seu respectivo operador satisfaça ${\partial\mathcal{A}\over\partial t}=0$ (Note que aqui não há os ``brackets'', indicando
+que $\mathcal{A}$ não é só invariante na média, mas também instantânemanete).
+	No caso do oscilador harmônico simples, a energia é um bom número quântico pois a Hamiltoniana, que é o operador correspondente à energia, não
+depende explicitamente do tempo, ou seja, ${\partial\mathcal{H}\over\partial t}=0$. Para a teoria da medida isto é bastante conveniente pois uma vez medida
+a energia, esta não se altera com o tempo.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 4.}
+{\it	Considere o estado fundamental de um oscilador harmônico simples unidimensional. Mostre que, para este estado, $\Delta x\Delta p={\hbar\over2}$.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	As soluções da equação de Schrödinger no estado estacionário para o oscilador harmônico são
+	$$
+	\psi_n(x)=N_nH_n(\alpha x)e^{-{\alpha^2x^2\over2}}
+	$$
+
+	com $\alpha=({mk\over\hbar^2})^{1/4}$ e $H_n(\alpha x)$ sendo as funções de Hermite. Para o estado fundamental $(n=0)$, $H_0(x)=1$ e teremos
+	$$
+	\psi_0(x)=N_0e^{-{1\over2}({mk\over\hbar^2})^{1/2}x^2}
+	$$
+
+	Como a densidade de probabilidade é $\rho(x)=|\psi_0(x)|^2=N_0^2e^{-({mk\over\hbar^2})^{1/2}x^2}$, podemos estimar um $\Delta x$ como sendo o valor 
+de $x$ capaz de levar o argumento da exponencial a $-1/2$:
+	$$
+	({mk\over\hbar^2})^{1/2}x_0^2={1\over2}	\Rightarrow	x_0^2\approx\Delta x=({\hbar^2\over4mk})^{1/2}	\Rightarrow	\Delta x=({\hbar^2\over4mk})^{1/4}
+	$$
+
+	Por outro lado, a solução para a mesma equação, no mesmo estado, mas como função do momento pode ser obtido através da transformada de Fourier de 
+$\psi_0(x)$:
+	$$
+	\phi_0(p)={1\over\sqrt{2\pi\hbar}}\int_{-\infty}^{+\infty}\psi_0(x)e^{-{i\over\hbar}px}dx
+	$$
+
+	que resulta, após alguns cálculos não muito complicados, 
+	$$
+	\phi_0(p)=M_0e^{-{p^2\over2(mk)^{1/2}\hbar}}
+	$$
+
+	E, da mesma forma, a densidade de probabilidade sendo $\rho(p)=|\phi_0(p)|^2=M_0^2e^{-{p^2\over\sqrt{mk}\hbar}}$, vamos também estimar um $\Delta p$ como
+sendo o $p_0$ capaz de levar o argumento da exponencial $-1/2$:
+	$$
+	{p_0^2\over\sqrt{mk}\hbar}={1\over2}	\Rightarrow	p_0^2\approx\Delta p^2=\sqrt{mk\over4}\hbar	\Rightarrow	\Delta p=({mk\over4}\hbar^2)^{1/4}
+	$$
+
+	Assim, finalmente encontramos
+	$$
+	\Delta x\Delta p=({\hbar^2\over4mk})^{1/4}({mk\over4}\hbar^2)^{1/4}={\hbar\over2}
+	$$
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 5.}
+{\it	Demonstre as seguintes propriedades do operador momento angular $\vec{L}$ em mecânica quântica:
+
+	(a)$[L_x,L_y]=i\hbar L_z$
+
+	(b)$[L_y,L_z]=i\hbar L_x$
+
+	(c)$[L_z,L_x]=i\hbar L_y$
+
+	(d)$[L^2,L_x]=0$
+
+	(e)$[L^2,\vec{L}]=0$
+
+	(f)$[L_y,L_x]=-i\hbar L_z$
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+	\begin{eqnarray}
+	[L_x,L_y]	&	=	&	[yp_z-zp_y,L_y]								\nonumber \\
+			&	=	&	[up_z,L_y]-[zp_y,L_y]							\nonumber \\
+			&	=	&	[yp_z,zp_x-xp_z]-[zp_y,zp_x-xp_z]					\nonumber \\
+			&	=	&	[yp_z,zp_x]-[yp_z,xp_z]-[zp_y,zp_x]+[zp_y,xp_z]				
+	\end{eqnarray}
+
+	Esta última expressão é especialmente importante pois ela nos permitirá determinar os itens $(b)$ e $(c)$ sem que tenhamos de refazer os laboriosos
+cálculos abaixo:
+	\begin{eqnarray}
+	[yp_z,zp_x]\phi		&	=	&	yp_zxp_z\phi-p_xyp_z\phi						\nonumber \\
+				&	=	&	-\hbar^2y{\partial\over\partial z}(z{\partial\phi\over\partial x})+
+							\hbar^2z{\partial\over\partial x}(y{\partial\phi\over\partial z}	\nonumber \\
+				&	=	&	\hbar^2[z({\partial y\over\partial x}{\partial\phi\over\partial z}
+							+y{\partial^2\phi\over\partial x\partial z})
+							       -y({\partial z\over\partial z}{\partial\phi\over\partial x}
+									+z{\partial^2\phi\over\partial z\partial x})]		\nonumber \\
+				&	=	&	\hbar^2(zy{\partial\phi\over\partial x\partial z}-y{\partial\phi\over\partial x}
+								+yz{\partial\phi\over\partial z\partial x})			\nonumber \\
+				&	=	&	-\hbar^2y{\partial\phi\over\partial x}					\nonumber \\
+				&	=	&	-i\hbar yp_x\phi							\nonumber 
+	\end{eqnarray}
+
+	Logo, $[yp_z,zp_x]=-i\hbar yp_x$.
+	\begin{eqnarray}
+	[yp_z,xp_z]\phi		&	=	&	yp_zxp_z\phi-xp_zyp_z\phi						\nonumber \\
+				&	=	&	-\hbar^2[y{\partial\over\partial z}(x{\partial\phi\over\partial z})
+							-x{\partial\over\partial z}({\partial\phi\over\partial z})]		\nonumber \\
+				&		&	\vdots									\nonumber \\
+				&	=	&	-\hbar^2(yx{\partial^2\phi\over\partial^2z}-xy{\partial^2\phi\over\partial^2z})	\nonumber \\
+				&	=	&	0									\nonumber 
+	\end{eqnarray}
+
+	Prosseguindo da mesma forma,
+	\begin{eqnarray}
+	[zp_y,zp_x]\phi		&	=	&	zp_yzp_x\phi-p_xzp_x\phi						\nonumber \\
+				&	=	&	-\hbar^2[z{\partial\over\partial y}(z{\partial\phi\over\partial x})
+								-z{\partial\over\partial x}(z{\partial\phi\over\partial x})]	\nonumber \\
+				&		&	\vdots									\nonumber \\
+				&	=	&	0									\nonumber
+	\end{eqnarray}
+
+	Algumas passagens foram omitidas pois não teriam outra função se não ocupar espaço e dar trabalho, visto que são imediatas, uma vez mostrado o
+caminho.
+	\begin{eqnarray}
+	[zp_y,xp_z]\phi		&	=	&	zp_yxp_z\phi-xp_zzp_y\phi						\nonumber \\
+				&	=	&	-\hbar^2[z{\partial\over\partial y}(x{\partial\phi\over\partial z})
+								-x{\partial\over\partial z}(z{\partial\phi\over\partial y})]	\nonumber \\
+				&		&	\vdots									\nonumber \\
+				&	=	&	\hbar^2x{\partial\phi\over\partial y}					\nonumber \\
+				&	=	&	i\hbar xp_y\phi								\nonumber 
+	\end{eqnarray}
+	
+	Isto é, $[zp_y,xp_z]=i\hbar xp_y$. juntando esses últimos quatro resultados na equação $(2)$ obtemos
+	\begin{eqnarray}
+	[L_x,L_y]		&	=	&	-i\hbar yp_x+i\hbar xp_y						\nonumber \\
+				&	=	&	i\hbar(xp_y-yp_x)							\nonumber \\
+				&	=	&	i\hbar L_z								\nonumber 
+	\end{eqnarray}
+
+	E finalmente demonstramos o que o exercício solicita. Quanto aos outros dois itens, encontramos
+
+	Item (b)
+	\begin{eqnarray}
+	[L_y,L_z]		&	=	&	[zp_x,xp_y]-[xp_x,yp_x]-[xp_z,xp_y]+[xp_z,yp_x]				\nonumber \\
+				&		&	\vdots									\nonumber \\
+				&	=	&	-i\hbar zp_y-0-0+i\hbar yp_z						\nonumber \\
+				&	=	&	i\hbar L_x								\nonumber 		
+	\end{eqnarray}
+
+	Item(c)
+	\begin{eqnarray}
+	[L_z,L_x]		&	=	&	[xp_y,yp_z]-[xp_y,zp_y]-[yp_x,yp_z]+[yp_x,zp_y]				\nonumber \\
+				&		&	\vdots									\nonumber \\
+				&	=	&	-i\hbar xp_z-0-0+i\hbar zp_x						\nonumber \\
+				&	=	&	i\hbar L_y								\nonumber
+	\end{eqnarray}
+	
+	Apesar das reticências indicarem os mesmos tipos de cálculos efetuados para o item (a), note que não é preciso refazê-los. Basta que comparemos
+a simetria dos colchetes de Poisson com os resultados. Por exemplo, para o item (a) encontramos
+	$$
+	[yp_z,zp_x]=-i\hbar yp_x
+	$$
+	$$
+	[yp_z,xp_z]=0
+	$$
+	$$
+	[zp_y,zp_x]=0
+	$$
+	$$
+	[zp_y,xp_z]=i\hbar xp_y
+	$$
+
+	Observe a regra: Se houver duas variáveis repetidas no colchetes, seja no índice de $p$, seja no próprio vetor posição, então o resultado é zero.
+Caso contrário, basta pegarmos a coordenada do lado esquerdo do colchete e multiplicar pelo momento do lado direito...tudo vezes $-i\hbar$. Veja que isto
+é verdade de fato, seja na primeira ou na última igualdade, pois
+	\begin{eqnarray}
+	[zp_y,xp_z]	&	=	&	-[xp_z,zp_y]				\nonumber \\
+			&	=	&	-(-i\hbar xp_y)				\nonumber \\
+			&	=	&	i\hbar xp_y				\nonumber 
+	\end{eqnarray}
+
+	Quanto ao item (d),
+	\begin{eqnarray}
+	[L^2,L_x]	&	=	&	[L_x^2+L_y^2+L_z^2,L_x]							\nonumber \\	
+			&	=	&	[L_x^2,L_x]+[L_y^2,L_x]+[L_z^2,L_x]					\nonumber \\
+			&	=	&	-[L_x,L_yL_y]-[L_x,L_zL_z]						\nonumber \\
+			&	=	&	-[L_x,L_y]L_y-L_y[L_x,L_y]-[L_x,L_z]L_z-L_z[L_x,L_z]			\nonumber \\
+			&	=	&	-i\hbar L_zL_y-i\hbar L_yL_z+i\hbar L_yL_z+i\hbar L_zL_y		\nonumber \\
+			&	=	&	0									\nonumber
+	\end{eqnarray}
+
+	Note que na penúltima passagem utilizamos o conhecimento adquirido nos itens anteriores. O próximo item é semelhante:
+	\begin{eqnarray}
+	[L^2,\vec{L}]		&	=	&	[L^2,L_x\hat{i}+L_y\hat{j}+L_z\hat{k}]				\nonumber \\
+				&	=	&	\hat{i}[L^2,L_x]+\hat{j}[L^2,L_y]+\hat{k}[L^2,L_z]		\nonumber \\
+				&	=	&	0								\nonumber
+	\end{eqnarray}
+
+	Neste último, note que usamos a simetria do sistema carteziano para concluir que $[L^2,L_x]=[L^2,L_y]=[L^2,L_z]=0$. Por fim, 
+	\begin{eqnarray}
+	[L_y,L_x]	&	=	&	L_yL_x-L_xL_y			\nonumber \\
+			&	=	&	-(L_xL_y-L_yL_x)		\nonumber \\
+			&	=	&	-[L_x,L_y]			\nonumber \\
+			&	=	&	-i\hbar L_z			\nonumber
+	\end{eqnarray}
+
+	Ufa! Esta lista deu para soar a camisa!
+	 
+	
+	 
+\end{document}
+
+
+
+
+
+

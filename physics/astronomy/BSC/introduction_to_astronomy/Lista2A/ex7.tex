@@ -1,0 +1,121 @@
+\begin{quotation}
+{\bf 7.}
+{\it 	Um planeta tem um núcleo de 		$1000\,\,\mathrm{km}$ de raio e densidade 
+$8,5\,\,\mathrm{g/cm^3}$; Um núcleo externo de 	$800\,\,\mathrm{km}$ de espessura e 
+$5,3\,\,\mathrm{g/cm^3}$; Um manto de 		$1800\,\,\mathrm{km}$ e densidade
+$3,1\,\,\mathrm{g/cm^3}$ e uma crosta de 	$20\,\,\mathrm{km}$ e densidade
+$2,6\,\,\mathrm{g/cm^3}$. {\tt (a)} Qual é a densidade média do planeta? {\tt (b)} Estime
+a pressão na interface entre o núcleo externo e o manto. {\tt (c)} Qual é a força diferencial
+gravitacional que uma lua a $80$ raios planetários, de massa $50$ vezes menor que a do planeta,
+exerce sobre pontos diametralmente opostos do planeta, tanto na linha lua-Planeta como perpendicular
+a ela? {\tt (d)} Qual a velocidade orbital da lua? {\tt (e)} Onde se encontra o baricentro do
+sistema?}
+\end{quotation}
+
+	%*******TABELA COM R_I E \RHO_I*********
+
+	{\tt (a)} A densidade média $\bar{\rho}$ do planeta é simplesmente a massa total dividida
+pelo volume deste:
+	\begin{eqnarray*}
+	\bar{\rho}	&=&{\rho_1V_1+\rho_2V_2+\rho_3V_3+\rho_4V_4\over V}	\\
+			&=&{\rho_1V_1+\rho_2V_2+\rho_3V_3\over V}+\rho_4	\\
+			&=&{4\pi[(rho_1-rho_2)r_1^3+(\rho_2-\rho_3)r_ 2^3+
+				(\rho_3-\rho_4)r_3^3]\over{{4\over3}\pi R^3}}+\rho_4 \\
+			&=&(\rho_1-\rho_2)({r_1\over R})^3+(\rho_2-\rho_3)({r_ 2\over R})^3+
+				(\rho_3-\rho_4)({r_3\over R})^3+\rho_4		\\
+			&\cong&3,4\,\,\mathrm{g/cm^3}
+	\end{eqnarray*}
+
+	{\tt (b)} A equação de equilíbrio hidrodinâmico de um planeta é
+	$$
+	{dp\over dr}=-\rho(r){Gm(r)\over r^2}
+	$$
+
+	O que pode ser resolvido facilmente reescrevendo-a como
+	$$
+	\int_0^{p_0}dp = -G\int_R^{R_0}{\rho(r)m(r)\over r^2}dr
+	$$
+
+	onde o limite inferior da primeira integral denota o fato de que a pressão na 
+superfície do planeta é muito menor que no interior dele, e $R_0$ é o raio onde se quer
+avaliar a pressão (No nosso caso $R_0=r_2$ e $p_0=p_3$). Então
+	\begin{eqnarray*}
+	p_3	&=& G\int_{r_2}^R{\rho(r)m(r)\over r^2}dr				\\
+		&=& G\int_{r_2}^{r_3}{\rho_2^2{{4\over3}\pi(r^3-r_2^3)}\over r^2}dr
+			+G\int_{r_3}^R{\rho_3^2{{4\over3}\pi(r^3-r_3^3)}\over r^2}dr	\\
+		&=& {4\over3}\pi\rho_2^2G\int_{r_2}^{r_3}{r^3-r_2^3\over r^2}dr+
+			{4\over3}\pi\rho_3^2G\int_{r_3}^R{r^3-r_3^3\over r^2}dr		\\
+		&=& {4\over3}\pi G[\rho_2^2({r_3^2\over2}+{r_2^3\over r_3}-{3\over2}r_2^2)+
+			\rho_3^2({R^2\over2}+{r_3^3\over R}-{3\over2}r_3^2)]		\\
+		&\cong& 254000\,\,\mathrm{atm} 
+	\end{eqnarray*}
+
+	{\tt (c)} A força, por unidade de massa, que a lua exerce sobre um ponto do planeta é
+simplesmente 
+	$$
+	g={F\over \delta m} = G{M\over d^2}
+	$$
+
+	onde $\delta m$ é a massa que sofre esta aceleração, $M$ a massa da lua e $d$ a distância entre
+os dois. No caso, queremos determinar diferença de aceleração dada aos elementos a $d_A=81R$ 
+(mais distante) e $d_B=79R$ (mais próximo):
+	\begin{eqnarray*}
+	g_{B}-g_{A}	&=&{mG\over R^2}({1\over79^2}-{1\over81^2})	\\
+			&=&{MG\over 50R^2}({1\over79^2}-{1\over81^2})	\\
+			&=&{4\over3}\pi R^3{\bar{\rho}G\over50R^2}({1\over79^2}-{1\over81^2})
+									\\
+			&=&{4\pi\bar{\rho}GR\over150}({1\over79^2}-{1\over81^2})
+									\\
+			&=&{4\pi\cdot3400\cdot6,67\times10^{-11}\cdot3,62\times10^6\over150}
+				({1\over79^2}-{1\over81^2})		\\
+			&\cong&5,4\times10^{-7}
+	\end{eqnarray*}
+
+	Logo, a diferencial gravitacional por unidade de massa é $0,54\,\mathrm{\mu N}$.
+
+	{\tt (d)} A velocidade orbital da lua pode ser calculada facilmente utilizando-se a
+terceira Lei de Kepler e assumindo que a órbita seja aproximadamente circular\footnote{Isto é
+importante para podermos garantir que a velocidade orbital é constante.}. Então temos
+	\begin{eqnarray*}
+	T^2	&=&{4\pi^2\over G(m+M)}a^3					\\
+		&=&{4\pi^2\over G(M/50+M)}(80R)^3				\\	
+		&=&{200\pi^2\over51{4\over3}\pi R^3\bar{\rho}G}(80R)^3		\\
+		&=&{1,024\times^8\pi\over214\cdot3,4\times10^3\cdot6,67\times10^{-11}}
+										\\
+		&=&2,08\times10^{13}\,\,\mathrm{s^2}				\\
+	T	&=&52\,\mathrm{d}20\mathrm{h}43\mathrm{m}9\mathrm{s}	
+	\end{eqnarray*}
+
+	Logo, a velocidade é
+	\begin{eqnarray*}
+	v	&=&{2\pi a\over T}={2\pi 80R\over T}={160\pi\cdot3,62\times10^6\over 4567389}	\\
+		&=&398,4\,\,\mathrm{m/s}
+	\end{eqnarray*}
+
+	{\tt (e)} Já sabemos, desde a lista anterior, que a posição de cada um, relativo ao
+centro de massa do sistema, relaciona-se com as massas dos componentes por
+	$$
+	{r_1\over r_2}={m_2\over m_1}
+	$$
+
+	Logo, se $r_1$ é a posição do planeta ($m_2=M$), $r_2$ a da lua ($m_2=M/50$) e $a=80R$
+a distância entre eles,
+	$$
+	{r_1\over a-r_2}={M/50\over M} \Rightarrow r_1=5678\,\,\mathrm{km}
+	$$
+
+	E, consequentemente, $r_2=283921,6\,\,\mathrm{km}$.
+	
+
+	
+
+	
+
+	
+	
+
+
+	
+
+
+	

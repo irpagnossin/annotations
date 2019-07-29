@@ -1,0 +1,83 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{1cm}
+\setlength{\topmargin}{0.25cm}
+\setlength{\headheight}{0.25cm}
+\setlength{\headsep}{0.25cm}
+\setlength{\topskip}{0.25cm}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\bf
+Mostre que para um operador Auto-Adjunto (mas não necessariamente
+Hermitiano) de segunda ordem $\mathcal{L}={d\over dx}[P(x){d\over dx}]+Q(x)$,
+é justo dizer que
+
+$$
+\int_a^b[v\mathcal{L}u-u\mathcal{L}v]dx=[P(x)(\dot{u}v-u\dot{v})]_a^b
+$$
+
+\sf\large
+
+\begin{picture}(5,0)
+\put(0,0){\line(1,0){5}}
+\end{picture}
+
+
+
+	A equação acima pode ser reescrita assim:
+
+$$
+\int_a^bv\mathcal{L}udx-\int_a^bu\mathcal{L}vdx=[P(x)(\dot{u}v-u\dot{v})]_a^b
+$$
+
+	Como a integral que nos interessa compôe-se de duas parcelas
+idênticas em forma (para transformar uma na outra basta trocarmos $u$ por
+$v$ e vice-versa), basta que avaliemos uma. Vejamos, primeiramente, como se
+comporta a integral $\int_a^bv\mathcal{L}udx$.
+	Aplicando a definição de operador auto-adjunto\footnote{
+$\mathcal{L}={d\over dx}[P(x){d\over dx}]+Q(x)$} a
+esta integral obtemos
+
+$$
+\int_a^bv\mathcal{L}udx=\underbrace{\int_a^bv{d\over dx}[P(x){du\over
+dx}]dx}_{(i)}+\int_a^bQ(x)uvdx
+$$
+
+	A integral $i$ pode ser resolvida integrando por partes: 
+
+\begin{eqnarray}
+(i) & = & [P(x)v{du\over dx}]_a^b-\int_a^bP(x){du\over dx}{dv\over dx}dx
+								\nonumber\\
+    & = & [P(x)v{du\over dx}]_a^b-\int_a^bP(x)\dot{u}\dot{v}dx
+							    \nonumber	 	
+\end{eqnarray}
+
+	Deste modo, é claro que
+
+$$
+\int_a^bv\mathcal{L}udx=[P(x)v\dot{u}]_a^b-\int_a^bP(x)\dot{u}\dot{v}dx+
+				\int_a^bQ(x)uvdx
+$$
+
+	Como não definimos nenhuma diferença entre $u(x)$ e $v(x)$, então
+basta que troquemos os $u$ pelos $v$ e vice-versa na equação imediatamente
+anterior para obtermos $\int_a^bu\mathcal{L}vdx$:
+
+$$
+\int_a^bu\mathcal{L}vdx=[P(x)u\dot{v}]_a^b-\int_a^bP(x)\dot{v}\dot{u}dx+
+				\int_a^bQ(x)vudx
+$$
+
+	E, finalmente, subtraindo esta daquela confirmamos o enunciado do
+exercício\footnote{\sf Por I.R.Pagnossin (i\_irp@hotmail.com)}:
+
+$$
+\int_a^b[v\mathcal{L}u-u\mathcal{L}v]dx=[P(x)(\dot{u}v-u\dot{v})]_a^b
+$$
+
+\end{document}

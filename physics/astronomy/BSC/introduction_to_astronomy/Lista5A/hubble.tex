@@ -1,0 +1,148 @@
+\begin{exercicio}[blue]
+	Na tabela \ref{tab:hubble} é dada uma lista de aglomerados de galáxias, suas distâncias -- determinadas a
+partir de métodos independentes -- e velocidades. Coloque esses dados num diagrama $v\times D$, onde $v$ é a velocidade
+e $D$ a distância. Determine a constante de proporcionalidade, conhecida como constante de Hubble ($H_0$).
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{lcc}
+		\hline
+		Agromerado	&	$D\,\mathrm{(Mpc)}$	&	$v\,\mathrm{(km/s)}$		\\
+		\hline
+		Pegasus I	&	57			&	3810				\\
+				&	69			&	3860				\\
+		Perseus		&	80			&	5430				\\
+				&	120			&	4960				\\
+		Coma		&	87			&	6657				\\
+				&	180			&	7200				\\
+		Hércules	&	158			&	10400				\\
+		Pégasus II	&	218			&	12800				\\
+		Gemini		&	450			&	23400				\\
+				&	552			&	22400				\\
+		Leo		&	460			&	19200				\\
+		Ursa Maior II	&	685			&	40400				\\
+				&	830			&	40000				\\
+		\hline
+	\end{tabular}
+	\caption{\footnotesize Distâncias e velocidades de recessão aproximadas de alguns aglomerados de galáxias.\label{tab:hubble}}
+\end{table}
+
+\end{exercicio}
+
+	Plotando os dados da tabela \ref{tab:hubble} e fazendo o ajuste de reta (fig.1) encontramos
+	$$
+	v = 48,216\cdot D+788,96\,\,\,\,\,\mathrm{[v]=km/s\,\,\,\,[D]=Mpc}
+	$$
+
+%\begin{figure}[htb]
+	%\centering
+	%\includegraphics[scale=0.5]{figuras/hubble.pdf}
+	%\label{fig:hubble}
+	%\caption{\footnotesize Resultado obtido ao plotar-se os dados da tabela \ref{tab:hubble}}
+%\end{figure}
+
+	E, portanto, a constante de Hubble para este conjunto de dados é
+	$$
+	H_0 = 48\pm 3\,\mathrm{{km/s\over Mpc}}
+	$$
+
+\begin{exercicio}[blue]
+
+	Na figura 2 são dados os espectros de $5$ aglomerados de galáxias com o espectro de comparação:
+$A$ corresponde a um comprimento de onda de $3888,52\,\mathrm{\mbox{\AA}}$; $B$ a $4471.24\,\mathrm{\mbox{\AA}}$ e
+$C$ a $5014,95\,\mathrm{\mbox{\AA}}$. As linhas $H$ e $K$ do cálcio correspondem, respectivamente, a 
+$3968,47\,\mathrm{\mbox{\AA}}$ e $3933,67\,\mathrm{\mbox{\AA}}$. Meça o {\it red-shift} $z$ de cada galáxia. Usando a
+lei de Hubble obtida no exercício anterior, determine a distância a cada um dos aglomerados.
+
+%\begin{figure}[htb]
+	%\centering
+ 	%\includegraphics[scale=0.5]{figuras/espectro.pdf}
+	%\label{fig:espectro}
+	%\caption{\footnotesize Espectro de absorção de alguns aglomerados. De cima para baixo, {\it Virgo}, {\it
+		%Ursa Maior}, {\it Coroa Boreal}, {\it Bootes} e {\it Hydra}.}
+%\end{figure}
+
+\end{exercicio}
+
+	Ao contrário do que foi sugerido em sala de aula: medir o tamanho da seta, preferimos criar uma relação entre
+a distância $x$, medida com uma régua a partir da raia $A$ até um ponto qualquer do espectro da figura 2.
+Para isso o que fizemos foi plotar os pontos $A$, $B$ e $C$ e procurar a melhor relação entre eles. No caso uma reta
+(fig.3).
+
+%\begin{figure}[htb]
+	%\centering
+	%\includegraphics[scale=0.5]{figuras/calibragem.pdf}
+	%\label{fig:calibragem do espectro}
+	%\caption{\footnotesize Existe uma relação linear entre as distâncias na figura \ref{fig:espectro} e os
+		%comprimentos de onda.}
+%\end{figure}
+
+	Encontramos 
+	\begin{equation}
+	\lambda = 225,29\cdot x+3895\,\,\,\,\,\mathrm{[\lambda]=\mbox{\AA}\,\,\,[x]=cm}
+	\label{eq:ajuste}
+	\end{equation}
+	
+	Assim, por exemplo, a raia $H$ ($\lambda=3968,47\,\mbox{\AA}$) do cálcio no referencial em repouso 
+encontra-se a $x=0,17\,\mathrm{cm}$ a direita da linha $A$. Semelhantemente, a linha $K$ encontra-se a 
+$x=0,33\,\mathrm{cm}$.
+
+	Isto posto, tudo o que precisamos fazer é medir, a partir de $A$, a distância em centímetros de cada uma
+das duas linhas de absorção em cada um dos espectros da figura 2 e calcularmos o $\lambda$ correspondente
+a partir de (\ref{eq:ajuste}); Fica fácil obter $z$:
+	$$
+	z={v\over c}={\Delta\lambda\over\lambda_0}
+	$$
+
+	onde $\lambda_0$ é o comprimento de onda no referencial em repouso da linha correspondente. Imediatamente 
+concluímos também que $v = zc$ e, finalmente, que $D=v/H_0$, com $H_0$ obtido no exercício anterior. E o problema está 
+resolvido.
+
+	Segue abaixo a tabela com todos os valores relevantes para o cálculo de $z$ e $D$ (tabela \ref{tab:red-shift})
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{lrrrrrr}
+\multicolumn{7}{c}{Linha $K$}\\
+\hline
+Aglomerado	$x$	&$\lambda$	&$\Delta\lambda$&$z=\Delta\lambda/\lambda_0$	&$v$(km/s)	&$D$(Mpc)	\\
+\hline
+Virgo		&0,3*	&3962,59	&-5,93		&-0,0015			&-448,51	&-9,34*		\\
+Ursa Maior	&1,0	&4120,29	&151,77		&0,0382				&11473,19	&239,02		\\	
+Coroa Boreal	&1,5	&4232,94	&264,42		&0,0666				&19988,69	&416,43		\\
+Bootes		&2,4	&4435,70	&467,18		&0,1177				&35316,58	&735,76		\\
+Hydra		&3,8	&4751,10	&782,58		&0,1972				&59159,98	&1232,50	\\
+\hline
+		&	&		&		&				&		&		\\
+\multicolumn{7}{c}{Linha $H$}\\
+\hline
+Aglomerado	&$x$	&$\lambda$	&$\Delta\lambda$&$z=\Delta\lambda/\lambda_0$	&$v$(km/s)	&$D$(Mpc)	\\
+\hline
+Virgo		&0,45	&3996,38	&62,71		&0,0159				&4782,59	&99,64		\\
+Ursa Maior	&1,15	&4154,08	&220,41		&0,0560				&16809,76	&350,20		\\
+Coroa Boreal	&1,65	&4266,73	&333,06		&0,0847				&25400,59	&529,18		\\
+Bootes		&2,55	&4469,49	&535,82		&0,1362				&40864,09	&851,34		\\
+Hydra		&3,95	&4784,90	&851,23		&0,2164				&64918,42	&1352,47*	\\
+\hline
+	\end{tabular}
+	\caption{\footnotesize Resultados obtidos para cada um dos aglomerados da figura 2.\label{tab:red-shift}}
+\end{table}
+
+	Os dois valores indicados com asterísco ($x=0,3\,\mathrm{cm}$ em $K$ e $x=3,95\,\mathrm{cm}$ em $H$) devem
+ser comentados:
+
+	 O primeiro pois dando $D$ negativo e muito próximo de zero, incentiva-nos a acreditar que se trata de 
+um erro decorrente do ajuste feito na figura 3. De fato, note que se colocarmos
+$x=0$ em (\ref{eq:ajuste}) encontraremos $\lambda = 3895,00\,\mathrm{\mbox{\AA}}$, uma diferença de $6,48\,\mathrm{\mbox{\AA}}$. Esta 
+pequena diferença, quando adicionada ao comprimento de onda encontrado na primeira linha da tabela, é suficiente 
+para dar uma distância de $944\,\mathrm{kc}$! Ou seja, um pequeno erro no valor de $x$ leva a um grande erro em $D$.
+Em suma, os valores encontrados neste exercício possuem uma grande incerteza -- mesmo que elas não tenham sido apresentadas.
+
+	O segundo porque esta raia não é muito visível na figura 2 e seu valor foi estimado seguindo
+a tendência evidenciada para os outros aglomerados\footnote{A raia $H$ fica sempre a aproximadamente $1,5\,\mathrm{mm}$ a
+direita da raia $K$.}.	
+
+	
+
+
+

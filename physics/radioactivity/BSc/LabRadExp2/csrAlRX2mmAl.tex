@@ -1,0 +1,35 @@
+\section{Camada semi-redutora do alumínio bombardeado por raios X filtrado por $2,0\unit{mm\,Al}$}
+\label{sec:csrAlRX2mmAl}
+
+	O feixe de raios X utilizado foi ajustado para $100,00\unit{kV}$ e $10,00\unit{mA}$, com detector
+posicionado a $1,20\unit{m}$ de distância da fonte. O tempo de exposição foi de $1\unit{min}$.\par
+	Apesar de o tubo de raios X acelerar todos os elétrons a $100\unit{kV}$ --- o que corresponde a uma
+energia, por elétron, de $100\unit{keV}$ --- ou quase, quando esses elétrons atingem a alvo (anodo)
+uma série de interações ocorre, cada qual com sua energia, o que acaba tornando o espectro branco. E
+portanto agora estamos trabalhando com espectro contínuo, onde perde o sentido aplicarmos a lei de
+decaimento exponencial para explicar o feixe. Contudo continamos a fazê-lo no intuito de encontrarmos
+a camada semi-redutora efetiva e a energia efetiva do feixe.\par
+	O procedimento é igual ao aplicado até agora nos outros casos; a única alteração é a interpretação:
+Lá, quando calculávamos a energia efetiva e a camada semi-redutora específica, estávamos de fato encontrando
+a energia do feixe e a camada semi-redutora do alvo; aqui, entrementes, calculamos a energia $E_{\mathrm{ef}}$
+de um feixe monoenergético imaginário que, aplicado ao alvo, interage com o meio como se este tivesse
+coeficiente de atenuação $\mu_{\mathrm{ef}}$.\par
+	\begin{figure}[htb]
+	 \centering
+	 \includegraphics[scale=0.35]{figuras/csrAlRX2mmAl.pdf}
+	 \caption{\footnotesize\label{fig:csrAlRX2mmAl}
+	   A exposição, durante um minuto, em função da espessura da barreira de alumínio colocada entre a fonte e
+	   o detector. Note que, diferentemente dos casos onde analisamos o césio, a curva é bem menos comportada.
+	   Isto ilustra a natureza poli-energética do feixe em questão.}
+	\end{figure}
+	
+	O ajuste de reta aqui é bem menos sucedido, mas mesmo assim, como não temos outra alternativa alcançável,
+continuamos, mesmo porque a idéia de feixe efetivo é justamente esta: Ajustar uma reta onde ela não existe!
+Encontramos $\mu=2,13\unit{cm^{-1}}$ e $\mu/\rho=0,78(3)\unit{cm^2/g}$; Portanto, $e_{1/2}=3,25(12)\unit{cm}$.\par
+	O valor de $\mu/\rho$ leva-nos a concluir que $30\unit{keV}\le E_{\mathrm{ef}}\le40\unit{keV}$. Procurando
+na referência~\cite{johns} este intervalo e interpolando encontramos $E_{\mathrm{ef}}=33,41\unit{keV}$.\par
+	Resumindo, o feixe real que irradiou o alumínio, branco com energia podendo variar de zero a $100\unit{keV}$
+comporta-se aproximadamente igual a um feixe monoernergético de $33,41\unit{keV}$. Consequentemente, a camada
+semi-redutora --- a primeira apenas --- para ambos é de $3,25(12)\unit{cm}$.\par
+	A única novidade aqui, quando comparada com as situações anteriores, é que a interpolação resultou num
+polinômio de terceiro grau, resolvível numericamente.

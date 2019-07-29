@@ -1,0 +1,65 @@
+\documentclass[legalpaper]{article}
+
+\setlength{\unitlength}{1cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+\large
+\sf
+{
+\it
+Mostre que se ao exigir da função $\psi (\vec{r})$ que ela seja solução da equação de Laplace numa região finita do espaço e que satisfaça as condições
+de Dirichlet na fronteira, então esta função é única.
+}
+
+
+\begin{picture}(5,0)
+\put(0,0){\line(1,0){5}}
+\end{picture}
+
+
+	Suponha, ao contrário, que haja duas funções, $\psi _1(\vec{r})$ e $\psi _2(\vec{r})$, que satisfaçam a equação de Laplace. Em símbolos temos
+\begin{eqnarray}
+\vec{\nabla}^2\psi _1(\vec{r})=0 \\									
+\vec{\nabla}^2\psi _2(\vec{r})=0 \nonumber	
+\end{eqnarray}
+
+	Então, é claro que $\vec{\nabla}^2\psi _1(\vec{r})=\vec{\nabla}^2\psi _2(\vec{r})$. Mas o Laplaciano é apenas uma derivada espacial e, portanto,
+podemos dizer que $\psi_1(\vec{r})$ e $\psi_2(\vec{r})$ diferem, no caso mais geral, por uma função $\phi(\vec{r})$:
+\begin{equation}
+\psi_1(\vec{r})=\psi_2(\vec{r})+\phi(\vec{r})
+\end{equation}
+
+	Note que no cálculo diferencial de uma variável independente ($x$, como de costume), se as derivadas de primeira ordem de duas funções
+são iguais, então tais funções diferem por uma constante. E, quando se trata de uma derivada de segunda ordem, então diferem por uma função linear.
+No caso de três variáveis, embora a forma da "função diferença" seja diferente, ainda sim vale a idéia. Como não sabemos qual é, exatamente, a forma desta
+função, chutamos uma qualquer (Este detalhe não influi no exercício). De fato, qualquer solução da equação de Laplace pode tomar lugar, pois
+suponha que se tome o Laplaciano da equação $(2)$:
+\begin{equation}
+\vec{\nabla}^2\psi_1(\vec{r})=\vec{\nabla}^2\psi_2(\vec{r})+\vec{\nabla}^2\phi(\vec{r})
+\end{equation}
+	
+	Se $\phi_(\vec{r})$ também for solução da equação de Laplace, então todas as parcelas tornam-se zero e a igualdade $(1)$ se verifica.
+	Agora vejamos as condições de Dirichlet, que correspondem a se conhecer o comportamento da solução na superfície que envolve a região - neste
+caso. Ou seja, sobre a superfície $\Sigma$ que envolve o volume no qual se avalia $\psi(\vec{r})$, este toma o valor $\psi(\Sigma)=\psi_0$. Aplicando isto
+à equação $(2)$:
+$$
+\psi_1(\Sigma)=\psi_2(\Sigma)+\phi(\Sigma)\Rightarrow \psi_0=\psi_0+\phi(\Sigma)\Rightarrow \phi(\Sigma)=0
+$$
+
+	Mas como $\phi(\vec{r})$ é solução da equação de Laplace, então ela é uma função harmônica. Logo, se ela é zero na fronteira, é nula em toda a
+região:
+$$
+\phi(\vec{r})=0
+$$
+
+	E, consequentemente, por $(2)$,
+$$
+\psi_1(\vec{r})=\psi_2(\vec{r})
+$$
+
+	o que significa que a solução da equação de Laplace com condições de Dirichlet é única\footnote{Por I.R.Pagnossin (i\_irp@hotmail.com)}.
+
+\end{document}

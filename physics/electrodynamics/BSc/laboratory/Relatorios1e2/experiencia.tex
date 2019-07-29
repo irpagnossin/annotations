@@ -1,0 +1,426 @@
+\label{sec:analise}
+\subsection{Circuito RC} 
+
+	O primeiro passo em direção à compreensão de circuitos sob regimes estacionários de correntes alternadas é encontrar um modelo físico e uma 
+descrição matemática capazes de explicar os resultados e prever possibilidades futuras. Isto foi desenvolvido no item anterior e agora cabe-nos verificar
+se de fato são coerentes e satisfatórias. Para isso, um problema bastante simples: Considere um circuito com duas impedâncias em série, 
+sendo a primeira puramente resistiva ($Z_R=R$) e a segunda puramente capacitiva ($\hat{Z}_c=-j/\omega C$). Neste caso, a {\it Lei de Ohm}\footnote
+{A {\it Lei de Ohm} neste caso deve ser aquela desenvolvida na seção \ref{sec:teoria}, cuja aplicação extende-se para circuitos de correntes alternadas.} 
+aplicada ao resistor dá
+	\begin{equation}
+	\hat{Z}_R={\hat{V}_R\over\hat{I}}  \Rightarrow  |\hat{Z}_R|={|\hat{V}_R|\over|\hat{I}|}  
+	\label{eq:corrente}
+	\end{equation} 
+
+	Ou, de forma mais simplificada, $R=V_R/I$. Note que a corrente não precisa de índice pois é a mesma em todo o circuito. Mas $R$ e $V_R$ são
+perfeitamente mensuráveis com os instrumentos que temos à mão. No caso, utilizamos o multímetro e o osciloscópio, respectivamente. Então é claro que
+podemos calcular a corrente. Mas conhecendo-se a corrente e aplicando novamente a {\it Lei de Ohm} ao capacitor podemos determinar o valor do 
+{\bf módulo}\footnote{Medimos o módulo simplesmente porque é mais fácil obter o valor de pico da tensão e da corrente no capacitor que são, respectivamente,
+os módulos da forma complexa da tensão e da corrente.} da impedância do capacitor:
+	\begin{equation}
+	\hat{Z}_C={\hat{V}_C\over\hat{I}}  \Rightarrow  |\hat{Z}_C|={|\hat{V}_C|\over|\hat{I}|} \Rightarrow  Z_C={V_c\over I}
+	\label{eq:impedancia}
+	\end{equation} 
+
+	Além disso, o modelo diz que $Z_C=1/\omega C$. Consequentemente, calculamos a capacitância -- dado que sabemos também medir a freqüência
+com o osciloscópio -- e, como esta é determinada pelo fabricante, podemos comparar nosso resultado e concluirmos se o modelo é verossímil ou não. A equação acima
+deve ser válida para qualquer freqüência. Então, ao invés de calcularmos $N$ vezes a capacitância através das $N$ medidas de impedância e freqüência, construímos
+o gráfico $(Z_C,\sigma_{Z_C})\times1/\omega$\footnote{Aqui consideramos já ter sido feita a transferência de erros de $1/\omega$ para $Z_C$.}, procedemos a regreção
+linear e, do coeficiente angular do ajuste, calculamos a capacitância. Ao coeficiente linear nada se pode associar fisicamente com este modelo, a não ser, talvez, 
+a uma avaliação da qualidade de nossas medidas, visto que esperamo-lo ser zero. 
+	Se formos capazes de concordar a teoria com a experiência neste caso teremos confirmado a eficiência do modelo do capacitor.
+
+	Medimos $(f,\sigma_f)$, $(V_R,\sigma_{V_R})$, $(V_C,\sigma_{V_C})$ e $(\phi,\sigma_{\phi})$, onde $\phi$ é a defasagem entre os sinais da tensão
+e corrente. Isto pode ser medido colocando-se um canal do osciloscópio no resistor, o outro no capacitor\footnote{É verdade que em ambos os casos estaremos medindo 
+tensões mas, como o resistor não possui parte complexa em sua impedância, o que significa que ele não imprime diferença de fase entre a tensão e a corrente 
+sobre ele, então a tensão sobre o resistor está em fase com a corrente de todo o circuito e, como tudo o que se quer é uma medida de tempo, o método prova-se 
+ser perfeitamente aceitável.} e medindo-se a diferença de fase entre os dois sinais. Quanto à freqüência, sua medida foi obtida de forma digital, através do
+menu {\it measure} do osciloscópio\footnote{É claro que poderíamos ter medido o período e, em seguida, calculado a freqüência. Mas, porque não utilizar os
+recursos que temos?} e sua incerteza ($\sigma_f$) foi estimada como a soma quadrática do erro estatístico ($\sigma_e$), devido às flutuações dos valores 
+indicados, e do erro instrumental ($\sigma_i$), igual à unidade do dígito significativo:
+	\begin{equation}
+	\sigma_f^2=\sigma_e^2+\sigma_i^2
+	\label{eq:incerteza}
+	\end{equation}
+ 
+	As incertezas nas tensões sobre o resistor e o capacitor foram também obtidas de forma digital, da mesma forma que a freqüência. Ou seja, vale
+a equação (\ref{eq:incerteza}) para a obtenção de $\sigma_{V_R}$ e $\sigma_{V_C}$, efetuando-se, é claro, as devidas mudanças de índices.
+	
+	Medimos o valor do resistor com o multímetro e obtemos $100,5\,\Omega$. Mas curto-circuitando as pontas do multímetro encontramos $0,5\,\Omega$. Então,
+o valor verdadeiro do resistor $R$ é $100,0\,\Omega$ -- precisamente o valor nominal -- com uma incerteza de $0,5\,\Omega$, conforme especificações do manual
+do multímetro\footnote{Medimos em fundo de escala $200\,\Omega$, cuja precisão era $0,2\%+3$ dígitos. Resolução de $100\,\mathrm{m}\Omega$. Então, a
+incerteza é $0,002\cdot100,0+3\cdot0,1=0,5\,\Omega$.}. 
+
+	O capacitor era de $1\mu\mathrm{F}\,\,(10\%)\,\,250\mathrm{V}$ nominal. O modelo utilizado para o capacitor não incluía uma resistência em paralelo
+pois esperava-se que esta resistência fosse muito grande e de fato isto foi verificado quando medimos a resistência ôhmica, com o multímetro, entre os terminais do
+capacitor e encontramos uma resistência maior que $20\,\mathrm{M}\Omega$. Não podemos precisar o valor pois o maior fundo de escala do multímetro era de 
+$20\,\mathrm{M}\Omega$. Assim, esperamos, através do roteiro há pouco comentado, encontrar um valor de capacitância entre $0,9\,\mu\mathrm{F}$ e 
+$1,1\,\mu\mathrm{F}$.
+
+	 A primeira grandeza que determinamos é a corrente, cuja relação é (\ref{eq:corrente}). Como $V_R$ e $R$ não são correlacionados, então a incerteza na 
+corrente é simplesmente
+	\begin{eqnarray} 
+	\sigma_I^2	&=&({\partial I\over\partial R}\sigma_R)^2+({\partial I\over\partial V_R}\sigma_{V_R})^2	\nonumber\\
+			&=&({V_R\sigma_R\over R^2})^2+({\sigma_{V_R}\over R})^2						\nonumber\\
+	\label{eq:erro corrente} 		
+			&=&{(I\sigma_R)^2+\sigma_{V_R}^2\over R^2}
+	\end{eqnarray}
+
+	Já da relação (\ref{eq:impedancia}) podemos tirar a incerteza na impedância do capacitor, com uma ressalva: Aqui, $V_C$ e $I$ são 
+interdependentes, de modo que a propagação de erros fica um pouco diferente:
+	\begin{eqnarray*}
+	\sigma_{Z_C}^2	&=	&({\partial Z\over\partial V_C}\sigma_{V_C})^2+({\partial Z\over\partial I}\sigma_I)^2
+				+2{\partial Z\over\partial V_C}{\partial Z\over\partial I}\sigma_{IV_C}^2 		\\
+			&\le	&({\partial Z\over\partial V_C}\sigma_{V_C})^2+({\partial Z\over\partial I}\sigma_I)^2
+				+2{\partial Z\over\partial V_C}{\partial Z\over\partial I}\sigma_I\sigma_{V_C} 		\\
+	\sigma_{Z_C}^2	&\le	&{\sigma_{V_C}^2+(Z\sigma_I)^2\over I^2}-2{V_C\sigma_{V_C}\sigma_I\over I^3}		
+	\end{eqnarray*}
+
+	Note que fizemos uso da relação $\sigma_{IV_C}^2\le\sigma_I\sigma_{V_C}$. Mas como a última parcela da última equação é sempre negativa\footnote{Lembre-se 
+que $V_C$ e $I$ são os módulos dos vetores complexos $\hat{V}_C$ e $\hat{I}$ respectivamente.}, podemos superestimar o erro cometido em $Z$:
+	\begin{equation}
+	\sigma_{Z_C}={\sqrt{(Z\sigma_I)^2+\sigma_{V_C}^2}\over I}
+	\label{eq:erro impedancia}
+	\end{equation} 	
+
+
+	Assim, acabamos de determinar $(Z_C,\sigma_{Z_C})$. Falta o conjuto $(1/\omega,\sigma_{1/\omega})$, que deve ser obtido da freqüência:
+	$$
+	\omega=2\pi f	\Rightarrow	{1\over\omega}={1\over 2\pi f}
+	$$
+
+	e a incerteza é também simples:
+	$$
+	\sigma_{1/\omega}=|{\partial\over\partial f}({1\over\omega})\sigma_f|={\sigma_f\over\omega f}
+	$$
+
+	Agora podemos plotar o gráfico $(Z_C,\sigma_{Z_C})\times(1/\omega,\sigma_{1/\omega})$, mas não convém pois dificulta a linearização dos pontos se
+considerarmos os erros em $1/\omega$. O que fazemos é transferir estes erros para a impedância $Z_C$, deste modo: Primeiro ignoramos os erros na abscissa e
+plotamos o gráfico $(Z_C,\sigma_{Z_C})\times(1/\omega)$. Linearizamos e determinamos o coeficiente angular $m$. Daí basta utilizarmos a expressão
+	$$
+	\sigma_{1Z_C}=\sigma_{Z_C}+m\sigma_{1/\omega}
+	$$
+
+	onde $\sigma_{1Z_C}$ é a nova incerteza em $Z_C$ e $1/\omega$ passa a não ter erro algum.
+
+\begin{figure}[htbp]
+	\begin{minipage}[t]{0.46\textwidth}% 
+		\includegraphics[scale=0.25]{capacitanciaRC.jpg} 
+		\caption{\footnotesize Determinamos o valor da capacitância pelo coeficiente angular do ajuste de reta aos pontos do gráfico.}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.46\textwidth}%  
+		\centering
+		\includegraphics[scale=0.25]{defasagemRC.jpg}
+		\caption{\footnotesize A defasagem entre a corrente e a tensão permanece próxima de um quarto de período ($\pi/2\mathrm{rad}$), conforme 
+			previsto no modelo.} 
+	\end{minipage}
+	\label{fig:capacitancia}       
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ERRO DE REFERÊNCIA CRUZADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+							     
+	Ao fazermos o ajuste de reta aos pontos do gráfico da figura 1, escolhemos um ajuste que não force a passagem da reta pela origem pois,
+como foi comentado no começo, obtermos um coeficiente linear pequeno pode indicar boa qualidade das medidas. De fato, encontramos $a=2(4)$ e 
+$b=957(8)\times10^3$, respectivamente coeficientes linear e angular. Ao compararmos a forma $y=a+bx$ da equação ajustada à equação $Z_C=1/\omega C$, vemos que 
+	$$
+	b={1\over C}  \Rightarrow	C={1\over b}	\Rightarrow C=1,044\mu\mathrm{F}
+	$$
+
+	além disso,
+	$$
+	\sigma_C=|{\partial C\over\partial b}\sigma_b|=C^2\sigma_b=0,009\mu\mathrm{F}
+	$$
+
+	Quanto à defasagem entre a corrente e a tensão, sabemos da teoria que a corrente está $\pi/2\,\,\mathrm{rad}$ atrasada com relação à tensão. Considere
+$\phi$ a defasagem medida em unidades de tempo e $\Phi$ a defasagem em graus. Se $f=1/T$, onde $T$ é o período em unidades de tempo, as duas se relacionam
+da seguinte forma:
+	$$
+	\Phi=360\cdot{\phi\over T}=360\cdot\phi\cdot f
+	$$
+
+	e, consequentemente, a incerteza é
+	$$
+	\sigma_{\Phi}=\phi\sqrt{({\sigma_f\over f})^2+({\sigma_{\phi}\over\phi})^2}
+	$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ERRO DE REFERÊNCIA CRUZADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	Daqui fazemos o gráfico $(f,\sigma_f)\times(\Phi,\sigma_{\Phi})$ (figura 2). 
+
+	
+	Isto finaliza nossa verificação do modelo utilizado para o capacitor e, como encontramos $C=1,044(9)\,\mu\mathrm{F}$, concluímos que de fato o modelo 
+descreve bem o componente, ao menos para baixas freqüências.
+	
+\subsection{Circuito RL} 
+
+	Podemos utilizar o mesmo circuito anterior para analisar o modelo dado ao indutor, bastanto para isso substituir o capacitor
+pelo indutor. A metodologia é exatamente a mesma: Medimos a tensão sobre o resistor conhecido (O mesmo que no caso anterior) determinando a corrente no
+circuito. Disto, e medindo a tensão sobre o indutor, encontramos $Z_L$. Mas há um pequeno detalhe: O indutor, sendo um fio comprido, tem uma resistência
+interna considerável, e não há como separá-la do indutor. Ou seja, o Indutor não é, de forma alguma, ideal. Ele exige que levemos em conta esta nova 
+impedância, que consideramos estar em série:
+	\begin{equation}
+	\hat{Z}_L=Z_R+X_Le^{j\theta}=R_L+\omega Le^{j\theta}
+	\label{eq:reatancia indutiva}
+	\end{equation} 
+
+	Este é o modelo do indutor. E lembre-se que na determinação da impedância do circuito RC dissemos tratar-se do módulo dela. Aqui isto se torna 
+evidente pois temos
+	\begin{equation}
+	|\hat{Z}_L|^2=R_L^2+\omega^2L^2
+	\label{eq:indutancia e resistencia}
+	\end{equation} 
+
+	E a linearização é feita no plano $Z_L^2\times\omega^2$. 
+	
+	Medimos $(f,\sigma_f)$, $(V_R,\sigma_{V_R})$, $(V_L,\sigma_{V_L})$ e $(\phi,\sigma_{\phi})$. A defasagem foi obtida da mesma forma que no caso 
+anterior e as incertezas na freqüência e tensões no resistor e indutor, obtidas exatamente como em (\ref{eq:incerteza}).	
+	
+	O indutor utilizado é de $40\,\mathrm{mH}$ com incerteza de $3\,\mathrm{mH}$ e resistência interna $R_L=9,94\pm0,09\,\Omega$, $1000$ espiras e $1\,A$
+de corrente máxima suportada. Estas são as grandezas que queremos verificar através do modelo para o indutor e, neste caso, a regressão dos pontos 
+$Z_L^2\times\omega^2$ dará um coeficiente angular, ao qual associamos o quadrado da indutância, e um coeficiente
+linear, que associamos ao quadrado da resistência interna do indutor, Equação~\ref{eq:indutancia e resistencia}.
+
+	Os erros na corrente e na impedância do indutor são idênticos a, respectivamente, (\ref{eq:erro corrente}) e (\ref{eq:erro impedancia}), pois são
+obtidos das mesmas equações (\ref{eq:corrente}) e (\ref{eq:impedancia}):
+
+	\begin{minipage}{0.46\textwidth}
+	$$ 
+	\sigma_I^2={(I\sigma_R)^2+\sigma_{V_R}^2\over R^2}
+	$$
+	\end{minipage}
+	\hfill
+	e
+	\hfill
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\sigma_{Z_L}^2={(Z\sigma_I)^2+\sigma_{V_L}^2\over I^2}
+	$$
+	\end{minipage} 
+
+	Temos agora de determinar $(\omega^2,\sigma_{\omega^2})$ e $(Z_L^2,\sigma_{Z_L^2})$\footnote{Note que $\sigma_{Z_L}^2\ne\sigma_{Z_L^2}$.}:
+
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\omega=2\pi f	\Rightarrow	\omega^2=4\pi^2 f^2
+	$$
+ 	\end{minipage} 
+	\hfill
+	e 
+	\hfill
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\sigma_{\omega^2}=|{\partial\omega^2\over\partial f}\sigma_f|=4\pi\omega\sigma_f
+	$$
+	\end{minipage} 
+
+	Além disso,
+	$$
+	\sigma_{Z_L^2}=|{\partial\over\partial Z}(Z^2)\sigma_{Z_L}|=2{Z_L}\sigma_{Z_L}
+	$$
+
+	O que falta agora é transferir o erro de $\omega^2$ para $Z_L^2$, e isto é feito também identicamente ao caso anterior, de modo a termos, por fim
+$(Z_L^2,\sigma_{Z_L^2})\times\omega^2$. 
+
+
+\begin{figure}[htbp]
+	\begin{minipage}[t]{0.46\textwidth}% 
+		\includegraphics[scale=0.25]{indutanciaRL.jpg} 
+		\caption{\footnotesize Ao linearizar e ajustar a reta aos pontos, ao coeficiente angular dá o valor da Indutância, enquanto que o
+			coeficiente linear dá o valor da resistência interna.}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.46\textwidth}%  
+		\centering
+		\includegraphics[scale=0.25]{defasagemRL.jpg}
+		\caption{\footnotesize Uma vez que o Indutor possui uma resistência interna apreciável, ele deixa de ser ideal, fazendo com que a diferença
+			de fase entre tensão e corrente no circuito seja diferente de $\pi/2\,\mathrm{rad}$, embora caminhe para este valor à medida que
+			a freqüência aumenta.}
+	\end{minipage}
+\end{figure}
+
+	Agora ambos os coeficientes angular e linear têm significado físico, $a=84(37)=R_L^2\Rightarrow R_L=9,2\,\Omega$ e 
+$b=1705\times10^{-6}=L^2\Rightarrow L=41,29\,\mathrm{mH}$. Então
+
+\vspace{10pt}
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\sigma_{R_L}=|{\partial R_L\over\partial a}\sigma_a|={\sigma_a\over2R_L}=2,0\,\Omega
+	$$
+	\end{minipage}
+	\hfill
+	e
+	\hfill
+	\begin{minipage}{0.46\textwidth}
+	$$
+	\sigma_L=|{\partial L\over\partial b}\sigma_b|={\sigma_b\over 2L}=0,29\mathrm{mH}
+	$$
+	\end{minipage}
+
+\vspace{10pt} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ERRO DE REFERÊNCIA CRUZADA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	Já a defasagem, embora os cálculos sejam exatamente os mesmos que no caso anterior, o resultado é bem diferente pois a fase varia 
+(fig.5).
+
+	
+	Assim, como encontramos $L=41,29(29)\,\mathrm{mH}$ e $R_L=9,2(20)\,\Omega$, concluimos que o modelo para o Indutor também está bom.
+
+\subsection{Filtro RC}
+
+	Agora que já verificamos que os modelos utilizados para descrever circuitos de correntes alternadas são razoáveis, vamos aplicá-los a circuitos simples
+e ver no que dá. O primeiro deles é o Filtro RC, cuja principal característica verIficada é a de filtrar sinais de acordo com a freqüÊncia. Neste caso, sinais
+com freqüência inferior a $\omega_c$ que entrarem no circuito sairão como se nada tivesse acontecido. Porém, se o sinal for de freqüência superior a $\omega_c$,
+então este será atenuado cada vez mais até seja perdido na saída. Este é o que se chama {\it Filtro RC Passa-Baixa}.
+
+	A freqüência de corte foi determinada na seção \ref{sec:teoria} e é
+	\begin{equation}
+	\omega_c={1\over RC}	\Rightarrow	f_c={1\over 2\pi RC}
+	\label{eq:fcorte}
+	\end{equation} 
+
+	Escolhemos utilizar uma freqüência por volta de $500\,\mathrm{Hz}$ e, com o capacitor que tinhamos, de $1\,\mu\mathrm{F}\pm10\%$, teríamos de conseguir
+um resistor de $318\,\Omega$. Conseguimos um de $333\,\Omega$ (nominal), cujo valor real era $328,0\,\Omega$ com incerteza de $1,3\,\Omega$. Então a freqüência de
+corte foi avaliada em $485\,\mathrm{Hz}$ com incerteza de $8\,\mathrm{Hz}$. O erro foi obtido por propagação através da equação (\ref{eq:fcorte}):
+	$$
+	\sigma_{f_c}={f_c\over2\pi}\sqrt{({\sigma_R\over R})^2+({\sigma_C\over C})^2}
+	$$
+
+	Medimos então $(V_e,\sigma_{V_e})$ e $(V_s,\sigma_{V_s})$ e, como o ganho real ($\mathrm{Re}[\hat{G}]$) é dado simplesmente pela razão da tensão de
+saída $V_s$ pela tensão de entrada $V_e$, a incerteza no ganho é avaliada -- como em (\ref{eq:erro impedancia}), em
+	$$
+	\sigma_G={\sqrt{\sigma_{V_s}^2+G^2\sigma_{V_e}^2}\over V_C}
+	$$
+
+	Então o que temos a fazer é simplesmente plotar o gráfico de $(G,\sigma_G)\times(f,\sigma_f)$\footnote{Perceba que como não pretendemos fazer ajuste
+algum, não há necessidade de se transferir os erros da abscissa para a ordenada.}.
+
+
+\begin{figure}[htbp]
+	\begin{minipage}[t]{0.46\textwidth}% 
+		\includegraphics[scale=0.25]{ganhologlog.jpg} 
+		\caption{\footnotesize O ganho real do filtro RC como função da freqüência do sinal de entrada. A freqüência de corte está indicada em vermelho.}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.46\textwidth}%  
+		\centering
+		\includegraphics[scale=0.25]{defasagem_filtroRC.jpg}
+		\caption{\footnotesize A defasagem do sinal entre os sinais de entrada e saída em função da freqüência.} 
+	\end{minipage}
+\end{figure}
+
+\subsection{Circuito Integrador}
+	
+	Um outro efeito do filtro RC passa-baixa é modificar a forma do sinal de saída para freqüências muito maiores que $\omega_c$. Essa modificação não
+é aleatória nem imprevisível. O que ocorre é que o sinal de saída passa a ter a forma da integral do sinal de entrada. Pela seção \ref{sec:teoria}:
+	$$
+	V_s(t)={1\over RC}\int V_e(t)\mathrm{dt}
+	$$
+
+	e o que fizemos foi simplesmente copiar em papel milimetrado -- respeitando as escalas do osciloscópio -- a forma dos sinais de entrada e 
+saída\footnote{Neste circuito utilizamos um sinal quadrado de entrada e escolhemos a freqüência $5005\,\mathrm{Hz}\gg f_c$.}.  
+
+	A verificação da concordância entre a teoria e a experiência é feita através de um cálculo simples, levando em consideração a figura \ref{fig:integrador}:
+
+\begin{figure}[htb]
+	\center
+	\includegraphics[scale=0.6]{integrador.jpg}
+	\caption{\footnotesize Forma de onda obtida da tela do osciloscópio. O sinal quadrado é o de entrada e o dente de serra é a saída.}
+	\label{fig:integrador} 
+\end{figure}  
+	
+	Tome o meio período da onda, intervalo esse no qual temos $V_e(t)=1V$. Então, o sinal de saída deve ser
+	$$
+	V_s(t)={1\over RC}\int_{t_0}^t 1\cdot\mathrm{dt}={(t-t_0)\over RC}\approx3048,78\cdot(t-t_0)  
+	$$
+
+	Escolhendo $t_0=46,25\,\mu\mathrm{s}$, $V_s(t)=3048,78\cdot(t-46,25)$ ($[t]=\mu\mathrm{s}$), então em $t=0$ (Que corresponde à borda de subida do
+sinal de entrada) teremos $-141,0\,\mathrm{mV}$, contra $-140\,\mathrm{mV}$ medido. E, para $t=92,5\,\mu\mathrm{s}$, $V_s=141,0\,\mathrm{mV}$, contra os
+$140\,\mathrm{mV}$ medido. Vemos que há uma ótima concordância entre a teoria e a prática. 
+
+	Pode-se pergutar por que utilizamos o valor $t_0=46,25\,\mu\mathrm{s}$. Isto foi feito porque, embora na figura~\ref{fig:integrador} tenhamos desenhado
+ambos os sinais centralizados longitudinalmente na referência, isto de fato não ocorre pois o sinal do capacitor é sempre positivo (Ou sempre negativo, dependendo
+da referência que se toma ao medir), enquanto que o sinal de entrada de fato muda de sinal a cada meio ciclo. Então o que teríamos é um sinal DC a ser somado à 
+saída do integrador. Para não fazer isso, pois teríamos de modificar os dados experimentais por argumentos teóricos, preferimos alterar a origem do sinal de 
+forma a corresponder com o esperado.
+
+\subsection{Perda de energia por histerese de um indutor}
+
+	Todos os circuitos dissipam energia, principalmente sobre a forma de {\it Efeito Joule}. Contudo, esta não é única forma que um circuito tem para
+perder energia. Se o circuito possuir um transformador\footnote{Que não passa de dois indutores arranjados de forma a trocarem energia magnética.}, também 
+devemos levar em consideração a energia passada do circuito para o material ferromagnético (e para o
+meio exterior) do indutor, na forma de eletromagnetização destes átomos. 
+
+	A energia perdida por ciclo de oscilação do sinal de entrada foi estimada na seção~\ref{sec:teoria} em
+	\begin{equation}
+	u\approx{R_2C\over R_1}\cdot{N_p\over N_s}\int V_C\mathrm{dV_R}
+	\label{eq:histerese}
+	\end{equation}
+
+	onde $R_1$ é o resistor limitador de corrente, $R_2$ e $C$ são o resistor e o capacitor do circuito integrador acoplado à saída do circuito que nos 
+interessa (Circuito RL), $N_p/N_s$ é a relação do número de espiras entre o terminal principal e secundário do indutor e a integral é ao longo de todo um
+período da histerese.
+
+	Avaliamos $R_1$ em $1\,013\pm2\,\Omega$ e $R_2$ em $101,6\pm0,2\,\mathrm{k}\Omega$ e o capacitor era de $1\,\mu\mathrm{F}\pm10\%$ (Nominal). Portanto
+o circuito integrador tem uma freqüência de corte de aproximadamente $1,6\,\mathrm{Hz}$. Como utilizamos a freqüência da rede ($60\,\mathrm{Hz}$) no nosso
+circuito, então está claro que de fato o circuito RC acoplado ao terminal secundário do transformador está agindo como integrador.
+
+	O valor de $N_p/N_s$ pode ser obido medindo-se as tensões de entrada ($44,2(1)\,V$) e saída ($6,90(1)\,V$) do transformador:
+	$$
+	{N_p\over N_s}={V_s\over V_e}\approx6,406
+	$$
+
+	O erro é fácil:
+	$$
+	\sigma_{N_p/N_s}={\sqrt{\sigma_{V_e}^2+(N_p/N_s)^2\sigma_{V_s}^2}\over V_s}=0,009    
+	$$
+
+	Assim, temos quase todos os dados necessários para resolver (\ref{eq:histerese}). Falta apenas a integral. Mas esta é a área da histerese, em 
+$\mathrm{Voltz}^2$, e podemos medi-la copiando-a para um papel milimetrado e calculando a área ``no braço''. Mas há uma forma mais inteligente de se
+resolver isso -- E também mais precisa: Determinamos a densidade do papel milimetrado vegetal utilizado medindo-se uma área conhecida e pesando-se este
+pedaço de papel em uma balança analítica de alta precisão. No caso, recortamos um pedaço de papel vegetal de $16\,\mathrm{cm}^2$ e avaliamos sua massa
+em $0,1074(1)\,\mathrm{g}$. A incerteza na área podemos estimar por volta de $2\,\mathrm{mm}^2$. Então a densidade do papel é 
+$\rho=0,006712(10)\mathrm{g/cm^2}$.
+
+	Agora recortamos a figura da histerese impressa no papel milimetrado e medimos sua massa. Fizemos, na realidade, duas medidas de massa pois o traço
+da histerese na tela do osciloscópio não era muito bem definido, de modo que acabamos por desenhar uma ``histerese interna'' e uma ``histerese interna'',
+sendo que pressupomos que a verdadeira está contida entre essas duas. Então, medimos a massa da ``histerese externa'' em $m_{he}=0,0603(1)\,\mathrm{g}$ e,
+consequentemente, sua área é 
+	$$
+	A_{he}={m_{he}\over\rho}=8,983\,\mathrm{cm}^2
+	$$
+
+	com incerteza de $0,013\,\mathrm{cm}^2$. Já para a ``histerese interna'' obtivemos $m_{hi}=0,0412(10)\,\mathrm{g}$, dando uma área $6,138\,\mathrm{cm}^2$
+com incerteza $0,017\,\mathrm{cm}^2$. Na tela do osciloscópio, 1 divisão equivale a $0,9\,\mathrm{cm}$ e, além disso, quando fizemos a medida estávamos com
+o canal 1 em $5,00\,\mathrm{V/div}$ e o canal 2 em $100\,\mathrm{mV/div}$. Então as áreas das histereses interna e externa em divisões da escala do
+osciloscópio são, respectivamente, $7,578(2)\,\mathrm{div}^2$ e $11,086(16)\,\mathrm{div}^2$. E como a cada $\mathrm{div}^2$ correspondem 
+$5,00\cdot100\times10^{-3}=0,5\mathrm{V}^2$, então temos que as áreas interna e externa em Voltz são $3,789(1)\,\mathrm{V}^2$ e $5,543(8)\,\mathrm{V}^2$.
+	
+	Finalmente temos tudo o que precisamos:
+	$$ 
+	u_{hi}\approx{101,6\times10^3\cdot1\times10^{-6}\over1013}\cdot6,406\cdot3,789\approx2,43\,\mathrm{mJ}
+	$$
+
+	e
+	$$
+	u_{he}\approx{101,6\times10^3\cdot1\times10^{-6}\over1013}\cdot6,406\cdot5,543\approx3,6\,\mathrm{mJ}
+	$$
+
+	Ou seja, a energia perdida por ciclo de histerese está entre $2,43(24)\,\mathrm{mJ}$ e $3,6(3)\,\mathrm{mJ}$. Ou ainda, $u=3,0(8)\,\mathrm{mJ}$. Este último
+foi obtido somando-se quadraticamente as incertezas em cada uma das histereses (``interna'' e ``externa'') e o desvio padrão desse conjunto de duas medidas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

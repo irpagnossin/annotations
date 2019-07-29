@@ -1,0 +1,201 @@
+\documentclass[a4paper,10pt]{article}[1998/12/01]
+
+%----------------------------------------------------------------------------------%
+%------------------------- CARREGA OS PACOTES NECESSÁRIOS -------------------------%
+%----------------------------------------------------------------------------------%
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsthm}
+
+\makeindex
+\pagestyle{myheadings}
+\markboth{}{\rm I. R. Pagnossin}
+
+\begin{document}
+
+\input{irpackage}
+
+%--------------------------------- TÍTULO E AUTOR ---------------------------------%
+%----------------------------------------------------------------------------------%
+\title{Lista 6 de introdução às radiações}
+\author{Ivan Ramos Pagnossin \\ irpagnossin@hotmail.com}
+\date{\today}
+\maketitle
+
+\renewcommand{\TituloExercicio}{Solução do exercício}
+
+\begin{exercicio}[blue]\end{exercicio}
+\vspace{-20pt}
+	Analisemos os três princípios da proteção radiológica utilizando o caso da secretária do último exercício desta lista:\par
+
+  Como não podemos garantir, em nenhuma situação, que
+  abaixo de uma certa dose os riscos à saúde são zero, é preciso que 
+  justifiquemos uma tal situação de risco. Então, e.g., no caso da ``nossa'' secretária,
+  a primeira coisa que se deve fazer é perguntar se ela precisa estar naquele local
+  onde é exposta. Se houver uma justificativa, um benefício para a  {\bf sociedade},
+  algo como: {\sl A secretária organiza o acesso de pacientes à radiografia, reduzindo,
+  com isso, a exposição dos próprios pacientes\/}, então teremos atendido ao
+  {\bf princípio da justificação}.\par
+
+	Uma vez justificada a atividade, então devemos organizar a sala de espera de tal
+	forma que todos que a ocupam seja expostos ao mínimo de radiação exequível, inclusive,
+	obviamente, a secretária. Devemos, por exemplo, aumentar a espessura da parede que
+	faz a divisória com a sala de radiografia; Podemos também nos perguntar se a sala de 		espera deve ser ao lado da de radiografia ou se pode ser em outro lugar. Quando 				tivermos 	reduzido ao máximo a exposição teremos atendido ao {\bf princípio da 					otimização}.\par
+	
+	Mas esta otimização de nada vale se as doses dos trablhadores e do público forem
+	superiores às máximas estipuladas pelos ``órgãos competentes''. Somente quando
+	estivermos obedecendo esses limites é que atenderemos ao {\bf princípio da limitação
+	da dose individual}.
+
+\begin{exercicio}[blue]\end{exercicio}
+\vspace{-20pt}
+\begin{itemize}
+\item[{\bf (a)}] A taxa de dose absorvida por unidade de massa do órgão é $\dot D=\xi C\bar E$, 
+	onde $C$ é a concentração de emissões por unidade de massa, $\dot E$ é a energia 
+	média da emissão e $\xi$ é a probabilidade de ocorrência. Temos:
+
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{cccccccc}
+  	$\xi$ 					& 
+	\parbox[c]{3em}{\center{\small$C$\\($\unit{Bq/kg}$)}} 			& 
+	\parbox[c]{3em}{\center{\small$\bar E$\\($\unit{MeV}$)}} & 
+	\parbox[c]{6em}{\center{\small$\dot D$\\($10^{-11}\unit{Gy/s}$)}} & 
+	\parbox[c]{6em}{\center{\small$\dot D$\\($\unit{mGy/ano}$)}} &  
+	& $w_R$ & 
+	\parbox[c]{10em}{\center{\small$w_R\;\dot D$\\($\unit{mSv/ano}$)}} \\
+  \cline{1-5}\cline{7-8}
+  \cline{1-5}\cline{7-8}
+  $1$ & $50$  & $6,00$  & $4,81$ & $1,51$ && $20$ & $30,20$ \\
+  $1$ & $200$ & $0,228$ & $0,73$ & $0,23$ && $1$  & $0,23$  \\
+  $1$ & $150$ & $0,661$ & $1,59$ & $0,50$ && $1$  & $0,50$  \\
+  $1$ & $100$ & $7,69$  & $12,32$& $3,88$ && $20$ & $77,60$ \\
+  \cline{1-5}\cline{7-8}
+      &       &         &        & $6,12$ &&      & $H_T=108,53$ \\
+  \end{tabular}
+  \caption{Cálculo de doses absorvidas e equivalente}
+  \label{tab:1}
+  \vspace{10pt}
+\end{table}
+
+ 	Portanto, a taxa de dose absorvida média é $6,12\unit{mGy/ano}$.
+
+
+\item[{\bf (b)}] A taxa de dose equivalente $H_T$ é calculada por $\dot H_T = \sum_R w_R \dot D$, onde
+	$w_R$ é o {\sl fator de ponderação da radiação\/}. Temos, pela tabela~\ref{tab:1}, que a
+	dose equivalente anual no trabalhador é $108,53\unit{mSv}$. Como a {\sc cnen} estabelece
+	um limite de $500\unit{mSv}$ como dose equivalente anual em órgão ou tecido de trabalhador,
+	concluimos que a periculosidade é aceitável pela {\bf lei}.
+
+	Um ponto importante a se considerar é que, da coluna $4$ para $5$ utilizamos um ano de 
+	$60\times60\times24\times365=51\,536\,000\unit{s}$. Isto pois como os nuclídeos da tabela anterior
+	estão alojados nos pulmões do trabalhador, a irradiação ocorre integralmente durante todo o
+	ano\footnote{Considerando que a concentração não se altere, o que absolutamente razoável dada
+	a rotina de trabalho a que são submetidas essas pessoas.}.
+
+\item[{\bf (c)}] Se a taxa de dose absorvida média por todo o corpo do trabalhador é 
+	$\dot D=0,250\unit{\mu Gy/h}$ e refere-se a irradiação gama, então a taxa {\bf média} de
+	dose equivalente será $\langle\dot H\rangle=0,250\unit{\mu Sv/h}$, pois $w_T=1$ para fótons. Logo, 
+	a taxa de dose efetiva será
+	$$
+	\dot E = \sum_Tw_T\dot H_T = \sum_Tw_T\langle\dot H\rangle = 
+		\langle\dot H\rangle\sum_Tw_T  = 0,250\times10^{-6}\unit{\mu Sv/h}=
+		        585\unit{\mu Sv/ano}
+	$$
+	lembrando que $\sum_Tw_T=1$, com $w_T$ sendo o {\sl fator de ponderação do tecido\/}.
+
+	Note que alteramos o valor da unidade de tempo. Neste caso, como a exposição à radiação gama
+só ocorre durante a jornada de trabalho, estabelecida em $45$ horas semanais, então o tempo de exposição
+é de $45\times52$ horas, sendo $52$ o número aproximado de semanas no ano.\par
+
+	À essa dose devemos somar também a dose efetiva no pulmão devido aos nuclídeos dos itens anteriores:
+	$$
+	E_{\mbox{\small pulmão}} = 0,12\cdot108,53 = 13,02\unit{mSv/ano}
+	$$
+
+	Logo, a dose efetiva total é $13,02 + 0,585 = 13,60\unit{mSv/ano}$. Como a {\sc cnen} estabelece
+um limite de $50\unit{mSv/ano}$ de dose efetiva para trabalhador, então ainda assim a norma está 
+cumprida.
+
+\begin{exercicio}[blue]\end{exercicio}
+\vspace{-20pt}
+\begin{description}
+\item[São devidos a danos no {\sc dna} da célula:] Efeito estocástico pois
+  um único fóton pode quebrar o {\sc dna}, desde que tenha energia e seção de choque suficientes para isso.
+
+\item[Decorrem de morte celular:] Determinístico, pois acima de certa dose toda célula morre.
+
+\item[Sua gravidade aumenta com o aumento da dose recebida pelo indivíduo:] Determinístico pois esta
+  frase faz parte da própria definição de efeitos determinísticos, junto com a existência dos limites
+  mínimo e máximo.
+
+\item[Depende do {\sc let} da radiação que o induziu:] Se depende do {\sc let}, então depende da energia
+  transferida ao meio. Portanto trata-se de efeito determinístico.
+
+\item[A radioterapia se baseia nesse tipo de efeito para curar tumores:] Determinstico. É exatamente o
+  mesmo caso da morte celular: A radioterapia utiliza grandes doses para matar as células tumorais.
+
+\item[Não existe dose abaixo da qual esse efeito tenha chance zero de ocorrer:] Determinístico e,
+  principalmente estocástico: Sobre nenhuma forma de radiação se pode afirmar isso, sobretudo para 
+  efeitos estocásticos.
+\end{description}
+
+\begin{exercicio}[blue]\end{exercicio}
+\vspace{-20pt}
+\begin{itemize}
+\item[{\bf (a)}] Consideremos primeiramente o {\bf técnico}:
+	Supondo que a frequência de utilização dos raios X, gama e elétrons sejam aproximadamente iguais:
+	$D_X = D_\gamma = D_e = 2/3\unit{mGy}$. Então as doses absorvidas por radiação X ($D_X$), gama 
+	($D_\gamma$) e 
+	elétrons ($D_e$) combinam-se para dar a dose equivalente:
+	$$
+	H = \sum_Rw_RD_R = 1\cdot{2\over3} + 1\cdot{2\over3} + 1\cdot{2\over3} = 2\unit{mSv},
+	$$
+	pois o {\sl fator de ponderação da radiação\/} de todos eles é um.\par
+
+	A dose efetiva será
+	$$
+	E = \sum_Tw_TH_T = \sum_Tw_TH = H\sum_Tw_T = H = 2\unit{mSv}
+	$$
+
+	As suposições no caso da {\bf secretária} são exatamente as mesmas. Portanto a dose efetiva nela é
+	$0,3\unit{mSv}$.\par
+
+	Já para o {\bf paciente} a situação é completamente diferente, pois ele recebe aquela dose absorvida
+	uma vez apenas e em um único órgão. A dose equivalente neste caso é 
+	$$
+	H_{\mbox{próstata}}=w_{\mbox{próstata}}\;D_{\mbox{próstata}} = 1\cdot 2000 = 2\unit{Sv}
+	$$
+
+	A dose efetiva, por sua vez, é
+	$$
+	E = E_{\mbox{próstata}} = 0,2\cdot2 = 0,4\unit{Sv}
+	$$
+	pois $w_{\mbox{próstata}} = 0,2$.
+\item[{\bf (b)}] Tanto para o técnico como para a secretária, a dose acima calculada corresponde a um
+	período de $30$ dias, ou aproximadamente um mês. Portanto, a dose efetiva anual sobre eles é, 
+	respectivamente, $24\unit{mSv}$ e $3,6\unit{mSv}$.
+
+	O paciente, por outro lado, recebeu, de uma única vez, $0,4\unit{Sv}$. Supondo que este paciente
+	só faça este exame radiográfico durante o ano, então esta será também sua dose efetiva anual.\par
+
+	 O limite de dose efetiva dada pela
+	{\sc cnen} para trabalhadores é $50\unit{mSv/\mbox{ano}}$ e, para público, que no caso inclui a
+	secretária, é $1\unit{mSv/\mbox{ano}}$.
+	Logo, tanto a secretária quanto o paciente tem suas doses individuais superior à máxima estipulada 
+	pela {\sc cnen}
+
+\item[{\bf (c)}] Quanto ao paciente nada se pode fazer para reduzir a dose. No caso da secretária, 
+	entretanto, é preciso reduzir sua dose individual. Para isso pode-se mudá-la de lugar na sala,
+	aumentar a espessura da parede que faz divisão com a sala de radiografia ou ainda mudar 
+	toda a sala, se for possível, para um local mais adequado.
+\end{itemize}
+
+\end{itemize}
+
+
+\end{document}
+ 

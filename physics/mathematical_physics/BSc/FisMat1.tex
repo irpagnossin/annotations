@@ -1,0 +1,72 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{1cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\sf
+{\bf (a)}
+{\it Identifique o operador Hermitiano de segunda ordem que dá origem à equação de Laguerre e reescreva a equação em termos deste operador, 
+identificando cada elemento da equação de autovalores resultante.}
+
+\begin{picture}(5,0)
+\put(0,0){\line(1,0){5}}
+\end{picture}
+
+\sf 
+	Uma equação diferencial ordinária homogênea e de segunda ordem que constitui um problema de autovalores pode ser escrita em termos 
+de um operador Hermitiano da forma
+
+\begin{eqnarray}
+\mathcal{L}	&	=	&	{d\over dx}[P(x){d\over dx}]+Q(x) \\
+		&	=	&	P(x){d^2\over dx^2}+\dot{P}(x){d\over dx}+Q(x) \nonumber
+\end{eqnarray}
+
+	Se aplicarmos tal operador à função de Laguerre $L_n(x)$ obteremos
+
+$$
+\mathcal{L}L_n(x)=P(x){d^2L_n\over dx^2}+\dot{P}(x){dL_n\over dx}+Q(x)L_n
+$$
+
+	E o problema de autovalores para o caso da euação de Laguerre passa a ser
+
+$$
+\mathcal{L}L_n(x)+nL_n(x)=P(x)\ddot{L}_n+\dot{P}(x)\dot{P}_n+[n+Q(x)]L_n(x)=0
+$$
+
+	Comparando com a equação de Laguerre, $x\ddot{L}_n+(1-x)\dot{L}_n+nL_n=0$, fica fácil notar que temos $Q(x)=0$ e que deveríamos ter
+$1-x={d\over dx}x$, mas isto infelizmente não é verdade. O que fazer? Uma possibilidade é multiplicarmos toda a equação por uma função desconhecida
+$g(x)$ e ver no que dá. Se der certo, ótimo, se não, voltamos atrás e tentamos outra opção. Vejamos. Se fizermos a dita multiplicação teremos de
+reescrever a equaçãode Laguerre como  $xg(x)\ddot{L}_n+(1-x)g(x)\dot{L}_n+ng(x)L_n=0$. Quem sabe agora possamos verificar a igualdade
+
+\begin{eqnarray}
+(1-x)g(x)		&	=	&	{d\over dx}[xg(x)] \nonumber \\
+g(x)-xg(x)		&	=	&	g(x)+x\dot{g}(x) \Rightarrow \nonumber \\
+\Rightarrow\dot{g}(x)	&	=	&	-g(x) \Rightarrow \nonumber \\
+\Rightarrow g(x)	&	=	&	e^{-x} \nonumber
+\end{eqnarray}
+
+	Ou seja, ao multiplicarmos a equação de Laguerre pela função $g(x)=e^{-x}$, passamos a poder escrevê-la na forma $(1)$, com $Q(x)=0$:
+
+$$
+{d\over dx}[e^{-x}{d\over dx}]L_n(x)+ne^{-x}L_n(x)=0
+$$
+
+	Que é a forma Hermitiana da equação de Laguerre. Vejamos seus elementos: Primeiramente, o operador Hermitiano
+
+$$
+\mathcal{L}={d\over dx}[e^{-x}{d\over dx}]
+$$
+
+	A função peso é $w(x)=e^{-x}$, que não necessariamente é igual a $g(x)$; O autovalor é $n$ e as autofunções são $L_n(x)$.
+
+
+
+
+\end{document}			
+
+
+

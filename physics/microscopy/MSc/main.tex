@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,10pt]{book}[1995/12/01]
+
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{graphics,graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{irpackage}
+\usepackage{makeidx}
+\usepackage{pifont}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{amstext}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE,RO]{\slshape Microscopia de varredura por sonda}
+\fancyhead[LO,RE]{\slshape\bfseries I. R. Pagnossin}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\scanner}{{\slshape scanner}}
+\newcommand{\creep}  {{\slshape creep}}
+\newcommand{\xcoupling}{{\slshape cross-coupling}}
+\newcommand{\tensor}[1]{\ensuremath{\mbox{\sffamily\bfseries #1}}}
+\newcommand{\vetor}[1]{\ensuremath{\mbox{\bfseries #1}}}
+\renewcommand{\footnoterule}{}
+
+
+\makeindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{\LARGE 
+Microscopia de varredura por sonda\\Scanning probe microscopy}
+\author{Ivan Ramos Pagnossin\thanks{irpagnossin@hotmail.com}}
+\maketitle
+
+\tableofcontents
+
+\chapter{Scanning probe microscopy}
+  \label{cap:introduction}
+  \input{introduction.tex}
+\chapter{Scanners}  
+  \label{cap:scanners}\index{Scanner}
+  \input{scanner.tex}
+\chapter{STM --- Microscopia de tunelamento}
+	\label{cap:stm}\index{STM}\index{Tunelamento}
+	\input{stm.tex}	
+\chapter{AFM --- Microscopia de força atômica}
+	\label{cap:afm}\index{AFM}
+	\input{afm.tex}
+\chapter{MFM --- Microscopia de força magnética}
+	\label{cap:mfm}\index{MFM}
+	\input{mfm.tex}	
+\chapter{LFM --- Microscopia de força lateral}
+	\label{cap:lfm}\index{LFM}
+	\input{lfm.tex}
+\chapter{Outros modos de SPM}
+	\label{cap:others-modes}
+	\input{others.tex}
+\chapter{Exemplo de aplicação: Pontos quânticos}
+	\label{cap:quantum-dots}\index{QD}\index{Quantum-dots}
+	\input{quantum-dots.tex}
+
+\begin{thebibliography}{9}
+	\bibitem{eisberg}		R. Eisberg, R. Resnick, {\itshape Física quântica}, ed. Campus, 1979
+	\bibitem{roland}		R. Wiesendanger, {\itshape Scanning probe microscopy and spectroscopy}, ed. Cambridge, 1994
+	\bibitem{salvadori}	M. C. Salvadori, {\itshape Notas de aula do curso de microscopia de força atômica e tunelamento}
+	\bibitem{bimberg}	D. Bimberg, M. Grundmann, N. N. Ledentsov, {\itshape Quantum dot heterostructures}, ed. Wiley,                         1999.
+	\bibitem{mike}		M. J. Silva, {\itshape Crescimento e caracterização de pontos quãnticos de InAs auto-formados},
+										Dissertação de mestrado, 1999.
+	\bibitem{maimon}	M. Maimon, E. Finkman, G. Bahir, S. E. Schacham, J. M. Garcia e P. M. Petroff, Appl. Phys. Lett.
+                    {\bfseries 73}, 2003 (1998).
+	\bibitem{harris}	L. Harris, D. J. Mawbray, M. S. Skolnick, M. Hopkinson e G. Hill, Appl. Phys. Lett. {\bfseries 73},
+                    969 (1998).
+  \bibitem{yusa}		G. Yusa e H. Sakaki, Appl. Phys. Lett. {\bfseries 70}, 345 (1997).
+  \bibitem{arakawa}	Y. Arakawa, H. Sakaki, Appl. Phys. Lett., {\bfseries 40}, 939 (1982)
+  \bibitem{pi}	http://www.physikinstrumente.com/tutorial/
+\end{thebibliography}
+
+\printindex
+\end{document}
+ 
+
+

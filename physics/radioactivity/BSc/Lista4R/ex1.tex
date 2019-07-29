@@ -1,0 +1,57 @@
+\begin{exercicio}[blue]
+	Discuta como o efeito fotoelétrico, Compton e produção de pares relacionam-se com a radiologia
+	diagnóstica. Para isso, utilize as informações:
+	\begin{itemize}
+	\item[i]	Em mamografia utiliza-se o tubo de raios X operando no intervalo de $25$ a $35\unit{keV}$,
+						enquanto que para fazer uma radiografia de tórax o tubo é operado no intervalo de $80$ a
+						$150\unit{keV}$.
+	\item[ii]	Costuma-se fazer aplicação endovenosa de compostos contendo iodo ou bário em pacientes para
+						destacar as artérias ou a parte superior do trato gastrointestinal, respectivamente.
+	\end{itemize}
+\end{exercicio}
+
+	\begin{itemize}
+	\item[i]	A produção de pares não ocorre para nenhum desses exames pois ambos trabalham com elétrons
+						acelerados a energias inferiores a $1022\unit{keV}$.\par
+						Lembrando que o número atômico médio da água e do corpo humano são parecidos\footnote{Este
+						é um fato esperado uma vez sabido que a composição do corpo humano é aproximadamente $70\%$
+						água, em massa.}, podemos aproximar as seções de choque do corpo às da água. Assim, da
+						figura~\ref{fig:ex1} --- seções de choque para a áuga --- podemos notar que os dois exames
+						baseiam-se majoritariamente no espalhamento Compton (Note que a região que compreende as
+						energias utilizadas pertence ao patamar da curva $(\mu/\rho)\times\ E$, característica do
+						espalhamento Compton.
+	\item[ii]	Quanto aos diagnósticos utilizando bário ($Z=56$) e iodo ($Z=53$), eles baseiam-se no fato
+						de que existe uma dependência, embora não muito bem conhecidas, das seções de choque mássicas e o
+						numero atômico $Z$ do alvo. Assim, como tanto o iodo quanto o bário possuem números atômicos
+						várias vezes superiores ao do corpo humano, gera-se contrastes nas chapas fotográficas entre
+						as regiões que contém I ou Ba e o restante o corpo.\par
+						Sabemos que as seçoes de choque no espalhamento Compton tem uma dependência com $Z/A$,
+						praticamente constante em toda a tabela periódica, exceto para o hidrogênio que, aliás,
+						é responsável por $10,5\%$ da composição de massa do nosso corpo. Isto leva a crer que
+						esses diagnósticos podem ser feitos na faixa de energia onde predominam o espalhamento
+						Compton; mas nem tanto, dada a baixa percentagem de hidrogênio no corpo.\par
+						Já o efeito fotoelétrico é altamente dependente do material do alvo, com uma dependência
+						aproximada de $Z^{3,8}$, o que indica ser esta faixa bastante interessante para os diagnósticos,
+						não fosse um problema: Nas baixas energias onde ocorre o efeito fotoelétrico as seções de
+						choque são muito altas, o que implica numa interação muito grande com o paciente e, 
+						consequentemente, efeitos colaterais em demasia.\par
+						A produção de pares, por sua vez, exige uma energia muito alta para ocorrer (Acima de 
+						$1022\unit{keV}$) que, além de ser difícil de conseguir, produz elétrons e pósitrons 
+						altamente energéticos que ionizam a região, causando desequilíbrios orgânicos que se deveria
+						evitar.\par
+						Por tudo isso torna-se interessante, neste tipo de diagnóstico, escolher energias da ordem de
+						algumas unidades de $\mathrm{keV}$, região onde temos o início do patamar do espalhamento Compton
+						(vide fig.~\ref{fig:ex1}) e fim do domínio do efeito fotoelétrico, ainda com seções de choque
+						baixas. Com isso tiramos proveito da grande variação com $Z$ do efeito fotoelétrico e as baixas
+						seções de choque do espalhamento incoerente.
+	\end{itemize}
+	
+	\begin{figure}[htb]
+		\centering
+		\includegraphics[scale=0.35]{ex1.pdf}
+		\caption{\label{fig:ex1}\footnotesize A dependência do coeficiente de atenuação mássico em função da
+					   energia do fóton incidente. O patamar deve-se majoritariamente ao espalhamento Compton, 
+					   enquanto os pontos mais à esquerda referem-se ao efeito fotoelétrico. A região onde ocorre
+					   a produção de pares não aparece.
+					   }
+	\end{figure}

@@ -1,0 +1,101 @@
+	No caso das lentes divergentes o processo é significativamente mais complicado, uma vez que este
+tipo de lente forma imagens virtuais e, portanto, impossíveis de se projetar. O ``truque'' para resolver
+este problema é associar uma lente convergente cuja distância focal conhecemos. Neste caso temos duas
+opções:
+
+\begin{itemize}
+\item Organizamos em seqüência o {\bf objeto} (fonte luminosa), uma lente {\bf convergente}, uma lente 
+	{\bf divergente} e o {\bf anteparo}, ou
+\item Alteramos as posições das duas lentes para obter a seqüência {\bf objeto}, lente {\bf divergente},
+	lente {\bf convergente} e {\bf anteparo}.
+\end{itemize} 
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:opção 1}
+  %\includegraphics[scale=0.5]{figuras/Ald1.jpg}
+  %\caption{\footnotesize A primeira opção para se medir a distância focal de uma lente divergente consiste
+	%em projetar uma imagem real, oriunda da lente convergente, na lente divergente que, por sua vez,
+	%produz uma imagem virtual do lado {\bf real}, entretanto. Esta pode, então, ser projetada num
+	%anteparo e as medidas pertinentes serem feitas.} 
+%\end{figure}
+
+	A idéia da primeira opção é fazer da {\bf imagem real} da lente {\it convergente} o 
+{\bf objeto virtual} da lente divergente. Como este objeto é virtual, localiza-se no lado real da
+configuração (Perceba a origem dos feixes de luz). Ao projetá-lo sobre a lente divergente, esta forma
+uma imagem no mesmo lado do objeto. Ou seja, {\bf real}, e não mais virtual. Esta obviamente pode ser
+projetada no anteparo. 
+
+	Então, na figura 7, o anteparo deve ser colocado na posição da {\it imagem 2}.
+Poder-se-ia argumentar: ``Mas se colocarmos o anteparo na posição da imagem 2 os feixes de luz da
+imagem 1 -- objeto da segunda lente -- seriam bloqueados pelo anteparo!''. Isto de fato não ocorre
+simplesmente porque o processo de formação da imagem não acontece em passos, como no desenho. Os feixes
+atravessam a lente convergente e, em seguida, a lente divergente, formando diretamente a imagem 2. O
+desenho acima é apenas uma representação do processo. 
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:opção 2}
+  %\includegraphics[scale=0.5]{figuras/Ald2.jpg}
+  %\caption{\footnotesize Alternativamente fazemos com que a imagem virtual da lente divergente, atingida
+	%primeiramente pelos feixes de luz, seja o objeto real da lente convergente que, por sua vez,
+	%projeta a imagem real num anteparo.} 
+%\end{figure} 
+
+	A segunda opção é ligeiramente diferente: Procuramos utilizar a {\bf imagem virtual} da lente 
+divergente como {\bf objeto real} da lente {\it convergente} que, por sua vez, forma outra imagem, 
+{\bf real} e projetável. O processo aqui é deveras mais compreensível que na opção anterior.
+
+	Verificou-se experimentalmente que a primeira opção era ruim pois exigia uma proximidade excessiva
+entre as duas lentes e o anteparo\footnote{Esta proximidade era exigida pela amplificação e pelo ponto de 
+formação das imagens, que de forma alguma cabiam no anteparo e no suporte das lentes.}, dificultando as 
+medidas e reduzindo enormemente a faixa de valores mensuráveis. Assim esta forma foi deixada de lado e 
+preferimos utilizar a segunda opção. Também por questões práticas escolhemos não a lente $C36$, a qual já 
+havíamos determinado a distância focal, mas a $C5$, cuja distância focal, sendo menor, permitia uma gama 
+maior de possibilidades de medidas.
+
+	O procedimento então é o seguinte: Fixamos as duas lentes e variamos as posições da fonte 
+(objeto 1) e do anteparo (imagem 2), medindo a posição de cada um desses componentes. Com isso somos 
+capazes de medir $(o_1,\sigma_{o_1})$ e $(i_2,\sigma_{i_2})$. A partir de $o_1$, e conhecendo a distância
+focal da lente convergente $C5$ ($14,40\,\mathrm{cm}$), podemos calcular a posição do objeto real desta
+lente:
+	$$
+	{1\over o_2} = {1\over f_c}-{1\over i_2},
+	$$
+	
+	que é a imagem da primeira lente (divergente -- $D25$). Na última expressão denotamos a distância
+focal por $f_c$ para identificar que se trata da lente {\bf c}onvergente. Significado análogo têm $f_d$.
+Além disso, $o_2,\,i_2,\,f_c>0$, o que caracteriza a lente como convergente.
+
+	Uma vez que acabamos de encontrar a posição da imagem da primeira lente (Objeto da segunda) e medimos
+a posição do primeiro objeto, podemos determinar a distância focal da lente divergente.
+	$$
+	{1\over f_d} = {1\over i_1}+{1\over o_1}
+	$$
+
+	A partir daqui o processo é idêntico ao da lente convergente, pois já determinamos $(o,\sigma_o)$ e
+$(i,\sigma_i)$: $y=1/i$ e $x=1/o$. Ressalva-se, entretanto, que como a lente é divergente, $i,f_d<0$ e $o>0$.
+Encontramos $y=-0,111(7)-1,61(3)x$. Então
+	$$
+	f_d = {1\over-0,111} \Rightarrow f_d = -9,0(6)\,\mathrm{cm}
+	$$
+
+%\begin{figure}[htb]
+  %\centering
+  %\label{fig:lentes divergentes}
+  %\includegraphics[scale=0.5]{figuras/ld.jpg}
+  %\caption{\footnotesize Resultados obtidos na determinação da distância focal de uma lente divergente.}  
+%\end{figure} 
+
+	Aqui, entretanto, percebemos que o coeficiente linear está bem longe de ser $1$. Isto indica um 
+erro sistemático no experimento, que cresce conforme a distância entre os componentes do experimento 
+diminui. Isto não é de espantar pois, embora melhor que a opção 1, este processo de medida também
+não foi o que se poderia dizer ``uma beleza'', principalmente quando o anteparo localizava-se
+próximo às lentes, dificultando o acesso visual. Bastante provavelmente podemos incluir aí também o
+cansaço visual decorrente da extenuante tarefa de procurar a melhor focalização da imagem.  
+ 
+
+
+
+
+

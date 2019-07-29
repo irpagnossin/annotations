@@ -1,0 +1,52 @@
+\begin{quotation}
+{\bf 2.}
+{\it	Seja $\psi(x)$ uma função de onda real com paridade definida, isto é, $\psi(-x)=\psi(x)$ (par) ou
+	$\psi(-x)=-\psi(x)$ (ímpar). Mostre que nesse caso tanto o valor esperado da posição $\med{\op X}$ 
+	quanto do momento $\med{\op P}$ são nulos.}
+\end{quotation}
+
+	O valor esperado da posição é simplesmente
+	\begin{eqnarray*}
+	\med{\op X}	&=& \hope{\psi}{\op X}{\psi}							\\
+			&=& \intii \psi^*(x)x\psi(x)dx							\\
+			&=& \int_{-\infty}^0 \psi^*(x)x\psi(x)dx+\int_0^{\infty} \psi^*(x)x\psi(x)dx	\\
+			&=& -\int_0^{-\infty} \psi^*(x)x\psi(x)dx+\int_0^{\infty} \psi^*(x)x\psi(x)dx	 
+	\end{eqnarray*}
+
+	Fazendo a substituição $x=-u$ na primeira integral ficamos com
+	$$
+	\med{\op X}=-\int_0^{\infty} \psi^*(-u)u\psi(-u)du+\int_0^{\infty} \psi^*(x)x\psi(x)dx
+	$$
+
+	Agora note que, seja $\psi(x)$ para ou ímpar, a identidade anterior não se altera pois
+	\begin{eqnarray*}
+	\mathrm{(Par)}&:&\,\,\,\, \psi^*(-u)\psi(-u)=[+\psi^*(u)][+\psi(u)]=\psi^*(u)\psi(u) 	\\
+	\mathrm{(\mbox{Í}mpar)}&:&\,\,\,\, \psi^*(-u)\psi(-u)=[-\psi^*(u)][-\psi(u)]=\psi^*(u)\psi(u)
+	\end{eqnarray*}
+
+	Então fica claro, lembrando-se que $u$ e $x$ são apenas rótulos para o argumento da função de onda, 
+que $\med{\op X}$ deve se anular. Caso bastante semelhante ocorre para o operador momento:
+	\begin{eqnarray*}
+	\med{\op P}	&=& \hope{\psi}{\op P}{\psi}							\\
+			&=& -i\hbar\intii dx\,\,\psi^*(x){d\over dx}\psi(x)				\\
+			&=& -i\hbar\int_{-\infty}^0 dx\,\,\psi^*(x){d\over dx}\psi(x)
+				-i\hbar\int_o^{\infty} dx\,\,\psi^*(x){d\over dx}\psi(x)		\\
+			&=& i\hbar\int_0^{-\infty} dx\,\,\psi^*(x){d\over dx}\psi(x)
+				-i\hbar\int_0^{\infty} dx\,\,\psi^*(x){d\over dx}\psi(x)		
+	\end{eqnarray*}
+
+	Utilizando novamente a mudança de variável $x=-u$ na primeira integral e verificando que
+	$$
+	{d\over dx}=-{d\over du}
+	$$
+
+	chegamos a
+	$$
+	\med{\op P}=i\hbar\int_0^{\infty} du\,\,\psi^*(-u){d\over du}\psi(-u)
+				-i\hbar\int_0^{\infty} dx\,\,\psi^*(x){d\over dx}\psi(x)		
+	$$   
+	
+	e outra vez, pelos mesmos argumentos, concluímos que $\med{\op P}=0$
+			
+			
+	

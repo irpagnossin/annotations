@@ -1,0 +1,237 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 5 de Mecânica Quântica}
+\author { Ivan Ramos Pagnossin }
+\date { 15 de Julho de 2000 }
+\maketitle
+
+\pagebreak
+
+\sf
+
+	Considere uma partícula de massa $m$ em um oscilador harmônico simples unidimensional de constante eástica $k$. Sejam os operadores 
+escada $R_{+}$ e $R_{-}$ e o hamiltoniano $\mathcal{H}$ dados por
+
+$$
+\mathcal{H}={p_{op}^2\over2m}+{1\over2}kx_{op}^2
+$$
+	e
+$$
+R_{\pm}={p_{op}\over\sqrt{2m}}\pm\sqrt{k\over2}x_{op}
+$$
+
+{\bf 1.}\footnote{Em todos os exercício utilizamos a notação $<\phi^{*}|\mathcal{A}|\psi>$ para indicar a integral $\int_{-\infty}^{\infty}
+\phi^{*}\mathcal{A}\psi dx$. Este comentário foi feito pois não encontramos um livro que evidenciasse a notação acima como usual nos cálculos
+da mecânica quântica.}
+{\it 	Mostre, utilizando a hermiticidade dos operadores $p_{op}$ e $x_{op}$, que $R_{+}^{\dag}=R_{-}$ e $R_{-}^{\dag}=R_{+}$.	
+    }	
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+\begin{eqnarray}
+<\phi^{*}|R_{+}^{\dag}|\psi>	&	=	&	<\phi^{*}|(\alpha p_{op}+i\beta x_{op})^{\dag}|\psi> 			\nonumber \\
+				&	=	&	<\phi^{*}|(\alpha^{*}p_{op}^{\dag}-i\beta^{*}x_{op}^{\dag})|\psi> 	\nonumber \\
+				&	=	&	<\phi^{*}|(\alpha p_{op}-i\beta x_{op})|\psi> 				\nonumber \\
+				&	=	&	<\phi^{*}|R_{-}|\psi> 							\nonumber 
+\end{eqnarray}
+	
+	Ou seja, $R_{+}^{\dag}=R_{-}$. Note que da segunda para terceira linha utilizamos os conhecimentos prévios de que $\alpha$ e $\beta$ são números
+reais, conforme a própria definição dos operadores levantador e abaixador, e da hermiticidade de $p_{op}$ e $x_{op}$. Isto é, $p_{op}^{\dag}=p_{op}$ e
+$x_{op}^{\dag}=x_{op}$, além das propriedades dos operadores adjuntos demonstradas na lista anterior. 
+	De forma análoga fazemos para $R_{-}$:
+\begin{eqnarray}
+<\phi^{*}|R_{-}^{\dag}|\psi>	&	=	&	<\phi^{*}|(\alpha p_{op}-i\beta x_{op})^{\dag}|\psi> 			\nonumber \\
+				&	=	&	<\phi^{*}|(\alpha^{*}p_{op}^{\dag}+i\beta^{*}x_{op}^{\dag})|\psi> 	\nonumber \\
+				&	=	&	<\phi^{*}|(\alpha p_{op}+i\beta x_{op})|\psi> 				\nonumber \\
+				&	=	&	<\phi^{*}|R_{+}|\psi> 							\nonumber 
+\end{eqnarray}
+
+	Que nos dá $R_{-}^{\dag}=R_{+}$.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 2.}
+{\it 	Escrevendo $x_{op}$ e $p_{op}$ em termos dos operadores escada, mostre que $<x>,<p>=0$ para qualquer estado $|n>\equiv\psi_n(x)$ do oscilador
+        harmônico simples, onde $|n>$ é solução de $\mathcal{H}|n>=E_n|n>$.
+    }
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+\sf
+\begin{eqnarray}
+<x>	&	=	&	<\psi_n^{*}|x_{op}|\psi_n>									\nonumber \\
+	&	=	&	{i\over\sqrt{2k}}<\psi_n^{*}|R_{-}-R_{+}|\psi_n>						\nonumber \\
+	&	=	&	{i\over\sqrt{2k}}<\psi_n^{*}|R_{-}|\psi_n>-{i\over\sqrt{2k}}<\psi^{*}|R_{+}|\psi_n>		\nonumber \\
+	&	=	&	{i\alpha\over\sqrt{2k}}<\psi_n^{*}|\psi_{n+1}>-{i\beta\over\sqrt{2k}}<\psi_n^{*}|\psi_{n+1}>	\nonumber \\
+	&	=	&	0												\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+<p>	&	=	&	<\psi_n^{*}|p_{op}|\psi_n>									\nonumber \\
+	&	=	&	\sqrt{m\over 2}<\psi_n^{*}|R_{-}+R_{+}|\psi_n>							\nonumber \\
+	&	=	&	\sqrt{m\over 2}<\psi_n^{*}|R_{-}|\psi_n>+\sqrt{m\over 2}<\psi^{*}|R_{+}|\psi_n>			\nonumber \\
+	&	=	&	\sqrt{m\over 2}<\psi_n^{*}|\psi_{n+1}>+\sqrt{m\over 2}<\psi_n^{*}|\psi_{n+1}>			\nonumber \\
+	&	=	&	0												\nonumber
+\end{eqnarray}
+
+	onde $\alpha$ e $\beta$ são constantes que ligam um estado quântico ao seu adjacente através dos operadores escada, de modo a manter a normalidade
+das autofunções.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 3.}
+{\it 	Mostre que 
+		$$T_{op}={1\over 2m}p_{op}^2={1\over 4}(R_{+}^2+R_{-}^2)+{1\over 2}\mathcal{H}$$
+		$$V_{op}={1\over 2}kx_{op}^2=-{1\over 4}(R_{+}^2+R_{-}^2)+{1\over 2}\mathcal{H}$$
+    }
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+\sf
+\begin{eqnarray}
+p_{op}^2	&	=	&	{m\over 2}(R_{+}+R_{-})(R_{+}+R_{-})							\nonumber \\
+		&	=	&	{m\over 2}(R_{+}^2+R_{-}^2+R_{-}R_{+}+R_{+}R_{-})					\nonumber \\
+		&	=	&	{m\over 2}(R_{+}^2+R_{-}^2)+{m\over 2}(\mathcal{H}+{1\over2}\hbar\omega+\mathcal{H}-{1\over2}\hbar\omega)
+																\nonumber \\
+		&	=	&	{m\over2}(R_{+}^2+R_{-}^2)+m\mathcal{H}							\nonumber \\
+T_{op}		&	=	&	{1\over 4}(R_{+}^2+R_{-}^2)+{1\over 2}\mathcal{H}					\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+x_{op}^2	&	=	&	{1\over 2k}(R_{+}-R_{-})(R_{+}-R_{-})							\nonumber \\
+		&	=	&	{1\over 2k}(-R_{+}^2-R_{-}^2+R_{-}R_{+}+R_{+}R_{-})					\nonumber \\
+		&	=	&	-{1\over 2k}(R_{+}^2+R_{-}^2)+{1\over2k}(\mathcal{H}-{1\over2}\hbar\omega+\mathcal{H}+{1\over2}\hbar\omega)
+																\nonumber \\
+		&	=	&	-{1\over 2k}(R_{+}^2+R_{-}^2)+{1\over k}\mathcal{H}					\nonumber \\
+V_{op}		&	=	&	-{1\over 4}(R_{+}^2+R_{-}^2)+{1\over 2}\mathcal{H}					\nonumber
+\end{eqnarray}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 4.}
+{\it 	Usando o resultado do exercício anterior, mostre que
+		$$<T_{op}>={1\over2}<\mathcal{H}>={1\over2}(n+{1\over2})\hbar\omega$$
+		$$<V_{op}>={1\over2}<\mathcal{H}>={1\over2}(n+{1\over2})\hbar\omega$$
+	onde a média se refere ao estado $|n>$ do oscilador.
+    }
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+\sf
+\begin{eqnarray}
+<T_{op}>	&	=	&	<\psi_n^{*}|T_{op}|\psi_n>								\nonumber \\
+		&	=	&	<\psi_n^{*}|{1\over4}(R_{+}^2+R_{-}^2)+{1\over2}\mathcal{H}|\psi_n>			\nonumber \\
+		&	=	&	{1\over4}<\psi_n^{*}|R_{+}^2|\psi_n>+{1\over4}<\psi_n^{*}|R_{-}^2|\psi_n>
+								+{1\over2}<\psi_n^{*}|\mathcal{H}|\psi_n>			\nonumber \\
+		&	=	&	{\alpha\over4}<\psi_n^{*}|\psi_{n+2}>+{\beta\over4}<\psi_n^{*}|\psi_{n-2}>
+								+{1\over2}E_n<\psi_n^{*}|\psi_n>				\nonumber \\
+		&	=	&	{1\over2}(n+{1\over2})\hbar\omega							\nonumber
+\end{eqnarray}
+\begin{eqnarray}
+<V_{op}>	&	=	&	<\psi_n^{*}|V_{op}|\psi_n>								\nonumber \\
+		&	=	&	<\psi_n^{*}|-{1\over4}(R_{+}^2+R_{-}^2)+{1\over2}\mathcal{H}|\psi_n>			\nonumber \\
+		&	=	&	-{1\over4}<\psi_n^{*}|R_{+}^2|\psi_n>+{1\over4}<\psi_n^{*}|R_{-}^2|\psi_n>
+								+{1\over2}<\psi_n^{*}|\mathcal{H}|\psi_n>			\nonumber \\
+		&	=	&	-{\alpha\over4}<\psi_n^{*}|\psi_{n+2}>+{\beta\over4}<\psi_n^{*}|\psi_{n-2}>
+								+{1\over2}E_n<\psi_n{*}|\psi_n>					\nonumber \\
+		&	=	&	{1\over2}(n+{1\over2})\hbar\omega							\nonumber
+\end{eqnarray}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 5.}
+{\it 	Considere o resultado $R_{-}|0>=0$ e a representação do estado fundamental $|0>$ como $\psi_0(x)$. (a) Determine explicitamente a função
+	$\psi_0(x)$ normalizada e (b) mostre que $|n>=({1\over n!})^{1/2}({1\over\hbar\omega})^{n/2}R_{+}^n|0>$, onde $|n>=\psi_n(x)$ é uma
+	autofunção normalizada.
+    }
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+\sf
+$$
+R_{-}|0>=R_{-}\psi_0=0	\Rightarrow	({p_{op}\over\sqrt{2m}}-i{\sqrt{k\over2}}x_{op})\psi_0(x)=0
+$$
+
+	Na representação da posição, o operador $x_{op}$ torna-se $x$ e $p_{op}$ passa a ser $-i\hbar{d\over dx}$. Assim ficamos com
+$$
+{-i\hbar\over\sqrt{2m}}{d\psi_0\over dx}-i\sqrt{k\over2}x\psi_0=0	\Rightarrow	{d\psi_0\over dx}=-{\sqrt{mk}\over\hbar}x\psi_0
+$$
+
+	Utilizando a técnica de integração por separação das variávies fazemos
+$$
+\int {d\psi_0\over\psi_0}=-{\sqrt{mk}\over\hbar}\int xdx		\Rightarrow	ln(\psi_0(x))=-{\sqrt{mk}\over2\hbar}x^2+C
+$$
+
+	Ou seja\footnote{utilizou-se também a igualdade facilmente demonstrada $\sqrt{mk}=m\omega$},
+$$
+\psi_0(x)=Ne^{-{m\omega\over2\hbar}x^2}
+$$
+
+	A constante $N$ é normalizadora e é facilmente determinável por $<\psi_0^{*}|\psi_0>=1$:
+\begin{eqnarray}
+<\psi_0^{*}|\psi_0>	&	=	&	N^2\int_{-\infty}^{+\infty}e^{-{m\omega\over\hbar}x^2}dx			\nonumber \\
+			&	=	&	N^2({\hbar\over m\omega})^{1/2}\int_{-\infty}^{+\infty}e^{-u^2}du		\nonumber \\
+			&	=	&	N^2({\pi\hbar\over m\omega})^{1/2}						\nonumber
+\end{eqnarray}
+
+	Disto concluímos que $N=({m\omega\over\pi\hbar})^{1/4}$ e, finalmente,
+$$
+\psi_0(x)=({m\omega\over\pi\hbar})^{1/4}e^{-{m\omega\over2\hbar}x^2}
+$$
+
+	Quanto ao item (b), em primeiro lugar determinaremos a constante multiplicativa que retorna a condição de normalidade do auto-estado
+atingido através da aplicação do operador levantador: $\alpha_nR_{+}\psi_{n-1}=\psi_n$. Agora multiplicamos ambos os lados da igualdade por $\psi_n^{*}$
+e integramos em todo espaço (de $-\infty$ a $\infty$). O lado direito vai a um pela normalidade do estado $n$ e resta-nos determinar o lado esquerdo:
+\begin{eqnarray}
+\psi_n			&	=	&	\alpha_n R_{+} \psi_{n-1}							\nonumber \\
+<\psi_n^{*}|\psi_n>	&	=	&	\alpha_n <\psi_n^{*}|R_{+}|\psi_{n-1}>						\nonumber \\
+1			&	=	&	\alpha_n <(\alpha_n R_{+}\psi_{n-1})^{*}|R_{+}|\psi_{n-1}>			\nonumber \\
+			&	=	&	|\alpha_n|^2<(R_{+}\psi_{n-1})^{*}|R_{+}|\psi_{n-1}>				\nonumber \\
+			&	=	&	|\alpha_n|^2<R_{+}\psi_{n-1}|R_{+}^{*}|\psi_{n-1}^{*}>				\nonumber \\
+			&	=	&	|\alpha_n|^2<\psi_{n-1}^{*}|R_{+}^{\dag}|R_{+}\psi_{n-1}>			\nonumber \\
+			&	=	&	|\alpha_n|^2<\psi_{n-1}^{*}|R_{-}R_{+}|\psi_{n-1}>				\nonumber \\
+			&	=	&	|\alpha_n|^2<\psi_{n-1}^{*}|\mathcal{H}+{1\over2}\hbar\omega|\psi_{n-1}>	\nonumber \\
+			&	=	&	|\alpha_n|^2[<\psi_{n-1}|\mathcal{H}|\psi_{n-1}>+
+									{1\over2}\hbar\omega<\psi_{n-1}^{*}|\psi_{n-1}>]	\nonumber \\
+			&	=	&	|\alpha_n|^2[E_{n-1}<\psi_{n-1}^{*}|\psi_{n-1}>+{1\over2}\hbar\omega]		\nonumber \\
+			&	=	&	|\alpha_n|^2(n-1+{1\over2}+{1\over2})\hbar\omega				\nonumber \\
+			&	=	&	|\alpha_n|^2n\hbar\omega							\nonumber \\
+\alpha_n		&	=	&	{1\over\sqrt{n\hbar\omega}}							\nonumber
+\end{eqnarray}
+
+	Agora estamos em condições de chegarmos ao estado $|n>$ através de aplicações sucessivas de $R_{+}$:
+\begin{eqnarray}
+\psi_n		&	=	&	\alpha_nR_{+}\psi_{n-1}					\nonumber \\
+		&	=	&	\alpha_nR_{+}(\alpha_{n-1}R_{+}\psi_{n-2})						\nonumber \\
+		&	=	&	\alpha_n\alpha_{n-1}R_{+}^2(\alpha_{n-2}R_{+}\psi_{n-3})				\nonumber \\
+		&	=	&	\alpha_n\alpha_{n-1}\alpha_{n-2}R_{+}^3(\alpha_{n-3}R_{+}\psi_{n-4})			\nonumber \\
+		&	=	&	\vdots											\nonumber \\
+		&	=	&	(\prod_{j=1}^n\alpha_j)R_{+}^n\psi_0							\nonumber \\
+|n>		&	=	&	({1\over n!})^{1/2}({1\over\hbar\omega})^{n/2}R_{+}^n|0>				\nonumber
+\end{eqnarray}
+
+\end{document}
+

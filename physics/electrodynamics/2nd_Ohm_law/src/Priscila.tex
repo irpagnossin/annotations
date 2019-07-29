@@ -1,0 +1,80 @@
+\documentclass{article}
+	\usepackage[latin1]{inputenc}	
+	\usepackage{amsmath}
+	\usepackage{SIunits}
+	\usepackage{graphicx}
+	
+	\hyphenation{tem-pe-ra-tu-ra}
+	
+\begin{document}
+
+	A segunda lei de Ohm diz que
+	\begin{equation}\label{eq:2aLeiOhm}
+	R = \rho \frac{L}{A},
+	\end{equation}
+	onde $R$ é a resistência do seu material, $L$ é o seu comprimento e $A$ a área transversal ao fluxo de corrente elétrica. Materiais que seguem esta lei são ditos \textsl{ôhmicos}\rlap{.}\footnote{Há materiais, como os semicondutores (didos, transístores, etc), que não obedecem esta lei. De fato, geralmente ela só é válida para metais, como o cobre.} Acontece que $\rho$, $L$ e $A$ dependem da temperatura, de modo que devemos escrevê-los assim:
+	\begin{eqnarray*}
+		\rho &\equiv& \rho(T) \\
+		L	   &\equiv& L(T) \\
+		A    &\equiv& A(T),
+	\end{eqnarray*}
+	onde $T$ é a temperatura (caso você não saiba, o sinal $\equiv$ equivale a dizer que ``$\rho$ é, na verdade, $\rho(T)$'').
+	
+	A dependência de $L$ e $A$ com a temperatura pode ser obtida daquela expressão que se aprende no colegial ou no cursinho, sobre a expansão dos corpos:
+	$$
+	L(T) = L_0 \left[1+\alpha\left(T-T_0\right)\right],
+	$$
+	sendo $L_0$ o comprimento na temperatura $T_0$ e $\alpha$ o chamado \textsl{coeficiente de expansão térmica linear}. Agora vejamos $A$: imagine que seu condutor é cilíndrico. Então a área transversal à corrente elétrica é uma circunferência de raio $r$ tal que $A=\pi r^2$. Mas $r$ segue a mesma expressão acima, ou seja,
+	$$
+	r(T) = r_0 \left[1+\alpha\left(T-T_0\right)\right].
+	$$
+	
+	Então,
+	\begin{eqnarray*}
+	A(T) &=& \pi r^2(T) \\
+	&=& \pi \left\{r_0\left[ 1+\alpha\left( T-T_0 \right) \right] \right\}^2 \\
+	&=& \underbrace{\pi r_0^2}_{A_0} \left[ 1+\alpha\left( T-T_0 \right) \right]^2 \\
+	&=& A_0 \left[ 1+\alpha\left( T-T_0 \right) \right]^2,
+	\end{eqnarray*}
+	onde $A_0$ é a área em $T_0$.
+	
+	Colocando $L(T)$ e $A(T)$ em~\eqref{eq:2aLeiOhm} obtemos
+	\begin{equation}\label{eq:2}
+	R(T) = \rho(T) \frac{L_0 \left[1+\alpha\left( T-T_0 \right)\right]}{A_0\left[ 1+\alpha\left( T-T_0 \right) \right]^2} =
+		\frac{L_0}{A_0} \, \frac{\rho(T)}{1+\alpha\left( T-T_0 \right)}
+	\end{equation}
+	
+	Mas quanto vale $L_0/A_0$ (o problema não forneceu as dimensões do condutor)? Bom... quando a temperatura é $T_0$, $R=R_0$, $\rho=\rho_0$, $L=L_0$ e $A=A_0$. Colocando esses valores em~\eqref{eq:2aLeiOhm},
+	$$
+	R_0 = \rho_0 \frac{L_0}{A_0} \quad\text{ou ainda, }\quad \frac{R_0}{\rho_0} = \frac{L_0}{A_0}.
+	$$
+	
+	Coloque este resultado em \eqref{eq:2} e teremos
+	$$
+	R(T) = \frac{R_0}{\rho_0} \, \frac{\rho(T)}{1+\alpha\left( T-T_0 \right)}.
+	$$
+	
+	Vejamos os valores agora: tome $T_0 = \unit{10}{\celsius} = \unit{283}{\kelvin}$. Nesta temperatura $R_0 = \unit{50}{\ohm}$ (dado pelo problema). Além disso, no site \texttt{www.webelements.com} você pode encontrar que $\alpha = \unit{16,5\times\microd}{\reciprocal \kelvin}$ (note que a unidade de temperatura utilizada é o Kelvin). Já naquele outro link que te passei você encontra $\rho(T)$, que reproduzo abaixo:
+	
+	\begin{center}
+		\resizebox{0.8\textwidth}{!}{\includegraphics{cobre}}
+	\end{center}
+	
+	Note que na faixa de temperatura que seu problema pede ($0 - \unit{200}{\celsius}$ ou, em Kelvin, $273 - \unit{473} {\kelvin}$: entre as duas linhas verticais) $\rho(T)$ é uma reta. Fazendo um ajuste de mínimos quadrados (ou regressão) descobrimos que neste intervalo vale a expressão:
+	\begin{equation}\label{rho}
+	\rho(T) \approx -0,3286 + 0,00684 \cdot T,
+	\end{equation}
+	com $T$ dado em Kelvin e $\rho$, em $\unit{\power{10}{-8}}{\ohm\metre}$. Fica claro então que 
+	$$
+	\rho_0 = \rho(T = \unit{283}{\kelvin} ) = -0,3286 + 0,00684 \cdot 283 = 1,60829.
+	$$
+	
+	Não se esqueça do $\unit{\power{10}{-8}}{\ohm\metre}$: $\rho_0 = \unit{1,60829\times\power{10}{-8}}{\ohm\metre}$. Pronto! Você já tem tudo de que precisa: com a expressão~\eqref{rho} você calcula $\rho(T)$ para todos os $T$ do intervalo pedido. Não se esqueça de transformar graus Celsius para Kelvin. Segue o gráfico que você quer:
+	
+	\begin{center}
+		\resizebox{0.8\textwidth}{!}{\includegraphics{resposta}}
+	\end{center}
+	
+	A resposta correta é a curva vermelha. A curva preta eu coloquei para você comparar: nela eu não considero a expansão de $L$ e $A$ com a temperatura.
+	
+\end{document}

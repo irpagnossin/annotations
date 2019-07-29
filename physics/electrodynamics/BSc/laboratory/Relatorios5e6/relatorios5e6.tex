@@ -1,0 +1,66 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig} 
+\usepackage{epsfig} 
+\usepackage{url}
+\usepackage{ae,algorithm,alltt}
+\usepackage{amsfonts,amstext,enumerate}
+\usepackage{float,fancyvrb,fontenc}
+\usepackage{geometry,hyperref,ifthen}
+\usepackage{indentfirst,lastpage,longtable}
+\usepackage{lscape,makeidx,mathrsfs}
+\usepackage{multicol,pifont,psfrag}
+\usepackage{setspace,showidx,subfigure}
+\usepackage{texnames,textcomp,ulem}
+\usepackage{url,varioref,version}
+\usepackage{wasysym}
+
+\begin{document}
+
+\pagestyle{myheadings}
+\markboth{}{\rm Lentes e polarização da luz}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}	
+
+\title {Lentes e Polarização da luz}  
+\author {I.R. Pagnossin \\ irpagnossin@hotmail.com \and R.B. Naca \\ rogerio\_naca@procomp.com.br}
+\date {\today}
+\maketitle
+
+\begin{abstract}
+  \input{tex/resumo.tex} 
+\end{abstract}
+\section{Introdução teórica} 
+  \input{tex/teoria.tex}
+\section{Análise de dados} 
+  \subsection{Lentes convergentes}\label{sec:lc} 
+    \input{tex/lc.tex}
+  \subsection{Lentes divergentes}\label{sec:ld} 
+    \input{tex/ld.tex} 
+  \subsection{Amplificação angular da lupa}\label{sec:lupa}  
+    \input{tex/lupa.tex} 
+  \subsection{Efeito lupa num orifício}\label{sec:orificio}  
+    \input{tex/orificio.tex} 
+  \subsection{Polarização do laser He--Ne}\label{sec:HeNe}
+    \input{tex/HeNe.tex} 
+  \subsection{Ângulo de Brewster}\label{sec:brewster} 
+    \input{tex/brewster.tex} 
+  \subsection{Lei de Malus}\label{sec:malus} 
+    \input{tex/malus.tex} 
+  \subsection{Coeficientes de reflexão}\label{sec:coeficientes}  
+    \input{tex/coeficientes.tex} 
+  \subsection{Birrefringência e fotoelasticidade}\label{sec:birrefringência}  
+    \input{tex/birrefringencia.tex} 
+\section{Conclusões}
+  \input{tex/conclusoes.tex} 
+\begin{thebibliography}{9}
+  \input{tex/bibliografia.tex}
+\end{thebibliography}
+
+\end{document}
+ 
+
+

@@ -1,0 +1,61 @@
+\begin{exercicio}[blue]
+	Um elétron no átomo de hidrogênio encontra-se no estado $\ket{21-1}=\ket{2p_-}$. 
+	
+	{\tt (a)} Escreva a função de onda $\psi_{2p_-}(\mathbf r)$.
+	
+	{\tt (b)} Determine a distribuição de probabilidades radial $D_{2p}(r)$ de se encontrar o elétron a uma distância $r$ do núcleo.
+	
+	{\tt (c)} Calcule $\med{r}$, $\med{r^2}$ e $\med{{1\over r}}$. Verifique o último resultado comparando com aquele encontrado no item {\tt (b)} do exercício anterior.
+
+\end{exercicio}
+
+	{\tt (a)} A expressão geral para as funções de onda do átomo de hidrogênio é
+	$$
+	\psi_{nlm}(r,\theta,\phi) = R_{nl}(r)Y_{lm}(\theta,\phi)
+	$$
+	
+	Para $\ket{21-1}$ temos, obviamente, $n=2$, $l=1$ e $m=-1$ e disto imediatamente encontramos\footnote{Basta buscar o problema de Sturm--Liouville em coordenadas esféricas em algum livro de física--matemática ou resolver a equação.}
+	\begin{eqnarray*}
+	R_{21}(r) 						&=& {1\over\sqrt{3}}({Z\over2a_0})^{3/2}({Zr\over a_0})e^{-Zr/2a_0}	\\
+	Y_{1-1}(\theta,\phi)	&=& ({3\over8\pi})^{1/2}e^{-i\phi}\sin\theta
+	\end{eqnarray*}
+	
+	O resto das contas, que não passa de substituição, deixo ao leitor interessado.
+	
+	{\tt (b)} A distribuição de probabilidade $D_{nl}(r)$ de encontrarmos o elétron a uma distância $r$
+do centro é, por definição,
+	$$
+	D_{nl}(r) dr = dr\int_{\theta = 0}^{\pi}\int_{\phi = 0}^{2\pi}\psi^*_{nlm}(r,\theta,\phi)
+				\psi_{nlm}(r,\theta,\phi) r^2\sin\theta\mathrm{d}\phi\mathrm{d}\theta
+	$$
+	
+	Como $|\psi_{nlm}(r,\theta,\phi)|^2=|R_{nl}(r)|^2|Y_{lm}(\theta,\phi)|^2$ e a parte angular por si
+só, quando integrada na superfície de uma esfera de raio $r$, resulta $1$, fica claro que a equação
+acima é equivalente a 
+	$$
+	D_{nl}(r)dr = r^2|R_{nl}(r)|^2dr
+	$$
+	
+	No nosso caso, como $n=2$ e $l=1$, 
+	$$
+	D_{21}(r)dr = {1\over\sqrt{3}}({Z\over2a_0})^{3/2}({Zr^3\over a_0})e^{-Zr/2a_0}dr
+	$$
+
+	{\tt (c)} Ao invés de calcularmos três integrais, vale mais a pena utilizarmos um expoente genérico $\mu$:
+	\begin{eqnarray*}
+	\med{r^\mu}	&=& \int_0^\infty r^\mu D_{nl}(r)dr = \int_0^\infty r^{\mu+2}|R_{nl}(r)|^2dr = 	\\
+							&=& \int_0^\infty r^{\mu+2}|R_{21}|^2 = \int_0^\infty r^{\mu+2}
+										{1\over3}{Z^3\over8a_0^3}{Z^2r^2\over a_0^2}e^{-Zr/a_0}dr									\\
+							&=& {Z^5\over24a_0^5}\int_0^\infty r^{\mu+4}e^{-Zr/a_0}dr 											\\
+							&=& {Z^5\over24a_0^5}({a_0\over A})^{\mu+5}\int_0^\infty \lambda^{\mu+4}
+										e^{-\lambda}\mathrm{d}\lambda																							\\
+							&=& {1\over24}({a_0\over Z})^\mu\Gamma(\mu+5)																		\\
+							&=& {(\mu+4)!\over24}({a_0\over Z})^\mu
+	\end{eqnarray*}
+	
+	com $\mu\ge-4$ e $\mu\in\mathbb{Z}$. Então quando $\mu=1$ teremos $\med{r} = 5a_0$; quando
+$\mu=2$ encontramos $\med{r^2}=30a_0^2$. E, finalmente, para $\mu=-1$, $\med{1/r}=1/4a_0$. 
+
+	Neste ponto é interessante comparar os resultados para $\med{1/r}$ obtido aqui e no item {\tt (b)} do exercício anterior: Aqui, como $n=2$, vemos que podemos expressar $\med{1/r}$ como $1/2^2a_0$, que é o mesmo resultado obtido no exercicio 3.
+
+

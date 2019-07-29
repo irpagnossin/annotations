@@ -1,0 +1,40 @@
+\documentclass[a4paper,10pt,twocolumn]{memoir}
+
+	% Required packages.
+	\usepackage{graphicx}
+	\usepackage[plain]{nccfancyhdr}
+
+	% Head and foot parameters and contents.
+	\renewcommand\headheight{0.05\textheight}
+	\renewcommand\headrulewidth{1pt}
+	\renewcommand\footrulewidth{1pt}
+	\fancyhead[c]{2007}
+	\fancyfoot[l]{I. R. Pagnossin (visitor PhD candidate). Advisor: G. M. Gusev [Instituto de F\'isica da Universidade de S\~ao Paulo (IF-USP), S\~ao Paulo, Brazil]. A. K. Meikap (visitor at IF-USP), T. E. Lamas (IF-USP) and J.-C. Portal (GHMFL).}
+
+	% Useful macros.
+	\newcommand\tauphi{\ensuremath{\tau_\varphi}}
+
+\begin{document}
+
+	\textbf{\large Anomalous electron dephasing rate on GaAs double quantum-wells}
+
+	Nowadays it's well established that by using weak-localization (WL) and electron-electron interaction (EEI) effects, analysis of the low field magnetoconductivity could provide quantitative information of dephasing ($\tauphi$) and spin-orbit scattering times for the electron waves in highly mobile two dimensional electron systems (2DES). Due to rapidly developed spintronics, dealing with the manipulation of spin in electronic devices, the spin properties of semiconductor quantum-wells and other heterostructures have aroused widespread interest among the investigators [G. M. Minkov \textsl{et al}, Phys. Rev. B \textbf{70}, 155323 (2004)].
+
+	The present report presents some results of a comprehensive study on the transport properties of heteroestructures containing double or parabolic quantum-wells, or quantum-dots (presented on the 13th edition of the Brazilian Workshop on Semiconductor Physics) [I. R. Pagnossin \textsl{et al}, Brazilian Journal of Physics \textbf{37-4b} (2007), to be published]. The samples of this report, grown by means of Molecular Beam Epitaxy, consist of $14$ nm width GaAs/AlAs double-quantum wells with $5$ nm barrier and symmetric $4 \times 10^{15}$ m$^{-2}$ delta-doping layers, 40 nm away from the quantum-wells interface.
+
+	The samples were patterned with Hall bars ($200\times 500$ $\mu$m) and Ti-Au gate contacts were evaporated over the surface. Standard lock-in techniques were used (1 $\mu$A ac) in order to get the electron concentration and transport mobility by means of the Shubnikov-de Haas and ordinary Hall effects, respectively. The measurements were carried out, for different gate voltages, in the temperature range $0.5 \le T < 1.1$ K in a $^3$He bath cryostat inserted in a superconducting coil (both low and high magnetic fields were used).
+
+	Firstly, from the zero magnetic field data and considering the model proposed by [O. E. Raichev and P. Vasilopoulos, J. Phys.: Condens. Matter \textbf{12}, 589 (2000)] to the conductivity dependece on the temperature for double quantum wells, we concluded that both WL and EEI are present in the diffusive regime (for best fitting parameters $F_0^\sigma = -0.653$ and $\sigma_0 = 6.3\times 10^{-4}$ $\Omega^{-1}$, the Fermi-liquid interaction constant [G. Zala \textsl{et al}, Phys. Rev. B \textbf{64}, 214204 (2001)] and the conductivity at $B = 0$, respectively).
+
+	For $B \ne 0$, corrections to the positive magneconductivity are due only to weak-localization and no antilocalization peak were observed, for which we conclude that, as expected for GaAs, spin-orbit interactions are negligible. In all probabilities, $\tauphi$ is the determining factor to control the magnitude and temperature dependence of the WL effect. In our case, it originates from inelastic electron-electron scatterings.
+
+	Fig. \ref{fig:1} shows the variation of the dephasing rate ($\tauphi^{-1}$) with conductivity for $0.75$ K. It's observed that $\tauphi^{-1}$ increases linearly with increasing conductivity. But according to the Fermi-liquid model, in 2DES the main phase breaking mechanism at low temperature is due to inelastic electron-electron interaction and it decreases monotonically with conductivity (dotted line in Fig. \ref{fig:1}). This anomalous behaviour indicates the existence of other probable mechanism of phase breaking for electrons in the investigated system. It's proper to say that a similar result was observed on an heterostructure containing quantum-dots [I. R. Pagnossin \textsl{et al}, Brazilian Journal of Physics \textbf{37} (2007), to be published], considering a different model to extract $\tauphi$ from the data.
+
+	\begin{figure}[tb]
+		\centering
+		\includegraphics[width=0.95\columnwidth]{Pagnossin1_f1.eps}
+		\caption{anomalous dependence of the dephasing rate on the conductivity. The dotted line shows the expected result from the Fermi-liquid model. Inset shows the tunneling time ($\tau_t$) as a function of the gate bias.}
+		\label{fig:1}
+	\end{figure}
+
+\end{document}

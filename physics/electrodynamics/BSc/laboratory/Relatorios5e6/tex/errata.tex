@@ -1,0 +1,74 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[pdftex]{graphics,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig} 
+\usepackage{epsfig} 
+\usepackage{url}
+\usepackage{ae,algorithm,alltt}
+\usepackage{amsfonts,amstext,enumerate}
+\usepackage{float,fancyvrb,fontenc}
+\usepackage{geometry,hyperref,ifthen}
+\usepackage{indentfirst,lastpage,longtable}
+\usepackage{lscape,makeidx,mathrsfs}
+\usepackage{multicol,pifont,psfrag}
+\usepackage{setspace,showidx,subfigure}
+\usepackage{texnames,textcomp,ulem}
+\usepackage{url,varioref,version}
+\usepackage{wasysym}
+
+\begin{document}
+
+\pagestyle{myheadings}
+\markboth{}{\rm Lentes e polarização da luz}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}	
+
+\title {Lentes e Polarização da luz}  
+\author {I.R. Pagnossin \\ irpagnossin@hotmail.com \and R.B. Naca \\ rogerio\_naca@procomp.com.br}
+\date {\today}
+\maketitle
+
+\section{Errata} 
+
+	Ao que nos conta os deuses parecem ter um grande senso de humor: Ontem, cerca de $5$ minutos
+após termos entregue o relatório da experiência descobrimos o erro ocorrido no processo de determinação
+do índice de refração das lentes: Ocorreu simplesmente que não levamos em consideração os sinais dos
+raios de curvatura. Levando isto em conta e colocando $R_1<0$ e $R_2>0$ sempre, refazemos os cálculos e em 
+primeira aproximação\footnote{Ou seja, ignorando o segundo
+termo da fórmula do fabricante de lentes.} encontramos
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{cc}
+  \hline
+  Lente		&	$n$			 	\\
+  \hline						
+  C36		&	1,51				\\
+  C5		&	1,52				\\
+  \hline
+  \end{tabular}
+\end{table}    
+
+	Utilizando estes índices para calcular um valor mais preciso ($c$), incluindo o segundo termo da
+fórmula do fabricante de lentes, verificamos tratarem-se de valores despresíveis:
+	\begin{eqnarray*}
+	\mathrm{c(C36)} &=& {(n-1)^2\over n}{t\over R_1R_2}				\\
+				&=&{(1,51-1)^2\over1,51}{0,5\over26,60\cdot25,00}\cong0,00013	\\
+	\mathrm{c(C5)}  &=&{(1,52-1)^2\over1,52}{0,67\over14,79\cdot15,06}\cong0,00053	\\
+	\end{eqnarray*} 
+
+	Como pode ser visto, encontramos $t=0,5\,\mathrm{cm}$ para a lente $C36$ e $t=0,67\,\mathrm{cm}$
+para $C5$. Para a lente divergente, encontramos em primeira aproximação $n=1,44$. A segunda aproximação 
+neste caso não foi possível pois não tinhamos o valor da espessura $t$, isto pois o micrômetro, aparelho
+que utilizamos para medir esta espessura, não alcançava o centro da lente divergente.
+
+	Finalmente concluímos com mais tranqüilidade o relatório...
+
+\end{document} 
+
+
+
+
+

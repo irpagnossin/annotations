@@ -1,0 +1,33 @@
+\section{Variação da exposição com a corrente}
+\label{sec:XxI}
+
+	A variação da exposição com a corrente é algo razoavelmente simples de compreender: Suponha o tubo de
+raios X das seções~\ref{sec:csrAlRX2mmAl} e~\ref{sec:csrAlRX05mmCu}, por exemplo. Os elétrons emitidos no
+catodo são acelerados em direção ao anodo por uma diferença de potencial $U$. Assim, cada elétron atinge 
+o anodo com aproximadamente $\epsilon_0=eU$. Se a corrente desse circuito for $I$, então a quantidade de elétrons
+por unidade de tempo que incide sobre o anodo é $I$ e, consequentemente, a potência incidente é 
+$P=\epsilon I$. Na interação com o alvo (anodo) parte da energia total incidente transforma-se em energia
+radiante e o restante fica a cargo do circuito dissipá-la na forma de calor. Isto significa que existe um
+fator $\kappa(\epsilon_0)$\footnote{$\kappa$ é apenas uma forma teórica de se dizer que parte da energia é
+transformada em radiação e exige a condição de que todos os elétrons são independentes. Com efeito, o resultado
+de $N$ elétrons interagindo difere de $2N$ apenas na quantidade, o que implica $\kappa$ não depender da corrente.
+Eventualmente pode-se ter outras dependências mas elas são menos importantes.} que, aplicado à energia incidente, resulta a energia iradiada: $\epsilon_1=\kappa(\epsilon_0)\epsilon_0 I$.\par
+	Esta energia, ao atingir o detector, terá sofrido uma série de outras interações e perdas que podemos novamente representá-la por um novo fator $\eta(\epsilon_1)$. Outro fator cabe ainda quando a radiação incidente 
+$\epsilon_2=\eta(\epsilon_1)\kappa(\epsilon_0)\epsilon_0 I$ interage com o próprio detector: $\zeta(\epsilon_2)$.
+Nesta situação, a quantidade de energia --- por unidade de tempo --- absorvida pelo volume $V$ é 
+	$$
+	\epsilon_3=[1-\zeta(\epsilon_2)]\eta(\epsilon_1)\kappa(\epsilon_0)\epsilon_0 I
+	$$
+	onde nota-se a dependência linear com I, confirmada pelo gráfico~\ref{fig:XxI}.\par
+	Na realidade a explicação acima aplica-se mais corretamente ao conceito de dose absorvida, mas vale a idéia 
+mesmo para a exposição, desde que se considere alguns detalhes a mais.
+	\begin{figure}[htb]
+	 \centering
+	 \includegraphics[scale=0.35]{figuras/XxI.pdf}
+	 \caption{\footnotesize\label{fig:XxI}
+	   A dependência da exposição com a corrente é linear pois a corrente diz apenas o número de interações
+	   que ocorrem por intervalo de tempo. Assim, supondo que cada uma das interações são independentes, um
+	   volume de interesse no qual se meça a exposição quando irradiado por $2N$ fótons é muito proximamente
+	   duas vezes mais irradiado que esse mesmo volume quando incidem-se-lhe $N$ fótons (ou elétrons, etc.).}
+	\end{figure}
+	

@@ -1,0 +1,59 @@
+\section{A meia-vida do $\mathrm{^{99m}Tc}$}
+
+	O número de contagens $\Delta n$ observado durante este intervalo de um minuto é aproximadamente
+igual à atividade $A(\xi)$ do tecnécio num instante $\xi\in]t_i-\Delta t/2,t_i+\Delta t/2[$ vezes
+o intervalo de tempo $\Delta t$ em que se fez a medida:
+	\begin{eqnarray*}
+	\Delta n & \cong & A\cdot\Delta t		\\
+	  	   & \cong & -{dN\over dt}\,\Delta t
+	\end{eqnarray*}
+  	onde $n$ é o número de {\bf núcleos-filho} formado durante o intervalo de tempo $\Delta t$.
+
+	No nosso caso, como $\Delta t$ foi de um minuto, um tempo bastante pequeno comparado aos
+$140$ minutos totais de toda a medida, podemos aproximar o número de contagens por unidade de
+tempo ($\Delta N/Delta t$) à atividade dos núcleos-pai:
+	\begin{equation}\label{eq:atividade}
+	\lim_{\Delta\to0} {\Delta N\over\Delta t} = -{dN\over dt} = A
+	\end{equation}
+
+	Desta forma nossas medidas, de minuto em minuto, deram-nos a atividade da amostra em cada
+instante de tempo $t$ e, a partir de agora, chamaremos {\sl atividade} ao número de contagens
+obtido durante uma medida.\par
+	A lei de decaimento exponencial é $N(t) = N_0e^{-\lambda t}$ e, aplicando-a na equação
+\ref{eq:atividade} obtemos
+	\begin{eqnarray}
+				    A(t) &=& -{dN\over dt}			\nonumber	\\
+		   			   &=& \lambda N_0e^{-\lambda t}	\nonumber	\\
+		   			   &=& A_0e^{-\lambda t}		\nonumber	\\
+	\label{eq:linear} \ln A(t) &=& \ln A_0 - \lambda t
+	\end{eqnarray}
+	com $A_0$ sendo a atividade inicial, em $t_0$ arbitrariamente escolhido por nós. Assim,
+para obtermos a meia-vida do tecnécio $T_{1/2}=\ln2/\lambda$ simplesmente plotamos o gráfico
+$\ln A\times t$ e ajustamos uma reta aos pontos de forma a determinar os coeficientes linear
+$\ln A_0$ e angular $-\lambda$. Mas vejamos com mais cuidado:\par
+	Com o fim de melhorar a aproximação $A=\Delta n/\Delta t$ que fizemos no começo da 
+análise podemos assumir $\Delta t/2=30\unit{2}$ como sendo a incerteza na medida do tempo $t$.\par
+	Para a atividade consideramos a incerteza teórica $\sigma_A=\sqrt A$, uma vez que 
+verificamos, na sessão \ref{sec:experimentoC}, que este número é uma boa avaliação da
+incerteza estatística do número de contagens, mesmo para nossa situação onde o núcleo-pai não
+está presente em quantidade inesgotável.\par
+	Assim, temos os pares $(A,\sigma_A)$ e $(t,\sigma_t)$. Pela equação de linearização 
+\ref{eq:linear} vemos a necessidade de propagar o erro $\sigma_A$ para $\sigma_\ln A$:
+	\begin{eqnarray*}
+	\sigma_\ln A^2 &=& (\sigma_A\,{\partial\over\partial A})^2	\\
+			   &=& ({\sigma_A\over A})^2
+	\end{eqnarray*}
+
+	Uma vez feito isso já podemos plotar o gráfico $(\ln A,\sigma_\ln A)\times(t,\sigma_t)$ e
+proceder a regressão\footnote{Não precisamos fazer transferência dos erros da abscissa para a
+ordenada pois o software utilizado na análise dos dados ({\sl Microcall Origin}) é capaz de
+fazê-lo por conta própria.}. Encontramos $\ln A_0 = 7,346(17)$ e $-\lambda = -0.00167(22)$ com
+$\csi_{\mathrm{red}}^2=-0,83$(??????????????), o que nos dá 
+	$$
+	T_{1/2} = \mathrm{6h\unit h 55\unit m\,\pm 55\unit m}
+	$$
+	onde a incerteza foi obtida por propagação da incerteza no coeficiente angular:
+	\begin{eqnarray*}
+	\sigma_{T_{1/2}}^2 &=& (\sigma_\lambda {\partial T_{1/2}\over\partial\lambda})^2 \\
+				 &=& ({\sigma_\lambda\ln2\over\lambda^2})^2
+	\end{eqnarray*}

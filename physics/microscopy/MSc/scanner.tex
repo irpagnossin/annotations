@@ -1,0 +1,241 @@
+%	Projeto:  Scanning probe microscopy
+%	Autor:	  Ivan Ramos Pagnossin
+%	Data:		  07/06/2002
+%	Arquivo:  scanner.tex
+% Capítulo: Scanner
+	
+\section{Princípios}
+	
+	Os deslocamentos nanométricos exigidos pela microscopia de varredura atualmente são feitos baseados no fenômeno da piezoeletricidade\index{Piezoeletricidade}. Dispositivos com essa função são genericamente conhecidos como {\slshape atuadores piezoelétricos}\index{Atuador piezoelétrico} ou,
+especificamente na microscopia de varredura, {\slshape scanners} (figura~\ref{fig:scanner1})\index{Scanner}. No que segue, trataremos ambos como sinônimos.\par
+
+	Existem dois tipos básicos de atuadores piezoelétricos: Os realimentados ({\slshape closed-loop}) \index{Atuador piezoelétrico!realimentado} e os não-realimentados ({\slshape opened-loop})\index{Atuador piezoelétrico!não realimentado}. O primeiro, de maior custo, conta com um sistema de realimentação eletrônica que verifica continuamente os deslocamentos produzidos; o segundo não. O material piezoelétrico mais comum no mercado é o titanato de zircônio chumbo (PZT)\index{PZT}.
+		
+\begin{figure}[htb]
+  \begin{minipage}[b]{0.46\textwidth}
+	  \centering\includegraphics[scale=0.5]{figuras/scanner/scanner1.jpg}
+	  \caption{\label{fig:scanner1}\footnotesize Um \scanner\ típico e seu esquema elétrico simplificado: Um cilíndro 		metálico é recoberto interna e externamente por PZT.}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.46\textwidth}
+	  \centering\includegraphics[scale=0.5]{figuras/scanner/scanner2.jpg} 
+	  \caption{\label{fig:scanner2}\footnotesize Da esquerda para a direita, o material antes do tratamento apresenta seus dipólos elétricos \index{Dipólo elétrico} distribuidos aleatoriamente. Durante o aquecimento e polarização todos os dipólos são alinhados ao campo elétrico aplicado. No final, ao retornar à temperatura ambiente, o PZT mantém todos os dipolos praticamente alinhados, gerando coerência de resposta a campos elétricos, mesmo que pequenos.}	  
+	\end{minipage}
+\end{figure}
+
+	A fabricação de cerâmicas piezoelétricas constitui-se dos seguintes passos (conforme~\cite{pi}): Primeiro os elementos básicos (como o titânio no PZT) são triturados e misturados. A mistura é então aquecida a $75\%$ da temperatura de sinterização para acelerar as reações químicas. O material é novamente triturado e re-misturado para aumentar sua reatividade. Em seguida é cozido à temperatura de $750^{\mathrm{o}}$, seguido de nova sinterização entre $1250^{\mathrm{o}}$ e
+$1350^{\mathrm{o}}$. Neste ponto a cerâmica pode ser cortada e lapidada na forma desejada. É ainda nesta fase que se fixam os eletrodos. O procedimento final é a polarização, que ocorre num banho aquecido em óleo e sujeito a campos elétricos de vários kilovolts por milímetro. Com isso o material expande-se ao longo do campo elétrico e contrai-se no plano perpendicular, alinhando todos os dipolos elétricos moleculares (domínios de Weiss)\index{Weis, domínios}. A situação é mantida por algumas horas e em seguida resfria-se a cerâmica, ainda com o campo aplicado. Ao final, o material apresenta uma polarização residual (que pode, entretanto, ser destruída se os limites elétrico, mecânico ou térmico forem superados).
+Como resultado temos uma cerâmica que expande-se (ou contrai-se) ao longo do campo aplicado, e proporcionalmente à sua intesidade. A figura~\ref{fig:scanner2} ilustra o processo.
+
+	Naturalmente, com o tempo os dipólos elétricos moleculares movem-se de forma a desalinharem-se em busca de uma configuração de menor energia, causando a perda da propriedade piezoelétrica. Para evitar este processo é preciso manter o \scanner\ em freqüênte uso, aplicando-lhe sempre um campo elétrico. Este desalinhamento é imensamente acelerado para temperaturas superiores a aproximadamente $150\unit{^\mathrm{o}C}$, a temperatura Curie\index{Temperatura Curie} do material. Isto se chama {\slshape aging} (ou {\slshape envelhecimento}) e será melhor comentado na seção~\ref{sec:aging}.\par
+
+	Em primeira aproximação, o deslocamento relativo $\vetor s$ total do material piezoelétrico é linear com o campo elétrico aplicado, segundo $\vetor s = \tensor d\vetor E$, sendo $\tensor d$ o tensor de acoplamento piezoelétrico, \index{Acoplamento piezoelétrico} dado em $\unit{C/N}$ (SI). Para o PZT-5A, e.g., $\tensor d$ é da ordem de $10^{-12}\unit{C/N}$. O carácter tensorial dessa expressão é útil para representar o fato experimental de que $\vetor s$ não é paralelo a $\vetor E$. Contudo, a relação anterior não é, a rigor, verdadeira, pois os deslocamentos $\vetor s$ não são lineares com $\vetor E$, dependendo de muitas outras propriedades do material e do próprio campo. A este fenômeno damos o nome de {\bfseries não-linearidade intrínseca} (veja seção~\ref{sec:nli}).
+	
+	Um atuador piezoelétrico é, como dissemos, um dispositivo que utiliza materiais piezoelétricos para produzir nano-deslocamentos controlados. Mas como será possível controlar tais deslocamentos se não conhecemos o tensor $\tensor d$? O primeiro método, usado nos atuadores não-realimentados, é calibrá-los freqüentemente utilizando uma amostra padrão cujas dimensões são conhecidas (veja, e.g., a figura~\ref{fig:padrao}). Com isso o software responsável por controlar o \scanner\ pode manter atualizados arquivos de configurações que refletem o comportamento do material piezoelétrico utilizado mediante aos estímulos externos. Lembre-se que qualquer material piezoelétrico envelhece (seção~\ref{sec:aging}), alterando suas propriedades. Isto explica a necessidade da calibração \index{Calibração} rotineira. Este procedimento, entretanto, não elimina completamente os efeitos da não linearidade do material piezoelétrico. De fato, {\slshape scanners} não-realimentados apresentam erros aproximadamente $10$ vezes maiores que os realimentados: Neste tipo de atuador, não há a necessidade de calibrações\footnote{Veja seção~\ref{sec:corrections}.} pois o dispositivo conta com sistemas ópticos ou capacitivos para medir, continuamente, o deslocamento $\vetor s$. Assim, as ações do software responsável pelos deslocamentos não levam em consideração as tensões aplicadas --- exceto para evitar romper os limites de usabilidade da cerâmica ---, mas somente o efeito delas.\par
+	
+	Consideremos um pequeno exemplo da situação acima para clarear a diferença entre os dois tipos de {\slshape scanners}:
+Suponha que tenhamos duas cerâmicas piezoelétricas idênticas, uma sendo utilizada por um atuador realimentado e outro por um não-realimentado (calibrado {\slshape hoje}). Tome ainda como verdade que {\slshape hoje} uma diferença de potencial $V$ é capaz de produzir um deslocamento $\vetor s$ no material (representemos por $V\to\vetor s$), e que {\slshape amanhã} esta mesma tensão corresponde a um deslocamento $\vetor s+\Delta\vetor s$ ($V\to\vetor s+\Delta\vetor s$). Então, {\slshape hoje} ambos os {\slshape scanners}, ao serem solicitados pelo usuário a produzir o deslocamento $\vetor s$, acertam igualmente. {\slshape Amanhã}, porém, o atuador não-realimentado, utilizando ainda os arquivos de configurações de {\slshape hoje}, ``acredita'' que a diferença de potencial $V$ ainda é capaz de produzir o deslocamento solicitado e, por isso, aplica $V$ na cerâmica, errando, portanto, de $\Delta\vetor s$ neste valor. O atuador realimentado, por outro lado, não sabe --- e nunca soube, na verdade --- que {\slshape hoje} $V$ é capaz de produzir $\vetor s$; nem que {\slshape amanhã} é necessário $V+\Delta V$ para produzir o mesmo efeito. O que ele faz é simplesmente aplicar uma tensão na piezo e medir o deslocamento. Então, independentemente se é {\slshape hoje} ou {\slshape amanhã}, o atuador realimentado sempre atinge $\vetor s$. Em termos esquemáticos, para o \scanner\ realimentado teremos $V+\Delta V\to\vetor s$ e, para o não-realimentado, $V\to\vetor s+\Delta\vetor s$.\par
+
+	Existem outros efeitos não lineares que são tratados, apenas por didática, separadamente. Em todos eles teremos sempre a situação acima: Os {\bfseries atuadores}\footnote{Note que não estamos nos referindo às cerâmicas piezoelétricas, que sempre apresentam tais alinearidades; mas sim dos {\bfseries atuadores} (ou {\slshape scanners}), que podem sempre contar com outros dispositivos para evitar tais problemas.} realimentados não sofrem, na prática, tais efeitos (exceto em $z$, como será visto na seção~\ref{sec:corrections}.
+	
+\newcommand{\dimensao}{\unit{\mu m}}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[scale=0.5]{figuras/scanner/scanner3.jpg}
+	
+	\begin{tabular}{ccc}
+	  \hline
+	  {\bfseries Model} & {\bfseries Scan size} & {\bfseries Vertical Range} \\
+	  \hline
+	  AS-0.5 (A)	&	$0,4\dimensao\times0,4\dimensao$	& $0,4\dimensao$ \\
+	  AS-12 (E)   & $10\dimensao\times10\dimensao$ & $2,5\dimensao$ \\
+	  AS-130 (J)  & $125\dimensao\times125\dimensao$ & $5,0\dimensao$ \\
+	  AS-130V (J vertical) & $125\dimensao\times125\dimensao$ & $5,0\dimensao$ \\
+	  AS-200 & $200\dimensao\times200\dimensao$ & $8,0\dimensao$ \\
+	  \hline
+	\end{tabular}
+		
+	\caption{\label{fig:scanner3}\footnotesize Alguns {\slshape scanners} não-realimentados fabricados pela Digital Instruments para microscópios {\slshape multimode} SPM. Da esquerda para a direita: AS-130V, AS-200, AS-130 e AS-0.5.}
+\end{figure}
+
+	A figura~\ref{fig:scanner1} ilustra a utilização prática de materiais piezoelétricos como {\slshape scanners} (ou atuadores piezoelétricos): Ao acionarmos o gerador $\pm Z$, um campo elétrico na direção radial é gerado, causando uma contração (distensão) do PZT nesta direção; Resulta disto uma distensão (contração) na direção perpendicular ($z$). Os movimentos em $x$ e $y$ são um pouco mais complicados: Primeiramente, note que diferentemente da parte superior do cilindro, a parte inferior possui pequenas frestas entre os materiais: Essas frestas tornam independentes\label{scanner:explanation} os movimentos produzidos pelos geradores $\pm X$ e $\pm Y$. Além disso, perceba que as partes em vermelho e amarelo estão sempre em oposição de fase. Isto faz com que se o material contrair-se à esquerda, ele estica-se à direita, produzindo um movimento para a esquerda no extremo inferior do cilíndro e vice-versa. Processo idêntico ocorre para o gerador $\pm Y$. Assim, consegue-se garar movimentos em todas as três direções.\par
+	
+	Diferentes modalidades de SPM utilizam diferentes tipos de sonda. Com isso, muitas vezes torna-se mais simples acoplar não a sonda ao \scanner\ --- que é a imagem que primeiro nos vêm a mente --- mas a {\bfseries amostra} ao \scanner. Assim, ao invés de movimentarmos a sonda {\bfseries sobre} a amostra, movimentamos a amostra {\bfseries sob} a sonda. O efeito é obviamente idêntico e, de fato, é o esquema adotado por microscópios do tipo {\slshape Multimode} da digital Instruments como, por exemplo, o NanoScope$^{\mbox{\copyright}}$IIIA \index{NanoScope} do laboratório de filmes finos do Instituto de Física da Universidade de São Paulo.
+
+	A seguir discutimos os efeitos não lineares sofridos por todos os tipos de materiais piezoelétricos. Obviamente, como procuramos deixar claro anteriormente, tais fenômenos, embora sempre presentes, atormentam somente os atuadores não-realimentados.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seção: Não linearidade intrínseca - Capítulo: Scanners
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Não linearidade intrínseca}
+	\label{sec:nli}\index{Não linearidade intrínseca}
+
+	Conforme comentamos há pouco, o deslocamento $\vetor s$ do material piezoelétrico não é linear com $\vetor E$. Em termos práticos, esta não linearidade apresenta-se como uma distorção da matriz de varredura (fig.~\ref{fig:varredura}), conforme ilustra a figura~\ref{fig:nli}. \index{Varredura!Matriz de}\par
+	
+	A forma atualmente utilizada pelos fabricantes de {\slshape scanners} (ou, no nosso caso, de microscópios SPM) para quantificar a não linearidade intrínseca é expressá-la como o quociente do máximo desvio da linearidade $\Delta x$ (veja figura~\ref{fig:nli}) pelo deslocamento linear esperado $x$ correspondente à tensão aplicada:
+	$$
+	\mbox{Não linearidade intrínseca} = {\Delta x\over x}
+	$$
+	
+	Valore típicos giram em torno de $2\%$ a $25\%$.\par
+	
+	A partir daqui lembraremos que $\vetor s = x\hat i+y\hat j+z\hat k$, com $\hat i$ e $\hat j$ os versores que definem o plano da varredura \index{Varredura!Plano de} (figura~\ref{fig:varredura}) e $\hat k$ o versor na perpendicular deste plano. O terno $(x,y,z)$, com $x$ e $y$ determinados pelo \scanner\ e $z$ medido conforme o que veremos nos capítulos seguintes, determina univocamente o resultado em cada ponto da malha de varredura. \index{Varredura!Malha de} Pelo exposto pode-se dizer que o que vale $x$ vale para $y$ e $z$, exceto quanto dito o contrário.
+	
+\setlength{\unitlength}{2mm}
+\begin{figure}
+  \centering
+  \begin{minipage}[c]{0.46\textwidth}
+  	\centering\begin{picture}(30,30)\input{figuras/scanner/scanner1}\end{picture}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.46\textwidth}
+    \centering\begin{picture}(30,30)\input{figuras/scanner/scanner2}\end{picture}
+  \end{minipage}
+  \caption{\label{fig:nli}\footnotesize Exemplo de varredura ($30\times30$ pontos) sem (à esquerda) e com (à direita) a influência da não linearidade intrínsica (seção~\ref{sec:nli}).}
+\end{figure}
+
+\begin{figure}[htb]
+	\begin{minipage}[b]{0.46\textwidth}\centering
+		\includegraphics[scale=0.25]{figuras/scanner/padrao.jpg}
+		\caption{\label{fig:padrao}\footnotesize Exemplo de amostra ($80\unit{\mu m}\times80\unit{\mu m}$) utilizada para calibrar o \scanner. No caso, sabe-se que a periodicidade da amostra é de $10\unit{\mu m}$. Os orifícios possuem $180\unit{\mu m}$ de profundidade.}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.46\textwidth}\centering
+		\includegraphics[scale=0.35]{figuras/scanner/histerese1.pdf}
+		\caption{\label{fig:histerese1}\footnotesize Gráfico ilustrando a histerese.}  
+	\end{minipage}
+\end{figure}
+
+
+	{\slshape Scanners} não-realimentados geralmente possuem softwares capazes de tratar a imagem obtida de modo a reduzir os efeitos da não-linearidade intrínseca (seção~\ref{sec:corrections}).
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seção: Histerese - Capítulo: Scanners
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Histerese}
+	\label{sec:histerese}\index{Histerese}
+	
+	A histerese também está presente em materiais piezoelétricos e tem origem fundamentalmente nos efeitos de polarização na rede cristalina \index{Rede cristalina} e em fricções moleculares. Nesse caso, têm-se que variações (na tensão aplicada) de intensidades idênticas, mas de sentidos opostos, resultam deslocamentos diferentes (veja gráfico~\ref{fig:histerese1}). Matematicamente podemos escrever $|\vetor s(\Delta\vetor E)|\ne|\vetor s(-\Delta\vetor E)|$.\par
+	
+	A histerese é quantificada conforme o quociente da máxima diferença entre os $\Delta x$ para $\Delta E$ positivo e negativo (Em termos do gráfigo~\ref{fig:histerese1} é a máxima distância entre a ``ida'' e a ``volta'') pelo maior distensão que é possível produzir na cerâmica (Ponto de retorno do gráfico~\ref{fig:histerese1}), podendo atingir valores de até $20\%$:
+	$$
+	\mbox{Histerese} = {\Delta x\over x}
+	$$
+	
+	Os efeitos da histerese são tão grandes que são facilmente evidenciáveis: Na figura~\ref{fig:varredura} note que as medidas (representadas pelos pontos) são feitas somente em um dos sentidos da varredura horizontal (trace). Isto é feito justamente para evitar o efeito da histerese. Contudo, o usuário pode habilitar um segundo canal de obtenção de dados de modo a obter duas imagens simultaneamente, uma no sentido $\Delta x>0$ ({\slshape trace}) e outra em $\Delta x<0$ ({\slshape retrace}). Este procedimento nos permite ilustrar\footnote{Na prática este mesmo procedimento nos permite determinar se a histerese está ou não ocorrendo. Caso esteja --- e isto vale para qualquer outro dos efeitos descritos, exceto o {\slshape aging} (seção~\ref{sec:aging}) ---, é preciso refazer as calibrações.} o efeito da histerese na varredura rápida  (figura~\ref{fig:histerese2}):
+		
+\begin{figure}[htb]
+  \begin{minipage}[b]{.3\textwidth}\centering
+    \includegraphics[scale=0.2]{figuras/scanner/1204t.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{.3\textwidth}\centering
+  	\includegraphics[scale=0.2]{figuras/scanner/1204r.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{.3\textwidth}\centering
+  	\includegraphics[scale=0.2]{figuras/scanner/1204h.jpg}
+  \end{minipage}
+  \caption{\label{fig:histerese2}\footnotesize Da esquerda para a direita, imagens da amostra padrão obtidas simultaneamente em {\slshape trace} e {\slshape retrace}, ilustrando o efeito da histerese na varredura rápida. Na extrema direita a subtração de uma pela outra. Note, nas bordas laterais, que as duas imagens não são iguais [AFM de contato ($80\unit{\mu m}\times80\unit{\mu m}$), $512$ pontos por linha].}
+\end{figure}
+
+	Na varredura lenta, a histerese pode ser evidenciada obtendo-se duas imagens consecutivas (fig.~\ref{fig:histerese3}).
+
+\begin{figure}[htb]
+  \begin{minipage}[b]{.3\textwidth}\centering
+    \includegraphics[scale=0.2]{figuras/scanner/1212t.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{.3\textwidth}\centering
+  	\includegraphics[scale=0.2]{figuras/scanner/1212r.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{.3\textwidth}\centering
+  	\includegraphics[scale=0.2]{figuras/scanner/1212h.jpg}
+  \end{minipage}
+  \caption{\label{fig:histerese3}\footnotesize Da esquerda para a direita, imagens obtidas sequencialmente, ilustrando o efeito da histerese na varredura lenta. Na extrema direita a subtração de uma pela outra. Note que as duas imagens não são iguais [AFM de contato ($80\unit{\mu m}\times80\unit{\mu m}$), $512$ pontos por linha].}
+\end{figure}
+			
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Seção: Creep - Capítulo: Scanners
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Creep}
+	\label{sec:creep}\index{Creep}
+	
+	Qualquer material piezoelétrico não se altera imediatamente após a aplicação de um campo elétrico. De fato, uma alteração abrupta na tensão aplicada faz com que a cerâmica oscile em torno de seu deslocamento nominal (figura~\ref{fig:creep1}), levando algo em torno de $\tau=3/\nu_0$ segundos ($[\nu_0]=s^{-1}$, SI) para atingir o deslocamento nominal, sendo $\nu_0$ a sua freqüência de ressonância\footnote{$\nu_0=2\pi\sqrt{(k/m_e)}$, sendo $k$ a constante elástica e $m_e$ é a massa efetiva da piezoelétrica, aproximadamente um terço da massa total do material.}. \index{Ressonância} Então, e.g., se $\nu_0=50\unit{kHz}$, ele oscilará por aproximadamente $60\unit{\mu s}$ antes de atingir o valor nominal correspondente à tensão aplicada.\par
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+	\centering
+  \includegraphics[scale=0.5]{figuras/scanner/creep1.pdf}
+  \caption{\label{fig:creep1}\footnotesize O cristal piezoelétrico, quando bruscamente perturbado, oscila em torno do valor nominal durante aproximadamente $\tau=3/\nu_0$.}
+\end{wrapfigure}
+	
+	Mas há ainda outro efeito: Após atingirem o valor nominal, os dipólos moleculares continuam a se alinharem. Este alinhamento prolonga-se por vários minutos e até horas, segundo a expressão logarítmica (fig.~\ref{fig:creep2})
+	$$
+	\Delta L(t) = \Delta L_0 \Big[1+\gamma\log\big({t\over t_0}\big)\Big]
+	$$
+	onde $\Delta L_0$ é o deslocamento após decorrido $t_0$, contados a partir do final da aplicação da tensão; $\gamma$ é o {\slshape fator de creep}, \index{Creep!Fator de} que depende do material e assume valores da ordem de $0,01$ a $0,02$.	Obviamente, como todos os outros efeitos descritos, somente {\slshape scanners} sem realimentação sofrem desse problema e, do ponto de vista do usuário, este manifesta-se como uma contínua distorção da imagem obtida para aquisições sucessivas. Na figura~\ref{fig:creep2}, e.g., fizemos quatro varreduras decentralizadas na amostra padrão (figura~\ref{fig:padrao}), cada qual separada da seguinte por alguns minutos.
+	
+\begin{figure}[htb]
+  \begin{minipage}[b]{0.2\textwidth}\centering
+    \includegraphics[scale=0.2]{figuras/scanner/creep1255.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.2\textwidth}\centering
+  	\includegraphics[scale=0.2]{figuras/scanner/creep1258.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.2\textwidth}\centering
+  	\includegraphics[scale=0.2]{figuras/scanner/creep1303.jpg}
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.2\textwidth}\centering
+  	\includegraphics[scale=0.2]{figuras/scanner/creep1306.jpg}
+  \end{minipage}
+  
+  \caption{\label{fig:creep2}\footnotesize A seqüência de imagens acima foi obtida numa ampliação da figura~\ref{fig:padrao}, com {\slshape offset} diferente de zero. Ou seja, decentralizada. É nítido o efeito do \creep: Embora tenhamos fixado a área da nova varredura (a ampliação), o piezoelétrico continua a modificar-se, causando distorções nas imagens [AFM de contato, $16,91\unit{\mu m}\times 16,91\unit{\mu m}$, $512$ pontos por linha].}
+\end{figure}
+	
+	Como o \creep\ é um efeito que ocorre para tempos longos, fica óbvio que a varredura rápida não sofre este efeito, dado que é realizada na casa dos segundos. 
+
+\begin{figure}[htb]
+		\centering\includegraphics[scale=0.5]{figuras/scanner/creep2.jpg}
+  	\caption{\label{fig:creep3}\footnotesize Mesmo quando finalizada a aplicação do sinal elétrico, o piezoelétrico continua a expandir-se (ou contrair-se) por um longo tempo. É o efeito chamado {\slshape creep}.}
+\end{figure}
+	
+	A figura~\ref{fig:creep2} efetivamente nos explica por que devemos evitar obter imagens decentralizadas (com {\slshape off set} diferente de zero) em microscópios que não contam com correções via hardware.	Mas o \creep\ aparece numa situação ainda mais crítica: Suponha que escolhamos obter uma imagem com $512$ pontos por linha a uma freqüência de $1\unit{Hz}$. Então, como a matriz de aquisição de dados é quadrada (veja figura~\ref{fig:varredura}), levaremos $512$ segundos, ou oito minutos, para completar a varredura lenta. Isto significa que o \scanner\ permanece deslocado do centro durante um tempo significativamente longo (no mínimo uns dois minutos) e, portanto, exposto ao \creep. Obviamente teremos uma imagem gradualmente distorcida nas bordas verticais (A varredura lenta, nos microscópios da Digital Instruments, são sempre colocados na vertical do monitor). A esse efeito some-se o {\slshape cross coupling} (seção~\ref{sec:cross-coupling}) e teremos uma imagem nada confiável nas bordas. De fato, uma imagem só será realmente confiável quando feita na mesma freqüência utilizada para calibrar o \scanner. Isto por que neste caso o arquivo de calibração reflete exatamente, ou quase, o comportamento do piezoelétrico para aquela freqüência. Se não for o caso, sempre haverá um erro maior na obtenção das imagens. No eixo $z$ o \creep\ apresenta uma ``borda'' nas variações de altura: Algo como o fenômeno de Gibbs observado em aproximações por série de Fourrier em funções descontínuas.
+		
+		Quantitativamente, o \creep\ é expresso como a razão $\Delta x_c/\Delta x$ e sempre relativamente a um tempo crítico $t_{cr}$ (observe a figura~\ref{fig:creep3}). Valores típicos para o \creep\ são de $1\%$ a $20\%$ para tempos críticos entre $10\unit{s}$ e $100\unit{s}$.
+		
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seção: Aging - Capítulo: Scanners
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aging}
+	\label{sec:aging}\index{Aging}
+	
+	Se uma cerâmica piezoelétrica permanece muito tempo sem sofrer influência de campos elétricos externos, os dipolos moleculares desalinham-se gradualmente com o tempo, resultando uma redução do ganho (ou deflexão por tensão aplicada). Em contrapartida, se um piezoelétrico é constantemente utilizado, os dipolos alinham-se cada vez mais, aumentando o ganho. Este comportamento pode ser observado na figura~\ref{fig:aging}. Vemos que a necessidade de recalibrarmos {\slshape scanners} não-realimentados aparece-nos insistentemente!\par
+	
+\begin{figure}[htb]
+	\begin{minipage}[b]{0.46\textwidth}\centering
+  	\includegraphics[scale=0.35]{figuras/scanner/aging.jpg}
+  	\caption{\label{fig:aging}\footnotesize Um \scanner, se não utilizado com freqüência, perde sua polarização, reduzindo seu ganho. O oposto ocorre se ele é sempre utilizado.}	
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.46\textwidth}\centering
+  	\includegraphics[scale=0.35]{figuras/scanner/cross-coupling.jpg}
+  	\caption{\label{fig:cross-coupling1}\footnotesize Imagem em corte vertical da amostra padrão de calibração (fig.~\ref{fig:padrao}). O \xcoupling\ altera o perfil da imagem, imprimindo-lhe uma curvatura não verdadeira.}
+  \end{minipage}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Seção: Cross coupling - Capítulo: Scanners
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cross coupling}
+	\label{sec:cross-coupling}\index{Cross-coupling}
+
+	Embora tenhamos dito, na página~\pageref{scanner:explanation}, que os deslocamentos em $\hat i$, $\hat j$ e $\hat k$ são dois-a-dois independentes, isto não é bem verdade. Primeiro por que, mesmo na aproximação de primeira ordem, o próprio tensor de acoplamento piezoelétrico encarrega-se de tornar o vetor $\vetor s$ não paralelo a $\vetor E$. Além disso, é fácil ver na figura~\ref{fig:scanner1} que como as cerâmicas são acomodadas sobre o mesmo cilíndro metálico, então é óbvio que elas não são independentes em seus deslocamentos. Essas duas verdades, contudo, pesam pouco quando comparadas com a geometria do sistema: De acordo com o que explicamos no início do capítulo, quando desejamos que o atuador piezoelétrico produza um deslocamento em $x$, \eg, o cilíndro metálico curva-se neste sentido. Essa curvatura é acompanhada de um distanciamento da sonda à superfície, que o hardware obviamente compreende como uma alteração em $z$, registrando esta alteração, erroneamente, como parte do perfil da amostra.\par
+	
+	Uma forma de verificar se o efeito está presente é utilizar uma amostra padrão plana ou de curvatura conhecida (figura~\ref{fig:cross-coupling1}).\par
+	
+	Como sempre há recursos em software capazes de minimizar este efeito. Contudo, caso a amostra analisada realmente possua uma curvatura, esta será removida.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Seção: Correções - Capítulo: Scanners
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Correções}
+	\label{sec:corrections}\index{Correções}\index{Correções!via software}\index{Correções!via hardware}
+		
+	A ``correção'' desses erros pode ser feita via software, mas deve ser feita com muito critério pois, em verdade, o que ele faz é modificar o resultado obtido baseando-se num comportamento padrão (esperado) ou, em softwares mais desenvolvidos, em modelamentos matemáticos de materiais piezoelétricos. Obviamente, qualquer alteração via software constitui uma {\bf modificação} do resultado da medida. De fato, é virtualmente possível obter qualquer coisa com correções via software, independentemente do resultado bruto. Em outras palavras, utilizar correções via software sem um conhecimento bastante aprofundado do que cada opção faz pode mascarar ou ainda criar objetos na amostra. Correções desse tipo são capazes de reduzir para até $10\%$ os erros nas medidas.\par
+	
+	Um detalhe importante: No caso de atuadores piezoelétricos utilizados na microscopia, mesmo os realimentados sofrem alguns dos efeitos acima comentados na direção $z$. Isto por que diferentemente das direções $x$ e $y$, esta é passiva, no sentido de que espelha uma interação desconhecida entre a ponta e a amostra. Em $x$ e $y$ é o usuário que determina os deslocamentos ($\vetor s\cdot\hat i$ e $\vetor s\cdot\hat j$); mas reside em $z$ a resposta da varredura. Portanto, nenhum \scanner, mesmo os realimentados, podem eliminar completamente os efeitos acima nesta direção. Isto leva-nos à conclusão de que também para atuadores realimentados é preciso calibrá-los.
+		

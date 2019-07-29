@@ -1,0 +1,220 @@
+\begin{exercicio}[blue]
+
+	Considere uma partícula num estado descrito pela função de onda
+	$$
+	\psi(x,y,z)=N(x+y+2z)e^{-\alpha\sqrt{x^2+y^2+z^2}}
+	$$
+
+	onde $N$ e $\alpha$ são constantes.
+
+	{\tt (a)} Reescrevendo $Y_{10}$ e $Y_{1\pm1}$ em termos de $x$, $y$, $z$ e $r=\sqrt{x^2+y^2+z^2}$,
+mostre que
+
+\begin{minipage}[c]{0.46\textwidth} 
+ $$
+ Y_{10}=({3\over4\pi})^{1/2}{z\over r},
+ $$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.46\textwidth}
+ $$
+ Y_{1\pm1} = \mp({3\over8\pi})^{1/2}{x\pm iy\over r}
+ $$
+\end{minipage}
+
+	{\tt (b)} Use o resultado do item {\tt (a)} para expressar $\psi$ em termos dos harmônicos 
+esféricos e determine a constante $N$ de tal forma que $\psi$ seja normalizada.
+
+	{\tt (c)} Mostre que a probabilidade de que a medida da componente $z$ do momento angular
+resulte em $0$ é $2/3$, enquanto a probabilidade de que resulte em $\pm\hbar$ é $1/6$.
+\end{exercicio} 
+
+	Item {\tt (a)}: Tudo o que temos de fazer aqui é utilizar a expressão geral das funções
+harmônicas:
+	$$
+	Y_{lm}(\theta,\phi)=(-1)^m{(1-\xi^2)^{m/2}\over2^ll!}\sqrt{(2l+1)(l+m)!\over4\pi(l-m)!}
+		e^{im\phi}{d^{l+m}\over d\xi^{l+m}}(\xi^2-1)^l
+	$$
+
+	onde $\xi=\cos\theta$. Então, $Y_{10}$ fica sendo
+	\begin{eqnarray*}
+	Y_{10}	&=& (-1)^0{(1-\xi^2)^{0/2}\over2^11!}\sqrt{(2+1)(1+0)!\over4\pi(1-0)!}
+			e^{i0\phi}{d^{1+0}\over d\xi^{1+0}}(\xi^2-1)^1				\\
+		&=& {1\over2}\sqrt{3\over4\pi}2\xi						\\	
+		&=& \sqrt{3\over4\pi}\cos\theta							\\
+		&=& \sqrt{3\over4\pi}{z\over r}
+	\end{eqnarray*}
+
+	lembrando que, em coordenadas esféricas,
+	\begin{eqnarray*}
+ 	x &=& r\sin\theta\cos\phi	\\
+	y &=& r\sin\theta\sin\phi	\\
+	z &=& r\cos\theta	
+	\end{eqnarray*} 
+
+	Do mesmo modo,
+	\begin{eqnarray*}
+	Y_{11}	&=& (-1)^1{(1-\xi^2)^{1/2}\over2^11!}\sqrt{(2+1)(1+1)!\over4\pi(1-1)!}
+			e^{i1\phi}{d^{1+1}\over d\xi^{1+1}}(\xi^2-1)^1					\\
+		&=& -{\sqrt{1-\xi^2}\over2}\cdot\sqrt{3\over2\pi}e^{i\phi}\cdot{d^2\over d\xi^2}(\xi^2-1)\\
+		&=& -\sqrt{3\over2\pi}e^{i\phi}\sin\theta						\\
+		&=& -\sqrt{3\over2\pi}(\cos\phi\sin\theta+i\sin\phi\sin\theta)				\\
+		&=& -\sqrt{3\over2\pi}\cdot{x+iy\over r}						\\
+	Y_{1-1}	&=& (-1)^{-1}{(1-\xi^2)^{-1/2}\over2^11!}\sqrt{(2+1)(1-1)!\over4\pi(1+1)!}		
+			e^{i(-1)\phi}{d^{1-1}\over d\xi^{1-1}}(\xi^2-1)^1				\\ 
+		&=& -{(1-\xi^2)^{-1/2}\over 2}\sqrt{3\over8\pi}e^{-i\phi}(\xi^2-1)			\\
+		&=& {1\over2}\sqrt{3\over8\pi}e^{-i\phi}\sin\theta					\\
+		&=& {1\over2}\sqrt{3\over8\pi}(\cos\phi\sin\theta-i\sin\phi\sin\theta)			\\
+		&=& {1\over2}\sqrt{3\over8\pi}{x-iy\over r}
+	\end{eqnarray*}
+
+	Note que os resultados obtidos não foram exatamente aqueles solicitados no enunciado. Existe
+um fator $1/2$ faltando em $Y_{11}$ e sobrando em $Y_{1-1}$. Solicitamos ao professor 
+verificar onde está o erro. De qualquer forma, para não prejudicarmos o restante do exercício, assumiremos
+daqui para frente como verdadeiras as expressões apresentadas no enunciado do exercício.
+ 
+	Item {\tt (b)}: Do enunciado temos imediatamente
+	\begin{eqnarray*} 
+	rY_{11} &=&({3\over8\pi})^{1/2}(x+iy) \Rightarrow x+iy=({8\pi\over3})^{1/2}rY_{11}		\\
+	rY_{1-1}&=&-({3\over8\pi})^{1/2}(x-iy)\Rightarrow x-iy=-({8\pi\over3})^{1/2}rY_{1-1}		
+	\end{eqnarray*} 
+
+	Então
+ 
+\begin{minipage}[c]{0.46\textwidth} 
+ $$
+ x=({2\pi\over3})^{1/2}r(Y_{11}-Y_{1-1})
+ $$
+\end{minipage}
+\begin{minipage}[c]{0.05\textwidth}
+e
+\end{minipage} 
+\begin{minipage}[c]{0.46\textwidth} 
+ $$
+ y=-i({2\pi\over3})^{1/2}r(Y_{11}+Y_{1-1})
+ $$ 
+\end{minipage}  
+	
+	Além disso, 
+	$$
+	z=({4\pi\over3})^{1/2}rY_{10}
+	$$
+
+	Conseqüentemente,
+	\begin{eqnarray*}
+	\psi(\mathbf{r})	&=& N(x+y+2z)e^{-\alpha\sqrt{x^2+y^2+z^2}}		\\
+				&=& N[({2\pi\over3})^{1/2}r(Y_{11}-Y_{1-1})-i({2\pi\over3})^{1/2}
+					r(Y_{11}+Y_{1-1})+
+					2({4\pi\over3})^{1/2}rY_{10}]e^{-\alpha r}	\\
+				&=& ({2\pi\over3})^{1/2}N[(Y_{11}-Y_{1-1})-i(Y_{11}+Y_{1-1})+
+					2\sqrt{2}Y_{10}]e^{-\alpha r}			\\
+				&=& ({2\pi\over3})^{1/2}N[(Y_{11}-Y_{1-1}+2\sqrt{2}Y_{10})-
+					i(Y_{11}+Y_{1-1})]e^{-\alpha r}
+	\end{eqnarray*} 
+
+	Ou, de forma mais conveniente,
+	\begin{equation}\label{eq:eletron} 
+	\psi(\mathbf{r}) = \sqrt{2\over3\pi}N[(1-i)Y_{11}-(1+i)Y_{1-1}+2\sqrt{2}Y_{10}]e^{-\alpha r}
+	\end{equation} 
+
+	A partir daqui a teoria pode evitar laboriosos cálculos: Primeiramente notemos que, ao 
+contrário da parte angular de $\psi$, que é uma combinação linear finita de autoestados do átomo de 
+hidrogênio, a parte radial não o é, isto porque à equação radial associamos a energia do átomo, que não
+está definida. Mas 
+nós não estamos tocando neste fato no momento. Então, é conveniente dizer que a exponencial em $\psi$
+corresponde a um estado quântico $\ket n$ que não conhecemos (E nem precisamos). Esta consideração é
+importante porque se simplesmente fizermos as contas a partir da função de onda propriamente dita,
+só poderemos escrever $N$ como função de $\alpha$: 
+	\begin{eqnarray*} 
+	\iprod{\psi}{\psi}	&=&\int_{\mathcal V}\psi^*(\mathbf{r})\psi(\mathbf{r})d\mathcal{V}	\\
+				&=&{2\pi\over4}|N|^2\int_{\mathcal V} 
+	 			[(Y_{11}^*-Y_{1-1}^*+2\sqrt{2}Y_{10}^*)-i(Y_{11}^*+Y_{1-1}^*)]
+				[(Y_{11}-Y_{1-1}+2\sqrt{2}Y_{10})-i(Y_{11}+Y_{1-1})]e^{-2\alpha r}
+											d\mathcal V	\\
+				&=&{2\over\pi}|N|^2\int_0^{\infty}r^2e^{-2\alpha r}dr
+					\int_0^\pi\int_0^{2\pi}(2Y_{11}^*Y_{11}+2Y_{1-1}^*Y_{1-1}+
+						8Y_{00}^*Y_{00})\sin\theta d\phi d\theta		\\
+	1			&=&{2\over\pi}|N|^2\int_0^{\infty}r^2e^{-2\alpha r}dr\cdot12		\\
+				&=&8\pi|N|^2\int_0^{\infty}r^2e^{-2\alpha r}dr				\\
+				&=&{8\pi|N|^2\over4\alpha^3}					
+	\end{eqnarray*} 
+
+	 concluímos que $|N|^2=\alpha^3/2\pi$. Como não conhecemos $\alpha$ também não conhecemos $N$ e,
+por conseguinte, não conhecemos as probabilidades requeridas. O problema neste método é que passa-nos
+desapercebidos que a integral em $r$ acima deve ser, ela própria, igual à unidade. Isto porque justamente
+a exponencial é uma combinação infinita de autoestados do átomo de hidrogênio $u_i(r)$:
+	$$
+	e^{-\alpha r}=\sum_{i=0}^\infty c_iu_i(r)
+	$$
+
+	onde $c_i$ são apenas constantes de ajuste. E sabemos que uma tal soma, multiplicada por ela mesma,
+dá 1:
+	\begin{eqnarray*} 
+	e^{-\alpha^* r}e^{-\alpha r}&=& \sum_{j=0}^\infty\sum_{i=0}^\infty c_j^*u_j^*(r)c_iu_i(r)	\\
+				   &=& \sum_{j=0}^\infty |c_j|^2|u_j(r)|^2				\\
+				   &=& 1
+	\end{eqnarray*} 
+
+	Isto leva-nos a $|N|^2=1/8\pi$. Mas vamos fazer isto de um modo mais elegante: Como já dissemos, 
+consideremos a exponencial como um estado $\ket n$ desconhecido. Então a função de onda \ref{eq:eletron} 
+fica 	
+	$$
+	\psi(\mathbf{r})=(A\ket{10}+B\ket{11}+C\ket{1-1})\ket n
+	$$
+
+	com $A=4N\sqrt{\pi/3}$, $B=N(1-i)\sqrt{2\pi/3}$ e $C=-N(1+i)\sqrt{2\pi/3}$. Então, para normalizar
+$\psi$ fazemos o produto interno dela por ela mesma:
+	\begin{eqnarray*}
+	\iprod{\psi(\mathbf{r})}{\psi(\mathbf{r})}	
+			&=& [A^*\bra{10}+B^*\bra{11}+C^*\bra{1-1}\bra n]
+				[(A\ket{10}+B\ket{11}+C\ket{1-1})\ket n]				\\
+			&=& |A|^2+|B|^2+|C|^2								\\
+			&=& {16|N|^2\pi\over3}+{4|N|^2\pi\over3}+{4|N|^2\pi\over3}			\\
+	1		&=& 8\pi|N|^2
+	\end{eqnarray*}
+
+	E, portanto, $|N|^2=1/8\pi$, o mesmo resultado que obtivemos há pouco!
+
+	Item {\tt (c)}: A probabilidade $\wp$ de obtermos um estado qualquer caracterizado por um número
+quântico $\varrho$ é dada simplesmente pela soma quadrática do módulo de todos os termos que multiplicam 
+um estado que contenha $\varrho$. Por exemplo: A probabilidade de obtermos a componente $z$ do momento 
+angular igual a zero, ou seja, a probabilidade de obtermos $m=0$ pode ser calculada simplesmente 
+observando-se a equaçao \ref{eq:eletron}:
+	$$
+	\wp=|4N\sqrt{\pi\over3}|^2={16|N|^2\pi\over3}={2\over3}
+	$$
+
+	O modo formal, entretanto, consiste em projetar a função de onda (\ref{eq:eletron}) no
+estado que estamos desejando verificar a probabilidade ($\phi$). Então, o exemplo anterior ficaria
+	\begin{eqnarray*}
+	\wp(m=0)	&=& |\iprod{\phi}{\psi}|^2							\\
+			&=& |(\sum_{n=1}^\infty\bra n\sum_{l=0}^{n-1}\bra{l0})
+				(A\ket{10}+B\ket{11}+C\ket{1-1})\ket n|^2				\\
+			&=& |\sum_{n=1}^\infty\iprod{n}{n}\sum_{l=0}^{n-1}A\iprod{l0}{10}+
+				B\iprod{l0}{11}+C\iprod{l0}{1-1}|^2					\\
+			&=& |A\sum_{l=0}^{n-1}\iprod{l0}{10}|^2						\\
+			&=& |A\iprod{10}{10}|^2								\\
+			&=& |A|^2									\\
+			&=& |4N\sqrt{\pi\over3}|^2							\\
+			&=& {16|N|^2\pi\over3}								\\
+			&=& {2\over3}
+	\end{eqnarray*} 
+
+	Assim, podemos fazer tanto por um método como pelo outro para os casos em que queremos as componentes
+$z$ do momento angular iguais a $-\hbar$ e $+\hbar$. Ou seja, para $m=-1$ e $m=1$ respectivamente:
+	\begin{eqnarray*}
+	\wp(m=1) &=& |B|^2={4|N|^2\pi\over3}={1\over6}	\\
+	\wp(m=-1)&=& |C|^2={4|N|^2\pi\over3}={1\over6}
+	\end{eqnarray*} 
+   
+
+
+
+
+
+
+
+
+
+
+

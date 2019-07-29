@@ -1,0 +1,130 @@
+\newcommand{\der}[2][]{{\partial#1\over\partial#2}}
+\newcommand{\Der}[2][]{{\partial^2#1\over\partial#2^2}}
+\newcommand{\cossec}{\mathrm{cossec}} 
+
+\begin{exercicio}[blue]
+
+	Na representação das coordenadas, a ação do observável momento angular sobre um estado 
+$\ket\psi$ é dada por
+	$$
+	\hope{\mathbf{r}}{\opv L}{\psi}=\opv L\iprod{\mathbf{r}}{\psi}
+	$$
+
+	onde $\opv L$ é o operador diferencial cujas componentes expressas em coordenadas esféricas são
+	\begin{eqnarray*}
+	\op L_x	&=& i\hbar(\sin\phi{\partial\over\partial\theta}+
+				\cot\theta\cos\phi{\partial\over\partial\phi}),		\\
+	\op L_y &=& i\hbar(-\cos\phi{\partial\over\partial\theta}+
+				\cot\theta\sin\phi{\partial\over\partial\phi}),		\\
+	\op L_z &=& -i\hbar{\partial\over\partial\phi}
+	\end{eqnarray*} 
+
+	{\tt (a)} Mostre que
+	$$
+	\opv L^2 = -\hbar^2[{1\over\sin\theta}{\partial\over\partial\theta}
+			(\sin\theta{\partial\over\partial\theta})+
+				{1\over\sin^2\theta}{\partial^2\over\partial\phi^2}]
+	$$
+
+	{\tt (b)} Mostre que
+	$$
+	\op L_\pm = \hbar e^{\pm i\phi}(\pm{\partial\over\partial\theta}+
+			i\cot\theta{\partial\over\partial\phi})
+	$$
+
+	{\tt (c)} Uma partícula está num estado descrito pela função de onda
+	$$
+	\psi(\mathbf{r})=f(r)\sin^3\theta e^{-3i\phi}
+	$$
+
+	Pela aplicação dos operadores diferenciais $\opv L^2$ e $L_z$ determine os números quânticos
+$l$ e $m$.
+\end{exercicio}
+
+
+	Item {\tt (a)}: Sabemos que $\opv L^2=\op L_x^2+\op L_y^2+\op L_z^2$. Então façamos por partes:
+	\begin{eqnarray*} 
+	\op L_x^2	&=& \hbar^2(\sin\phi\der\theta+\cot\theta\cos\phi\der\theta)
+				(\sin\phi\der\theta+\cot\theta\cos\phi\der\phi)		\\
+			&=& -\hbar^2[\sin^2\phi\Der\theta+\sin\phi\cos\phi\der\theta(\cot\theta\der\phi)+
+				\cot\theta\cos\phi\der\phi(\sin\phi\der\theta)+
+				\cot^2\theta\cos\phi\der\phi(\cos\phi\der\phi)]		\\
+			&=& -\hbar^2[\sin^2\phi\Der\theta-\sin\phi\cos\phi\cossec\theta\der\phi+
+				\sin\phi\cos\phi\cot\theta{\partial^2\over\partial\theta\partial\phi}+\\
+			& & +\cot\theta\cos^2\phi\der\theta+\cot\theta\cos\phi\sin\phi
+				{\partial^2\over\partial\phi\partial\theta}-
+					\cot^2\theta\sin\phi\cos\phi\der\phi+
+						\cot^2\theta\cos^2\phi\Der\phi]		\\
+	\op L_y^2	&=& -\hbar^2(-\cos\phi\der\theta+\cot\theta\sin\phi\der\phi)
+				(-\cos\phi\der\theta+\cot\theta\sin\phi\der\phi)	\\
+			&=& -\hbar^2[\cos^2\phi\Der\theta+\sin\phi\cos\phi\cossec\theta\der\phi-
+				\sin\phi\cos\phi\cot\theta{\partial^2\over\partial\theta\partial\phi}+\\
+			& &	+\sin^2\phi\cot\theta\der\theta-\cot\theta\sin\phi\cos\phi
+					{\partial^2\over\partial\theta\partial\phi}+
+				\cot^2\theta\sin\phi\cos\phi\der\phi+\cot^2\theta\sin^2\phi\Der\phi]	\\
+	\op L_z^2	&=& -\hbar^2\Der\phi
+	\end{eqnarray*} 
+
+	Somando tudo concluiremos que
+ 	$$ 
+	\opv L^2 = -\hbar^2[{1\over\sin\theta}{\partial\over\partial\theta}
+			(\sin\theta{\partial\over\partial\theta})+
+				{1\over\sin^2\theta}{\partial^2\over\partial\phi^2}]
+	$$
+
+	Item {\tt (b)}:
+	\begin{eqnarray*} 
+	\op L_\pm 	&=& \op L_x\pm i\op L_y								\\
+			&=& i\hbar(\sin\phi\der\theta+\cot\theta\cos\phi\der\phi)\pm
+				i\cdot i\hbar(-\cos\phi\der\theta+\cot\theta\sin\phi\der\phi)		\\
+			&=& i\hbar\sin\phi\der\theta-i\hbar\cot\theta\cos\phi\der\phi\pm
+				\hbar\cos\phi\der\theta\mp\hbar\cot\theta\sin\phi\der\phi		\\
+			&=& \pm\hbar(\cos\phi\pm i\sin\phi)\der\theta+\hbar\cot\theta
+				(\mp\sin\phi+i\cos\phi)\der\phi						\\
+			&=& \pm\hbar e^{\pm i\phi}\der\theta+i\hbar\cot\theta
+				(\cos\theta\pm i\sin\phi)\der\phi					\\
+			&=& \pm\hbar e^{\pm i\phi}\der\theta+i\hbar\cot\theta e^{\pm i\phi}\der\phi	\\
+			&=& \hbar e^{\pm i\phi}(\pm\der\theta+i\cot\theta\der\phi)			
+	\end{eqnarray*} 
+
+	Item {\tt (c)}: Para determinarmos $m$ aplicamos o operador $\op L_z$ sobre a função de onda
+$\psi$:
+	\begin{eqnarray*}
+	\op L_z\ket\psi	&=& -i\hbar\der\phi\psi(\mathbf{r})						\\
+			&=& -i\hbar\der\phi[f(r)\sin^3\theta e^{-3i\phi}]				\\
+			&=& -3\hbar f(r)\sin^3\theta e^{-3i\phi}					\\
+			&=& -3\hbar\psi(\mathbf{r})
+	\end{eqnarray*}
+
+	Logo, pela equação de autovalor do operador $\op L_z$,
+	$$
+	\op L_z\ket\psi=m\hbar\ket\psi
+	$$
+
+	temos $m=-3$. De forma análoga procedemos para encontrar $l$:
+	\begin{eqnarray*}
+	\opv L^2\ket\psi&=& \hbar^2[{1\over\sin\theta}{\partial\over\partial\theta}
+				(\sin\theta{\partial\over\partial\theta})+
+				{1\over\sin^2\theta}{\partial^2\over\partial\phi^2}]\psi(\mathbf{r})	\\
+		 	&=& \hbar^2[{1\over\sin\theta}{\partial\psi\over\partial\theta}
+				(\sin\theta{\partial\psi\over\partial\theta})+
+				{1\over\sin^2\theta}{\partial^2\psi\over\partial\phi^2}]		\\
+			&\vdots&									\\
+			&=& 12\hbar^2\psi(\mathbf{r}) 
+	\end{eqnarray*}  
+
+	E, como a equação de autovalor do operador $\opv L^2$ é
+	$$
+	\opv L^2\ket\psi=l(l+1)\hbar^2\ket\psi
+	$$
+
+	concluímos que $l(l+1)=12 \Rightarrow l=3$\footnote{Na solução desta pequena equação encontramos
+duas raízes para $l(l+1)=12$: Uma positiva ($+3$) e a outra negativa ($-4$). O valor negativo é 
+simplesmente ignorado pois $l=0,1,2,...$.}. 
+
+	
+	
+
+
+
+

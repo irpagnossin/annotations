@@ -1,0 +1,61 @@
+%	Projeto:  Scanning probe microscopy
+%	Autor:	  Ivan Ramos Pagnossin
+%	Data:		  13/06/2002
+%	Arquivo:  cap2_STM.tex
+% Capítulo: Microscopia de tunelamento
+
+	Na microscopia de tunelamento a interação entre ponta e amostra é o efeito túnel, \index{Efeito túnel} explicável somente com a utilização do conceito de dualidade onda-partícula \index{Dualidade onda-partícula} inerente à mecânica quântica nova, inatingível através da mecânica clássica.\footnote{Atualmente, contudo, existe uma série de cientistas procurando mostrar que mesmo o tunelamento pode ser explicado com base nos conceitos da mecânica clássica somente.} A primeira imagem por microscopia de tunelamento foi obtida em 1981 pelos cientistas Gerd Bining e Heinrich Rohrer, \index{Binning, Gerd}\index{Rohrer, Heinrich} rendendo-lhes, por isso, o prêmio nobel de física em 1986. Nesta técnica, uma ponta condutora muito fina (obtida geralmente por corrosão eletrolítica: \index{Corrosão eletrolítica} figura~\ref{fig:ponta-STM}) é mantida a uma diferença de potencial com relação à amostra tal que quando a sonda atinge aproximadamente $10\unit{\angstron}$ de distância uma corrente de tunelamento passa a ser detectável.
+	
+\begin{wrapfigure}{r}{0.6\textwidth}\centering
+  \includegraphics[scale=1]{figuras/stm/ponta-stm.jpg}
+  \caption{\label{fig:ponta-STM}\footnotesize Exemplo de ponta de tungstênio utilizada em microscopia de tunelamento: À esquerda a ponta obtida após a corrosão eletrolítica; À direita, trabalhada com feixes de íons.}
+\end{wrapfigure}
+		
+	Sabe-se que dois metais diferentes ao serem postos em contato apresentam uma diferença de potencial natural devida à diferença entre os níveis de Fermi \index{Fermi!Níveis de} desses materiais.\upcite[pág.517]{eisberg} Se, ao invés disso, mantivermos esses dois materiais muito próximos, ocorrerá tunelamento de um para o outro até que as taxas de tunelamento igualem-se, atingindo um equilíbrio dinâmico. Se, no entanto, aplicarmos uma diferença de potencial entre esses dois metais e a mantivermos através de uma fonte externa (como uma bateria), estaremos dando preferência a um dos sentidos de tunelamento e o equilíbrio não é atingido. A isto segue o aparecimento de uma {\slshape corrente de tunelamento} \index{Tunelamento!Corrente de} que varia exponencialmente com a distância:
+	$$
+	I(z)\cong Ve^{-2cz} \Rightarrow I(z+\delta)\cong Ve^{-2c(z+\delta)} =e^{-2c\delta} I(z)
+	$$
+	com $c$ uma constante e $V$ a tensão aplicada. Isto significa que uma pequena variação na distância entre os metais altera consideravelmente a corrente de tunelamento. Assim, se um desses metais for a ponta (sonda) e o outro for a amostra, teremos um método extremamente sensível de verificarmos alterações na corrente de tunelamento. Mais que isso: Como a corrente de tunelamento depende crucialmente da distribuição dos orbitais na superfície da amostra, a microscopia de tunelamento é capaz de analisar a distribuição eletrônica nessa superfície. Mas podemos ir mais longe: Se for possível associar a distribuição eletrônica (orbitais) superficial à morfologia, então teremos como enxergar essa morfologia na escala atômica. De fato, verifica-se experimentalmente que essa técnica possui resolução de frações de ângstrons da direção $z$ e de ângstrons lateralmente (veja figura~\ref{fig:grafite1}). É, sem dúvida, a técnica que nos permite enxergar mais ``de perto'' uma amostra. Mas nem tudo são flores: Como a técnica necessita a circulação de uma corrente (de tunelamento) é claro que ambos os metais envolvidos devem ser condutores: Quanto a ponta não há problemas, pois são feitas de tungstênio justamente por este motivo (entre outro); quanto à amostra, vemos que essa técnia limita-nos a amostras condutoras ou, em casos mais extremos, semi-condutoras. Um problema freqüente na microscopia de tunelamento devido justamente a essa limitação de condutividade das partes envolvidas são os óxidos que se depositam sobre a superfície da amostra. É comum precisarmos limpar a amostra antes de efetuarmos medidas com essa técnica.
+
+\begin{figure}[htb]
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/stm/grafite1.jpg}		
+	\end{minipage}\hfill
+	\begin{minipage}[c]{0.46\textwidth}\centering
+		\includegraphics[scale=0.4]{figuras/stm/grafite2.jpg}		
+	\end{minipage}
+	\caption{\label{fig:grafite1}\footnotesize Imagem em STM de grafite altamente orientado. À esquerda uma varredura de $5\unit{\mu m}\times5\unit{\mu m}$ evidencia os desníveis entre os planos atômicos (linhas diagonais). À direita a mesma imagem, ampliada para $3\unit{nm}\times3\unit{nm}$, onde a distribuição eletrônica atômica passa a aparecer. Note a estrutura em colméia, a mais comum alotropia do carbono. Embora as ``bolinhas'' visíveis sejam de fato átomos, a estrutura apresentada não é completa: Faltam alguns átomos que a técnica não mostra. Isto ocorre basicamente porque os planos atômicos não são verticalmente alinhados (veja figura~\ref{fig:grafite2}).}
+\end{figure}
+	
+	Existe duas formas de se varrer uma amostra: Fixando a altura da ponta ou mantendo a corrente de tunelamento constante. No primeiro a sonda fixa sua posição $z$ e varre a amostra registrando as variações na corrente de tunelamento (Note que manter a {\bfseries altura} constante não é o mesmo que manter a {\bfseries distância} ponta-amostra constante); No segundo a posição $z$ da ponta é modificada, ponto a ponto da malha de varredura, de forma a manter a corrente de tunelamento constante. Note que no primeiro caso, por não alteramos a posição $z$, teremos muito pouca influência dos ``males'' dos {\slshape scanners}: Quando muito poderemos ter apenas o \creep.\par
+
+\begin{wrapfigure}{r}{0.5\textwidth}\centering
+	\includegraphics[scale=0.65]{figuras/stm/grafite3.jpg}
+	\caption{\label{fig:grafite2}\footnotesize A forma alotrópica mais comum do carbono é aquela que se organiza hexagonalmente (em forma de colméia). Numa imagem STM de tal estrutura (fig.~\ref{fig:grafite1}), entretanto, o que se vê na realidade são os hexágonos hachurados. Ou seja, o STM não enxerga todos os átomos. Isto se deve basicamente devido a um efeito da superposição das monocamadas. Para uma explicação aprofundada veja~\cite[pág.388]{roland}. Na figura acima, $A=2,546\unit{\angstron}$ e $C=6,67\unit{\angstron}$.}
+\end{wrapfigure}
+
+	Além do exposto no parágrafo anterior, o método altura fixa é mais rápido, mas não nos permite analisar superfícies com irregularidades superiores a $10\angstron$, o que não ocorre no segundo. Note mais essa sutileza: Ao optarmos pelo método de corrente de tunelamento constante, não necessariamente estamos mantendo a distância ponta-amostra constante pois como já foi mencionado, a microscopia de tunelamento, na realidade, mede a distribuição eletrônica da superfície. Então, e.g., numa região oxidada da superfície a corrente de tunelamento cairá abruptamente e o microscópio acreditará na necessidade de aproximar a ponta da amostra, interpretando esse deslocamento como um vale na morfologia da amostra, o que não é verdade (De fato teremos justamente o oposto: Uma protuberância). Fica claro que a analogia entre morfologia e distribuição eletrônica, \index{Distribuição eletrônica} que é o que realmente mede o microscópio de tunelamento, deve ser feita com muito cuidado.\par
+	
+	Como exemplo das ludibriações causadas pelos microscópios de tunelamento quando da analogia entre distribuição eletrônica e morfologia pode ser observada numa superfície de grafite (figura~\ref{fig:grafite1}): A estrutura do grafite mais comum na natureza é aquela que se organiza hexagonalmente (figura~\ref{fig:grafite2}) e embora o primeiro vizinho de qualquer átomo de carbono esteja a $1,42\unit{\angstron}$, de fato o que se enxerga são protuberâncias distanciadas de $2,456\unit{\angstron}$. Este efeito decorre do fato de os planos atômicos do carbono estarem deslocados um em relação ao outro (figura~\ref{fig:grafite2}). Para uma explicação mais extensa consulte a referência~\cite[pág. 388]{roland}.
+
+\subsection{STS --- Espectroscopia de tunelamento}
+	\label{sec:EspectroscopiaDeTunelamento}\index{STS}\index{Espectroscopia!de tunelamento}
+	
+	A espectroscopia de tunelamento limita-se à interpretação dos resultados da microscopia de tunelamento como propredades eletrônicas e químicas (ligações, vizinhanças, etc.). Existem várias técnicas de procedê-la, algumas das quais resumimos abaixo:
+	
+	\begin{dingautolist}{202}
+		\item Fixando a corrente de tunelamento, mede-se as correções em $z$ para diferentes tensões aplicadas entre ponta e amostra ({\slshape bias}), analisando os efeitos do {\slshape bias} \index{Bias} nas respostas.
+		
+		\item Analogamente, podemos fixar a altura e registrar as variações na corrente para diferentes {\slshape bias} aplicado.
+		
+		\item Outro tipo de estudo é fixar o \scanner\ num ponto da malha de varredura (obviamente de preferência o centro) e variar a diferença de potencial entre ponta e amostra ({\slshape bias}). 
+	
+		\item Utilizando o esquema do item anterior para todos os pontos da malha de varredura podemos mapear a estrutura eletrônica da região varrida.
+	\end{dingautolist}
+	
+	Phillipe Sautet \index{Sautet, Phillipe} tem utilizado a microscopia de tunelamento para analisar a adsorção de diversos elementos na $\mathrm{Pt}(1,1,1)$. Como resultado, ele tem observado que nas imagens STM tais átomos podem causar protuberâncias de até $2\angstron$ e depressões de até $0,35\angstron$, dependendo do átomo adsorvido. É um exemplo claro de como as imagens STM não podem ser associadas ao bel prazer com a morfologia da amostra. 
+	
+		
+
+	
+	

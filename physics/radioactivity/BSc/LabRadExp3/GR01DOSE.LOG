@@ -1,0 +1,76 @@
+#
+Date:            6/10/2001
+Time:            9:53:8
+Setup file:      fisrad.set
+Data  file:      gr01dose.dat
+
+
+INITIAL parameters:
+B. Intervalo de tempo de amostragem (s) [0.09,*]:                       0.2
+C. Temperatura do inicio da leitura (øC) [40,400]:                       40
+D. Temperatura do fim da leitura (øC) [80,500]:                         280
+E. Modo de aquecimento (Automatico/Manual) ["A","M"]:                     A
+F. Taxa de aquecimento (øC/s) [0.0001,35]:                                5
+G. Ganho do controlador de temperatura (øC/V):                           98
+H. Voltagem para o inicio da rampa de aquecimento (V) [-10,1]:          0.0
+I. Tempo morto da PMT+preamp (ns) [5,200]:                              100
+J. Ganho do amplificador do Termopar (tipoK) (ADU/mV) [0.1,*]:          245
+K. Nivel de discriminacao (mV) [-300,300]:                              -30
+L. Logaritmo do fundo de escala do CDA - use 10 p/ saida log. [3,10]:    10
+M. Material medido (string continuo):      laboratorio 3 curso de  FisRad 1
+N. Nome do experimentador (string continuo):    samuel,ricardo,carlos,elmar     
+                                                          
+
+
+
+
+Data analysis during the run:
+>>>
+Ident        :fundoA   
+Center       :247.10 øC
+Temp. of Max.:229.24 øC
+Peak height  :-2.63E+0000 CPS
+Area         : 5.80E+0000 counts
+cursor background
+>>>
+Ident        :acr01    
+Center       :220.09 øC
+Temp. of Max.:225.11 øC
+Peak height  : 4.93E+0002 CPS
+Area         : 3.76E+0003 counts
+cursor background
+>>>
+Ident        :acr02    
+Center       :222.32 øC
+Temp. of Max.:230.47 øC
+Peak height  : 7.05E+0002 CPS
+Area         : 3.82E+0003 counts
+cursor background
+>>>
+Ident        :acr03    
+Center       :219.86 øC
+Temp. of Max.:225.58 øC
+Peak height  : 6.25E+0002 CPS
+Area         : 3.28E+0003 counts
+cursor background
+>>>
+Ident        :acr04    
+Center       :216.10 øC
+Temp. of Max.:225.79 øC
+Peak height  : 6.27E+0002 CPS
+Area         : 4.04E+0003 counts
+cursor background
+>>>
+Ident        :acr05    
+Center       :183.85 øC
+Temp. of Max.:190.53 øC
+Peak height  : 2.19E+0001 CPS
+Area         : 2.03E+0002 counts
+cursor background
+>>>
+Ident        :cr0606   
+Center       :221.28 øC
+Temp. of Max.:230.72 øC
+Peak height  : 6.54E+0002 CPS
+Area         : 4.43E+0003 counts
+cursor background

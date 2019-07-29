@@ -1,0 +1,78 @@
+\begin{quotation}
+{\bf 5.}
+{\it	Suponha que você lançe um missil desde o pólo norte, ao longo do meridiano $43\,$\textdegree Oeste,
+com uma velocidade horizontal $v_{\theta}(0)=8\,\,\mathrm{km/s}$. Calcule a longitude em que este míssil 
+{\tt (a)} atinge o equador e {\tt (b)} ao chegar ao pólo sul.}
+\end{quotation}
+
+	O desvio de sua trajetória inicial deve-se à força de Coriolis, dada por 
+$-2m\mathbf{\omega}\times\mathbf{v}$. Tomando um vetor velocidade genérico $\mathbf{v}=v_r(t)\hat{r}+
+v_{\theta}(t)\hat{\theta}+v_{\phi}(t)\hat{\phi}$ e, lembrando que o vetor velocidade angular da Terra é
+$\mathbf{\omega}=\omega\hat{k}=\omega(\cos\theta\hat{r}-\sin\theta\hat{\theta})$, teríamos de resolver o
+sistema
+	\[\mathbf{a}=2\omega\left(\begin{array}{ccc}
+			\hat{r}		&	\hat{\theta}	&	\hat{\phi}	\\
+			\cos\theta	&	-\sin\theta	&	0		\\
+			v_r(t)		&	v_{\theta}(t)	&	v_{\phi}(t)	
+			\end{array}\right) \]
+
+	Mas isto resulta num sistema de três equações diferenciais ordinárias acopladas não lineares
+muito difícil de se resolver analiticamente. Então, procuramos uma simplificação: Consideremos a aceleração
+inicial (no pólo norte) causada pela força de Coriolis: $2mv\omega$. Se esta aceleração, durante todo o
+percurso até o equador não for capaz de produzir uma velocidade comparável a $v_{\theta}(0)$, então poderemos
+supor que a aceleração de Coriolis permanece a mesma durante todo o percurso. Vejamos: Se isso fosse 
+verdade, então a velocidade no equador, causada exclusivamente pela força de Coriolis seria 
+	$$
+	v_{\phi}(\theta = {\pi\over2}) = 2\omega v t = 2\omega v{R\theta\over v_{\theta}(0)}
+		\cong236\,\,\mathrm{m/s}
+	$$
+	
+	que corresponde a apenas $3\%$ da velocidade inicial $v_{\theta}(0)$. Assim, é possível estimar
+o desvio de trajetória através de 
+	$$
+	s_{\phi}(t) = s_{\phi}(0)+v_{\phi}(0)t+{1\over2}a t^2 
+	$$
+
+	Como tanto o desvio e a velocidade inicial na direção dos paralelos é zero, podemos reescrever a
+equação acima já introduzindo a mudança de variável $R\theta = v_{\theta}(0)t$, que é obtido ao considerar
+que $v_{\theta}(0)$ permanece constante:
+	$$
+	\phi(\theta) = {\omega R\theta^2\over v_{\theta}(0)},\,\,\,\,\,\,\,\mathrm{[\phi],[\theta]=rad}
+	$$
+
+	Logo, o desvio do míssil ao atingir o equador é
+	$$
+	\phi({\pi\over2}) = 1^\mathrm{o}\,19\,'46\,''
+	$$ 
+
+	Semelhantemente fazemos para o hemisfério sul: 
+	$$
+	s_{\phi}(t) = s_{\phi}(0)+v_{\phi}(0)t+{1\over2}\omega t^2 
+	$$
+
+	Aqui, porém, $\phi(0) = 1^\mathrm{o}\,19\,'46\,''$, $v_\phi(0) =236\,\,\mathrm{m/s}$ e
+a aceleraçãode Coriolis é $-2\omega v_\theta(0)$\footnote{Na passagem do hemisfério norte para o sul
+consideramos simplesmente que a força de Coriolis muda de sentido, o que não é verdade na prática pois
+próximo ao equador a aceleração de Coriolis, neste caso, é pequena. Mas imagine que, ao invés de irmos
+do equador ao pólo sul, fizessemos o contrário. Então, nesta condição a mesma aproximação feita acima
+seria possível. Assim, o que fizemos foi proceder a mesma aproximação feita para o hemisfério norte,
+mas agora cronologicamente invertida!}:
+	$$
+	\phi(\theta) = \phi({\pi\over2})+{v_{\phi}({\pi/2})\over v_{\theta}(0)}\theta-
+			{\omega R\theta^2\over v_{\theta}(0)}
+	$$
+
+	Portanto,
+	$$
+	\phi(\pi)= 1^\mathrm{o}\,19\,'46\,'' -  0,07''\cong  1^\mathrm{o}\,19\,'46\,''
+	$$
+
+	Ou seja, desde o equador até o pólo sul todo o efeito da força de Coriolis foi compensar a 
+velocidade no equador, praticamente não causando desvio nenhum. 
+
+	Resumindo. O míssil atinge tanto o equador quanto o pólo sul  pelo paralelo  
+$44^\mathrm{o}\,19\,'46\,''$ oeste. 
+
+
+	
+	 

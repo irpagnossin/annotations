@@ -1,0 +1,60 @@
+\begin{exercicio}
+	Mostre que para o oscilador harmônico unidimensional 
+$\hope{n}{\op X^4}{n}=(\hbar/2m\omega)^2(6n^2+6n+3)$.
+\end{exercicio}
+
+	Primeiramente lembremos, como no exercício anterior, que
+	$$
+	\hope{n}{\op X^4}{n}=({\hbar\over m\omega})^2\hope{n}{\hat x^4}{n}
+	$$
+
+	e escrevamos $\hat x^4$ em termos dos operadores aniquilação e criação:
+	\begin{eqnarray*}
+	\hat x^2&=& {1\over2}(\a^2+\a\aa+\aa\a+\aa[2])						\\
+		&=& {1\over2}(\a^2+\a\aa-1+\a\aa+\aa[2])						\\
+		&=& {1\over2}(-1+\a^2+\aa[2]+2\a\aa)						\\
+	\hat x^4&=& {1\over4}(-1+\a^2+\aa[2]+2\a\aa)(-1+\a^2+\aa[2]+2\a\aa)			\\
+		&=& {1\over4}(1-\a^2-\aa[2]-2\a\aa-\a^2+\a^4+\a^2\aa[2]+2\a^3\aa-			\\		
+		& & -\aa[2]+\aa[2]\a^2+2\aa[2]\a\aa+\aa[4]-2\a\aa+2\a\aa\a^2+2\a\aa[3]+4\a\aa\a\aa)
+	\end{eqnarray*}
+
+	Somente os termos cujas somas dos índices de cada um dos operadores forem iguais 
+resultarão diferente de zero; Matematicamente, se $i$ é a soma dos expoentes de $\a$ e $j$ a soma
+dos expoentes de $\aa$, então este termo somente contribuirá ao resultado final se $i=j$. Logo, 
+efetivamente teremos
+	$$
+	\hat x^4 = {1\over4}(1+\a^2\aa[2]+\aa[2]\a^2-4\a\aa+4\a\aa\a\aa)
+	$$
+
+	Para não ficarmos carregando toda a equação acima por todo o cálculo, façamos por partes:
+	\begin{eqnarray*}
+	\hope{n}{\a^2\aa[2]}{n}	&=& \hope{n}{\a^2\aa\aa}{n}					\\
+				&=& \sqrt{n+1}\hope{n}{\a^2\aa}{n+1}				\\
+				&=& \sqrt{(n+1)(n+2)}\hope{n}{\a\a}{n+2}			\\
+				&=& (n+2)\sqrt{n+1}\hope{n}{\a}{n+1}				\\
+				&=& (n+1)(n+2)\iprod{n}{n}	       				\\
+				&=& (n+1)(n+2)							\\
+	\hope{n}{\aa[2]\a^2}{n} &=& \hope{n}{\aa[2]\a\a}{n}					\\
+				&=& \sqrt{n}\hope{n}{\aa[2]\a}{n-1}				\\
+				&=& \sqrt{n(n-1)}\hope{n}{\aa\aa}{n-2}				\\
+				&=& (n-1)\sqrt{n}\hope{n}{\aa}{n}				\\
+				&=& (n-1)n\iprod{n}{n}						\\
+				&=& (n-1)n							\\
+	\hope{n}{4\a\aa}{n}	&=& 4\sqrt{n+1}\hope{n}{\a}{n+1}				\\
+				&=& 4(n+1)\iprod{n}{n}						\\
+				&=& 4(n+1)							\\
+	\hope{n}{4\a\aa\a\aa}{n}&=& 4\sqrt{n+1}\hope{n}{\a\aa\a}{n+1}				\\
+				&=& 4(n+1)\hope{n}{4\a\aa}{n}					\\
+				&=& 4(n+1)^2
+	\end{eqnarray*}
+
+	Por conseguinte,
+	\begin{eqnarray*}
+	\hope{n}{\hat x^4}{n}	&=&{1\over4}[1+(n+1)(n+2)+(n-1)n-4(n+1)+4(n+1)^2]			\\
+				&=&{1\over4}(6n^2+6n+3)
+	\end{eqnarray*}
+
+	Finalmente,
+	$$
+	\hope{n}{\op X^4}{n}=({\hbar\over2m\omega})^2(6n^2+6n+3)
+	$$

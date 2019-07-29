@@ -1,0 +1,322 @@
+\documentclass[a4paper]{article}
+
+\setlength{\unitlength}{0.5cm}
+
+\usepackage[latin1]{inputenc}
+\usepackage[portuges]{babel}
+
+\begin{document}
+
+\title { Lista número 7 de Mecânica Quântica}
+\author { Ivan Ramos Pagnossin }
+\date { 01 de agosto de 2000 }
+\maketitle
+
+\pagebreak
+\sf
+
+{\bf 1.}
+{\it 	Considere os operadores $L_+=L_x+iL_y$ e $L_-=L_x-iL_y$, onde $L_x$ e $L_y$ são as componentes do momento angular $\vec{L}$. Demonstre as 
+	seguintes propriedades:
+
+	(a)$L_+L_-=L^2-L_z^2+\hbar L_z$
+
+	(b)$L_-L_+=L^2-L_z^2-\hbar L_z$
+
+	(c)$[L^2,L_+]=0$
+
+	(d)$[L^2,L_-]=0$
+
+	(e)$L_z,L_+]=\hbar L_+$
+
+	(f)$L_z,L_-]=-\hbar L_-$
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Item (a):
+	\begin{eqnarray}
+	L_+L_-	&	=	&	(L_x+iL_y)(L_x-iL_y)			\nonumber \\
+		&	=	&	L_x^2-iL_xL_y+iL_yL_x+L_y^2		\nonumber \\
+		&	=	&	L_x^2+L_y^2-i[L_x,L_y]			\nonumber \\
+		&	=	&	L^2-L_z^2-i(i\hbar L_z)			\nonumber \\
+		&	=	&	L^2-L_z^2+\hbar L_z			\nonumber
+	\end{eqnarray}
+
+	Item (b):
+	\begin{eqnarray}
+	L_-L_+	&	=	&	(L_x-iL_y)(L_x+iL_y)			\nonumber \\
+		&	=	&	L_x^2+iL_xL_y-iL_yL_x+L_y^2		\nonumber \\
+		&	=	&	L_x^2+L_y^2+i[L_x,L_y]			\nonumber \\
+		&	=	&	L^2-L_z^2+i(i\hbar L_z)			\nonumber \\
+		&	=	&	L^2-L_z^2-\hbar L_z			\nonumber
+	\end{eqnarray}
+
+	Itens (c) e (d):
+	\begin{eqnarray}
+	[L^2,L_{\pm}]	&	=	&	[L^2,L_x\pm iL_y]		\nonumber \\
+			&	=	&	[L^2,L_x]\pm i[L^2,L_y]		\nonumber \\
+			&	=	&	0				\nonumber
+	\end{eqnarray}
+	
+	Neste último item utilizamos o conhecimento adquirido com a lista anterior sobre o fato de que $[L^2,L_x]=[L^2,L_y]=0$.
+	
+	Itens (e) e (f)
+	\begin{eqnarray}
+	[L_z,L_{\pm}]	&	=	&	[L_z,L_x\pm iL_y]		\nonumber \\
+			&	=	&	[L_z,L_x]\pm i[L_z,L_y]		\nonumber \\
+			&	=	&	i\hbar L_y \pm i(i\hbar L_x)	\nonumber \\
+			&	=	&	i\hbar L_y \pm \hbar L_x	\nonumber \\
+			&	=	&	\pm\hbar(L_x\pm iL_y)		\nonumber \\
+			&	=	&	\pm\hbar L_{\pm}		\nonumber 
+	\end{eqnarray}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 2.}
+{\it	Mostre que, para os auto-estados de $L^2$ e $L_z$, valem as propriedades:
+
+	(a)$<L_x>=<L_y>=0$
+
+	(b)$<L_x^2>+<L_y^2>={1\over 2}<L^2-L_z^2>={1\over2}[l(l+1)-m^2]\hbar^2$
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Pelas definições de $\vec{L}$ e $L_z$, conclui-se que $L_x^2+L_y^2=L^2-L_z^2$. Ou seja, num plano $L_x\times L_y$, essas componentes do momento
+angular formam um círculo, conforme figura abaixo. Além disso, por simetria é possível afirmar que $x$ e $y$ são indistinguíveis.  Utilizando as definições 
+desta figura podemos calcular:
+	\begin{eqnarray}
+	<L_x>	&	=	&	{\int_0^{2\pi}\sqrt{l(l+1)-m^2}\hbar cos\theta d\theta\over\int_0^{2\pi}d\theta}	\nonumber \\
+		&	=	&	{\sqrt{l(l+1)-m^2}\hbar\over2\pi}[sen\theta]_0^{2\pi}					\nonumber \\
+		&	=	&	0											\nonumber 
+	\end{eqnarray}
+
+	e
+	\begin{eqnarray}
+	<L_y>	&	=	&	{\int_0^{2\pi}\sqrt{l(l+1)-m^2}\hbar sen\theta d\theta\over\int_0^{2\pi}d\theta}	\nonumber \\
+		&	=	&	-{\sqrt{l(l+1)-m^2}\hbar\over2\pi}[cos\theta]_0^{2\pi}					\nonumber \\
+		&	=	&	0											\nonumber 
+	\end{eqnarray}
+
+\begin{picture}(20,5)
+\put(10,2.5){\circle{10}}
+\put(10,2.5){\vector(1,0){2}}
+\put(10,2.5){\vector(0,1){2}}
+\put(10,2.5){\line(-1,0){2}}
+\put(10,2.5){\line(0,-1){2}}
+\put(10,2.5){\line(1,1){1}}
+\end{picture}
+
+
+	Item (b)
+	\begin{eqnarray}
+	L_x^2+L_y^2	&	=	&	L^2-L_z^2							\nonumber \\
+	<L_x^2+L_y^2>	&	=	&	<L^2-L_z^2>							\nonumber \\
+			&	=	&	<\psi_n^*|L^2-L_z^2|\psi_n>					\nonumber \\
+			&	=	&	<\psi_n^*|L^2|\psi_n>-<\psi_n^*|L_z^2|\psi_n>			\nonumber \\
+			&	=	&	l(l+1)\hbar^2<\psi_n^*|\psi_n>-<\psi_n^*|L_z|L_z\psi_n>		\nonumber \\
+			&	=	&	l(l+1)\hbar^2-m\hbar<\psi_n^*|L_z|\psi_n>			\nonumber \\
+			&	=	&	l(l+1)\hbar^2-m^2\hbar^2<\psi_n^*|\psi_n>			\nonumber \\
+			&	=	&	[l(l+1)-m^2]\hbar^2						\nonumber 
+	\end{eqnarray}
+
+	Pelos mesmos argumentos do item anterior, podemos verificar que 
+	$$
+	<L_x^2+L_y^2>=<2L_x^2>=<2L_y^2>	\Rightarrow	<L_x^2>=<L_y^2>={1\over2}<L_x^2+L_y^2>	
+	$$
+
+	E, consequentemente, $<L_x^2>+<L_y^2>={1\over 2}<L^2-L_z^2>={1\over2}[l(l+1)-m^2]\hbar^2$. Podemos confirmar este resultado pelo mesmo método 
+utilizado no item (a), notando apenas que, agora, o gráfico $L_x^2\times L_y^2$ é limitado ao primeiro quadrante do plano cartesiano. Ou seja, 
+$\theta\in[0,{\pi\over2}]$:
+	\begin{eqnarray}
+	<L_x^2>	&	=	&	{\int_0^{\pi/2}[l(l+1)-m^2\hbar^2] cos^2\theta d\theta\over\int_0^{\pi/2}d\theta}	\nonumber \\
+		&	=	&	{l(l+1)-m^2\hbar^2\over\pi/2}[{\theta\over2}+{sen2\theta\over4}]_0^{\pi/2}		\nonumber \\
+		&	=	&	{1\over2}[l(l+1)-m^2]\hbar^2								\nonumber 
+	\end{eqnarray}
+
+	e
+	\begin{eqnarray}
+	<L_y^2> &	=	&	{\int_0^{\pi/2}[l(l+1)-m^2\hbar^2] sen^2\theta d\theta\over\int_0^{\pi/2}d\theta}	\nonumber \\
+		&	=	&	{l(l+1)-m^2\hbar^2\over\pi/2}[{\theta\over2}-{sen2\theta\over4}]_0^{\pi/2}		\nonumber \\
+		&	=	&	{1\over2}[l(l+1)-m^2]\hbar^2								\nonumber
+	\end{eqnarray}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 3.}
+{\it	Os operadores $L^2$ e $L_z$ podem ser escritos em coordenadas esféricas como
+	$$
+	L_z=-i\hbar{\partial\over\partial\phi}	
+	$$
+
+	e
+	$$
+	L^2=-\hbar^2[{1\over sen\theta}{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})+
+				{1\over sen^2\theta}{\partial^2\over\partial\phi^2}]
+	$$
+
+	(a)Mostre que as funções harmônicas esféricas $Y_{lm}(\theta,\phi)$ são autofunções simultâneas de $L^2$ e $L_z$.
+
+	(b)Quais são os respectivos autovalores?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+	\begin{eqnarray}
+	L_z|lm>						&	=	&		m\hbar|lm>						\nonumber \\
+	-i\hbar{\partial\psi_{lm}\over\partial\phi}	&	=	&		m\hbar\psi_{lm}						\nonumber 
+	\end{eqnarray}
+	
+	Fazendo $\psi_{lm}=R(r)\Theta(\theta)\Phi(\phi)$,
+	\begin{eqnarray}
+	-i\hbar{d\Phi\over d\phi}	&	=	&	m\hbar\Phi			\nonumber \\
+	\int{d\Phi\over\Phi}		&	=	&	im\int d\phi			\nonumber \\
+	\Phi(\phi)			&	=	&	Ae^{im\phi}			
+	\end{eqnarray}
+
+	Por outro lado,
+	\begin{eqnarray}
+	L^2|lm>						&	=	&		l(l+1)\hbar^2|lm>		\nonumber \\
+	-\hbar^2[{1\over sen\theta}{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})+
+				{1\over sen^2\theta}{\partial^2\over\partial\phi^2}]\psi_{lm}
+							&	=	&		l(l+1)\hbar^2\psi_{lm}		\nonumber 
+	\end{eqnarray}
+
+	Fazendo novamente $\psi_{lm}=R(r)\Theta(\theta)\Phi(\phi)$,
+	\begin{eqnarray}
+	-\hbar^2[{1\over sen\theta}{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})+
+				{1\over sen^2\theta}{\partial^2\over\partial\phi^2}]\psi_{lm}
+							&	=	&		l(l+1)\hbar^2\psi_{lm}		\nonumber \\
+	{R\Phi\over sen\theta}{d\over d\theta}(sen\theta{d\Theta\over d\theta})+{R\Theta\over sen^2\theta}{d\Phi^2\over d\phi^2}
+							&	=	&		-l(l+1)R\Theta\Phi		\nonumber \\
+	{sen\theta\over\Theta}{d\over d\theta}(sen\theta{d\Theta\over d\theta})+{1\over\Phi}{d\Phi^2\over d\phi^2}
+							&	=	&		-l(l+1)sen^2\theta		\nonumber 
+	\end{eqnarray}
+
+	Utilizando o conhecido método de separação de variáveis para a parcela dependente de $\phi$, e chamando convenientemente a constante de separação de
+$-m^2$, encontramos, uma vez mais, $\Phi(\phi)=Ae^{im\phi}$, e a equação acima simplifica-se para 
+	\begin{eqnarray}
+	 {sen\theta\over\Theta}{d\over d\theta}(sen\theta{d\Theta\over d\theta})+[l(l+1)sen^2\theta-m^2]
+							&	=	&		0				\nonumber \\ 
+	 sen\theta{d\over d\theta}(sen\theta{d\Theta\over d\theta})+[l(l+1)sen^2\theta-m^2]\Theta
+							&	=	&		0				
+	\end{eqnarray}
+
+	Esta última equação é a conhecida \it Equação Associada de Legendre \sf, cujas soluções são os \it Polinômios Associados de Legendre \sf. Retornando
+estes dois resultados à expressão de $\psi$ encontramos
+	$$
+	\psi_{lm}(r,\theta,\phi)=R(r)P_{lm}(cos\theta)e^im{\phi}
+	$$
+
+	E, como também não é surpresa, o produro $P_{lm}e^{im\phi}$ é conhecido como \it Harmônicos Esféricos $Y_{lm}$ \sf. Para completar a demonstração
+solicitada, basta notarmos que este resultado também é solução de $L_z\psi_{lm}=m\hbar\psi_{lm}$.Ou seja, $Y_{lm}$ é solução simultânea de
+$L^2|lm>=l(l+1)\hbar^2|lm>$ e $L_z|lm>=m\hbar|lm>$. Observando as equações $(1)$ e $(2)$, notamos que os autovalores de $L_z$ e $L^2$ são, respectivamente, 
+$m\hbar$ e $l(l+1)\hbar^2$. 
+
+	Neste exercício partiu-se da equação já conhecida para os autoestados de $L_z$ e $L^2$, com os autovalores já devidamente expressos como é corrente
+na literatura científica. Contudo, estes autovalores são, na realidade, encontrados após cansativos argumentos e cálculos sobre o \it Problema de Sturm-Lioville
+\sf dos operadores Hermitanos $L_z$ e $L^2$. Mas creio que não é necessário descrevê-los aqui.
+ 
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 4.}
+{\it	Mostre que no átomo de hidrogênio a Hamiltoniana comuta com $L^2$ e $L_z$.
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	\begin{eqnarray}
+	[L^2,\mathcal{H}]	&	=	&	[L^2,{1\over2m}\vec{\nabla}^2+V(r)]					\nonumber \\
+				&	=	&	[L^2,-{\hbar^2\over2m}\{{1\over r^2}{\partial\over\partial r}(r{\partial\over\partial r})
+							+{1\over r^2}[{1\over sen\theta}{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})+
+							{1\over sen^2\theta}{\partial^2\over\partial\phi^2}]\}+V(r)]		\nonumber \\
+				&	=	&	[L^2,-{\hbar^2\over2m}\{{1\over r^2}{\partial\over\partial r}(r{\partial\over\partial r})
+							+{L^2\over r^2}\}+V(r)]							\nonumber \\
+				&	=	&	-{\hbar^2\over2m}[L^2,{1\over r^2}{\partial\over\partial r}(r{\partial\over\partial r})]
+							-{\hbar^2\over2m}[L^2,{L^2\over r^2}]+[L^2,V(r)]			\nonumber \\
+				&	=	&	0									\nonumber 
+	\end{eqnarray}
+
+	O primeiro colchete se anula pois $L^2$ é um operador que atua apenas nas partes angulares $\phi$ e $\theta$, enquanto que o segundo argumento é um
+operador que atua na parte radial $r$. Logo, como as derivadas são comutáveis, então os operadores são comutáveis;
+
+	O segundo colchete anula-se pois como $L^2$ atua apenas na parte angular, e $r^2$ não possui nada angular, então este comporta-se como uma constante
+frente a $L^2$, resultando ${1\over r^2}[L^2,L^2]$, que obviamente é zero;
+
+	A último colchete se anula pelo mesmo motivo acima, mas este vale a pena demonstrar com um pequeno cálculo:
+	\begin{eqnarray}
+	[L^2,V(r)]\phi	&	=	&	L^2(V(r)\phi)-V(r)L^2\phi		\nonumber \\
+			&	=	&	V(r)L^2\phi-V(r)L^2\phi			\nonumber \\
+			&	=	&	0					\nonumber
+	\end{eqnarray}
+	
+	A comutatividade de $L_z$ com $\mathcal{H}$ é bastante semelhante:
+	\begin{eqnarray}
+	[L_z,\mathcal{H}]	&	=	&	[L_z,{1\over2m}\vec{\nabla}^2+V(r)]					\nonumber \\
+				&	=	&	[L_z,-{\hbar^2\over2m}\{{1\over r^2}{\partial\over\partial r}(r{\partial\over\partial r})
+							+{1\over r^2}[{1\over sen\theta}{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})+
+							{1\over sen^2\theta}{\partial^2\over\partial\phi^2}]\}			\nonumber \\
+				&		&	+V(r)]									\nonumber \\
+				&	=	&	[L_z,-{\hbar^2\over2mr^2}\{sen^2\theta{\partial\over\partial r}(r{\partial\over\partial r})
+							+[sen\theta{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})\}+
+							{(-i\hbar)^2\over2mr^2}{\partial^2\over\partial\phi^2}]			\nonumber \\
+				&		&	+V(r)]									\nonumber \\
+				&	=	&	[L_z,-{\hbar^2\over2mr^2}\{sen^2\theta{\partial\over\partial r}(r{\partial\over\partial r})
+							+[sen\theta{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})\}+
+							{L_z^2\over2mr^2}+V(r)]							\nonumber \\
+				&	=	&	[L_z,-{\hbar^2\over2mr^2}\{sen^2\theta{\partial\over\partial r}(r{\partial\over\partial r})
+							+[sen\theta{\partial\over\partial\theta}(sen\theta{\partial\over\partial\theta})]
+							+[L_z,{L_z^2\over2mr^2}]						\nonumber \\
+				&		&	+[L_z,V(r)]								\nonumber \\
+				&	=	&	0									\nonumber
+	\end{eqnarray}
+
+	Os argumentos para a nulidade dos colchetes são exatamente os mesmos do caso anterior, exceto pela segunda parcela do primeiro colchete, onde 
+misturam-se $L_z$, operador da parte angular $\phi$, e um operador apenas com parte angular $\theta$.
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\put(0,0.1){\line(1,0){10}}
+\end{picture}
+
+{\bf 5.}
+{\it	No átomo de hidrogênio $E$, $l$, $m$ e $s(=1/2)$ são bons números quânticos. O que significa isto?
+}
+
+\begin{picture}(10,0)\thicklines
+\put(0,0){\line(1,0){10}}
+\end{picture}
+
+	Isto significa que essas grandezas são, além de constantes de movimento, fixas com o tempo; Não possuem variação temporal explícita, comutam com a
+Hamiltoniana  e, portanto, são ideais para a teoria da medida em mecânica quântica, pois uma vez medidas, seus valores permanecem inalterados.
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+\begin{exercicio}[blue]
+	A técnica de fluoroscopia com raios X pode empregar o uso contínuo de um tubo de raios X com potencial
+	de $80\unit{kV}$ e corrente de $3\unit{mA}$.
+	\begin{itemize}
+	\item	Qual a potência empregada neste equipamento?
+	\item	Supondo que esse tubo possui alvo de tungstênio, calcule o valor percentual aproximada para a
+				energia dissipada em forma de raios X.
+	\item	Com base nessas informações, discuta a produção de calor no alvo.
+	\end{itemize}
+\end{exercicio}
+
+	\begin{itemize}
+	\item	A potência aplicada ao circuito é simplesmente o produto da tensão pela corrente, desde que a
+				corrente seja contínua ou o circuito seja puramente resistivo:
+				$$
+				P = V\cdot I = 240\unit{W}
+				$$
+				
+	\item	A energia dissipada por irradiação X é igual à área sob o espectro, desde que se tenha corrigido
+				os efeitos geométricos (O detector não mede todos os $4\pi\unit{str}$ existentes ao redor da fonte)
+				e de atenuação (Absorção e/ou filtração pela massa de ar entre a fonte e o detector, por exemplo.),
+				entre outros que não me lembro. Por triangulação é possível aproximar esta área:
+				$$
+				P_r \cong [{1\over2}(30-10)\cdot22,5\times10^3+{1\over2}(80-30)\cdot22,5\times10^3]\cdot1,602\times
+						10^{-19}\unit[W] \cong 1\times10^{-10}\unit{W}
+				$$
+				
+				Bem, essa quantidade de energia é ridiculamente menor que aquela aplicada ao circuito. Fica até sem
+				sentido escrevê-la em forma de percentual.
+	\item	Como a energia dissipada na forma de raios X é muito pequena, têm-se que praticamente toda a potência
+				aplicada ao circuito é dissipada por efeito Joule, ou aquecimento. Este aquecimento é tal que seria
+				capaz de elevar de um grau Celsius $57\unit{g}$ de água por segundo!
+	\end{itemize}
