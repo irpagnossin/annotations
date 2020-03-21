@@ -1,0 +1,371 @@
+\documentclass{article}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{SIunits}
+\newcommand\vetor[1]{\ensuremath{\boldsymbol{#1}}}
+
+
+\newcommand\bra[1]{\ensuremath{\langle#1|}}
+\newcommand\ket[1]{\ensuremath{|#1\rangle}}
+\newcommand\iprod[2]{\ensuremath{\langle#1|#2\rangle}}
+\newcommand\hope[3]{\ensuremath{\langle#1|#2|#3\rangle}}
+\newcommand\psik{\ensuremath{\Psi_{\vetor k}(\vetor r)}}
+\newcommand\psii[1]{\ensuremath{\psi_{#1}(\vetor r)}}
+\newcommand\psiiR[1]{\ensuremath{\psi_{#1}(\vetor r-\vetor R)}}
+
+\begin{document}
+
+
+	\textbf{Exercício 1:} Considere o operador de rotação $C_\theta$ numa família de planos $(m_1m_2m_3)$ --- onde $m_i$ são índices de Miller --- dado por
+	$$
+	C_n = \left(
+	\begin{matrix}
+		\cos\theta	&	-\sin\theta	\\
+		\sin\theta	&	\cos\theta
+	\end{matrix}\right),
+	$$
+	sendo $\theta$ o ângulo de rotação. Tome agora um vetor $\vetor R = (x,y,z)$ da rede direta que pertença ao plano $(m_1m_2m_3)$ e apliquemo-lhe $C_\theta$:
+	$$
+	C_\theta\,\vetor R = 
+	\left(
+	\begin{matrix}
+		\cos\theta	&	-\sin\theta	\\
+		\sin\theta	&	\cos\theta
+	\end{matrix}\right) \cdot
+	\left(\begin{matrix}
+	x \\
+	y \\
+	z
+	\end{matrix}\right) = 
+	\left(\begin{matrix}
+		x\,\cos\theta-y\,\sin\theta	\\
+		x\,\sin\theta+y\,\sin\theta
+	\end{matrix}\right).
+	$$
+	
+	Por outro lado,
+	$$
+	C_{-\theta}\,\vetor R = 	
+	\left(\begin{matrix}
+		x\,\cos\theta+y\,\sin\theta	\\
+		-x\,\sin\theta+y\,\sin\theta
+	\end{matrix}\right),
+	$$
+	de modo que $(C_\theta + C_{-\theta})\,\vetor R = 2\,\cos\theta\,\vetor R$. Assim, $C_\theta + C_{-\theta} = \lambda \in Z$ e podemos escrever $\lambda = 2\,\cos\theta$. Como $\theta\in[0,2\,\pi]$, o valor máximo (mínimo) de $\lambda$ é $2$ ($-2$). Entrementes, $\lambda\in Z$ e, por conseguinte, é igual a $-2$, $-1$, $0$, $1$ ou $2$. Finalmente, se escrevermos $\theta$ como uma fração de $2\,\pi$, ou seja, como $2\,\pi/n$ ($n\in Z$), concluimos que
+	$$
+	n = \frac{2\,\pi}{\arccos\left(\lambda/2\right)}
+	$$
+	e decorre dos valores possíveis de $\lambda$ que $n=1,2,\ldots,6$.
+	
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}
+	\textbf{Exercício 2:} \textbf{(a)} Desenhando a célula convencional (FCC) do diamante ou consultando a equação $(4.5)$ do Aschcroft, concluimos que os vetores primitivos simétricos da estrutura do diamante são
+	$$
+	\vetor a_1 = \frac{a}{2}\,(0,1,1)	\qquad \vetor a_2 = \frac{a}{2}\,(1,0,1)	\qquad \vetor a_3 = \frac{a}{2}\,(1,1,0).
+	$$
+	
+	\textbf{(b)} Por definição, o volume encerrado pelos vetores primitivos contém apenas um ponto da rede direta. Deste modo, como a estrutura do diamante pode ser descrita por uma rede de Bravais FCC com base de dois átomos, temos dois átomos de carbono em cada célula primitiva da estrutura. 
+	
+	\textbf{(c)} A figura $1$ no final do trabalho ilustra a célula convencional da estrutura do diamante, na qual podemos identificar alguns dos primeiros (1º), segundos (2º) e terceiros (3º) \textbf{átomos} vizinhos. Estudando cuidadosamente esta figura concluímos que
+	
+	\begin{center}
+	\begin{tabular}{ccc}
+		Vizinhos	&	Quantidade &	Distância	\\
+		\hline
+		1º	&	4		&	$\sqrt{3}\,a/4$ \\
+		2º	&	12	&	$\sqrt{2}\,a/2$	\\
+		3º	&	12	&	$\sqrt{19}\,a/4$ \\
+		\hline 
+	\end{tabular}
+	\end{center}
+	
+	\textbf{(d)} Existem $8$ átomos na célula convencional do diamante, cada qual com raio igual à metade da distância até os primeiros vizinhos (linha 1 da tabela anterior), ou seja, $\sqrt{3}\,a/8$. Deste modo, o fator de empilhamento $f_e$ é
+	$$
+	f_e = \frac{\text{Volume total dos átomos}}{\text{Volume da célula convencional}} = \frac{8\,\left[\frac{4}{3}\,\pi\left(\frac{\sqrt{3}}{8}\,a\right)^3\right]}{a^3} = \frac{\sqrt{3}\,\pi}{16} \approx 0,34
+	$$
+	
+	\textbf{(e)} Os primeiros átomos vizinhos localizam-se em $\vetor r_j = \frac{a}{4}(x_j,y_j,z_j)$, com $\{x_j,y_j,z_j\}$ podendo assumir os seguintes valores:
+	
+	\begin{center}
+	\begin{tabular}{ccc}
+		$x_j$	&	$y_j$ &	$z_j$	\\
+		\hline
+		$-1$	&	$-1$	&	$+1$	\\
+		$+1$	&	$-1$	&	$-1$	\\
+		$-1$	&	$+1$	&	$-1$	\\
+		$+1$	&	$+1$	&	$+1$	\\		
+		\hline 
+	\end{tabular}
+	\end{center}	
+	
+	Além disso, como $||\vetor r_j|| =\sqrt{3}\,a/2$, temos que os versores dos primeiros vizinhos são $\hat{\vetor r}_j= \frac{1}{\sqrt{3}} (x_j,y_j,z_j)$. Assim, 
+	\begin{align*}
+	\cos(j,k) & = \hat{\vetor r}_j \cdot \hat{\vetor r}_k = \frac{1}{3}\,(x_j\,x_k + y_j\,y_k + z_j\,z_k) \\
+						& = -\,\frac{1}{3},
+	\end{align*}
+	quaisquer que sejam $\hat{\vetor r}_j$ e $\hat{\vetor r}_k$. Logo, o ângulo entre quaisquer duas ligações que unem um sítio da rede aos seus primeiros átomos vizinhos é $\arccos(-1/3) \approx 109\degree28'$.
+	
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}	
+	\textbf{Exercício 3:} Consultando a figura $2$, vemos que o plano $(100)$ de uma célula cúbica simples (C) intercepta os vetores primitivos simétricos de uma célula cúbica de faces centradas (FCC) em $(2,2,\infty)$, sendo este vetor escrito na base formada pelos vetores primitivos simétricos ilustrados na figura $2$. Assim, 
+	$$
+	2\;2\;\infty	\quad\to\quad \frac{1}{2}\;\frac{1}{2}\;\frac{1}{\infty}	\quad\to\quad	\frac{1}{2}\;\frac{1}{2}\;\frac{0}{2} \quad\to\quad 1\;1\;0
+	$$
+	e podemos escrever $(001)_\text{C} \equiv (110)_\text{FCC}$. Analogamente, o plano $(001)$ da célula cúbica simples intercepta os vetores primitivos da célula FCC em $(\infty,2,2)$. Conseqüentemente,
+	$$
+	\infty\;2\;2	\quad\to\quad \frac{1}{\infty}\;\frac{1}{2}\;\frac{1}{2}	\quad\to\quad	\frac{0}{2}\;\frac{1}{2}\;\frac{1}{2} \quad\to\quad 0\;1\;1
+	$$
+	e $(001)_\text{C} \equiv (011)_\text{FCC}$.
+
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}
+	\textbf{Exercício 4:} Como a estrutura do ferro é BCC, temos dois átomos de Fe por célula convencional, ou seja, temos dois átomos de ferro por $f_e\,a^3$ (volume ocupado pelos átomos quando representados por esferas impenetráveis), onde $f_e$ é o fator de empacotamento:
+	$$
+	f_e = \frac{\text{Volume de 2 átomos de Fe}}{\text{Volume da célula convencional BCC}} = \frac{2\, \left[ \frac{4}{3}\, \pi\, \left( \frac{\sqrt{3}}{4}\,a \right)^3 \right]}{a^3}.
+	$$
+	
+	Note que fizemos o raio atômico igual a $\sqrt{3}\,a/4$, que corresponde a um quarto da diagonal da célula convencional, posto que precisamos acomodar dois átomos (ou ainda, quatro raios atômicos) ao longo desta distância.
+	
+	Por outro lado, a massa de um mol ($6,022\times 10^{23}$) de átomos de ferro é $56$ gramas (peso atômico), de modo que podemos escrever a densidade do ferro como sendo
+	$$
+	\unit{7,9}{\gram\per\centi\cubic\metre} = \frac{\text{2 átomos de Fe}}{f_e\,a^3}\cdot\frac{\text{56 gramas}}{6,022\times 10^{23}\text{ átomos de Fe}}.
+	$$
+	
+	Destarte, o parâmetro de rede $a$ é
+	$$
+	a = \left( \frac{2\cdot 56}{f_e\cdot 7,9\cdot 6,022\times 10^{23}} \right)^{1/3} \approx \unit{3,26}{\angstrom}
+	$$
+	
+	E como a distância entre dois átomos vizinhos é $\sqrt{3}\,a/2$, temos que o espaçamento atômico nesta estrutura é de \unit{2,82}{\angstrom} e o raio aproximado de cada átomo de ferro, $2,82/2 = \unit{1,41}{\angstrom}$
+	
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}	
+	\textbf{Exercício 5:} \textbf{(a)} A figura $3$ ilustra a organização geométrica ideal para a estrutura \textsl{hcp}: Note que $\bar{AB}= a$. Neste caso, o volume delimitado pelos pontos \textit{A}, \textit{B}, \textit{C} e \textit{D} é um tetraedro e, conseqüentemente, o triângulo $\Delta BCD$ é equilátero. Portanto, o ângulo $\angle FBE$ é 30º e $\bar{BF} = \bar{BE}/\cos(30\degree) = a/\left[2\cos(30\degree)\right] = a/\sqrt{3}$. Assim,
+	$$
+	\bar{AF} = \frac{c}{2} = \left[a^2- \bar{BF}^2\right]^{1/2} \quad\Rightarrow\quad \frac{c}{a} = \left(\frac{8}{3}\right)^{1/2}
+	$$
+	
+	\textbf{(b)} Consultando a figura $2.25$ do livro do Singh (página $59$), vemos que em uma célula convencional \textsl{hcp} temos $6$ pontos da rede, cada qual com ``raio'' $a/2$ (item anterior). Portanto, o fator de enpacotamento é
+	$$
+	f_e = \frac{\text{Volume dos seis pontos da rede}}{\text{Volume da célula convencional}} = 
+					\frac{6\,\left[ \frac{4}{3}\,\pi\,\left( \frac{a}{2} \right)^3 \right]}{6\,\left[ \frac{1}{2}\,a^2\,\sin(60\degree)\,c \right]} 	=	\frac{\pi}{3\,\sqrt{2}} \approx 0,74
+	$$
+
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}	
+	\textbf{Execício 6:} A figura $6$ ilustra uma célula (nem primitiva e nem convencional) contendo os íons $A^+$ e $B^-$. Devido à simetria no plano $xy$, podemos concluir que o dipolo total formado na parte superior ao íon $B^-$, é proporcional a $h_1$, ao passo que o dipolo formado na parte inferior a $B^-$ é proporcional a $h_2$, ou seja, 
+	$$
+	\vetor d_1 \propto -h_1\hat{\vetor k}	\qquad\text{e}\qquad	\vetor d_2 \propto +h_2\hat{\vetor k}.
+	$$
+	
+	Portanto, haverá polarização espontânea (caracterizada por $\vetor d_1+ \vetor d_2 \ne \vetor 0$) quando $h_1\ne h_2 \ne c/2$, ou seja, quando a relação $c/a$ for diferente da ideal, $\sqrt{8/3} \approx 1,63$. \textbf{(b)} Assim, completando a tabela dada no enunciado da questão,
+	
+	\begin{center}
+		\begin{tabular}{cc}
+			Material	&	$c/a$	\\		
+			\hline
+			BN		&	$1,60$ 	\\
+			AlN		&	$1,60$	\\
+			GaN		&	$1,62$	\\
+			InN		&	$1,61$	\\
+			ZnO		&	$1,57$	\\
+			ZnS		&	$1,63$	\\
+			CdS		&	$1,63$	\\
+			CdSe	&	$1,63$	\\
+			\hline
+			\end{tabular}
+	\end{center}
+	
+	Logo, da tabela acima podemos concluir (em primeira aproximação) que BN, AlN, GaN, InN e ZnO apresentam polarização espontânea.
+	
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}
+
+%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}	
+	\textbf{Exercício 6:} O fator de estrutura procurado é 
+	$$
+	S_{\vetor k} = \sum_j f_j\,e^{i\vetor k\cdot \vetor R_j} = f_0 \sum_j e^{i\vetor k\cdot \vetor R_j},
+	$$
+	onde $f_j=f_0$ é o fator de estrutura atômico, igual para todos os átomos de carbono da célula convencional. Os vetores $\vetor R_j$ localizam os átomos da base utilizada e, no nosso caso, são oito (em termos dos versores ortonormais canônicos):
+
+	\begin{align*}
+	\vetor R_1 &= (0,0,0)							&\qquad	\vetor R_5 &= \frac{a}{4}(1,1,1)	\\
+	\vetor R_2 &= \frac{a}{2}(0,1,1)	&\qquad	\vetor R_6 &= \frac{a}{4}(3,1,3) \\
+	\vetor R_3 &= \frac{a}{2}(1,0,1)	&\qquad	\vetor R_7 &= \frac{a}{4}(1,3,3) \\
+	\vetor R_5 &= \frac{a}{2}(1,1,0)	&\qquad	\vetor R_8 &= \frac{a}{4}(3,3,1)
+	\end{align*}
+
+	
+	Fazendo $\vetor k = (h,k,l)$, onde $h$, $k$ e $l$ são índices de Miller, ficamos com
+	\begin{multline*}
+	\frac{S_{\vetor k}}{f_0} = 1 + e^{i\pi(h+k)} + e^{i\pi(k+l)} + e^{i\pi(l+h)} + e^{i\pi(h+k+l)/2} + \\ e^{i\pi(3h+3k+l)/2} + 
+				e^{i\pi(3h+k+3l)/2} + e^{i\pi(h+3k+3l)/2},
+	\end{multline*}
+	que pode ser reorganizado da seguinte forma:
+	\begin{align*}
+	\frac{S_{\vetor k}}{f_0} &= \left[ 1 + e^{i\pi(h+k)} + e^{i\pi(k+l)} + e^{i\pi(l+h)} \right]\,\left[ 1 + e^{i\pi(h+k+l)/2} \right] \\
+			& = \left[ 1 + (-1)^{h+k} + (-1)^{k+l} + (-1)^{l+h} \right]\left[ 1 + i^{h+k+l} \right]
+	\end{align*}
+	
+	Os zeros do fator de estrutura ocorrem quando (I) $\exp\left[i\pi(h+k+l)/2\right]=-1$ \textbf{ou} (II) quando apenas um dos parênteses no colchete mais à esquerda é $+1$ e os outros, $-1$ (anulando todo o colchete). A primeira condição é verdadeira quando o argumento da exponencial é um múltiplo ímpar de $\pi$, ou seja, quando $h+k+l = 2(2n-1)$, $n=1,2,\ldots$. Por outro lado, a segunda condição exige que \textbf{apenas} uma das somas $h+k$, $k+l$ ou $l+h$ seja par (levando todo o colchete da esquerda a zero), enquanto as outras duas sejam ímpares, o que pode ser satisfeito quando temos uma mistura de números pares e ímpares (não todos pares nem todos ímpares). Assim, os zeros do fator de estrutura ocorrem quando
+	\begin{equation}\label{eq:minimos}
+	h+k+l = 2(2n-1), \quad n = 1,2,\ldots
+	\end{equation}
+	e quando $h$, $k$ e $l$ são uma mistura de pares e ímpares.
+	
+	A intensidade das reflexões de fótons incididos sobre a estrutura é aproximadamente proporcional a $|S_{\vetor k}|^2$:
+	\begin{equation}\label{eq:reflexoes}
+	|\frac{S_{\vetor k}}{f_0}|^2 = \left| 1 + (-1)^{h+k} + (-1)^{k+l} + (-1)^{l+h} \right|^2 \, \left| 1 + i^{h+k+l} \right|^2
+	\end{equation}
+	
+	Assim, as reflexões possíveis ocorrem quando $|S_{\vetor k}|^2\ne 0$: Um máximo (absoluto ou relativo) de $|S_{\vetor k}|^2$ ocorre quando todos as parcelas no colchete da esquerda forem $+1$, ou seja, quando todos os expoentes forem pares. Isto ocorre sempre que os índices forem (iii) todos pares ou (iv) todos ímpares. Em (iii), podemos escrever $(h,k,l) = (2m_1,2m_2,2m_3)$, com $m_i=1,2,\ldots$. Neste caso,
+	\begin{equation}\tag{iii}
+	h + k + l = 2 (m_1 + m_2 + m_3) = 2m, \quad m = 1,2,\ldots
+	\end{equation}
+	
+	Por outro lado, em (iv) podemos escrever $(h,k,l) = (2m_1-1,2m_2-1,2m_3-1)$e, por conseguinte,
+	\begin{equation}\tag{iv}
+	h + k + l = \underbrace{2 (m_1 + m_2 + m_3 + 1)}_{\text{par}} + 1 = 2m + 1, 	\quad m = 1,2,\ldots
+	\end{equation}
+
+	Agora precisamos ver o comportamento de $i^{h+k+l}$ na equação~\eqref{eq:reflexoes}: Quando valer~(iii) acima, teremos $i^{2m} = (-1)^m$. Portanto, para que o termo $|1+i^{h+k+l}|$ não se anule devemos impor que $m$ seja par,\footnote{De fato, comparando (iii) com \eqref{eq:minimos} veremos que se $m$ for ímpar, estaremos em um mínimo: $|S_{\vetor k}/f_0|=0$.} ou seja, que $m=2n$. E neste caso teremos 
+	$$
+	|\frac{S_{\vetor k}}{f_0}|^2 = |1+1+1+1|^2\,|1+1|^2 = 64.
+	$$
+	
+	Por outro lado, quando valer~(iv), teremos $i^{h+k+l} = i^{2m+1} = i\,(-1)^m$ e o termo $|1+i^{h+k+l}|$ ficará igual a $|1\pm i|=\sqrt{2}$; e isto leva a
+	$$
+	|\frac{S_{\vetor k}}{f_0}|^2 = |1+1+1+1|^2\,(\sqrt{2})^2 = 32.
+	$$
+	
+	Finalmente, concluimos as reflexões permitidas ocorrem quando $h+k+l=2(2n)$ (equação (iii) com $m=2n$) ou quando todos os índices forem ímpares (equação (iv), lembrando que uma mescla de pares com ímpares resulta em um mínimo).
+	
+	No caso da célula primitiva, onde a base é composta por apenas dois átomos em $\vetor R_1=(0,0,0)$ e $\vetor R_2=a(1,1,1)/4$,
+	$$
+	\frac{S_{\vetor k}}{f_0} = 1 + e^{i\pi(h+k+l)/2} = 1 + i^{h+k+l} .	
+	$$
+		
+	Então, os zeros ocorrem quando $i^{h+k+l}=-1$, ou seja, quando $h+k+l=2(2n-1)$. As reflexões, por outro lado, ocorrem quando $|S_{\vetor k}|^2\ne0$, i.e., quando $i^{h+k+l}=+1$ ou $\pm i$. O primeiro caso ocorre quando $h+k+l = 2(2n)$; o segundo, quando $h+k+l = 2n+1$.
+	
+	Assim, embora a estrutura seja a mesma, os zeros e as condições de reflexão são diferentes em cada uma das descrições acima. Isto ocorre simplesmente por que a base utilizada é diferente: No primeiro caso, utilizamos oito átomos; no segundo, apenas dois. Contudo, é importante ressaltar que as descrições são equivalentes, pois referem-se a uma mesma estrutura.
+
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}
+	\textbf{Exercício 8:} $\Psi_{\vetor k}(\vetor r)$ será uma função de Bloch se $\Psi_{\vetor k}(\vetor r+ \vetor R) = e^{i\vetor k\cdot \vetor R} \Psi_{\vetor k}(\vetor r)$:
+	\begin{align*}
+		\Psi_{\vetor k} (\vetor r + \vetor R') &= \sum_{m,\vetor R} e^{i\vetor k\cdot \vetor R}\,\psi_m(\vetor r + \vetor R' - \vetor R) \\
+				& = \sum_{m,\vetor R} e^{i\vetor k\cdot (\vetor R-\vetor R')}\,e^{i\vetor k\cdot \vetor R'}
+								 \psi_m(\vetor r - (\vetor R - \vetor R')) \\
+				&  = e^{i\vetor k\cdot \vetor R'} \sum_{m,\vetor R''} e^{i\vetor k\cdot \vetor R''}\,\psi_m(\vetor r - \vetor R'') \\
+				& = e^{i\vetor k\cdot \vetor R'} \Psi_{\vetor k} (\vetor r)
+	\end{align*}
+		
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}
+	\textbf{Exercício 9:}	O método tight-bindig consiste em resolver o problema de autovalores $\mathcal{H}\ket{\psik}=E(\vetor k)\ket{\psik}$ com $\mathcal{H} = \mathcal{H}_\text{at} + \Delta U$, $\psik=\sum_{\vetor R} e^{i\vetor k\cdot \vetor R}\,\phi(\vetor r-\vetor R)$ e $\phi(\vetor r)=\sum_nb_n\,\psii{n}$, sendo $\psii{n}$ autofunções do problema atômico conhecido $\mathcal{H}_\text{at}\ket{\psi}=E(\vetor k)\ket{\psi}$. $\Delta U\ll \mathcal{H}_\text{at}$ é uma perturbação. Multiplicando o problema de autovalores por $\bra{\psii{n}}$, encontramos $\hope{\psii{n}}{\mathcal{H}}{\psik} = E(\vetor k)\iprod{\psii{m}}{\psik}$. Vamos resolver cada um dos membros desta equação:
+	\begin{align*}
+		\iprod{\psii{n}}{\psik} & = \sum_{n,\vetor R}b_n\,e^{i\vetor k\cdot\vetor R} \iprod{\psii{n}}{\psiiR{m}} \\
+					& = \sum_n b_n\,\delta_{nm} + \sum_{n,\vetor R\ne\vetor 0}b_n\,e^{i\vetor k\cdot\vetor R} \iprod{\psii{n}}{\psiiR{m}} \\
+					& = b_m  + \sum_{n,\vetor R\ne\vetor 0}b_n\,e^{i\vetor k\cdot\vetor R} \iprod{\psii{n}}{\psiiR{m}}.
+	\end{align*}
+	
+	Além disso,
+	\begin{align*}
+		\hope{\psii{m}}{\mathcal{H}}{\psik}	&= \hope{\psii{m}}{\mathcal{H}_\text{at} + \Delta U}{\psik} \\
+					& = \hope{\psii{m}}{\mathcal{H}_\text{at}}{\psik} + \hope{\psii{m}}{\Delta U}{\psik}\\
+					& = \hope{\psik}{\mathcal{H}_\text{at}^\dagger}{\psii{m}}^* + \hope{\psii{m}}{\Delta U}{\psik}\\
+					& = E_m \iprod{\psii{m}}{\psik} + \hope{\psii{m}}{\Delta U}{\psik},
+	\end{align*}
+	pois $E_m^*=E_m$ e $\mathcal{H}_\text{at}^\dagger = \mathcal{H}_\text{at}$.
+	\begin{align*}
+		\hope{\psii{m}}{\mathcal{H}}{\psik}	&= E_m \iprod{\psii{m}}{\psik} + \sum_{n,\vetor R} b_n\, e^{i\vetor k\cdot \vetor k} \, \hope{\psii{m}}{\Delta U}{\psiiR{n}} \\
+			& = E_m \iprod{\psii{m}}{\psik} + \sum_n b_n\hope{\psii{m}}{\Delta U}{\psii{n}} +\\
+				& \rule{2cm}{0pt} + \sum_{n,\vetor R\ne\vetor 0} b_n\, e^{i\vetor k\cdot \vetor k} \, \hope{\psii{m}}{\Delta U}{\psiiR{n}} \\
+				& = E_m \iprod{\psii{m}}{\psik} + \sum_n b_n \left( \beta_{nm} + \sum_{\vetor R\ne \vetor 0} e^{i\vetor k\cdot\vetor R} \gamma_{nm}(\vetor R) \right)
+	\end{align*}
+	
+	Assim, aplicando esses resultados no problema de autovalores obtemos 
+	\begin{multline*}
+	E_m\iprod{\psii{m}}{\psik} + \sum_n b_n\left( \beta_{nm} + \sum_{\vetor R\ne\vetor 0}e^{i\vetor k\cdot\vetor R}\,\gamma_{nm}(\vetor R)\right) = \\
+	  = E(\vetor k)\,\iprod{\psii{m}}{\psik}.
+	\end{multline*}
+	
+	Finalmente, utilizando $\iprod{\psii{n}}{\psii{m}}=\delta_{nm}$ e $\iprod{\psii{m}}{\psiiR{n}}=0$ obtemos a equação de autovalores procurada:	
+	\begin{equation}\label{eq:eq-secular}
+		\left[E(\vetor k) - E_m\right]\,b_m = \sum_n b_n \left( \beta_{nm} + \sum_{\vetor R\ne \vetor 0} e^{i\vetor k\cdot \vetor R} \gamma_{nm}(\vetor R) \right)
+	\end{equation}
+
+	Agora, para obtermos a matriz $4\times4$ explicitamente, tomamos $\beta_{nm}=0$ por simplicidade e separamos a soma nos termos $n=m$ e $n\ne m$:
+	$$
+	\left\{\sum_{\vetor R\ne \vetor 0} e^{i\vetor k\cdot \vetor R} \gamma_{mm}(\vetor R) - \left[ E(\vetor k)- E_m \right]\right\} b_m
+	+ \sum_{n\ne m}^4 b_n \sum_{\vetor R\ne \vetor 0} e^{i\vetor k\cdot \vetor R} \gamma_{nm}(\vetor R) = 0
+	$$
+
+	Fazendo $\gamma_{nm} = \sum_{\vetor R\ne \vetor 0} e^{i\vetor k\cdot\vetor R}\gamma_{nm}(\vetor R)$ para tornar a equação mais compacta, encontramos
+	$$
+	\left\{\gamma_{mm} - \left[ E(\vetor k)- E_m \right]\right\} b_m + \sum_{n\ne m}^4 b_n \gamma_{nm} = 0
+	$$
+
+	Em notação matricial, 
+	{\small
+	$$
+	\left(\begin{matrix}
+		\gamma_{11} - \left[ E(\vetor k)- E_1 \right]	&	\gamma_{21}	& \gamma_{31} & \gamma_{41} \\
+		\gamma_{12}	& \gamma_{22} - \left[ E(\vetor k)- E_2 \right] & \gamma_{32}	&	\gamma_{42} \\
+		\gamma_{13}	&	\gamma_{23}	& \gamma_{33} - \left[ E(\vetor k)- E_3 \right]	&	\gamma_{43} \\
+		\gamma_{14}	&	\gamma_{24}	&	\gamma_{34}	& \gamma_{44} - \left[ E(\vetor k)- E_4 \right]
+	\end{matrix}\right)
+	\left(\begin{matrix}
+		b_1 \\ b_2 \\b_3 \\ b_4
+	\end{matrix}\right) = 0
+	$$}
+
+	No caso de uma rede cúbica simples, cujos primeiros vizinhos (estamos ignorando as interações entre vizinhos mais distantes) estão localizados em
+	$$
+	\vetor R_{1,2} = \pm a(1,0,0)	\qquad \vetor R_{3,4} = \pm a(0,1,0) \qquad \vetor R_{5,6} = \pm a(0,0,1)
+	$$
+
+	Fazendo $\vetor k= (k_x,k_y,k_z)$ e utilizando a simetria $\gamma_{nm}(\vetor R) = \gamma_{nm}(-\vetor R)$,
+	$$
+	\gamma_{nm} = 2\left[\gamma_{nm}(\vetor R_1)\cos(k_xa) + \gamma_{nm}(\vetor R_3)\cos(k_ya) + \gamma_{nm}(\vetor R_5)\cos(k_za)\right]
+	$$
+	
+	Observando que $E_1=E_{s0}$ e $E_2=E_3=E_4=E_{p0}$ e que $\gamma_{nm}$ é equivalente às integrais apresentadas no enunciado da questão, a equação matricial anterior fica completamente definida.
+
+
+	%-------------------------------------------------------------------------------------------------------------
+	
+	\vspace{1cm}	
+	\textbf{Exercício 10:} \textbf{(a)} Utilizando a equação~\eqref{eq:eq-secular} para $m=s$,
+	$$
+	E(\vetor k) - E_s = \beta_ss + e^{i\,a\,k}\gamma_{ss}(\vetor R_1) + e^{-i\,a\,k}\gamma_{ss}(\vetor R_2)
+	$$
+	
+	Como $\vetor R_1 = -\vetor R_2$, podemos escrever $\gamma_{ss}(\vetor R_1) = \gamma_{ss}(\vetor R_2) = \gamma_{ss}$. Com isto, a expressão acima se torna
+	$$
+	E(\vetor k) = E_s + \beta_{ss} + 2\gamma_{ss}(\vetor R_1)\,\cos(ak)
+	$$
+	e a figura $5a$ ilustra o seu gráfico para $k\in[0,\pi/a]$.
+	
+	\textbf{(b)} A massa efetiva desta estrutura é
+	$$
+	\frac{1}{m^*} = \frac{1}{\hbar^2}\,\frac{\partial^2E}{\partial k^2} = \frac{2\,\gamma_{ss}\,a^2\,\cos(ak)}{\hbar^2}
+		\quad\Rightarrow\quad m^* = \frac{\hbar^2}{2\,\gamma_{ss}\,a^2\,\cos(ak)}
+	$$
+	e a figura $5b$ ilustra o seu gráfico para $k\in[0,\pi/a]$.
+	
+	
+\end{document}
